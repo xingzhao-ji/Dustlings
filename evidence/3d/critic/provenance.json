@@ -165,5 +165,11 @@
     "sourceHash": "38c8b21a78bc3485bcc6f10a7ca348b53deb4c40e3f44c394a7b692d7839ddfe",
     "humanSessions": 0,
     "nativeAppLaunched": false
+  },
+  "recapAndSettingsReview": {
+    "recordedAt": "2026-09-10T10:42:33.252944+00:00",
+    "provenance": "recap-and-settings/review-provenance.json",
+    "humanSessions": 0,
+    "nativeAppLaunched": false
   }
 }

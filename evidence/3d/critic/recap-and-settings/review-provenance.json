@@ -1,0 +1,125 @@
+{
+  "recordedAt": "2026-09-10T10:41:00.276542+00:00",
+  "reviewer": "Independent AI critic",
+  "humanSessions": 0,
+  "nativeAppLaunched": false,
+  "listening": false,
+  "gameSourceInspected": false,
+  "scope": "Bounded recap and Settings follow-up; not a full gameplay review or general accessibility pass.",
+  "visualMethod": "Normal-size supplied 1280x800 recap and 960x600 Settings stills; after ritual sampled at 2Hz over 34-41 seconds plus full-size frame40. Frame inspection, not continuous audiovisual perception.",
+  "captureConditions": {
+    "recap": "41.3-second 1280x800 30FPS MovieMaker recording, generated input, explicitly all-cleaned50-helper fixture; un-auditioned audio track.",
+    "settings": "Producer reports actual native Godot rendering, generated production FileDialog signal callbacks with embedded picker fixture. No physical OS dialog or critic input. 960x640 window yields960x600 captured canvas, logical1080x675."
+  },
+  "recapAfterSourceHash": "1ec1e548c0e2c138f3545341bd77b8db72a6b8d4439a2c1f8beee6ae3e04dcd6",
+  "files": [
+    {
+      "source": "evidence/3d/immersion-restoration/recap.png",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/recap-before/recap.png",
+      "sha256": "f920a0dd70b04d81d9b58b1bac3879c347084c4770b9fbbbaaa18e93d0a41206",
+      "bytes": 504240
+    },
+    {
+      "source": "evidence/3d/immersion-restoration/capture-manifest.json",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/recap-before/capture-manifest.json",
+      "sha256": "a81194e3f86c966d5862380d69da95db48ce856b9a8db5ee0c14f8547ac9a027",
+      "bytes": 10868
+    },
+    {
+      "source": "evidence/3d/immersion-restoration/results.json",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/recap-before/results.json",
+      "sha256": "b5cef8314e72868f678e121637243ae74f9ce7b3f8a24ebfca224e2fa6af007e",
+      "bytes": 1043
+    },
+    {
+      "source": "evidence/3d/contextual-recap/recap.png",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/recap-after/recap.png",
+      "sha256": "8b4ae4c6a2a5d9476a0e8721830852392cdc41635bb55763eceb4de7a996958c",
+      "bytes": 537703
+    },
+    {
+      "source": "evidence/3d/contextual-recap/completion.png",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/recap-after/completion.png",
+      "sha256": "c98c51e38da5c7c9a9b444d340894c6ae54f31ec3e6cf387049579469c291164",
+      "bytes": 662508
+    },
+    {
+      "source": "evidence/3d/contextual-recap/ritual.mp4",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/recap-after/ritual.mp4",
+      "sha256": "e354506a2fc855183beef485a566bf32d43df6bd22f1aab06498f88ba80667bd",
+      "bytes": 6042031
+    },
+    {
+      "source": "evidence/3d/contextual-recap/capture-manifest.json",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/recap-after/capture-manifest.json",
+      "sha256": "82aad547f7c2f09806d267ad7b0f1154acb1829246ee86ddcef2d620f0b39b07",
+      "bytes": 10897
+    },
+    {
+      "source": "evidence/3d/contextual-recap/results.json",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/recap-after/results.json",
+      "sha256": "63be68062d3847a6b007cc001fc2004471b63506c6aa5b9046e16aad58bab6e8",
+      "bytes": 1075
+    },
+    {
+      "source": "evidence/3d/accessibility-audit/baseline/960-invalid-json.png",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/settings/baseline/960-invalid-json.png",
+      "sha256": "6d85c0309935f1b1390f366249ee10bde0167bf670efb60fa0fa099db1334663",
+      "bytes": 201294
+    },
+    {
+      "source": "evidence/3d/accessibility-audit/baseline/results.json",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/settings/baseline/results.json",
+      "sha256": "34e5c0934e010c4406adf8e8a7f508235b53f59bcab83ac84579bbf90577717c",
+      "bytes": 17633
+    },
+    {
+      "source": "evidence/3d/accessibility-audit/candidate-initial/960-recovery-invalid.png",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/settings/candidate-initial/960-recovery-invalid.png",
+      "sha256": "054e035f78580b2e2ee9fbc4782b054767147c4c001a83b1e776c28f0bd35be9",
+      "bytes": 212382
+    },
+    {
+      "source": "evidence/3d/accessibility-audit/candidate-initial/results.json",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/settings/candidate-initial/results.json",
+      "sha256": "74faedfff400dbf5a2b0949e2ebecea10123dd4f81eb8256e866bcd66e74f42a",
+      "bytes": 19618
+    },
+    {
+      "source": "evidence/3d/accessibility-audit/candidate/960-invalid-json.png",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/settings/candidate/960-invalid-json.png",
+      "sha256": "44a2ec998ed61108fb6d65872eef9b8e690071fe63c4179d7058baaf8974e937",
+      "bytes": 210505
+    },
+    {
+      "source": "evidence/3d/accessibility-audit/candidate/960-recovery-invalid.png",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/settings/candidate/960-recovery-invalid.png",
+      "sha256": "ef75820dbc4ffa4943d3cc9558669c471c51c7c3d3aac0c16b42bededa08f28d",
+      "bytes": 214659
+    },
+    {
+      "source": "evidence/3d/accessibility-audit/candidate/results.json",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/settings/candidate/results.json",
+      "sha256": "2a75574e78e5b20999574ebc81408a8f7a9c585a03919e9b598cf53809066694",
+      "bytes": 19622
+    },
+    {
+      "source": "evidence/3d/accessibility-audit/README.md",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/settings/producer-README.md",
+      "sha256": "a1471aab7250f28faf23a5fd93013d244a43b5f8c925e69800fef97a8e80a2b9",
+      "bytes": 3272
+    },
+    {
+      "source": "evidence/3d/accessibility-audit/files.json",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/settings/producer-files.json",
+      "sha256": "cbe18ece4c63260530592f5ea027d8486a34af5febd808cbba51cab48d28ebaa",
+      "bytes": 8520
+    },
+    {
+      "source": "evidence/3d/accessibility-audit/proposal.json",
+      "reviewCopy": "evidence/3d/critic/recap-and-settings/settings/producer-proposal.json",
+      "sha256": "8a456feb2b313dfcec2986ec2e778d935f97562111147106aa45233eddffdb11",
+      "bytes": 2163
+    }
+  ]
+}

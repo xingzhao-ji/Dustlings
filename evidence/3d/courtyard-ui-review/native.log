@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)
+
+Movie Maker mode enabled, recording movie in 1280×800 @ 30 FPS...
+{"case":"full","celebration_unpaused":true,"chorus_started_at":521.666666666521,"cleaned":491.999999996625,"completed":true,"completed_at":655.599999999732,"draw_calls":312.0,"elapsed":665.633333333057,"engine":{"build":"official","hash":"ed1daf0bf001b61586d9930840f2f1394092c079","hex":263938,"major":4,"minor":7,"patch":2,"status":"stable","string":"4.7.2-stable (official)","timestamp":0},"first_helper_at":22.2166666666667,"first_upgrade_at":92.4666666666627,"first_view":1,"helpers":50,"input_kind":"Whole integrated play through generated native controls:2s brushing/5s cycle, scripted brush→teamwork→chorus purchases, periodic visible crew orders. No progress injection or accelerated simulation. Script choices are not player comprehension or human pacing.","kind":"Native Godot automated inspection; fixtures are explicitly labelled. No human test.","motes":370,"objects":608.0,"recap_closed":true,"restoration":1.0,"stats":{"assisted":219.629656373485,"brushed":272.370343626083,"orders":17},"status":"recorded","upgrades":{"bloom":true,"brush":true,"teamwork":true},"viewport":"(1440.0, 900.0)"}
+--------------------------------------------------------------------------------
+Done recording movie at path: /Users/xingzhaoji/Desktop/Dustlings/evidence/3d/courtyard-ui-review/full.avi
+20381 frames at 30 FPS (movie length: 00:11:19:11), recorded in 00:05:12 (217% of real-time speed).
+CPU render time: 4.75 seconds (average: 0.23 ms/frame)
+GPU render time: 0.00 seconds (average: 0.00 ms/frame)
+Encoding time: 116.12 seconds (average: 5.70 ms/frame)
+--------------------------------------------------------------------------------

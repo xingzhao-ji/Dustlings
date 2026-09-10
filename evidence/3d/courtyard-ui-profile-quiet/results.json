@@ -1,0 +1,57 @@
+{
+  "case": "profile",
+  "cleaned": 441.331724999099,
+  "completed": false,
+  "draw_calls": 303.0,
+  "elapsed": 262.000000000039,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "first_helper_at": 200,
+  "first_upgrade_at": 200,
+  "helpers": 50,
+  "kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.",
+  "motes": 319,
+  "objects": 672.0,
+  "performance": {
+    "conditions": "Visible native Godot Metal Forward+, 1280x800 window, normal MSAA/shadows/audio,50-helper80%-clean starting fixture. Optional --qa-profile-restore rings the real bell after60wallseconds; no later state injection. No movie or screenshots during measurement.",
+    "duration_seconds": 60.012401,
+    "frame_measurement": "Monotonic wall-clock microseconds between every _process callback; no discarded outliers or engine delta smoothing.",
+    "over_33_4_ms": [],
+    "p95_ms": 14.387,
+    "p99_ms": 14.816,
+    "phases": {
+      "working": {
+        "over_33_4_count": 0,
+        "p95_ms": 14.387,
+        "p99_ms": 14.816,
+        "samples": 7197,
+        "worst_ms": 19.911
+      }
+    },
+    "restoration_sequence_requested": false,
+    "samples": 7197,
+    "worst_ms": 19.911
+  },
+  "restoration": 0.0,
+  "stats": {
+    "assisted": 441.331724999099,
+    "brushed": 0.0,
+    "orders": 0
+  },
+  "status": "recorded",
+  "upgrades": {
+    "bloom": true,
+    "brush": true,
+    "teamwork": true
+  },
+  "viewport": "(1440.0, 900.0)"
+}

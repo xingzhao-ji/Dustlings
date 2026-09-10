@@ -1,0 +1,29 @@
+{
+  "observedAtUTC": "2026-09-10T11:04:17Z",
+  "model": "MacBook Pro",
+  "modelIdentifier": "Mac16,7",
+  "chip": "Apple M4 Pro",
+  "memory": "48 GB",
+  "os": "macOS 26.6.2",
+  "osBuild": "25G83",
+  "hardwareSource": "system_profiler -json SPHardwareDataType; sw_vers, identifying serials omitted",
+  "engine": "Godot 4.7.2 stable official ed1daf0bf",
+  "renderer": "native Metal Forward+",
+  "physicalWindow": [
+    1280,
+    800
+  ],
+  "logicalViewport": [
+    1440,
+    900
+  ],
+  "quality": "normal MSAA/shadows/audio",
+  "test": "60-second50-helper80%-clean working fixture; no restoration sequence requested",
+  "concurrency": "Both development agents explicitly confirmed their native/archive/hash processes closed before this run. No movie/screenshots or other team heavy/native work overlapped. Ordinary OS background activity uncontrolled.",
+  "humanInput": false,
+  "thermalMonitoring": false,
+  "windowsTested": false,
+  "hardwareVerification": "Same host as system_profiler/sw_vers verification at10:25; no device change",
+  "priorAttempt": "../courtyard-ui-profile/conditions-note.json",
+  "reasonForFollowup": "Earlier attempt overlapped already-running Windows fixture hashing/archive checks; preserve it asnon-isolated. This is the single corrected-condition follow-up."
+}

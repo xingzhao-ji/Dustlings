@@ -1,4 +1,18 @@
-# Native 3D courtyard performance — 2026-09-10 10:24 UTC
+# Current native UI integration — 2026-09-10 11:04 UTC
+
+Runtime `a8430be`, capture source `d16167dda40fc96fccb6da3d604483a90783007f64c4c545e5fbe99bc7ab08ae`, packaged source `ee3a43ae3dcf50364bcdb3914c730f2cc459ebeb18559b39f376e3a3996ef920`.
+
+The quiet **60.012401-second** sample retained all **7,197** native callback intervals: p95 **14.387 ms**, p99 **14.816 ms**, worst **19.911 ms**, **zero over33.4 ms**. It uses the same MacBook Pro Mac16,7 / M4 Pro /48GB /macOS26.6.2, native Metal Forward+,1280×800 window and normal MSAA/shadows/audio. Fifty helpers start at80% cleaned; this sample measures working only. No movie, screenshot or other team native/heavy processing overlapped after both agents explicitly confirmed their previous jobs closed. Ordinary OS activity and thermals were not instrumented.
+
+[Raw current result](../evidence/3d/courtyard-ui-profile-quiet/results.json), [source and arguments](../evidence/3d/courtyard-ui-profile-quiet/capture-manifest.json), [device/conditions](../evidence/3d/courtyard-ui-profile-quiet/device.json).
+
+The [first attempt](../evidence/3d/courtyard-ui-profile/results.json) is preserved as **non-isolated**: a Windows archive/hash fixture had started before the pause request and overlapped its beginning. It recorded60.0085seconds/7,196 callbacks, p9514.369ms, p9914.763ms, worst19.795ms, zero over33.4. [The condition note](../evidence/3d/courtyard-ui-profile/conditions-note.json) records why one follow-up was necessary. Neither sample's raw outcomes were discarded, and no timing difference is attributed to the overlap.
+
+The earlier180-second three-phase measurement below retains its older runtime identity; its art/rendering is unchanged by the UI pass. Do not describe the new60-second working sample as a new three-phase test or a measured speedup. Callback cadence is not GPU time or input latency; Windows, physical controls, thermal endurance and human comfort remain unverified.
+
+---
+
+# Previous native 3D courtyard performance — 2026-09-10 10:24 UTC
 
 Current runtime: `960d96b`, capture source `38c8b21a78bc3485bcc6f10a7ca348b53deb4c40e3f44c394a7b692d7839ddfe`. The 180.003568-second run retained all 21,588 intervals between native `_process` callbacks. Overall p95: **14.180 ms**, p99: **14.569 ms**, worst: **20.031 ms**; **zero intervals over 33.4 ms**. This is callback cadence, not GPU time or measured input latency.
 

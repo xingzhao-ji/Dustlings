@@ -1,0 +1,7 @@
+{
+  "classification": "non-isolated sample; not the controlled follow-up",
+  "observedAtUTC": "2026-09-10T11:02:34Z",
+  "overlap": "A Windows packaging fixture/archive/hash process (native_icon exec99544) had started before the quiet-window request and overlapped the beginning of this sample. The producer reported it completed; exact overlap duration was not instrumented.",
+  "disposition": "Keep all raw results and outliers. Do not attribute timing differences to the overlap. Run one fresh sample only after both development agents acknowledge no heavy or native work.",
+  "nextCapture": "courtyard-ui-profile-quiet"
+}

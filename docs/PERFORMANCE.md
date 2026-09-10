@@ -1,4 +1,22 @@
-# Courtyard performance corrections — 2026-09-10
+# Native 3D courtyard performance — 2026-09-10 10:24 UTC
+
+Current runtime: `960d96b`, capture source `38c8b21a78bc3485bcc6f10a7ca348b53deb4c40e3f44c394a7b692d7839ddfe`. The 180.003568-second run retained all 21,588 intervals between native `_process` callbacks. Overall p95: **14.180 ms**, p99: **14.569 ms**, worst: **20.031 ms**; **zero intervals over 33.4 ms**. This is callback cadence, not GPU time or measured input latency.
+
+| Actual phase | Samples | p95 ms | p99 ms | Worst ms | Over 33.4 ms |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Working | 7,197 | 14.391 | 14.806 | 20.031 | 0 |
+| Chorus | 3,008 | 12.278 | 12.513 | 18.833 | 0 |
+| Restored | 11,383 | 13.982 | 14.409 | 19.882 | 0 |
+
+Physical host: **MacBook Pro Mac16,7, Apple M4 Pro, 48 GB, macOS 26.6.2 (25G83)**. Godot 4.7.2 official, visible native Metal Forward+, 1280×800 window, normal MSAA/shadows/audio. The starting fixture has 50 helpers and 80% cleaned. Generated input rang the actual bell at 60.010258 wall seconds; there was no later progress injection. Both restoration and cleanup completed. No movie capture, screenshot capture, other game instances or team archive/media processing overlapped the measurement. Ordinary OS background activity and thermals were not instrumented.
+
+[Raw result](../evidence/3d/immersion-180-profile/results.json), [exact source and arguments](../evidence/3d/immersion-180-profile/capture-manifest.json), [device and test conditions](../evidence/3d/immersion-180-profile/device.json). The earlier native 60-second working-only sample had p95 14.797 ms and worst 20.525 ms. Duration, restoration sequence and source differ, so this is **not** a controlled speedup comparison.
+
+The useful technical result is that this sample found no sustained callback stall across working, chorus and restored states on this Mac. It does not establish Windows performance, low-end hardware support, thermal endurance, physical mouse/trackpad latency, human readability or comfort. Those remain open. MovieMaker recordings are excluded from performance claims.
+
+---
+
+# Historical 2D browser performance corrections — 2026-09-10
 
 The intended benefit is responsive interaction with50 visible helpers and less unnecessary work when paused. These are browser measurements on MacBook Pro Mac16,7, M4 Pro,48GB, macOS26.6.2, headless Chrome152. They do not establish energy use, on-screen responsiveness, thermal stability, human comfort, or weaker-device performance.
 

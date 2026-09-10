@@ -1,0 +1,73 @@
+{
+  "case": "profile",
+  "cleaned": 491.999999998181,
+  "completed": true,
+  "draw_calls": 307.0,
+  "elapsed": 381.99999999993,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "first_helper_at": 200,
+  "first_upgrade_at": 200,
+  "helpers": 50,
+  "kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.",
+  "motes": 370,
+  "objects": 597.0,
+  "performance": {
+    "conditions": "Visible native Godot Metal Forward+, 1280x800 window, normal MSAA/shadows/audio,50-helper80%-clean starting fixture. Optional --qa-profile-restore rings the real bell after60wallseconds; no later state injection. No movie or screenshots during measurement.",
+    "duration_seconds": 180.003568,
+    "frame_measurement": "Monotonic wall-clock microseconds between every _process callback; no discarded outliers or engine delta smoothing.",
+    "over_33_4_ms": [],
+    "p95_ms": 14.18,
+    "p99_ms": 14.569,
+    "phases": {
+      "chorus": {
+        "over_33_4_count": 0,
+        "p95_ms": 12.278,
+        "p99_ms": 12.513,
+        "samples": 3008,
+        "worst_ms": 18.833
+      },
+      "restored": {
+        "over_33_4_count": 0,
+        "p95_ms": 13.982,
+        "p99_ms": 14.409,
+        "samples": 11383,
+        "worst_ms": 19.882
+      },
+      "working": {
+        "over_33_4_count": 0,
+        "p95_ms": 14.391,
+        "p99_ms": 14.806,
+        "samples": 7197,
+        "worst_ms": 20.031
+      }
+    },
+    "restoration_sequence_requested": true,
+    "samples": 21588,
+    "worst_ms": 20.031
+  },
+  "profile_bell_at_wall_seconds": 60.010258,
+  "profile_bell_clicked": true,
+  "restoration": 1.0,
+  "stats": {
+    "assisted": 491.999999998181,
+    "brushed": 0.0,
+    "orders": 0
+  },
+  "status": "recorded",
+  "upgrades": {
+    "bloom": true,
+    "brush": true,
+    "teamwork": true
+  },
+  "viewport": "(1440.0, 900.0)"
+}

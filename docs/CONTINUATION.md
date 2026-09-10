@@ -1,3 +1,25 @@
+# Continuation checkpoint — 2026-09-10 10:28 UTC
+
+The session is active. Milestone: real 3D courtyard 0.4.0-dev, **awaiting human validation**. Recorded human sessions: **0**. Player, presentation and owner gates remain open. Do not expand beyond the courtyard.
+
+Runtime remains frozen clean at **960d96b**. Its combined full native film completed: first helper 22.217 simulation seconds, first upgrade 92.467 seconds, ending 655.600 seconds, all three upgrades and 17 orders. The actual ending displays **100% clear** despite the floating residual. The 679.367-second full film and 41.3-second short restoration include actual engine audio; generated controls and MovieMaker timing do not establish human play or performance. Short restoration leaves the world unpaused and opens/closes the optional recap. Both live in `evidence/3d/immersion-full-courtyard/` and `immersion-restoration/`.
+
+The quiet native **180.003568-second** run is finished: 21,588 callbacks, p95 **14.180 ms**, p99 **14.569 ms**, worst **20.031 ms**, zero over 33.4 ms. It includes working, chorus and restored phases, actual bell input at 60.010258 seconds and no later progress injection. MacBook Pro Mac16,7, M4 Pro, 48 GB, macOS 26.6.2, 1280×800 native Metal with normal quality/audio. No other team game, movie or heavy media/archive processing overlapped. See `evidence/3d/immersion-180-profile/` and `docs/PERFORMANCE.md`; callback cadence is not input latency or Windows/thermal/human validation.
+
+The exact Mac/Windows export is `builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/manifest.json`, source hash `056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313`. Both PCKs are `3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47`; all 13 packaged scripts/shaders match. Current actual Mac **45/45 separate-process checks pass**, all four processes closed. Windows now has a single verified portable ZIP with 12 integrity checks, but remains **unrun**. Mac is ad-hoc signed and unnotarized.
+
+**Exact next action:** let **store_requirements** finish strict source-bound review-hub verification and commit its hub/tool/gates/recovery evidence. Keep canonical runtime frozen until that completes. It owns those files. The current hub must disclose the hidden save-copy feedback defect described below; a technically verified candidate is not a completed milestone.
+
+**Next correction already active:** **native_icon** found that Save a copy success/failure and invalid Load a copy write only the world tip, which Settings hides. It owns `docs/3D-ACCESSIBILITY-AUDIT.md` and an isolated patch/native probe under `evidence/3d/accessibility-audit/`. It may use the native slot now for before/candidate reproduction; no other game process should run concurrently. Root will inspect its wrapping Settings status label and minimal patch, integrate only after the current hub is saved, verify normal/minimum-window visibility, unchanged progress, pause and focus, then refresh the affected capture/package evidence. Broader focus/layout risks need reproduction before correction.
+
+**independent_critic** separately reviews the current combined full/short films for immersion breaks and owns all verdicts in its critique/evidence. It has no human-review authority and no listening claim. Root asked the owner for observations on these two current recordings through an asynchronous question; no response or satisfaction is recorded. Continue useful correction work without routine permission questions.
+
+The private protocol is fixed before data: five-minute required segment, neutral continuation choice, 12–20 unfamiliar target players, 80% uncoached upgrade and 50% voluntary continuation, actual counts/reasons by segment. No invitations were sent. Figma and CUA physical input remain unavailable; native UI is the inspectable fallback. Human listening, physical controls, Windows execution and all three human gates remain open. Preserve exact source/capture provenance and the next unresolved action before any execution end. An ended session is not a finished game.
+
+---
+
+## Earlier checkpoint (historical status where superseded above)
+
 # Continuation checkpoint — 2026-09-10 10:10 UTC
 
 The session is active. Milestone: real 3D courtyard 0.4.0-dev, **awaiting human validation**. Recorded human sessions: **0**. Player, presentation and owner gates remain open. Do not expand beyond the courtyard.

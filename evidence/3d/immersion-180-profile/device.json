@@ -1,0 +1,26 @@
+{
+  "observedAtUTC": "2026-09-10T10:25:45Z",
+  "model": "MacBook Pro",
+  "modelIdentifier": "Mac16,7",
+  "chip": "Apple M4 Pro",
+  "memory": "48 GB",
+  "os": "macOS 26.6.2",
+  "osBuild": "25G83",
+  "hardwareSource": "system_profiler -json SPHardwareDataType; sw_vers, identifying serials omitted",
+  "engine": "Godot 4.7.2 stable official ed1daf0bf",
+  "renderer": "native Metal Forward+",
+  "physicalWindow": [
+    1280,
+    800
+  ],
+  "logicalViewport": [
+    1440,
+    900
+  ],
+  "quality": "normal MSAA/shadows/audio",
+  "test": "50-helper 80%-clean fixture; actual bell at60wallseconds; no later progress injection",
+  "concurrency": "No other team native game instances, movie/screenshots or heavy archive/media processing during180second measurement. Ordinary OS background work uncontrolled.",
+  "humanInput": false,
+  "thermalMonitoring": false,
+  "windowsTested": false
+}

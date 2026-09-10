@@ -78,6 +78,7 @@
     <label class="switch-label"><span>Lightweight scenery<small>Lower rendering resolution for quieter devices</small></span><input id="low-quality" type="checkbox" role="switch"></label>
     <div class="save-tools"><button id="export-save" class="secondary-button">Export save</button><button id="import-save" class="secondary-button">Import save</button><input type="file" id="save-file" accept=".json,application/json" hidden></div>
     <p id="settings-save-note" class="fineprint" role="status">Automatically saved on this browser. A backup keeps the previous checkpoint.</p>
+    <div id="save-conflict" class="restart-confirm" hidden><p>Another window saved a different courtyard. This window is paused so neither version is overwritten. Export this window’s progress above if you want to keep it, then load the saved courtyard.</p><button id="load-latest-save" class="secondary-button">Load the saved courtyard</button></div>
     <button id="resume-button" class="primary-button">Back to the courtyard <span>↗</span></button><button id="restart-button" class="text-button danger">Start a fresh courtyard</button>
     <div id="restart-confirm" class="restart-confirm" hidden><p>Export your save first if you’d like to keep this courtyard. Starting fresh replaces its progress.</p><button id="confirm-restart" class="secondary-button danger">Start fresh</button><button id="cancel-restart" class="secondary-button">Keep this courtyard</button></div>
   </dialog>

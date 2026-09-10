@@ -1,5 +1,5 @@
 import {createState,tick,buyUpgrade,assignCrew,releaseCrew,beginRitual,UPGRADES,serialise,restore,walkable,notify} from './game.js';
-import {SaveStore} from './storage.js';
+import {SaveStore,SAVE_KEY} from './storage.js';
 import {Renderer} from './renderer.js';
 import {DustAudio} from './audio.js';
 
@@ -24,10 +24,25 @@ for(const u of UPGRADES){
   b.innerHTML=`<span class="upgrade-icon"><svg><use href="#i-${u.icon}"/></svg></span><span><strong>${u.name}</strong><span class="upgrade-description">${u.detail}</span><span class="branch-label"></span></span><span class="upgrade-cost"><span>${u.cost}</span><svg><use href="#i-dust"/></svg></span>`;
   b.title=u.effect;b.addEventListener('click',()=>{if(buyUpgrade(state,u.id)){save();updateUI();}});$('upgrades').append(b);
 }
-function save(){if(started)store.save(state);updateSaveStatus();}
+// Web Locks serialize writers across tabs. The store also compares its last read
+// revision, so a stale window never silently replaces a newer checkpoint.
+function withSaveLock(action){return navigator.locks?.request?navigator.locks.request(SAVE_KEY,action):Promise.resolve().then(action);}
+function showSaveConflict(){
+  if(!started)return;
+  stopInput();paused=true;audio.pause();
+  if($('completion').open)$('completion').close();
+  if(!$('settings').open)$('settings').showModal();
+  updateSaveStatus();
+}
+async function save(){
+  let success=false;
+  try{if(started)success=await withSaveLock(()=>store.save(state));}catch{store.status='unavailable';}
+  updateSaveStatus();if(store.status==='conflict')showSaveConflict();return success;
+}
 function updateSaveStatus(){
-  $('save-status').textContent=store.status==='unavailable'?'Save unavailable — export a backup':store.status==='damaged'?'Save needs recovery':'Saved on this device';
-  $('settings-save-note').textContent=store.status==='unavailable'?'Browser storage is unavailable. Use Export save to keep your progress.':'Automatically saved in this browser. A backup keeps the previous checkpoint.';
+  $('save-status').textContent=store.status==='conflict'?'Newer progress in another window':store.status==='unavailable'?'Save unavailable — export a backup':store.status==='damaged'?'Save needs recovery':'Saved on this device';
+  $('settings-save-note').textContent=store.status==='conflict'?'Your progress is still in this window. Export it before loading the saved courtyard if you want to keep both.':store.status==='unavailable'?'Browser storage is unavailable. Use Export save to keep your progress.':'Automatically saved in this browser. A backup keeps the previous checkpoint.';
+  $('save-conflict').hidden=store.status!=='conflict';
 }
 function updateUI(){
   const percent=Math.min(100,Math.floor(state.cleaned/state.totalDust*100));
@@ -75,7 +90,7 @@ function closeJournal(){$('journal').classList.remove('open');}
 $('mobile-journal').onclick=()=>{$('journal').classList.toggle('open');};$('close-journal').onclick=closeJournal;
 function stopInput(){state.pointer.active=false;state.pointer.preview=false;pointerId=null;autoSweep=0;panning=false;audio.setBrushing(false);}
 function openSettings(){if(!started)return;stopInput();paused=true;audio.pause();save();$('settings').showModal();}
-function closeSettings(){if(!$('settings').open)return;$('settings').close();$('restart-confirm').hidden=true;paused=false;lastTime=performance.now();audio.resume();canvas.focus({preventScroll:true});}
+function closeSettings(){if(!$('settings').open)return;if(store.status==='conflict'){$('load-latest-save').focus();return;}$('settings').close();$('restart-confirm').hidden=true;paused=false;lastTime=performance.now();audio.resume();canvas.focus({preventScroll:true});}
 $('pause-button').onclick=openSettings;$('close-settings').onclick=closeSettings;$('resume-button').onclick=closeSettings;
 $('settings').addEventListener('cancel',e=>{e.preventDefault();closeSettings();});
 $('welcome').addEventListener('cancel',e=>e.preventDefault());
@@ -101,10 +116,19 @@ $('export-save').onclick=exportSave;$('completion-save').onclick=exportSave;
 $('import-save').onclick=()=>$('save-file').click();
 $('save-file').onchange=async e=>{
   const file=e.target.files[0];if(!file)return;
-  try{if(file.size>300000)throw Error('That file is too large to be a courtyard save.');const next=restore(JSON.parse(await file.text()));state=next;state.reducedMotion=settings.reducedMotion;completionShown=state.completed;birth=null;save();audio.setProgress(state.restoration);setMode('brush');$('settings-save-note').textContent='Your courtyard has been recovered. Ready when you are.';}catch(err){$('settings-save-note').textContent=`Could not import. ${err.message} Your current courtyard is safe.`;}e.target.value='';
+  try{if(file.size>300000)throw Error('That file is too large to be a courtyard save.');const next=restore(JSON.parse(await file.text()));if(store.hasConflict()){showSaveConflict();e.target.value='';return;}state=next;state.reducedMotion=settings.reducedMotion;completionShown=state.completed;birth=null;const saved=await save();audio.setProgress(state.restoration);setMode('brush');if(saved)$('settings-save-note').textContent='Your courtyard has been recovered. Ready when you are.';}catch(err){$('settings-save-note').textContent=`Could not import. ${err.message} Your current courtyard is safe.`;}e.target.value='';
 };
 $('restart-button').onclick=()=>$('restart-confirm').hidden=false;$('cancel-restart').onclick=()=>$('restart-confirm').hidden=true;
-$('confirm-restart').onclick=()=>{store.clear();state=createState();state.reducedMotion=settings.reducedMotion;completionShown=false;birth=null;audio.setProgress(0);save();setMode('brush');closeSettings();};
+$('confirm-restart').onclick=async()=>{
+  const reset=await withSaveLock(()=>{if(!store.clear())return false;state=createState();state.reducedMotion=settings.reducedMotion;completionShown=false;birth=null;return store.save(state);});
+  if(!reset){updateSaveStatus();if(store.status==='conflict')showSaveConflict();return;}
+  audio.setProgress(0);setMode('brush');updateSaveStatus();closeSettings();
+};
+$('load-latest-save').onclick=async()=>{
+  await withSaveLock(()=>{const latest=store.load();if(!latest&&store.status!=='ready')return;state=latest||createState();state.reducedMotion=settings.reducedMotion;completionShown=state.completed;birth=null;store.save(state);});
+  updateSaveStatus();if(store.status==='saved'||store.status==='recovered'||store.status==='ready'){audio.setProgress(state.restoration);setMode('brush');closeSettings();}
+};
+window.addEventListener('storage',e=>{if(e.key===SAVE_KEY&&store.hasConflict())showSaveConflict();});
 function enjoy(){$('completion').close();paused=false;lastTime=performance.now();audio.resume();canvas.focus({preventScroll:true});}
 $('enjoy-button').onclick=enjoy;
 document.querySelector('.wordmark').onclick=e=>{e.preventDefault();openSettings();};

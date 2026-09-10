@@ -1,0 +1,14 @@
+{
+  "kind": "Two real tabs sharing one browser context; automated, no human testing",
+  "browser": "152.0.7977.83",
+  "webLocks": true,
+  "checks": [
+    "Stale startup and repeated saves preserve both primary and previous valid backup",
+    "Conflicting window pauses and exposes export plus load-latest recovery",
+    "Stale restart cannot erase another window",
+    "The local branch can still be exported from the conflict dialog",
+    "Explicit load-latest restores newer progress and transfers writing to that window",
+    "Recovered current window can save normally"
+  ],
+  "errors": []
+}

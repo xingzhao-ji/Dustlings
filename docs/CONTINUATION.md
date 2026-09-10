@@ -1,3 +1,25 @@
+# Continuation checkpoint — 2026-09-10 09:33 UTC
+
+Session active. Milestone: exceptional real 3D courtyard, Godot 4.7.2, version 0.4.0-dev. No additional zones eligible. Human sessions **0**; player, presentation and owner acceptance all pending. This is a development checkpoint, not product completion.
+
+## Latest handoff — read this first
+
+Clean runtime checkpoint2572e2f was packaged successfully: `builds/3d/0.4.0-dev-2026-09-10T09-23-03-961Z-0db02d30ce/manifest.json`. Source aggregate0db02d30cecf84b28fce7919352f9ca2fd79c9deb82d5a7deffdb40e69d7d431; both runtime PCKs SHAa55ebb8d8ec501f8cb9d5484d2e9a473d3b443224bbec0ad4915b4171c8adb04. Mac Universal2 archive ad-hoc signature verified; actual packaged process checks are next. Windowsx64 exports and PCK source checks pass, Windows remains unrun. Packages are ignored on disk, no upload occurred.
+
+Full uninterrupted generated-input play is saved in `evidence/3d/full-courtyard-review/full.mp4` (capture-manifest and results beside it). No progress injection: first helper22.2167s, all three scripted purchases/orders,50helpers, completion681.7333s, unpaused celebration and optional recap return pass. This is automated input and engine-time MovieMaker, not human comprehension, pacing or performance. `completed.png` catches the frame before the periodically refreshed counter; use later actual film frames for100% state.
+
+Camera/input correction is verified by native auditccad970:25checks and984/984 sole remaining dust coverage cases across1280/960. N now chooses actual visible brush coverage and smoothly reframes when needed; Home/Frame/pan cancel strokes; keyboard aim ignores mouse hovering UI. Smooth far-target reframe48frames/776.9ms. Preserve these fixes.
+
+Independent critiqueecf7e4e strengthened the next material gap: the isolated helper cleans according to simulation, but its purpose is not readily visible at default size during20s passive play. Travel is clearer and should be preserved. `evidence/3d/helper-work-review/helper.mp4` is the actual before view; passive contribution0.2691 is not visual success. Root is beginning actual-work/local-dust feedback; native_icon owns only dustling_visual.gd and docs/3D-WORK-FEEDBACK.md to add a grounded, readable hand sweep without changing movement, identity or production rates. Critic remains separate and owns its verdict. The current package is a reproducible before-correction candidate, not a polished milestone.
+
+**Exact next action:** root is running `DUSTLINGS_CAPTURE_SOURCE=builds/3d/capture-snapshots/full-courtyard-review node tools/capture-3d.mjs profile integrated-courtyard-profile`,60wall-clock seconds/50helpers on MacBook Pro Mac16,7 M4Pro48GB macOS26.6.2 at1280×800 Metal. No MovieMaker/screenshots or other heavy native work during measurement. Poll the returned execution session. Then release native slot to store_requirements for exact packaged Mac separate-process opening/save/relaunch/second-copy checks. It owns tools/native-3d-checks.mjs, review hub/tool/gates and build-doc corrections. Do not overwrite its pending files.
+
+Next integrate the bounded helper work correction, run meaningful event/no-idle/cap/pause checks, capture the same passive helper interval plus crowded scene, obtain fresh independent critique and profile if cost changes. Freeze/repackage the corrected source once verified; source-bound review hub must clearly distinguish historical/current files. Keep saving checkpoints about every20min and continue useful authorized work. Figma unavailable; engine interface prototypes are the fallback. CUA physical input unavailable; no native listening, Windows device execution, representative playtests or owner acceptance is claimed.
+
+---
+
+## Earlier checkpoint (historical status where superseded above)
+
 # Continuation checkpoint — 2026-09-10 09:08 UTC
 
 Session active. Current milestone: exceptional real 3D courtyard, Godot 4.7.2, version 0.4.0-dev. No additional zones eligible. Human sessions **0**; representative-player, presentation and current-build owner acceptance are all pending. An ended session is not a finished game.

@@ -1,0 +1,47 @@
+{
+  "reviewer": "independent AI critic",
+  "revision_review_media_first": true,
+  "developer_change_explanation_read_before_initial_response": false,
+  "prior_game_and_critique_context_known": true,
+  "human_sessions": 0,
+  "native_input": false,
+  "audio_listened": false,
+  "continuous_audiovisual_perception": false,
+  "before_source": "e834ba59ea92629ee4b42883dbe6d6f13326d2859f4189aba3eb4c61fba04633",
+  "after_source": "e505ffbc13b70540b8f4353cd5dc26216058d5737c23fce4e2e1909cc83fa8dc",
+  "inputs": {
+    "evidence/rpg/neighborhood-integrated/route.mp4": {
+      "sha256": "fa9145eb056144e46d48b0b8e1593dc1585f9f7cdca4512c98b6e0c7b3d7081d",
+      "bytes": 41676925
+    },
+    "evidence/rpg/neighborhood-integrated/arrival.png": {
+      "sha256": "7f75b7370dfe08ca9c0ac06b71476ccb392e3f93d6bed290ac6eb90f47b85810",
+      "bytes": 379013
+    },
+    "evidence/rpg/neighborhood-integrated/capture-manifest.json": {
+      "sha256": "af10ab56ad0c884280d284c26e679d67109d27c5d55ed33cfbae36427a32fe90",
+      "bytes": 14413
+    },
+    "evidence/rpg/neighborhood-arrival-current/overview.mp4": {
+      "sha256": "db93237cfa8cbd188c0bb779bff1d2155957df6434acac3c439d88af32b4ac0c",
+      "bytes": 344727
+    },
+    "evidence/rpg/neighborhood-arrival-current/arrival.png": {
+      "sha256": "58e0a3e0dc68bd9b204dc9a965fc6dbfc19bd1bf5d43813fabd5a6d1d0f94a0c",
+      "bytes": 389127
+    },
+    "evidence/rpg/neighborhood-arrival-current/welcome.png": {
+      "sha256": "5e72c94b0f94b603b901f7346769bce1bdd4baa17aeaa5d9c521dee787cf8fdd",
+      "bytes": 320968
+    },
+    "evidence/rpg/neighborhood-arrival-current/capture-manifest.json": {
+      "sha256": "52edd476e5e8c5ce6aa6fb9ec5e5dc4920577cf53df5120cc89b0b5dac63b333",
+      "bytes": 16961
+    },
+    "evidence/rpg/neighborhood-arrival-current/results.json": {
+      "sha256": "af386a4fffad7be0dcda5bd7a7cd78e7175390dc94bbbf125d3e3a5bcd0d1c98",
+      "bytes": 1636
+    }
+  },
+  "scope": "Stationary arrival only,1280x800. Original arrival stills have identical supplied player position(0,0,9); matched1.8s frames are also preserved. A trial2.2s old-route frame showed movement beginning and was excluded, so the full0\u20135s intervals are not represented as matching stationary captures. Newoverview5.833333s; six commands and5.225engine sec per supplied results. Normal-size stills plus1fps overview samples inspected."
+}

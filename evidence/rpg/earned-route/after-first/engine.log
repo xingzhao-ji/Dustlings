@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SCRIPT ERROR: Parse Error: Could not preload resource script "res://scripts/rpg_navigation.gd".
+          at: GDScript::reload (res://scripts/rpg_main.gd:9)
+          GDScript backtrace (most recent call first):
+              [0] run (res://tests/rpg_earned_route_checks.gd:54)
+SCRIPT ERROR: Parse Error: Could not resolve script "res://scripts/rpg_navigation.gd".
+          at: GDScript::reload (res://scripts/rpg_main.gd:9)
+          GDScript backtrace (most recent call first):
+              [0] run (res://tests/rpg_earned_route_checks.gd:54)
+ERROR: Failed to load script "res://scripts/rpg_main.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/rpg_earned_route_checks.gd:54)
+SCRIPT ERROR: Invalid access to property or key 'qa_case' on a base object of type 'Node3D'.
+          at: RouteProbe._ready (res://scripts/rpg_qa.gd:20)
+          GDScript backtrace (most recent call first):
+              [0] _ready (res://scripts/rpg_qa.gd:20)
+              [1] _ready (res://tests/rpg_earned_route_checks.gd:15)
+              [2] run (res://tests/rpg_earned_route_checks.gd:56)
+SCRIPT ERROR: Invalid access to property or key 'companions' on a base object of type 'Node3D'.
+          at: RouteProbe._process (res://tests/rpg_earned_route_checks.gd:31)
+
+[Repeated follow-on invalid-property errors omitted. Original log grew to 352MiB before the failed fixture was terminated; no route completed.]

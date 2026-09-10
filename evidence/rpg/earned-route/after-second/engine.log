@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+RPG_QA={"elapsed":108.749999999995,"ok":false,"steps":68,"story":{"day":1,"flags":{"bridge_cleared":true,"bridge_plan":true,"bridge_repaired":true,"first_companion":true,"ivo_concern":true,"mara_concern":true,"met_ivo":true,"met_mara":true,"met_nell":true,"met_tavi":true,"nell_concern":true,"parcel_collected":true,"tavi_concern":true,"wood_collected":true},"home":"sage","schema":1,"trust":{"ivo":2,"mara":3,"nell":2,"tavi":2}}}

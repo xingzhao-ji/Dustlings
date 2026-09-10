@@ -1,0 +1,626 @@
+{
+	"camera_distance": 7.6,
+	"checks": [
+		{
+			"command": "{ \"wait\": 1.0 }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 0,
+			"time": 1.0
+		},
+		{
+			"command": "{ \"button\": \"Step into\" }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 1,
+			"time": 1.01666666666667
+		},
+		{
+			"command": "{ \"wait\": 1.0 }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 2,
+			"time": 2.01666666666666
+		},
+		{
+			"command": "{ \"wait\": 0.016667 }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 3,
+			"time": 2.05
+		},
+		{
+			"command": "{ \"move\": (0.5, 0.0, 7.4) }",
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.398337, 0.000843, 7.51834)",
+			"step": 4,
+			"time": 2.7
+		},
+		{
+			"command": "{ \"brush\": 5.0 }",
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.398337, 0.000843, 7.51834)",
+			"step": 5,
+			"time": 7.81666666666664
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.398337, 0.000843, 7.51834)",
+			"step": 6,
+			"time": 9.8333333333334
+		},
+		{
+			"command": "{ \"wait\": 0.016667 }",
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.398337, 0.000843, 7.51834)",
+			"step": 7,
+			"time": 9.86666666666674
+		},
+		{
+			"command": "{ \"move\": (-2.0, 0.0, 4.4) }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 8,
+			"time": 11.4000000000001
+		},
+		{
+			"command": "{ \"interact\": \"ivo\" }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 9,
+			"time": 11.4333333333335
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 10,
+			"time": 13.4500000000002
+		},
+		{
+			"command": "{ \"wait\": 0.016667 }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 11,
+			"time": 13.4833333333336
+		},
+		{
+			"command": "{ \"button\": \"Why so many\" }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 12,
+			"time": 13.5000000000003
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 13,
+			"time": 15.516666666667
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 14,
+			"time": 15.5333333333337
+		},
+		{
+			"command": "{ \"interact\": \"ivo\" }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 15,
+			"time": 15.566666666667
+		},
+		{
+			"command": "{ \"button\": \"carry Nell\" }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 16,
+			"time": 15.5833333333337
+		},
+		{
+			"command": "{ \"wait\": 1.5 }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 17,
+			"time": 17.1000000000003
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.526921)",
+			"step": 18,
+			"time": 17.116666666667
+		},
+		{
+			"command": "{ \"move\": (-5.7, 0.0, 3.0) }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.605926, 0.000835, 3.117421)",
+			"step": 19,
+			"time": 18.7833333333335
+		},
+		{
+			"command": "{ \"interact\": \"tavi\" }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.605926, 0.000835, 3.117421)",
+			"step": 20,
+			"time": 18.8166666666669
+		},
+		{
+			"command": "{ \"wait\": 2.5 }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.605926, 0.000835, 3.117421)",
+			"step": 21,
+			"time": 21.3333333333334
+		},
+		{
+			"command": "{ \"wait\": 0.016667 }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.605926, 0.000835, 3.117421)",
+			"step": 22,
+			"time": 21.3666666666667
+		},
+		{
+			"command": "{ \"button\": \"extra cup\" }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.605926, 0.000835, 3.117421)",
+			"step": 23,
+			"time": 21.3833333333334
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.605926, 0.000835, 3.117421)",
+			"step": 24,
+			"time": 23.4
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.605926, 0.000835, 3.117421)",
+			"step": 25,
+			"time": 23.4166666666666
+		},
+		{
+			"command": "{ \"move\": (-10.0, 0.0, 7.8) }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.832136, 0.000816, 7.76649)",
+			"step": 26,
+			"time": 26.8499999999998
+		},
+		{
+			"command": "{ \"interact\": \"home\" }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.832136, 0.000816, 7.76649)",
+			"step": 27,
+			"time": 26.8833333333331
+		},
+		{
+			"command": "{ \"button\": \"Sage\" }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.832136, 0.000816, 7.76649)",
+			"step": 28,
+			"time": 26.8999999999998
+		},
+		{
+			"command": "{ \"wait\": 1.5 }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.832136, 0.000816, 7.76649)",
+			"step": 29,
+			"time": 28.4166666666663
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.832136, 0.000816, 7.76649)",
+			"step": 30,
+			"time": 28.433333333333
+		},
+		{
+			"command": "{ \"move\": (-10.0, 0.0, 5.1) }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.893417, 0.00083, 5.235208)",
+			"step": 31,
+			"time": 29.4333333333329
+		},
+		{
+			"command": "{ \"wait\": 0.016667 }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.893417, 0.00083, 5.235208)",
+			"step": 32,
+			"time": 29.4666666666663
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.893417, 0.00083, 5.235208)",
+			"step": 33,
+			"time": 31.4833333333328
+		},
+		{
+			"command": "{ \"move\": (-10.0, 0.0, 7.8) }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.893417, 0.000745, 7.661878)",
+			"step": 34,
+			"time": 32.4333333333328
+		},
+		{
+			"command": "{ \"move\": (0.0, 0.0, 4.4) }",
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.118071, 0.000842, 4.51854)",
+			"step": 35,
+			"time": 37.0833333333325
+		},
+		{
+			"command": "{ \"move\": (8.6, 0.0, 2.8) }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 36,
+			"time": 40.6666666666656
+		},
+		{
+			"command": "{ \"interact\": \"mara\" }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 37,
+			"time": 40.699999999999
+		},
+		{
+			"command": "{ \"wait\": 2.5 }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 38,
+			"time": 43.2166666666655
+		},
+		{
+			"command": "{ \"wait\": 0.016667 }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 39,
+			"time": 43.2499999999988
+		},
+		{
+			"command": "{ \"button\": \"unfinished bridge\" }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 40,
+			"time": 43.2666666666655
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 41,
+			"time": 45.283333333332
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 42,
+			"time": 45.2999999999987
+		},
+		{
+			"command": "{ \"interact\": \"mara\" }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 43,
+			"time": 45.333333333332
+		},
+		{
+			"command": "{ \"button\": \"Show her\" }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 44,
+			"time": 45.3499999999987
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 45,
+			"time": 47.3666666666653
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "mara",
+			"ok": true,
+			"position": "(8.482586, 0.000842, 2.894554)",
+			"step": 46,
+			"time": 47.3833333333319
+		},
+		{
+			"command": "{ \"move\": (6.4, 0.0, 4.0) }",
+			"nearest": "wood",
+			"ok": true,
+			"position": "(6.518101, 0.000834, 3.905717)",
+			"step": 47,
+			"time": 48.3166666666652
+		},
+		{
+			"command": "{ \"interact\": \"wood\" }",
+			"nearest": "wood",
+			"ok": true,
+			"position": "(6.518101, 0.000834, 3.905717)",
+			"step": 48,
+			"time": 48.3499999999985
+		},
+		{
+			"command": "{ \"button\": \"Gather boards\" }",
+			"nearest": "wood",
+			"ok": true,
+			"position": "(6.518101, 0.000834, 3.905717)",
+			"step": 49,
+			"time": 48.3666666666652
+		},
+		{
+			"command": "{ \"wait\": 1.5 }",
+			"nearest": "wood",
+			"ok": true,
+			"position": "(6.518101, 0.000834, 3.905717)",
+			"step": 50,
+			"time": 49.8833333333318
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "wood",
+			"ok": true,
+			"position": "(6.518101, 0.000834, 3.905717)",
+			"step": 51,
+			"time": 49.8999999999984
+		},
+		{
+			"command": "{ \"move\": (0.0, 0.0, 0.0) }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.138705, 0.000778, 0.091827)",
+			"step": 52,
+			"time": 53.0166666666649
+		},
+		{
+			"command": "{ \"move\": (-3.1, 0.0, -1.0) }",
+			"nearest": "nell",
+			"ok": true,
+			"position": "(-2.96515, 0.000843, -0.888694)",
+			"step": 53,
+			"time": 54.3833333333315
+		},
+		{
+			"command": "{ \"interact\": \"nell\" }",
+			"nearest": "nell",
+			"ok": true,
+			"position": "(-2.96515, 0.000843, -0.888694)",
+			"step": 54,
+			"time": 54.4166666666649
+		},
+		{
+			"command": "{ \"wait\": 2.5 }",
+			"nearest": "nell",
+			"ok": true,
+			"position": "(-2.96515, 0.000843, -0.888694)",
+			"step": 55,
+			"time": 56.9333333333314
+		},
+		{
+			"command": "{ \"wait\": 0.016667 }",
+			"nearest": "nell",
+			"ok": true,
+			"position": "(-2.96515, 0.000843, -0.888694)",
+			"step": 56,
+			"time": 56.9666666666647
+		},
+		{
+			"command": "{ \"button\": \"Who planted\" }",
+			"nearest": "nell",
+			"ok": true,
+			"position": "(-2.96515, 0.000843, -0.888694)",
+			"step": 57,
+			"time": 56.9833333333314
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "nell",
+			"ok": true,
+			"position": "(-2.96515, 0.000843, -0.888694)",
+			"step": 58,
+			"time": 58.9999999999979
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "nell",
+			"ok": true,
+			"position": "(-2.96515, 0.000843, -0.888694)",
+			"step": 59,
+			"time": 59.0166666666646
+		},
+		{
+			"command": "{ \"move\": (0.0, 0.0, -2.2) }",
+			"nearest": "bridge",
+			"ok": true,
+			"position": "(-0.123474, 0.000806, -2.083704)",
+			"step": 60,
+			"time": 60.3166666666645
+		},
+		{
+			"command": "{ \"brush\": 9.0 }",
+			"nearest": "bridge",
+			"ok": true,
+			"position": "(-0.123474, 0.000806, -2.083704)",
+			"step": 61,
+			"time": 69.416666666664
+		},
+		{
+			"command": "{ \"interact\": \"bridge\" }",
+			"nearest": "bridge",
+			"ok": true,
+			"position": "(-0.123474, 0.000806, -2.083704)",
+			"step": 62,
+			"time": 69.4499999999973
+		},
+		{
+			"command": "{ \"wait\": 0.016667 }",
+			"nearest": "bridge",
+			"ok": true,
+			"position": "(-0.123474, 0.000806, -2.083704)",
+			"step": 63,
+			"time": 69.4833333333307
+		},
+		{
+			"command": "{ \"button\": \"Repair together\" }",
+			"nearest": "bridge",
+			"ok": true,
+			"position": "(-0.123474, 0.000806, -2.083704)",
+			"step": 64,
+			"time": 69.4999999999973
+		},
+		{
+			"command": "{ \"wait\": 7.0 }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-0.123474, -0.000696, -2.083704)",
+			"step": 65,
+			"time": 76.5166666666636
+		},
+		{
+			"command": "{ \"wait\": 0.016667 }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-0.123474, -0.000696, -2.083704)",
+			"step": 66,
+			"time": 76.5499999999969
+		},
+		{
+			"command": "{ \"move\": (0.0, 0.0, -7.4) }",
+			"nearest": "nell",
+			"ok": true,
+			"position": "(0.119472, 0.000843, -7.282343)",
+			"step": 67,
+			"time": 78.7333333333302
+		},
+		{
+			"command": "{ \"move\": (-5.5, 0.0, -8.0) }",
+			"nearest": "nell",
+			"ok": false,
+			"position": "(-3.343736, 0.000095, -7.895167)",
+			"reason": "30-second route timeout",
+			"step": 68
+		}
+	],
+	"companion_distances": [
+		4.00009441375732,
+		1.07228803634644,
+		1.0705543756485
+	],
+	"companion_routes": [
+		{
+			"next": "(0.119472, 0.000842, -6.329007)",
+			"position": "(0.119338, 0.000842, -5.8932)",
+			"queued": 12
+		},
+		{
+			"next": "idle",
+			"position": "(-3.499169, 0.000843, -8.95613)",
+			"queued": 0
+		},
+		{
+			"next": "idle",
+			"position": "(-2.31544, 0.000843, -7.597353)",
+			"queued": 0
+		}
+	],
+	"companions": 3,
+	"elapsed_engine_seconds": 108.749999999995,
+	"humanTests": 0,
+	"method": "Generated native InputEvents; authored route knows destinations. No player or story progression injection.",
+	"ok": false,
+	"patches": {
+		"bridge": 0.0,
+		"lantern": 0.0
+	},
+	"position": [
+		-3.34373617172241,
+		0.0000945691717788577,
+		-7.89516735076904
+	],
+	"resident_positions": {
+		"ivo": "(0.968646, 0.000831, -7.210646)",
+		"mara": "(8.0, 0.000137, 2.130913)",
+		"nell": "(-3.906772, 0.000843, -7.994935)",
+		"tavi": "(-6.3, 0.0, 2.0)"
+	},
+	"story": {
+		"day": 1,
+		"flags": {
+			"bridge_cleared": true,
+			"bridge_plan": true,
+			"bridge_repaired": true,
+			"first_companion": true,
+			"ivo_concern": true,
+			"mara_concern": true,
+			"met_ivo": true,
+			"met_mara": true,
+			"met_nell": true,
+			"met_tavi": true,
+			"nell_concern": true,
+			"parcel_collected": true,
+			"tavi_concern": true,
+			"wood_collected": true
+		},
+		"home": "sage",
+		"schema": 1,
+		"trust": {
+			"ivo": 2,
+			"mara": 3,
+			"nell": 2,
+			"tavi": 2
+		}
+	}
+}

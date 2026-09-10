@@ -44,7 +44,7 @@ func _ready():
 			{"move":Vector3(6.4,0,4.0)},{"interact":"wood"},{"button":"Gather boards"},{"wait":1.5},{"close":true},
 			{"move":Vector3(0,0,0)},{"move":Vector3(-3.1,0,-1.0)},{"interact":"nell"},{"wait":2.5},{"capture":"nell"},{"button":"Who planted"},{"wait":2.0},{"close":true},
 			{"move":Vector3(0,0,-2.2)},{"brush":9.0},{"interact":"bridge"},{"capture":"bridge-before"},{"button":"Repair together"},{"wait":7.0},{"capture":"bridge-after"},
-			{"move":Vector3(0,0,-7.4)},{"move":Vector3(-5.5,0,-8)},{"interact":"garden"},{"button":"Water gently"},{"wait":2.0},{"close":true},{"wait":3.0},{"capture":"garden"},
+			{"move":Vector3(0,0,-7.4)},{"move":Vector3(0,0,-6.5)},{"move":Vector3(-5.5,0,-6.5)},{"move":Vector3(-5.5,0,-8)},{"interact":"garden"},{"button":"Water gently"},{"wait":2.0},{"close":true},{"wait":3.0},{"capture":"garden"},
 			{"move":Vector3(2.2,0,-6.5)},{"move":Vector3(-3,0,-6.5)},{"move":Vector3(-3,0,-8)},{"interact":"nell"},{"button":"parcel from Ivo"},{"wait":2.0},{"close":true},
 			{"interact":"nell"},{"button":"humming"},{"wait":3.0},{"capture":"melody"},{"close":true},
 			{"move":Vector3(4,0,-8.0)},{"move":Vector3(12,0,-8.0)},{"interact":"vine_wall"},{"wait":2.0},{"capture":"ivy-before"},{"button":"Hum Nell"},{"wait":5.0},{"capture":"ivy-after"},
@@ -54,7 +54,7 @@ func _ready():
 			{"move":Vector3(-3,0,-9.6)},{"interact":"table"},{"button":"Prepare the shared"},{"wait":2.0},{"close":true},{"wait":18.0},{"capture":"gathering"},
 			{"move":Vector3(-4.5,0,-9.3)},{"interact":"tavi"},{"button":"teach me"},{"wait":2.0},{"close":true},
 			{"move":Vector3(-1,0,-8.5)},{"interact":"mara"},{"button":"make something"},{"wait":2.0},{"close":true},
-			{"move":Vector3(2.2,0,-7.4)},{"interact":"ivo"},{"button":"favorite route"},{"wait":2.0},{"close":true},
+			{"move":Vector3(-1,0,-6.5)},{"move":Vector3(2.2,0,-6.5)},{"move":Vector3(2.2,0,-7.4)},{"interact":"ivo"},{"button":"favorite route"},{"wait":2.0},{"close":true},
 			{"move":Vector3(2.2,0,-6.5)},{"move":Vector3(-3,0,-6.5)},{"move":Vector3(-3,0,-8)},{"interact":"nell"},{"button":"letter"},{"wait":2.0},{"close":true},
 			{"move":Vector3(0,0,-7)},{"move":Vector3(0,0,3)},{"move":Vector3(-10,0,7.8)},{"move":Vector3(-10,0,5.1)},{"wait":3.0},{"capture":"home-return"},
 			{"save":true},{"wait":1.0}

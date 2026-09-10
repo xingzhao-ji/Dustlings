@@ -1,0 +1,274 @@
+{
+  "checks": [
+    {
+      "check": "Preserve coherent two-foot/two-eye identity: player",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Preserve coherent two-foot/two-eye identity: mara",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Preserve coherent two-foot/two-eye identity: ivo",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Preserve coherent two-foot/two-eye identity: nell",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Preserve coherent two-foot/two-eye identity: tavi",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Root's post-build half-turn preserves parallel stationary boots",
+      "details": {
+        "left": "(-0.125, 0.0, 0.0)",
+        "right": "(0.125, 0.0, 0.0)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Hand hook returns the actual posed hand centers",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Steady planted feet cancel actual travel at 0.85m/s",
+      "details": {
+        "max_frame_foot_step_m": 0.0558395385742188,
+        "max_horizontal_extension_m": 0.402434766292572,
+        "max_stance_drift_m": 0.0,
+        "minimum_boot_ellipsoid_y": 0.0,
+        "minimum_foot_origin_y": 0.0,
+        "sampled_planted_frames": 316,
+        "speed": 0.85
+      },
+      "ok": true
+    },
+    {
+      "check": "Steady gait keeps grounded soles and bounded limb travel at 0.85m/s",
+      "details": {
+        "max_frame_foot_step_m": 0.0558395385742188,
+        "max_horizontal_extension_m": 0.402434766292572,
+        "max_stance_drift_m": 0.0,
+        "minimum_boot_ellipsoid_y": 0.0,
+        "minimum_foot_origin_y": 0.0,
+        "sampled_planted_frames": 316,
+        "speed": 0.85
+      },
+      "ok": true
+    },
+    {
+      "check": "Interrupted stride returns to a compact social stance within one second at 0.85m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Interrupted stride settles both boots at 0.85m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Foot contact events occur at the actual walking floor",
+      "details": {
+        "count": 11,
+        "speed": 0.85
+      },
+      "ok": true
+    },
+    {
+      "check": "Stopped boots remain still at 0.85m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Quiet standing does not repeat footstep events at 0.85m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Steady planted feet cancel actual travel at 1.6m/s",
+      "details": {
+        "max_frame_foot_step_m": 0.103208988904953,
+        "max_horizontal_extension_m": 0.38190221786499,
+        "max_stance_drift_m": 0.0,
+        "minimum_boot_ellipsoid_y": 0.0,
+        "minimum_foot_origin_y": 0.0,
+        "sampled_planted_frames": 309,
+        "speed": 1.6
+      },
+      "ok": true
+    },
+    {
+      "check": "Steady gait keeps grounded soles and bounded limb travel at 1.6m/s",
+      "details": {
+        "max_frame_foot_step_m": 0.103208988904953,
+        "max_horizontal_extension_m": 0.38190221786499,
+        "max_stance_drift_m": 0.0,
+        "minimum_boot_ellipsoid_y": 0.0,
+        "minimum_foot_origin_y": 0.0,
+        "sampled_planted_frames": 309,
+        "speed": 1.6
+      },
+      "ok": true
+    },
+    {
+      "check": "Interrupted stride returns to a compact social stance within one second at 1.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Interrupted stride settles both boots at 1.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Foot contact events occur at the actual walking floor",
+      "details": {
+        "count": 19,
+        "speed": 1.6
+      },
+      "ok": true
+    },
+    {
+      "check": "Stopped boots remain still at 1.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Quiet standing does not repeat footstep events at 1.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Steady planted feet cancel actual travel at 2.6m/s",
+      "details": {
+        "max_frame_foot_step_m": 0.17167492210865,
+        "max_horizontal_extension_m": 0.366651237010956,
+        "max_stance_drift_m": 0.0,
+        "minimum_boot_ellipsoid_y": 0.0,
+        "minimum_foot_origin_y": 0.0,
+        "sampled_planted_frames": 301,
+        "speed": 2.6
+      },
+      "ok": true
+    },
+    {
+      "check": "Steady gait keeps grounded soles and bounded limb travel at 2.6m/s",
+      "details": {
+        "max_frame_foot_step_m": 0.17167492210865,
+        "max_horizontal_extension_m": 0.366651237010956,
+        "max_stance_drift_m": 0.0,
+        "minimum_boot_ellipsoid_y": 0.0,
+        "minimum_foot_origin_y": 0.0,
+        "sampled_planted_frames": 301,
+        "speed": 2.6
+      },
+      "ok": true
+    },
+    {
+      "check": "Interrupted stride returns to a compact social stance within one second at 2.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Interrupted stride settles both boots at 2.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Foot contact events occur at the actual walking floor",
+      "details": {
+        "count": 30,
+        "speed": 2.6
+      },
+      "ok": true
+    },
+    {
+      "check": "Stopped boots remain still at 2.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Quiet standing does not repeat footstep events at 2.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Rapid reversals avoid floor penetration or whole-foot jumps",
+      "details": {
+        "max_frame_step_m": 0.25372776389122,
+        "min_y": 0.0
+      },
+      "ok": true
+    },
+    {
+      "check": "Save relocation reseeds contacts without stretched limbs",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Map remains full-size and visible throughout 240-frame encounter",
+      "details": {
+        "invalid_frames": []
+      },
+      "ok": true
+    },
+    {
+      "check": "Ivo's left support grip stays attached and idle right grip touches map",
+      "details": {
+        "idle_right_grip_error_m": 0.000065947235270869,
+        "max_left_grip_error_m": 0.0
+      },
+      "ok": true
+    },
+    {
+      "check": "Ivo deliberately returns attention to map after conversation",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Gentle motion preserves Ivo's held object",
+      "details": {},
+      "ok": true
+    }
+  ],
+  "failures": [],
+  "kind": "Headless pose/transform checks with explicit actor translation, not native motion or aesthetic/human approval",
+  "measurements": [
+    {
+      "max_frame_foot_step_m": 0.0558395385742188,
+      "max_horizontal_extension_m": 0.402434766292572,
+      "max_stance_drift_m": 0.0,
+      "minimum_boot_ellipsoid_y": 0.0,
+      "minimum_foot_origin_y": 0.0,
+      "sampled_planted_frames": 316,
+      "speed": 0.85
+    },
+    {
+      "max_frame_foot_step_m": 0.103208988904953,
+      "max_horizontal_extension_m": 0.38190221786499,
+      "max_stance_drift_m": 0.0,
+      "minimum_boot_ellipsoid_y": 0.0,
+      "minimum_foot_origin_y": 0.0,
+      "sampled_planted_frames": 309,
+      "speed": 1.6
+    },
+    {
+      "max_frame_foot_step_m": 0.17167492210865,
+      "max_horizontal_extension_m": 0.366651237010956,
+      "max_stance_drift_m": 0.0,
+      "minimum_boot_ellipsoid_y": 0.0,
+      "minimum_foot_origin_y": 0.0,
+      "sampled_planted_frames": 301,
+      "speed": 2.6
+    }
+  ],
+  "source_sha256": "973ef8e21e4a34efed01092c7b0ed68d8abc1102e60be1dca9e7c20ccc23485e"
+}

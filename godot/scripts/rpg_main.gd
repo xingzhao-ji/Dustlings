@@ -68,7 +68,6 @@ var _last_trail = Vector3.ZERO
 var _ui_buttons: Array[Button] = []
 var _start_saved = false
 var exiting=false
-var step_distance=0.0
 var moth_pending=false
 var moth_phase=0
 var moth_clock=0.0
@@ -201,6 +200,8 @@ func _make_player():
 	avatar = Actor.new()
 	player.add_child(avatar)
 	avatar.configure("player")
+	avatar.foot_contact.connect(func(at: Vector3):
+		if is_instance_valid(audio) and active: audio.footstep(at,_surface_at(at)))
 	avatar.rotation.y=PI
 	_last_trail = player.position
 	waypoints.append(player.position)
@@ -320,13 +321,7 @@ func _physics_process(delta):
 	player.velocity.x = direction.x*2.6
 	player.velocity.z = direction.z*2.6
 	player.velocity.y = -1 if player.is_on_floor() else maxf(-12,player.velocity.y-18*delta)
-	var before_walk=player.position
 	player.move_and_slide()
-	if player.is_on_floor():
-		step_distance+=Vector2(player.position.x-before_walk.x,player.position.z-before_walk.z).length()
-		if step_distance>=.55:
-			step_distance=fmod(step_distance,.55)
-			audio.footstep(player.position,_surface_at(player.position))
 	if player.position.y < -2: player.position = world.get_spawn(); player.velocity = Vector3.ZERO
 	if direction.length() > .05:
 		avatar.rotation.y = lerp_angle(avatar.rotation.y,atan2(direction.x,direction.z),minf(1,delta*13))
@@ -731,6 +726,7 @@ func _panel(kind: String,width: float=640) -> VBoxContainer:
 	notice_time=0
 	brush_ring.visible=false
 	modal=PanelContainer.new()
+	modal.modulate.a=0
 	layer.add_child(modal)
 	modal.add_theme_stylebox_override("panel",_style(Color("f2ead4")))
 	modal.custom_minimum_size.x=width
@@ -739,17 +735,21 @@ func _panel(kind: String,width: float=640) -> VBoxContainer:
 	var box=VBoxContainer.new()
 	box.add_theme_constant_override("separation",12)
 	modal.add_child(box)
-	call_deferred("_fit_panel")
+	call_deferred("_fit_panel",modal,kind)
 	return box
 
-func _fit_panel():
+func _fit_panel(panel: PanelContainer,kind: String):
 	await get_tree().process_frame
 	await get_tree().process_frame
-	if not is_instance_valid(modal): return
-	var size=modal.get_combined_minimum_size()
-	modal.size=size
+	if not is_instance_valid(panel) or panel!=modal: return
+	var size=panel.get_combined_minimum_size()
+	panel.size=size
 	var view=get_viewport().get_visible_rect().size
-	modal.position=Vector2((view.x-size.x)*.5,(view.y-size.y)*.5 if modal_kind!="dialogue" else view.y-size.y-24)
+	panel.position=Vector2((view.x-size.x)*.5,(view.y-size.y)*.5 if kind!="dialogue" else view.y-size.y-24)
+	# Layout and text wrapping complete before the first visible pixel. Bind the
+	# deferred work to this exact panel so repeated choices cannot move a newer one.
+	var reveal=create_tween()
+	reveal.tween_property(panel,"modulate:a",1.0,.10 if settings.gentle else .16)
 
 func _copy(box: VBoxContainer,text: String,size: int=22):
 	var label=_label(text,size)

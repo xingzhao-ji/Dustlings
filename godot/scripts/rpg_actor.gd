@@ -2,6 +2,8 @@ extends Node3D
 ## Original small village people. Ground origin; +Z forward. Root controls travel.
 ## Five coherent silhouettes use the same hand-made round forms as the Dustlings.
 
+signal foot_contact(at: Vector3)
+
 var kind := "player"
 var _made := false
 var _body: Node3D
@@ -16,6 +18,10 @@ var _swing_to: Array[Vector3] = []
 var _was_stance: Array[bool] = []
 var _swing_phase: Array[float] = []
 var _feet_ready := false
+var _idle_time := 0.0
+var _settle_index := -1
+var _settle_age := 0.0
+var _settle_from := Vector3.ZERO
 var _previous_actor_position := Vector3.ZERO
 var _walk_distance := 0.0
 var _attention_target := Vector3.ZERO
@@ -307,6 +313,22 @@ func _pose_feet(dt: float, speed: float) -> void:
             _was_stance.append(true)
             _swing_phase.append(0.6)
         _feet_ready = true
+    if speed < 0.04:
+        _idle_time += dt
+        if _idle_time > 0.15 and _settle_index < 0:
+            var furthest := 0.075
+            for i in 2:
+                var neutral := Vector3(-0.125 if i == 0 else 0.125, 0, -0.025 if i == 0 else 0.025)
+                var gap := _feet[i].position.distance_to(neutral)
+                if gap > furthest:
+                    furthest = gap
+                    _settle_index = i
+            if _settle_index >= 0:
+                _settle_age = 0.0
+                _settle_from = _feet[_settle_index].position
+    else:
+        _idle_time = 0.0
+        _settle_index = -1
     for i in 2:
         var foot := _feet[i]
         var side := -0.125 if i == 0 else 0.125
@@ -314,25 +336,30 @@ func _pose_feet(dt: float, speed: float) -> void:
         var stance := phase < 0.60
         var at := foot.position
         if speed < 0.04:
-            # A lifted foot completes a short settling step; grounded support
-            # does not scrub back to a cosmetic neutral stance when input stops.
-            if at.y > 0.001:
-                at = at.move_toward(Vector3(side, 0, clampf(at.z, -0.24, 0.24)), dt * 1.7)
+            # Finish one small recovery step, with the other foot supporting the
+            # body. An arbitrary walking stride must not become the social pose.
+            if _settle_index == i:
+                _settle_age += dt
+                var u := clampf(_settle_age / 0.28, 0, 1)
+                var neutral := Vector3(side, 0, -0.025 if i == 0 else 0.025)
+                at = _settle_from.lerp(neutral, smoothstep(0, 1, u))
+                at.y += sin(u * PI) * (0.022 if _gentle else 0.038)
+                if u >= 1.0:
+                    _plants[i] = to_global(neutral)
+                    foot_contact.emit(_plants[i])
+                    _settle_index = -1
+            elif at.y > 0.001:
+                at.y = move_toward(at.y, 0, dt * 0.7)
                 _plants[i] = to_global(Vector3(at.x, 0, at.z))
             else:
                 at = to_local(_plants[i])
                 at.y = 0
-                var neutral := Vector3(side, 0, 0)
-                # Turn-in-place recovery stays on the ground with a tiny lift;
-                # it is bounded, rather than swapping left/right boots instantly.
-                if at.distance_to(neutral) > 0.28 or at.x * side < 0:
-                    at = at.move_toward(neutral, dt * 0.9)
-                    at.y = minf(0.035, at.distance_to(neutral) * 0.1)
-                    _plants[i] = to_global(Vector3(at.x, 0, at.z))
             _was_stance[i] = true
             foot.rotation.x = move_toward(foot.rotation.x, 0, dt * 2)
         elif stance:
-            if not _was_stance[i]: _plants[i] = _swing_to[i]
+            if not _was_stance[i]:
+                _plants[i] = _swing_to[i]
+                foot_contact.emit(_plants[i])
             at = to_local(_plants[i])
             at.y = 0
             # During an abrupt reversal, recover an overextended contact with a

@@ -3,11 +3,15 @@ const Actor=preload("res://scripts/rpg_actor.gd")
 var checks=[]
 var failures=[]
 var measures=[]
+var output="res://../evidence/rpg/actor"
 func check(ok: bool,name: String,details: Dictionary={}):
     var item={"check":name,"ok":ok,"details":details}
     if ok:checks.append(item)
     else:failures.append(item);push_warning(name)
-func _init():call_deferred("run")
+func _init():
+    for arg in OS.get_cmdline_user_args():
+        if arg.begins_with("--actor-evidence="):output=arg.trim_prefix("--actor-evidence=")
+    call_deferred("run")
 func actor(kind: String):
     var a=Actor.new();root.add_child(a);a.configure(kind);return a
 func run():
@@ -24,6 +28,8 @@ func run():
     initial.queue_free()
     for speed in [.85,1.6,2.6]:
         var a=actor("player")
+        var contact_points=[]
+        a.foot_contact.connect(func(at:Vector3):contact_points.append(at))
         var last=[a._feet[0].global_position,a._feet[1].global_position]
         var was=[true,true]
         var max_stance_drift=0.0
@@ -50,11 +56,15 @@ func run():
         measures.append(values)
         check(max_stance_drift<.0001 and contacts>180,"Steady planted feet cancel actual travel at "+str(speed)+"m/s",values)
         check(lowest>=-.0001 and lowest_sole>=-.0001 and max_extension<.65 and max_step<.24,"Steady gait keeps grounded soles and bounded limb travel at "+str(speed)+"m/s",values)
-        for frame in 30:a.animate(1.0/60.0,0)
+        for frame in 60:a.animate(1.0/60.0,0)
+        check(absf(a._feet[0].position.z)<.08 and absf(a._feet[1].position.z)<.08,"Interrupted stride returns to a compact social stance within one second at "+str(speed)+"m/s")
         check(a._feet[0].position.y<.001 and a._feet[1].position.y<.001,"Interrupted stride settles both boots at "+str(speed)+"m/s")
+        check(contact_points.size()>5 and contact_points.all(func(at):return absf(at.y)<.001),"Foot contact events occur at the actual walking floor",{"speed":speed,"count":contact_points.size()})
+        var contact_count=contact_points.size()
         var previous=[a._feet[0].global_position,a._feet[1].global_position]
         for frame in 30:a.animate(1.0/60.0,0)
         check(a._feet[0].global_position.distance_to(previous[0])<.001 and a._feet[1].global_position.distance_to(previous[1])<.001,"Stopped boots remain still at "+str(speed)+"m/s")
+        check(contact_points.size()==contact_count,"Quiet standing does not repeat footstep events at "+str(speed)+"m/s")
         a.queue_free()
     await process_frame
     var turn=actor("player")
@@ -95,7 +105,7 @@ func run():
     check(ivo._activity_props.map.visible,"Gentle motion preserves Ivo's held object")
     ivo.queue_free();await process_frame
     var report={"kind":"Headless pose/transform checks with explicit actor translation, not native motion or aesthetic/human approval","source_sha256":FileAccess.get_sha256("res://scripts/rpg_actor.gd"),"checks":checks,"failures":failures,"measurements":measures}
-    DirAccess.make_dir_recursive_absolute("res://../evidence/rpg/actor")
-    var file=FileAccess.open("res://../evidence/rpg/actor/pose-checks.json",FileAccess.WRITE);file.store_string(JSON.stringify(report,"  "));file.close()
+    DirAccess.make_dir_recursive_absolute(output)
+    var file=FileAccess.open(output.path_join("pose-checks.json"),FileAccess.WRITE);file.store_string(JSON.stringify(report,"  "));file.close()
     print(JSON.stringify({"checks":checks.size(),"failures":failures.size(),"measurements":measures}))
     quit(0 if failures.is_empty() else 1)

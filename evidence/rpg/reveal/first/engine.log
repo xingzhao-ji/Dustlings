@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+{"checks":24,"failures":0,"observations":{"approach_frames":53,"approach_max_frame_step":0.0575926639139652,"contact_hold_drift":0.0,"first_id":100814296152,"fixture":"Story prerequisites prepared once; player at (12,0,-11.5), three companions at x11.3/11.8/12.3,z-11.1, age3. Production dialogue, movement, animation, pause and filesystem saving then used unchanged.","moth_minimum_head_distance":0.0}}

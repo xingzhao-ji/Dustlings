@@ -1,0 +1,178 @@
+{
+  "checks": [
+    {
+      "check": "Fresh isolated QA save",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Letter creates a pending handoff without starting behind its panel",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Letter grants durable ability and fourth companion",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Newborn grows during six-second letter without full-size to dot restart",
+      "details": {
+        "age": 5.99999999999998,
+        "initial_scale": 0.0350000001490116,
+        "later_min_scale": 1.0
+      },
+      "ok": true
+    },
+    {
+      "check": "Existing first companion keeps body size and position while reading",
+      "details": {
+        "minimum_scale": 1.0,
+        "position": "(11.51817, 0.00083, -11.16049)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Gift does not occur while letter remains open",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Production choice saves the ability before the player finishes reading",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Same companion physically reaches meeting without a position warp",
+      "details": {
+        "frames": 53,
+        "max_frame_travel": 0.0575926639139652,
+        "position": "(12.50544, 0.000828, -12.40467)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Handoff preserves the first companion instance",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Player can walk while the moth approaches",
+      "details": {
+        "distance": 0.518548011779785
+      },
+      "ok": true
+    },
+    {
+      "check": "Camera orbit controls remain live during handoff",
+      "details": {
+        "yaw": 0.26
+      },
+      "ok": true
+    },
+    {
+      "check": "Pause freezes both handoff timing and actual moth position",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Pause prevents walking and companion movement",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Pause applies to soundscape during handoff",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Resume continues the same handoff phase",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Moth reaches the same companion head within eight centimeters",
+      "details": {
+        "minimum_distance": 0.0
+      },
+      "ok": true
+    },
+    {
+      "check": "Receiving companion remains grounded and still through contact",
+      "details": {
+        "maximum_drift": 0.0
+      },
+      "ok": true
+    },
+    {
+      "check": "Contact triggers its sound event and visible retained light",
+      "details": {
+        "light_energy": 0.0350000001490116
+      },
+      "ok": true
+    },
+    {
+      "check": "Handoff finishes after pause and frees normal following",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Same companion retains light after scene finishes",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Current greenhouse progress saves through production store",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Saved flags preserve both memory and useful ability",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Fresh scene reloads the earned memory and ability",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Reload reconstructs four companions with a usable retained light",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Frozen runtime source remains unchanged during checks",
+      "details": {},
+      "ok": true
+    }
+  ],
+  "failures": [],
+  "kind": "Headless prepared-state interruption and continuity checks, not native visual/audio or human validation",
+  "observations": {
+    "approach_frames": 53,
+    "approach_max_frame_step": 0.0575926639139652,
+    "contact_hold_drift": 0.0,
+    "first_id": 100814296152,
+    "fixture": "Story prerequisites prepared once; player at (12,0,-11.5), three companions at x11.3/11.8/12.3,z-11.1, age3. Production dialogue, movement, animation, pause and filesystem saving then used unchanged.",
+    "moth_minimum_head_distance": 0.0
+  },
+  "source_at_end": {
+    "dustling_visual.gd": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc",
+    "rpg_actor.gd": "0c7fccb5c4c7fc8ece4010ff1b34602182e00ac7a39c867a294e6f3a33be8854",
+    "rpg_environment.gd": "3fd9c1092cabb1b8ca5c3e25bcba2572103514800a7d634d175ad53b5785165d",
+    "rpg_main.gd": "c6ce8bd5ca7be6536fb0a3ba4a1e1a733068f71c960676f68cce8c84c4ae69cd",
+    "rpg_navigation.gd": "3102adf4a8c563844a793a5146c49b681eff6f89df0d56b49dff8baba61947a1",
+    "rpg_save.gd": "baea44034774e4cb72be30ee0a2c408a2aad713655f956134af492d51cb70f95",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  },
+  "source_at_start": {
+    "dustling_visual.gd": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc",
+    "rpg_actor.gd": "0c7fccb5c4c7fc8ece4010ff1b34602182e00ac7a39c867a294e6f3a33be8854",
+    "rpg_environment.gd": "3fd9c1092cabb1b8ca5c3e25bcba2572103514800a7d634d175ad53b5785165d",
+    "rpg_main.gd": "c6ce8bd5ca7be6536fb0a3ba4a1e1a733068f71c960676f68cce8c84c4ae69cd",
+    "rpg_navigation.gd": "3102adf4a8c563844a793a5146c49b681eff6f89df0d56b49dff8baba61947a1",
+    "rpg_save.gd": "baea44034774e4cb72be30ee0a2c408a2aad713655f956134af492d51cb70f95",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  }
+}

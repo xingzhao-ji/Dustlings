@@ -1,0 +1,87 @@
+{
+  "source": "index.html favicon data URI",
+  "sourceSvgSha256": "0e822e8956fa23b12a095fc6a0a7e3b51ba699bc260520091f1f29f4c5306cae",
+  "change": "Add opaque #f6f3e9 background from style.css; preserve favicon geometry and colors.",
+  "generatedWith": "Playwright Chromium rasterization; PNG-compressed multi-resolution ICO; macOS iconutil ICNS",
+  "pngSizes": [
+    16,
+    32,
+    48,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "icoSizes": [
+    16,
+    32,
+    48,
+    64,
+    128,
+    256
+  ],
+  "humanApproved": false,
+  "artifacts": [
+    {
+      "path": "app-icon.svg",
+      "bytes": 306,
+      "sha256": "c71f0d7cb627e75def4fbb06c63525e67675e6eff17dff0c273ab9e356b1b743"
+    },
+    {
+      "path": "app-icon-16.png",
+      "bytes": 363,
+      "sha256": "f0909026f20604d32611998a00ef277042378e45ce4d2bf4ba2d1bfb27f35072"
+    },
+    {
+      "path": "app-icon-32.png",
+      "bytes": 667,
+      "sha256": "249a976db59de791ae33b9cd1f690c6699e3822c743c702a6c65eb874722bf44"
+    },
+    {
+      "path": "app-icon-48.png",
+      "bytes": 901,
+      "sha256": "13c5cdcd265b70dd25e833eb9700dcf29841780da4a7b1ea6db575236c2ed16e"
+    },
+    {
+      "path": "app-icon-64.png",
+      "bytes": 1165,
+      "sha256": "0f4efa076c49333e54e814a15372bf6045a58f93ee3945b9179ed7fc1d10d176"
+    },
+    {
+      "path": "app-icon-128.png",
+      "bytes": 2323,
+      "sha256": "bcd9ec9922f30e89360c8d9e5f75f030e12e62101cc75ad435e89c11a5c44150"
+    },
+    {
+      "path": "app-icon-256.png",
+      "bytes": 4583,
+      "sha256": "53cb140f3f69ceed3df15a2217b028206a1e7f737736c5001915973fe2ff29df"
+    },
+    {
+      "path": "app-icon-512.png",
+      "bytes": 9407,
+      "sha256": "6a6634f23da1e9497e901660551f7cb290205fa67feb91539041687b2f8b9685"
+    },
+    {
+      "path": "app-icon-1024.png",
+      "bytes": 20723,
+      "sha256": "9fbcb0ff57badbe8f5e05b49222d95b615dd7009d7004861558c002cebdd014f"
+    },
+    {
+      "path": "app-icon.ico",
+      "bytes": 10104,
+      "sha256": "617ec63012018f494c73c1c45d4a8c21c737bef5611e0da6f030a67577d8a211"
+    },
+    {
+      "path": "app-icon.icns",
+      "bytes": 83377,
+      "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+    },
+    {
+      "path": "icon-size-review.png",
+      "bytes": 31708,
+      "sha256": "73691277a1bc973ea9bcee08f0b415a3bf329a367806d57db046fddee3f6cdc3"
+    }
+  ]
+}

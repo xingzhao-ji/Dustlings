@@ -1,0 +1,53 @@
+{
+  "status": "Partial review stopped by explicit owner instruction; no further media inspection performed.",
+  "sourceHash": "198e7d10b6ea2587280bace4fd9373ce439952934858995b1909ab214f6d6e76",
+  "videoPath": "evidence/rpg/neighborhood-art-refined/art.mp4",
+  "videoSha256": "8432f4b45f9b827f8cc85ad8ee690ed3473f69ccb333e0c376f17a47081a3ea2",
+  "inspectedNormalStills": [
+    "art-orbit-back.png",
+    "art-orbit-quarter.png",
+    "art-orbit-low.png",
+    "art-ivo-notice.png",
+    "art-ivo-gesture.png",
+    "art-ivo-return.png",
+    "art-reversal-stop.png",
+    "art-stop-start.png"
+  ],
+  "generatedButNotInspected": [
+    "chronology-01.png",
+    "chronology-02.png",
+    "chronology-03.png",
+    "chronology-04.png",
+    "walk-crop-9.5-14.5.png",
+    "ivo-crop-16-24.png",
+    "dialogue-every-frame-18-20.png"
+  ],
+  "limits": "Independent AI with prior project knowledge; media first before explanation. No human tests, owner approval, listening, continuous perception, physical controls or performance claim. Native app not run.",
+  "humanTests": 0,
+  "artifactHashes": {
+    "art-arrival.png": "f019a12b961aa9acceee03d90bacb351f2df52a5ff13510d6e077f59aa071e3a",
+    "art-first-companion.png": "b6ad2158877e52ed8e2075e7ee7b6d26b0c7937a0f6a8a49acec1e017dac9a1f",
+    "art-ivo-gesture.png": "d1781a0c646c42317a0373a79217ad8619e8a1b59a5df72aeb4440633b43e69a",
+    "art-ivo-notice.png": "fc3ee0d046d9430919f047340d38af992dda1c6c3f7d4fdea0202ef8cc450720",
+    "art-ivo-return.png": "dad01b4097e3a50b8fa110620de7614d9f4a8f933cb6b482479548d1cca735ec",
+    "art-orbit-back.png": "94b361a49e9d87dc362e60fccbce0cc2b99b0285db1f95c95ab341693b096fd9",
+    "art-orbit-front.png": "50628d6a524e7994273f47fdbaf70399fd8e311812d105de23b599001cdc18d0",
+    "art-orbit-high.png": "dd0e521011651c7011b14be9ea2b2c61854b9ae35d5068555ad7abe53eba8d93",
+    "art-orbit-low.png": "5e3a6ff136add0535268a0a3f77b7b29dfe757d04b400d387ed8db5095d2232e",
+    "art-orbit-quarter.png": "ba08e882a98cd86b905028dd6049854f99da623550d811123384fa3621f3ce7a",
+    "art-orbit-three-quarter.png": "4396a96d0384200505ba0d966552bd20f5ce895a54b56865a57259418e0ab7cd",
+    "art-returned-view.png": "a35e67434d67a7967641da3076bf17d0469e573f18c7a641dea280693586d696",
+    "art-reversal-stop.png": "45ec44320b80b561a3aafdece081d567ef4106f31754762ae1aa4a9639323d09",
+    "art-stop-start.png": "2c863d35e99e56dfeb8204c34132a91ee3fbdbf06c8beb08b3711b01fe6e0e3e",
+    "capture-manifest.json": "698d51e01a4b792e398d51678b30b2dc15ffe1593a8c3d731dd15f21d643cf72",
+    "chronology-01.png": "9d0a412a610d7a0b6e703b3b4136b01dbe337afc83b8f609e63792b7e18529ef",
+    "chronology-02.png": "49e881aed5fdef9e3650aaca90ded493586678c64a4528d2f75aa13064c6d24a",
+    "chronology-03.png": "44366fc28c4fe593ee484e1149e3cafa9d2fe6433572e019bbd97488bb504050",
+    "chronology-04.png": "5c3c0bb8ccab9414cd07d3e0084e0ee95821e144b83db201a6f88cbd1b4527d5",
+    "dialogue-every-frame-18-20.png": "2869801494247d9f02de9c3bebe7702a1a75529d9d8c844699f4a24d5c2e069b",
+    "ivo-crop-16-24.png": "afbc6c3adec337461a9b313af8876a0330ede3202227fccb5d763470e69e659a",
+    "results.json": "9375d4e1ed265e8f2d1d4cde43794d1d24c02fc2c27bfca8c07fc7f9dd051ba8",
+    "walk-crop-9.5-14.5.png": "19c4268b266ee23ae19676ea462d20c68c6885325cf3f8dc3a766dceccb4a603",
+    "welcome.png": "d2bb5f0e95d9594184d845e9724d0504db98134de60f0c120c5da3cfae476920"
+  }
+}

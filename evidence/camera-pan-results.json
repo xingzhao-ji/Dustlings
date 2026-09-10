@@ -1,0 +1,126 @@
+[
+  {
+    "name": "landscape",
+    "panMode": "actual mouse drag through shared pointer handler in touch-enabled browser",
+    "checks": [
+      {
+        "label": "top-left",
+        "camera": {
+          "zoom": 2,
+          "centerX": 180,
+          "centerY": 220
+        },
+        "dustNode": 19,
+        "visible": true,
+        "pointerInverse": {
+          "x": 126.96204151562412,
+          "y": 186.6670873258263
+        }
+      },
+      {
+        "label": "top-right",
+        "camera": {
+          "zoom": 2,
+          "centerX": 820,
+          "centerY": 220
+        },
+        "dustNode": 18,
+        "visible": true,
+        "pointerInverse": {
+          "x": 871.525242452044,
+          "y": 168.08742054086179
+        }
+      },
+      {
+        "label": "bottom-left",
+        "camera": {
+          "zoom": 2,
+          "centerX": 180,
+          "centerY": 600
+        },
+        "dustNode": 439,
+        "visible": true,
+        "pointerInverse": {
+          "x": 121.40266652614807,
+          "y": 634.5246033594012
+        }
+      },
+      {
+        "label": "bottom-right",
+        "camera": {
+          "zoom": 2,
+          "centerX": 820,
+          "centerY": 600
+        },
+        "dustNode": 465,
+        "visible": true,
+        "pointerInverse": {
+          "x": 880.1480588444973,
+          "y": 632.8157114405185
+        }
+      }
+    ]
+  },
+  {
+    "name": "phone",
+    "panMode": "actual mouse drag through shared pointer handler in touch-enabled browser",
+    "checks": [
+      {
+        "label": "top-left",
+        "camera": {
+          "zoom": 2,
+          "centerX": 180,
+          "centerY": 220
+        },
+        "dustNode": 19,
+        "visible": true,
+        "pointerInverse": {
+          "x": 126.96204151562415,
+          "y": 186.66708732582632
+        }
+      },
+      {
+        "label": "top-right",
+        "camera": {
+          "zoom": 2,
+          "centerX": 820,
+          "centerY": 220
+        },
+        "dustNode": 18,
+        "visible": true,
+        "pointerInverse": {
+          "x": 871.5252424520442,
+          "y": 168.0874205408618
+        }
+      },
+      {
+        "label": "bottom-left",
+        "camera": {
+          "zoom": 2,
+          "centerX": 180,
+          "centerY": 600
+        },
+        "dustNode": 439,
+        "visible": true,
+        "pointerInverse": {
+          "x": 121.40266652614808,
+          "y": 634.5246033594012
+        }
+      },
+      {
+        "label": "bottom-right",
+        "camera": {
+          "zoom": 2,
+          "centerX": 820,
+          "centerY": 600
+        },
+        "dustNode": 465,
+        "visible": true,
+        "pointerInverse": {
+          "x": 880.1480588444973,
+          "y": 632.8157114405186
+        }
+      }
+    ]
+  }
+]

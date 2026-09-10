@@ -1,0 +1,190 @@
+{
+  "browser": "152.0.7977.83",
+  "dpr": 1,
+  "fixtures": true,
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touchEmulation": false,
+      "geometry": {
+        "mode": "desktop",
+        "zoom": 1,
+        "recommendedZoom": 1,
+        "viewport": {
+          "x": 0,
+          "y": 80,
+          "width": 1020,
+          "height": 537
+        },
+        "scale": 0.8040752351097179,
+        "canvas": {
+          "width": 1020,
+          "height": 727
+        },
+        "dustNodes": 466,
+        "inverseError": 2.2737367544323206e-13,
+        "unreachable": [],
+        "controlsExcluded": true,
+        "estimatedArtBounds": {
+          "width": 745.3777429467085,
+          "height": 471.9921630094044
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "landscape",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "touchEmulation": true,
+      "geometry": {
+        "mode": "landscape",
+        "zoom": 1,
+        "recommendedZoom": 1,
+        "viewport": {
+          "x": 300,
+          "y": 12,
+          "width": 498,
+          "height": 281
+        },
+        "scale": 0.40282131661442006,
+        "canvas": {
+          "width": 810,
+          "height": 305
+        },
+        "dustNodes": 466,
+        "inverseError": 2.2737367544323206e-13,
+        "unreachable": [],
+        "controlsExcluded": true,
+        "estimatedArtBounds": {
+          "width": 373.41536050156736,
+          "height": 236.45611285266457
+        },
+        "dragPanChecks": [
+          {
+            "label": "top-left",
+            "camera": {
+              "zoom": 2,
+              "centerX": 180,
+              "centerY": 220
+            },
+            "dustNode": 19,
+            "visible": true
+          },
+          {
+            "label": "top-right",
+            "camera": {
+              "zoom": 2,
+              "centerX": 820,
+              "centerY": 220
+            },
+            "dustNode": 18,
+            "visible": true
+          },
+          {
+            "label": "bottom-left",
+            "camera": {
+              "zoom": 2,
+              "centerX": 180,
+              "centerY": 600
+            },
+            "dustNode": 439,
+            "visible": true
+          },
+          {
+            "label": "bottom-right",
+            "camera": {
+              "zoom": 2,
+              "centerX": 820,
+              "centerY": 600
+            },
+            "dustNode": 465,
+            "visible": true
+          }
+        ]
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchEmulation": true,
+      "geometry": {
+        "mode": "portrait",
+        "zoom": 1.7,
+        "recommendedZoom": 1.7,
+        "viewport": {
+          "x": 0,
+          "y": 88,
+          "width": 368,
+          "height": 522
+        },
+        "scale": 0.5733333333333334,
+        "canvas": {
+          "width": 368,
+          "height": 732
+        },
+        "dustNodes": 466,
+        "inverseError": 2.2737367544323206e-13,
+        "unreachable": [],
+        "controlsExcluded": true,
+        "estimatedArtBounds": {
+          "width": 531.48,
+          "height": 336.5466666666667
+        },
+        "dragPanChecks": [
+          {
+            "label": "top-left",
+            "camera": {
+              "zoom": 2,
+              "centerX": 180,
+              "centerY": 220
+            },
+            "dustNode": 19,
+            "visible": true
+          },
+          {
+            "label": "top-right",
+            "camera": {
+              "zoom": 2,
+              "centerX": 820,
+              "centerY": 220
+            },
+            "dustNode": 18,
+            "visible": true
+          },
+          {
+            "label": "bottom-left",
+            "camera": {
+              "zoom": 2,
+              "centerX": 180,
+              "centerY": 600
+            },
+            "dustNode": 439,
+            "visible": true
+          },
+          {
+            "label": "bottom-right",
+            "camera": {
+              "zoom": 2,
+              "centerX": 820,
+              "centerY": 600
+            },
+            "dustNode": 465,
+            "visible": true
+          }
+        ]
+      },
+      "pageErrors": []
+    }
+  ]
+}

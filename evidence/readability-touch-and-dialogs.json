@@ -1,0 +1,220 @@
+[
+  {
+    "name": "phone",
+    "overlap": {
+      "xOverlap": 158.71875,
+      "yOverlap": 0,
+      "tip": "Place the flag above your finger. Lift to send the crew."
+    },
+    "checks": [
+      {
+        "text": "",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "Your helpers will wait right here.",
+        "fontSize": 16,
+        "contrast": 5.92
+      },
+      {
+        "text": "Music\n48%",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "48%",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Little sounds\n65%",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "65%",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Ambience\n38%",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "38%",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Gentle motion\nLess bouncing, fewer particles",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "Less bouncing, fewer particles",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Tap to sweep\nTap once for a short sweep; holding still works",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "Tap once for a short sweep; holding still works",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Lightweight scenery\nLower rendering resolution for quieter devices",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "Lower rendering resolution for quieter devices",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Export save",
+        "fontSize": 14,
+        "contrast": 8.24
+      },
+      {
+        "text": "Import save",
+        "fontSize": 14,
+        "contrast": 8.24
+      },
+      {
+        "text": "Automatically saved in this browser. A backup keeps the previous check",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Back to the courtyard\n↗",
+        "fontSize": 16,
+        "contrast": 4.93
+      },
+      {
+        "text": "Start a fresh courtyard",
+        "fontSize": 14,
+        "contrast": 6
+      }
+    ],
+    "tipTextOverlap": {
+      "xOverlap": 158.71875,
+      "yOverlap": 0
+    }
+  },
+  {
+    "name": "landscape",
+    "overlap": {
+      "xOverlap": 155.71875,
+      "yOverlap": 20.296875,
+      "tip": "Place the flag above your finger. Lift to send the crew."
+    },
+    "checks": [
+      {
+        "text": "",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "Your helpers will wait right here.",
+        "fontSize": 16,
+        "contrast": 5.92
+      },
+      {
+        "text": "Music\n48%",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "48%",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Little sounds\n65%",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "65%",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Ambience\n38%",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "38%",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Gentle motion\nLess bouncing, fewer particles",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "Less bouncing, fewer particles",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Tap to sweep\nTap once for a short sweep; holding still works",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "Tap once for a short sweep; holding still works",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Lightweight scenery\nLower rendering resolution for quieter devices",
+        "fontSize": 16,
+        "contrast": 9.03
+      },
+      {
+        "text": "Lower rendering resolution for quieter devices",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Export save",
+        "fontSize": 14,
+        "contrast": 8.24
+      },
+      {
+        "text": "Import save",
+        "fontSize": 14,
+        "contrast": 8.24
+      },
+      {
+        "text": "Automatically saved in this browser. A backup keeps the previous check",
+        "fontSize": 14,
+        "contrast": 5.92
+      },
+      {
+        "text": "Back to the courtyard\n↗",
+        "fontSize": 16,
+        "contrast": 4.93
+      },
+      {
+        "text": "Start a fresh courtyard",
+        "fontSize": 14,
+        "contrast": 6
+      }
+    ],
+    "tipTextOverlap": {
+      "xOverlap": 0,
+      "yOverlap": 20.296875
+    }
+  }
+]

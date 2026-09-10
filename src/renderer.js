@@ -32,7 +32,10 @@ export class Renderer {
     this.width = 1000; this.height = 740; this.scale = 1;
     this.offsetX = 0; this.offsetY = 70;
     this.camera = { zoom: 1, centerX: 500, centerY: 390 };
-    this.insets = { top: 80, bottom: 110 };
+    this.insets = { top: 80, bottom: 110, left: 0, right: 0 };
+    this.viewportMode = 'desktop';
+    this.recommendedZoom = 1;
+    this.manualInsets = false;
     this.staticScene = null;
     this.dustSprites = [];
     this.createArt();
@@ -45,7 +48,8 @@ export class Renderer {
     this.canvas.height = Math.round(this.height * this.dpr);
     // CSS owns the displayed size. Setting an inline pixel width here would lock
     // a responsive canvas at its first size and defeat its ResizeObserver.
-    this.updateTransform();
+    if (this.manualInsets) this.updateTransform();
+    else this.setResponsiveViewport(this.width, this.height);
   }
 
   setCamera(zoom, centerX = 500, centerY = 390) {
@@ -54,15 +58,40 @@ export class Renderer {
     this.updateTransform();
   }
 
-  setViewportInsets(top = 80, bottom = 110) {
-    this.insets = { top: Math.max(0, top), bottom: Math.max(0, bottom) };
+  setViewportInsets(top = 80, bottom = 110, left = 0, right = 0) {
+    if (typeof top === 'object') ({ top = 80, bottom = 110, left = 0, right = 0 } = top);
+    this.manualInsets = true;
+    this.insets = { top: Math.max(0, top), bottom: Math.max(0, bottom), left: Math.max(0, left), right: Math.max(0, right) };
     this.updateTransform();
   }
 
+  /** Derive framing only. The caller retains ownership of its zoom controls. */
+  setResponsiveViewport(width = this.width, height = this.height) {
+    this.manualInsets = false;
+    if (width >= 620 && height <= 420) {
+      this.viewportMode = 'landscape';
+      this.insets = { top: 12, bottom: 12, left: 300, right: 12 };
+      this.recommendedZoom = 1;
+    } else if (width <= 560 && height > width) {
+      this.viewportMode = 'portrait';
+      this.insets = { top: 88, bottom: 122, left: 0, right: 0 };
+      this.recommendedZoom = 1.7;
+    } else {
+      this.viewportMode = 'desktop';
+      this.insets = { top: 80, bottom: 110, left: 0, right: 0 };
+      this.recommendedZoom = 1;
+    }
+    this.canvas.dataset.viewportMode = this.viewportMode;
+    this.updateTransform();
+    return { mode: this.viewportMode, recommendedZoom: this.recommendedZoom, ...this.viewport };
+  }
+
   updateTransform() {
-    const availableHeight = Math.max(100, this.height - this.insets.top - this.insets.bottom);
-    this.fitScale = Math.max(.1, Math.min((this.width - 24) / 1020, (availableHeight - 24) / 638));
-    const baseX = (this.width - 1000 * this.fitScale) / 2;
+    const availableWidth = Math.max(1, this.width - this.insets.left - this.insets.right);
+    const availableHeight = Math.max(1, this.height - this.insets.top - this.insets.bottom);
+    this.viewport = { x: this.insets.left, y: this.insets.top, width: availableWidth, height: availableHeight };
+    this.fitScale = Math.max(.1, Math.min((availableWidth - 24) / 1020, (availableHeight - 24) / 638));
+    const baseX = this.insets.left + (availableWidth - 1000 * this.fitScale) / 2;
     const baseY = this.insets.top + (availableHeight - 638 * this.fitScale) / 2 + 83 * this.fitScale;
     this.scale = this.fitScale * this.camera.zoom;
     this.offsetX = baseX + 500 * this.fitScale - this.camera.centerX * this.scale;
@@ -71,6 +100,7 @@ export class Renderer {
 
   worldToScreen(x, y) { return { x: this.offsetX + x * this.scale, y: this.offsetY + y * GROUND_Y * this.scale }; }
   screenToWorld(x, y) { return { x: (x - this.offsetX) / this.scale, y: (y - this.offsetY) / (this.scale * GROUND_Y) }; }
+  containsScreenPoint(x, y) { const v = this.viewport; return !!v && x >= v.x && y >= v.y && x <= v.x + v.width && y <= v.y + v.height; }
 
   createArt() {
     const layer = draw => {
@@ -297,7 +327,7 @@ export class Renderer {
     const bg = c.createRadialGradient(this.width * .5, this.height * .52, 1, this.width * .5, this.height * .52, Math.max(this.width, this.height) * .6);
     bg.addColorStop(0, '#edf0df'); bg.addColorStop(1, '#f4f0e5'); c.fillStyle = bg; c.fillRect(0, 0, this.width, this.height);
     c.save();
-    c.beginPath(); c.rect(0, this.insets.top, this.width, Math.max(1, this.height - this.insets.top - this.insets.bottom)); c.clip();
+    c.beginPath(); c.rect(this.viewport.x, this.viewport.y, this.viewport.width, this.viewport.height); c.clip();
     c.translate(this.offsetX, this.offsetY); c.scale(this.scale, this.scale);
     c.drawImage(this.staticScene, -60, -100, 1120, 740);
     this.drawDust(c, state.dust || []);

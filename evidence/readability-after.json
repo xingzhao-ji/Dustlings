@@ -1,0 +1,1622 @@
+[
+  {
+    "name": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "startVisible": true,
+    "landmarkReachable": true,
+    "closeJournalVisible": true,
+    "pageErrors": [],
+    "text": [
+      {
+        "selector": ".chapter-copy",
+        "text": "Your Dustlings are already helping. Grow your crew with each sweep, or point them toward a patch tha",
+        "fontSize": 16,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          233,
+          231,
+          220
+        ],
+        "contrast": 5.2
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "A softer sweep",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "Better together",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "The fountain chorus",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "A wider brush. More dust with every gentle stroke.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "Dustlings work in little pairs, tidying almost twice as fast.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "Gather your crew in a circle to bring the old fountain to life.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "32 more motes to discover",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "32 more motes to discover",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "After A softer sweep + Better together",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "32",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "32",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "58",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".landmark-card p",
+        "text": "A quiet fountain with a song still in it.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          223,
+          230,
+          212
+        ],
+        "contrast": 5.04
+      },
+      {
+        "selector": ".landmark-card button",
+        "text": "Clear 75% & learn the chorus",
+        "fontSize": 14,
+        "foreground": "rgb(65, 84, 62)",
+        "background": [
+          203,
+          213,
+          191
+        ],
+        "contrast": 5.39
+      },
+      {
+        "selector": ".game-tip",
+        "text": "Hold & sweep over the dust. See what wakes up.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          239,
+          240,
+          225
+        ],
+        "contrast": 5.6
+      },
+      {
+        "selector": ".tool",
+        "text": "Brush B",
+        "fontSize": 14,
+        "foreground": "rgb(52, 84, 63)",
+        "background": [
+          220,
+          230,
+          213
+        ],
+        "contrast": 6.57
+      },
+      {
+        "selector": ".tool",
+        "text": "Direct crew D",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          249,
+          247,
+          238
+        ],
+        "contrast": 9.15
+      },
+      {
+        "selector": ".scene-stats>div",
+        "text": "50 little helpers",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          243,
+          240,
+          229
+        ],
+        "contrast": 5.66
+      },
+      {
+        "selector": ".scene-stats>div",
+        "text": "0 motes",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          240,
+          227
+        ],
+        "contrast": 5.64
+      },
+      {
+        "selector": ".upgrade-intro",
+        "text": "Spend motes. Keep every helper.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          233,
+          231,
+          220
+        ],
+        "contrast": 5.2
+      },
+      {
+        "selector": ".progress-caption",
+        "text": "Courtyard cleared 75%",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          233,
+          231,
+          220
+        ],
+        "contrast": 5.2
+      },
+      {
+        "selector": ".text-button",
+        "text": "Show me the remaining dust ↗",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          233,
+          231,
+          220
+        ],
+        "contrast": 5.2
+      },
+      {
+        "selector": ".save-status",
+        "text": "Saved on this device",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          233,
+          231,
+          220
+        ],
+        "contrast": 5.2
+      }
+    ],
+    "settings": [
+      {
+        "selector": ".settings-intro",
+        "fontSize": 16,
+        "color": "rgb(82, 99, 78)",
+        "text": "Your helpers will wait right here."
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Music\n48%"
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Little sounds\n65%"
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Ambience\n38%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "48%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "65%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "38%"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Less bouncing, fewer particles"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Tap once for a short sweep; holding still works"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Lower rendering resolution for quieter devices"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Export save"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Import save"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Load the saved courtyard"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(130, 82, 54)",
+        "text": "Start fresh"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Keep this courtyard"
+      },
+      {
+        "selector": ".primary-button",
+        "fontSize": 16,
+        "color": "rgb(255, 251, 237)",
+        "text": "Back to the courtyard\n↗"
+      },
+      {
+        "selector": ".text-button",
+        "fontSize": 14,
+        "color": "rgb(130, 82, 54)",
+        "text": "Start a fresh courtyard"
+      }
+    ]
+  },
+  {
+    "name": "compact",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "startVisible": true,
+    "landmarkReachable": true,
+    "closeJournalVisible": true,
+    "pageErrors": [],
+    "text": [
+      {
+        "selector": ".chapter-copy",
+        "text": "Your Dustlings are already helping. Grow your crew with each sweep, or point them toward a patch tha",
+        "fontSize": 16,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          233,
+          231,
+          220
+        ],
+        "contrast": 5.2
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "A softer sweep",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "Better together",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "The fountain chorus",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "A wider brush. More dust with every gentle stroke.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "Dustlings work in little pairs, tidying almost twice as fast.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "Gather your crew in a circle to bring the old fountain to life.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "32 more motes to discover",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "32 more motes to discover",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "After A softer sweep + Better together",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "32",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "32",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "58",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".landmark-card p",
+        "text": "A quiet fountain with a song still in it.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          223,
+          230,
+          212
+        ],
+        "contrast": 5.04
+      },
+      {
+        "selector": ".landmark-card button",
+        "text": "Clear 75% & learn the chorus",
+        "fontSize": 14,
+        "foreground": "rgb(65, 84, 62)",
+        "background": [
+          203,
+          213,
+          191
+        ],
+        "contrast": 5.39
+      },
+      {
+        "selector": ".game-tip",
+        "text": "Hold & sweep over the dust. See what wakes up.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          240,
+          240,
+          225
+        ],
+        "contrast": 5.61
+      },
+      {
+        "selector": ".tool",
+        "text": "Brush B",
+        "fontSize": 14,
+        "foreground": "rgb(52, 84, 63)",
+        "background": [
+          220,
+          230,
+          213
+        ],
+        "contrast": 6.57
+      },
+      {
+        "selector": ".tool",
+        "text": "Direct crew D",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          249,
+          247,
+          238
+        ],
+        "contrast": 9.15
+      },
+      {
+        "selector": ".scene-stats>div",
+        "text": "50 little helpers",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          243,
+          240,
+          228
+        ],
+        "contrast": 5.65
+      },
+      {
+        "selector": ".scene-stats>div",
+        "text": "0 motes",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          240,
+          227
+        ],
+        "contrast": 5.64
+      },
+      {
+        "selector": ".upgrade-intro",
+        "text": "Spend motes. Keep every helper.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          233,
+          231,
+          220
+        ],
+        "contrast": 5.2
+      },
+      {
+        "selector": ".progress-caption",
+        "text": "Courtyard cleared 75%",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          233,
+          231,
+          220
+        ],
+        "contrast": 5.2
+      },
+      {
+        "selector": ".text-button",
+        "text": "Show me the remaining dust ↗",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          233,
+          231,
+          220
+        ],
+        "contrast": 5.2
+      },
+      {
+        "selector": ".save-status",
+        "text": "Saved on this device",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          233,
+          231,
+          220
+        ],
+        "contrast": 5.2
+      }
+    ],
+    "settings": [
+      {
+        "selector": ".settings-intro",
+        "fontSize": 16,
+        "color": "rgb(82, 99, 78)",
+        "text": "Your helpers will wait right here."
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Music\n48%"
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Little sounds\n65%"
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Ambience\n38%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "48%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "65%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "38%"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Less bouncing, fewer particles"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Tap once for a short sweep; holding still works"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Lower rendering resolution for quieter devices"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Export save"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Import save"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Load the saved courtyard"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(130, 82, 54)",
+        "text": "Start fresh"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Keep this courtyard"
+      },
+      {
+        "selector": ".primary-button",
+        "fontSize": 16,
+        "color": "rgb(255, 251, 237)",
+        "text": "Back to the courtyard\n↗"
+      },
+      {
+        "selector": ".text-button",
+        "fontSize": 14,
+        "color": "rgb(130, 82, 54)",
+        "text": "Start a fresh courtyard"
+      }
+    ]
+  },
+  {
+    "name": "phone",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "startVisible": true,
+    "landmarkReachable": true,
+    "closeJournalVisible": true,
+    "pageErrors": [],
+    "text": [
+      {
+        "selector": ".chapter-copy",
+        "text": "Your Dustlings are already helping. Grow your crew with each sweep, or point them toward a patch tha",
+        "fontSize": 16,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          243,
+          230
+        ],
+        "contrast": 5.76
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "A softer sweep",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "Better together",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "The fountain chorus",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "A wider brush. More dust with every gentle stroke.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "Dustlings work in little pairs, tidying almost twice as fast.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "Gather your crew in a circle to bring the old fountain to life.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "32 more motes to discover",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "32 more motes to discover",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "After A softer sweep + Better together",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "32",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "32",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "58",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".landmark-card p",
+        "text": "A quiet fountain with a song still in it.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          223,
+          230,
+          212
+        ],
+        "contrast": 5.04
+      },
+      {
+        "selector": ".landmark-card button",
+        "text": "Clear 75% & learn the chorus",
+        "fontSize": 14,
+        "foreground": "rgb(65, 84, 62)",
+        "background": [
+          203,
+          213,
+          191
+        ],
+        "contrast": 5.39
+      },
+      {
+        "selector": ".game-tip",
+        "text": "Hold & sweep over the dust. See what wakes up.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          241,
+          240,
+          227
+        ],
+        "contrast": 5.63
+      },
+      {
+        "selector": ".tool",
+        "text": "Brush",
+        "fontSize": 14,
+        "foreground": "rgb(52, 84, 63)",
+        "background": [
+          220,
+          230,
+          213
+        ],
+        "contrast": 6.57
+      },
+      {
+        "selector": ".tool",
+        "text": "Direct crew",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          249,
+          247,
+          238
+        ],
+        "contrast": 9.15
+      },
+      {
+        "selector": ".tool",
+        "text": "Grow",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          249,
+          247,
+          238
+        ],
+        "contrast": 9.15
+      },
+      {
+        "selector": ".scene-stats>div",
+        "text": "50 little helpers",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          240,
+          228
+        ],
+        "contrast": 5.64
+      },
+      {
+        "selector": ".scene-stats>div",
+        "text": "0 motes",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          240,
+          227
+        ],
+        "contrast": 5.64
+      },
+      {
+        "selector": ".upgrade-intro",
+        "text": "Spend motes. Keep every helper.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          243,
+          230
+        ],
+        "contrast": 5.76
+      },
+      {
+        "selector": ".progress-caption",
+        "text": "Courtyard cleared 75%",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          243,
+          230
+        ],
+        "contrast": 5.76
+      },
+      {
+        "selector": ".text-button",
+        "text": "Show me the remaining dust ↗",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          243,
+          230
+        ],
+        "contrast": 5.76
+      }
+    ],
+    "settings": [
+      {
+        "selector": ".settings-intro",
+        "fontSize": 16,
+        "color": "rgb(82, 99, 78)",
+        "text": "Your helpers will wait right here."
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Music\n48%"
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Little sounds\n65%"
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Ambience\n38%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "48%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "65%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "38%"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Less bouncing, fewer particles"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Tap once for a short sweep; holding still works"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Lower rendering resolution for quieter devices"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Export save"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Import save"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Load the saved courtyard"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(130, 82, 54)",
+        "text": "Start fresh"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Keep this courtyard"
+      },
+      {
+        "selector": ".primary-button",
+        "fontSize": 16,
+        "color": "rgb(255, 251, 237)",
+        "text": "Back to the courtyard\n↗"
+      },
+      {
+        "selector": ".text-button",
+        "fontSize": 14,
+        "color": "rgb(130, 82, 54)",
+        "text": "Start a fresh courtyard"
+      }
+    ]
+  },
+  {
+    "name": "landscape",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "startVisible": true,
+    "landmarkReachable": true,
+    "closeJournalVisible": true,
+    "pageErrors": [],
+    "text": [
+      {
+        "selector": ".chapter-copy",
+        "text": "Your Dustlings are already helping. Grow your crew with each sweep, or point them toward a patch tha",
+        "fontSize": 16,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          243,
+          230
+        ],
+        "contrast": 5.76
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "A softer sweep",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "Better together",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-card strong",
+        "text": "The fountain chorus",
+        "fontSize": 18,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "A wider brush. More dust with every gentle stroke.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "Dustlings work in little pairs, tidying almost twice as fast.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-description",
+        "text": "Gather your crew in a circle to bring the old fountain to life.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "32 more motes to discover",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "32 more motes to discover",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".branch-label",
+        "text": "After A softer sweep + Better together",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 5.29
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "32",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "32",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".upgrade-cost",
+        "text": "58",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          231,
+          234,
+          220
+        ],
+        "contrast": 8.07
+      },
+      {
+        "selector": ".landmark-card p",
+        "text": "A quiet fountain with a song still in it.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          223,
+          230,
+          212
+        ],
+        "contrast": 5.04
+      },
+      {
+        "selector": ".landmark-card button",
+        "text": "Clear 75% & learn the chorus",
+        "fontSize": 14,
+        "foreground": "rgb(65, 84, 62)",
+        "background": [
+          203,
+          213,
+          191
+        ],
+        "contrast": 5.39
+      },
+      {
+        "selector": ".game-tip",
+        "text": "Hold & sweep over the dust. See what wakes up.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          238,
+          240,
+          224
+        ],
+        "contrast": 5.59
+      },
+      {
+        "selector": ".tool",
+        "text": "Brush",
+        "fontSize": 14,
+        "foreground": "rgb(52, 84, 63)",
+        "background": [
+          220,
+          230,
+          213
+        ],
+        "contrast": 6.57
+      },
+      {
+        "selector": ".tool",
+        "text": "Direct crew",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          249,
+          247,
+          237
+        ],
+        "contrast": 9.15
+      },
+      {
+        "selector": ".tool",
+        "text": "Grow",
+        "fontSize": 14,
+        "foreground": "rgb(50, 72, 62)",
+        "background": [
+          249,
+          247,
+          237
+        ],
+        "contrast": 9.15
+      },
+      {
+        "selector": ".scene-stats>div",
+        "text": "50 little helpers",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          240,
+          228
+        ],
+        "contrast": 5.64
+      },
+      {
+        "selector": ".scene-stats>div",
+        "text": "0 motes",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          240,
+          240,
+          226
+        ],
+        "contrast": 5.61
+      },
+      {
+        "selector": ".upgrade-intro",
+        "text": "Spend motes. Keep every helper.",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          243,
+          230
+        ],
+        "contrast": 5.76
+      },
+      {
+        "selector": ".progress-caption",
+        "text": "Courtyard cleared 75%",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          243,
+          230
+        ],
+        "contrast": 5.76
+      },
+      {
+        "selector": ".text-button",
+        "text": "Show me the remaining dust ↗",
+        "fontSize": 14,
+        "foreground": "rgb(82, 99, 78)",
+        "background": [
+          242,
+          243,
+          230
+        ],
+        "contrast": 5.76
+      }
+    ],
+    "settings": [
+      {
+        "selector": ".settings-intro",
+        "fontSize": 16,
+        "color": "rgb(82, 99, 78)",
+        "text": "Your helpers will wait right here."
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Music\n48%"
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Little sounds\n65%"
+      },
+      {
+        "selector": ".slider-label",
+        "fontSize": 16,
+        "color": "rgb(50, 72, 62)",
+        "text": "Ambience\n38%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "48%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "65%"
+      },
+      {
+        "selector": ".slider-label>span",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "38%"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Less bouncing, fewer particles"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Tap once for a short sweep; holding still works"
+      },
+      {
+        "selector": ".switch-label small",
+        "fontSize": 14,
+        "color": "rgb(82, 99, 78)",
+        "text": "Lower rendering resolution for quieter devices"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Export save"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Import save"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Load the saved courtyard"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(130, 82, 54)",
+        "text": "Start fresh"
+      },
+      {
+        "selector": ".secondary-button",
+        "fontSize": 14,
+        "color": "rgb(50, 72, 62)",
+        "text": "Keep this courtyard"
+      },
+      {
+        "selector": ".primary-button",
+        "fontSize": 16,
+        "color": "rgb(255, 251, 237)",
+        "text": "Back to the courtyard\n↗"
+      },
+      {
+        "selector": ".text-button",
+        "fontSize": 14,
+        "color": "rgb(130, 82, 54)",
+        "text": "Start a fresh courtyard"
+      }
+    ]
+  }
+]

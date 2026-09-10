@@ -1,0 +1,55 @@
+{
+  "kind": "dustlings-godot-notice-bundle",
+  "version": 1,
+  "source": {
+    "revision": "960d96b7e464317eed8441c56446093b38661912",
+    "sha256": "056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313"
+  },
+  "engine": {
+    "version": "4.7.2.stable.official.ed1daf0bf",
+    "revision": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "editorSha256": "c7cccbf8fb143e34e02fd6521e09be2c2b974f0d5db080b19071c9c570718ccf",
+    "templates": {
+      "macOS": {
+        "bytes": 123597580,
+        "sha256": "88df5e2e6fee99088699be66e6d42e4da4fb0c5619d054297d755a49558a4792"
+      },
+      "windowsX64": {
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      }
+    }
+  },
+  "upstream": {
+    "LICENSE.txt": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/ed1daf0bf001b61586d9930840f2f1394092c079/LICENSE.txt",
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "COPYRIGHT.txt": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/ed1daf0bf001b61586d9930840f2f1394092c079/COPYRIGHT.txt",
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "thirdparty/README.md": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/ed1daf0bf001b61586d9930840f2f1394092c079/thirdparty/README.md",
+      "bytes": 40858,
+      "sha256": "a8037f030f40bcc4b3b70fa87de4f2424130ed8a432774ecca78707c038e4ccc"
+    }
+  },
+  "files": {
+    "GODOT_LICENSE.txt": {
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "GODOT_COPYRIGHT.txt": {
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "THIRD-PARTY-NOTICES.txt": {
+      "bytes": 1722,
+      "sha256": "cf8a03ca9d4c8ab0e4b2ac171ad37ff19df97d50c9f5f6e753b29a90609a01d3"
+    }
+  },
+  "scope": "Engine and bundled components; no license or ownership assertion for Dustlings. No release or human approval."
+}

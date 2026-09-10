@@ -14,6 +14,7 @@ import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
+import {verifyNoticeArchive} from './godot-notices.mjs';
 const exec = promisify(execFile);
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -111,15 +112,35 @@ if (options.build) {
   const winLink=await link(win,'Windows x64 executable',build.windows.executable.sha256);
   const pckLink=await link(pck,'Windows game-data PCK',build.windows.pck.sha256);
   const manifestLink=await link(options.build,'Exact export manifest');
+  let noticesHTML='';
+  if(build.notices) {
+    const notices=build.notices;
+    const expected=['GODOT_LICENSE.txt','GODOT_COPYRIGHT.txt','THIRD-PARTY-NOTICES.txt','notice-manifest.json'].map(name=>'Notices/'+name);
+    if(notices.schema!==1 || notices.sourceProvenance?.sha256!==build.source.sha256 || notices.sourceProvenance?.revision!==build.source.revision || notices.sourceProvenance?.engineVersion!==build.toolchain.editorVersion || notices.sourceProvenance?.editorSha256!==build.toolchain.editor.sha256 || Object.keys(notices.files||{}).length!==4 || expected.some(name=>!Object.hasOwn(notices.files,name))) throw Error('Notice bundle does not bind the exact build source and toolchain');
+    for(const name of expected) {
+      const record=await asset(relative(path.join(base,name)),'Bundled engine attribution: '+name,notices.files[name].sha256);
+      if(record.bytes!==notices.files[name].bytes) throw Error('Notice file size mismatch: '+name);
+    }
+    const inner=await readJSON(relative(path.join(base,'Notices/notice-manifest.json')));
+    if(inner.kind!=='dustlings-godot-notice-bundle' || inner.version!==1 || inner.source?.sha256!==build.source.sha256 || inner.source?.revision!==build.source.revision || inner.engine?.revision!==notices.engineHash || inner.engine?.editorSha256!==build.toolchain.editor.sha256 || inner.engine?.version!==build.toolchain.editorVersion || JSON.stringify(inner.engine?.templates)!==JSON.stringify(build.toolchain.templates) || Object.keys(inner.files||{}).length!==3 || expected.slice(0,3).some(name=>!Object.hasOwn(inner.files,name.slice('Notices/'.length)))) throw Error('Internal notice provenance differs from the build');
+    for(const [name,entry] of Object.entries(inner.files)) if(notices.files['Notices/'+name]?.sha256!==entry.sha256 || notices.files['Notices/'+name]?.bytes!==entry.bytes) throw Error('Internal notice hash differs: '+name);
+    await verifyNoticeArchive({archive:local(mac),bundle:notices});
+    noticesHTML=`<p>${await link(relative(path.join(base,'Notices/THIRD-PARTY-NOTICES.txt')),'Engine, font and component notices')} accompany both development downloads. This attribution does not license the Dustlings game itself.</p>`;
+  }
   let windowsDownload=`<p>${winLink}<br>${pckLink}</p><p>Keep both files together, then run the executable.</p>`;
   if(options.windowsPackage) {
     const companion=await readJSON(options.windowsPackage), folder=path.dirname(local(options.windowsPackage));
     if(companion.kind!=='dustlings-windows-review-package' || companion.version!==1 || path.resolve(folder,companion.manifest.file)!==local(options.build) || companion.manifest.sha256!==digest(await fs.readFile(local(options.build))) || companion.manifest.sourceHash!==build.source.sha256) throw Error('Windows ZIP companion does not bind this exact build manifest and source');
     const entries=companion.entries;
-    if(!Array.isArray(entries) || entries.length!==3 || new Set(entries.map(item=>item.file)).size!==3 || !entries.every(item=>['Dustlings.exe','Dustlings.pck','README.txt'].includes(item.file))) throw Error('Windows ZIP must contain exactly the expected executable, pack and instructions');
+    const expectedNames=['Dustlings.exe','Dustlings.pck','README.txt',...Object.keys(build.notices?.files||{})];
+    if(!Array.isArray(entries) || entries.length!==expectedNames.length || new Set(entries.map(item=>item.file)).size!==expectedNames.length || !entries.every(item=>expectedNames.includes(item.file))) throw Error('Windows ZIP must contain exactly the expected executable, pack, instructions and declared notices');
     for(const [name,expected] of [['Dustlings.exe',build.windows.executable],['Dustlings.pck',build.windows.pck]]) {
       const item=entries.find(entry=>entry.file===name);
       if(item.sha256!==expected.sha256 || item.bytes!==expected.bytes) throw Error(`Windows ZIP companion has a different ${name}`);
+    }
+    for(const [name,expected] of Object.entries(build.notices?.files||{})) {
+      const item=entries.find(entry=>entry.file===name);
+      if(item.sha256!==expected.sha256 || item.bytes!==expected.bytes) throw Error('Windows ZIP notice differs from the build: '+name);
     }
     const archive=relative(path.resolve(folder,companion.archive.file));
     const archiveAsset=await asset(archive,'Windows development ZIP',companion.archive.sha256);
@@ -152,7 +173,7 @@ print(json.dumps(result))`,local(archive),JSON.stringify(entries)],{timeout:3000
     macStatus=`${Object.values(check.checks).filter(item=>item.passed).length} artifact and separate-process checks passed in ${await link(options.macCheck,'the exact packaged Mac report')}: opening save, fresh-process return, and blocked second-copy writes. Automated input; no human participant.`;
   }
   current={version:build.version,mode:options.candidate?'packaged-candidate':'live-source-matched',manifest:relative(local(options.build)),sourceSha256:build.source.sha256,pckSha256:build.macOS.pck.sha256,knownGaps:options.gaps};
-  buildHTML=`<div class="downloads"><article><h3>Mac development app</h3><p>${macLink}</p><p>Extract the ZIP and open the app. Universal2, locally verified ad-hoc signature; no notarization.</p><p>${macStatus}</p></article><article><h3>Windows development files</h3>${windowsDownload}<p><strong>Windows execution remains unverified.</strong></p></article></div><details><summary>Build identity · ${esc(build.version)}</summary><p>${manifestLink}</p><dl><dt>Source revision</dt><dd><code>${esc(build.source.revision)}</code></dd><dt>Source dirty / repository dirty</dt><dd>${esc(build.source.dirty)} / ${esc(build.source.repositoryDirty)}</dd><dt>Frozen source SHA-256</dt><dd><code>${esc(build.source.sha256)}</code></dd><dt>Game PCK SHA-256</dt><dd><code>${esc(build.macOS.pck.sha256)}</code></dd><dt>Built</dt><dd>${esc(build.finished)}</dd></dl></details>`;
+  buildHTML=`<div class="downloads"><article><h3>Mac development app</h3><p>${macLink}</p><p>Extract the ZIP and open the app. Universal2, locally verified ad-hoc signature; no notarization.</p><p>${macStatus}</p></article><article><h3>Windows development files</h3>${windowsDownload}<p><strong>Windows execution remains unverified.</strong></p></article></div>${noticesHTML}<details><summary>Build identity · ${esc(build.version)}</summary><p>${manifestLink}</p><dl><dt>Source revision</dt><dd><code>${esc(build.source.revision)}</code></dd><dt>Source dirty / repository dirty</dt><dd>${esc(build.source.dirty)} / ${esc(build.source.repositoryDirty)}</dd><dt>Frozen source SHA-256</dt><dd><code>${esc(build.source.sha256)}</code></dd><dt>Game PCK SHA-256</dt><dd><code>${esc(build.macOS.pck.sha256)}</code></dd><dt>Built</dt><dd>${esc(build.finished)}</dd></dl></details>`;
   candidateMarkdown=`The current native review candidate is **${build.version}**, a real-geometry Godot courtyard, **awaiting human validation**.\n\n| Field | Exact record |\n| --- | --- |\n| Export manifest | [${relative(local(options.build))}](../${relative(local(options.build))}) |\n| Source revision | \`${build.source.revision}\` |\n| Source dirty / repository dirty | ${build.source.dirty} / ${build.source.repositoryDirty} |\n| Source SHA-256 | \`${build.source.sha256}\` |\n| Mac PCK SHA-256 | \`${build.macOS.pck.sha256}\` |\n| Mac archive SHA-256 | \`${build.macOS.archive.sha256}\` |\n| Windows executable SHA-256 | \`${build.windows.executable.sha256}\` |\n| Export finished | ${build.finished} |\n| Current review hub | [Actual gameplay, package links and provenance](../evidence/3d/REVIEW.html) |\n| Human / owner acceptance | Zero human sessions; no current-build owner approval |\n\nMac signing is local ad-hoc, with no notarization. Windows execution, physical iPad/iPhone support and store readiness remain unverified. The hub verifies runtime source parity between the package and its captures; fixtures and movie-mode timing are labeled separately from human play.`;
   if(options.candidate) {
     buildHTML=`<div class="pending"><h3>Tested packaged candidate · ${esc(build.source.revision.slice(0,7))}</h3><p>This is the tested, playable package. Live development has moved on; the corrections in progress are not included here. Its captures and checks below match this frozen package. <strong>Known defects remain; this is not a polished or accepted milestone.</strong></p></div>`+buildHTML;

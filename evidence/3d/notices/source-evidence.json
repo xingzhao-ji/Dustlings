@@ -1,0 +1,87 @@
+{
+  "kind": "godot-notice-source-evidence",
+  "captured": "2026-09-10",
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "toolchain": {
+    "editorVersion": "4.7.2.stable.official.ed1daf0bf",
+    "editor": {
+      "bytes": 351312912,
+      "sha256": "c7cccbf8fb143e34e02fd6521e09be2c2b974f0d5db080b19071c9c570718ccf"
+    },
+    "templates": {
+      "macOS": {
+        "bytes": 123597580,
+        "sha256": "88df5e2e6fee99088699be66e6d42e4da4fb0c5619d054297d755a49558a4792"
+      },
+      "windowsX64": {
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      }
+    }
+  },
+  "method": "Isolated installed editor --headless Engine API extraction; pinned official upstream text; no game or GUI launch.",
+  "defaultFont": "Open Sans SemiBold",
+  "componentCount": 102,
+  "licenseCount": 19,
+  "engineApiSha256": "f1a02e126a60aca8c86e87d418665e6bdefacb1c8e3c95b76863c4ac59e989f5",
+  "upstream": {
+    "LICENSE.txt": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/ed1daf0bf001b61586d9930840f2f1394092c079/LICENSE.txt",
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "COPYRIGHT.txt": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/ed1daf0bf001b61586d9930840f2f1394092c079/COPYRIGHT.txt",
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "thirdparty/README.md": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/ed1daf0bf001b61586d9930840f2f1394092c079/thirdparty/README.md",
+      "bytes": 40858,
+      "sha256": "a8037f030f40bcc4b3b70fa87de4f2424130ed8a432774ecca78707c038e4ccc"
+    }
+  },
+  "engineLicenseMatchesPinnedUpstream": true,
+  "reviewedBuild": {
+    "manifest": "builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/manifest.json",
+    "sha256": "1087423e13a51dfd9e3e7b53974e2cbbc8403560b21d4501b437688ea9de11a1",
+    "sourceSha256": "056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313",
+    "archives": [
+      {
+        "file": "macOS/Dustlings.zip",
+        "sha256": "58b0a91c83859f6ed7e96706a3380bc19b069fa787dbfb72361c7b4a9d98c90e",
+        "entries": [
+          "Dustlings 3D.app/Contents/_CodeSignature/CodeResources",
+          "Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+          "Dustlings 3D.app/Contents/Resources/icon.icns",
+          "Dustlings 3D.app/Contents/Resources/Dustlings 3D.pck",
+          "Dustlings 3D.app/Contents/Resources/PrivacyInfo.xcprivacy",
+          "Dustlings 3D.app/Contents/Info.plist",
+          "Dustlings 3D.app/Contents/PkgInfo"
+        ],
+        "visibleNoticeEntries": []
+      },
+      {
+        "file": "Windows/Dustlings-Windows.zip",
+        "sha256": "7d7b768f443d0b6004e0617a776a503190d6bf3078eb65de9d9cfdccf75fbd16",
+        "entries": [
+          "Dustlings.exe",
+          "Dustlings.pck",
+          "README.txt"
+        ],
+        "visibleNoticeEntries": []
+      }
+    ]
+  },
+  "missing": "No accompanying notices in either reviewed archive. Engine license strings embedded in a binary were not treated as a user-accessible attribution file."
+}

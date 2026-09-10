@@ -1,0 +1,189 @@
+{
+  "kind": "Packaging-only notice proof on copies of exact historical development archives; no GUI, PCK rebuild, Windows execution or human review",
+  "checks": [
+    {
+      "name": "Exact audited bundle generated",
+      "passed": true,
+      "files": {
+        "Notices/GODOT_LICENSE.txt": {
+          "bytes": 1149,
+          "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+        },
+        "Notices/GODOT_COPYRIGHT.txt": {
+          "bytes": 100108,
+          "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+        },
+        "Notices/THIRD-PARTY-NOTICES.txt": {
+          "bytes": 1722,
+          "sha256": "cf8a03ca9d4c8ab0e4b2ac171ad37ff19df97d50c9f5f6e753b29a90609a01d3"
+        },
+        "Notices/notice-manifest.json": {
+          "bytes": 2115,
+          "sha256": "89b7bee25c136764d4487e2a5b56345c59cca277f93034f9210453cd64052721"
+        }
+      }
+    },
+    {
+      "name": "Identical repeat preserves mtime",
+      "passed": true
+    },
+    {
+      "name": "Different engine rejected",
+      "passed": true
+    },
+    {
+      "name": "Unknown source identity rejected",
+      "passed": true
+    },
+    {
+      "name": "Mixed existing output rejected",
+      "passed": true
+    },
+    {
+      "name": "Mac original missing notices rejected",
+      "passed": true
+    },
+    {
+      "name": "Mac actual staged archive notices and payload",
+      "passed": true
+    },
+    {
+      "name": "Windows original missing notices rejected",
+      "passed": true
+    },
+    {
+      "name": "Windows actual staged archive notices and payload",
+      "passed": true
+    },
+    {
+      "name": "Incorrect archive notice bytes rejected",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "bundle": {
+    "schema": 1,
+    "engineHash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "sourceProvenance": {
+      "revision": "960d96b7e464317eed8441c56446093b38661912",
+      "sha256": "056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313",
+      "engineVersion": "4.7.2.stable.official.ed1daf0bf",
+      "editorSha256": "c7cccbf8fb143e34e02fd6521e09be2c2b974f0d5db080b19071c9c570718ccf",
+      "upstream": {
+        "LICENSE.txt": {
+          "url": "https://raw.githubusercontent.com/godotengine/godot/ed1daf0bf001b61586d9930840f2f1394092c079/LICENSE.txt",
+          "bytes": 1149,
+          "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+        },
+        "COPYRIGHT.txt": {
+          "url": "https://raw.githubusercontent.com/godotengine/godot/ed1daf0bf001b61586d9930840f2f1394092c079/COPYRIGHT.txt",
+          "bytes": 100108,
+          "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+        },
+        "thirdparty/README.md": {
+          "url": "https://raw.githubusercontent.com/godotengine/godot/ed1daf0bf001b61586d9930840f2f1394092c079/thirdparty/README.md",
+          "bytes": 40858,
+          "sha256": "a8037f030f40bcc4b3b70fa87de4f2424130ed8a432774ecca78707c038e4ccc"
+        }
+      }
+    },
+    "files": {
+      "Notices/GODOT_LICENSE.txt": {
+        "bytes": 1149,
+        "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+      },
+      "Notices/GODOT_COPYRIGHT.txt": {
+        "bytes": 100108,
+        "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+      },
+      "Notices/THIRD-PARTY-NOTICES.txt": {
+        "bytes": 1722,
+        "sha256": "cf8a03ca9d4c8ab0e4b2ac171ad37ff19df97d50c9f5f6e753b29a90609a01d3"
+      },
+      "Notices/notice-manifest.json": {
+        "bytes": 2115,
+        "sha256": "89b7bee25c136764d4487e2a5b56345c59cca277f93034f9210453cd64052721"
+      }
+    }
+  },
+  "archives": [
+    {
+      "label": "Mac",
+      "original": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/macOS/Dustlings.zip",
+      "originalSha256": "58b0a91c83859f6ed7e96706a3380bc19b069fa787dbfb72361c7b4a9d98c90e",
+      "staged": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/experiments/notices-stage/Mac.zip",
+      "stagedSha256": "29436bd0c40c13aabbd12adc3903c278e05562fc4d530f78fef3cf56b142368e",
+      "verification": {
+        "passed": true,
+        "noticeFiles": 4,
+        "method": "Actual decompressed archive bytes, not filenames alone"
+      },
+      "unchangedOriginalEntries": [
+        {
+          "file": "Dustlings 3D.app/Contents/_CodeSignature/CodeResources",
+          "bytes": 3181,
+          "sha256": "43a76b23fddd12cff7b790ce6ef5d44c108300a16658bfba11575a54468c2b33"
+        },
+        {
+          "file": "Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+          "bytes": 170963648,
+          "sha256": "522062065f95971a98bdeb3f509512f8167f5b41a56f684cfb2bb992ebc0619d"
+        },
+        {
+          "file": "Dustlings 3D.app/Contents/Resources/icon.icns",
+          "bytes": 83377,
+          "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+        },
+        {
+          "file": "Dustlings 3D.app/Contents/Resources/Dustlings 3D.pck",
+          "bytes": 2136660,
+          "sha256": "3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47"
+        },
+        {
+          "file": "Dustlings 3D.app/Contents/Resources/PrivacyInfo.xcprivacy",
+          "bytes": 229,
+          "sha256": "0535353bb08c25b8ce5ed9ac7e442a5994f402e0f6cbc4bed668cfc63c2ceac3"
+        },
+        {
+          "file": "Dustlings 3D.app/Contents/Info.plist",
+          "bytes": 1826,
+          "sha256": "c8be7f50d6ad8921ec6d934bc1613966a38debd3d4c0e21b18c58f8a49e1a51a"
+        },
+        {
+          "file": "Dustlings 3D.app/Contents/PkgInfo",
+          "bytes": 9,
+          "sha256": "7e50a30efad50208a173203ced60818d693bb61266b75aa10927d1a2adce80cb"
+        }
+      ]
+    },
+    {
+      "label": "Windows",
+      "original": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/Windows/Dustlings-Windows.zip",
+      "originalSha256": "7d7b768f443d0b6004e0617a776a503190d6bf3078eb65de9d9cfdccf75fbd16",
+      "staged": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/experiments/notices-stage/Windows.zip",
+      "stagedSha256": "1ee4fb59a00ad7d7b84b9b5995b5dd1d70fdaf41192cffb4341a99f2f88bab02",
+      "verification": {
+        "passed": true,
+        "noticeFiles": 4,
+        "method": "Actual decompressed archive bytes, not filenames alone"
+      },
+      "unchangedOriginalEntries": [
+        {
+          "file": "Dustlings.exe",
+          "bytes": 109136384,
+          "sha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512"
+        },
+        {
+          "file": "Dustlings.pck",
+          "bytes": 2136660,
+          "sha256": "3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47"
+        },
+        {
+          "file": "README.txt",
+          "bytes": 1026,
+          "sha256": "9ef958c6acf8df9da162942f061dddce87b07b3fa8a3b4bdeb99da9aa8bb4e49"
+        }
+      ]
+    }
+  ]
+}

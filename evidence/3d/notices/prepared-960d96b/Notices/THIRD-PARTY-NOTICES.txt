@@ -1,0 +1,30 @@
+Dustlings - third-party software notices
+
+This game uses Godot Engine 4.7.2.stable.official.ed1daf0bf.
+Its license is reproduced in GODOT_LICENSE.txt. Copyright and license texts
+for Godot's bundled components are reproduced in GODOT_COPYRIGHT.txt.
+That upstream inventory is intentionally complete and may also describe
+editor-only or other-platform components absent from this desktop build.
+These notices do not apply the engine's license to Dustlings code or assets.
+
+Fonts and rendering
+The audited default UI font is Open Sans SemiBold, part of the Open Sans
+font family: copyright 2020 The Open Sans Project Authors; SIL Open Font
+License 1.1. Its notice and full license are in GODOT_COPYRIGHT.txt.
+This software uses FreeType. Portions are copyright 1996-2025 The FreeType
+Project (https://freetype.org). All rights reserved. Full terms and original
+copyright holders are in GODOT_COPYRIGHT.txt.
+
+Component source availability
+The unmodified engine source used by this official toolchain is available at
+https://github.com/godotengine/godot/tree/ed1daf0bf001b61586d9930840f2f1394092c079
+Source archive:
+https://github.com/godotengine/godot/archive/ed1daf0bf001b61586d9930840f2f1394092c079.tar.gz
+This includes the MPL-2.0 CA certificate source at
+https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/thirdparty/certs/ca-bundle.crt
+Its source is governed by MPL-2.0, reproduced in GODOT_COPYRIGHT.txt.
+Component versions and original upstream locations are documented at
+https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/thirdparty/README.md
+
+Godot license: https://godotengine.org/license/
+Distribution identity and file hashes: notice-manifest.json

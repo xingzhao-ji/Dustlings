@@ -7,9 +7,29 @@ Use the existing [PLAYTEST.md](PLAYTEST.md) protocol for recruitment, observatio
 ## Current 3D review candidate
 
 <!-- 3D-REVIEW-CANDIDATE:START -->
-The active milestone is the real-geometry Godot courtyard, version `0.4.0-dev`, **awaiting human validation**. Final matching build metadata is pending. Earlier 3D packages and every 2D deliverable are historical; none establishes the current experience.
+The packaged review candidate is **0.4.0-dev**, a real-geometry Godot courtyard, **awaiting human validation**.
 
-See [the 3D review hub](../evidence/3d/REVIEW.html) for labeled references. Current player, presentation and owner gates are not passed. Human sessions: **0**. Windows execution and physical mobile support remain unverified.
+| Field | Exact record |
+| --- | --- |
+| Export manifest | [builds/3d/0.4.0-dev-2026-09-10T09-23-03-961Z-0db02d30ce/manifest.json](../builds/3d/0.4.0-dev-2026-09-10T09-23-03-961Z-0db02d30ce/manifest.json) |
+| Source revision | `2572e2f84d83f4175fac879e6735ee490fcfe47d` |
+| Source dirty / repository dirty | false / true |
+| Source SHA-256 | `0db02d30cecf84b28fce7919352f9ca2fd79c9deb82d5a7deffdb40e69d7d431` |
+| Mac PCK SHA-256 | `a55ebb8d8ec501f8cb9d5484d2e9a473d3b443224bbec0ad4915b4171c8adb04` |
+| Mac archive SHA-256 | `7d7699265376fe475c699dcce10157d44aaa2523919e431a201b5431770d417b` |
+| Windows executable SHA-256 | `56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512` |
+| Export finished | 2026-09-10T09:23:19.311Z |
+| Current review hub | [Actual gameplay, package links and provenance](../evidence/3d/REVIEW.html) |
+| Human / owner acceptance | Zero human sessions; no current-build owner approval |
+
+Mac signing is local ad-hoc, with no notarization. Windows execution, physical iPad/iPhone support and store readiness remain unverified. The hub verifies runtime source parity between the package and its captures; fixtures and movie-mode timing are labeled separately from human play.
+
+This package is separate from changed live development. Its frozen source and attached capture runtime bytes match; this record makes no parity claim for the working tree. Corrections in progress require a new package and verification.
+
+Known package gaps:
+
+- Helpers can appear to work without a sufficiently legible local cleaning response. An independent AI critique of actual footage identified this; correction is in progress, with human confirmation still needed.
+- The completed courtyard can still display 99% clear in the HUD, as confirmed in the full film near 697 seconds. The live correction is not included in this package.
 <!-- 3D-REVIEW-CANDIDATE:END -->
 
 Bind every human review to the exact native PCK and executable/archive hashes, source revision and dirty state. If implementation or presentation changes, preserve old observations under their original identity and obtain fresh review for affected claims. An agent's critique, generated input recording or fixture is not a human session. No gate transfers from the old 2D prototype.

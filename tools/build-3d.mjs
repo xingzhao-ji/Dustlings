@@ -7,6 +7,7 @@ import os from 'node:os';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
+import { writeGodotNotices, verifyNoticeArchive } from './godot-notices.mjs';
 
 const exec = promisify(execFile);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -98,6 +99,19 @@ try {
     const result = await logged(label, editor, ['--headless', '--path', snapshot, '--export-release', preset, target]);
     if (/SCRIPT ERROR:|ERROR:/m.test(result.stdout + result.stderr)) throw new Error(`${label} reported errors; inspect log`);
   }
+  // Keep engine notices beside the app, preserving the signed bundle and PCK.
+  manifest.toolchain.noticeTool = await statFile(path.join(root, 'tools/godot-notices.mjs'));
+  manifest.notices = await writeGodotNotices({output: path.join(out, 'Notices'), source: manifest.source, toolchain: manifest.toolchain});
+  await logged('macos-append-notices', process.env.PYTHON || 'python3', ['-c', `import sys,json,pathlib,zipfile
+archive,base,names=sys.argv[1],pathlib.Path(sys.argv[2]),json.loads(sys.argv[3])
+with zipfile.ZipFile(archive,'a',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+    existing=z.namelist()
+    for name in names:
+        if name in existing: raise RuntimeError('Refusing duplicate notice entry: '+name)
+        z.write(base/name,arcname=name)
+print(json.dumps({'added':names,'signed_app_modified':False}))
+`, macZip, out, JSON.stringify(Object.keys(manifest.notices.files).sort())]);
+  manifest.checks.macOSNotices = await verifyNoticeArchive({archive: macZip, bundle: manifest.notices});
   // Keep the durable artifact zipped: Desktop/iCloud may attach forbidden FinderInfo
   // to live .app directories. Verify an untouched extraction on the local temp volume.
   const extraction = await fs.mkdtemp(path.join(os.tmpdir(), 'dustlings-3d-export-'));

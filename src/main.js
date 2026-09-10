@@ -3,6 +3,7 @@ import {SaveStore,SAVE_KEY} from './storage.js';
 import {Renderer} from './renderer.js';
 import {DustAudio} from './audio.js';
 import {createKeyboardControls} from './keyboard.js';
+import {normaliseSettings} from './settings.js';
 
 const $=id=>document.getElementById(id);
 let browserStorage;
@@ -19,11 +20,12 @@ function html(el,value){if(htmlValues.get(el)!==value){el.innerHTML=value;htmlVa
 function attr(el,key,value){value=String(value);if(el.getAttribute(key)!==value)el.setAttribute(key,value);}
 function panCamera(dx,dy){camera.x=Math.max(180,Math.min(820,camera.x+dx));camera.y=Math.max(200,Math.min(610,camera.y+dy));renderer.setCamera(zoom,camera.x,camera.y);}
 const keyboard=createKeyboardControls({canvas,getState:()=>state,renderer,onMode:setMode,onAssign:(x,y)=>{assignCrew(state,x,y);save();updateUI();},onPan:panCamera,onNotice:message=>notify(state,message),onChange:updateUI});
-let settings={music:.48,sfx:.65,ambience:.38,muted:false,reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches,tapSweep:false,lowQuality:false};
-try{Object.assign(settings,JSON.parse(localStorage.getItem('dustlings.settings')||'{}'));}catch{}
+let settings=normaliseSettings(null,matchMedia('(prefers-reduced-motion: reduce)').matches);
+try{settings=normaliseSettings(JSON.parse(localStorage.getItem('dustlings.settings')||'null'),settings.reducedMotion);}catch{}
 state.reducedMotion=settings.reducedMotion;audio.setMix(settings);
 function saveSettings(){try{localStorage.setItem('dustlings.settings',JSON.stringify(settings));}catch{}audio.setMix(settings);}
 function resize(){
+  if(started)stopInput();
   const r=canvas.getBoundingClientRect();renderer.resize(r.width,r.height,Math.min(settings.lowQuality?1:2,devicePixelRatio||1));
   if(viewportMode!==renderer.viewportMode){viewportMode=renderer.viewportMode;zoom=renderer.recommendedZoom;camera={x:500,y:390};}
   renderer.setCamera(zoom,camera.x,camera.y);if($('zoom-out')){$('zoom-out').disabled=zoom<=1;$('zoom-in').disabled=zoom>=2;}sceneDirty=true;
@@ -101,7 +103,11 @@ $('find-dust').onclick=()=>{
 function closeJournal(){$('journal').classList.remove('open');$('mobile-journal').setAttribute('aria-expanded','false');}
 function toggleJournal(){const opened=$('journal').classList.toggle('open');$('mobile-journal').setAttribute('aria-expanded',opened);}
 $('mobile-journal').onclick=toggleJournal;$('close-journal').onclick=closeJournal;
-function stopInput(){keyboard.stop();state.pointer.active=false;state.pointer.preview=false;pointerId=null;autoSweep=0;panning=false;audio.setBrushing(false);sceneDirty=true;}
+function stopInput(){
+  const captured=pointerId;keyboard.stop();state.pointer.active=false;state.pointer.preview=false;state.pointer.inside=false;
+  pointerId=null;lastPointer=null;autoSweep=0;panning=false;audio.setBrushing(false);sceneDirty=true;
+  if(captured!==null&&canvas.hasPointerCapture(captured))canvas.releasePointerCapture(captured);
+}
 function openSettings(){if(!started)return;stopInput();paused=true;audio.pause();save();$('settings').showModal();}
 function closeSettings(){if(!$('settings').open)return;if(store.status==='conflict'){$('load-latest-save').focus();return;}$('settings').close();$('restart-confirm').hidden=true;paused=false;lastTime=performance.now();audio.resume();canvas.focus({preventScroll:true});}
 $('pause-button').onclick=openSettings;$('close-settings').onclick=closeSettings;$('resume-button').onclick=closeSettings;
@@ -177,7 +183,13 @@ function pointerUp(e,cancel=false){
 }
 canvas.addEventListener('pointerup',e=>pointerUp(e));canvas.addEventListener('pointercancel',e=>pointerUp(e,true));
 canvas.addEventListener('lostpointercapture',e=>{if(pointerId===e.pointerId)pointerUp(e,true);});
-canvas.addEventListener('pointerleave',()=>{if(pointerId===null){state.pointer.inside=false;state.pointer.active=false;audio.setBrushing(false);}});
+canvas.addEventListener('pointerleave',()=>{
+  // Touch emits leave immediately after a normal lift. Preserve the intentional
+  // timed sweep; cancellation, focus loss, pause and tool changes still stop it.
+  if(pointerId===null&&!(settings.tapSweep&&autoSweep>0&&state.pointer.active)){
+    state.pointer.inside=false;state.pointer.active=false;audio.setBrushing(false);
+  }
+});
 canvas.addEventListener('contextmenu',e=>e.preventDefault());
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){if($('journal').classList.contains('open')){e.preventDefault();closeJournal();return;}if(started&&!paused){e.preventDefault();openSettings();}return;}

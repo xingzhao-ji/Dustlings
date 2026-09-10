@@ -1,22 +1,23 @@
-# Continuation checkpoint — 2026-09-10 05:52 UTC
+# Continuation checkpoint — 2026-09-10 06:12 UTC
 
-Current milestone: **courtyard, awaiting human validation**. Player experience, presentation comparison, and owner acceptance are independent gates; none has passed. Human test sessions:0. Development is still running at this checkpoint.
+Current milestone: **courtyard, awaiting human validation**. Player experience, presentation comparison, and owner acceptance remain separate, unpassed gates. Human sessions: **0**. Development is still running at this checkpoint.
 
-Completed since prototype0.1:
+Completed since the 05:52 checkpoint:
 
-- Save loss across windows corrected. Two actual browser tabs verified stale autosave/restart protection, primary+backup preservation, branch export, explicit latest recovery. Commit `b7119f1`.
-- Five stranded dust targets corrected;5,592 routes across466 sites,3 work offsets and4 starts pass. Impossible restoration saves rejected; all50 helpers reach chorus positions. Commit `ef1ae41`.
-- Keyboard brushing/aiming/next-dust/direction added. Pan/tool conflict, extra-pointer interference, repeated live-region replacement, unnamed dialogs, Grow state and hidden completion audio corrected. Commit `3fe1f33`.
-- Verification:24 source/unit tests;13 navigation/save/lifecycle tests;20 accessibility browser checks;26 existing browser checks pass. Keyboard browser run uses actual key events with explicitly advanced simulation. No human/screen-reader/hardware claims.
-- Readability agent completed essential14px, main16px and contrast corrections with134 measured samples; all pass. Four actual viewport layouts inspected. These CSS changes are integrating with the camera correction before their commit.
+- Readable typography/contrast and responsive camera integrated. Desktop framing preserved, landscape village grew from approximately 125 × 78 to 373 × 236 px, portrait opens at 1.7×. All 466 dust nodes reachable, 8 corner drags pass; before/after views and short motion recordings saved. Commit `30a8f5e` plus root integration `dccdd37`.
+- Paused rendering reduced from 300 canvas draws per 5 seconds to 0. Eight integration checks pass, including paused resize/resolution redraw and resume. The original isolated 216.6 ms active-play stall remains unexplained and was not reproduced in the 10-second trace.
+- Reproducible audio startup cost traced to native AudioContext construction. Silent welcome preparation reduced measured Start work from 126–128 to 13–14 ms across 3 trials. Cost moved earlier, not removed. Generated source buffers unchanged; no human listening claim. Commit `8cf3b4e`.
+- WebKit 26.6 installed and tested. It exposed canceled tap-to-sweep after finger lift; corrected in main. Fresh WebKit 26/26 and focused Chrome 3/3 pass. This is Playwright WebKit on Mac, not branded Safari or physical iOS. Audit commit `944b2c0`.
+- Rotation/resize while holding brush reproduced stale-target cleaning; input now stops and releases capture. All 6 boundary checks pass, with 0 additional dust brushed after rotation/resize. Evidence commit `ea7bac6`.
+- Invalid saved settings normalized independently using strict numeric/boolean fields. Three new unit tests pass; total source unit tests currently 27. Actual settings browser rerun is pending joint recovery integration.
 
-In progress / exact next actions:
+Highest-impact open work:
 
-1. Read `evidence/profile-after-idle-fix.json` when `node tools/profile-stalls.mjs after-idle-fix` finishes; verify paused redraw drops from300 per5s to0. The original216.6ms stall did not recur in the10-second instrumented probe (active render p95=1.7ms; no long tasks); its cause is still unknown, not declared fixed.
-2. Integrate renderer.recommendedZoom and containsScreenPoint in main.js. Renderer now offers landscape controls column and responsive viewport; CSS/renderer are being verified by art agent. Verify landscape scene grows from~125×78 to at least300×190 CSS px, touch cannot clean behind controls, every edge remains reachable, and pointer transforms stay exact.
-3. Build a version0.2 standalone artifact, verify offline asynchronous saves/WebLocks, rerun affected browser checks and a sustained50-helper profile, record updated actual views/motion. Current standalone artifact remains0.1 until that build step; current local source is newer.
-4. Continue the ordered gaps in BACKLOG.md, including cross-engine/device capability checks and current-build human/owner review preparation. No new zones.
+1. Interruption audit reproduced lost newly brushed progress in all 5 reload/back/close trials. The sound agent is implementing `SaveStore.checkpoint(state)` in storage.js: synchronous separate recovery journal carrying exact canonical baseline, with a journal-change conflict guard. Canonical primary/backup writes stay under Web Locks. Integrate checkpoint calls on pagehide and hidden visibility in main.js; label interrupted recovery accurately. Then rerun actual interruption/settings and existing two-tab conflict checks. Do not replace canonical locking with an unsafe unload write.
+2. Commit tested input/settings integration and checkpoint state. After recovery passes, freeze source version 0.2 and `npm run build`; build manifest now records source revision, dirty status and artifact hash. Current standalone artifact remains old 0.1 until that command.
+3. Run current-artifact opening capture, restoration recording, offline smoke and isolated 50-helper 60-second profile. Tools accept `DUSTLINGS_EVIDENCE_DIR=evidence/v0.2`; QA accepts `DUSTLINGS_CAPTURE_ONLY=1` and `DUSTLINGS_URL=file://...?...`; fixture-aware tools accept `DUSTLINGS_FIXTURE_DIR`. Preserve old evidence. Convert recordings to MP4 with ffmpeg. `tools/review-page.mjs` will generate the updated human review page only after matching-hash evidence exists.
+4. Research agent has prepared dynamic source enumeration (now includes settings.js) and exact standalone WebKit checks. Notify it when the build is frozen; coordinate browser shutdown before isolated performance sampling.
 
-Unresolved: physical-device inputs, phone comfort, native audio listening, isolated frame stall, human appeal/upgrade clarity/restoration/pacing/continuation, benchmark-quality comparison and owner sell-readiness. No working Windows guest was verified; none was started. Figma unavailable. No requests to outside testers have been sent.
+Useful next work is recovery integration and exact candidate verification, not more aesthetic additions. No further zones. Physical Windows/Mac input, real mobile touch/safe areas/thermal performance, native listening, unfamiliar-player satisfaction and owner acceptance remain unresolved. Figma unavailable. No tester outreach sent.
 
-Resume by reading this file, checking git status and the mentioned result files; finish the next unfinished action without redoing benchmark research or asking whether to continue. An ended session is not a finished game.
+Resume by checking git status and unfinished actions above. Do not repeat benchmark research, rebuild the plan, or ask whether to continue. An ended session is not a completed game.

@@ -2,9 +2,10 @@ import {chromium} from '@playwright/test';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
+const fixtures=process.env.DUSTLINGS_FIXTURE_DIR||'evidence';
 const output=process.env.DUSTLINGS_EVIDENCE_DIR||'evidence';await mkdir(output,{recursive:true});
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
-const save=JSON.parse(await readFile('evidence/completed-test-save.json','utf8'));
+const save=JSON.parse(await readFile(`${fixtures}/completed-test-save.json`,'utf8'));
 Object.assign(save,{restoration:0,ritual:false,ritualTime:0,completed:false,completedAt:null});
 const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:2});
 try{

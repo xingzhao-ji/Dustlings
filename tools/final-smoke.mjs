@@ -3,6 +3,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
+const fixtures=process.env.DUSTLINGS_FIXTURE_DIR||'evidence';
 const output=process.env.DUSTLINGS_EVIDENCE_DIR||'evidence';await mkdir(output,{recursive:true});
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
 const result={build:JSON.parse(await readFile('builds/build-manifest.json','utf8')),checks:[],errors:[],requests:[]};
@@ -10,7 +11,7 @@ const p=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFacto
 p.on('pageerror',e=>result.errors.push(e.message));p.on('request',r=>{if(/^https?:/.test(r.url()))result.requests.push(r.url());});
 try{
   await p.goto(pathToFileURL(resolve('builds/Dustlings Courtyard.html')).href+'?qa=1');await p.locator('#start-button').click();await p.waitForTimeout(100);await p.screenshot({path:`${output}/final-dirty.png`});
-  const save=JSON.parse(await readFile('evidence/completed-test-save.json','utf8'));await p.evaluate(save=>window.__dustlings.load(save),save);await p.waitForTimeout(7000);
+  const save=JSON.parse(await readFile(`${fixtures}/completed-test-save.json`,'utf8'));await p.evaluate(save=>window.__dustlings.load(save),save);await p.waitForTimeout(7000);
   assert.equal(await p.locator('#scene-caption-text').textContent(),'A little place, alive again');await p.screenshot({path:`${output}/final-restored.png`});result.checks.push('Restored caption matches completed game state');
   await p.evaluate(()=>window.__dustlings.save());await p.reload();await p.locator('#start-button').click();assert(await p.evaluate(()=>window.__dustlings.state.completed));result.checks.push('Exact final artifact offline launch and save/return');
   for(const [name,width,height] of [['macbook',1280,800],['ipad',820,1180],['iphone',390,844],['iphone-landscape',844,390]]){

@@ -12,7 +12,7 @@ A standalone, real 3D cozy RPG in Godot. Explore Bellwether on foot, meet its fo
 
 WASD or arrows walk; right-drag turns the camera; scroll adjusts distance. Comma/period orbit using the keyboard; Q returns to the forward view. E talks or inspects. Hold Space near visible dust to brush; mouse brushing also follows visible nearby surfaces. J opens your journal. Escape leaves a conversation or opens pause/settings. Settings include separate sound levels, gentle motion, camera sensitivity, graphics quality and verified save copies.
 
-The RPG uses its own save namespace and preserves the old courtyard save. Current Windows/macOS RPG packages and a source-bound review page are being prepared; the old courtyard packages are historical and are not the current RPG.
+The RPG uses its own save namespace and preserves the old courtyard save. Windows/macOS RPG development archives and current gameplay are linked in the [review hub](evidence/rpg/REVIEW.html). Export/source/archive checks passed; exact packaged runtime checks remain pending. The old courtyard packages are historical and are not the current RPG. Development is stopped at the owner’s request; see the continuation checkpoint.
 
 ## Review and continue
 

@@ -1,0 +1,342 @@
+{
+	"camera_distance": 7.6,
+	"checks": [
+		{
+			"command": "{ \"wait\": 1.0 }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 0,
+			"time": 1.025
+		},
+		{
+			"command": "{ \"button\": \"Step into\" }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 1,
+			"time": 1.05833333333333
+		},
+		{
+			"command": "{ \"wait\": 1.0 }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 2,
+			"time": 2.09166666666667
+		},
+		{
+			"command": "{ \"capture\": \"arrival\" }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 3,
+			"time": 2.125
+		},
+		{
+			"command": "{ \"move\": (0.5, 0.0, 7.4) }",
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428978, 0.000843, 7.531031)",
+			"step": 4,
+			"time": 2.79166666666667
+		},
+		{
+			"command": "{ \"brush\": 5.0 }",
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428978, 0.000843, 7.531031)",
+			"step": 5,
+			"time": 7.92499999999998
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428978, 0.000843, 7.531031)",
+			"step": 6,
+			"time": 9.92499999999998
+		},
+		{
+			"command": "{ \"capture\": \"first-companion\" }",
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428978, 0.000843, 7.531031)",
+			"step": 7,
+			"time": 9.95833333333331
+		},
+		{
+			"command": "{ \"move\": (-2.0, 0.0, 4.4) }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 8,
+			"time": 11.525
+		},
+		{
+			"command": "{ \"interact\": \"ivo\" }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 9,
+			"time": 11.5916666666666
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 10,
+			"time": 13.5916666666666
+		},
+		{
+			"command": "{ \"capture\": \"ivo\" }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 11,
+			"time": 13.625
+		},
+		{
+			"command": "{ \"button\": \"Why so many\" }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 12,
+			"time": 13.6583333333333
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 13,
+			"time": 15.6583333333333
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 14,
+			"time": 15.6916666666666
+		},
+		{
+			"command": "{ \"interact\": \"ivo\" }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 15,
+			"time": 15.7583333333333
+		},
+		{
+			"command": "{ \"button\": \"carry Nell\" }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 16,
+			"time": 15.7916666666666
+		},
+		{
+			"command": "{ \"wait\": 1.5 }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 17,
+			"time": 17.2916666666667
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.000843, 4.508969)",
+			"step": 18,
+			"time": 17.325
+		},
+		{
+			"command": "{ \"move\": (-5.7, 0.0, 3.0) }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.562591, 0.000843, 3.099471)",
+			"step": 19,
+			"time": 18.9916666666668
+		},
+		{
+			"command": "{ \"interact\": \"tavi\" }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.562591, 0.000843, 3.099471)",
+			"step": 20,
+			"time": 19.0583333333334
+		},
+		{
+			"command": "{ \"wait\": 2.5 }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.562591, 0.000843, 3.099471)",
+			"step": 21,
+			"time": 21.5583333333336
+		},
+		{
+			"command": "{ \"capture\": \"tavi\" }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.562591, 0.000843, 3.099471)",
+			"step": 22,
+			"time": 21.5916666666669
+		},
+		{
+			"command": "{ \"button\": \"extra cup\" }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.562591, 0.000843, 3.099471)",
+			"step": 23,
+			"time": 21.6250000000002
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.562591, 0.000843, 3.099471)",
+			"step": 24,
+			"time": 23.6250000000003
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "tavi",
+			"ok": true,
+			"position": "(-5.562591, 0.000843, 3.099471)",
+			"step": 25,
+			"time": 23.6583333333337
+		},
+		{
+			"command": "{ \"move\": (-10.0, 0.0, 7.8) }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.869573, 0.000814, 7.768773)",
+			"step": 26,
+			"time": 27.1250000000005
+		},
+		{
+			"command": "{ \"interact\": \"home\" }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.869573, 0.000814, 7.768773)",
+			"step": 27,
+			"time": 27.1916666666672
+		},
+		{
+			"command": "{ \"button\": \"Sage\" }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.869573, 0.000814, 7.768773)",
+			"step": 28,
+			"time": 27.2250000000005
+		},
+		{
+			"command": "{ \"wait\": 1.5 }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.869573, 0.000814, 7.768773)",
+			"step": 29,
+			"time": 28.7250000000006
+		},
+		{
+			"command": "{ \"close\": true }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.869573, 0.000814, 7.768773)",
+			"step": 30,
+			"time": 28.7583333333339
+		},
+		{
+			"command": "{ \"move\": (-10.0, 0.0, 5.1) }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.930856, 0.000843, 5.194154)",
+			"step": 31,
+			"time": 29.7916666666673
+		},
+		{
+			"command": "{ \"capture\": \"home-interior\" }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.930856, 0.000843, 5.194154)",
+			"step": 32,
+			"time": 29.8250000000006
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.930856, 0.000843, 5.194154)",
+			"step": 33,
+			"time": 31.8250000000007
+		},
+		{
+			"command": "{ \"move\": (-10.0, 0.0, 7.8) }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.930856, 0.000707, 7.70749)",
+			"step": 34,
+			"time": 32.8250000000007
+		},
+		{
+			"command": "{ \"move\": (0.0, 0.0, 4.4) }",
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.069767, 0.000843, 4.518291)",
+			"step": 35,
+			"time": 37.5250000000004
+		},
+		{
+			"command": "{ \"move\": (7.9, 0.0, 3.3) }",
+			"nearest": "wood",
+			"ok": true,
+			"position": "(7.79332, 0.000843, 3.415206)",
+			"step": 36,
+			"time": 40.7583333333336
+		},
+		{
+			"command": "{ \"interact\": \"mara\" }",
+			"nearest": "wood",
+			"ok": false,
+			"position": "(7.79332, 0.000843, 3.415206)",
+			"reason": "30-second route timeout",
+			"step": 37
+		}
+	],
+	"companions": 1,
+	"elapsed_engine_seconds": 70.7583333333319,
+	"humanTests": 0,
+	"method": "Generated native InputEvents; authored route knows destinations. No player or story progression injection.",
+	"ok": false,
+	"patches": {
+		"bridge": 1.0,
+		"lantern": 0.0
+	},
+	"position": [
+		7.7933201789856,
+		0.000843457761220634,
+		3.41520571708679
+	],
+	"story": {
+		"day": 1,
+		"flags": {
+			"first_companion": true,
+			"ivo_concern": true,
+			"met_ivo": true,
+			"met_tavi": true,
+			"parcel_collected": true,
+			"tavi_concern": true
+		},
+		"home": "sage",
+		"schema": 1,
+		"trust": {
+			"ivo": 2,
+			"mara": 0,
+			"nell": 0,
+			"tavi": 2
+		}
+	}
+}

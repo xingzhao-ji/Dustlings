@@ -1,0 +1,14 @@
+{
+  "raw": "evidence/rpg/neighborhood-first/overview.avi",
+  "raw_bytes": 14787162,
+  "raw_sha256": "d9d6c2310e277f4791360048984d975534607feb3b3f85709bf6c90c7aeec106",
+  "preserved": "evidence/rpg/neighborhood-first/overview.mp4",
+  "preserved_sha256": "6e633330d4edd55565bf4e6b4ed3f0004a2d59f978f6d51d685f9c0289f6d9a2",
+  "video": {
+    "width": 1280,
+    "height": 800,
+    "duration": "5.800000",
+    "nb_frames": "174"
+  },
+  "reason": "Redundant root-generated raw removed after matching encoded dimensions and frame count; MP4, source snapshot, logs, saves and stills retained."
+}

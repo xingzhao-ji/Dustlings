@@ -1,0 +1,14 @@
+{
+  "raw": "evidence/rpg/neighborhood-route-corrected/route.avi",
+  "raw_bytes": 454689754,
+  "raw_sha256": "d4829a10a5ae5d5c4e3de0f657da68ea5d20e389ff62e9c5c86f39fc784f9ff1",
+  "preserved": "evidence/rpg/neighborhood-route-corrected/route.mp4",
+  "preserved_sha256": "0059d9bc04e276b7bbf1164b02f5f996e45b291768ba604c46d841cf6ed366f7",
+  "video": {
+    "width": 1280,
+    "height": 800,
+    "duration": "159.766667",
+    "nb_frames": "4793"
+  },
+  "reason": "Redundant root-generated raw removed after matching encoded dimensions and frame count; MP4, source snapshot, logs, saves and stills retained."
+}

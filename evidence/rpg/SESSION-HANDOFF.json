@@ -1,0 +1,28 @@
+{
+  "stopped_by_owner": true,
+  "stopped_at_utc": "2026-09-10T18:28:11.818860+00:00",
+  "build_manifest": "builds/3d/0.5.0-rpg-dev-2026-09-10T18-25-12-865Z-8ea89a06f1/manifest.json",
+  "build_source": "8ea89a06f1846dbdc3b4d9162b4287a1a1946e56470cce4b362b23c41372c51e",
+  "build_complete": true,
+  "build_changed_during_export": false,
+  "native_art_source": "198e7d10b6ea2587280bace4fd9373ce439952934858995b1909ab214f6d6e76",
+  "native_route_source": "344ca70145099cb069bbe58829fae4e1034719bef4a69c9ecfda1d3dfb87bf00",
+  "route_success": true,
+  "route_steps": 163,
+  "route_engine_seconds": 197.158333333325,
+  "companion_distances": [
+    1.09841346740723,
+    1.05576157569885,
+    0.961290955543518,
+    1.10987138748169
+  ],
+  "script_shader_files_compared": 22,
+  "build_route_differences": [],
+  "human_tests": 0,
+  "owner_approved": false,
+  "packaged_macos_execution": "not performed",
+  "windows_execution": "not performed",
+  "current_performance": "not measured",
+  "audio_audition": "not performed",
+  "next_action": "Run exact packaged macOS source checks with final route isolated save; inspect current native gift/gathering and dialogue transition, then obtain current human/owner feedback."
+}

@@ -1,0 +1,14 @@
+{
+  "raw": "evidence/rpg/neighborhood-ui-corrected/overview.avi",
+  "raw_bytes": 15449754,
+  "raw_sha256": "53ae893ab5c619e72ab56cb6e01b10c702986d95126f4938b61a657280285ae2",
+  "preserved": "evidence/rpg/neighborhood-ui-corrected/overview.mp4",
+  "preserved_sha256": "8017d2bf4ffe380ebcc72ae9ca6bbdf7af86e446d0db61d73b7d282ec313c4f7",
+  "video": {
+    "width": 1280,
+    "height": 800,
+    "duration": "5.833333",
+    "nb_frames": "175"
+  },
+  "reason": "Redundant root-generated raw removed after matching encoded dimensions and frame count; MP4, source snapshot, logs, saves and stills retained."
+}

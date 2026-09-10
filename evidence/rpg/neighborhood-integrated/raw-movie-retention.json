@@ -1,0 +1,14 @@
+{
+  "raw": "evidence/rpg/neighborhood-integrated/route.avi",
+  "raw_bytes": 449983620,
+  "raw_sha256": "6ad13defce6cc722e61dd111d840c67908a13e13f3b2808f063d593651a7b676",
+  "preserved": "evidence/rpg/neighborhood-integrated/route.mp4",
+  "preserved_sha256": "fa9145eb056144e46d48b0b8e1593dc1585f9f7cdca4512c98b6e0c7b3d7081d",
+  "video": {
+    "width": 1280,
+    "height": 800,
+    "duration": "153.466667",
+    "nb_frames": "4604"
+  },
+  "reason": "Redundant root-generated raw removed after matching encoded dimensions and frame count; MP4, source snapshot, logs, saves and stills retained."
+}

@@ -1,6 +1,6 @@
 # Bellwether RPG opening — quality gates
 
-**Milestone: in development; awaiting human validation and owner acceptance.** This is the new third-person 3D RPG opening, superseding the cleanup-only scope. It is not the old courtyard product. Review snapshot prepared on 10 September 2026; runtime changes are continuing. [Local review hub](../evidence/rpg/REVIEW.html).
+**Milestone: in development; awaiting human validation and owner acceptance.** This is the new third-person 3D RPG opening, superseding the cleanup-only scope. It is not the old courtyard product. Review snapshot prepared on 10 September 2026; development stopped on the owner’s instruction at18:27UTC. [Local review hub](../evidence/rpg/REVIEW.html).
 
 ## Separate decisions
 
@@ -47,3 +47,8 @@ The earlier `neighborhood-arrival-materials` attempt froze the QA driver mid-edi
 No verified RPG package manifest has been supplied to this review page yet. The preserved courtyard ZIP is not linked as an RPG build. The RPG package runner is prepared; exact exported Mac launch/resume/corrupt-primary recovery is pending. Windows remains unrun. No current RPG performance figure is available here; old courtyard numbers do not validate the new neighborhood.
 
 The lead is completing the representative art/motion capture, full route and independent comparison. After accepted technical corrections, freeze source, export desktop packages, run exact packaged Mac recovery and a quiet native callback profile, then update the hub with those artifacts. Figma is unavailable; the inspectable art board and actual game UI are the documented fallback. No development continues after a session ends; the lead maintains the resumable continuation checkpoint.
+
+
+## Owner-requested stop / delivered candidate
+
+See [SESSION-HANDOFF.json](../evidence/rpg/SESSION-HANDOFF.json) for the exported0.5.0-rpg-dev source, complete163-step native route, exact script/shader parity, Windows archive verification and explicit unperformed checks. Current game is **not complete or approved**. Old pending-package statements above describe the earlier review snapshot; native archives now exist, while actual packaged process execution, current performance, listening and human/owner acceptance remain pending. [Continuation](CONTINUATION.md) orders the exact remaining gaps.

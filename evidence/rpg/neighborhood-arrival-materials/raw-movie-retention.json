@@ -1,0 +1,14 @@
+{
+  "raw": "evidence/rpg/neighborhood-arrival-materials/overview.avi",
+  "raw_bytes": 437097168,
+  "raw_sha256": "367efcbdb80b2b86441e0a625e9ed8606a986f17ee436b166c99bd56dce65ea6",
+  "preserved": "evidence/rpg/neighborhood-arrival-materials/overview.mp4",
+  "preserved_sha256": "ae0c67c84a84e5d05573571036a79703043315f813b5a6b3a7b0758e22437086",
+  "video": {
+    "width": 1280,
+    "height": 800,
+    "duration": "161.933333",
+    "nb_frames": "4858"
+  },
+  "reason": "Redundant root-generated raw removed after matching encoded dimensions and frame count; MP4, source snapshot, logs, saves and stills retained."
+}

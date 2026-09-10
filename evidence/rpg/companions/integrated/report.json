@@ -1,0 +1,2633 @@
+{
+  "checks": [
+    {
+      "check": "Explicit four-companion fixture initialized without changing follower code",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Player walks first open lane",
+      "details": {
+        "actual": "(0.0, 0.000843, 5.143329)",
+        "target": "(0.0, 0.0, 5.0)"
+      },
+      "ok": true
+    },
+    {
+      "check": "All four companions settle within3m after first open lane",
+      "details": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000438, -0.015962, 0.000419)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000418, -0.015245, 0.0004)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(0.0, 0.000843, 5.143329)",
+            "next_distance": 0.736757814884186,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.72113883495331,
+                "id": 1
+              },
+              {
+                "distance": 1.40732705593109,
+                "id": 2
+              },
+              {
+                "distance": 0.382216334342957,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 0.736757814884186,
+            "position": "(0.721782, 0.000843, 4.995536)",
+            "queue": 0,
+            "velocity": "(-0.027425, 0.0, 0.026242)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015967, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(0.0, 0.000843, 5.143329)",
+            "next_distance": 1.07297205924988,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.72113883495331,
+                "id": 0
+              },
+              {
+                "distance": 1.82209122180939,
+                "id": 2
+              },
+              {
+                "distance": 1.84501266479492,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07297205924988,
+            "position": "(-0.714671, 0.000837, 5.94365)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015913, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(0.0, 0.000843, 5.143329)",
+            "next_distance": 1.07297706604004,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.40732705593109,
+                "id": 0
+              },
+              {
+                "distance": 1.82209122180939,
+                "id": 1
+              },
+              {
+                "distance": 1.78755867481232,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07297706604004,
+            "position": "(-0.402142, 0.000843, 4.148562)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000227, -0.01596, 0.001066)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015869, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(0.0, 0.000843, 5.143329)",
+            "next_distance": 1.00531446933746,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 0.382216334342957,
+                "id": 0
+              },
+              {
+                "distance": 1.84501266479492,
+                "id": 1
+              },
+              {
+                "distance": 1.78755867481232,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.00531446933746,
+            "position": "(0.998631, 0.000845, 5.259058)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ]
+      },
+      "ok": true
+    },
+    {
+      "check": "Companion bodies avoid solid overlap after first open lane",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Player walks home street",
+      "details": {
+        "actual": "(-4.901182, 0.000843, 7.747831)",
+        "target": "(-5.0, 0.0, 7.8)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks home door",
+      "details": {
+        "actual": "(-9.879008, -0.0005, 7.766855)",
+        "target": "(-10.0, 0.0, 7.8)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks home interior",
+      "details": {
+        "actual": "(-9.940291, 0.000843, 5.235573)",
+        "target": "(-10.0, 0.0, 5.1)"
+      },
+      "ok": true
+    },
+    {
+      "check": "All four companions settle within3m after home interior",
+      "details": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.004752, -0.015946, 0.005523)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.004525, -0.015183, 0.005258)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(-9.940291, 0.000843, 5.235573)",
+            "next_distance": 0.952407777309418,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.72137308120728,
+                "id": 1
+              },
+              {
+                "distance": 1.80204224586487,
+                "id": 2
+              },
+              {
+                "distance": 0.446576178073883,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 0.952407777309418,
+            "position": "(-9.486357, 0.000837, 6.072845)",
+            "queue": 0,
+            "velocity": "(-0.297992, 0.0, 0.346319)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000697, -0.015952, -0.005609)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000666, -0.015235, -0.005357)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(-9.940291, 0.000843, 5.235573)",
+            "next_distance": 1.07172703742981,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.72137308120728,
+                "id": 0
+              },
+              {
+                "distance": 1.83844900131226,
+                "id": 2
+              },
+              {
+                "distance": 2.16610145568848,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07172703742981,
+            "position": "(-11.01132, 0.000843, 5.274333)",
+            "queue": 0,
+            "velocity": "(-0.043707, 0.0, -0.351599)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015918, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(-9.940291, 0.000843, 5.235573)",
+            "next_distance": 1.07284808158875,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.80204224586487,
+                "id": 0
+              },
+              {
+                "distance": 1.83844900131226,
+                "id": 1
+              },
+              {
+                "distance": 2.00781202316284,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07284808158875,
+            "position": "(-9.470878, 0.000837, 4.270869)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.002032, -0.015959, 0.000818)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.001935, -0.015195, 0.000779)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.001075, -0.015195, -0.000648)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.235573)",
+            "next_distance": 1.32685387134552,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 0.446576178073883,
+                "id": 0
+              },
+              {
+                "distance": 2.16610145568848,
+                "id": 1
+              },
+              {
+                "distance": 2.00781202316284,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.32685387134552,
+            "position": "(-9.07168, 0.000837, 6.238596)",
+            "queue": 0,
+            "velocity": "(0.070775, 0.0, -0.04264)",
+            "waypoint_blocker": ""
+          }
+        ]
+      },
+      "ok": true
+    },
+    {
+      "check": "Companion bodies avoid solid overlap after home interior",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Player walks home exit",
+      "details": {
+        "actual": "(-9.940291, 0.000836, 7.705574)",
+        "target": "(-10.0, 0.0, 7.8)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks home street exit",
+      "details": {
+        "actual": "(-6.117536, 0.000843, 7.766788)",
+        "target": "(-6.0, 0.0, 7.8)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks plaza",
+      "details": {
+        "actual": "(-0.121611, 0.000842, 4.457532)",
+        "target": "(0.0, 0.0, 4.4)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks bridge approach",
+      "details": {
+        "actual": "(-0.060329, -0.00339, -2.667086)",
+        "target": "(0.0, 0.0, -2.8)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks repaired bridge",
+      "details": {
+        "actual": "(-0.060329, 0.000843, -6.393755)",
+        "target": "(0.0, 0.0, -6.5)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks north lane",
+      "details": {
+        "actual": "(4.906526, -0.000017, -6.43258)",
+        "target": "(5.0, 0.0, -6.5)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Companion bodies avoid solid overlap after bridge crossing",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Player walks greenhouse approach",
+      "details": {
+        "actual": "(11.86795, 0.000842, -7.934003)",
+        "target": "(12.0, 0.0, -8.0)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks greenhouse interior",
+      "details": {
+        "actual": "(11.92923, 0.000842, -11.59195)",
+        "target": "(12.0, 0.0, -11.7)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Companion bodies avoid solid overlap after greenhouse interior",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Player walks greenhouse exit",
+      "details": {
+        "actual": "(11.92923, 0.000843, -8.125288)",
+        "target": "(12.0, 0.0, -8.0)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks north lane return",
+      "details": {
+        "actual": "(5.135901, 0.000806, -6.531946)",
+        "target": "(5.0, 0.0, -6.5)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks bridge return approach",
+      "details": {
+        "actual": "(0.109229, 0.000843, -6.531946)",
+        "target": "(0.0, 0.0, -6.5)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Player walks bridge return",
+      "details": {
+        "actual": "(0.109229, 0.000836, 4.30139)",
+        "target": "(0.0, 0.0, 4.4)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Companion bodies avoid solid overlap after return to plaza",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Fixture reaches every required observation stage",
+      "details": {},
+      "ok": true
+    }
+  ],
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "failures": [
+    {
+      "check": "All four companions settle within3m after bridge crossing",
+      "details": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.016331, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(4.906526, -0.000017, -6.43258)",
+            "next_distance": 0.98484867811203,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.80368995666504,
+                "id": 1
+              },
+              {
+                "distance": 1.03539633750916,
+                "id": 2
+              },
+              {
+                "distance": 18.0468902587891,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 0.98484867811203,
+            "position": "(3.931898, 0.000419, -6.291061)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.006642, -0.015946, 0.002784)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.006344, -0.01523, 0.002659)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(4.906526, -0.000017, -6.43258)",
+            "next_distance": 1.07276499271393,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.80368995666504,
+                "id": 0
+              },
+              {
+                "distance": 0.808620631694794,
+                "id": 2
+              },
+              {
+                "distance": 19.8429069519043,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07276499271393,
+            "position": "(5.345404, 0.000843, -7.411461)",
+            "queue": 0,
+            "velocity": "(0.416524, 0.0, 0.174565)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.020355, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(4.906526, -0.000017, -6.43258)",
+            "next_distance": 0.704602897167206,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.03539633750916,
+                "id": 0
+              },
+              {
+                "distance": 0.808620631694794,
+                "id": 1
+              },
+              {
+                "distance": 19.0784969329834,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 0.704602897167206,
+            "position": "(4.611321, 0.000102, -7.072361)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015962, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.972239)",
+            "next_distance": 0.916592657566071,
+            "next_points": "[(-9.940291, 0.000843, 5.972239), (-9.940291, 0.000842, 6.36224), (-9.940291, 0.00083, 6.752242), (-9.940291, 0.000843, 7.142242), (-9.940291, 0.000835, 7.532241)]",
+            "others": [
+              {
+                "distance": 18.0468902587891,
+                "id": 0
+              },
+              {
+                "distance": 19.8429069519043,
+                "id": 1
+              },
+              {
+                "distance": 19.0784969329834,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 18.8555774688721,
+            "position": "(-9.061645, 0.000843, 6.233241)",
+            "queue": 73,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ]
+      },
+      "ok": false
+    },
+    {
+      "check": "All four companions settle within3m after greenhouse interior",
+      "details": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.00413, -0.015892, -0.008013)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.003944, -0.015178, -0.007653)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(11.92923, 0.000842, -11.59195)",
+            "next_distance": 1.06780076026917,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.86798989772797,
+                "id": 1
+              },
+              {
+                "distance": 1.84040915966034,
+                "id": 2
+              },
+              {
+                "distance": 27.1401634216309,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.06780076026917,
+            "position": "(10.97562, 0.000843, -12.0724)",
+            "queue": 0,
+            "velocity": "(0.259857, 0.0, -0.504217)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.004021, -0.015898, 0.006006)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.00384, -0.015184, 0.005736)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(11.92923, 0.000842, -11.59195)",
+            "next_distance": 1.06821000576019,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.86798989772797,
+                "id": 0
+              },
+              {
+                "distance": 1.84924376010895,
+                "id": 2
+              },
+              {
+                "distance": 28.5936260223389,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.06821000576019,
+            "position": "(12.84214, 0.000843, -12.14664)",
+            "queue": 0,
+            "velocity": "(0.25293, 0.0, 0.377777)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015914, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(11.92923, 0.000842, -11.59195)",
+            "next_distance": 1.07297337055206,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.84040915966034,
+                "id": 0
+              },
+              {
+                "distance": 1.84924376010895,
+                "id": 1
+              },
+              {
+                "distance": 26.883207321167,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07297337055206,
+            "position": "(11.96338, 0.000843, -10.51952)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015962, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.972239)",
+            "next_distance": 0.916592657566071,
+            "next_points": "[(-9.940291, 0.000843, 5.972239), (-9.940291, 0.000842, 6.36224), (-9.940291, 0.00083, 6.752242), (-9.940291, 0.000843, 7.142242), (-9.940291, 0.000835, 7.532241)]",
+            "others": [
+              {
+                "distance": 27.1401634216309,
+                "id": 0
+              },
+              {
+                "distance": 28.5936260223389,
+                "id": 1
+              },
+              {
+                "distance": 26.883207321167,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 27.5382328033447,
+            "position": "(-9.061645, 0.000843, 6.233241)",
+            "queue": 102,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ]
+      },
+      "ok": false
+    },
+    {
+      "check": "All four companions settle within3m after return to plaza",
+      "details": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015967, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(0.109229, 0.000836, 4.30139)",
+            "next_distance": 1.072669506073,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.80588936805725,
+                "id": 1
+              },
+              {
+                "distance": 1.82444071769714,
+                "id": 2
+              },
+              {
+                "distance": 10.2467241287231,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.072669506073,
+            "position": "(0.811106, 0.000837, 3.490225)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.008354, -0.015942, 0.004726)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.007979, -0.015225, 0.004514)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(0.109229, 0.000836, 4.30139)",
+            "next_distance": 1.00764608383179,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.80588936805725,
+                "id": 0
+              },
+              {
+                "distance": 1.82921326160431,
+                "id": 2
+              },
+              {
+                "distance": 9.54394149780273,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.00764608383179,
+            "position": "(0.432124, 0.000843, 5.2559)",
+            "queue": 0,
+            "velocity": "(-0.524067, 0.0, 0.296453)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015919, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(0.109229, 0.000836, 4.30139)",
+            "next_distance": 1.07288765907288,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.82444071769714,
+                "id": 0
+              },
+              {
+                "distance": 1.82921326160431,
+                "id": 1
+              },
+              {
+                "distance": 8.42343711853027,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07288765907288,
+            "position": "(-0.930079, 0.000837, 4.035071)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015962, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.972239)",
+            "next_distance": 0.916592657566071,
+            "next_points": "[(-9.940291, 0.000843, 5.972239), (-9.940291, 0.000842, 6.36224), (-9.940291, 0.00083, 6.752242), (-9.940291, 0.000843, 7.142242), (-9.940291, 0.000835, 7.532241)]",
+            "others": [
+              {
+                "distance": 10.2467241287231,
+                "id": 0
+              },
+              {
+                "distance": 9.54394149780273,
+                "id": 1
+              },
+              {
+                "distance": 8.42343711853027,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 9.37213802337646,
+            "position": "(-9.061645, 0.000843, 6.233241)",
+            "queue": 169,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ]
+      },
+      "ok": false
+    }
+  ],
+  "kind": "Headless fixed-fps actual CharacterBody3D and generated walking fixture. Four-companion/door progress initialized once; no follower teleport, no native visual/human/performance claim.",
+  "source_at_end": {
+    "rpg_actor.gd": "ddec4eaedfa3eabfa8d0ddc584de9ee40904c566753830bf0c955a018a45fdb9",
+    "rpg_environment.gd": "3fd9c1092cabb1b8ca5c3e25bcba2572103514800a7d634d175ad53b5785165d",
+    "rpg_main.gd": "125f753402d64bedae9abb78507965214b4a46cc2053e28189651549ee6b78a9",
+    "rpg_navigation.gd": "6e651e471119f3bd117a595a7a5ad63320bd6b7eb234dff5056641a2b3d92056",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  },
+  "source_at_start": {
+    "rpg_actor.gd": "ddec4eaedfa3eabfa8d0ddc584de9ee40904c566753830bf0c955a018a45fdb9",
+    "rpg_environment.gd": "3fd9c1092cabb1b8ca5c3e25bcba2572103514800a7d634d175ad53b5785165d",
+    "rpg_main.gd": "5c2bd3882c7411f8a7633fcd19138f1ee4e25f53b72abbc91c03e24d0d57e4c8",
+    "rpg_navigation.gd": "6e651e471119f3bd117a595a7a5ad63320bd6b7eb234dff5056641a2b3d92056",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  },
+  "source_changed": true,
+  "stages": [
+    {
+      "after": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000438, -0.015962, 0.000419)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000418, -0.015245, 0.0004)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(0.0, 0.000843, 5.143329)",
+            "next_distance": 0.736757814884186,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.72113883495331,
+                "id": 1
+              },
+              {
+                "distance": 1.40732705593109,
+                "id": 2
+              },
+              {
+                "distance": 0.382216334342957,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 0.736757814884186,
+            "position": "(0.721782, 0.000843, 4.995536)",
+            "queue": 0,
+            "velocity": "(-0.027425, 0.0, 0.026242)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015967, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(0.0, 0.000843, 5.143329)",
+            "next_distance": 1.07297205924988,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.72113883495331,
+                "id": 0
+              },
+              {
+                "distance": 1.82209122180939,
+                "id": 2
+              },
+              {
+                "distance": 1.84501266479492,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07297205924988,
+            "position": "(-0.714671, 0.000837, 5.94365)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015913, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(0.0, 0.000843, 5.143329)",
+            "next_distance": 1.07297706604004,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.40732705593109,
+                "id": 0
+              },
+              {
+                "distance": 1.82209122180939,
+                "id": 1
+              },
+              {
+                "distance": 1.78755867481232,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07297706604004,
+            "position": "(-0.402142, 0.000843, 4.148562)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000227, -0.01596, 0.001066)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015869, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(0.0, 0.000843, 5.143329)",
+            "next_distance": 1.00531446933746,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 0.382216334342957,
+                "id": 0
+              },
+              {
+                "distance": 1.84501266479492,
+                "id": 1
+              },
+              {
+                "distance": 1.78755867481232,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.00531446933746,
+            "position": "(0.998631, 0.000845, 5.259058)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ],
+        "player": "(0.0, 0.000843, 5.143329)",
+        "stage": "first open lane after30s"
+      },
+      "before": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000449, -0.015873, -0.013876)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000429, -0.01516, -0.013252)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(0.0, 0.000843, 7.440003)",
+            "next_distance": 0.422728538513184,
+            "next_points": "[(0.0, 0.000843, 7.440003), (0.0, 0.000843, 7.050003), (0.0, 0.000843, 6.660002), (0.0, 0.000843, 6.27), (0.0, 0.000843, 5.879998)]",
+            "others": [
+              {
+                "distance": 0.517973184585571,
+                "id": 1
+              },
+              {
+                "distance": 0.504012405872345,
+                "id": 2
+              },
+              {
+                "distance": 0.564388990402222,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 2.71921539306641,
+            "position": "(0.013675, 0.000842, 7.86251)",
+            "queue": 6,
+            "velocity": "(-0.028293, 0.0, -0.874152)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000803, -0.015862, -0.017664)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000767, -0.015149, -0.016871)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(0.0, 0.000842, 7.830005)",
+            "next_distance": 0.544337749481201,
+            "next_points": "[(0.0, 0.000842, 7.830005), (0.0, 0.000843, 7.440003), (0.0, 0.000843, 7.050003), (0.0, 0.000843, 6.660002), (0.0, 0.000843, 6.27)]",
+            "others": [
+              {
+                "distance": 0.517973184585571,
+                "id": 0
+              },
+              {
+                "distance": 1.00059461593628,
+                "id": 2
+              },
+              {
+                "distance": 0.384786754846573,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 3.20987272262573,
+            "position": "(-0.164151, 0.000842, 8.349002)",
+            "queue": 7,
+            "velocity": "(-0.050604, 0.0, -1.113631)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.000536, -0.015887, -0.010169)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.000512, -0.015173, -0.009712)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(0.0, 0.000843, 7.050003)",
+            "next_distance": 0.309817016124725,
+            "next_points": "[(0.0, 0.000843, 7.050003), (0.0, 0.000843, 6.660002), (0.0, 0.000843, 6.27), (0.0, 0.000843, 5.879998), (0.0, 0.000843, 5.489996)]",
+            "others": [
+              {
+                "distance": 0.504012405872345,
+                "id": 0
+              },
+              {
+                "distance": 1.00059461593628,
+                "id": 1
+              },
+              {
+                "distance": 1.0554610490799,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 2.21612119674683,
+            "position": "(-0.016305, 0.000843, 7.35939)",
+            "queue": 5,
+            "velocity": "(0.033734, 0.0, -0.640112)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.001227, -0.015863, -0.017432)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.001172, -0.01515, -0.016649)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(0.0, 0.000842, 7.830005)",
+            "next_distance": 0.599642157554626,
+            "next_points": "[(0.0, 0.000842, 7.830005), (0.0, 0.000843, 7.440003), (0.0, 0.000843, 7.050003), (0.0, 0.000843, 6.660002), (0.0, 0.000843, 6.27)]",
+            "others": [
+              {
+                "distance": 0.564388990402222,
+                "id": 0
+              },
+              {
+                "distance": 0.384786754846573,
+                "id": 1
+              },
+              {
+                "distance": 1.0554610490799,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 3.25240182876587,
+            "position": "(0.218616, 0.000842, 8.388375)",
+            "queue": 7,
+            "velocity": "(-0.077334, 0.0, -1.098925)",
+            "waypoint_blocker": ""
+          }
+        ],
+        "player": "(0.0, 0.000843, 5.143329)",
+        "stage": "first open lane before rest"
+      }
+    },
+    {
+      "after": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.004752, -0.015946, 0.005523)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.004525, -0.015183, 0.005258)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(-9.940291, 0.000843, 5.235573)",
+            "next_distance": 0.952407777309418,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.72137308120728,
+                "id": 1
+              },
+              {
+                "distance": 1.80204224586487,
+                "id": 2
+              },
+              {
+                "distance": 0.446576178073883,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 0.952407777309418,
+            "position": "(-9.486357, 0.000837, 6.072845)",
+            "queue": 0,
+            "velocity": "(-0.297992, 0.0, 0.346319)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000697, -0.015952, -0.005609)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.000666, -0.015235, -0.005357)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(-9.940291, 0.000843, 5.235573)",
+            "next_distance": 1.07172703742981,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.72137308120728,
+                "id": 0
+              },
+              {
+                "distance": 1.83844900131226,
+                "id": 2
+              },
+              {
+                "distance": 2.16610145568848,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07172703742981,
+            "position": "(-11.01132, 0.000843, 5.274333)",
+            "queue": 0,
+            "velocity": "(-0.043707, 0.0, -0.351599)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015918, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(-9.940291, 0.000843, 5.235573)",
+            "next_distance": 1.07284808158875,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.80204224586487,
+                "id": 0
+              },
+              {
+                "distance": 1.83844900131226,
+                "id": 1
+              },
+              {
+                "distance": 2.00781202316284,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07284808158875,
+            "position": "(-9.470878, 0.000837, 4.270869)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.002032, -0.015959, 0.000818)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.001935, -0.015195, 0.000779)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.001075, -0.015195, -0.000648)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.235573)",
+            "next_distance": 1.32685387134552,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 0.446576178073883,
+                "id": 0
+              },
+              {
+                "distance": 2.16610145568848,
+                "id": 1
+              },
+              {
+                "distance": 2.00781202316284,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.32685387134552,
+            "position": "(-9.07168, 0.000837, 6.238596)",
+            "queue": 0,
+            "velocity": "(0.070775, 0.0, -0.04264)",
+            "waypoint_blocker": ""
+          }
+        ],
+        "player": "(-9.940291, 0.000843, 5.235573)",
+        "stage": "home interior after30s"
+      },
+      "before": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.012786, -0.015877, 0.000152)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.012212, -0.015164, 0.000146)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(-4.554516, 0.000843, 7.747831)",
+            "next_distance": 0.392169505357742,
+            "next_points": "[(-4.554516, 0.000843, 7.747831), (-4.944516, 0.000837, 7.747831), (-5.334516, 0.000835, 7.747831), (-5.724517, 0.000837, 7.747831), (-6.114517, 0.000843, 7.747831)]",
+            "others": [
+              {
+                "distance": 0.489683538675308,
+                "id": 1
+              },
+              {
+                "distance": 0.481869906187057,
+                "id": 2
+              },
+              {
+                "distance": 1.01749742031097,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 6.2986011505127,
+            "position": "(-4.162374, 0.000842, 7.74317)",
+            "queue": 20,
+            "velocity": "(-0.805317, 0.0, 0.009605)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.023358, -0.015851, 0.000062)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.022308, -0.015139, 0.000059)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(-5.334516, 0.000835, 7.747831)",
+            "next_distance": 0.682469606399536,
+            "next_points": "[(-5.334516, 0.000835, 7.747831), (-5.724517, 0.000837, 7.747831), (-6.114517, 0.000843, 7.747831), (-6.504517, 0.00083, 7.747831), (-6.894518, 0.000843, 7.747831)]",
+            "others": [
+              {
+                "distance": 0.489683538675308,
+                "id": 0
+              },
+              {
+                "distance": 0.971526920795441,
+                "id": 2
+              },
+              {
+                "distance": 1.50701129436493,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 5.85392427444458,
+            "position": "(-4.652049, 0.000842, 7.746135)",
+            "queue": 18,
+            "velocity": "(-1.473554, 0.0, 0.003895)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.015886, -0.015867, 0.000483)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.015172, -0.015154, 0.000461)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(-4.164515, 0.000843, 7.747831)",
+            "next_distance": 0.484129548072815,
+            "next_points": "[(-4.164515, 0.000843, 7.747831), (-4.554516, 0.000843, 7.747831), (-4.944516, 0.000837, 7.747831), (-5.334516, 0.000835, 7.747831), (-5.724517, 0.000837, 7.747831)]",
+            "others": [
+              {
+                "distance": 0.481869906187057,
+                "id": 0
+              },
+              {
+                "distance": 0.971526920795441,
+                "id": 1
+              },
+              {
+                "distance": 0.535763800144196,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 6.73954153060913,
+            "position": "(-3.680609, 0.000842, 7.73313)",
+            "queue": 21,
+            "velocity": "(-1.001185, 0.0, 0.030417)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.02063, -0.015855, 0.001424)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.019703, -0.015143, 0.00136)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-3.774514, 0.000843, 7.747831)",
+            "next_distance": 0.630396008491516,
+            "next_points": "[(-3.774514, 0.000843, 7.747831), (-4.164515, 0.000843, 7.747831), (-4.554516, 0.000843, 7.747831), (-4.944516, 0.000837, 7.747831), (-5.334516, 0.000835, 7.747831)]",
+            "others": [
+              {
+                "distance": 1.01749742031097,
+                "id": 0
+              },
+              {
+                "distance": 1.50701129436493,
+                "id": 1
+              },
+              {
+                "distance": 0.535763800144196,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 7.22930335998535,
+            "position": "(-3.145615, 0.000842, 7.704417)",
+            "queue": 22,
+            "velocity": "(-1.301171, 0.0, 0.089822)",
+            "waypoint_blocker": ""
+          }
+        ],
+        "player": "(-9.940291, 0.000843, 5.235573)",
+        "stage": "home interior before rest"
+      }
+    },
+    {
+      "after": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.016331, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(4.906526, -0.000017, -6.43258)",
+            "next_distance": 0.98484867811203,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.80368995666504,
+                "id": 1
+              },
+              {
+                "distance": 1.03539633750916,
+                "id": 2
+              },
+              {
+                "distance": 18.0468902587891,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 0.98484867811203,
+            "position": "(3.931898, 0.000419, -6.291061)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.006642, -0.015946, 0.002784)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.006344, -0.01523, 0.002659)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(4.906526, -0.000017, -6.43258)",
+            "next_distance": 1.07276499271393,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.80368995666504,
+                "id": 0
+              },
+              {
+                "distance": 0.808620631694794,
+                "id": 2
+              },
+              {
+                "distance": 19.8429069519043,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07276499271393,
+            "position": "(5.345404, 0.000843, -7.411461)",
+            "queue": 0,
+            "velocity": "(0.416524, 0.0, 0.174565)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.020355, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(4.906526, -0.000017, -6.43258)",
+            "next_distance": 0.704602897167206,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.03539633750916,
+                "id": 0
+              },
+              {
+                "distance": 0.808620631694794,
+                "id": 1
+              },
+              {
+                "distance": 19.0784969329834,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 0.704602897167206,
+            "position": "(4.611321, 0.000102, -7.072361)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015962, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.972239)",
+            "next_distance": 0.916592657566071,
+            "next_points": "[(-9.940291, 0.000843, 5.972239), (-9.940291, 0.000842, 6.36224), (-9.940291, 0.00083, 6.752242), (-9.940291, 0.000843, 7.142242), (-9.940291, 0.000835, 7.532241)]",
+            "others": [
+              {
+                "distance": 18.0468902587891,
+                "id": 0
+              },
+              {
+                "distance": 19.8429069519043,
+                "id": 1
+              },
+              {
+                "distance": 19.0784969329834,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 18.8555774688721,
+            "position": "(-9.061645, 0.000843, 6.233241)",
+            "queue": 73,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ],
+        "player": "(4.906526, -0.000017, -6.43258)",
+        "stage": "bridge crossing after30s"
+      },
+      "before": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.010217, -0.015935, -0.000262)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.009758, -0.015219, -0.00025)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(-1.118278, 0.000843, 4.457532)",
+            "next_distance": 0.30998569726944,
+            "next_points": "[(-1.118278, 0.000843, 4.457532), (-0.728278, 0.000842, 4.457532), (-0.338278, 0.000843, 4.457532), (-0.060329, 0.000842, 4.179582), (-0.060329, 0.000842, 3.789581)]",
+            "others": [
+              {
+                "distance": 0.740237414836884,
+                "id": 1
+              },
+              {
+                "distance": 1.23669600486755,
+                "id": 2
+              },
+              {
+                "distance": 7.83549928665161,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 12.605393409729,
+            "position": "(-1.428162, 0.000843, 4.465478)",
+            "queue": 43,
+            "velocity": "(0.641139, 0.0, -0.016441)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.021634, -0.015855, -0.001253)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.020662, -0.015143, -0.001197)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(-1.508278, 0.000842, 4.457532)",
+            "next_distance": 0.660608112812042,
+            "next_points": "[(-1.508278, 0.000842, 4.457532), (-1.118278, 0.000843, 4.457532), (-0.728278, 0.000842, 4.457532), (-0.338278, 0.000843, 4.457532), (-0.060329, 0.000842, 4.179582)]",
+            "others": [
+              {
+                "distance": 0.740237414836884,
+                "id": 0
+              },
+              {
+                "distance": 0.498182386159897,
+                "id": 2
+              },
+              {
+                "distance": 7.10945320129395,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 13.0182037353516,
+            "position": "(-2.167781, 0.000842, 4.495723)",
+            "queue": 44,
+            "velocity": "(1.364489, 0.0, -0.079017)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.012264, -0.015926, -0.003687)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.011713, -0.01521, -0.003521)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(-2.288278, 0.000842, 4.457532)",
+            "next_distance": 0.388658672571182,
+            "next_points": "[(-2.288278, 0.000842, 4.457532), (-1.898278, 0.00083, 4.457532), (-1.508278, 0.000842, 4.457532), (-1.118278, 0.000843, 4.457532), (-0.728278, 0.000842, 4.457532)]",
+            "others": [
+              {
+                "distance": 1.23669600486755,
+                "id": 0
+              },
+              {
+                "distance": 0.498182386159897,
+                "id": 1
+              },
+              {
+                "distance": 6.61386203765869,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 13.3530397415161,
+            "position": "(-2.660482, 0.000843, 4.569424)",
+            "queue": 46,
+            "velocity": "(0.770077, 0.0, -0.231501)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015962, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.972239)",
+            "next_distance": 0.916592657566071,
+            "next_points": "[(-9.940291, 0.000843, 5.972239), (-9.940291, 0.000842, 6.36224), (-9.940291, 0.00083, 6.752242), (-9.940291, 0.000843, 7.142242), (-9.940291, 0.000835, 7.532241)]",
+            "others": [
+              {
+                "distance": 7.83549928665161,
+                "id": 0
+              },
+              {
+                "distance": 7.10945320129395,
+                "id": 1
+              },
+              {
+                "distance": 6.61386203765869,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 18.8555774688721,
+            "position": "(-9.061645, 0.000843, 6.233241)",
+            "queue": 73,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ],
+        "player": "(4.906526, -0.000017, -6.43258)",
+        "stage": "bridge crossing before rest"
+      }
+    },
+    {
+      "after": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.00413, -0.015892, -0.008013)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.003944, -0.015178, -0.007653)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(11.92923, 0.000842, -11.59195)",
+            "next_distance": 1.06780076026917,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.86798989772797,
+                "id": 1
+              },
+              {
+                "distance": 1.84040915966034,
+                "id": 2
+              },
+              {
+                "distance": 27.1401634216309,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.06780076026917,
+            "position": "(10.97562, 0.000843, -12.0724)",
+            "queue": 0,
+            "velocity": "(0.259857, 0.0, -0.504217)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.004021, -0.015898, 0.006006)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.00384, -0.015184, 0.005736)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(11.92923, 0.000842, -11.59195)",
+            "next_distance": 1.06821000576019,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.86798989772797,
+                "id": 0
+              },
+              {
+                "distance": 1.84924376010895,
+                "id": 2
+              },
+              {
+                "distance": 28.5936260223389,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.06821000576019,
+            "position": "(12.84214, 0.000843, -12.14664)",
+            "queue": 0,
+            "velocity": "(0.25293, 0.0, 0.377777)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015914, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(11.92923, 0.000842, -11.59195)",
+            "next_distance": 1.07297337055206,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.84040915966034,
+                "id": 0
+              },
+              {
+                "distance": 1.84924376010895,
+                "id": 1
+              },
+              {
+                "distance": 26.883207321167,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07297337055206,
+            "position": "(11.96338, 0.000843, -10.51952)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015962, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.972239)",
+            "next_distance": 0.916592657566071,
+            "next_points": "[(-9.940291, 0.000843, 5.972239), (-9.940291, 0.000842, 6.36224), (-9.940291, 0.00083, 6.752242), (-9.940291, 0.000843, 7.142242), (-9.940291, 0.000835, 7.532241)]",
+            "others": [
+              {
+                "distance": 27.1401634216309,
+                "id": 0
+              },
+              {
+                "distance": 28.5936260223389,
+                "id": 1
+              },
+              {
+                "distance": 26.883207321167,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 27.5382328033447,
+            "position": "(-9.061645, 0.000843, 6.233241)",
+            "queue": 102,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ],
+        "player": "(11.92923, 0.000842, -11.59195)",
+        "stage": "greenhouse interior after30s"
+      },
+      "before": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.007958, -0.01237, -0.000246)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.007764, -0.012068, -0.00024)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(7.967951, 0.000805, -7.934003)",
+            "next_distance": 0.311095058917999,
+            "next_points": "[(7.967951, 0.000805, -7.934003), (8.35795, 0.000833, -7.934003), (8.747952, 0.000824, -7.934003), (9.13795, 0.000835, -7.934003), (9.527949, 0.000843, -7.934003)]",
+            "others": [
+              {
+                "distance": 1.05857467651367,
+                "id": 1
+              },
+              {
+                "distance": 0.557247638702393,
+                "id": 2
+              },
+              {
+                "distance": 21.907808303833,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 5.6305251121521,
+            "position": "(7.657004, 0.000838, -7.924404)",
+            "queue": 20,
+            "velocity": "(0.643338, 0.0, -0.019861)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.013872, -0.015873, -0.000045)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.013249, -0.01516, -0.000043)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(9.13795, 0.000835, -7.934003)",
+            "next_distance": 0.422405600547791,
+            "next_points": "[(9.13795, 0.000835, -7.934003), (9.527949, 0.000843, -7.934003), (9.91795, 0.000843, -7.934003), (10.30795, 0.000837, -7.934003), (10.69795, 0.00083, -7.934003)]",
+            "others": [
+              {
+                "distance": 1.05857467651367,
+                "id": 0
+              },
+              {
+                "distance": 0.501341223716736,
+                "id": 2
+              },
+              {
+                "distance": 22.7310409545898,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 4.87015676498413,
+            "position": "(8.715547, 0.000842, -7.932624)",
+            "queue": 17,
+            "velocity": "(0.873938, 0.0, -0.002852)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.017572, -0.015912, -0.000083)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.016782, -0.015197, -0.00008)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(8.747952, 0.000824, -7.934003)",
+            "next_distance": 0.533750832080841,
+            "next_points": "[(8.747952, 0.000824, -7.934003), (9.13795, 0.000835, -7.934003), (9.527949, 0.000843, -7.934003), (9.91795, 0.000843, -7.934003), (10.30795, 0.000837, -7.934003)]",
+            "others": [
+              {
+                "distance": 0.557247638702393,
+                "id": 0
+              },
+              {
+                "distance": 0.501341223716736,
+                "id": 1
+              },
+              {
+                "distance": 22.3404140472412,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 5.21541023254395,
+            "position": "(8.214207, 0.000843, -7.931471)",
+            "queue": 18,
+            "velocity": "(1.1043, 0.0, -0.005239)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015962, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.972239)",
+            "next_distance": 0.916592657566071,
+            "next_points": "[(-9.940291, 0.000843, 5.972239), (-9.940291, 0.000842, 6.36224), (-9.940291, 0.00083, 6.752242), (-9.940291, 0.000843, 7.142242), (-9.940291, 0.000835, 7.532241)]",
+            "others": [
+              {
+                "distance": 21.907808303833,
+                "id": 0
+              },
+              {
+                "distance": 22.7310409545898,
+                "id": 1
+              },
+              {
+                "distance": 22.3404140472412,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 27.5382328033447,
+            "position": "(-9.061645, 0.000843, 6.233241)",
+            "queue": 102,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ],
+        "player": "(11.92923, 0.000842, -11.59195)",
+        "stage": "greenhouse interior before rest"
+      }
+    },
+    {
+      "after": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015967, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(0.109229, 0.000836, 4.30139)",
+            "next_distance": 1.072669506073,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.80588936805725,
+                "id": 1
+              },
+              {
+                "distance": 1.82444071769714,
+                "id": 2
+              },
+              {
+                "distance": 10.2467241287231,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.072669506073,
+            "position": "(0.811106, 0.000837, 3.490225)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.008354, -0.015942, 0.004726)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.007979, -0.015225, 0.004514)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(0.109229, 0.000836, 4.30139)",
+            "next_distance": 1.00764608383179,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.80588936805725,
+                "id": 0
+              },
+              {
+                "distance": 1.82921326160431,
+                "id": 2
+              },
+              {
+                "distance": 9.54394149780273,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.00764608383179,
+            "position": "(0.432124, 0.000843, 5.2559)",
+            "queue": 0,
+            "velocity": "(-0.524067, 0.0, 0.296453)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015919, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(0.109229, 0.000836, 4.30139)",
+            "next_distance": 1.07288765907288,
+            "next_points": "[]",
+            "others": [
+              {
+                "distance": 1.82444071769714,
+                "id": 0
+              },
+              {
+                "distance": 1.82921326160431,
+                "id": 1
+              },
+              {
+                "distance": 8.42343711853027,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 1.07288765907288,
+            "position": "(-0.930079, 0.000837, 4.035071)",
+            "queue": 0,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015962, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.972239)",
+            "next_distance": 0.916592657566071,
+            "next_points": "[(-9.940291, 0.000843, 5.972239), (-9.940291, 0.000842, 6.36224), (-9.940291, 0.00083, 6.752242), (-9.940291, 0.000843, 7.142242), (-9.940291, 0.000835, 7.532241)]",
+            "others": [
+              {
+                "distance": 10.2467241287231,
+                "id": 0
+              },
+              {
+                "distance": 9.54394149780273,
+                "id": 1
+              },
+              {
+                "distance": 8.42343711853027,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 9.37213802337646,
+            "position": "(-9.061645, 0.000843, 6.233241)",
+            "queue": 169,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ],
+        "player": "(0.109229, 0.000836, 4.30139)",
+        "stage": "return to plaza after30s"
+      },
+      "before": {
+        "companions": [
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.019407, -0.015864, 0.000003)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.018535, -0.015152, 0.000002)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 0,
+            "next": "(6.089235, 0.000811, -6.531946)",
+            "next_distance": 0.591266632080078,
+            "next_points": "[(6.089235, 0.000811, -6.531946), (5.699234, 0.000791, -6.531946), (5.309234, 0.000815, -6.531946), (4.919234, 0.000822, -6.531946), (4.529233, 0.000843, -6.531946)]",
+            "others": [
+              {
+                "distance": 0.531229972839355,
+                "id": 1
+              },
+              {
+                "distance": 1.38077294826508,
+                "id": 2
+              },
+              {
+                "distance": 20.2673892974854,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 12.6706142425537,
+            "position": "(6.680501, 0.000842, -6.532023)",
+            "queue": 43,
+            "velocity": "(-1.22331, 0.0, 0.000159)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.014976, -0.016084, 0.000001)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.014216, -0.015267, 0.000001)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 1,
+            "next": "(5.699234, 0.000791, -6.531946)",
+            "next_distance": 0.450037479400635,
+            "next_points": "[(5.699234, 0.000791, -6.531946), (5.309234, 0.000815, -6.531946), (4.919234, 0.000822, -6.531946), (4.529233, 0.000843, -6.531946), (4.139234, 0.000843, -6.531946)]",
+            "others": [
+              {
+                "distance": 0.531229972839355,
+                "id": 0
+              },
+              {
+                "distance": 0.849560379981995,
+                "id": 2
+              },
+              {
+                "distance": 19.8575592041016,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 12.4033813476562,
+            "position": "(6.149271, 0.000825, -6.531973)",
+            "queue": 42,
+            "velocity": "(-0.931112, 0.0, 0.000057)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(-0.006099, -0.007747, 0.0)"
+              },
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, 0.0, 0.0)"
+              }
+            ],
+            "id": 2,
+            "next": "(4.919234, 0.000822, -6.531946)",
+            "next_distance": 0.38062396645546,
+            "next_points": "[(4.919234, 0.000822, -6.531946), (4.529233, 0.000843, -6.531946), (4.139234, 0.000843, -6.531946), (3.749233, 0.000843, -6.531946), (3.359232, 0.000842, -6.531946)]",
+            "others": [
+              {
+                "distance": 1.38077294826508,
+                "id": 0
+              },
+              {
+                "distance": 0.849560379981995,
+                "id": 1
+              },
+              {
+                "distance": 19.2145805358887,
+                "id": 3
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 12.0126171112061,
+            "position": "(5.299757, -0.007956, -6.531953)",
+            "queue": 40,
+            "velocity": "(-0.787288, 0.0, 0.000015)",
+            "waypoint_blocker": ""
+          },
+          {
+            "contacts": [
+              {
+                "collider": "WalkingGround",
+                "normal": "(0.0, 1.0, 0.0)",
+                "remainder": "(0.0, -0.015962, 0.0)"
+              }
+            ],
+            "id": 3,
+            "next": "(-9.940291, 0.000843, 5.972239)",
+            "next_distance": 0.916592657566071,
+            "next_points": "[(-9.940291, 0.000843, 5.972239), (-9.940291, 0.000842, 6.36224), (-9.940291, 0.00083, 6.752242), (-9.940291, 0.000843, 7.142242), (-9.940291, 0.000835, 7.532241)]",
+            "others": [
+              {
+                "distance": 20.2673892974854,
+                "id": 0
+              },
+              {
+                "distance": 19.8575592041016,
+                "id": 1
+              },
+              {
+                "distance": 19.2145805358887,
+                "id": 2
+              }
+            ],
+            "overlap_colliders": [],
+            "player_distance": 9.37213802337646,
+            "position": "(-9.061645, 0.000843, 6.233241)",
+            "queue": 169,
+            "velocity": "(0.0, 0.0, 0.0)",
+            "waypoint_blocker": ""
+          }
+        ],
+        "player": "(0.109229, 0.000836, 4.30139)",
+        "stage": "return to plaza before rest"
+      }
+    }
+  ]
+}

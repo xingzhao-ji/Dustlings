@@ -5,7 +5,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {spawn} from 'node:child_process';
 const [scenario='opening',label='current',...extra]=process.argv.slice(2);
-if(!/^[a-z0-9_-]+$/.test(label)||!['opening','overview','ritual','profile'].includes(scenario))throw Error('Invalid capture scenario/label');
+if(!/^[a-z0-9_-]+$/.test(label)||!['opening','overview','ritual','profile','helper','full'].includes(scenario))throw Error('Invalid capture scenario/label');
 const requestedWindow=process.env.DUSTLINGS_CAPTURE_WINDOW;
 if(requestedWindow&&!/^\d{3,4}x\d{3,4}$/.test(requestedWindow))throw Error('Invalid capture window');
 const output=path.resolve('evidence/3d',label),snapshot=path.resolve('builds/3d/capture-snapshots',label);

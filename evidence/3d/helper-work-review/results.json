@@ -1,0 +1,29 @@
+{
+  "case": "helper",
+  "cleaned": 7.35986611184085,
+  "completed": false,
+  "draw_calls": 51.0,
+  "elapsed": 44.2666666666654,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "first_helper_at": 10.2500000000001,
+  "helpers": 1,
+  "input_kind": "Generated native brush input creates one helper, followed by20seconds with no player brushing and a real visible crew direction. No progress fixture or accelerated simulation.",
+  "kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.",
+  "motes": 7,
+  "objects": 240.0,
+  "passive_assistance": 0.269126329591142,
+  "passive_started": 0.0,
+  "restoration": 0.0,
+  "status": "recorded",
+  "viewport": "(1440.0, 900.0)"
+}

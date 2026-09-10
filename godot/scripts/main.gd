@@ -36,6 +36,8 @@ var last_pointer = Vector2.ZERO
 var keyboard_pointer = Vector2.ZERO
 var keyboard_aim = false
 var brush_keyboard_held = false
+var next_dust_index = -1
+var pending_dust_aim = false
 var hud: CanvasLayer
 var ordinary_controls: Array = []
 var top: HBoxContainer
@@ -73,6 +75,12 @@ var qa_driving_pointer = false
 var qa_profile_started = 0
 var qa_profile_frames: Array = []
 var qa_profile_previous = 0
+var qa_next_stroke = 3.0
+var qa_release_stroke = 0.0
+var qa_next_order = 20.0
+var qa_action_at = 0.0
+var qa_upgrade = ""
+var qa_progress_mark = 0.25
 
 func _ready():
 	get_tree().auto_accept_quit = false
@@ -198,7 +206,7 @@ func _physics_process(delta):
 		tap_remaining = maxf(0, tap_remaining - delta)
 		brushing = tap_remaining > 0
 	var previous_brushed = sim.stats.brushed
-	sim.tick(delta, (brushing or brush_keyboard_held) and cursor_valid and mode == "brush", Vector2(cursor_world.x, cursor_world.z))
+	sim.tick(delta, (brushing or brush_keyboard_held) and cursor_valid and not pending_dust_aim and mode == "brush", Vector2(cursor_world.x, cursor_world.z))
 	dust_feedback.tick(delta, sim.elapsed, sim.stats.brushed - previous_brushed, cursor_world, gentle_motion)
 	_handle_events()
 	save_timer += delta
@@ -208,13 +216,20 @@ func _physics_process(delta):
 
 func _process(delta):
 	_place_camera(delta)
+	if pending_dust_aim and not paused and absf(zoom - desired_zoom) < 0.003 and camera_focus.distance_to(camera_target) < 0.03:
+		pending_dust_aim = false
+		if not _find_dust_aim():
+			_stop_input()
+			keyboard_aim = false
+			cursor_valid = false
+			_notice("Your helpers can reach the last dust." if not sim.crew.is_empty() else "Brush beside the fountain to reach the dust.", 6)
 	if not paused:
 		environment_node.tick_environment(delta, sim.elapsed)
 		_sync_world(delta)
 		notice_timer = maxf(0, notice_timer - delta)
 		frame_times.append(delta * 1000)
 		if frame_times.size() > 14400: frame_times.pop_front()
-		audio.set_activity(sim.ratio(), sim.restoration, (brushing or brush_keyboard_held) and cursor_valid and mode == "brush", cursor_world)
+		audio.set_activity(sim.ratio(), sim.restoration, (brushing or brush_keyboard_held) and cursor_valid and not pending_dust_aim and mode == "brush", cursor_world)
 	ui_timer += delta
 	if ui_timer > 0.12:
 		ui_timer = 0
@@ -236,7 +251,7 @@ func _sync_world(delta: float):
 		node.rotation.y = lerp_angle(node.rotation.y, c.direction, minf(1, delta * 9))
 		node.pose(delta, sim.elapsed + i * 0.73, c.speed, c.work, sim.elapsed - c.born, sim.ritual or sim.completed, gentle_motion)
 	environment_node.set_restoration(sim.restoration)
-	brush_ring.visible = cursor_valid and started and not paused and modal_kind == ""
+	brush_ring.visible = cursor_valid and started and not paused and not pending_dust_aim and modal_kind == ""
 	brush_ring.position = cursor_world + Vector3(0, 0.04, 0)
 	brush_ring.scale = Vector3.ONE * (sim.brush_radius() / 0.88 if mode == "brush" else 0.45)
 	order_ring.visible = sim.assignment != Vector2.INF
@@ -256,9 +271,9 @@ func _sync_world(delta: float):
 func _update_cursor():
 	cursor_valid = false
 	var hovered = get_viewport().gui_get_hovered_control()
-	if is_instance_valid(hovered) and hovered.is_visible_in_tree() and hovered.mouse_filter != Control.MOUSE_FILTER_IGNORE: return
+	if not keyboard_aim and is_instance_valid(hovered) and hovered.is_visible_in_tree() and hovered.mouse_filter != Control.MOUSE_FILTER_IGNORE: return
 	var screen = keyboard_pointer if keyboard_aim else get_viewport().get_mouse_position()
-	if qa_driving_pointer: screen = qa_pointer
+	if qa_driving_pointer and not keyboard_aim: screen = qa_pointer
 	var origin = camera.project_ray_origin(screen)
 	var end = origin + camera.project_ray_normal(screen) * 80
 	var result = get_world_3d().direct_space_state.intersect_ray(PhysicsRayQueryParameters3D.create(origin, end, 1))
@@ -286,8 +301,8 @@ func _unhandled_input(event):
 			camera_target.z = clampf(camera_target.z, -2.2, 2.2)
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_MIDDLE or event.button_index == MOUSE_BUTTON_RIGHT:
+			if event.pressed: _stop_input()
 			dragging_camera = event.pressed
-			brushing = false
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed: _zoom(0.15)
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed: _zoom(-0.15)
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -311,7 +326,7 @@ func _unhandled_input(event):
 				KEY_U: _show_grow()
 				KEY_EQUAL, KEY_PLUS: _zoom(0.15)
 				KEY_MINUS: _zoom(-0.15)
-				KEY_HOME: desired_zoom = 1.0; camera_target = Vector3(0, 0.1, 0.4)
+				KEY_HOME: _frame_courtyard()
 				KEY_N: _next_dust()
 				KEY_ENTER:
 					if mode == "direct": _direct()
@@ -328,6 +343,7 @@ func _input(event):
 	if event is InputEventKey and event.keycode == KEY_SPACE and not event.pressed: brush_keyboard_held = false
 
 func _direct():
+	_update_cursor()
 	if cursor_valid and sim.direct(Vector2(cursor_world.x, cursor_world.z)):
 		_notice("Your crew is on its way.")
 	elif sim.crew.is_empty(): _notice("Brush some dust to meet your first helper.")
@@ -335,13 +351,52 @@ func _direct():
 	else: _notice("Choose an open patch of paving."); audio.cue("blocked", cursor_world)
 
 func _next_dust():
+	_stop_input()
 	var focus = get_viewport().gui_get_focus_owner()
 	if focus: focus.release_focus()
-	for d in sim.dust:
-		if d.amount > 0.01:
-			keyboard_pointer = camera.unproject_position(Vector3(d.p.x, 0, d.p.y))
+	if _find_dust_aim(): return
+	keyboard_aim = false
+	cursor_valid = false
+	if sim.ratio() >= 0.99999:
+		_notice("Every speck is clean.")
+		return
+	_frame_courtyard(true)
+	pending_dust_aim = true
+	_notice("Finding the remaining dust…")
+
+func _find_dust_aim() -> bool:
+	var screen_size = get_viewport().get_visible_rect().size
+	var safe_screen = Rect2(Vector2(18, 85), screen_size - Vector2(36, 210))
+	for step in sim.dust.size():
+		var index = (next_dust_index + 1 + step) % sim.dust.size()
+		var d = sim.dust[index]
+		if d.amount <= 0.01: continue
+		# A visible neighbouring brush centre can reach under the fountain's
+		# silhouette without aiming through its actual collision geometry.
+		for candidate in 17:
+			var point: Vector2 = d.p
+			if candidate > 0:
+				var angle = (candidate - 1) % 8 * TAU / 8.0
+				var radius = 0.35 if candidate <= 8 else minf(0.70, sim.brush_radius() * 0.80)
+				point += Vector2(cos(angle), sin(angle)) * radius
+			if not sim.walkable(point): continue
+			var world = Vector3(point.x, 0, point.y)
+			var screen = camera.unproject_position(world)
+			if camera.is_position_behind(world) or not safe_screen.has_point(screen): continue
+			var origin = camera.project_ray_origin(screen)
+			var hit = get_world_3d().direct_space_state.intersect_ray(PhysicsRayQueryParameters3D.create(origin, origin + camera.project_ray_normal(screen) * 80, 1))
+			if hit.is_empty() or not hit.collider.get_meta("cleanable", false) or hit.position.distance_to(world) > 0.08: continue
+			keyboard_pointer = screen
 			keyboard_aim = true
-			return
+			next_dust_index = index
+			_notice("Arrow keys aim · Enter sends helpers" if mode == "direct" else "Arrow keys aim · hold Space to sweep", 4)
+			return true
+	return false
+
+func _frame_courtyard(wide = false):
+	_stop_input()
+	desired_zoom = 0.85 if wide else 1.0
+	camera_target = Vector3(0, 0.1, 0.4)
 
 func _zoom(change: float):
 	desired_zoom = clampf(desired_zoom + change, 0.85, 1.8)
@@ -353,6 +408,7 @@ func _stop_input():
 	brush_keyboard_held = false
 	tap_remaining = 0
 	dragging_camera = false
+	pending_dust_aim = false
 
 func _set_mode(value: String):
 	_stop_input()
@@ -492,7 +548,7 @@ func _build_ui():
 	for button in [brush_button, direct_button, grow_button]: dock.add_child(button)
 	dock.add_child(_button("−", func(): _zoom(-0.15), 46))
 	dock.add_child(_button("+", func(): _zoom(0.15), 46))
-	dock.add_child(_button("Frame", func(): desired_zoom = 1.0; camera_target = Vector3(0, 0.1, 0.4), 82))
+	dock.add_child(_button("Frame", _frame_courtyard, 82))
 	tip = _label("Hold and sweep over a dusty patch.", 17)
 	tip.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	tip.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
@@ -861,6 +917,8 @@ func _qa_finish():
 	if not qa_profile.is_empty() and started and instance_primary: _save_progress()
 	qa_report["status"] = "failed" if qa_case == "opening" and (not sim.upgrades.brush or sim.assignment == Vector2.INF or sim.first_helper_at < 0 or sim.first_helper_at > 30) else "recorded"
 	if qa_case == "ritual" and (not sim.completed or sim.restoration < 1 or not qa_report.get("recap_closed", false) or not qa_report.get("celebration_unpaused", false)): qa_report.status = "failed"
+	if qa_case == "helper" and (sim.crew.size() != 1 or qa_report.get("passive_assistance", 0.0) < 0.12 or sim.assignment == Vector2.INF): qa_report.status = "failed"
+	if qa_case == "full" and (not sim.completed or not qa_report.get("recap_closed", false)): qa_report.status = "failed"
 	if not qa_profile.is_empty(): qa_report.merge({"isolated_save_path": _save_path(), "saved_payload": _payload(), "instance_primary": instance_primary, "save_problem": save_problem})
 	qa_report.merge({"kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.", "engine": Engine.get_version_info(), "case": qa_case, "helpers": sim.crew.size(), "first_helper_at": sim.first_helper_at, "elapsed": sim.elapsed, "cleaned": sim.cleaned, "motes": sim.motes, "restoration": sim.restoration, "completed": sim.completed, "viewport": str(get_viewport().get_visible_rect().size), "draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME), "objects": Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME)})
 	var file = FileAccess.open(qa_output.path_join("results.json"), FileAccess.WRITE)
@@ -895,10 +953,13 @@ func _qa_click(text: String) -> bool:
 
 func _qa_key(code: Key):
 	for pressed in [true, false]:
-		var key = InputEventKey.new()
-		key.keycode = code
-		key.pressed = pressed
-		get_viewport().push_input(key, true)
+		_qa_hold_key(code, pressed)
+
+func _qa_hold_key(code: Key, pressed: bool):
+	var key = InputEventKey.new()
+	key.keycode = code
+	key.pressed = pressed
+	get_viewport().push_input(key, true)
 
 func _qa_driver(delta):
 	if qa_capturing or exiting: return
@@ -926,6 +987,107 @@ func _qa_driver(delta):
 				if button.is_visible_in_tree() and button.text in ["Bring it to life", "Return to the courtyard"]: start_disabled = button.disabled
 			_start()
 			qa_report.second_launch_blocked = not instance_primary and start_disabled and not started
+			_qa_finish()
+	elif qa_case == "helper":
+		if qa_stage == 0 and qa_time >= 1:
+			qa_stage = 1
+			_qa_click("Bring it to life")
+		elif qa_stage == 1 and qa_time >= 3:
+			qa_stage = 2
+			_qa_mouse(camera.unproject_position(Vector3(-5, 0, 2)), true)
+		elif qa_stage == 2 and sim.crew.size() == 1:
+			_qa_mouse(qa_pointer, false)
+			qa_stage = 3
+			qa_action_at = qa_time
+			qa_report.passive_started = sim.stats.assisted
+			_qa_capture("first-helper")
+		elif qa_stage == 3 and qa_time >= qa_action_at + 12:
+			qa_stage = 4
+			_qa_capture("helping")
+		elif qa_stage == 4 and qa_time >= qa_action_at + 20:
+			qa_stage = 5
+			qa_report.passive_assistance = sim.stats.assisted - qa_report.passive_started
+			_qa_click("Direct  D")
+			_qa_mouse(camera.unproject_position(Vector3(4, 0, 2)), true)
+			_qa_mouse(qa_pointer, false)
+		elif qa_stage == 5 and qa_time >= qa_action_at + 25:
+			qa_stage = 6
+			_qa_capture("travelling")
+		elif qa_stage == 6 and qa_time >= qa_action_at + 34:
+			qa_report.input_kind = "Generated native brush input creates one helper, followed by20seconds with no player brushing and a real visible crew direction. No progress fixture or accelerated simulation."
+			_qa_finish()
+		elif qa_time > 90: _qa_finish()
+	elif qa_case == "full":
+		if qa_time > 1000:
+			qa_report.failure = "Automated integrated play did not finish in the bounded1000seconds."
+			_qa_finish()
+		elif qa_stage == 0 and qa_time >= 1:
+			qa_stage = 1
+			_qa_click("Bring it to life")
+			_qa_capture("dirty")
+		elif qa_stage == 1:
+			if sim.completed:
+				qa_stage = 10
+				qa_action_at = qa_time
+				qa_report.completed_at = sim.elapsed
+				qa_report.celebration_unpaused = not paused and not audio.is_paused
+				_qa_capture("completed")
+				return
+			if sim.crew.size() > 0 and not qa_report.has("first_view"):
+				qa_report.first_view = sim.crew.size()
+				_qa_capture("first-helper")
+				return
+			if sim.ratio() >= qa_progress_mark:
+				_qa_capture("progress-%d" % roundi(qa_progress_mark * 100))
+				qa_progress_mark += 0.25
+				return
+			if qa_release_stroke > 0 and qa_time >= qa_release_stroke:
+				_qa_hold_key(KEY_SPACE, false)
+				qa_release_stroke = 0
+			if sim.ritual: return
+			if qa_time < qa_next_stroke: return
+			for id in ["brush", "teamwork", "bloom"]:
+				if not sim.upgrades[id] and sim.motes >= Sim.COSTS[id]:
+					_qa_hold_key(KEY_SPACE, false)
+					_qa_mouse(grow_button.get_global_rect().get_center(), true)
+					_qa_mouse(qa_pointer, false)
+					qa_upgrade = id
+					qa_stage = 2
+					qa_action_at = qa_time
+					return
+			if restore_button.visible and not sim.completed:
+				_qa_click("Ring the fountain bell")
+				qa_report.chorus_started_at = sim.elapsed
+				qa_next_stroke = qa_time + 2
+				return
+			if sim.crew.size() >= 4 and qa_time >= qa_next_order:
+				_qa_click("Direct  D")
+				_qa_key(KEY_N)
+				_qa_key(KEY_ENTER)
+				_qa_click("Brush  B")
+				qa_next_order = qa_time + 30
+			_qa_key(KEY_N)
+			_qa_hold_key(KEY_SPACE, true)
+			qa_release_stroke = qa_time + 2
+			qa_next_stroke = qa_time + 5
+		elif qa_stage == 2 and qa_time >= qa_action_at + 1.5:
+			var button = upgrade_buttons.get(qa_upgrade)
+			_qa_mouse(button.get_global_rect().get_center(), true)
+			_qa_mouse(qa_pointer, false)
+			qa_stage = 3
+		elif qa_stage == 3 and qa_time >= qa_action_at + 3:
+			await _qa_capture("discovery-" + qa_upgrade)
+			_qa_click("Back to the courtyard")
+			qa_stage = 1
+			qa_next_stroke = qa_time + 1
+		elif qa_stage == 10 and qa_time >= qa_action_at + 7:
+			_qa_click("Courtyard restored")
+			qa_stage = 11
+		elif qa_stage == 11 and qa_time >= qa_action_at + 10:
+			qa_report.recap_closed = _qa_click("Enjoy the courtyard") and not paused
+			qa_stage = 12
+		elif qa_stage == 12 and qa_time >= qa_action_at + 13:
+			qa_report.input_kind = "Whole integrated play through generated native controls:2s brushing/5s cycle, scripted brush→teamwork→chorus purchases, periodic visible crew orders. No progress injection or accelerated simulation. Script choices are not player comprehension or human pacing."
 			_qa_finish()
 	elif qa_case == "opening":
 		if qa_stage == 0 and qa_time >= 1:

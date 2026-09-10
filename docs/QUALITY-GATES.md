@@ -6,7 +6,7 @@ Use the existing [PLAYTEST.md](PLAYTEST.md) protocol for recruitment, observatio
 
 ## Review candidate
 
-The version 0.2 candidate is frozen below. Attach feedback only to this exact artifact. Automated candidate verification passes in the available engines; a full-session endurance check is still running. Neither supplies human acceptance.
+The version 0.2 candidate is frozen below. Attach feedback only to this exact artifact. Automated candidate verification passes in the available engines, including a full normal-speed courtyard session with exact saved-ending recovery. Neither supplies human acceptance.
 
 | Field | Current record |
 | --- | --- |

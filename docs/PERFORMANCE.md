@@ -23,3 +23,9 @@ A sustained50-helper profile must identify the exact standalone artifact, browse
 Artifact `cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea` was sampled for 60 seconds with 50 helpers, normal rendering at DPR2 and audio playing. Installed headless Chrome152.0.7977.83, 1440×900 viewport on the host described above. No other agent browser checks or video recording overlapped this sample; other host background work was not controlled.
 
 The 3,600 retained foreground intervals had mean16.666ms, p95/p99/worst16.8ms, zero over33.4ms, zero at least500ms. [Exact artifact report](../evidence/v0.2/final-build-checks.json). The earlier isolated216.6ms interval remains documented and unexplained. This single desktop sample is not mobile, weak-device, thermal, or human responsiveness validation.
+
+## Full normal-time integration run
+
+The same frozen artifact completed a fresh courtyard in543.27 wall seconds with actual pointer/UI input, approximately40% brushing duty before the chorus and no manual brushing afterward. Save, export, reload and resume preserved the exact ending fields; no game errors. This is a scripted policy, not human pacing. [Full report](../evidence/v0.2/endurance-normal-time-results.json).
+
+The non-isolated, instrumented run collected32,578 foreground intervals: mean16.675ms, p9516.7ms, p9916.8ms, worst216.6ms. It retained three raw values over33.4ms:216.6ms near opening/startup,100ms near the final-cleanup capture, and33.400000000023ms (a floating-point boundary value). There were no intervals at least500ms and no observed long tasks. Capture timing is correlated, not a proven cause; other host work overlapped. Do not merge this result with the separate isolated60-second sample or erase its outliers. Heap samples are descriptive allocation/GC observations and do not establish absence of leaks.

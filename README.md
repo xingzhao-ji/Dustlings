@@ -6,6 +6,8 @@ A little dust. A little life. A playable courtyard prototype for a single-player
 
 **Current milestone: courtyard 0.2, awaiting human validation.** Player experience, presentation quality, and owner acceptance are independent gates; none has passed.
 
+**App targets:** Steam for Windows/Mac and the iPhone/iPad App Store. [Desktop development apps and native checks](docs/DESKTOP-BUILD.md) are available; the [Apple project](docs/APPLE-BUILD.md) compiles directly but full Xcode packaging is blocked by the local toolchain. No store submission or release approval has occurred.
+
 **Review:** [captures, recordings and evidence](evidence/REVIEW.html). [Continuation checkpoint](docs/CONTINUATION.md) explains completed work, limitations and the next task.
 
 Hold and drag to brush. Dust becomes tiny helpers. Choose **Direct crew** (D), then click an open patch; **Brush** (B) returns to sweeping. Spend motes on three discoveries. Clear 75% and learn the chorus to ring the fountain bell. Helpers handle the final specks. Use +/− and the pan button to look closer; touch targets appear 42 CSS pixels above the finger. Escape opens pause/settings. Optional tap-to-sweep reduces holding. Keyboard: focus the courtyard, use arrows to aim, Space to start/stop brushing, N for another dust patch, and Enter to send the crew in Direct mode. Shift + arrows pans.

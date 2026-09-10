@@ -1,17 +1,17 @@
 {
-  "date": "2026-09-10T06:58:32.234Z",
+  "date": "2026-09-10T07:05:09.463Z",
   "kind": "Automated execution of packaged native Electron app on macOS. No human playtest, physical input, or listening claim.",
-  "profile": "evidence/platforms/profiles/native-GCVeY8",
+  "profile": "evidence/platforms/profiles/native-2Ky8ue",
   "build": {
     "wrapperFiles": {
-      "platforms/desktop/main.cjs": "3b9de67856b923f53d4eab6df808173978021edec1a780d24cbdbf3e8066eac9",
+      "platforms/desktop/main.cjs": "aa0dcc81b3c60a08cf8dbf9e6b4d5ee351f2b45aa7071089d42fa56da0d38cdc",
       "platforms/desktop/package.json": "74eaa1d1f215d5086932f9d8c9699bd2656feb9d050845fe031485921b85ba40",
       "platforms/desktop/package-lock.json": "ce8f0124f8f7e4387b28af9be9cfdd3967be872a44374b29fd101552a8c71a9e",
       "tools/build-desktop.mjs": "b782e3ea74e3cc43e29f9d1495cb9f253c6865770a0d80b5cb03e7971a2d49b8"
     },
-    "builtAt": "2026-09-10T06:58:31.997Z",
+    "builtAt": "2026-09-10T07:05:09.223Z",
     "host": "darwin arm64",
-    "wrapperRevision": "22ef6d159db85d6b9a05a30003df0fba4f1b8dfa",
+    "wrapperRevision": "b14cf705301564a75415c0ae5337710183ae4296",
     "wrapperWorkingTree": "May contain current uncommitted packaging changes; native source checkpoint recorded separately.",
     "game": {
       "version": "0.2.0",
@@ -41,52 +41,20 @@
     "Normal-speed mouse brushing formed first helper; before/after native renderer captures and 12-second game/audio recording saved.",
     "Injected native suspend event pauses simulation and WebAudio; physical lid sleep remains untested.",
     "Native quit and process relaunch preserved normal-play progress using the same persistent profile.",
-    "Native JSON file import restored 50 helpers; completed 60-second performance sample.",
+    "Native JSON file import restored 50 helpers. Performance not repeated for save-only wrapper correction; see desktop-profile.json.",
     "Native download export produced valid matching JSON (destination supplied by automation; native Save dialog usability untested).",
     "Runtime HTTP request blocked; courtyard is fully bundled and offline.",
     "Normal packaged launch does not expose QA controls."
   ],
   "errors": [],
-  "performance": {
-    "samples": 3600,
-    "meanMs": 8.386388888888888,
-    "p95Ms": 8.400000000001455,
-    "p99Ms": 9.299999999995634,
-    "worstMs": 200,
-    "over33ms": 1,
-    "over500ms": 0,
-    "creatures": 50,
-    "dpr": 2,
-    "canvas": {
-      "width": 860,
-      "height": 649
-    },
-    "audio": {
-      "ready": true,
-      "prepared": true,
-      "paused": false,
-      "contextState": "running",
-      "maxVoices": 48,
-      "peakVoices": 15,
-      "continuousSources": 3,
-      "progress": 1,
-      "mix": {
-        "music": 0.48,
-        "sfx": 0.65,
-        "ambience": 0.38,
-        "muted": false,
-        "reducedMotion": false
-      }
-    },
-    "conditions": "60 seconds, visible native Electron window, no video during sample, 50-helper simulation fixture; other host activity not controlled."
-  },
+  "performance": null,
   "runtime": {
     "electron": "44.3.0",
     "chrome": "152.0.7977.78",
     "os": "26.6.2",
     "arch": "arm64",
     "packaged": true,
-    "userData": "/Users/xingzhaoji/Desktop/Dustlings/evidence/platforms/profiles/native-GCVeY8",
+    "userData": "/Users/xingzhaoji/Desktop/Dustlings/evidence/platforms/profiles/native-2Ky8ue",
     "webPreferences": {
       "sandbox": true,
       "contextIsolation": true,
@@ -95,16 +63,16 @@
     }
   },
   "opening": {
-    "elapsed": 12.653399999994114,
-    "cleaned": 9.031848600000412,
+    "elapsed": 12.645000000006029,
+    "cleaned": 9.04107880000043,
     "crew": 1,
-    "firstHelperAt": 8.895099999994095
+    "firstHelperAt": 8.870000000006003
   },
   "relaunch": {
-    "beforeElapsed": 13.32090000000008,
-    "afterElapsed": 13.44999999999412,
-    "beforeDust": 456.9588063999999,
-    "afterDust": 456.956999,
+    "beforeElapsed": 13.321300000029876,
+    "afterElapsed": 13.449900000035838,
+    "beforeDust": 456.94945299999966,
+    "afterDust": 456.94765259999957,
     "helpers": 1
   },
   "status": "passed"

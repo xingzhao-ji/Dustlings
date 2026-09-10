@@ -12,6 +12,8 @@ const pauseAndSave=`(async()=>{
   const welcome=document.getElementById('welcome');
   if(welcome&&!welcome.open&&!document.querySelector('dialog[open]'))document.getElementById('pause-button').click();
   if(navigator.locks)await navigator.locks.request('dustlings.courtyard.v1',()=>{});
+  const status=document.getElementById('save-status')?.textContent;
+  if(welcome&&!welcome.open&&status!=='Saved on this device')throw new Error(status||'Save status unavailable');
 })()`;
 async function preserve(){
   if(window&&!window.isDestroyed()&&!window.webContents.isDestroyed()){
@@ -27,16 +29,13 @@ async function createWindow(){
   contents.session.webRequest.onBeforeRequest({urls:['http://*/*','https://*/*']},(_details,callback)=>callback({cancel:true}));
   contents.setWindowOpenHandler(()=>({action:'deny'}));
   contents.on('will-navigate',(event,url)=>{if(!url.startsWith(APP_URL))event.preventDefault();});
-  contents.session.on('will-download',(_event,item)=>{
-    item.setSaveDialogOptions({title:'Keep a Dustlings save',defaultPath:path.join(app.getPath('documents'),item.getFilename()),filters:[{name:'Dustlings save',extensions:['json']}]});
-  });
   window.on('close',event=>{
-    if(closing)return;
     event.preventDefault();
+    if(closing)return;
     closing=true;
     preserve().then(()=>{window.destroy();if(quitting||process.platform!=='darwin')app.quit();}).catch(async error=>{
-      closing=false;
       await dialog.showMessageBox(window,{type:'error',title:'Your courtyard is still open',message:'Dustlings could not finish saving before closing.',detail:'Use Pause → Export save to keep a backup, then try closing again. '+error.message,buttons:['Keep playing']});
+      closing=false;
     });
   });
   window.on('closed',()=>{window=null;closing=false;});
@@ -46,7 +45,11 @@ async function createWindow(){
 const primary=app.requestSingleInstanceLock();
 if(!primary)app.quit();
 else app.whenReady().then(async()=>{
-  app.on('second-instance',()=>{if(window){if(window.isMinimized())window.restore();window.show();window.focus();}});
+  app.on('second-instance',()=>{if(window){if(window.isMinimized())window.restore();window.show();window.focus();}else createWindow();});
+  const {session}=require('electron');
+  session.defaultSession.on('will-download',(_event,item)=>{
+    item.setSaveDialogOptions({title:'Keep a Dustlings save',defaultPath:path.join(app.getPath('documents'),item.getFilename()),filters:[{name:'Dustlings save',extensions:['json']}]});
+  });
   protocol.handle('dustlings',request=>{
     const url=new URL(request.url);
     if(url.hostname!=='courtyard'||url.pathname!=='/index.html')return new Response('Not found',{status:404});
@@ -62,5 +65,5 @@ else app.whenReady().then(async()=>{
   await createWindow();
   app.on('activate',()=>{if(!window)createWindow();});
 });
-app.on('before-quit',event=>{if(window&&!window.isDestroyed()&&!closing){event.preventDefault();quitting=true;window.close();}});
+app.on('before-quit',event=>{if(window&&!window.isDestroyed()){event.preventDefault();quitting=true;if(!closing)window.close();}});
 app.on('window-all-closed',()=>{if(process.platform!=='darwin')app.quit();});

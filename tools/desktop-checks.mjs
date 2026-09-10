@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdir,readFile,writeFile,mkdtemp} from 'node:fs/promises';
 import path from 'node:path';
 import {once} from 'node:events';
+import {createServer} from 'node:http';
 const output='evidence/platforms';await mkdir(output,{recursive:true});await mkdir(`${output}/profiles`,{recursive:true});
 const profile=await mkdtemp(path.resolve(`${output}/profiles/native-`));
 const executablePath=path.resolve('builds/native/Dustlings-darwin-arm64/Dustlings.app/Contents/MacOS/Dustlings');
@@ -49,20 +50,23 @@ try{
  await page.waitForFunction(()=>window.__dustlings.state.creatures.length===50);
  await page.locator('#resume-button').click();await page.waitForTimeout(300);
  await page.screenshot({path:`${output}/desktop-50-fixture.png`});
+ if(process.env.DUSTLINGS_SKIP_PROFILE!=='1'){
  await page.evaluate(()=>window.__dustlings.resetPerformance());
  console.log('Native import/relaunch checks passed; profiling 50 helpers for 60 seconds.');
  for(let i=0;i<6;i++)await page.waitForTimeout(10000);
  result.performance=await page.evaluate(()=>window.__dustlings.getPerformance());
- result.performance.conditions='60 seconds, visible native Electron window, no video during sample, 50-helper simulation fixture; other host activity not controlled.';
+ result.performance.conditions='60 seconds observed; game retains only the latest 3,600 frame intervals (about30s on120Hz host). Visible native Electron window, no video during sample, 50-helper simulation fixture; other host activity not controlled.';
  assert.equal(result.performance.creatures,50);
  result.checks.push('Native JSON file import restored 50 helpers; completed 60-second performance sample.');
+ }else result.checks.push('Native JSON file import restored 50 helpers. Performance not repeated for save-only wrapper correction; see desktop-profile.json.');
  // Intercept destination only so automation does not operate a system Save dialog.
- const exportPath=path.resolve(`${output}/desktop-export-save.json`);
+ const exportPath=path.join(profile,'export-save.json');
  await app.evaluate(({BrowserWindow},target)=>{BrowserWindow.getAllWindows()[0].webContents.session.once('will-download',(_event,item)=>item.setSavePath(target));},exportPath);
  await page.locator('#pause-button').click();const beforeExport=await page.evaluate(()=>window.__dustlings.serialise());await page.locator('#export-save').click();
- for(let i=0;i<40;i++){try{const exported=JSON.parse(await readFile(exportPath,'utf8'));assert.deepEqual(exported.dust,beforeExport.dust);assert.deepEqual(exported.upgrades,beforeExport.upgrades);result.checks.push('Native download export produced valid matching JSON (destination supplied by automation; native Save dialog usability untested).');break;}catch(error){if(i===39)throw error;await page.waitForTimeout(100);}}
+ for(let i=0;i<40;i++){try{const exported=JSON.parse(await readFile(exportPath,'utf8'));const {savedAt:_a,...actual}=exported,{savedAt:_b,...expected}=beforeExport;assert.deepEqual(actual,expected);await writeFile(`${output}/desktop-export-save.json`,JSON.stringify(exported,null,2));result.checks.push('Native download export produced valid matching JSON (destination supplied by automation; native Save dialog usability untested).');break;}catch(error){if(i===39)throw error;await page.waitForTimeout(100);}}
  await page.locator('#resume-button').click();
- const external=await page.evaluate(async()=>{try{await fetch('https://example.invalid/');return false;}catch{return true;}});assert.equal(external,true);
+ let requests=0;const server=createServer((_request,response)=>{requests++;response.setHeader('Access-Control-Allow-Origin','*');response.end('reachable');});await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+ try{const url=`http://127.0.0.1:${server.address().port}/probe`;assert.equal(await (await fetch(url)).text(),'reachable');requests=0;const external=await page.evaluate(async url=>{try{await fetch(url);return false;}catch{return true;}},url);assert.equal(external,true);assert.equal(requests,0);}finally{await new Promise(resolve=>server.close(resolve));}
  result.checks.push('Runtime HTTP request blocked; courtyard is fully bundled and offline.');
  await quit();await launch(false);assert.equal(await page.evaluate(()=>typeof window.__dustlings),'undefined');
  result.checks.push('Normal packaged launch does not expose QA controls.');

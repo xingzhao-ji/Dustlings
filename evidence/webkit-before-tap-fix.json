@@ -1,0 +1,336 @@
+{
+  "timestamp": "2026-09-10T06:03:51.028Z",
+  "kind": "Playwright WebKit compatibility; not Safari app, physical iOS, human play, or performance validation",
+  "sourceHashes": {
+    "index.html": "fece434e5f17b3f08a56c3000434303e34b04fdb670a33022f8d02b96ac706f0",
+    "style.css": "eb646aa87295b328aab02893cd7753bc514ea732e263edff8f351f61f5d7df11",
+    "src/main.js": "b87a59c1d24680a8ff4fe5115c5630efabd87905d03b0fc6a2abd5eb3fa6bd50",
+    "src/game.js": "c31dab971d23839fa019b8dd7f3d7c7a7caa5a50dd3ed578c1c327f346829335",
+    "src/storage.js": "27931bc1cd5ca11704a3da8a0dc8ab22199552b263a5a90b6118d89bdf6d32bf",
+    "src/renderer.js": "e9b8862756956895fb9c3002bc4438f97c54d2dc9dbd1bdafa0449707d1c4a65",
+    "src/audio.js": "fa3650b282b8ef8e41a86a65d314c1262d3b0c2ad61d5e76eabdb6888c1fe26f",
+    "src/keyboard.js": "1f1aa3dc6c9aa0eb1fec68ae3754f7a2abf67b914775965e5113402281566000"
+  },
+  "conditions": {
+    "hostPlatform": "darwin",
+    "hostArchitecture": "arm64",
+    "kernel": "25.6.0",
+    "snapshot": "In-memory source snapshot; no shared source files modified",
+    "headless": true,
+    "dpr": 1
+  },
+  "checks": [
+    {
+      "name": "WebKit starts WebAudio from the start gesture",
+      "pass": true
+    },
+    {
+      "name": "Actual keyboard events clean, create helpers, and earn a meaningful upgrade",
+      "pass": true,
+      "crew": 6,
+      "motes": 42,
+      "brushed": 40.74523760368586,
+      "active": false,
+      "timing": "48 seconds explicitly advanced simulation; not human or real-time pacing"
+    },
+    {
+      "name": "Keyboard activation buys the visible brush capability",
+      "pass": true
+    },
+    {
+      "name": "Keyboard can direct the crew",
+      "pass": true
+    },
+    {
+      "name": "Settings pause freezes simulation and suspends WebKit audio",
+      "pass": true,
+      "elapsed": 48.065999999999406,
+      "audio": {
+        "ready": true,
+        "prepared": false,
+        "paused": true,
+        "contextState": "suspended",
+        "maxVoices": 48,
+        "peakVoices": 4,
+        "continuousSources": 3,
+        "progress": 0,
+        "mix": {
+          "music": 0.48,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": false,
+          "reducedMotion": false
+        }
+      }
+    },
+    {
+      "name": "WebKit reload preserves exact dust, upgrades, and assignment",
+      "pass": true
+    },
+    {
+      "name": "WebKit reload preserves volume settings",
+      "pass": true,
+      "value": "27"
+    },
+    {
+      "name": "WebKit audio can resume on the return gesture",
+      "pass": true
+    },
+    {
+      "name": "Desktop document has no horizontal overflow",
+      "pass": true,
+      "viewport": 1440,
+      "document": 1440,
+      "body": 1440,
+      "height": 900
+    },
+    {
+      "name": "390×844 gameplay has no horizontal overflow",
+      "pass": true,
+      "viewport": 390,
+      "document": 390,
+      "body": 390,
+      "height": 844
+    },
+    {
+      "name": "390×844 touch tap maps to the target 42px above the finger",
+      "pass": true,
+      "pointer": {
+        "x": 299.4186046511628,
+        "y": 447.87543699650405,
+        "touch": true,
+        "inside": false,
+        "active": false,
+        "preview": false
+      },
+      "finger": {
+        "x": 80.33333333333331,
+        "y": 517.8770196078432
+      },
+      "mappingError": {
+        "xCssPx": 0.3333333333333144,
+        "yCssPx": 0.8770196078431809
+      },
+      "tolerance": "2 CSS px for WebKit synthetic-touch coordinate quantization; not 2 world units"
+    },
+    {
+      "name": "390×844 tap-to-sweep continues cleaning after finger release",
+      "pass": false,
+      "brushedBefore": 0,
+      "brushedAfter": 0,
+      "delta": 0,
+      "waitMs": 1100,
+      "events": [
+        {
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "clientX": 80,
+          "clientY": 517,
+          "stateActive": true,
+          "tapSetting": true
+        },
+        {
+          "event": "pointerup",
+          "pointerType": "touch",
+          "clientX": 80,
+          "clientY": 517,
+          "stateActive": true,
+          "tapSetting": true
+        },
+        {
+          "event": "lostpointercapture",
+          "pointerType": "touch",
+          "clientX": 0,
+          "clientY": 0,
+          "stateActive": true,
+          "tapSetting": true
+        },
+        {
+          "event": "pointerout",
+          "pointerType": "touch",
+          "clientX": 80,
+          "clientY": 517,
+          "stateActive": true,
+          "tapSetting": true
+        },
+        {
+          "event": "pointerleave",
+          "pointerType": "touch",
+          "clientX": 80,
+          "clientY": 517,
+          "stateActive": false,
+          "tapSetting": true
+        }
+      ]
+    },
+    {
+      "name": "390×844 touch release directs to the offset destination",
+      "pass": true,
+      "assignment": {
+        "x": 650,
+        "y": 428.4955920352637
+      },
+      "destinationError": {
+        "xCssPx": 0,
+        "yCssPx": 0.6210196078430954
+      }
+    },
+    {
+      "name": "390×844 Grow drawer has no horizontal overflow",
+      "pass": true,
+      "viewport": 390,
+      "document": 390,
+      "body": 390,
+      "height": 844
+    },
+    {
+      "name": "390×844 Grow drawer closes",
+      "pass": true
+    },
+    {
+      "name": "390×844 settings has no horizontal overflow",
+      "pass": true,
+      "viewport": 390,
+      "document": 390,
+      "body": 390,
+      "height": 844
+    },
+    {
+      "name": "390×844 resume action remains reachable",
+      "pass": true
+    },
+    {
+      "name": "844×390 gameplay has no horizontal overflow",
+      "pass": true,
+      "viewport": 844,
+      "document": 844,
+      "body": 844,
+      "height": 390
+    },
+    {
+      "name": "844×390 touch tap maps to the target 42px above the finger",
+      "pass": true,
+      "pointer": {
+        "x": 298.91828793774323,
+        "y": 446.73043666234327,
+        "touch": true,
+        "inside": false,
+        "active": false,
+        "preview": false
+      },
+      "finger": {
+        "x": 485.435736677116,
+        "y": 295.94827586206895
+      },
+      "mappingError": {
+        "xCssPx": 0.4357366771159832,
+        "yCssPx": 0.9482758620689538
+      },
+      "tolerance": "2 CSS px for WebKit synthetic-touch coordinate quantization; not 2 world units"
+    },
+    {
+      "name": "844×390 tap-to-sweep continues cleaning after finger release",
+      "pass": false,
+      "brushedBefore": 0,
+      "brushedAfter": 0,
+      "delta": 0,
+      "waitMs": 1100,
+      "events": [
+        {
+          "event": "pointerdown",
+          "pointerType": "touch",
+          "clientX": 485,
+          "clientY": 295,
+          "stateActive": true,
+          "tapSetting": true
+        },
+        {
+          "event": "pointerup",
+          "pointerType": "touch",
+          "clientX": 485,
+          "clientY": 295,
+          "stateActive": true,
+          "tapSetting": true
+        },
+        {
+          "event": "lostpointercapture",
+          "pointerType": "touch",
+          "clientX": 0,
+          "clientY": 0,
+          "stateActive": true,
+          "tapSetting": true
+        },
+        {
+          "event": "pointerout",
+          "pointerType": "touch",
+          "clientX": 485,
+          "clientY": 295,
+          "stateActive": true,
+          "tapSetting": true
+        },
+        {
+          "event": "pointerleave",
+          "pointerType": "touch",
+          "clientX": 485,
+          "clientY": 295,
+          "stateActive": false,
+          "tapSetting": true
+        }
+      ]
+    },
+    {
+      "name": "844×390 touch release directs to the offset destination",
+      "pass": true,
+      "assignment": {
+        "x": 648.9494163424125,
+        "y": 429.4909208819715
+      },
+      "destinationError": {
+        "xCssPx": 0.4231974921630126,
+        "yCssPx": 0.14764890282128817
+      }
+    },
+    {
+      "name": "844×390 Grow drawer has no horizontal overflow",
+      "pass": true,
+      "viewport": 844,
+      "document": 844,
+      "body": 844,
+      "height": 390
+    },
+    {
+      "name": "844×390 Grow drawer closes",
+      "pass": true
+    },
+    {
+      "name": "844×390 settings has no horizontal overflow",
+      "pass": true,
+      "viewport": 844,
+      "document": 844,
+      "body": 844,
+      "height": 390
+    },
+    {
+      "name": "844×390 resume action remains reachable",
+      "pass": true
+    },
+    {
+      "name": "No WebKit runtime exceptions or console errors",
+      "pass": true,
+      "count": 0
+    }
+  ],
+  "errors": [],
+  "engine": {
+    "name": "Playwright WebKit",
+    "version": "26.6",
+    "executable": "/Users/xingzhaoji/Library/Caches/ms-playwright/webkit-2359/pw_run.sh",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15"
+  },
+  "summary": {
+    "passed": 24,
+    "failed": 2,
+    "errors": 0
+  },
+  "workspaceChangesAfterSnapshot": []
+}

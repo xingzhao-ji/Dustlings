@@ -7,29 +7,26 @@ Use the existing [PLAYTEST.md](PLAYTEST.md) protocol for recruitment, observatio
 ## Current 3D review candidate
 
 <!-- 3D-REVIEW-CANDIDATE:START -->
-The packaged review candidate is **0.4.0-dev**, a real-geometry Godot courtyard, **awaiting human validation**.
+The current native review candidate is **0.4.0-dev**, a real-geometry Godot courtyard, **awaiting human validation**.
 
 | Field | Exact record |
 | --- | --- |
-| Export manifest | [builds/3d/0.4.0-dev-2026-09-10T09-23-03-961Z-0db02d30ce/manifest.json](../builds/3d/0.4.0-dev-2026-09-10T09-23-03-961Z-0db02d30ce/manifest.json) |
-| Source revision | `2572e2f84d83f4175fac879e6735ee490fcfe47d` |
+| Export manifest | [builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/manifest.json](../builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/manifest.json) |
+| Source revision | `960d96b7e464317eed8441c56446093b38661912` |
 | Source dirty / repository dirty | false / true |
-| Source SHA-256 | `0db02d30cecf84b28fce7919352f9ca2fd79c9deb82d5a7deffdb40e69d7d431` |
-| Mac PCK SHA-256 | `a55ebb8d8ec501f8cb9d5484d2e9a473d3b443224bbec0ad4915b4171c8adb04` |
-| Mac archive SHA-256 | `7d7699265376fe475c699dcce10157d44aaa2523919e431a201b5431770d417b` |
+| Source SHA-256 | `056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313` |
+| Mac PCK SHA-256 | `3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47` |
+| Mac archive SHA-256 | `58b0a91c83859f6ed7e96706a3380bc19b069fa787dbfb72361c7b4a9d98c90e` |
 | Windows executable SHA-256 | `56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512` |
-| Export finished | 2026-09-10T09:23:19.311Z |
+| Export finished | 2026-09-10T10:10:04.206Z |
 | Current review hub | [Actual gameplay, package links and provenance](../evidence/3d/REVIEW.html) |
 | Human / owner acceptance | Zero human sessions; no current-build owner approval |
 
 Mac signing is local ad-hoc, with no notarization. Windows execution, physical iPad/iPhone support and store readiness remain unverified. The hub verifies runtime source parity between the package and its captures; fixtures and movie-mode timing are labeled separately from human play.
 
-This package is separate from changed live development. Its frozen source and attached capture runtime bytes match; this record makes no parity claim for the working tree. Corrections in progress require a new package and verification.
-
 Known package gaps:
 
-- Helpers can appear to work without a sufficiently legible local cleaning response. An independent AI critique of actual footage identified this; correction is in progress, with human confirmation still needed.
-- The completed courtyard can still display 99% clear in the HUD, as confirmed in the full film near 697 seconds. The live correction is not included in this package.
+- A Settings save-copy notice can be hidden. The current UI audit identified this feedback defect; the correction is not in this frozen package.
 <!-- 3D-REVIEW-CANDIDATE:END -->
 
 Bind every human review to the exact native PCK and executable/archive hashes, source revision and dirty state. If implementation or presentation changes, preserve old observations under their original identity and obtain fresh review for affected claims. An agent's critique, generated input recording or fixture is not a human session. No gate transfers from the old 2D prototype.
@@ -63,6 +60,8 @@ A player-rate pass is an internal decision rule, not proof of beauty, market dem
 ## Exact player counts
 
 The first private round targets **12–20 unfamiliar intended players**. Use one primary segment per person, decided before play. Secondary interests may overlap but must not duplicate people in the total. Keep friends/developers separate from the unfamiliar-target denominator.
+
+The primary upgrade result is measured by the **five-minute required-segment choice point**. Record later upgrade success separately. Primary voluntary continuation requires a neutral choice to stay and at least two additional active minutes; report earlier finite endings separately with actual actions, duration and reasons. The protocol was amended with **zero enrolled or tested players**, before any human outcome. The 12–20, 80% and 50% internal decision rules remain unchanged; do not move the cutoff after observing results.
 
 | Primary segment | Enrolled N | Uncoached meaningful upgrade n/N | Voluntary continuation n/N | Early stops / technical failures | Reasons and linked sessions |
 | --- | --- | --- | --- | --- | --- |

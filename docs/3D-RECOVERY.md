@@ -76,7 +76,7 @@ Timeouts or failures terminate only the runner's own app PIDs. Its isolated prof
 
 Remaining scope: this small opening save does not establish full-crowd or active-chorus return, physical sleep/device interruption, native file-dialog comfort, Windows execution, mobile support, human satisfaction or owner release approval. Human test count remains **0**.
 
-### Actual packaged result
+### Earlier packaged result — `2572e2f`
 
 [Exact report and check details](../evidence/3d/native-packaged/recovery-2572e2f/report.json), with per-process logs, results and actual opening images beside it. The preliminary [13-check artifact preflight](../evidence/3d/native-packaged/preflight-2572e2f/report.json) launched zero apps and is preserved separately.
 
@@ -99,3 +99,22 @@ The generated opening created its first helper at 10.25 **simulation seconds**, 
 The Windows executable contained all six authored icon frames (16, 32, 48, 64, 128 and 256 pixels) byte for byte, with matching group references. This is structural resource verification on Mac. Windows execution is still **unrun**.
 
 The unique cache profile `dustlings-qa-native3d_d0f725901cf94866bfa728080ebc4167.json` and temporary extracted bundle remain inspectable; their exact paths are in the report. The actual dirty-courtyard screenshot was inspected after launch. No human participant or owner acceptance was recorded. Next action: after the work-legibility correction is frozen and packaged, repeat this exact-manifest sequence for the new candidate and attach source-matched gameplay/performance evidence.
+
+### Current packaged result — `960d96b`
+
+The [new exact packaged report](../evidence/3d/native-packaged/recovery-960d96b/report.json) passed **45/45 checks** on 2026-09-10, 10:25:14–10:26:34 UTC. Four real release-app processes exited 0 with no recorded engine errors, warnings or leaked-resource diagnostics: opening PID 45791, resume 45879, primary hold 45887, second copy 45890. Conditions were the same Mac16,7 / Apple M4 Pro / 48 GiB / macOS 26.6.2 / Metal Forward+, logical viewport 1440×900. This is automated generated-input execution, not a human test or a performance measurement.
+
+| Identity | Exact value |
+| --- | --- |
+| Build manifest | `builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/manifest.json` |
+| Source revision | `960d96b7e464317eed8441c56446093b38661912` |
+| Source SHA-256 | `056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313` |
+| Source dirty / changed during export | `false` / `false` |
+| PCK SHA-256 | `3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47` |
+| Mac executable SHA-256 | `522062065f95971a98bdeb3f509512f8167f5b41a56f684cfb2bb992ebc0619d` |
+
+The opening created helpers, bought the brush upgrade, assigned the crew and persisted music 0.25 / gentle motion on through actual controls. A new process restored all compared game and preference fields at welcome before deliberate Return resumed play/audio. The simultaneous second process could not start or change any primary, staged or backup save bytes; closing the waiting primary also left those bytes unchanged. The unique profile `dustlings-qa-native3d_444f1f7d454c426190c469b911295ebf.json` and extracted bundle remain available at the exact paths recorded in the report.
+
+The separate [17-check preflight](../evidence/3d/native-packaged/preflight-960d96b/report.json) launched zero apps. Both this preflight and the full run inspected the actual Mac icon and all six Windows icon resources. Neither executed Windows. The prior `2572e2f` report remains historical, with its own package and results preserved.
+
+The current build still has a separately observed Settings save-copy notice visibility defect; these checks do not exercise that native file-dialog feedback. Full-crew/active-chorus process return, physical sleep/device interruption, Windows execution, human comfort and owner acceptance remain unverified. The next correction requires a new package and affected checks before its result can replace this exact candidate. Human sessions remain **0**.

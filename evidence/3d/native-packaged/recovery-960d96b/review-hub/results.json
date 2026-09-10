@@ -1,0 +1,38 @@
+{
+  "kind": "Local review hub automated layout and media decoding; no human review",
+  "checks": [
+    {
+      "name": "desktop width",
+      "passed": true,
+      "viewport": [
+        1280,
+        900
+      ]
+    },
+    {
+      "name": "#gameplay video actual decoding",
+      "passed": true,
+      "duration": 679.366667,
+      "width": 1280,
+      "height": 800,
+      "time": 0.469968
+    },
+    {
+      "name": "#compare video actual decoding",
+      "passed": true,
+      "duration": 705.466667,
+      "width": 1280,
+      "height": 800,
+      "time": 0.466297
+    },
+    {
+      "name": "phone-layout width",
+      "passed": true,
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "status": "passed"
+}

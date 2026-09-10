@@ -1,0 +1,511 @@
+{
+  "schema": 1,
+  "kind": "packaged-mac-preflight-only",
+  "started": "2026-09-10T10:10:35.670Z",
+  "manifest": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/manifest.json",
+  "output": "/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/preflight-960d96b",
+  "method": "Release Mac app extracted from the exact verified archive; separate OS processes, real-time engine-generated InputEvents. No Movie Maker, editor, progress injection, physical input or human playtest.",
+  "conditions": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.6.0",
+    "movieMaker": false,
+    "model": "Mac16,7",
+    "macOSVersion": "26.6.2",
+    "memoryBytes": 51539607552
+  },
+  "humanTests": 0,
+  "ownerApproved": false,
+  "releaseReady": false,
+  "windowsExecution": "unrun",
+  "checks": {
+    "macHost": {
+      "passed": true,
+      "detail": "darwin"
+    },
+    "successfulNativeBuildManifest": {
+      "passed": true
+    },
+    "archiveHash": {
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/macOS/Dustlings.zip",
+        "expected": {
+          "bytes": 62048659,
+          "sha256": "58b0a91c83859f6ed7e96706a3380bc19b069fa787dbfb72361c7b4a9d98c90e"
+        },
+        "actual": {
+          "bytes": 62048659,
+          "sha256": "58b0a91c83859f6ed7e96706a3380bc19b069fa787dbfb72361c7b4a9d98c90e"
+        }
+      }
+    },
+    "singlePackagedApp": {
+      "passed": true,
+      "detail": [
+        "Dustlings 3D.app"
+      ]
+    },
+    "bundleMetadataHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-72D2Dc/Dustlings 3D.app/Contents/Info.plist",
+        "expected": {
+          "bytes": 1826,
+          "sha256": "c8be7f50d6ad8921ec6d934bc1613966a38debd3d4c0e21b18c58f8a49e1a51a"
+        },
+        "actual": {
+          "bytes": 1826,
+          "sha256": "c8be7f50d6ad8921ec6d934bc1613966a38debd3d4c0e21b18c58f8a49e1a51a"
+        }
+      }
+    },
+    "bundleIdentity": {
+      "passed": true,
+      "detail": {
+        "LSMinimumSystemVersionByArchitecture": {
+          "arm64": "13.00",
+          "x86_64": "11.00"
+        },
+        "CFBundleName": "Dustlings 3D",
+        "NSHumanReadableCopyright": "Dustlings development prototype",
+        "DTXcode": "1420",
+        "DTSDKName": "macosx13.1",
+        "DTSDKBuild": "22C55",
+        "CFBundleDevelopmentRegion": "English",
+        "CFBundleVersion": "0.4.0",
+        "LSArchitecturePriority": [
+          "arm64",
+          "x86_64"
+        ],
+        "NSPrincipalClass": "NSApplication",
+        "DTPlatformName": "macosx",
+        "CFBundlePackageType": "APPL",
+        "CFBundleIconFile": "icon.icns",
+        "CFBundleSupportedPlatforms": [
+          "MacOSX"
+        ],
+        "CFBundleShortVersionString": "0.4.0",
+        "NSHighResolutionCapable": true,
+        "CFBundleInfoDictionaryVersion": "6.0",
+        "CFBundleExecutable": "Dustlings 3D",
+        "CFBundleIdentifier": "com.dustlings.courtyard3d.prototype",
+        "LSApplicationCategoryType": "public.app-category.games",
+        "DTPlatformVersion": "13.1",
+        "DTXcodeBuild": "14C18",
+        "CFBundleDisplayName": "Dustlings 3D",
+        "CFBundleSignature": "",
+        "DTPlatformBuild": "14C18"
+      }
+    },
+    "safeExecutableName": {
+      "passed": true
+    },
+    "executableHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-72D2Dc/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+        "expected": {
+          "bytes": 170963648,
+          "sha256": "522062065f95971a98bdeb3f509512f8167f5b41a56f684cfb2bb992ebc0619d"
+        },
+        "actual": {
+          "bytes": 170963648,
+          "sha256": "522062065f95971a98bdeb3f509512f8167f5b41a56f684cfb2bb992ebc0619d"
+        }
+      }
+    },
+    "singlePackagedPck": {
+      "passed": true,
+      "detail": [
+        "Contents/Resources/Dustlings 3D.pck"
+      ]
+    },
+    "pckHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-72D2Dc/Dustlings 3D.app/Contents/Resources/Dustlings 3D.pck",
+        "expected": {
+          "bytes": 2136660,
+          "sha256": "3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47"
+        },
+        "actual": {
+          "bytes": 2136660,
+          "sha256": "3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47"
+        }
+      }
+    },
+    "macSignature": {
+      "passed": true,
+      "detail": "Verified exact extracted app; development ad-hoc signing, no notarization or release approval."
+    },
+    "packagedIconHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-72D2Dc/Dustlings 3D.app/Contents/Resources/icon.icns",
+        "expected": {
+          "bytes": 83377,
+          "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+        },
+        "actual": {
+          "bytes": 83377,
+          "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+        }
+      }
+    },
+    "packagedMacIcon": {
+      "passed": true,
+      "detail": {
+        "iconRelative": "Contents/Resources/icon.icns",
+        "bytes": 83377,
+        "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2",
+        "interpretation": "Actual bundle resource and plist linkage; no aesthetic or Dock inspection claim."
+      }
+    },
+    "packagedMacIconMatchesAuthoredSource": {
+      "passed": true
+    },
+    "windowsExecutableHash": {
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/Windows/Dustlings.exe",
+        "expected": {
+          "bytes": 109136384,
+          "sha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512"
+        },
+        "actual": {
+          "bytes": 109136384,
+          "sha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512"
+        }
+      }
+    },
+    "authoredWindowsIconHash": {
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/source/godot/assets/ui/app-icon.ico",
+        "expected": {
+          "bytes": 10104,
+          "sha256": "617ec63012018f494c73c1c45d4a8c21c737bef5611e0da6f030a67577d8a211"
+        },
+        "actual": {
+          "bytes": 10104,
+          "sha256": "617ec63012018f494c73c1c45d4a8c21c737bef5611e0da6f030a67577d8a211"
+        }
+      }
+    },
+    "packagedWindowsIcon": {
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "expected": [
+          {
+            "width": 16,
+            "height": 16,
+            "bytes": 363,
+            "sha256": "f0909026f20604d32611998a00ef277042378e45ce4d2bf4ba2d1bfb27f35072"
+          },
+          {
+            "width": 32,
+            "height": 32,
+            "bytes": 667,
+            "sha256": "249a976db59de791ae33b9cd1f690c6699e3822c743c702a6c65eb874722bf44"
+          },
+          {
+            "width": 48,
+            "height": 48,
+            "bytes": 901,
+            "sha256": "13c5cdcd265b70dd25e833eb9700dcf29841780da4a7b1ea6db575236c2ed16e"
+          },
+          {
+            "width": 64,
+            "height": 64,
+            "bytes": 1165,
+            "sha256": "0f4efa076c49333e54e814a15372bf6045a58f93ee3945b9179ed7fc1d10d176"
+          },
+          {
+            "width": 128,
+            "height": 128,
+            "bytes": 2323,
+            "sha256": "bcd9ec9922f30e89360c8d9e5f75f030e12e62101cc75ad435e89c11a5c44150"
+          },
+          {
+            "width": 256,
+            "height": 256,
+            "bytes": 4583,
+            "sha256": "53cb140f3f69ceed3df15a2217b028206a1e7f737736c5001915973fe2ff29df"
+          }
+        ],
+        "icons": [
+          {
+            "ids": [
+              3,
+              1,
+              1033
+            ],
+            "bytes": 363,
+            "sha256": "f0909026f20604d32611998a00ef277042378e45ce4d2bf4ba2d1bfb27f35072"
+          },
+          {
+            "ids": [
+              3,
+              2,
+              1033
+            ],
+            "bytes": 667,
+            "sha256": "249a976db59de791ae33b9cd1f690c6699e3822c743c702a6c65eb874722bf44"
+          },
+          {
+            "ids": [
+              3,
+              3,
+              1033
+            ],
+            "bytes": 901,
+            "sha256": "13c5cdcd265b70dd25e833eb9700dcf29841780da4a7b1ea6db575236c2ed16e"
+          },
+          {
+            "ids": [
+              3,
+              4,
+              1033
+            ],
+            "bytes": 1165,
+            "sha256": "0f4efa076c49333e54e814a15372bf6045a58f93ee3945b9179ed7fc1d10d176"
+          },
+          {
+            "ids": [
+              3,
+              5,
+              1033
+            ],
+            "bytes": 2323,
+            "sha256": "bcd9ec9922f30e89360c8d9e5f75f030e12e62101cc75ad435e89c11a5c44150"
+          },
+          {
+            "ids": [
+              3,
+              6,
+              1033
+            ],
+            "bytes": 4583,
+            "sha256": "53cb140f3f69ceed3df15a2217b028206a1e7f737736c5001915973fe2ff29df"
+          }
+        ],
+        "groups": [
+          {
+            "ids": [
+              14,
+              2147484000,
+              1033
+            ],
+            "frames": [
+              {
+                "width": 16,
+                "height": 16,
+                "bytes": 363,
+                "iconId": 1
+              },
+              {
+                "width": 32,
+                "height": 32,
+                "bytes": 667,
+                "iconId": 2
+              },
+              {
+                "width": 48,
+                "height": 48,
+                "bytes": 901,
+                "iconId": 3
+              },
+              {
+                "width": 64,
+                "height": 64,
+                "bytes": 1165,
+                "iconId": 4
+              },
+              {
+                "width": 128,
+                "height": 128,
+                "bytes": 2323,
+                "iconId": 5
+              },
+              {
+                "width": 256,
+                "height": 256,
+                "bytes": 4583,
+                "iconId": 6
+              }
+            ]
+          }
+        ],
+        "method": "Read actual PE RT_ICON and RT_GROUP_ICON bytes and compare every authored ICO frame and group reference; Windows was not executed."
+      }
+    }
+  },
+  "processes": [],
+  "failures": [],
+  "limitations": [
+    "This small opening save does not test a full crew or an active chorus return.",
+    "No physical sleep/interruption or native import/export file dialog interaction.",
+    "No sustained performance or human usability claim.",
+    "Preflight only: no game process was launched and no recovery test passed."
+  ],
+  "exitCode": 0,
+  "manifestSha256": "1087423e13a51dfd9e3e7b53974e2cbbc8403560b21d4501b437688ea9de11a1",
+  "sourceSha256": "056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313",
+  "sourceRevision": "960d96b7e464317eed8441c56446093b38661912",
+  "sourceDirty": false,
+  "sourceChangedSinceSnapshot": false,
+  "version": "0.4.0-dev",
+  "extraction": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-72D2Dc",
+  "executableSha256": "522062065f95971a98bdeb3f509512f8167f5b41a56f684cfb2bb992ebc0619d",
+  "pckSha256": "3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47",
+  "windowsExecutableSha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512",
+  "windowsIcon": {
+    "passed": true,
+    "expected": [
+      {
+        "width": 16,
+        "height": 16,
+        "bytes": 363,
+        "sha256": "f0909026f20604d32611998a00ef277042378e45ce4d2bf4ba2d1bfb27f35072"
+      },
+      {
+        "width": 32,
+        "height": 32,
+        "bytes": 667,
+        "sha256": "249a976db59de791ae33b9cd1f690c6699e3822c743c702a6c65eb874722bf44"
+      },
+      {
+        "width": 48,
+        "height": 48,
+        "bytes": 901,
+        "sha256": "13c5cdcd265b70dd25e833eb9700dcf29841780da4a7b1ea6db575236c2ed16e"
+      },
+      {
+        "width": 64,
+        "height": 64,
+        "bytes": 1165,
+        "sha256": "0f4efa076c49333e54e814a15372bf6045a58f93ee3945b9179ed7fc1d10d176"
+      },
+      {
+        "width": 128,
+        "height": 128,
+        "bytes": 2323,
+        "sha256": "bcd9ec9922f30e89360c8d9e5f75f030e12e62101cc75ad435e89c11a5c44150"
+      },
+      {
+        "width": 256,
+        "height": 256,
+        "bytes": 4583,
+        "sha256": "53cb140f3f69ceed3df15a2217b028206a1e7f737736c5001915973fe2ff29df"
+      }
+    ],
+    "icons": [
+      {
+        "ids": [
+          3,
+          1,
+          1033
+        ],
+        "bytes": 363,
+        "sha256": "f0909026f20604d32611998a00ef277042378e45ce4d2bf4ba2d1bfb27f35072"
+      },
+      {
+        "ids": [
+          3,
+          2,
+          1033
+        ],
+        "bytes": 667,
+        "sha256": "249a976db59de791ae33b9cd1f690c6699e3822c743c702a6c65eb874722bf44"
+      },
+      {
+        "ids": [
+          3,
+          3,
+          1033
+        ],
+        "bytes": 901,
+        "sha256": "13c5cdcd265b70dd25e833eb9700dcf29841780da4a7b1ea6db575236c2ed16e"
+      },
+      {
+        "ids": [
+          3,
+          4,
+          1033
+        ],
+        "bytes": 1165,
+        "sha256": "0f4efa076c49333e54e814a15372bf6045a58f93ee3945b9179ed7fc1d10d176"
+      },
+      {
+        "ids": [
+          3,
+          5,
+          1033
+        ],
+        "bytes": 2323,
+        "sha256": "bcd9ec9922f30e89360c8d9e5f75f030e12e62101cc75ad435e89c11a5c44150"
+      },
+      {
+        "ids": [
+          3,
+          6,
+          1033
+        ],
+        "bytes": 4583,
+        "sha256": "53cb140f3f69ceed3df15a2217b028206a1e7f737736c5001915973fe2ff29df"
+      }
+    ],
+    "groups": [
+      {
+        "ids": [
+          14,
+          2147484000,
+          1033
+        ],
+        "frames": [
+          {
+            "width": 16,
+            "height": 16,
+            "bytes": 363,
+            "iconId": 1
+          },
+          {
+            "width": 32,
+            "height": 32,
+            "bytes": 667,
+            "iconId": 2
+          },
+          {
+            "width": 48,
+            "height": 48,
+            "bytes": 901,
+            "iconId": 3
+          },
+          {
+            "width": 64,
+            "height": 64,
+            "bytes": 1165,
+            "iconId": 4
+          },
+          {
+            "width": 128,
+            "height": 128,
+            "bytes": 2323,
+            "iconId": 5
+          },
+          {
+            "width": 256,
+            "height": 256,
+            "bytes": 4583,
+            "iconId": 6
+          }
+        ]
+      }
+    ],
+    "method": "Read actual PE RT_ICON and RT_GROUP_ICON bytes and compare every authored ICO frame and group reference; Windows was not executed."
+  },
+  "finished": "2026-09-10T10:10:36.522Z",
+  "interrupted": null
+}

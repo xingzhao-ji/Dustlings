@@ -1,0 +1,29 @@
+{
+  "kind": "Review provenance rejection checks; no app launches",
+  "checks": [
+    {
+      "name": "Mismatched Windows ZIP executable rejected",
+      "passed": true,
+      "exitCode": 1,
+      "expectedDiagnostic": "different Dustlings.exe",
+      "currentHubUnchanged": true,
+      "currentGateUnchanged": true
+    },
+    {
+      "name": "Artifact-only preflight rejected as recovery",
+      "passed": true,
+      "exitCode": 1,
+      "expectedDiagnostic": "preflight alone is insufficient",
+      "currentHubUnchanged": true,
+      "currentGateUnchanged": true
+    },
+    {
+      "name": "Historical build rejected as current source",
+      "passed": true,
+      "exitCode": 1,
+      "expectedDiagnostic": "Live source differs",
+      "currentHubUnchanged": true,
+      "currentGateUnchanged": true
+    }
+  ]
+}

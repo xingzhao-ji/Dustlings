@@ -1,0 +1,251 @@
+{
+  "kind": "Isolated native water-flow optical experiment; no production change or human approval",
+  "created": "2026-09-10T09:53:11.680234+00:00",
+  "baseline": "builds/3d/experiments/water-flow/baseline",
+  "candidate": "builds/3d/experiments/water-flow/candidate",
+  "sourceFiles": {
+    "project.godot": "7c69fff9766c313a0027237f953fe5c3e1a8437d116287a8fb1d77e6f03a8cac",
+    "export_presets.cfg": "736adeb37e32fb85c533bcb9af6e92cff62cf8c4e0c6e18ab7143efc2644d52e",
+    "scenes/courtyard.tscn": "40b44bc40cc1dbc411897fbc88bd8c8a5f04c9ecd1e547263fa2cfc2484cdc52",
+    "tests/simulation_checks.gd.uid": "15522ac52a4db57f6e83bb85b5a98076b9f182ca6b7cf6b08184a8af78f3b21e",
+    "tests/work_feedback_checks.gd.uid": "a44391e57053e60704d7ceeb56adc84cffe6d3a40b78bc46b163fbe764de7559",
+    "tests/camera_checks.gd.uid": "5a466ee98d90faff10453a7071eb614e696c133cc107bd4b8553be4c19a51626",
+    "tests/save_checks.gd": "77f187b86fbe8a6111fffdf291416b37e3b1822611f7bf4a9ea94a2136aec49f",
+    "tests/native_recovery_checks.gd": "2f2f32534a30e7d556cc6c3a21649bb45eeb06ca0b8b88fb3153087c29e1911d",
+    "tests/chorus_checks.gd": "3f71f2abbb7b9a521f7ca93b82009c6eb3a7bd6456e9b55c0e0f08aa7fac514b",
+    "tests/camera_checks.gd": "29642a928a79ff49753674e54c4b261477789c884c45e994c846b26eb71318c5",
+    "tests/save_checks.gd.uid": "b940f3a5fd984a772ca4af99604c54a2ac6666c8337ef646e496cd8fdce67df9",
+    "tests/native_recovery_checks.gd.uid": "c1da25540009ba909e4319f04c40169faebcd0779cfaba314dd775578fb43bc1",
+    "tests/simulation_checks.gd": "84d9c4ab0fa3592c884b50afba243a3b37e97529b6f93c16137b220998eb5ebe",
+    "tests/audio_checks.gd": "b260a81897f00060c7f1b807c89a9fb4c2fe87a84e520817ab90100987a0a000",
+    "tests/audio_checks.gd.uid": "6017e810046af1c7b393545cba27e48b87786b7addc573067323f3ff857e7515",
+    "tests/crowd_checks.gd.uid": "1c1b165df258fcad483db983478c0a324a0445d92c9b6b6f897cc149115919a7",
+    "tests/integration_checks.gd": "61c5296d6c33fd65e1cc29da1b3e382bfc0ad0fd663fd2cb5ee05ccbcf8365f7",
+    "tests/crowd_checks.gd": "120448e5fa85e46c74cfcd7d968dd2a151d0b66b8e0bb741d42f15478ac69bc8",
+    "tests/work_feedback_checks.gd": "19a975cb43e926c28b060d80ed7a8624e6cf050c6fb4038ef008cafd0459304d",
+    "tests/integration_checks.gd.uid": "18a6ec34d05b3699d077e0698cc6ce916ef1c4bac2c58f89cf7206f11aeb0727",
+    "tests/chorus_checks.gd.uid": "be23ad9b24492140a039365b2afda1c316f0bd072320fce6b013facdc1d6d8d3",
+    "scripts/simulation.gd.uid": "792f1c954ad5e4fd781e29a312b28bf8c2a0c30e10713eefcf833f40bf0e561d",
+    "scripts/soundscape.gd.uid": "850698c9cd6ce62fd29ec9c9cf731438b73a2eb704882437b5543d172031007c",
+    "scripts/dustling_visual.gd": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc",
+    "scripts/courtyard_environment.gd": "9eb274e439ea6fb913486f4944d3bf55e459d5790e37983cb1fea5be71128bc8",
+    "scripts/soundscape.gd": "cd0f5959cf63e5dbd25b1add40b801cccd878906ee0aac8a8faad002dd566b5b",
+    "scripts/courtyard_environment.gd.uid": "4f19792d00fe9e7d9443b8701d85a992337ecc573b4f0d38267954eef47de024",
+    "scripts/discovery_preview.gd.uid": "71552544f674cbfcd0ff7847dd9cda8ef068c6aad960dcc073750d3b10dabee2",
+    "scripts/save_store.gd": "683aed2d3619384421668e48f0353252f164992341a86908a46d735c2545356a",
+    "scripts/save_store.gd.uid": "b24d48ad9eb3666ad51bd2ad88a0296b40729c17f54876c536a3517c5a9d23f9",
+    "scripts/dustling_visual.gd.uid": "6349b99f99f4f2781502bf75c5a05a2b1e45d73e2ab44bd095632d7b6f530074",
+    "scripts/discovery_preview.gd": "f545d8e9ef11e76c2d2c7f4584056ecf2bcf3a354ecc8bb0fc408b118dc48af8",
+    "scripts/main.gd": "8680ba77e8a090d306222ec59a25004e1c51e6b36dbf8fb481422256dbc91db5",
+    "scripts/simulation.gd": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b",
+    "scripts/main.gd.uid": "ff6ddc705c0c7220c6d37ddfb70b6f27e000a7d0effa7beba395a5d76837e8f0",
+    "scripts/dust_feedback.gd": "2e5098956ea8aa03fefbba3f244be1b5151c07864feaf81e7181e17b69dd4425",
+    "scripts/dust_feedback.gd.uid": "4bd304359f784424928a9aaffaa847e6375c29b75ff57ea2644eb651a923be63",
+    "shaders/courtyard_surface.gdshader.uid": "dfa1e43ef5b7c287d1f31c8e9037895ebede6832bee94c37f1032740a429eb94",
+    "shaders/courtyard_environment_vegetation.gdshader.uid": "e541ebb37be71f3a2511e8fe6247b3e54b335dfc4bb5d76f3c4dd9a803d92237",
+    "shaders/courtyard_environment_water.gdshader.uid": "82331e95ebb011a80fad4a1925da6cf58b561ec60774f64eb6b42e1fb16a9774",
+    "shaders/courtyard_environment_water.gdshader": "a819e6f53d63c0ccacda969f7c2b1dfaa3c194b2c24041a2343364be556a3b9d",
+    "shaders/courtyard_environment_vegetation.gdshader": "7704d26fc46f31e1c35f2429179801feb2603147131f31814ec51ac3f291ba3a",
+    "shaders/dust_drift.gdshader.uid": "6b45b4d48bf5ac61649e21b1377ee2a246f9363b9e89b77889e6bd85521b5fc2",
+    "shaders/courtyard_surface.gdshader": "d2492f80369252073d6ace8fb25ae2e573ba938d6fd079bf22613595aa9460a7",
+    "shaders/dust_drift.gdshader": "cbdcaeb680b9ee9122da780a8b58333f1857ebe3cdd8bb774514d78040586c8f",
+    "assets/ui/toggle-on.svg": "d16699482e09d785944f902a6cb94027e1c24e633709aba2f1415d2cfb586cae",
+    "assets/ui/app-icon.ico": "617ec63012018f494c73c1c45d4a8c21c737bef5611e0da6f030a67577d8a211",
+    "assets/ui/app-icon.svg.import": "9eeb9bd452978d6d9ced8f3964a55237bf7607856643dc5d35302d19fddf6770",
+    "assets/ui/toggle-off.svg": "b98ea360cba3d16fc307e79ec31758b95f30e6d5e88a080e82721a41c663fa21",
+    "assets/ui/toggle-off.svg.import": "664866855cd121e3cc56a1f056c01d903fd0e067e9d99aa1ad45c9d3959a86f7",
+    "assets/ui/slider-pearl-focus.svg": "b0cae053ea95496c50ad86efad1d66c57174f50b40e972db1844e4ba4ae9ee96",
+    "assets/ui/slider-pearl.svg": "97df9313432e747aef8f7807becaaa4b914ed15827255ab28296b42f80da91a3",
+    "assets/ui/app-icon.icns": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2",
+    "assets/ui/app-icon.svg": "c71f0d7cb627e75def4fbb06c63525e67675e6eff17dff0c273ab9e356b1b743",
+    "assets/ui/toggle-on.svg.import": "92c2da3182d547dc711698b48d74d5f673ba24127803cb102bdd4e724f7ca681",
+    "assets/ui/slider-pearl-focus.svg.import": "1b7ffb75f01e9c2cad29b6a513dd6aff8d53d1743be5550623d7eb3d0a1468e3",
+    "assets/ui/slider-pearl.svg.import": "50080c66a2caed86d7ab3058f1f3e0edf8ec5553def20c7c02aba74dc8ed3b55",
+    "assets/audio/assign.wav.import": "d70cf2610c17a7cd94eb414b1f3b27ef7555f741fdf7905e639d8688450e98a8",
+    "assets/audio/water.ogg.import": "bdc30428bed9fb82e1a79855c4927963e820b9852bdd18d865a83519ac6d2beb",
+    "assets/audio/upgrade.wav.import": "293235e14af9ce652f92232b432b2a2e807190ec92d3f2dab4b334232478df37",
+    "assets/audio/chorus.wav": "044ede9b5b59eb0e3ae9e7ff107f08b97ed83b3bd625f3a692caf2c49bc028d8",
+    "assets/audio/music-bloom.ogg.import": "548b0ef65f05860a3bb06a7f5ded2d2fb4e654f9aa941cc0135961ae0f214f72",
+    "assets/audio/birth.wav.import": "edf2f5314e3efcc11cf2b68d2e2586b40ed08d0fc49b0a14fe20c04f3c0ade78",
+    "assets/audio/complete.wav.import": "61847a33a06afd60d3f4934d02f78ce02d1d2882f8a012daaed7f016d0b019ec",
+    "assets/audio/air.ogg": "30718bb3c0d6e9a0e7dcc0758ece8a72285fe72b14ca5ac7def59419ac2b69b1",
+    "assets/audio/complete.wav": "733bd99449bbdfb9bdf4a016e16c89e151bae353e4d30e51112861ef3e444377",
+    "assets/audio/restored.wav": "82e560eec7f423d1a5cdbf6d2f53ba4dc2454bfeb0ad905b10cb5a33cebb967c",
+    "assets/audio/brush.ogg": "4c201bca63fb070561e52c83a26ef2d1eb0c96f56f8e764a0e3e0964c4ef00af",
+    "assets/audio/music-base.wav.import": "01f5a746be84712bb982e9e33c77002c1e8aac34441ad0277d5851573638993e",
+    "assets/audio/music-base.ogg.import": "4da8e3e170581bdbac25672b4fe9eb994c8d9e346a73e800ef8ce3de0312fcc2",
+    "assets/audio/ui.wav.import": "a8e5becce721885f62c0878192daae49b78e75be8088178178569d9948746aba",
+    "assets/audio/music-warm.ogg": "0d2174812bc34e0122a969199d5c9c6b1dda9071874d6b1a845ced3a6a097bff",
+    "assets/audio/ui.wav": "2a7952af4eec42c8c35c351b28a593f9c1d00b6753ec15e508f70b4ec25888b2",
+    "assets/audio/music-bloom.ogg": "907c76622285a7eaf0f3abb296e797469899a851ece21c815235570afbbc86a8",
+    "assets/audio/brush.ogg.import": "da5b2d5dca4ba5327a4528b875fc373a9ac8ccccd1acd4b7fbe7dad1549da37f",
+    "assets/audio/restored.wav.import": "580c40ee674170810bbf0a2154bc92013c00389a7ab9c3349ecffdd4de055029",
+    "assets/audio/air.ogg.import": "89c2178995479cee9437cadea862ec19c0450635d7747f25731efe06fa9d8200",
+    "assets/audio/water.ogg": "7a3dac9747c3135ae3238df28418c6f476a905bad2011063bd34f891fd15e7f6",
+    "assets/audio/birth.wav": "6d36300d8136cffe26e98282c1eaddd570fa4ce8e6639945926d61372f4f30bb",
+    "assets/audio/assign.wav": "ca79b53378c5283f75bb3620d6a08bfe83b2ca60199ff9464b152c91706b1187",
+    "assets/audio/upgrade.wav": "a5afeddf661b8774715a4bd7936a9d4daf082997fbf98dde6bc8741bcbcf9919",
+    "assets/audio/chorus.wav.import": "c59e3cf7c58874b0239d9fc67a2e3bc9ccd20792e8cafe8aa8339b74abf87dcf",
+    "assets/audio/blocked.wav": "020ff051d6d36ec02790aeb4a8826661febba6605c9f3bcaaf46aa97b83c81a5",
+    "assets/audio/music-base.ogg": "a3fd110400f3e04cee43dd6a0e03e8d9aea918d7950d33e90b4f3f158a59f42c",
+    "assets/audio/music-warm.ogg.import": "bea2e64aa80e2dd14c306dce36baad5d3847f4a32773c6f61291ede3ba6a0310",
+    "assets/audio/blocked.wav.import": "7436f8d571a76fe126a5096ad8dc57000778484c63598cac35b8734e924281fc"
+  },
+  "changedFiles": [
+    "scripts/courtyard_environment.gd",
+    "shaders/courtyard_stream_flow.gdshader"
+  ],
+  "baselineEnvironmentSha256": "9eb274e439ea6fb913486f4944d3bf55e459d5790e37983cb1fea5be71128bc8",
+  "candidateEnvironmentSha256": "ef3a4d05b535bb25442e7cd7fff66d56640cad3e6988f6a24db7ab8528389997",
+  "candidateShaderSha256": "0d1f3d522efb50b4d9c9e96b17fa37cce8c3ffb5d2f3a49dfa11f941852e7762",
+  "humanTests": 0,
+  "status": "native technical checks passed; independent visual review pending",
+  "nativeConditions": "Mac16,7 AppleM4Pro,macOS26.6.2,48GiB,Godot4.7.2 MetalForward+,1280x800,50-helper restored fixture,30fpsMovieMaker; not sustained performance or human play.",
+  "artifacts": {
+    "candidate-import.log": {
+      "bytes": 6608,
+      "sha256": "c2428c9212cde129a7b97302bb6a84cd37e3f974364c1c1f66fbba126a22c5ce"
+    },
+    "inspect.gd": {
+      "bytes": 3868,
+      "sha256": "ede0e2289cdf89f52cbaa25fe7c2df6e7ce7e47b22dd03085aef13f3c48b4d85"
+    },
+    "candidate-environment.gd": {
+      "bytes": 21547,
+      "sha256": "ef3a4d05b535bb25442e7cd7fff66d56640cad3e6988f6a24db7ab8528389997"
+    },
+    "water-only.patch": {
+      "bytes": 3704,
+      "sha256": "19fca091af572fe24cc50fcee29dc92a6524447549d968694a09cf70890c521d"
+    },
+    "baseline-import.log": {
+      "bytes": 6608,
+      "sha256": "c2428c9212cde129a7b97302bb6a84cd37e3f974364c1c1f66fbba126a22c5ce"
+    },
+    "source-snapshot.zip": {
+      "bytes": 2214715,
+      "sha256": "656994ce8cac7e876cb5bf3deb95117465fa0108ca8fe4652691e02863da899c"
+    },
+    "courtyard_stream_flow.gdshader": {
+      "bytes": 1201,
+      "sha256": "0d1f3d522efb50b4d9c9e96b17fa37cce8c3ffb5d2f3a49dfa11f941852e7762"
+    },
+    "baseline-environment.gd": {
+      "bytes": 21134,
+      "sha256": "9eb274e439ea6fb913486f4944d3bf55e459d5790e37983cb1fea5be71128bc8"
+    },
+    "candidate/flow.mp4": {
+      "bytes": 2266723,
+      "sha256": "ca6cb3e44fa1745594f8b20df0a4b259db0fb8ddebf4185807b46a8b2415b28f"
+    },
+    "candidate/paused-end.png": {
+      "bytes": 662475,
+      "sha256": "ae0710d775f79d7db9141fae7cadc5c6e990103af8f6f4f26f913cc9e1675385"
+    },
+    "candidate/paused-start.png": {
+      "bytes": 662475,
+      "sha256": "ae0710d775f79d7db9141fae7cadc5c6e990103af8f6f4f26f913cc9e1675385"
+    },
+    "candidate/normal-105.png": {
+      "bytes": 663309,
+      "sha256": "295c2cd4f6bfa2856e865081cb2c77d91dc362935d4ab6e33607f1ba66e2dc94"
+    },
+    "candidate/normal-110.png": {
+      "bytes": 663500,
+      "sha256": "58377693bc0860d54317db09c05a0da726fab04ad9b2dec15d276aad1284a2cc"
+    },
+    "candidate/results.json": {
+      "bytes": 1454,
+      "sha256": "2dfd2cd2993b9ecf21a1b7ee9e04877d09cf2ea355a0467b2e247fc6932456df"
+    },
+    "candidate/normal-100.png": {
+      "bytes": 664088,
+      "sha256": "5bebf7ca2a38f0250e23449c7b2005eeb5e86405a96f8893c30dbd41d3b8d4f1"
+    },
+    "candidate/normal-115.png": {
+      "bytes": 665296,
+      "sha256": "02e67a90ad77f1007bd64b7beacb8bdc84e761e3bcca05bcd1803d7da64f484b"
+    },
+    "candidate/normal-090.png": {
+      "bytes": 664976,
+      "sha256": "182e2b5365e1bee852d936f10026efd06092dcddbdbaaab337630f9ebade91d1"
+    },
+    "candidate/native.log": {
+      "bytes": 1949,
+      "sha256": "de58e60a7afac4731bd12e094e869ca3d100fe6fac1b4c583a1af46167e45dea"
+    },
+    "candidate/normal-120.png": {
+      "bytes": 663639,
+      "sha256": "5bddd75c72f55d50dcca0ea47a3ca6ea965b879c251dc86e1717ef51056c5bad"
+    },
+    "candidate/normal-095.png": {
+      "bytes": 664369,
+      "sha256": "2d6c371f41c9280886ec11c4f158d5952b1dfa3046e6e1406f30025079914080"
+    },
+    "candidate/gentle.png": {
+      "bytes": 661462,
+      "sha256": "2a4457f90d66d6b0fc48d8dbc9a0d569cab20f3ed03e3c720563070e8cc91805"
+    },
+    "candidate/encode.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "baseline/flow.mp4": {
+      "bytes": 2262202,
+      "sha256": "71603e69ceb928c0e8f65fce2300c2cee9a83d721bb6b7108bf69dde6dff52fa"
+    },
+    "baseline/paused-end.png": {
+      "bytes": 662148,
+      "sha256": "adbe8c00f0dd3f5cd8cc8d7d8dbda2d87667fb7c677fa64329121676474a0a6a"
+    },
+    "baseline/paused-start.png": {
+      "bytes": 662148,
+      "sha256": "adbe8c00f0dd3f5cd8cc8d7d8dbda2d87667fb7c677fa64329121676474a0a6a"
+    },
+    "baseline/normal-105.png": {
+      "bytes": 664252,
+      "sha256": "93ea6e21389f02ec1ca26ce17941a6c2488cbafac65b0503b5c911bad93a5b89"
+    },
+    "baseline/normal-110.png": {
+      "bytes": 663826,
+      "sha256": "8db0b3447017a2a7392f158682e78c509d95444b0f7f38ee1879bb698c94c6fb"
+    },
+    "baseline/results.json": {
+      "bytes": 1411,
+      "sha256": "4c35a0e32b8f2622d292d13722b423ee3fc6a67438afccd4962deb050c1101fb"
+    },
+    "baseline/normal-100.png": {
+      "bytes": 665103,
+      "sha256": "b659e83c679183ad515863821f2ad02277717052486d41b992c22a49e7ebd05b"
+    },
+    "baseline/normal-115.png": {
+      "bytes": 664334,
+      "sha256": "6935f7c33348e5f8e62fd824599fd90960f58611e9713e78ae2b587a6d253fc5"
+    },
+    "baseline/normal-090.png": {
+      "bytes": 664974,
+      "sha256": "615131c290e53f5222c20703eba91eba551a92b9657b10133aace7801e5682ce"
+    },
+    "baseline/native.log": {
+      "bytes": 1905,
+      "sha256": "7e90f8cb343d3f835eb0568d10cae674d03a491ef883e83544886e3631410184"
+    },
+    "baseline/normal-120.png": {
+      "bytes": 663973,
+      "sha256": "eae5409a8d4644bd16a9d896f11958a3009cc7c324b60eb82eb02afdea799156"
+    },
+    "baseline/normal-095.png": {
+      "bytes": 663741,
+      "sha256": "302f982b24f7f6b393cd8c089ea61b5972efc39c297c8e4c9c879fa1e0ed17fd"
+    },
+    "baseline/gentle.png": {
+      "bytes": 661617,
+      "sha256": "510966767ce1ab16d093b1f6a4f3df992c520b6e28e3988ff4d47c4ad70d7dab"
+    },
+    "baseline/encode.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "comparisonScope": "Same frozen source and camera; only environment water region and newstreamshader differ. This snapshot predates root warmwindows; integrate with a water-only patch."
+}

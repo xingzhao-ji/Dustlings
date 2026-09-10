@@ -1,0 +1,52 @@
+{
+  "captures": [
+    "normal-090",
+    "normal-095",
+    "normal-100",
+    "normal-105",
+    "normal-110",
+    "normal-115",
+    "normal-120",
+    "gentle",
+    "paused-start",
+    "paused-end"
+  ],
+  "checks": [
+    "Only the existing basin and two stream meshes exist",
+    "Both streams share one material",
+    "Existing stream triangle count is unchanged",
+    "All stream geometry remains inside basin and obstacle footprint",
+    "Gentle motion freezes stream phase",
+    "Pause preserves the exact stream source time"
+  ],
+  "draw_calls": {
+    "maximum": 311.0,
+    "minimum": 308.0,
+    "samples": 331,
+    "scope": "Scene draw-count comparison only; Movie Maker is not sustained performance"
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "failures": [],
+  "geometry": {
+    "helpers": 50,
+    "maximum_stream_radius": 0.924312591552734,
+    "stream_vertices": 1536
+  },
+  "humanTests": 0,
+  "kind": "Native restored50-helper visual fixture; fixed30fps Movie Maker, no human test or performance run",
+  "source": {
+    "environment_sha256": "ef3a4d05b535bb25442e7cd7fff66d56640cad3e6988f6a24db7ab8528389997",
+    "stream_shader_sha256": "0d1f3d522efb50b4d9c9e96b17fa37cce8c3ffb5d2f3a49dfa11f941852e7762"
+  },
+  "status": "passed"
+}

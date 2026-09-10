@@ -1,0 +1,43 @@
+# Isolated fountain flow experiment
+
+2026-09-10. Final isolated proposal: **v2**. Native technical checks pass; the independent limited review finds the dark brace-like appearance reduced, with continuous flow-perception uncertainty remaining. No production environment or shader was changed by this task. Human sessions remain **0**. The v1 history below is preserved; the final handoff is in the v2 section.
+
+The intended player benefit is recognizing restored, flowing water immediately at the default camera. The source evidence is the independent critic's repeated observation that the narrow dark streams resemble supports in actual restored gameplay, also recorded in `SKY-DIRECTION.md`. The root still saw fairly dark green in v1's `normal-100.png`; animated shader code alone could not close this gap.
+
+The bounded experiment is 20 minutes. It preserves the basin material, fountain path, water reveal thresholds, particles, audio, mechanics and work rates. The two existing real curved streams receive one shared dedicated material. Their radius changes from 0.035 to 0.045 m as an optical hypothesis for approximately two-pixel-wide streams; this is still about one fifth of the creature body diameter. Traveling pale reflections follow the existing tube UV.y from bowl (0) to basin (1), at 0.5 normalized curve lengths per simulation second. The curve's nonuniform height parameter remains unchanged. There are no added particles, impact rings, transparency or geometry batches.
+
+The new material uses the game's passed simulation time, never the shader's global `TIME`. Gentle motion freezes its animated phase using the existing motion amount; pause stops source-time updates. Basin water remains under its original shader. The experiment is isolated from the root's later warm-window integration.
+
+## V1 captures and checks, retained
+
+- [Baseline movie](../evidence/3d/water-flow/baseline/flow.mp4) and [candidate movie](../evidence/3d/water-flow/candidate/flow.mp4), each 12.6 seconds, 1280×800 at 30 FPS. These are native Godot MovieMaker recordings of a prepared restored 50-helper courtyard, not natural progression, sustained performance or a human session. Frames 1–240 show ordinary motion, 240–300 gentle motion, 300–360 an explicitly injected paused state; the remaining frames cover shutdown. The pause injection exercises source-time stopping without hiding the fountain behind a menu.
+- [Matched baseline frame](../evidence/3d/water-flow/baseline/normal-105.png), [matched candidate frame](../evidence/3d/water-flow/candidate/normal-105.png), [candidate gentle frame](../evidence/3d/water-flow/candidate/gentle.png), and [candidate paused frame](../evidence/3d/water-flow/candidate/paused-end.png). Full-size matched frames were inspected. The [two-row crop sequence](../evidence/3d/water-flow/flow-crops.png) shows baseline above candidate at frames 90–120 in five-frame increments; it is enlarged 2× for diagnosis and does not establish normal-size legibility.
+- [Baseline result](../evidence/3d/water-flow/baseline/results.json) and [candidate result](../evidence/3d/water-flow/candidate/results.json): six checks passed in each, both native processes exited 0, with no engine error/warning/leak diagnostics. The scene retains exactly one basin and two stream meshes; both streams share a material, with **1,536 stream vertices unchanged**. The candidate's maximum stream footprint radius is 0.9243 m, inside the 1.10 m basin and well inside the fountain obstacle. It introduces no stream geometry over walkable brushing targets.
+- Gentle motion set stream `motion_amount` to 0. Pause retained exactly the same passed `time_seconds` across the checked interval. These confirm parameter/lifecycle behavior, not perceived comfort.
+- Peak scene draw count was **311 for both variants** (baseline range 307–311, candidate 308–311, 331 sampled frames each). These are draw-count observations during MovieMaker, not wall-clock frame-rate results. Actual host: Mac16,7, Apple M4 Pro, 48 GiB, macOS 26.6.2, Godot 4.7.2 Metal Forward+.
+
+The candidate appears lighter in the matched stills and contains moving reflection samples in the diagnostic sequence, but its silhouette remains a narrow continuous green stream. Whether the reflections communicate flow at normal size is unresolved here. This agent inspected full-size stills and a sampled sequence, not continuous audio playback. No listening claim or human aesthetic verdict follows.
+
+## V1 reproducible source, retained
+
+[Provenance and hashes](../evidence/3d/water-flow/provenance.json) bind the two captures to their source and driver. [The source snapshot ZIP](../evidence/3d/water-flow/source-snapshot.zip) preserves the frozen baseline project plus the candidate environment/shader overrides, excluding generated Godot caches. Extract baseline, apply the candidate overrides for the after variant, import with the matching Godot editor, then run the retained `inspect.gd` driver using `--qa` and an explicit `--water-output` folder.
+
+[Water-only patch](../evidence/3d/water-flow/water-only.patch) and [exact candidate shader](../evidence/3d/water-flow/courtyard_stream_flow.gdshader) are ready for a selective merge. The environment changes are limited to `_stream_material` creation, the stream mesh radius/material assignment, and restoration/gentle/time parameter forwarding. Apply these regions to the current environment; do not replace it wholesale and lose the separately integrated windows. The two source environment files are retained beside the patch.
+
+Baseline movie SHA-256: `71603e69ceb928c0e8f65fce2300c2cee9a83d721bb6b7108bf69dde6dff52fa`. Candidate movie SHA-256: `ca6cb3e44fa1745594f8b20df0a4b259db0fb8ddebf4185807b46a8b2415b28f`. Candidate shader SHA-256: `0d1f3d522efb50b4d9c9e96b17fa37cce8c3ffb5d2f3a49dfa11f941852e7762`.
+
+The independent v1 review found visible changing cyan highlights and no broad glare or occlusion regression, but did not consider the pipe-like reading resolved. That concrete finding justified one final correction within this task's bound.
+
+## V2 final focused correction and handoff
+
+V2 disables the two streams' opaque cast shadows and raises only the shader's base transmitted-light emission floor from 0.065 to 0.24. The palette, moving highlight function, curve, radius, geometry, basin, audio and gameplay remain the same as v1. It adds no transparency or extra effect.
+
+The [v2 movie](../evidence/3d/water-flow/candidate-v2/flow.mp4), [normal-size frame](../evidence/3d/water-flow/candidate-v2/normal-100.png), [gentle frame](../evidence/3d/water-flow/candidate-v2/gentle.png), and [native result](../evidence/3d/water-flow/candidate-v2/results.json) preserve the same 12.6-second comparison. Native exit code was 0, all six checks passed, and no engine diagnostics appeared. Stream vertices and footprint remain 1,536 and 0.9243 m. Peak scene draw count decreased from 311 to 309 after removing stream shadow draws; this still is not a sustained performance result.
+
+The root and this agent inspected the actual full-size v2 still. The independent critic reports a materially reduced dark brace-like edge, lighter lines that are easier to read as falling water, and no obvious glare or creature-occlusion regression. Straight, uniform silhouettes remain; their continuous-perception and comfort uncertainty is retained. This limited agent review does not establish immediate recognition by human players, and no listening or human/owner gate passed. The independent critic owns the exact verdict in [the critique record](CRITIQUE-3D-0.4.md).
+
+Use the [v2 water-only patch](../evidence/3d/water-flow/water-v2-only.patch) and [exact v2 shader](../evidence/3d/water-flow/candidate-v2/courtyard_stream_flow.gdshader), bound by [v2 provenance](../evidence/3d/water-flow/provenance-v2.json) and [the v2 source snapshot](../evidence/3d/water-flow/source-snapshot-v2.zip). The root's warm-window integration makes the baseline full-file patch context stale: merge only the listed water subsections, preserving window materials and restoration behavior. No canonical file was edited here.
+
+V2 movie SHA-256: `168aa8dd5fd83e29d07cd49c727ed88f8a87d2fb4b58b07f41c2f9b3e4d14470`. V2 shader SHA-256: `486bb08c715cfe189465a008d0c6ef906fa978dbffe414a911e5a34bd7c812eb`.
+
+Exact next action: root integrates the selected water subsections with windows, inspects the combined courtyard, freezes and packages that source, then records matching full play and sustained performance. Retain the remaining water-perception question for human review. No further water microtuning is planned without fresh human evidence or a new concrete defect.

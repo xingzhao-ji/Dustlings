@@ -1,0 +1,14 @@
+{
+  "README.txt": "9ef958c6acf8df9da162942f061dddce87b07b3fa8a3b4bdeb99da9aa8bb4e49",
+  "checks.py": "d7c5f1b902649f809f104e51c305c2c8634761819c7dacc30c0db4515848f472",
+  "companion.json": "9d0efeddaea9d3c2cdc3b601f8fee343caf64c78341dfb3475e38d844ad9879f",
+  "idempotent-rerun.log": "b2d0cf13a10b0c502f17d7b31a77503b8d7254ebf590bccfeb99fbee2af32416",
+  "package.log": "b2d0cf13a10b0c502f17d7b31a77503b8d7254ebf590bccfeb99fbee2af32416",
+  "provenance.json": "7367acd0502be88f563fc442705c75f43f7ff5b5fbb6b47da83e47389e0a801c",
+  "reject-damaged-zip.log": "6e00406e5d1ee26f45fe49f596715380482b97b7b72f94d348d209504f25e472",
+  "reject-different-existing-zip.log": "65cb8d9332bff5aede97e7a1b1bd8967e58d9a4ca5ca401fab76dd8d0cd8d95d",
+  "reject-wrong-companion-binding.log": "c08124386f2a8d4c681d6d054cbc7aa95e226e88191f20bc86574e2d0d4a0df1",
+  "reject-wrong-export-hash.log": "e5aa58fb0cd01b029d6b011b088d7d3949863c54c0b547e49c6ebaf9433de96f",
+  "results.json": "9cd19ef4fb8b8e383dac56f3db6e6a9737e43c97f643520cf200b308e50e4287",
+  "verify-only.log": "2e8b58a007a5f5c27a95c90ae8ebf0d65b10c5734f5e3a3f20d16bde8aab9770"
+}

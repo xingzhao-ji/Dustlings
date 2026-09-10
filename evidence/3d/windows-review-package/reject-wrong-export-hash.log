@@ -1,0 +1,8 @@
+file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:34
+  if (bytes.length !== expected.bytes || digest(bytes) !== expected.sha256) throw Error(`Export hash mismatch: ${source}`);
+                                                                                  ^
+
+Error: Export hash mismatch: Windows/Dustlings.exe
+    at file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:34:83
+
+Node.js v26.7.0

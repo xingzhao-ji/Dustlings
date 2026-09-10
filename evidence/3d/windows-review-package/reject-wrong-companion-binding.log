@@ -1,0 +1,8 @@
+file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:82
+  if (await fs.readFile(companionPath, 'utf8') !== canonical(proof)) throw Error('Companion does not exactly bind the verified archive to this manifest');
+                                                                           ^
+
+Error: Companion does not exactly bind the verified archive to this manifest
+    at file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:82:76
+
+Node.js v26.7.0

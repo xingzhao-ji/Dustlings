@@ -1,0 +1,8 @@
+file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:94
+      if (!(await fs.readFile(destination)).equals(archive)) throw Error('Refusing to overwrite a different Windows review archive');
+                                                                   ^
+
+Error: Refusing to overwrite a different Windows review archive
+    at file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:94:68
+
+Node.js v26.7.0

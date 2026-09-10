@@ -1,0 +1,42 @@
+{
+  "action": "verified",
+  "companion": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/windows-review-package.json",
+  "kind": "dustlings-windows-review-package",
+  "version": 1,
+  "manifest": {
+    "file": "manifest.json",
+    "sha256": "1087423e13a51dfd9e3e7b53974e2cbbc8403560b21d4501b437688ea9de11a1",
+    "sourceHash": "056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313"
+  },
+  "archive": {
+    "file": "Windows/Dustlings-Windows.zip",
+    "bytes": 39603063,
+    "sha256": "7d7b768f443d0b6004e0617a776a503190d6bf3078eb65de9d9cfdccf75fbd16"
+  },
+  "entries": [
+    {
+      "file": "Dustlings.exe",
+      "source": "Windows/Dustlings.exe",
+      "bytes": 109136384,
+      "sha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512"
+    },
+    {
+      "file": "Dustlings.pck",
+      "source": "Windows/Dustlings.pck",
+      "bytes": 2136660,
+      "sha256": "3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47"
+    },
+    {
+      "file": "README.txt",
+      "bytes": 1026,
+      "sha256": "9ef958c6acf8df9da162942f061dddce87b07b3fa8a3b4bdeb99da9aa8bb4e49"
+    }
+  ],
+  "verification": {
+    "zipCrc": "passed",
+    "extractedEntriesMatch": "passed",
+    "entryCount": 3,
+    "windowsExecution": "not performed"
+  }
+}
+

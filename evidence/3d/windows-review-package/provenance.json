@@ -1,0 +1,24 @@
+{
+  "preserved_at_utc": "2026-09-10T10:17:17.494598+00:00",
+  "tool": {
+    "file": "tools/package-windows-review.mjs",
+    "sha256": "d19dcea21b63491bf6c0b764482b217d772e83d4ff9ba3e007248808c9eb8857"
+  },
+  "test_runner": {
+    "file": "evidence/3d/windows-review-package/checks.py",
+    "sha256": "d7c5f1b902649f809f104e51c305c2c8634761819c7dacc30c0db4515848f472"
+  },
+  "kind": "Local macOS portable Windows ZIP integrity checks; no Windows execution or human validation",
+  "original_build": "builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/manifest.json",
+  "expected_rejections": [
+    "reject-wrong-export-hash.log",
+    "reject-different-existing-zip.log",
+    "reject-damaged-zip.log",
+    "reject-wrong-companion-binding.log"
+  ],
+  "notes": [
+    "Only archive and companion are added to ignored build output.",
+    "Original manifest and exported file hashes remain unchanged.",
+    "Actual source/ZIP/entry bindings are in companion.json and results.json."
+  ]
+}

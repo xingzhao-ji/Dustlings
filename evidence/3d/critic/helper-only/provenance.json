@@ -1,0 +1,74 @@
+{
+  "reviewer": "Independent AI critic",
+  "humanSessions": 0,
+  "sourceHash": "3828d0c0cf76290844c142446460769eddf0c9e4ad3c29feb290342196c9defa",
+  "capturedAt": "2026-09-10T09:20:40.058Z",
+  "finalizedAt": "2026-09-10T09:25:25.885126+00:00",
+  "method": "Full movie chronology at 1 Hz; all three provided normal-size stills; full-size frames at 12 s and 30 s; enlarged work crop sampled at 4 Hz over 17\u201321 s. Not continuous audiovisual perception.",
+  "directInput": false,
+  "listening": false,
+  "gameSourceInspected": false,
+  "nativeAppLaunched": false,
+  "visualFindingSentBeforeResultLogRead": true,
+  "leadHadAlreadyProvidedAssistanceNumber": true,
+  "captureConditions": "Lead and manifest: generated native brushing to create one helper, 20 s without brushing, visible order and travel; no progress fixture or accelerated simulation. Fixed engine-time MovieMaker output is not wall-clock performance evidence.",
+  "sourceEquivalenceClaim": "Lead says source differs from then-current only in a QA driver await used by another scenario; not independently source-audited.",
+  "firstHelperStillLimitation": "first-helper.png shows particle/pregrowth moment and HUD 0 helpers; use later frames for actual visible creature.",
+  "files": [
+    {
+      "source": "evidence/3d/helper-work-review/capture-manifest.json",
+      "reviewCopy": "evidence/3d/critic/helper-only/capture-manifest.json",
+      "sha256": "fc87f8edc9ae6fa1921c9b9092e9ad1708f4e67296f769a7c390bc49ae6a4e85",
+      "bytes": 10058
+    },
+    {
+      "source": "evidence/3d/helper-work-review/first-helper.png",
+      "reviewCopy": "evidence/3d/critic/helper-only/first-helper.png",
+      "sha256": "0c547dd08e83bdb178b8f91a76da54b96eeea066095ae18255cd49a87aa41393",
+      "bytes": 682767
+    },
+    {
+      "source": "evidence/3d/helper-work-review/helper.mp4",
+      "reviewCopy": "evidence/3d/critic/helper-only/helper.mp4",
+      "sha256": "b2e06e176c338086bfae35e62a01d68e713f3e638287935c9bf67897bce6f268",
+      "bytes": 1865546
+    },
+    {
+      "source": "evidence/3d/helper-work-review/helping.png",
+      "reviewCopy": "evidence/3d/critic/helper-only/helping.png",
+      "sha256": "1e1a0369bc4e879e347a64c09171825fa1906405518c2299f3310adadef732f8",
+      "bytes": 678361
+    },
+    {
+      "source": "evidence/3d/helper-work-review/results.json",
+      "reviewCopy": "evidence/3d/critic/helper-only/results.json",
+      "sha256": "72cb9d8bb87e0379e96759a78c0d1cd8eb58824984ba4d0c951a5ee0761ac9b7",
+      "bytes": 908
+    },
+    {
+      "source": "evidence/3d/helper-work-review/travelling.png",
+      "reviewCopy": "evidence/3d/critic/helper-only/travelling.png",
+      "sha256": "7a714fab51abae50697694679d238327d6c1c2eac79568e5a5593ea0e8c524b6",
+      "bytes": 683037
+    }
+  ],
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 800,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "45.900000"
+    }
+  }
+}

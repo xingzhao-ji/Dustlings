@@ -99,5 +99,13 @@
     "changedNativePackageReviewed": false,
     "listening": false,
     "humanSessions": 0
+  },
+  "helperOnlyFollowup": {
+    "record": "helper-only/provenance.json",
+    "finalizedAt": "2026-09-10T09:25:25.885126+00:00",
+    "changedCaptureEvidenceReviewed": true,
+    "changedNativePackageReviewed": false,
+    "listening": false,
+    "humanSessions": 0
   }
 }

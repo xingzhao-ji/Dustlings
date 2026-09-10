@@ -219,6 +219,58 @@
     "sha256": "441d5d92a3941a99001692b1e4167a9daae8314053e6404100cea33eff6d4540",
     "bytes": 1605388
   },
+  "helper-only/capture-manifest.json": {
+    "sha256": "fc87f8edc9ae6fa1921c9b9092e9ad1708f4e67296f769a7c390bc49ae6a4e85",
+    "bytes": 10058
+  },
+  "helper-only/first-helper.png": {
+    "sha256": "0c547dd08e83bdb178b8f91a76da54b96eeea066095ae18255cd49a87aa41393",
+    "bytes": 682767
+  },
+  "helper-only/helper.mp4": {
+    "sha256": "b2e06e176c338086bfae35e62a01d68e713f3e638287935c9bf67897bce6f268",
+    "bytes": 1865546
+  },
+  "helper-only/helping.png": {
+    "sha256": "1e1a0369bc4e879e347a64c09171825fa1906405518c2299f3310adadef732f8",
+    "bytes": 678361
+  },
+  "helper-only/passive-12.png": {
+    "sha256": "b5b7fb5a8e0d748ccf9995cca9d16b6fe805e440ee0c43d9b67c15f3c698da9c",
+    "bytes": 633479
+  },
+  "helper-only/passive-30.png": {
+    "sha256": "331188c91cbaebb760f1deab772371b6c219977c37740080b8f4b07d2496fdc7",
+    "bytes": 628545
+  },
+  "helper-only/provenance.json": {
+    "sha256": "f4afdf99c6ed43d7b770a498928220e95b79699fb4237183ee7ee40a0dd64063",
+    "bytes": 3111
+  },
+  "helper-only/results.json": {
+    "sha256": "72cb9d8bb87e0379e96759a78c0d1cd8eb58824984ba4d0c951a5ee0761ac9b7",
+    "bytes": 908
+  },
+  "helper-only/sequence-01.png": {
+    "sha256": "1056696dd831ccb9d4053571122cdbad6ce69a77a9086dad824d1a89b3433e0d",
+    "bytes": 785204
+  },
+  "helper-only/sequence-02.png": {
+    "sha256": "ec21ba38b91ff6c78953a3003a19182c08ba200d8b38c44131c99070ed03890d",
+    "bytes": 787556
+  },
+  "helper-only/sequence-03.png": {
+    "sha256": "7d59519fa3d4e8bbda2074b7e620b2c779687c6ff0e91f313f2889048bc402f1",
+    "bytes": 326259
+  },
+  "helper-only/travelling.png": {
+    "sha256": "7a714fab51abae50697694679d238327d6c1c2eac79568e5a5593ea0e8c524b6",
+    "bytes": 683037
+  },
+  "helper-only/work-detail-17-21.png": {
+    "sha256": "e802a350757fbab9504645f4ee7b62168cd619d7a40d0d71409e6c5cf05bbb21",
+    "bytes": 929578
+  },
   "integrated-sensory/birth-detail-10-13.png": {
     "sha256": "90fc7ebc8307f15c14bea5371ab58db07f9148ca1a5536d4e5e9ab815258086f",
     "bytes": 746389
@@ -412,8 +464,8 @@
     "bytes": 903356
   },
   "provenance.json": {
-    "sha256": "cfe24e13753d653882595fba81d9bc44aaeb990d69963b8468fc59e39d1fb14f",
-    "bytes": 4294
+    "sha256": "ff9291f431a3a564cab80df3ff26fc2123f61c3498457091eb67f6463324dcbb",
+    "bytes": 4559
   },
   "travel-detail-sequence.png": {
     "sha256": "dee04d52b6462b802f54d84d8ddd8fd13318585f669830057822a79ade30bf45",

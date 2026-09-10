@@ -1,0 +1,54 @@
+--- canonical-baseline
++++ isolated-distribution-candidate
+@@ -60,26 +60,29 @@
+ 		if static_instance_count >= MAX_STATIC_INSTANCES: break
+ 		var seed = float(d.get("seed", 0.5))
+ 		var spot: Vector2 = d.p
+-		# Sparse irregular drifts, not one pebble per simulation cell.
+-		if seed < 0.43:
+-			var length = lerpf(0.21, 0.37, fmod(seed * 29.7, 1.0))
+-			var width = lerpf(0.09, 0.18, fmod(seed * 43.1, 1.0))
++		var cluster = _powder_cluster(spot)
++		# World-sized patches break the printed-per-tile pattern. Smaller marks
++		# leave room for asymmetric placement on the unchanged flat paver faces.
++		var drift_spot = spot + Vector2(sin(seed * 79.1), cos(seed * 53.7)) * 0.19
++		if seed < 0.12 + cluster * 0.56:
++			var length = lerpf(0.13, 0.28, fmod(seed * 29.7, 1.0))
++			var width = lerpf(0.065, 0.145, fmod(seed * 43.1, 1.0))
+ 			var angle = seed * 37.0
+ 			var extent = Vector2(absf(cos(angle)) * length + absf(sin(angle)) * width, absf(sin(angle)) * length + absf(cos(angle)) * width)
+ 			var fit = minf(1.0, minf(0.42 / extent.x, 0.385 / extent.y))
+ 			length *= fit
+ 			width *= fit
+ 			extent *= fit
+-			var center = _on_paver(spot, extent)
+-			var basis = Basis(Vector3.UP, angle) * Basis.IDENTITY.scaled(Vector3(length, 0.65 + seed * 0.70, width))
++			var center = _on_paver(drift_spot, extent)
++			var basis = Basis(Vector3.UP, angle) * Basis.IDENTITY.scaled(Vector3(length, 0.65 + fmod(seed * 2.3, 1.0) * 0.30, width))
+ 			drifts[int(seed * 97) % 3].append({"transform": Transform3D(basis, Vector3(center.x, 0.0008, center.y)), "color": Color("aaa08c").lightened(fmod(seed * 17.0, 1.0) * 0.07)})
+ 			static_instance_count += 1
+-		if seed > 0.22:
++		if seed > 0.68 - cluster * 0.48:
+ 			for i in 2:
+ 				if static_instance_count >= MAX_STATIC_INSTANCES: break
+ 				var angle = seed * 28.0 + i * 1.4
+ 				var span = 0.08 + fmod(seed * 15.7 + i * 0.23, 1.0) * 0.10
+-				var center = _on_paver(spot + Vector2(cos(angle), sin(angle)) * 0.10, Vector2.ONE * span * 0.58)
++				var center = _on_paver(drift_spot + Vector2(cos(angle), sin(angle)) * 0.12, Vector2.ONE * span * 0.58)
+ 				var basis = Basis(Vector3.UP, angle).scaled(Vector3(span, 0.11, span))
+ 				fibres.append({"transform": Transform3D(basis, Vector3(center.x, 0.001, center.y)), "color": Color("b8ad96").darkened(i * 0.035)})
+ 				static_instance_count += 1
+@@ -112,6 +115,13 @@
+ 	_work_wisps.material_override = _particle_material
+ 	_work_wisps.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+ 	add_child(_work_wisps)
++
++func _powder_cluster(point: Vector2) -> float:
++	# Fixed world-space distribution, unrelated to tile or field cell indices.
++	var broad = sin(point.x * 0.70 + sin(point.y * 0.86) * 0.90) * 0.36
++	broad += cos(point.y * 0.92 - point.x * 0.18) * 0.28
++	broad += sin(point.x * 1.47 + point.y * 0.53) * 0.12
++	return smoothstep(-0.16, 0.32, broad)
+ 
+ func _on_paver(point: Vector2, extent: Vector2) -> Vector2:
+ 	# Match unchanged paver faces. Large outer-edge drifts move to the adjacent

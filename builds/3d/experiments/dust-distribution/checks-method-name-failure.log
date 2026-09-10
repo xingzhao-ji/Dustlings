@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+{"kind":"Headless CPU-submitted mesh geometry/distribution; no GPU readback or aesthetic score","variants":{"baseline":{"drifts":219,"drifts_within0_10_of_tile_center":24,"existing_feedback_api_and_caps":false,"max_y":0.0236034840345383,"min_y":0.00100000004749745,"occupied_tiles":146,"passed":false,"static_batches":4,"static_instances":997,"vertices_outside_flat_faces":0},"candidate":{"drifts":153,"drifts_within0_10_of_tile_center":5,"existing_feedback_api_and_caps":false,"max_y":0.0235328637063503,"min_y":0.00100000004749745,"occupied_tiles":132,"passed":false,"static_batches":4,"static_instances":623,"vertices_outside_flat_faces":0}}}

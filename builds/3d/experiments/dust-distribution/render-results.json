@@ -1,0 +1,14 @@
+{
+	"after_draw_calls": 40.0,
+	"audio_never_started": true,
+	"baseline_instances": 997,
+	"before_draw_calls": 40.0,
+	"brush_interval_seconds": 4.0,
+	"candidate_instances": 623,
+	"fifty_after_draw_calls": 301.0,
+	"fifty_before_draw_calls": 300.0,
+	"kind": "Frozen native matched distribution comparison. Four seconds of generated continuous brushing at normal engine time, then labelled50-helper and complete fixtures; no human input or wall-clock performance claim.",
+	"no_collision_nodes": true,
+	"removed_brushed": 3.42833333333334,
+	"zero_idle_wisps": true
+}

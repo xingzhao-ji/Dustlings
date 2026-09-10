@@ -227,6 +227,7 @@ func _dynamic_round(parent: Node3D, at: Vector3, size: Vector3, color: Color) ->
     return mesh
 
 func _terrain() -> void:
+    _scenic_surround()
     _box(Vector3(0, -0.42, -1), Vector3(37, 0.8, 35), Color("839b82"), 0.5, "ground")
     _solid("WalkingGround", Vector3(0, -0.5, -1), Vector3(37, 1, 35))
     # Long boundaries are dressed by hillside trees rather than invisible room walls.
@@ -267,6 +268,65 @@ func _terrain() -> void:
         _box(Vector3(sin(angle) * 2.0, -0.008, 9 + cos(angle) * 2.0), Vector3(0.33, 0.07, 0.50), _cream, 0.06, "stone", -angle)
     _post_lamp(Vector3(-2.6, 0, 8.3))
     _post_lamp(Vector3(3.4, 0, 7))
+
+func _scenic_height(x: float, z: float) -> float:
+    # Six broad earthen banks, blended into one continuous nonwalkable surround.
+    # Nothing rises inside the established village rectangle. The original
+    # physical floor and boundary bodies remain the only traversable terrain.
+    var outside := maxf(absf(x) - 18.0, absf(z + 1.0) - 17.0)
+    var hills: Array[Vector4] = [
+        Vector4(-28, -25, 18, 15), Vector4(8, -34, 23, 15),
+        Vector4(33, -7, 18, 25), Vector4(25, 30, 21, 20),
+        Vector4(-8, 35, 28, 15), Vector4(-34, 5, 16, 24)
+    ]
+    var heights: Array[float] = [5.4, 6.2, 5.4, 4.3, 5.5, 5.1]
+    var height := 0.0
+    for i in hills.size():
+        var hill := hills[i]
+        var dx := (x - hill.x) / hill.z
+        var dz := (z - hill.y) / hill.w
+        height += heights[i] * exp(-dx * dx - dz * dz)
+    return -0.028 + height * smoothstep(0.0, 8.5, outside)
+
+func _scenic_surround() -> void:
+    # A single softly shaded real-geometry ring, not more explorable land.
+    # The inner edge overlaps the visual floor by half a metre; sparse radial
+    # rings keep the background modest (4,096 triangles, one existing batch).
+    var offsets: Array[float] = [0, 1, 2, 3, 4, 5, 7, 9, 12, 16, 21, 27, 35, 45, 60, 80, 110]
+    var segments := 128
+    var data := {"vertices": [], "normals": [], "colors": [], "uv": [], "indices": []}
+    for ring in offsets.size():
+        for segment in segments:
+            var angle := TAU * float(segment) / float(segments)
+            var direction := Vector2(sin(angle), cos(angle))
+            var edge := 1.0 / maxf(absf(direction.x) / 18.0, absf(direction.y) / 17.0)
+            var pos := direction * (edge + offsets[ring]) + Vector2(0, -1)
+            var height := _scenic_height(pos.x, pos.y)
+            var dx := (_scenic_height(pos.x + 0.15, pos.y) - _scenic_height(pos.x - 0.15, pos.y)) / 0.30
+            var dz := (_scenic_height(pos.x, pos.y + 0.15) - _scenic_height(pos.x, pos.y - 0.15)) / 0.30
+            var distance_tint := smoothstep(2.0, 28.0, offsets[ring])
+            var color := Color("839b82").lerp(Color("728f83"), distance_tint)
+            color = color.lerp(Color("8ca197"), smoothstep(32.0, 72.0, offsets[ring]) * 0.36)
+            data.vertices.append(Vector3(pos.x, height, pos.y))
+            data.normals.append(Vector3(-dx, 1, -dz).normalized())
+            data.colors.append(color)
+            data.uv.append(pos * 0.05)
+            if ring < offsets.size() - 1:
+                var a := ring * segments + segment
+                var b := ring * segments + (segment + 1) % segments
+                var c := a + segments
+                var d := b + segments
+                data.indices.append_array([a, b, c, b, d, c])
+    # Add vertex colors directly instead of _queue_mesh, which gives each prop
+    # one color. Reuse the matte ground material with no new texture or shader.
+    if not _batches.has("ground"):
+        _batches["ground"] = {"vertices": [], "normals": [], "colors": [], "uv": [], "indices": []}
+    var batch: Dictionary = _batches["ground"]
+    var first: int = batch.vertices.size()
+    for key in ["vertices", "normals", "colors", "uv"]:
+        batch[key].append_array(data[key])
+    for index in data.indices:
+        batch.indices.append(first + index)
 
 func _path(from: Vector3, to: Vector3, width: float) -> void:
     var length := from.distance_to(to)

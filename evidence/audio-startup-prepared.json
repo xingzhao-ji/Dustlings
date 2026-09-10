@@ -1,0 +1,858 @@
+{
+  "recordedAt": "2026-09-10T05:57:59.921Z",
+  "label": "prepared",
+  "conditions": "Three sequential fresh headless Google Chrome processes, 1440×900 viewport, DPR 2, default sample rate. Native AudioContext and DustAudio methods timed separately. No speaker audition or human responsiveness test. Other root work may share this machine.",
+  "trials": [
+    {
+      "trial": 1,
+      "browser": "152.0.7977.83",
+      "phases": [
+        {
+          "name": "AudioContext constructor",
+          "start": 112.2999999821186,
+          "duration": 109.59999999403954,
+          "sampleRate": 48000,
+          "state": "running"
+        },
+        {
+          "name": "DustAudio.prepare synchronous",
+          "start": 112.2999999821186,
+          "duration": 109.7000000178814
+        },
+        {
+          "name": "AudioContext.createMediaStreamDestination",
+          "start": 266.09999999403954,
+          "duration": 0.19999998807907104,
+          "arguments": []
+        },
+        {
+          "name": "AudioContext.createConvolver",
+          "start": 266.2999999821186,
+          "duration": 0,
+          "arguments": []
+        },
+        {
+          "name": "AudioContext.createBuffer",
+          "start": 266.39999997615814,
+          "duration": 0,
+          "arguments": [
+            2,
+            69600,
+            48000
+          ]
+        },
+        {
+          "name": "DustAudio._impulse synchronous",
+          "start": 266.2999999821186,
+          "duration": 6.800000011920929
+        },
+        {
+          "name": "AudioContext.createBuffer",
+          "start": 277,
+          "duration": 0,
+          "arguments": [
+            1,
+            192000,
+            48000
+          ]
+        },
+        {
+          "name": "DustAudio._noiseBuffer synchronous",
+          "start": 277,
+          "duration": 2
+        },
+        {
+          "name": "DustAudio._texture synchronous",
+          "start": 279,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._texture synchronous",
+          "start": 279,
+          "duration": 0.09999999403953552
+        },
+        {
+          "name": "DustAudio._texture synchronous",
+          "start": 279.09999999403954,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._buildGraph synchronous",
+          "start": 265.89999997615814,
+          "duration": 13.200000017881393
+        },
+        {
+          "name": "AudioContext.resume synchronous",
+          "start": 279.09999999403954,
+          "duration": 0.19999998807907104
+        },
+        {
+          "name": "DustAudio.resume synchronous",
+          "start": 279.09999999403954,
+          "duration": 0.19999998807907104
+        },
+        {
+          "name": "DustAudio.start synchronous",
+          "start": 265.89999997615814,
+          "duration": 13.400000005960464
+        },
+        {
+          "name": "AudioContext.resume settled",
+          "start": 279.09999999403954,
+          "duration": 12.199999988079071
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 291.2999999821186,
+          "duration": 0.7000000178813934
+        },
+        {
+          "name": "DustAudio.resume settled",
+          "start": 279.09999999403954,
+          "duration": 13
+        },
+        {
+          "name": "DustAudio.start settled",
+          "start": 265.89999997615814,
+          "duration": 26.200000017881393
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 397,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 496.59999999403954,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 597,
+          "duration": 0.09999999403953552
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 698.1999999880791,
+          "duration": 0.09999999403953552
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 796.7999999821186,
+          "duration": 0
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 112.2999999821186,
+          "duration": 109
+        }
+      ],
+      "longFrames": [
+        {
+          "start": 112.2999999821186,
+          "duration": 109.90000000596046,
+          "scripts": [
+            {
+              "duration": 109.7000000178814,
+              "function": "",
+              "url": "",
+              "invoker": "IdleRequestCallback"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "preparationFrom": "Audit harness: welcome painted, idle callback",
+      "beforeClick": {
+        "ready": false,
+        "context": true,
+        "diagnostics": {
+          "ready": false,
+          "prepared": true,
+          "paused": false,
+          "contextState": "suspended",
+          "maxVoices": 48,
+          "peakVoices": 0,
+          "continuousSources": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        },
+        "now": 223.69999998807907
+      },
+      "diagnostics": {
+        "ready": true,
+        "prepared": true,
+        "paused": false,
+        "contextState": "running",
+        "maxVoices": 48,
+        "peakVoices": 2,
+        "continuousSources": 3,
+        "progress": 0,
+        "mix": {
+          "music": 0.48,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": false,
+          "reducedMotion": false
+        }
+      },
+      "sampleRate": 48000
+    },
+    {
+      "trial": 2,
+      "browser": "152.0.7977.83",
+      "phases": [
+        {
+          "name": "AudioContext constructor",
+          "start": 118.09999999403954,
+          "duration": 105.80000001192093,
+          "sampleRate": 48000,
+          "state": "running"
+        },
+        {
+          "name": "DustAudio.prepare synchronous",
+          "start": 118,
+          "duration": 106
+        },
+        {
+          "name": "AudioContext.createMediaStreamDestination",
+          "start": 270,
+          "duration": 0.29999998211860657,
+          "arguments": []
+        },
+        {
+          "name": "AudioContext.createConvolver",
+          "start": 270.2999999821186,
+          "duration": 0.10000002384185791,
+          "arguments": []
+        },
+        {
+          "name": "AudioContext.createBuffer",
+          "start": 270.40000000596046,
+          "duration": 0,
+          "arguments": [
+            2,
+            69600,
+            48000
+          ]
+        },
+        {
+          "name": "DustAudio._impulse synchronous",
+          "start": 270.40000000596046,
+          "duration": 6.799999982118607
+        },
+        {
+          "name": "AudioContext.createBuffer",
+          "start": 281.09999999403954,
+          "duration": 0.09999999403953552,
+          "arguments": [
+            1,
+            192000,
+            48000
+          ]
+        },
+        {
+          "name": "DustAudio._noiseBuffer synchronous",
+          "start": 281.09999999403954,
+          "duration": 1.9000000059604645
+        },
+        {
+          "name": "DustAudio._texture synchronous",
+          "start": 283,
+          "duration": 0.19999998807907104
+        },
+        {
+          "name": "DustAudio._texture synchronous",
+          "start": 283.19999998807907,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._texture synchronous",
+          "start": 283.19999998807907,
+          "duration": 0.09999999403953552
+        },
+        {
+          "name": "DustAudio._buildGraph synchronous",
+          "start": 269.90000000596046,
+          "duration": 13.399999976158142
+        },
+        {
+          "name": "AudioContext.resume synchronous",
+          "start": 283.2999999821186,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio.resume synchronous",
+          "start": 283.2999999821186,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio.start synchronous",
+          "start": 269.90000000596046,
+          "duration": 13.399999976158142
+        },
+        {
+          "name": "AudioContext.resume settled",
+          "start": 283.2999999821186,
+          "duration": 12.400000005960464
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 295.69999998807907,
+          "duration": 0.7000000178813934
+        },
+        {
+          "name": "DustAudio.resume settled",
+          "start": 283.2999999821186,
+          "duration": 13.200000017881393
+        },
+        {
+          "name": "DustAudio.start settled",
+          "start": 269.90000000596046,
+          "duration": 26.599999994039536
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 400.59999999403954,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 502.09999999403954,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 601.6999999880791,
+          "duration": 0.09999999403953552
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 701.0999999940395,
+          "duration": 0.09999999403953552
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 802.1999999880791,
+          "duration": 0
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 118,
+          "duration": 106
+        }
+      ],
+      "longFrames": [
+        {
+          "start": 117.7999999821186,
+          "duration": 106.40000000596046,
+          "scripts": [
+            {
+              "duration": 106.09999999403954,
+              "function": "",
+              "url": "",
+              "invoker": "IdleRequestCallback"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "preparationFrom": "Audit harness: welcome painted, idle callback",
+      "beforeClick": {
+        "ready": false,
+        "context": true,
+        "diagnostics": {
+          "ready": false,
+          "prepared": true,
+          "paused": false,
+          "contextState": "suspended",
+          "maxVoices": 48,
+          "peakVoices": 0,
+          "continuousSources": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        },
+        "now": 226.2999999821186
+      },
+      "diagnostics": {
+        "ready": true,
+        "prepared": true,
+        "paused": false,
+        "contextState": "running",
+        "maxVoices": 48,
+        "peakVoices": 2,
+        "continuousSources": 3,
+        "progress": 0,
+        "mix": {
+          "music": 0.48,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": false,
+          "reducedMotion": false
+        }
+      },
+      "sampleRate": 48000
+    },
+    {
+      "trial": 3,
+      "browser": "152.0.7977.83",
+      "phases": [
+        {
+          "name": "AudioContext constructor",
+          "start": 102.5,
+          "duration": 109.69999998807907,
+          "sampleRate": 48000,
+          "state": "running"
+        },
+        {
+          "name": "DustAudio.prepare synchronous",
+          "start": 102.5,
+          "duration": 109.69999998807907
+        },
+        {
+          "name": "AudioContext.createMediaStreamDestination",
+          "start": 255.2999999821186,
+          "duration": 0.30000001192092896,
+          "arguments": []
+        },
+        {
+          "name": "AudioContext.createConvolver",
+          "start": 255.69999998807907,
+          "duration": 0,
+          "arguments": []
+        },
+        {
+          "name": "AudioContext.createBuffer",
+          "start": 255.69999998807907,
+          "duration": 0,
+          "arguments": [
+            2,
+            69600,
+            48000
+          ]
+        },
+        {
+          "name": "DustAudio._impulse synchronous",
+          "start": 255.69999998807907,
+          "duration": 6.800000011920929
+        },
+        {
+          "name": "AudioContext.createBuffer",
+          "start": 266.5,
+          "duration": 0,
+          "arguments": [
+            1,
+            192000,
+            48000
+          ]
+        },
+        {
+          "name": "DustAudio._noiseBuffer synchronous",
+          "start": 266.39999997615814,
+          "duration": 2.2000000178813934
+        },
+        {
+          "name": "DustAudio._texture synchronous",
+          "start": 268.59999999403954,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._texture synchronous",
+          "start": 268.59999999403954,
+          "duration": 0.09999999403953552
+        },
+        {
+          "name": "DustAudio._texture synchronous",
+          "start": 268.69999998807907,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._buildGraph synchronous",
+          "start": 255.19999998807907,
+          "duration": 13.5
+        },
+        {
+          "name": "AudioContext.resume synchronous",
+          "start": 268.7999999821186,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio.resume synchronous",
+          "start": 268.69999998807907,
+          "duration": 0.09999999403953552
+        },
+        {
+          "name": "DustAudio.start synchronous",
+          "start": 255.19999998807907,
+          "duration": 13.599999994039536
+        },
+        {
+          "name": "AudioContext.resume settled",
+          "start": 268.7999999821186,
+          "duration": 11.700000017881393
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 280.59999999403954,
+          "duration": 0.699999988079071
+        },
+        {
+          "name": "DustAudio.resume settled",
+          "start": 268.69999998807907,
+          "duration": 12.599999994039536
+        },
+        {
+          "name": "DustAudio.start settled",
+          "start": 255.19999998807907,
+          "duration": 26.099999994039536
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 386.19999998807907,
+          "duration": 0.09999999403953552
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 486.2999999821186,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 586.3999999761581,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 686.3999999761581,
+          "duration": 0
+        },
+        {
+          "name": "DustAudio._schedule synchronous",
+          "start": 785.0999999940395,
+          "duration": 0
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 102.39999997615814,
+          "duration": 109
+        }
+      ],
+      "longFrames": [
+        {
+          "start": 102.2999999821186,
+          "duration": 110,
+          "scripts": [
+            {
+              "duration": 109.80000001192093,
+              "function": "",
+              "url": "",
+              "invoker": "IdleRequestCallback"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "preparationFrom": "Audit harness: welcome painted, idle callback",
+      "beforeClick": {
+        "ready": false,
+        "context": true,
+        "diagnostics": {
+          "ready": false,
+          "prepared": true,
+          "paused": false,
+          "contextState": "suspended",
+          "maxVoices": 48,
+          "peakVoices": 0,
+          "continuousSources": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        },
+        "now": 213.09999999403954
+      },
+      "diagnostics": {
+        "ready": true,
+        "prepared": true,
+        "paused": false,
+        "contextState": "running",
+        "maxVoices": 48,
+        "peakVoices": 2,
+        "continuousSources": 3,
+        "progress": 0,
+        "mix": {
+          "music": 0.48,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": false,
+          "reducedMotion": false
+        }
+      },
+      "sampleRate": 48000
+    }
+  ],
+  "summary": [
+    {
+      "trial": 1,
+      "sampleRate": 48000,
+      "beforeClick": {
+        "ready": false,
+        "context": true,
+        "diagnostics": {
+          "ready": false,
+          "prepared": true,
+          "paused": false,
+          "contextState": "suspended",
+          "maxVoices": 48,
+          "peakVoices": 0,
+          "continuousSources": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        },
+        "now": 223.69999998807907
+      },
+      "phases": [
+        {
+          "name": "AudioContext constructor",
+          "duration": 109.59999999403954
+        },
+        {
+          "name": "DustAudio._impulse synchronous",
+          "duration": 6.800000011920929
+        },
+        {
+          "name": "DustAudio._noiseBuffer synchronous",
+          "duration": 2
+        },
+        {
+          "name": "DustAudio._buildGraph synchronous",
+          "duration": 13.200000017881393
+        },
+        {
+          "name": "DustAudio.start synchronous",
+          "duration": 13.400000005960464
+        },
+        {
+          "name": "AudioContext.resume settled",
+          "duration": 12.199999988079071
+        },
+        {
+          "name": "DustAudio.resume settled",
+          "duration": 13
+        },
+        {
+          "name": "DustAudio.start settled",
+          "duration": 26.200000017881393
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 112.2999999821186,
+          "duration": 109
+        }
+      ],
+      "clickLongTasks": [],
+      "longFrames": [
+        {
+          "start": 112.2999999821186,
+          "duration": 109.90000000596046,
+          "scripts": [
+            {
+              "duration": 109.7000000178814,
+              "function": "",
+              "url": "",
+              "invoker": "IdleRequestCallback"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "sampleRate": 48000,
+      "beforeClick": {
+        "ready": false,
+        "context": true,
+        "diagnostics": {
+          "ready": false,
+          "prepared": true,
+          "paused": false,
+          "contextState": "suspended",
+          "maxVoices": 48,
+          "peakVoices": 0,
+          "continuousSources": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        },
+        "now": 226.2999999821186
+      },
+      "phases": [
+        {
+          "name": "AudioContext constructor",
+          "duration": 105.80000001192093
+        },
+        {
+          "name": "DustAudio._impulse synchronous",
+          "duration": 6.799999982118607
+        },
+        {
+          "name": "DustAudio._noiseBuffer synchronous",
+          "duration": 1.9000000059604645
+        },
+        {
+          "name": "DustAudio._buildGraph synchronous",
+          "duration": 13.399999976158142
+        },
+        {
+          "name": "DustAudio.start synchronous",
+          "duration": 13.399999976158142
+        },
+        {
+          "name": "AudioContext.resume settled",
+          "duration": 12.400000005960464
+        },
+        {
+          "name": "DustAudio.resume settled",
+          "duration": 13.200000017881393
+        },
+        {
+          "name": "DustAudio.start settled",
+          "duration": 26.599999994039536
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 118,
+          "duration": 106
+        }
+      ],
+      "clickLongTasks": [],
+      "longFrames": [
+        {
+          "start": 117.7999999821186,
+          "duration": 106.40000000596046,
+          "scripts": [
+            {
+              "duration": 106.09999999403954,
+              "function": "",
+              "url": "",
+              "invoker": "IdleRequestCallback"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "sampleRate": 48000,
+      "beforeClick": {
+        "ready": false,
+        "context": true,
+        "diagnostics": {
+          "ready": false,
+          "prepared": true,
+          "paused": false,
+          "contextState": "suspended",
+          "maxVoices": 48,
+          "peakVoices": 0,
+          "continuousSources": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        },
+        "now": 213.09999999403954
+      },
+      "phases": [
+        {
+          "name": "AudioContext constructor",
+          "duration": 109.69999998807907
+        },
+        {
+          "name": "DustAudio._impulse synchronous",
+          "duration": 6.800000011920929
+        },
+        {
+          "name": "DustAudio._noiseBuffer synchronous",
+          "duration": 2.2000000178813934
+        },
+        {
+          "name": "DustAudio._buildGraph synchronous",
+          "duration": 13.5
+        },
+        {
+          "name": "DustAudio.start synchronous",
+          "duration": 13.599999994039536
+        },
+        {
+          "name": "AudioContext.resume settled",
+          "duration": 11.700000017881393
+        },
+        {
+          "name": "DustAudio.resume settled",
+          "duration": 12.599999994039536
+        },
+        {
+          "name": "DustAudio.start settled",
+          "duration": 26.099999994039536
+        }
+      ],
+      "longTasks": [
+        {
+          "start": 102.39999997615814,
+          "duration": 109
+        }
+      ],
+      "clickLongTasks": [],
+      "longFrames": [
+        {
+          "start": 102.2999999821186,
+          "duration": 110,
+          "scripts": [
+            {
+              "duration": 109.80000001192093,
+              "function": "",
+              "url": "",
+              "invoker": "IdleRequestCallback"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

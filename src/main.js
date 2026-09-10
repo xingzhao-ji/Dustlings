@@ -1,5 +1,5 @@
 import {createState,tick,buyUpgrade,assignCrew,releaseCrew,beginRitual,UPGRADES,serialise,restore,walkable,notify} from './game.js';
-import {SaveStore,SAVE_KEY} from './storage.js';
+import {SaveStore,SAVE_KEY,INTERRUPTED_KEY} from './storage.js';
 import {Renderer} from './renderer.js';
 import {DustAudio} from './audio.js';
 import {createKeyboardControls} from './keyboard.js';
@@ -52,6 +52,7 @@ async function save(){
   try{if(started)success=await withSaveLock(()=>store.save(state));}catch{store.status='unavailable';}
   updateSaveStatus();if(store.status==='conflict')showSaveConflict();return success;
 }
+function checkpoint(){if(started){store.checkpoint(state);updateSaveStatus();}}
 function updateSaveStatus(){
   $('save-status').textContent=store.status==='conflict'?'Newer progress in another window':store.status==='unavailable'?'Save unavailable — export a backup':store.status==='damaged'?'Save needs recovery':'Saved on this device';
   $('settings-save-note').textContent=store.status==='conflict'?'Your progress is still in this window. Export it before loading the saved courtyard if you want to keep both.':store.status==='unavailable'?'Browser storage is unavailable. Use Export save to keep your progress.':'Automatically saved in this browser. A backup keeps the previous checkpoint.';
@@ -147,7 +148,7 @@ $('load-latest-save').onclick=async()=>{
   await withSaveLock(()=>{const latest=store.load();if(!latest&&store.status!=='ready')return;state=latest||createState();state.reducedMotion=settings.reducedMotion;completionShown=state.completed;birth=null;store.save(state);});
   updateSaveStatus();if(store.status==='saved'||store.status==='recovered'||store.status==='ready'){audio.setProgress(state.restoration);setMode('brush');closeSettings();}
 };
-window.addEventListener('storage',e=>{if(e.key===SAVE_KEY&&store.hasConflict())showSaveConflict();});
+window.addEventListener('storage',e=>{if((e.key===SAVE_KEY||e.key===INTERRUPTED_KEY)&&store.hasConflict())showSaveConflict();});
 function enjoy(){$('completion').close();paused=false;lastTime=performance.now();audio.resume();canvas.focus({preventScroll:true});}
 $('enjoy-button').onclick=enjoy;
 document.querySelector('.wordmark').onclick=e=>{e.preventDefault();openSettings();};
@@ -207,8 +208,8 @@ document.querySelector('.world-panel').append(cameraControls);
 setZoom(zoom);
 let panMode=false;$('zoom-in').onclick=()=>setZoom(Math.min(2,zoom+(canvas.clientWidth<500?.7:.25)));$('zoom-out').onclick=()=>setZoom(Math.max(1,zoom-(canvas.clientWidth<500?.7:.25)));$('pan-toggle').onclick=()=>{panMode=!panMode;$('pan-toggle').setAttribute('aria-pressed',panMode);$('pan-toggle').classList.toggle('selected',panMode);notify(state,panMode?'Drag the courtyard to look around. Tap ↔ again to brush.':'Ready to brush again.');};
 canvas.addEventListener('pointerdown',e=>{if(panMode&&!paused&&pointerId===e.pointerId){panning=true;state.pointer.active=false;autoSweep=0;}},false);
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&started){stopInput();audio.pause();save();if(!paused){paused=true;$('settings').showModal();}}});
-window.addEventListener('pagehide',()=>{stopInput();save();});window.addEventListener('blur',()=>{stopInput();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&started){stopInput();audio.pause();checkpoint();save();if(!paused){paused=true;$('settings').showModal();}}});
+window.addEventListener('pagehide',()=>{stopInput();checkpoint();save();});window.addEventListener('blur',()=>{stopInput();});
 
 function processEvents(){
   for(const e of state.events.splice(0)){
@@ -238,7 +239,7 @@ function frame(now){
   requestAnimationFrame(frame);
 }
 if(state.elapsed>0)$('start-button').innerHTML='Return to your courtyard <span>↗</span>';
-if(store.recovered||store.status==='damaged'||store.status==='unavailable'){$('recovery-note').hidden=false;$('recovery-note').textContent=store.recovered?'Your previous save was recovered from its backup.':store.status==='damaged'?'The saved courtyard could not be read. You can import a backup from Settings after starting.':'Browser saving is unavailable. Export a save from Settings before leaving.';}
+if(store.recovered||store.status==='damaged'||store.status==='unavailable'){$('recovery-note').hidden=false;$('recovery-note').textContent=store.recovered?(store.recoverySource==='interrupted'?'Your last sweep was recovered after an interruption.':'Your previous save was recovered from its backup.'):store.status==='damaged'?'The saved courtyard could not be read. You can import a backup from Settings after starting.':'Browser saving is unavailable. Export a save from Settings before leaving.';}
 updateUI();updateSaveStatus();$('welcome').showModal();requestAnimationFrame(frame);
 // Native audio setup is costly on the measured MacBook. Do it only after the
 // welcome has painted; sources and music still begin from the Start gesture.

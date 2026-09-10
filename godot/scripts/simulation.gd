@@ -5,6 +5,8 @@ const COSTS = {"brush": 32, "teamwork": 32, "bloom": 58}
 const FOUNTAIN_RADIUS = 1.45
 const HELPER_SPACING = 0.54 # 0.46 m body plus a visible gap at the playing camera.
 const PAIR_OFFSET = 0.29
+const CHORUS_DURATION = 18.0
+const LEGACY_CHORUS_DURATION = 38.0
 var dust: Array = []
 var crew: Array = []
 var upgrades = {"brush": false, "teamwork": false, "bloom": false}
@@ -82,7 +84,7 @@ func release():
 func begin_restoration() -> bool:
 	if not upgrades.bloom or ratio() < 0.75 or ritual or restoration >= 1: return false
 	ritual = true
-	ritual_time = 0
+	ritual_time = restoration * CHORUS_DURATION
 	release()
 	events.append({"kind": "chorus"})
 	return true
@@ -250,8 +252,9 @@ func tick(delta: float, brushing: bool, brush_point: Vector2):
 		for c in crew:
 			if c.work > 0: gathered += 1
 		if gathered >= mini(12, crew.size()) * 0.8:
-			ritual_time += delta
-			restoration = minf(1.0, ritual_time / 38.0)
+			ritual_time = minf(CHORUS_DURATION, ritual_time + delta)
+			if ritual_time >= CHORUS_DURATION - 0.000001: ritual_time = CHORUS_DURATION
+			restoration = minf(1.0, ritual_time / CHORUS_DURATION)
 		if restoration >= 1.0:
 			ritual = false
 			for c in crew: c.target = -1
@@ -268,7 +271,7 @@ func serialise() -> Dictionary:
 	for d in dust: amounts.append(d.amount)
 	var creatures: Array = []
 	for c in crew: creatures.append({"x": c.p.x, "z": c.p.y, "born": c.born, "direction": c.direction})
-	return {"format": "dustlings-3d", "version": 1, "dust": amounts, "crew": creatures, "upgrades": upgrades.duplicate(), "motes": motes, "earned": earned, "elapsed": elapsed, "restoration": restoration, "ritual": ritual, "ritual_time": ritual_time, "completed": completed, "first_helper_at": first_helper_at, "first_upgrade_at": first_upgrade_at, "assignment": [] if assignment == Vector2.INF else [assignment.x, assignment.y], "stats": stats.duplicate()}
+	return {"format": "dustlings-3d", "version": 1, "dust": amounts, "crew": creatures, "upgrades": upgrades.duplicate(), "motes": motes, "earned": earned, "elapsed": elapsed, "restoration": restoration, "ritual": ritual, "ritual_time": ritual_time, "ritual_duration": CHORUS_DURATION, "completed": completed, "first_helper_at": first_helper_at, "first_upgrade_at": first_upgrade_at, "assignment": [] if assignment == Vector2.INF else [assignment.x, assignment.y], "stats": stats.duplicate()}
 
 func restore(data: Variant) -> bool:
 	if not data is Dictionary or data.get("format") != "dustlings-3d" or data.get("version") != 1: return false
@@ -294,6 +297,13 @@ func restore(data: Variant) -> bool:
 	for key in ["elapsed", "restoration", "ritual_time", "first_helper_at", "first_upgrade_at"]:
 		if not (data.get(key) is float or data.get(key) is int) or not is_finite(data[key]): return false
 	if data.elapsed < 0 or data.restoration < 0 or data.restoration > 1 or data.ritual_time < 0: return false
+	var saved_duration = data.get("ritual_duration", LEGACY_CHORUS_DURATION)
+	if not (saved_duration is float or saved_duration is int) or not is_finite(saved_duration) or saved_duration <= 0: return false
+	# Visible restoration is authoritative across duration changes. A legacy19s /
+	# 38s save remains half restored; interpreting19 as the new clock would finish it.
+	var resumed_time = data.restoration * CHORUS_DURATION
+	if saved_duration == CHORUS_DURATION and is_equal_approx(minf(1.0, data.ritual_time / saved_duration), data.restoration):
+		resumed_time = minf(CHORUS_DURATION, data.ritual_time)
 	if data.first_helper_at > data.elapsed or data.first_upgrade_at > data.elapsed: return false
 	if data.crew.size() > 0 and data.first_helper_at < 0: return false
 	if spent > 0 and data.first_upgrade_at < 0: return false
@@ -324,7 +334,7 @@ func restore(data: Variant) -> bool:
 	elapsed = data.elapsed
 	restoration = data.restoration
 	ritual = data.ritual
-	ritual_time = data.ritual_time
+	ritual_time = resumed_time
 	completed = data.completed
 	first_helper_at = data.first_helper_at
 	first_upgrade_at = data.first_upgrade_at

@@ -68,6 +68,10 @@ func run():
 	game._notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)
 	check(game.paused and not game.brushing, "Focus loss preserves and pauses the courtyard")
 	check(game._save_progress(), "Integrated current state passes verified native save")
+	game._qa_fixture(true)
+	game.sim.cleaned = float(game.sim.dust.size()) - 0.000000003
+	game._update_ui()
+	check(game.counts.text.contains("100% clear"), "Completed courtyard displays100% despite actual floating-point accumulation residual")
 	var report = {"kind": "Headless Godot integration: generated local viewport input, actual3D physics raycasts, accelerated test steps. Not human timing, native physical input or presentation evidence.", "checks": checks, "failures": failures, "helpers": game.sim.crew.size(), "brushed": game.sim.stats.brushed}
 	var file = FileAccess.open("res://../evidence/3d/integration-checks.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(report, "  "))

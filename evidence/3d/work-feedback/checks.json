@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "Per-helper activity equals actual passive removal, with no rate or currency contribution from presentation",
+    "Actual first-helper assistance can produce a bounded local dust response",
+    "Transient work feedback stays outside the established save payload",
+    "Idle feedback drains and cannot spend stale work credit",
+    "A working-looking pose without actual removed dust emits nothing",
+    "Fifty simultaneous contacts stay within one fixed forty-instance work batch",
+    "Gentle motion limits work response to ten low-lift particles",
+    "Reset hides particles and clears activity credit for returning or loading"
+  ],
+  "failures": [],
+  "kind": "Headless simulation and bounded presentation checks; not rendered appearance, human clarity or enjoyment.",
+  "passive_assistance": 0.269460677153323,
+  "sources": {
+    "feedback": "2e5098956ea8aa03fefbba3f244be1b5151c07864feaf81e7181e17b69dd4425",
+    "simulation": "d8d819791edf69bc9973a21ec173424fc69c35f64a226cd29ff572e8e0459fc5"
+  }
+}

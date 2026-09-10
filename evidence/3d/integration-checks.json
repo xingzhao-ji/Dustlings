@@ -1,5 +1,5 @@
 {
-  "brushed": 45.0020334556601,
+  "brushed": 0.0,
   "checks": [
     "Welcome has no game progression or audio playback",
     "Native pointer event brushes the visible raycast ground surface",
@@ -15,9 +15,10 @@
     "Changing camera zoom cancels the old brush target",
     "Keyboard dust finding selects an aimable visible target",
     "Focus loss preserves and pauses the courtyard",
-    "Integrated current state passes verified native save"
+    "Integrated current state passes verified native save",
+    "Completed courtyard displays100% despite actual floating-point accumulation residual"
   ],
   "failures": [],
-  "helpers": 6,
+  "helpers": 50,
   "kind": "Headless Godot integration: generated local viewport input, actual3D physics raycasts, accelerated test steps. Not human timing, native physical input or presentation evidence."
 }

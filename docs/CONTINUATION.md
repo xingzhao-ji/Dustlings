@@ -1,4 +1,4 @@
-# Continuation checkpoint — 2026-09-10 09:33 UTC
+# Continuation checkpoint — 2026-09-10 09:30 UTC
 
 Session active. Milestone: exceptional real 3D courtyard, Godot 4.7.2, version 0.4.0-dev. No additional zones eligible. Human sessions **0**; player, presentation and owner acceptance all pending. This is a development checkpoint, not product completion.
 

@@ -22,3 +22,11 @@ Next evidence must come from the actual current engine build: uninterrupted open
 - **Performance baseline:**60.014wallseconds,7,193framecallbacks, p9514.827ms,p9914.895ms,worst20.345ms,zero>33.4ms onMac16,7/M4Pro/48GB/macOS26.6.2,1280×800Metalnormalquality/audio. This predates dust integration; alloutliersretained. NoWindows/mobileclaim.
 
 Next justified issue is camera/keyboard reachability, under a bounded actualraycast/nativeinput audit. Complete the source-bound package/evidence handoff after confirmed defects are corrected. Human sessions0; owner acceptance absent.
+
+##09:37 work-legibility and full-play follow-through
+
+The full generated-input native recording finishes without progress injection: firsthelper22.217simulation seconds, completion681.733, all three scripted upgrades/orders,50helpers and optional recap return. Film705.467s includes welcome/paused menus. This does not establish human pacing. Mac packaged45/45 actual separate-process checks pass, exact source2572e2f; Windows icons/PCK/resources inspected but Windows unrun. Updated50-helper profile60.012wallseconds,p9514.797ms,p9914.886ms,worst20.525ms,zero>33.4 on the namedM4Pro48GBMac. Retain raw results.
+
+**Bounded work feedback correction (~20min):** isolated AI reviewecf7e4e found the first contribution not visually recognizable during20s passive play, while travel reads clearly. Keep rates, routes, scale and character identity. Use actual positive per-helper removal for work state, face the dust when stopped, animate planted reach/sweep/recovery, and add one globally capped local dust batch (40normal/10gentle). No added helper sound or camera motion. Headless8feedback checks pass,16integration checks pass, existing10simulation/5904routes retain the561.1s controlled ending. Actual matched helper capture/independent review is next. Human comprehension/comfort remains unknown.
+
+**Actual ending counter defect:** root and critic independently observed99%clear in the completed full film. This persists beyond UI refresh; accumulated floating-point remainder was floored. Small display tolerance corrects that contradiction, without changing progression. Existing integration now includes the reproduced residual and passes. Native after view pending.

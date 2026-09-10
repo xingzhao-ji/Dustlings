@@ -207,7 +207,13 @@ func _physics_process(delta):
 		brushing = tap_remaining > 0
 	var previous_brushed = sim.stats.brushed
 	sim.tick(delta, (brushing or brush_keyboard_held) and cursor_valid and not pending_dust_aim and mode == "brush", Vector2(cursor_world.x, cursor_world.z))
-	dust_feedback.tick(delta, sim.elapsed, sim.stats.brushed - previous_brushed, cursor_world, gentle_motion)
+	var work_samples: Array = []
+	for i in mini(creature_nodes.size(), sim.crew.size()):
+		var c = sim.crew[i]
+		if c.get("assisted", 0.0) <= 0 or c.speed >= 0.08: continue
+		var visual = creature_nodes[i]
+		work_samples.append({"id": c.id, "removed": c.assisted, "strength": visual.work_stroke(), "point": visual.work_contact()})
+	dust_feedback.tick(delta, sim.elapsed, sim.stats.brushed - previous_brushed, cursor_world, gentle_motion, work_samples)
 	_handle_events()
 	save_timer += delta
 	if save_timer >= 8:
@@ -248,7 +254,11 @@ func _sync_world(delta: float):
 		var c = sim.crew[i]
 		var node = creature_nodes[i]
 		node.position = Vector3(c.p.x, 0, c.p.y)
-		node.rotation.y = lerp_angle(node.rotation.y, c.direction, minf(1, delta * 9))
+		var facing = c.direction
+		if c.work > 0 and c.speed < 0.08 and not sim.ritual and not sim.completed and c.target >= 0:
+			var toward_dust: Vector2 = sim.dust[c.target].p - c.p
+			if toward_dust.length_squared() > 0.0001: facing = atan2(toward_dust.x, toward_dust.y)
+		node.rotation.y = lerp_angle(node.rotation.y, facing, minf(1, delta * 9))
 		node.pose(delta, sim.elapsed + i * 0.73, c.speed, c.work, sim.elapsed - c.born, sim.ritual or sim.completed, gentle_motion)
 	environment_node.set_restoration(sim.restoration)
 	brush_ring.visible = cursor_valid and started and not paused and not pending_dust_aim and modal_kind == ""
@@ -758,7 +768,7 @@ func _restore():
 
 func _update_ui():
 	if not counts: return
-	counts.text = "%d %s   ·   %d motes   ·   %d%% clear" % [sim.crew.size(), "helper" if sim.crew.size() == 1 else "helpers", sim.motes, floori(sim.ratio() * 100)]
+	counts.text = "%d %s   ·   %d motes   ·   %d%% clear" % [sim.crew.size(), "helper" if sim.crew.size() == 1 else "helpers", sim.motes, 100 if sim.ratio() >= 1.0 - 0.0000001 else floori(sim.ratio() * 100)]
 	brush_button.modulate = Color("c9ddcb") if mode == "brush" else Color.WHITE
 	direct_button.modulate = Color("c9ddcb") if mode == "direct" else Color.WHITE
 	grow_button.text = "Grow  U" if sim.motes < 32 or (sim.upgrades.brush and sim.upgrades.teamwork and sim.upgrades.bloom) else "Grow  •"

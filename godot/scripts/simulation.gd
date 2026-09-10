@@ -55,9 +55,10 @@ func collect(index: int, amount: float, source: String):
 	while crew.size() < mini(50, int(floor((cleaned + 0.00001) / 7.0))):
 		var id = crew.size()
 		var p = _birth_position(d.p)
-		crew.append({"id": id, "p": p, "target": -1, "born": elapsed, "direction": 0.0, "work": 0.0, "speed": 0.0})
+		crew.append({"id": id, "p": p, "target": -1, "born": elapsed, "direction": 0.0, "work": 0.0, "speed": 0.0, "assisted": 0.0})
 		events.append({"kind": "birth", "p": p, "first": id == 0})
 		if id == 0: first_helper_at = elapsed
+	return removed
 
 func buy(id: String) -> bool:
 	if not COSTS.has(id) or upgrades[id] or motes < COSTS[id]: return false
@@ -226,6 +227,7 @@ func tick(delta: float, brushing: bool, brush_point: Vector2):
 	for c in crew:
 		previous_positions.append(c.p)
 		c.work = 0.0
+		c.assisted = 0.0
 		c.speed = 0.0
 		if elapsed - c.born < 0.8: continue
 		if ritual or completed:
@@ -245,8 +247,8 @@ func tick(delta: float, brushing: bool, brush_point: Vector2):
 		c.speed = c.p.distance_to(previous_positions[index]) / maxf(delta, 0.0001)
 		if not ritual and not completed and elapsed - c.born >= 0.8 and c.target >= 0:
 			if c.p.distance_to(dust[c.target].p) < 0.54:
-				c.work = 1.0
-				collect(c.target, delta * (0.0245 if upgrades.teamwork else 0.014) * (3.0 if remaining < 0.06 else 1.0), "assisted")
+				c.assisted = collect(c.target, delta * (0.0245 if upgrades.teamwork else 0.014) * (3.0 if remaining < 0.06 else 1.0), "assisted")
+				c.work = 1.0 if c.assisted > 0 else 0.0
 	if ritual:
 		var gathered = 0
 		for c in crew:
@@ -324,7 +326,7 @@ func restore(data: Variant) -> bool:
 			if not (entry.get(key) is float or entry.get(key) is int) or not is_finite(entry[key]): return false
 		var pos = Vector2(entry.x, entry.z)
 		if not walkable(pos) or entry.born < 0 or entry.born > data.elapsed: return false
-		restored_crew.append({"id": restored_crew.size(), "p": pos, "target": -1, "born": entry.born, "direction": entry.direction, "speed": 0.0, "work": 0.0})
+		restored_crew.append({"id": restored_crew.size(), "p": pos, "target": -1, "born": entry.born, "direction": entry.direction, "speed": 0.0, "work": 0.0, "assisted": 0.0})
 	for i in range(dust.size()): dust[i].amount = data.dust[i]
 	crew = restored_crew
 	upgrades = data.upgrades.duplicate()

@@ -1,0 +1,36 @@
+{
+  "case": "profile",
+  "cleaned": 436.716766665854,
+  "completed": false,
+  "draw_calls": 301.0,
+  "elapsed": 262.000000000039,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "first_helper_at": 200,
+  "helpers": 50,
+  "kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.",
+  "motes": 314,
+  "objects": 672.0,
+  "performance": {
+    "conditions": "Visible native Godot Metal Forward+, 1280x800 window, normal MSAA/shadows/audio,50-helper fixture. No movie or screenshots during measured interval.",
+    "duration_seconds": 60.012069,
+    "frame_measurement": "Monotonic wall-clock microseconds between every _process callback; no discarded outliers or engine delta smoothing.",
+    "over_33_4_ms": [],
+    "p95_ms": 14.797,
+    "p99_ms": 14.886,
+    "samples": 7195,
+    "worst_ms": 20.525
+  },
+  "restoration": 0.0,
+  "status": "recorded",
+  "viewport": "(1440.0, 900.0)"
+}

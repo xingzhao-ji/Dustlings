@@ -3,6 +3,8 @@ extends Node3D
 const MAX_BRUSH_WISPS = 32
 const MAX_GENTLE_WISPS = 8
 const MAX_STATIC_INSTANCES = 1200
+const MAX_WORK_WISPS = 40
+const MAX_GENTLE_WORK_WISPS = 10
 var _field: ImageTexture
 var _configured_dust: Array = []
 var _batches: Array = []
@@ -10,6 +12,9 @@ var _drift_material: ShaderMaterial
 var _particle_material: StandardMaterial3D
 var _brush_wisps: MultiMeshInstance3D
 var _particles: Array = []
+var _work_wisps: MultiMeshInstance3D
+var _work_particles: Array = []
+var _work_credit: Dictionary = {}
 var _spawn_credit = 0.0
 var _quiet_time = 0.0
 var _last_brush = Vector3.ZERO
@@ -30,6 +35,9 @@ func _ready():
 
 func reset():
 	_particles.clear()
+	_work_particles.clear()
+	_work_credit.clear()
+	if is_instance_valid(_work_wisps): _work_wisps.multimesh.visible_instance_count = 0
 	_spawn_credit = 0
 	_quiet_time = 0
 	_has_last_brush = false
@@ -40,6 +48,7 @@ func _build():
 		if is_instance_valid(batch): remove_child(batch); batch.queue_free()
 	_batches.clear()
 	if is_instance_valid(_brush_wisps): remove_child(_brush_wisps); _brush_wisps.queue_free()
+	if is_instance_valid(_work_wisps): remove_child(_work_wisps); _work_wisps.queue_free()
 	reset()
 	static_instance_count = 0
 	_drift_material = ShaderMaterial.new()
@@ -92,6 +101,17 @@ func _build():
 	_brush_wisps.material_override = _particle_material
 	_brush_wisps.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	add_child(_brush_wisps)
+	_work_wisps = MultiMeshInstance3D.new()
+	_work_wisps.name = "HelpingDust"
+	var work_multi = MultiMesh.new()
+	work_multi.transform_format = MultiMesh.TRANSFORM_3D
+	work_multi.mesh = _drift_mesh(2)
+	work_multi.instance_count = MAX_WORK_WISPS
+	work_multi.visible_instance_count = 0
+	_work_wisps.multimesh = work_multi
+	_work_wisps.material_override = _particle_material
+	_work_wisps.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(_work_wisps)
 
 func _on_paver(point: Vector2, extent: Vector2) -> Vector2:
 	# Match unchanged paver faces. Large outer-edge drifts move to the adjacent
@@ -155,9 +175,10 @@ func _fibre_mesh() -> ArrayMesh:
 			surface.add_vertex(point)
 	return surface.commit()
 
-func tick(delta: float, _elapsed: float, removed_brushed: float, world_point: Vector3, gentle: bool):
+func tick(delta: float, _elapsed: float, removed_brushed: float, world_point: Vector3, gentle: bool, work_samples: Array = []):
 	if not is_instance_valid(_brush_wisps): return
 	var dt = clampf(delta, 0, 0.10)
+	_tick_work(dt, gentle, work_samples)
 	for i in range(_particles.size() - 1, -1, -1):
 		var p = _particles[i]
 		p.age += dt
@@ -194,3 +215,37 @@ func tick(delta: float, _elapsed: float, removed_brushed: float, world_point: Ve
 		var basis = Basis(Vector3.UP, p.angle + fraction * 0.4).scaled(Vector3(size, 0.12, size))
 		_brush_wisps.multimesh.set_instance_transform(i, Transform3D(basis, Vector3(position.x, height, position.y)))
 	_brush_wisps.multimesh.visible_instance_count = _particles.size()
+
+func _tick_work(dt: float, gentle: bool, samples: Array):
+	# Actual removed dust earns a small visual response. Pose contact controls when
+	# it appears; no amount, idle pose or completed/chorus pose can invent work.
+	for i in range(_work_particles.size() - 1, -1, -1):
+		_work_particles[i].age += dt
+		if _work_particles[i].age >= _work_particles[i].life: _work_particles.remove_at(i)
+	var cap = MAX_GENTLE_WORK_WISPS if gentle else MAX_WORK_WISPS
+	while _work_particles.size() > cap: _work_particles.pop_back()
+	var active: Dictionary = {}
+	for sample in samples:
+		if sample.removed <= 0 or dt <= 0: continue
+		active[sample.id] = true
+		var credit = minf(float(_work_credit.get(sample.id, 0.0)) + sample.removed * (45.0 if gentle else 120.0), 2.0)
+		if sample.strength > (0.05 if gentle else 0.35):
+			while credit >= 1 and _work_particles.size() < cap:
+				credit -= 1
+				var angle = _rng.randf() * TAU
+				var point: Vector3 = sample.point
+				var origin = _on_paver(Vector2(point.x, point.z), Vector2.ONE * 0.08)
+				if origin.length() < 1.52: continue
+				_work_particles.append({"origin": origin, "age": 0.0, "life": 0.24 if gentle else 0.48, "angle": angle, "length": _rng.randf_range(0.08, 0.12), "lift": 0.003 if gentle else 0.035})
+		_work_credit[sample.id] = credit
+	for id in _work_credit.keys():
+		if not active.has(id): _work_credit.erase(id)
+	for i in _work_particles.size():
+		var p = _work_particles[i]
+		var fraction = p.age / p.life
+		var drift = Vector2(cos(p.angle), sin(p.angle)) * sin(fraction * PI) * (0.008 if gentle else 0.035)
+		var position = _on_paver(p.origin + drift, Vector2.ONE * 0.08)
+		var size = p.length * (1.0 - fraction * 0.72)
+		var basis = Basis(Vector3.UP, p.angle).scaled(Vector3(size, 0.65 * (1 - fraction * 0.8), size * 0.75))
+		_work_wisps.multimesh.set_instance_transform(i, Transform3D(basis, Vector3(position.x, 0.002 + sin(fraction * PI) * p.lift, position.y)))
+	_work_wisps.multimesh.visible_instance_count = _work_particles.size()

@@ -1,0 +1,91 @@
+{
+  "review_kind": "independent AI frame-based visual inspection",
+  "human_sessions": 0,
+  "native_input": false,
+  "audio_listened": false,
+  "continuous_audiovisual_perception": false,
+  "source_hash": "1a3ed24c8fc5e636afe65da1b77e913e3d800a246fa563b383cfc2d1d4117f9e",
+  "inputs": {
+    "evidence/rpg/neighborhood-route-corrected/route.mp4": {
+      "sha256": "0059d9bc04e276b7bbf1164b02f5f996e45b291768ba604c46d841cf6ed366f7",
+      "bytes": 45198693
+    },
+    "evidence/rpg/neighborhood-route-corrected/capture-manifest.json": {
+      "sha256": "db9e9efb6a44fed328f832a31973bf0f729b9f642a2c40871de5c429aca4cb11",
+      "bytes": 40069
+    },
+    "evidence/rpg/neighborhood-route-corrected/results.json": {
+      "sha256": "a84099a96e360e19930cb56656fb724ca032954c9a6dfb1da1ae03c69791e4b8",
+      "bytes": 23789
+    },
+    "evidence/rpg/neighborhood-route-corrected/gathering.png": {
+      "sha256": "d9bd934694f30a472848d32caa727387b8dbbf12a289156cb75b5003ee001fcd",
+      "bytes": 443506
+    },
+    "evidence/rpg/neighborhood-route-corrected/mara.png": {
+      "sha256": "f8d4a84ae2a39d10bb03e15909e49f1630f80f68762daf6de35dcb69a2f064f7",
+      "bytes": 394091
+    },
+    "evidence/rpg/neighborhood-route-corrected/ivy-after.png": {
+      "sha256": "9883dc55d95d8a667056f8dad60aceb3898b71f8f2b254c0d5836835965d9fd9",
+      "bytes": 435344
+    },
+    "evidence/rpg/neighborhood-route-corrected/bridge-before.png": {
+      "sha256": "c1485b1f83ad6d1c707578dad98cce38f36d21bfe2f88e1109a1053ca8f0bd1f",
+      "bytes": 382364
+    },
+    "evidence/rpg/neighborhood-route-corrected/nell.png": {
+      "sha256": "34eb58e9409998cb68390cbce66215a615aa942d8af8dce1d0acc36737031778",
+      "bytes": 409275
+    },
+    "evidence/rpg/neighborhood-route-corrected/greenhouse.png": {
+      "sha256": "f129d5810228420769e67d212a9b3444dd0a66c28bb80b1d59f7b5bf14ab2a08",
+      "bytes": 439294
+    },
+    "evidence/rpg/neighborhood-route-corrected/ivy-before.png": {
+      "sha256": "dbcaf5c4bf214fe9a92fe4fe38316982de2ff8569d929385cba48f2eb21d2ebc",
+      "bytes": 382522
+    },
+    "evidence/rpg/neighborhood-route-corrected/first-companion.png": {
+      "sha256": "838516668bb97c03de5684c12bfed94fd3916713b8d8e388008bea70eb771ddb",
+      "bytes": 425412
+    },
+    "evidence/rpg/neighborhood-route-corrected/arrival.png": {
+      "sha256": "f3681c1b79ab2f6ab3d0ab9febac1bc960360012d08ce0330d8e76b94ff99fac",
+      "bytes": 378461
+    },
+    "evidence/rpg/neighborhood-route-corrected/letter.png": {
+      "sha256": "ff80b4f41333c2eca7588ec08203248b632914b01426e67abeee6f61672f5af3",
+      "bytes": 431546
+    },
+    "evidence/rpg/neighborhood-route-corrected/ivo.png": {
+      "sha256": "62a949732633f2d52b6ebcc475cc15b696756a73313c5a1fc2247d4b84f6730f",
+      "bytes": 393747
+    },
+    "evidence/rpg/neighborhood-route-corrected/home-interior.png": {
+      "sha256": "4954d46de5d5a3d1f84e5b4db7267549f53b1968eef6c14dfbf56f4427e9211c",
+      "bytes": 464409
+    },
+    "evidence/rpg/neighborhood-route-corrected/garden.png": {
+      "sha256": "c3c4ac7dc14ddda3bdaa2c3b6361e84c6c5445589f2d534a1795830410971e38",
+      "bytes": 362964
+    },
+    "evidence/rpg/neighborhood-route-corrected/bridge-after.png": {
+      "sha256": "d779807add2524d223b320ea03dd4e8714b2277918e698afbef17846033a2fa1",
+      "bytes": 402813
+    },
+    "evidence/rpg/neighborhood-route-corrected/melody.png": {
+      "sha256": "e13bcee14e8571a5ed1faf34112c131fad70dab67b0f24bb5ebd09d379732a0d",
+      "bytes": 358918
+    },
+    "evidence/rpg/neighborhood-route-corrected/tavi.png": {
+      "sha256": "80cea0377c0b838cf2bb3d08bf273af1533904d81c4165c4fab00a4e7bb6a424",
+      "bytes": 411476
+    },
+    "evidence/rpg/neighborhood-route-corrected/alcove.png": {
+      "sha256": "014b3ab7ed2768f9125d77fbe614b459fcd65d26b01ae2b24693be643ad6e131",
+      "bytes": 381711
+    }
+  },
+  "samples": "Complete159.766667s movie chronology sampled every2s (80frames, contact sheets sequence01\u201305 read row-first). Normal-size supplied event stills plus0.6s welcome,117.7s glow,134.1s post-alcove-dialogue and151.1s gathering. Generated native inputs and no progression injection per supplied manifest/results, not a human playthrough."
+}

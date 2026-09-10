@@ -5,7 +5,8 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {spawn} from 'node:child_process';
 const [scenario='overview',label='current',...extra]=process.argv.slice(2);
-if(!/^[a-z0-9_-]+$/.test(label)||!['overview','route','profile','resume'].includes(scenario))throw Error('Invalid capture scenario/label');
+if(!/^[a-z0-9_-]+$/.test(label)||!['overview','route','profile','resume','ui','art'].includes(scenario))throw Error('Invalid capture scenario/label');
+if(scenario==='art'&&process.env.DUSTLINGS_RPG_SAVE)throw Error('Art comparisons require a fresh save; unset DUSTLINGS_RPG_SAVE.');
 const requestedWindow=process.env.DUSTLINGS_CAPTURE_WINDOW;
 if(requestedWindow&&!/^\d{3,4}x\d{3,4}$/.test(requestedWindow))throw Error('Invalid capture window');
 const output=path.resolve('evidence/rpg',label),snapshot=path.resolve('builds/3d/rpg-capture-snapshots',label);
@@ -24,6 +25,8 @@ async function freeze(source,destination,prefix=''){
 await freeze(process.env.DUSTLINGS_CAPTURE_SOURCE || 'godot',snapshot);
 const sourceHash=crypto.createHash('sha256').update(JSON.stringify(Object.fromEntries(Object.entries(files).sort()))).digest('hex');
 const manifest={created:new Date().toISOString(),scenario,label,sourceDirectory:path.resolve(process.env.DUSTLINGS_CAPTURE_SOURCE || 'godot'),runtimeArguments:extra,nativeArguments:requestedWindow?['--resolution',requestedWindow]:[],sourceHash,files,method:scenario==='profile'?'Wall-clock native run; no movie recording.':'Godot MovieMaker30fps fixed engine-time with generated native InputEvents or explicitly labelled fixtures. Rendering may run faster than wall-clock; no human input.',humanTests:0};
+if(scenario==='art')manifest.artReview={start:'fresh isolated save',segments:'Arrival, earned helper, normal/reversed/stop-start walking, Ivo meeting, stationary full yaw and low/high pitch camera drags.',cameraControl:'Generated RMB press/motion/release; no camera state injection.',timing:'Unedited normal-speed game sequence rendered by MovieMaker; timestamped steps and stills in results.json. Not wall-clock performance or human input.'};
+if(process.env.DUSTLINGS_RPG_SAVE){ const saveBytes=await fs.readFile(process.env.DUSTLINGS_RPG_SAVE); await fs.writeFile(path.join(output,'isolated-save.json'),saveBytes);manifest.resumeSave={path:path.resolve(process.env.DUSTLINGS_RPG_SAVE),sha256:crypto.createHash('sha256').update(saveBytes).digest('hex')};}
 await fs.writeFile(path.join(output,'capture-manifest.json'),JSON.stringify(manifest,null,2)+'\n');
 async function run(exe,args,log){return await new Promise((resolve,reject)=>{const child=spawn(exe,args,{stdio:['ignore','pipe','pipe']});let result='';child.stdout.on('data',d=>result+=d);child.stderr.on('data',d=>result+=d);child.on('error',reject);child.on('close',async code=>{await fs.writeFile(path.join(output,log),result);if(code!==0||/SCRIPT ERROR:|ERROR:/m.test(result))reject(Error(`${log} failed (${code}); inspect preserved log`));else resolve(result);});});}
 const engine=path.resolve('.tools/Godot.app/Contents/MacOS/Godot');
@@ -37,4 +40,4 @@ try{
  if(scenario!=='profile')await run('ffmpeg',['-hide_banner','-loglevel','error','-i',path.join(output,scenario+'.avi'),'-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-movflags','+faststart','-y',path.join(output,scenario+'.mp4')],'encode.log');
  manifest.status='recorded';
 }catch(error){manifest.status='failed';manifest.failure=error.message;process.exitCode=1;}
-manifest.finished=new Date().toISOString();await fs.writeFile(path.join(output,'capture-manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log(JSON.stringify({output,scenario,sourceHash,status:manifest.status,failure:manifest.failure,result:manifest.result},null,2));
+manifest.finished=new Date().toISOString();await fs.writeFile(path.join(output,'capture-manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log(JSON.stringify({output,scenario,sourceHash,status:manifest.status,failure:manifest.failure,result:manifest.result?{ok:manifest.result.ok,steps:manifest.result.checks?.length,elapsed:manifest.result.elapsed_engine_seconds,performance:manifest.result.performance}:undefined},null,2));

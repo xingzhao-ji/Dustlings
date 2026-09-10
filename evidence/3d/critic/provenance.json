@@ -123,5 +123,14 @@
     "changedNativePackageReviewed": false,
     "listening": false,
     "humanSessions": 0
+  },
+  "helperFarSeatReview": {
+    "record": "helper-far-seat/provenance.json",
+    "finalizedAt": "2026-09-10T09:46:20.857599+00:00",
+    "isolatedCandidate": true,
+    "changedCaptureEvidenceReviewed": true,
+    "changedNativePackageReviewed": false,
+    "listening": false,
+    "humanSessions": 0
   }
 }

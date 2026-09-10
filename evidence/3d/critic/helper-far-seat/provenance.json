@@ -1,0 +1,78 @@
+{
+  "reviewer": "Independent AI critic",
+  "humanSessions": 0,
+  "sourceHash": "279860847bf592bc0587491518e1286939b301ddebe8258ebca1d82fab47590e",
+  "capturedAt": "2026-09-10T09:41:45.924Z",
+  "finalizedAt": "2026-09-10T09:46:20.857599+00:00",
+  "comparisonEvidence": [
+    "../helper-only/provenance.json",
+    "../helper-contact/provenance.json"
+  ],
+  "method": "Full chronology sampled at 1 Hz; normal-size helping, passive 30-second and travel frames; matched 4 Hz crop at 17\u201321 s. Not continuous audiovisual perception.",
+  "submissionStatus": "Isolated alternative, not canonically integrated when submitted",
+  "verdict": "Matched-view face visibility restored and working reach/lean more discernible. Prefer this to first contact candidate in reviewed single-helper case. Human understanding remains uncertain; no new obvious hovering or particle-clutter defect observed in sampled route. No further isolated cosmetic revision requested without new evidence.",
+  "listening": false,
+  "nativeAppLaunched": false,
+  "directInput": false,
+  "gameSourceInspected": false,
+  "leadProvidedChangeScope": "Helper stands on far side of real patch; same work pose/feedback; rates/gait unchanged. Route/integration checks running separately and not audited by critic.",
+  "reportedAssistanceBeforeAndAfter": 0.269126329591142,
+  "endingCounterFixVerified": false,
+  "files": [
+    {
+      "source": "evidence/3d/helper-far-seat/capture-manifest.json",
+      "reviewCopy": "evidence/3d/critic/helper-far-seat/capture-manifest.json",
+      "sha256": "768126c1fc1b598366013a047fc42c6c1c55e9d4f1a2b2fbbbab869973c881c1",
+      "bytes": 10504
+    },
+    {
+      "source": "evidence/3d/helper-far-seat/first-helper.png",
+      "reviewCopy": "evidence/3d/critic/helper-far-seat/first-helper.png",
+      "sha256": "0c547dd08e83bdb178b8f91a76da54b96eeea066095ae18255cd49a87aa41393",
+      "bytes": 682767
+    },
+    {
+      "source": "evidence/3d/helper-far-seat/helper.mp4",
+      "reviewCopy": "evidence/3d/critic/helper-far-seat/helper.mp4",
+      "sha256": "24053641f1e883e5e0dd3888acafb08ed4b51fb3de129af8d0538c78c1bbca2f",
+      "bytes": 1931273
+    },
+    {
+      "source": "evidence/3d/helper-far-seat/helping.png",
+      "reviewCopy": "evidence/3d/critic/helper-far-seat/helping.png",
+      "sha256": "fc8eb42e5ebc260e31b5c15c1f39d88ebf7f1ebbcaa7d84ff2444bbbed3d91d0",
+      "bytes": 678602
+    },
+    {
+      "source": "evidence/3d/helper-far-seat/results.json",
+      "reviewCopy": "evidence/3d/critic/helper-far-seat/results.json",
+      "sha256": "f1f8cabb032e4db534d5e369c38b8ce1b1f337b5056a59a03cb3104572da6cd0",
+      "bytes": 908
+    },
+    {
+      "source": "evidence/3d/helper-far-seat/travelling.png",
+      "reviewCopy": "evidence/3d/critic/helper-far-seat/travelling.png",
+      "sha256": "40072c3c56c167fb34a93266b14ae43f423206db58e7facc43a319621dc6c2ce",
+      "bytes": 683434
+    }
+  ],
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 800,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "45.900000"
+    }
+  }
+}

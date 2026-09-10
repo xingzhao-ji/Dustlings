@@ -411,6 +411,58 @@
     "sha256": "ab0aaaeef533457df2b21cba4985ae19eb3cf4c35e6f061836749b92adfd0668",
     "bytes": 983578
   },
+  "helper-far-seat/capture-manifest.json": {
+    "sha256": "768126c1fc1b598366013a047fc42c6c1c55e9d4f1a2b2fbbbab869973c881c1",
+    "bytes": 10504
+  },
+  "helper-far-seat/first-helper.png": {
+    "sha256": "0c547dd08e83bdb178b8f91a76da54b96eeea066095ae18255cd49a87aa41393",
+    "bytes": 682767
+  },
+  "helper-far-seat/helper.mp4": {
+    "sha256": "24053641f1e883e5e0dd3888acafb08ed4b51fb3de129af8d0538c78c1bbca2f",
+    "bytes": 1931273
+  },
+  "helper-far-seat/helping.png": {
+    "sha256": "fc8eb42e5ebc260e31b5c15c1f39d88ebf7f1ebbcaa7d84ff2444bbbed3d91d0",
+    "bytes": 678602
+  },
+  "helper-far-seat/passive-12.png": {
+    "sha256": "26a73cc1b8a12ef9391ebdd91cfd724706010a15691bd6fd773dcf5ae38e2eb0",
+    "bytes": 633560
+  },
+  "helper-far-seat/passive-30.png": {
+    "sha256": "41a2eb95514787f611e157e5bad7a50f218380331f65cbed56fe95f988efb408",
+    "bytes": 628221
+  },
+  "helper-far-seat/provenance.json": {
+    "sha256": "8913048ca76d3c0d2868aa2234941f5abf6b289ebdaa3f7adb98c68599e18a58",
+    "bytes": 3248
+  },
+  "helper-far-seat/results.json": {
+    "sha256": "f1f8cabb032e4db534d5e369c38b8ce1b1f337b5056a59a03cb3104572da6cd0",
+    "bytes": 908
+  },
+  "helper-far-seat/sequence-01.png": {
+    "sha256": "c20b518b7945e0fd8b118a7c437662e9d9b011cba01b682108d937cd3ca4d1fb",
+    "bytes": 788735
+  },
+  "helper-far-seat/sequence-02.png": {
+    "sha256": "c01fe1e2a808267311479ad08156cd412492006ebdb1f8ae6d2c572e4c0c4add",
+    "bytes": 794395
+  },
+  "helper-far-seat/sequence-03.png": {
+    "sha256": "5d7159302a10f18a6eb295b8c10543aa95b1fc21bdd7f40c5fd4e976832a14b0",
+    "bytes": 329202
+  },
+  "helper-far-seat/travelling.png": {
+    "sha256": "40072c3c56c167fb34a93266b14ae43f423206db58e7facc43a319621dc6c2ce",
+    "bytes": 683434
+  },
+  "helper-far-seat/work-detail-17-21.png": {
+    "sha256": "0ddb471cb774d1002a829f4195c1e03c604053ba9013bb23fcd41370a88ffea4",
+    "bytes": 1002054
+  },
   "helper-only/capture-manifest.json": {
     "sha256": "fc87f8edc9ae6fa1921c9b9092e9ad1708f4e67296f769a7c390bc49ae6a4e85",
     "bytes": 10058
@@ -656,8 +708,8 @@
     "bytes": 903356
   },
   "provenance.json": {
-    "sha256": "d040a983f8ce61d5a89cb5639ce44e25309d77c5d57b4a7830c7f2fd725994cc",
-    "bytes": 5101
+    "sha256": "a193f0b175e311dab43b9941e0810f8e9d178fb930d35b75ca4c09ea6f117d2e",
+    "bytes": 5402
   },
   "travel-detail-sequence.png": {
     "sha256": "dee04d52b6462b802f54d84d8ddd8fd13318585f669830057822a79ade30bf45",

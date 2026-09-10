@@ -1,7 +1,7 @@
 import {_electron as electron} from '@playwright/test';
 import {mkdir,mkdtemp,readFile,writeFile} from 'node:fs/promises';
 import path from 'node:path';
-const output='evidence/platforms';await mkdir(`${output}/profiles`,{recursive:true});
+const output=process.env.DUSTLINGS_DESKTOP_EVIDENCE_DIR||'evidence/platforms';await mkdir(`${output}/profiles`,{recursive:true});
 const profile=await mkdtemp(path.resolve(`${output}/profiles/profile-`));
 const app=await electron.launch({executablePath:path.resolve('builds/native/Dustlings-darwin-arm64/Dustlings.app/Contents/MacOS/Dustlings'),env:{...process.env,DUSTLINGS_TEST_USER_DATA:profile,DUSTLINGS_TEST_QA:'1'},timeout:30000});
 let report={date:new Date().toISOString(),kind:'Automated native Mac ARM64 profile; no physical input or human quality evidence.',build:JSON.parse(await readFile('builds/desktop-build-manifest.json','utf8')),conditions:'Visible native Electron app, 1280x820 outer window, DPR2, normal quality/audio, 50-helper imported simulation fixture. No video or screenshots during profile. Team asked to avoid compilation/other browser checks. General OS/background activity not controlled.',frames:[],events:[],longTasks:[]};

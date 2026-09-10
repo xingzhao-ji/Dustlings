@@ -12,6 +12,9 @@ try{browserStorage=window.localStorage;}catch{browserStorage={getItem(){throw Er
 const store=new SaveStore(browserStorage);
 let state=store.load()||createState();
 const canvas=$('world'),renderer=new Renderer(canvas),audio=new DustAudio();
+const portrait=$('welcome-portrait'),portraitContext=portrait.getContext('2d');
+portraitContext.scale(2,2);portraitContext.translate(85,108);portraitContext.scale(3.1,3.1);
+renderer.drawCreature(portraitContext,{id:0,x:0,y:0,phase:0,born:-6,work:0},{elapsed:0,reducedMotion:true},0,1);
 let started=false,paused=true,lastTime=performance.now(),lastSave=0,lastUI=0,autoSweep=0,birth=null,birthUntil=0,completionShown=state.completed,sceneDirty=true;
 let zoom=1,camera={x:500,y:390},lastPointer=null,pointerId=null,panning=false,pointerMoved=false,viewportMode=null;
 const frames=[];
@@ -87,7 +90,7 @@ function updateUI(){
   $('find-dust').hidden=percent<60||state.completed;
   $('toast').hidden=state.noticeTime<=0||!state.notice;if(state.notice)text($('toast'),state.notice);
   const isTouch=matchMedia('(pointer:coarse)').matches;
-  text($('tip-text'),panMode?'Drag to look around. Choose a tool to return.':state.completed?'Stay a while. You brought this place back to life.':state.ritual?'A chorus of little things.':state.pointer.keyboard?(state.mode==='direct'?'Arrows aim · Enter sends crew · N finds dust':'Arrows aim · Space starts/stops brushing · N finds dust'):state.mode==='direct'?(isTouch?'Place the flag above your finger. Lift to send the crew.':'Click an open patch to send your crew there.'):(isTouch?'Sweep with the circle just above your finger.':settings.tapSweep?'Tap for a sweep, or hold & brush at your own pace.':'Hold & sweep over the dust. See what wakes up.'));
+  text($('tip-text'),panMode?'Drag to look around.':state.completed?'Courtyard restored':state.ritual?'Restoring the fountain…':state.pointer.keyboard?(state.mode==='direct'?'Arrows aim · Enter sends crew · N finds dust':'Arrows aim · Space starts/stops brushing · N finds dust'):state.mode==='direct'?(isTouch?'Place the flag above your finger. Lift to send the crew.':'Click an open patch to send your crew there.'):(isTouch?'Sweep with the circle just above your finger.':settings.tapSweep?'Tap for a sweep, or hold & brush at your own pace.':'Hold & sweep to brush.'));
   $('sound-toggle').classList.toggle('muted',settings.muted);$('sound-toggle').querySelector('use').setAttribute('href',settings.muted?'#i-sound-off':'#i-sound');$('sound-toggle').setAttribute('aria-pressed',String(!settings.muted));$('sound-toggle').setAttribute('aria-label',settings.muted?'Unmute sound':'Mute sound');
   $('sound-toggle').title=settings.muted?'Sound off · click to unmute':'Sound on · click to mute';
 }
@@ -207,6 +210,8 @@ canvas.addEventListener('blur',()=>keyboard.stop());
 function setZoom(value){const changed=zoom!==value;zoom=value;if(zoom===1)camera={x:500,y:390};renderer.setCamera?.(zoom,camera.x,camera.y);sceneDirty=true;$('zoom-in').disabled=zoom>=2;$('zoom-out').disabled=zoom<=1;if(changed)uiSound('select');}
 const cameraControls=document.createElement('div');cameraControls.className='camera-controls';cameraControls.innerHTML='<button id="zoom-out" aria-label="Zoom out" title="Zoom out · −" disabled>−</button><button id="zoom-in" aria-label="Zoom in" title="Zoom in · +">+</button><button id="pan-toggle" aria-label="Pan courtyard" aria-pressed="false" title="Pan courtyard">↔</button>';
 document.querySelector('.world-panel').append(cameraControls);
+// Explicit natural tab order also includes game buttons in WebKit's default Mac keyboard mode.
+for(const button of document.querySelectorAll('button'))button.tabIndex=0;
 setZoom(zoom);
 let panMode=false;$('zoom-in').onclick=()=>setZoom(Math.min(2,zoom+(canvas.clientWidth<500?.7:.25)));$('zoom-out').onclick=()=>setZoom(Math.max(1,zoom-(canvas.clientWidth<500?.7:.25)));$('pan-toggle').onclick=()=>{panMode=!panMode;$('pan-toggle').setAttribute('aria-pressed',panMode);$('pan-toggle').classList.toggle('selected',panMode);stopInput();$('brush-tool').classList.toggle('selected',!panMode&&state.mode==='brush');$('direct-tool').classList.toggle('selected',!panMode&&state.mode==='direct');$('brush-tool').setAttribute('aria-pressed',String(!panMode&&state.mode==='brush'));$('direct-tool').setAttribute('aria-pressed',String(!panMode&&state.mode==='direct'));notify(state,panMode?'Drag to look around. Choose Brush or Direct crew to return.':state.mode==='direct'?'Ready to direct your crew.':'Ready to brush again.');updateUI();uiSound('select');};
 canvas.addEventListener('pointerdown',e=>{if(panMode&&!paused&&pointerId===e.pointerId){panning=true;state.pointer.active=false;autoSweep=0;}},false);

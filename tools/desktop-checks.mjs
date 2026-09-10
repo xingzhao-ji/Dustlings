@@ -4,7 +4,7 @@ import {mkdir,readFile,writeFile,mkdtemp} from 'node:fs/promises';
 import path from 'node:path';
 import {once} from 'node:events';
 import {createServer} from 'node:http';
-const output='evidence/platforms';await mkdir(output,{recursive:true});await mkdir(`${output}/profiles`,{recursive:true});
+const output=process.env.DUSTLINGS_DESKTOP_EVIDENCE_DIR||'evidence/platforms';await mkdir(output,{recursive:true});await mkdir(`${output}/profiles`,{recursive:true});
 const profile=await mkdtemp(path.resolve(`${output}/profiles/native-`));
 const executablePath=path.resolve('builds/native/Dustlings-darwin-arm64/Dustlings.app/Contents/MacOS/Dustlings');
 const result={date:new Date().toISOString(),kind:'Automated execution of packaged native Electron app on macOS. No human playtest, physical input, or listening claim.',profile:path.relative(process.cwd(),profile),build:JSON.parse(await readFile('builds/desktop-build-manifest.json','utf8')),checks:[],errors:[],performance:null};

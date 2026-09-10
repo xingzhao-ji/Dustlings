@@ -1,6 +1,6 @@
 {
   "name": "dustlings-desktop",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Dustlings desktop packaging prototype for Steam Windows and macOS",
   "main": "main.cjs",

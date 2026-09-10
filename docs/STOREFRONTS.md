@@ -1,6 +1,6 @@
 # Storefront preparation
 
-Checked 2026-09-09 Pacific. Latest priority: **Steam for Windows first, Mac testing throughout; iPhone/iPad App Store as later ports**. A separate Mac App Store release remains an optional preference awaiting the owner's response. Storefront preparation does not expand the approved one-village scope or authorize publication.
+Checked 2026-09-09 Pacific. Latest priority: **Steam for Windows first, Mac testing throughout; iPhone/iPad App Store as later ports**. A separate Mac App Store release is outside the current Windows-first preparation priority. Storefront preparation does not expand the approved one-village scope or authorize publication.
 
 The courtyard 0.2 milestone remains **awaiting human validation**. Human sessions: **0**; unfamiliar incremental buyers 0, unfamiliar cozy/cleanup players 0, friends/developers 0. No release approval or current-build owner acceptance has been recorded. Packaging success cannot pass those gates.
 

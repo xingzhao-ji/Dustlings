@@ -1,6 +1,6 @@
 # Courtyard UI refinement
 
-Status: source integration verified; new standalone/native candidate still to be frozen. Human sessions0. The changes below are supported by observed defects and the owner's direction; tactile appeal, comfort and delight remain human-review questions.
+Status: courtyard0.3 source freeze; packaged build verification is in progress. Human sessions0. The changes below are supported by observed defects and the owner's direction; tactile appeal, comfort and delight remain human-review questions.
 
 ## Bounded cycle / approximately25 minutes
 
@@ -19,7 +19,7 @@ Player benefit: spend ordinary play with the village, recognize available action
 
 Before captures: evidence/ui-refinement/before-settings.png, before-journal.png and before-pan.png from frozen0.2 at1280×796. After captures and exact layout measurements are in the same directory. These are automated engine views, not mockups or human playtests.
 
-Eight focused UI checks pass. Existing37 source tests,26 interaction checks and20 accessibility checks pass. The accessibility route was updated to open Grow through Tab/Enter, and pause verification allows only the short deliberate UI cue while the score stays muted, then checks re-suspension. The audit now exits nonzero on a failed check instead of merely reporting it.
+Nine focused UI checks pass, including actual hover/press/selected/unavailable states. Press/hover specificity was corrected after the first state check exposed indistinguishable relief. Existing37 source tests,26 interaction checks and20 accessibility checks pass. The accessibility route was updated to open Grow through Tab/Enter, and pause verification allows only the short deliberate UI cue while the score stays muted, then checks re-suspension. The audit now exits nonzero on a failed check instead of merely reporting it.
 
 Five original UI cues use the existing musical language. They respect Little sounds volume, mute, hidden state and a90ms limiter. Paused cues briefly run through a separate UI bus while music/ambience stay muted, then suspend again; native programmatic pause does not request a UI sound. Nine audition cases and live audio checks pass. Existing36s score rendering remains numerically consistent. Listening remains pending; inspect artifacts/audio/ui/ui-audition.wav and its checks.
 
@@ -28,3 +28,5 @@ Five original UI cues use the existing musical language. They respect Little sou
 The first full-scene capture still has broad cream flanks and limited value separation. A separate matched lighting/framing experiment is being reviewed before integration. Do not infer that more empty canvas alone gives the village the intended presence. Further subjective revision should use the owner's/current intended players' observations.
 
 Before freezing the next candidate: inspect new UI motion, hover/press and 50-helper backgrounds; check WebKit and native input/save behavior; inspect the lighting candidate separately; package the actual current game; record source/hash/build conditions and provide a short native UI interaction recording. Then observe unfamiliar players for discovery comprehension, purchase recognition, comfortable controls, fatigue and voluntary continuation, and request the owner's separate current-build quality assessment. No gate has passed from automation alone.
+
+The welcome portrait now uses the same creature drawing code as gameplay, replacing the separate CSS illustration. WebKit inspection also found that its default Mac Tab mode skipped implicit buttons; explicit natural tab order now keeps discovery controls in the keyboard route. Both corrections are part of the0.3 source freeze and require final integration checks.

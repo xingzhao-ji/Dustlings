@@ -62,9 +62,9 @@ try {
     await page.keyboard.press('Space');
     const keyboard = await page.evaluate(() => ({ crew: window.__dustlings.state.creatures.length, motes: window.__dustlings.state.motes, brushed: window.__dustlings.state.stats.brushed, active: window.__dustlings.state.pointer.active }));
     check('Actual keyboard events clean, create helpers, and earn a meaningful upgrade', keyboard.crew > 0 && keyboard.motes >= 32 && keyboard.brushed > 0 && !keyboard.active, { ...keyboard, timing: '48 seconds explicitly advanced simulation; not human or real-time pacing' });
-    await page.locator('#upgrade-brush').focus(); await page.keyboard.press('Enter');
+    await page.keyboard.press('u'); await page.keyboard.press('Tab'); await page.keyboard.press('Enter');
     check('Keyboard activation buys the visible brush capability', await page.evaluate(() => window.__dustlings.state.upgrades.brush && window.__dustlings.state.brushRadius > 44));
-    await page.locator('#world').focus(); await page.keyboard.press('d'); await page.keyboard.press('n'); await page.keyboard.press('Enter');
+    await page.keyboard.press('Escape'); await page.locator('#world').focus(); await page.keyboard.press('d'); await page.keyboard.press('n'); await page.keyboard.press('Enter');
     check('Keyboard can direct the crew', await page.evaluate(() => Boolean(window.__dustlings.state.assignment)));
     await page.keyboard.press('Escape');
     await page.waitForTimeout(180);

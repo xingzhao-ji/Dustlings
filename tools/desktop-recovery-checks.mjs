@@ -4,7 +4,7 @@ import {mkdir,mkdtemp,readFile,writeFile} from 'node:fs/promises';
 import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import path from 'node:path';
-const output='evidence/platforms';await mkdir(`${output}/profiles`,{recursive:true});
+const output=process.env.DUSTLINGS_DESKTOP_EVIDENCE_DIR||'evidence/platforms';await mkdir(`${output}/profiles`,{recursive:true});
 const profile=await mkdtemp(path.resolve(`${output}/profiles/recovery-`));
 const executablePath=path.resolve('builds/native/Dustlings-darwin-arm64/Dustlings.app/Contents/MacOS/Dustlings');
 const env={...process.env,DUSTLINGS_TEST_USER_DATA:profile,DUSTLINGS_TEST_QA:'1'};

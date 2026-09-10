@@ -12,7 +12,7 @@ for(const target of manifest.targets){
  const embedded=extractFile(archive,'game.html');const hash=createHash('sha256').update(embedded).digest('hex');
  if(hash!==manifest.game.sha256)throw Error('Embedded game hash mismatch '+target);
  const embeddedMain=extractFile(archive,'main.cjs');if(createHash('sha256').update(embeddedMain).digest('hex')!==manifest.wrapperFiles['platforms/desktop/main.cjs'])throw Error('Embedded wrapper mismatch '+target);
- const output=`builds/Dustlings-Courtyard-0.2.0-${target}-Development.zip`;
+ const output=`builds/Dustlings-Courtyard-${manifest.game.version}-${target}-Development.zip`;
  execFileSync('ditto',['-c','-k','--sequesterRsrc','--keepParent',mac?`${folder}/Dustlings.app`:folder,output],{stdio:'inherit'});
  const body=await readFile(output);hashes[target]={archive:output,bytes:(await stat(output)).size,sha256:createHash('sha256').update(body).digest('hex'),embeddedGameSha256:hash,appAsarSha256:createHash('sha256').update(await readFile(archive)).digest('hex'),runtimeExecuted:mac};
 }

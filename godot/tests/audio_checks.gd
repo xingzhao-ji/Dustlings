@@ -162,7 +162,10 @@ func run():
 	check(sound.score.playing and sound.score.get_playback_position() >= 0 and sound.score.get_playback_position() < 1, "Synchronized score crosses an actual loop boundary and wraps to its opening")
 	measurements.loop_position_after_seek = sound.score.get_playback_position()
 	measurements.samples = {"before_start": before_start, "started": started, "paused": paused_sample, "paused_ui": paused_ui, "muted": muted, "world_cue": spatial_playing, "all_muted": all_muted, "left": left_sample, "right": right_sample, "distant": distant, "unfocused": unfocused}
+	var score_reference = weakref(sound.score_stream)
+	var air_reference = weakref(sound.air.stream)
 	await sound.shutdown()
+	check(score_reference.get_ref() == null and air_reference.get_ref() == null, "Mixer drain releases synchronized score and ambient resources, not just player fields")
 	check(not sound.active and sound.score.stream == null and sound.air.stream == null and sound.brush.stream == null and sound.water.stream == null, "Explicit shutdown releases all looping streams before engine exit")
 	world.queue_free()
 	sound = null

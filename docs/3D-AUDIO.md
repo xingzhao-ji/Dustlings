@@ -30,7 +30,7 @@ All existing public methods retain their signatures: `start_soundscape()`, `set_
 - Focus loss pauses all world playback, clears UI tails and suppresses new cues. Focus return alone does not resume the world; the root's explicit Return action does.
 - Finished cues are removed from their collection, stopped, disconnected by a one-shot signal, and freed. Spatial world cues keep inverse-distance attenuation, unit size 16 and a maximum distance of 50. Brush position follows the supplied world target; water remains at the fountain.
 
-Additive integration method: **`await audio.shutdown()` before `get_tree().quit()`**. It stops voices/loops, clears their stream references and synchronized substreams, then waits 0.15 real seconds for the mixer to drain. `_exit_tree()` also releases resources, but abrupt tree destruction alone cannot guarantee the audio thread has consumed its stop requests. The lead must use the awaited method for normal and automated exits. This does not claim reliable cleanup after a forced process termination.
+Additive integration method: **`await audio.shutdown()` before `get_tree().quit()`**. It stops voices/loops, clears their stream references and synchronized substreams, then waits for the mixer to drain (0.6 real seconds with Godot’s coarse Dummy driver; 0.15 seconds with a normal audio driver). `_exit_tree()` also releases resources, but abrupt tree destruction alone cannot guarantee the audio thread has consumed its stop requests. The lead must use the awaited method for normal and automated exits. This does not claim reliable cleanup after a forced process termination.
 
 The private `base`, `warm`, and `bloom` players have been replaced by `score` plus `score_stream`; no root gameplay caller used those former internals.
 
@@ -44,7 +44,7 @@ Run:
 
 The test creates actual Godot streams, 3D audio sources and a listener, and captures mixed PCM from `AudioEffectCapture`. It runs on Godot 4.7.2 on the available Mac host using the **Dummy audio driver**. The driver still executes the audio mixer and produces real nonzero samples; it is not a speaker/headphone audition or a physical-device usability test.
 
-Final result: **33 checks passed, zero failures, zero engine errors/warnings**. Pre-Start, pause, settled mute, unfocused and out-of-range sample peaks were exactly zero. Nonzero score/UI/world samples establish that the capture path was active.
+Initial functional result: **33 checks passed, zero failures, zero engine errors/warnings**. The rapid-cycle cleanup follow-up below expands the resource-release check and supersedes the original shutdown timing. Pre-Start, pause, settled mute, unfocused and out-of-range sample peaks were exactly zero. Nonzero score/UI/world samples establish that the capture path was active.
 
 Acceptance checks cover pre-Start silence, audible synchronized playback, equal stem duration, gradual layers without restart, paused playback position/envelopes, pause silence, deliberate UI/purchase feedback, live existing-voice volume changes, existing/future mute, eight/three voice caps, the 50-birth burst, actual left/right panning, silence beyond the spatial cutoff, focus loss, finished-cue cleanup, crossing a real loop boundary and explicit stream release before exit.
 
@@ -66,3 +66,13 @@ Godot documents synchronized substreams as starting together and provides mixed 
 4. Validate native Windows audio-device changes, focus behavior, spatial balance and cleanup on physical hardware. The current Mac-host/Dummy checks do not establish Windows or iOS audio readiness.
 
 Exact next action: the lead integrates the awaited shutdown path, records the corrected purchase/mute/pause sequence in actual gameplay, and makes that clip plus the harness available for human listening before any taste-driven remix.
+
+## Rapid-cycle cleanup follow-up
+
+After the initial clean probe, the lead observed leaked synchronized playback, upgrade cue and ambience resources in the full start → purchase → pause/focus test. Three bounded repeats reproduced 11 leaked ObjectDB instances and four retained resources despite the original 0.15-second drain. These failures are preserved in `/tmp/dustlings-audio-integration-repeat-{1,2,3}.log` and summarized by `/tmp/dustlings-audio-integration-repeat.json`. A clean isolated probe therefore did not close the integrated reliability gap.
+
+Two isolated alternatives were compared: unpausing before stopping did not fix the leak; allowing the Dummy mixer 0.6 seconds to drain did. The longer drain then passed three consecutive full integration checks with no diagnostics (`/tmp/dustlings-audio-drain-repeat-{1,2,3}.log`, summary `.json`). The source now applies that delay specifically to the Dummy driver, which also serves offline movie capture, while retaining the normal-driver delay. No cue, motif, gain, playback or pause behavior changed. The audio regression now also observes weak references to the released synchronized score and ambience resource; it does not merely assert that player fields were set to null.
+
+The lead still needs the current native-device exit check. A Windows audio-driver result is not inferred from this Dummy-driver correction, and no diagnostic suppression was added.
+
+Final follow-up verification: 34 audio-engine checks passed with zero failures/diagnostics, including weak-reference release; the current shared source also passed the full integration script without errors or leak warnings (`/tmp/dustlings-3d-audio-checks-final.log`, `/tmp/dustlings-audio-integration-final.log`).

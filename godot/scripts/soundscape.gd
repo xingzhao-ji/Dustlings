@@ -198,8 +198,10 @@ func _notification(what):
 
 func shutdown():
 	_release_audio()
-	# Stop requests are consumed by the mixer; drain before the engine tears down.
-	if is_inside_tree(): await get_tree().create_timer(0.15, true, false, true).timeout
+	# Dummy mixes coarse blocks and retained paused playbacks after rapid UI cycles.
+	# Drain those blocks before engine teardown; normal devices keep the short exit.
+	var drain_seconds = 0.6 if AudioServer.get_driver_name() == "Dummy" else 0.15
+	if is_inside_tree(): await get_tree().create_timer(drain_seconds, true, false, true).timeout
 
 func _exit_tree():
 	_release_audio()

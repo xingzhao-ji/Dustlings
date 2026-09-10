@@ -1,0 +1,28 @@
+{
+  "simulationSourceSha256": "79f70bd9764cb217a251038b28a867c84c18d52ee0e0e78cacb3b3a38c5b9b06",
+  "baseline": {
+    "revision": "9e08258b63706fe5885b78c7c1b638bd90a1872c",
+    "sourceSha256": "3924445ef118517753713d7b4fc9cdd28c4844d75923337c84c180496eef1362",
+    "harnessOnlyChange": "Removed global class_name declaration to load baseline beside current class"
+  },
+  "sameProcessComparison": true,
+  "recording": {
+    "path": "../crowd-visual.mp4",
+    "sha256": "05bbcd46bdc02289db2152d5d58d8050aa47ea73b58e0ea55d266d1c4191362e",
+    "bytes": 2502975
+  },
+  "images": {
+    "0-3.png": "c11c3269d330001e36e51378ad36ad36cba95ae752abd9f05aba565e7f930bfe",
+    "0-7.png": "5c6da373f42f1c63d08fda53364ecbc7d86c9199c533b8987f7f05f961134867",
+    "1-3.png": "e820954dd71c45cf613fd9a33093ef99f2b3d2f040435542b2549ced9e1ba589",
+    "1-7.png": "cec3fc52af33c03320c105151a7af7c40ac858d004c2ddd2788b265bc44c847b",
+    "2-3.png": "d28d7c345ddc156d4c29b4a032456c4baba1f228b08855703aea74eeee6ef91d",
+    "2-7.png": "6e4684ea804cdf8d15173fb0e23148d09f7fe55acf8ff83f4c6a6c3fa5d1afea",
+    "3-3.png": "7988ef77fd0db556c740f01765dbb4293a07feb25b2a7ce21254cf0bd8aff2e4",
+    "3-7.png": "eac1b9e037c53b158f875fb19b106b3b55c02d510b13d5044a85cdf8760a000e"
+  },
+  "automatedFixture": true,
+  "humanSessions": 0,
+  "ownerAcceptance": false,
+  "conditions": "Apple M4 Pro Mac16,7 macOS26.6.2; Metal Forward+ Godot4.7.2;1280x800;movie mode30fps with12seconds accelerated preparation per segment; not sustained performance"
+}

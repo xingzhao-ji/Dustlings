@@ -1,0 +1,56 @@
+{
+  "camera": "Unchanged current game default camera",
+  "current_source_sha256": "79f70bd9764cb217a251038b28a867c84c18d52ee0e0e78cacb3b3a38c5b9b06",
+  "kind": "Actual Godot rendered comparison; each segment has12 seconds of accelerated preparation, then8 seconds of shown motion; no human test",
+  "stages": [
+    {
+      "assisted": 0.44881666666667,
+      "draw_calls": 62.0,
+      "helpers": 5,
+      "stage": 0
+    },
+    {
+      "assisted": 0.316866666666669,
+      "draw_calls": 62.0,
+      "helpers": 5,
+      "stage": 1
+    },
+    {
+      "assisted": 11.8273666666668,
+      "draw_calls": 287.0,
+      "helpers": 50,
+      "stage": 2
+    },
+    {
+      "assisted": 2.8583333333334,
+      "draw_calls": 288.0,
+      "helpers": 50,
+      "stage": 3
+    },
+    {
+      "assisted": 2.8681333333334,
+      "draw_calls": 288.0,
+      "helpers": 50,
+      "stage": 3
+    },
+    {
+      "assisted": 2.8779333333334,
+      "draw_calls": 288.0,
+      "helpers": 50,
+      "stage": 3
+    },
+    {
+      "assisted": 2.8877333333334,
+      "draw_calls": 288.0,
+      "helpers": 50,
+      "stage": 3
+    },
+    {
+      "assisted": 2.8975333333334,
+      "draw_calls": 288.0,
+      "helpers": 50,
+      "stage": 3
+    }
+  ],
+  "viewport": "(1280, 800)"
+}

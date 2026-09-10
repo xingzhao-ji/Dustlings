@@ -25,8 +25,8 @@ var paused = true
 var gentle_motion = false
 var tap_sweep = false
 var tap_remaining = 0.0
-var zoom = 1.0
-var desired_zoom = 1.0
+var zoom = 1.12
+var desired_zoom = 1.12
 var camera_target = Vector3(0, 0.1, 0.4)
 var camera_focus = Vector3(0, 0.1, 0.4)
 var dragging_camera = false
@@ -68,6 +68,7 @@ var qa_pointer = Vector2.ZERO
 var qa_driving_pointer = false
 var qa_profile_started = 0
 var qa_profile_frames: Array = []
+var qa_profile_previous = 0
 
 func _ready():
 	get_tree().auto_accept_quit = false
@@ -76,6 +77,7 @@ func _ready():
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--evidence="): qa_output = arg.trim_prefix("--evidence=")
 		if arg.begins_with("--qa-case="): qa_case = arg.trim_prefix("--qa-case=")
+		if qa and arg.begins_with("--qa-zoom="): zoom = clampf(float(arg.trim_prefix("--qa-zoom=")), 0.85, 1.8); desired_zoom = zoom
 	_acquire_instance()
 	_load_progress()
 	environment_node = EnvironmentScene.new()
@@ -346,7 +348,9 @@ func _handle_events():
 				_notice(confirmations[event.id], 7)
 			"chorus": _notice("The fountain chorus…", 8)
 			"restored": _notice("Water, at last. Your crew will find the last specks.", 8)
-			"complete": _save_progress(); _show_completion()
+			"complete":
+				if _save_progress(): _notice("The courtyard is awake.", 10)
+				else: _show_settings()
 	sim.events.clear()
 
 func _burst(where: Vector3):
@@ -425,23 +429,28 @@ func _label(text: String, size = 17) -> Label:
 func _build_ui():
 	hud = CanvasLayer.new()
 	add_child(hud)
-	var upper = PanelContainer.new()
-	upper.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
-	upper.offset_left = 22
-	upper.offset_right = -22
-	upper.offset_top = 18
-	upper.offset_bottom = 80
-	upper.add_theme_stylebox_override("panel", _panel_style(Color("f4eddc"), Color("ded8c4")))
-	hud.add_child(upper)
 	top = HBoxContainer.new()
-	top.add_theme_constant_override("separation", 20)
-	upper.add_child(top)
-	top.add_child(_label("Dustlings  /  Courtyard", 20))
+	top.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
+	top.offset_left = 22
+	top.offset_right = -22
+	top.offset_top = 18
+	top.offset_bottom = 70
+	top.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	top.add_theme_constant_override("separation", 12)
+	hud.add_child(top)
+	var place = PanelContainer.new()
+	place.add_theme_stylebox_override("panel", _panel_style(Color("f4eddc"), Color("ded8c4"), 16))
+	place.add_child(_label("Courtyard", 20))
+	top.add_child(place)
 	var space = Control.new()
 	space.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	space.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	top.add_child(space)
+	var progress = PanelContainer.new()
+	progress.add_theme_stylebox_override("panel", _panel_style(Color("f4eddc"), Color("ded8c4"), 16))
 	counts = _label("")
-	top.add_child(counts)
+	progress.add_child(counts)
+	top.add_child(progress)
 	top.add_child(_button("Settings", _show_settings, 105))
 	var dock = HBoxContainer.new()
 	dock.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
@@ -472,11 +481,11 @@ func _build_ui():
 	save_label.position = Vector2(32, 100)
 	hud.add_child(save_label)
 	restore_button = _button("Ring the fountain bell", _restore, 250)
-	restore_button.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
-	restore_button.offset_left = -125
-	restore_button.offset_right = 125
-	restore_button.offset_top = 104
-	restore_button.offset_bottom = 154
+	restore_button.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
+	restore_button.offset_left = 22
+	restore_button.offset_right = 272
+	restore_button.offset_top = 132
+	restore_button.offset_bottom = 182
 	hud.add_child(restore_button)
 
 func _modal(title: String, kind: String, width = 450) -> VBoxContainer:
@@ -597,15 +606,36 @@ func _show_settings():
 		slider.value = settings[key]
 		slider.custom_minimum_size = Vector2(225, 42)
 		slider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		for state in ["slider", "grabber_area", "grabber_area_highlight"]:
+			var track = StyleBoxFlat.new()
+			track.bg_color = Color("d5d7c5") if state == "slider" else Color("658977")
+			track.set_corner_radius_all(4)
+			track.content_margin_top = 4
+			track.content_margin_bottom = 4
+			slider.add_theme_stylebox_override(state, track)
+		slider.add_theme_icon_override("grabber", preload("res://assets/ui/slider-pearl.svg"))
+		slider.add_theme_icon_override("grabber_highlight", preload("res://assets/ui/slider-pearl-focus.svg"))
+		slider.add_theme_icon_override("grabber_disabled", preload("res://assets/ui/slider-pearl.svg"))
 		slider.value_changed.connect(func(value): settings[key] = value; _apply_settings())
 		row.add_child(slider)
-	for entry in [["gentle", "Gentle motion"], ["tap", "Tap to sweep"], ["quality", "Soft shadows & smooth edges"]]:
+	for entry in [["gentle", "Gentle motion"], ["tap", "Tap to sweep"], ["quality", "Smooth edges"]]:
 		var toggle = CheckButton.new()
 		toggle.text = entry[1]
 		toggle.custom_minimum_size.y = 44
 		for state in ["font_color", "font_pressed_color", "font_hover_color", "font_focus_color", "font_hover_pressed_color"]:
 			toggle.add_theme_color_override(state, Color("294842"))
 		toggle.add_theme_font_size_override("font_size", 17)
+		toggle.add_theme_icon_override("checked", preload("res://assets/ui/toggle-on.svg"))
+		toggle.add_theme_icon_override("unchecked", preload("res://assets/ui/toggle-off.svg"))
+		var toggle_focus = _panel_style(Color(0, 0, 0, 0), Color("406e61"), 10)
+		toggle_focus.shadow_size = 0
+		toggle_focus.set_border_width_all(2)
+		toggle.add_theme_stylebox_override("focus", toggle_focus)
+		var toggle_hover = _panel_style(Color("e8ecdc"), Color("d1dac5"), 10)
+		toggle_hover.shadow_size = 0
+		toggle_hover.set_content_margin_all(4)
+		toggle.add_theme_stylebox_override("hover", toggle_hover)
+		toggle.add_theme_stylebox_override("hover_pressed", toggle_hover)
 		toggle.button_pressed = settings[entry[0]]
 		toggle.toggled.connect(func(value): settings[entry[0]] = value; _apply_settings(); audio.ui())
 		column.add_child(toggle)
@@ -628,10 +658,13 @@ func _show_help():
 func _show_completion():
 	var column = _modal("The courtyard is awake", "complete")
 	_body(column, "Every little speck found its place.\nThe fountain flows again.")
-	_body(column, "Your restored courtyard is saved.\nThe canal is the next planned place; it is not in this development build.")
+	_body(column, ("Your restored courtyard is saved." if save_problem.is_empty() else save_problem) + "\nThe canal is the next planned place; it is not in this development build.")
 	column.add_child(_button("Enjoy the courtyard", _close_modal, 390))
 
 func _restore():
+	if sim.completed:
+		_show_completion()
+		return
 	if sim.begin_restoration(): _stop_input(); _handle_events(); _save_progress()
 
 func _update_ui():
@@ -640,7 +673,8 @@ func _update_ui():
 	brush_button.modulate = Color("c9ddcb") if mode == "brush" else Color.WHITE
 	direct_button.modulate = Color("c9ddcb") if mode == "direct" else Color.WHITE
 	grow_button.text = "Grow  U" if sim.motes < 32 or (sim.upgrades.brush and sim.upgrades.teamwork and sim.upgrades.bloom) else "Grow  •"
-	restore_button.visible = started and sim.upgrades.bloom and sim.ratio() >= 0.75 and sim.restoration < 1 and not sim.ritual and modal_kind == ""
+	restore_button.text = "Courtyard restored" if sim.completed else "Ring the fountain bell"
+	restore_button.visible = started and modal_kind == "" and (sim.completed or (sim.upgrades.bloom and sim.ratio() >= 0.75 and sim.restoration < 1 and not sim.ritual))
 	if notice_timer <= 0:
 		if sim.completed: tip.text = "Courtyard restored"
 		elif sim.ritual: tip.text = "The fountain chorus…"
@@ -787,6 +821,7 @@ func _qa_fixture(restored: bool):
 
 func _qa_finish():
 	qa_report["status"] = "failed" if qa_case == "opening" and (not sim.upgrades.brush or sim.assignment == Vector2.INF or sim.first_helper_at < 0 or sim.first_helper_at > 30) else "recorded"
+	if qa_case == "ritual" and (not sim.completed or sim.restoration < 1 or not qa_report.get("recap_closed", false) or not qa_report.get("celebration_unpaused", false)): qa_report.status = "failed"
 	qa_report.merge({"kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.", "engine": Engine.get_version_info(), "case": qa_case, "helpers": sim.crew.size(), "first_helper_at": sim.first_helper_at, "elapsed": sim.elapsed, "cleaned": sim.cleaned, "motes": sim.motes, "restoration": sim.restoration, "completed": sim.completed, "viewport": str(get_viewport().get_visible_rect().size), "draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME), "objects": Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME)})
 	var file = FileAccess.open(qa_output.path_join("results.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify(qa_report, "  "))
@@ -898,12 +933,15 @@ func _qa_driver(delta):
 		elif qa_stage == 1 and qa_time >= 3:
 			qa_stage = 2
 			qa_profile_started = Time.get_ticks_usec()
+			qa_profile_previous = qa_profile_started
 		elif qa_stage == 2:
-			qa_profile_frames.append(delta * 1000.0)
-			if Time.get_ticks_usec() - qa_profile_started >= 60000000:
+			var now = Time.get_ticks_usec()
+			qa_profile_frames.append((now - qa_profile_previous) / 1000.0)
+			qa_profile_previous = now
+			if now - qa_profile_started >= 60000000:
 				qa_profile_frames.sort()
 				var over = qa_profile_frames.filter(func(value): return value > 33.4)
-				qa_report.performance = {"duration_seconds": (Time.get_ticks_usec() - qa_profile_started) / 1000000.0, "samples": qa_profile_frames.size(), "p95_ms": qa_profile_frames[int(qa_profile_frames.size() * 0.95)], "p99_ms": qa_profile_frames[int(qa_profile_frames.size() * 0.99)], "worst_ms": qa_profile_frames[-1], "over_33_4_ms": over, "conditions": "Visible native Godot Metal Forward+, 1280x800 window, normal MSAA/shadows/audio,50-helper fixture. No movie or screenshots during measured interval."}
+				qa_report.performance = {"duration_seconds": (now - qa_profile_started) / 1000000.0, "samples": qa_profile_frames.size(), "frame_measurement": "Monotonic wall-clock microseconds between every _process callback; no discarded outliers or engine delta smoothing.", "p95_ms": qa_profile_frames[int(qa_profile_frames.size() * 0.95)], "p99_ms": qa_profile_frames[int(qa_profile_frames.size() * 0.99)], "worst_ms": qa_profile_frames[-1], "over_33_4_ms": over, "conditions": "Visible native Godot Metal Forward+, 1280x800 window, normal MSAA/shadows/audio,50-helper fixture. No movie or screenshots during measured interval."}
 				_qa_finish()
 	elif qa_case == "ritual":
 		if qa_stage == 0 and qa_time >= 1:
@@ -919,14 +957,25 @@ func _qa_driver(delta):
 		elif qa_stage == 2 and qa_time >= 15:
 			qa_stage = 3
 			_qa_capture("chorus")
-		elif qa_stage == 3 and qa_time >= 48:
+		elif qa_stage == 3 and sim.completed:
 			qa_stage = 4
+			qa_report.completed_at = qa_time
+			qa_report.celebration_unpaused = not paused and not audio.is_paused and modal_kind == ""
 			_qa_capture("completion")
-		elif qa_stage == 4 and qa_time >= 50:
+		elif qa_stage == 4 and qa_time >= qa_report.completed_at + 7:
 			qa_stage = 5
-			_qa_click("Enjoy the courtyard")
-		elif qa_stage == 5 and qa_time >= 53:
+			qa_report.recap_opened = _qa_click("Courtyard restored")
+		elif qa_stage == 5 and qa_time >= qa_report.completed_at + 9:
+			qa_stage = 6
+			_qa_capture("recap")
+		elif qa_stage == 6 and qa_time >= qa_report.completed_at + 10:
+			qa_stage = 7
+			qa_report.recap_closed = _qa_click("Enjoy the courtyard") and modal_kind == "" and not paused
+		elif qa_stage == 7 and qa_time >= qa_report.completed_at + 12:
 			qa_report.fixture = "All cleanup completed; fountain unawakened. Real-time chorus and ending triggered through visible bell."
+			_qa_finish()
+		elif qa_time > 95:
+			qa_report.failure = "Chorus or optional recap did not complete within the bounded fixture."
 			_qa_finish()
 	elif qa_case == "overview":
 		if qa_stage == 0 and qa_time >= 1:
@@ -967,4 +1016,3 @@ func _qa_driver(delta):
 			_qa_capture("settings")
 		elif qa_stage == 11 and qa_time >= 19:
 			_qa_finish()
-

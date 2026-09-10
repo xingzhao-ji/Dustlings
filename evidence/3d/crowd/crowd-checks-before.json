@@ -1,0 +1,75 @@
+{
+  "baseline": true,
+  "cases": [
+    {
+      "arrived": true,
+      "assisted": 2.19683333333331,
+      "average_simulation_tick_ms": 0.0118222222222222,
+      "final_helpers": 5,
+      "initial_helpers": 5,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 0.86,
+      "minimum_distance_m": 0.115791849792004,
+      "minimum_travel_distance_m": 0.115791849792004,
+      "minimum_work_distance_m": 0.117681339383125,
+      "seconds": 45,
+      "teamwork": false,
+      "working_frames": 9415
+    },
+    {
+      "arrived": true,
+      "assisted": 4.09148333333235,
+      "average_simulation_tick_ms": 0.0122855555555556,
+      "final_helpers": 5,
+      "initial_helpers": 5,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 1.02,
+      "minimum_distance_m": 0.00421373639255762,
+      "minimum_travel_distance_m": 0.00421373639255762,
+      "minimum_work_distance_m": 0.00421373639255762,
+      "seconds": 45,
+      "teamwork": true,
+      "working_frames": 10020
+    },
+    {
+      "arrived": true,
+      "assisted": 22.7555000000381,
+      "average_simulation_tick_ms": 0.115272222222222,
+      "final_helpers": 50,
+      "initial_helpers": 50,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 0.86,
+      "minimum_distance_m": 0.00201860209926963,
+      "minimum_travel_distance_m": 0.00201860209926963,
+      "minimum_work_distance_m": 0.00201860209926963,
+      "seconds": 45,
+      "teamwork": false,
+      "working_frames": 97525
+    },
+    {
+      "arrived": true,
+      "assisted": 39.9812666666159,
+      "average_simulation_tick_ms": 0.124323703703704,
+      "final_helpers": 50,
+      "initial_helpers": 50,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 1.02,
+      "minimum_distance_m": 0.000313373457174748,
+      "minimum_travel_distance_m": 0.000313373457174748,
+      "minimum_work_distance_m": 0.00240534474141896,
+      "seconds": 45,
+      "teamwork": true,
+      "working_frames": 97914
+    }
+  ],
+  "failed_routes": [],
+  "failures": [
+    "5 solo bodies overlap",
+    "5 paired bodies overlap",
+    "50 solo bodies overlap",
+    "50 paired bodies overlap"
+  ],
+  "kind": "Deterministic 5/50-helper travel/work fixtures; no human review",
+  "route_count": 5904,
+  "source_sha256": "db5db4b13b32c2177c3367d013f0c7e4ece14f5eb30b4eda6f9a85471bfa1937"
+}

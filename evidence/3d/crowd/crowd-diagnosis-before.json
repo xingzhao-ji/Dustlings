@@ -1,0 +1,74 @@
+[
+  {
+    "assisted": 0.0,
+    "mean_goal_distance": 7.27607222557068,
+    "reserved_seats_overlapping": 47,
+    "seconds": 5.0,
+    "within_one_meter_of_goal": 0,
+    "working": 0
+  },
+  {
+    "assisted": 0.0706416666666664,
+    "mean_goal_distance": 3.54865498520434,
+    "reserved_seats_overlapping": 47,
+    "seconds": 10.0,
+    "within_one_meter_of_goal": 6,
+    "working": 4
+  },
+  {
+    "assisted": 1.3887416666667,
+    "mean_goal_distance": 1.22398775421083,
+    "reserved_seats_overlapping": 47,
+    "seconds": 15.0,
+    "within_one_meter_of_goal": 24,
+    "working": 13
+  },
+  {
+    "assisted": 2.89304166666625,
+    "mean_goal_distance": 1.14325433477759,
+    "reserved_seats_overlapping": 47,
+    "seconds": 20.0,
+    "within_one_meter_of_goal": 23,
+    "working": 11
+  },
+  {
+    "assisted": 4.23686666666581,
+    "mean_goal_distance": 1.14315367206931,
+    "reserved_seats_overlapping": 47,
+    "seconds": 25.0,
+    "within_one_meter_of_goal": 23,
+    "working": 11
+  },
+  {
+    "assisted": 5.56761666666655,
+    "mean_goal_distance": 1.18779896467924,
+    "reserved_seats_overlapping": 48,
+    "seconds": 30.0,
+    "within_one_meter_of_goal": 21,
+    "working": 9
+  },
+  {
+    "assisted": 6.56475000000041,
+    "mean_goal_distance": 1.19742952154949,
+    "reserved_seats_overlapping": 49,
+    "seconds": 35.0,
+    "within_one_meter_of_goal": 21,
+    "working": 8
+  },
+  {
+    "assisted": 7.70890000000106,
+    "mean_goal_distance": 1.22555309016258,
+    "reserved_seats_overlapping": 49,
+    "seconds": 40.0,
+    "within_one_meter_of_goal": 19,
+    "working": 10
+  },
+  {
+    "assisted": 8.88081666666647,
+    "mean_goal_distance": 1.26922135293484,
+    "reserved_seats_overlapping": 49,
+    "seconds": 45.0,
+    "within_one_meter_of_goal": 20,
+    "working": 9
+  }
+]

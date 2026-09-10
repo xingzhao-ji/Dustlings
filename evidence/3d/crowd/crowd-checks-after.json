@@ -1,0 +1,70 @@
+{
+  "baseline": false,
+  "cases": [
+    {
+      "arrived": true,
+      "assisted": 1.71336666666651,
+      "average_simulation_tick_ms": 0.024752962962963,
+      "final_helpers": 5,
+      "initial_helpers": 5,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 0.945457220077515,
+      "minimum_distance_m": 0.540001273155212,
+      "minimum_travel_distance_m": 0.540001273155212,
+      "minimum_work_distance_m": 0.540014684200287,
+      "seconds": 45,
+      "teamwork": false,
+      "working_frames": 7343
+    },
+    {
+      "arrived": true,
+      "assisted": 3.93835833333233,
+      "average_simulation_tick_ms": 0.02534,
+      "final_helpers": 5,
+      "initial_helpers": 5,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 1.16639479994774,
+      "minimum_distance_m": 0.540002107620239,
+      "minimum_travel_distance_m": 0.540002226829529,
+      "minimum_work_distance_m": 0.540002465248108,
+      "seconds": 45,
+      "teamwork": true,
+      "working_frames": 9647
+    },
+    {
+      "arrived": true,
+      "assisted": 8.21519999999784,
+      "average_simulation_tick_ms": 2.64579111111111,
+      "final_helpers": 50,
+      "initial_helpers": 50,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 1.11843109130859,
+      "minimum_distance_m": 0.52825665473938,
+      "minimum_travel_distance_m": 0.529774963855743,
+      "minimum_work_distance_m": 0.531518936157227,
+      "seconds": 45,
+      "teamwork": false,
+      "working_frames": 35208
+    },
+    {
+      "arrived": true,
+      "assisted": 8.88081666666647,
+      "average_simulation_tick_ms": 2.78398888888889,
+      "final_helpers": 50,
+      "initial_helpers": 50,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 1.42375621944666,
+      "minimum_distance_m": 0.523515403270721,
+      "minimum_travel_distance_m": 0.53014087677002,
+      "minimum_work_distance_m": 0.531881928443909,
+      "seconds": 45,
+      "teamwork": true,
+      "working_frames": 21750
+    }
+  ],
+  "failed_routes": [],
+  "failures": [],
+  "kind": "Deterministic 5/50-helper travel/work fixtures; no human review",
+  "route_count": 5904,
+  "source_sha256": "79f70bd9764cb217a251038b28a867c84c18d52ee0e0e78cacb3b3a38c5b9b06"
+}

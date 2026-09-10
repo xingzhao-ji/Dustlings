@@ -1,0 +1,5 @@
+{
+  "revision": "9e08258b63706fe5885b78c7c1b638bd90a1872c",
+  "sourceSha256": "3924445ef118517753713d7b4fc9cdd28c4844d75923337c84c180496eef1362",
+  "harnessOnlyChange": "Removed global class_name declaration to load baseline beside current class"
+}

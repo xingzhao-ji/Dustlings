@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-10T07:35:30.333Z",
+  "kind": "Automated packaged macOS ARM64 app update from 0.2.0 to 0.3.0 across different bundle paths. A labeled existing simulation fixture exercises all upgrades and 50 helpers; this is not human play, physical-device input, store delivery or performance evidence.",
+  "temporaryDirectory": "builds/native/update-check-uywZp8",
+  "profile": "builds/native/update-check-uywZp8/profile",
+  "archive": {
+    "path": "builds/Dustlings-Courtyard-0.2.0-darwin-arm64-Development.zip",
+    "bytes": 126137447,
+    "sha256": "7bedaa726c9ad674eb33b0a87ac97092b87f9911150ce7505efdf950e48d5aff"
+  },
+  "newBuild": {
+    "wrapperFiles": {
+      "platforms/desktop/main.cjs": "aa0dcc81b3c60a08cf8dbf9e6b4d5ee351f2b45aa7071089d42fa56da0d38cdc",
+      "platforms/desktop/package.json": "6cda3fc5a93c19a323b9286a845781d634897a34ef83fcaa46da1b85b95b26ad",
+      "platforms/desktop/package-lock.json": "08ccd3f1c090eda49ddf20ae20d719d419c55da5468c969ebd40738d5c3cbc8a",
+      "tools/build-desktop.mjs": "b782e3ea74e3cc43e29f9d1495cb9f253c6865770a0d80b5cb03e7971a2d49b8"
+    },
+    "builtAt": "2026-09-10T07:35:09.666Z",
+    "host": "darwin arm64",
+    "wrapperRevision": "fd6f3e6de9473a3f32291d8f767c9558747a2453",
+    "wrapperWorkingTree": "May contain current uncommitted packaging changes; native source checkpoint recorded separately.",
+    "game": {
+      "version": "0.3.0",
+      "sourceRevision": "fd6f3e6de9473a3f32291d8f767c9558747a2453",
+      "sourceDirty": false,
+      "builtAt": "2026-09-10T07:35:06.703Z",
+      "artifact": "Dustlings Courtyard.html",
+      "sha256": "87462fc27f21240cd0f3f067332005a33a36711dcc81ac1b89836c6b2173e637",
+      "bytes": 167925,
+      "runtimeDependencies": 0,
+      "scope": "Courtyard prototype; human acceptance pending"
+    },
+    "electron": "44.3.0",
+    "packager": "20.3.0",
+    "targets": [
+      "darwin-arm64",
+      "win32-x64"
+    ],
+    "outputs": [
+      "builds/native/Dustlings-darwin-arm64",
+      "builds/native/Dustlings-win32-x64"
+    ],
+    "status": "Development packages only. No Steam submission, Apple notarization, release signing, or human acceptance."
+  },
+  "checks": [
+    "Archived 0.2.0 app launched from extracted path; exact frozen game hash matched and normal pointer brushing cleaned dust."
+  ],
+  "errors": [],
+  "oldRuntime": {
+    "version": "0.2.0",
+    "packaged": true,
+    "electron": "44.3.0",
+    "chrome": "152.0.7977.78",
+    "os": "26.6.2",
+    "arch": "arm64",
+    "path": "/Users/xingzhaoji/Desktop/Dustlings/builds/native/update-check-uywZp8/old/Dustlings.app/Contents/Resources/app.asar",
+    "userData": "/Users/xingzhaoji/Desktop/Dustlings/builds/native/update-check-uywZp8/profile",
+    "gameHash": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea"
+  },
+  "status": "failed",
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(before.state.assignment)\n\n    at file:///Users/xingzhaoji/Desktop/Dustlings/tools/desktop-update-checks.mjs:60:157"
+}

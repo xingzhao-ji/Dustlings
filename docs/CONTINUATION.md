@@ -1,3 +1,25 @@
+# Continuation checkpoint — 2026-09-10 10:10 UTC
+
+Session active; exceptional real3D courtyard0.4.0-dev, awaiting human validation. Human sessions0; player/presentation/owner gates allpending. No additionalzoneseligible.
+
+## Latest handoff — read this first
+
+Runtime is frozen clean at **960d96b**. It integrates: far-side grounded work withvisiblefaces andactual-removal feedback; irregular623-instancepowder; warmwindowpanes; finalwaterv2 highlights withopaqueshadowsremoved;100%completiondisplaytolerance; unused14,400-entryrender-samplerremoved. Current16integrationchecks pass. Critic e78047a preferswaterv2;51e1c51 preferspowderdistribution andfindswindowframes/glareacceptableinsamples;helper/crowd326de96/182718f preservefaces/routes. These are limitedAIvisualfindings, nothumanbeauty/comfortapproval. Subtlework,watertubesilhouette,dustinterpretation,finalcleanup rhythm andlisteningremainhumanquestions.
+
+FreshMac/Windows export **succeeded**: `builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/manifest.json`. Sourceaggregate056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313, no sourcechanges. Buildtoolchecksdo notlaunchapps. Previous2572e2fpackage45processchecks arehistorical. CurrentMacpackagedprocessverification isstillpending;Windowsunrun.
+
+**Exact next action:** poll rootexec **99161**, `node tools/capture-3d.mjs full immersion-full-courtyard`. It recordswholeplaythroughwithgeneratednativecontrols, no progressinjection;MovieMakerrenderingisnotperformance. Do notstartanothernativeappwhileit runs. Inspectcurrentopening/reveal/ending100% andactualresults, then capture shortcurrentritual. AfterMovieencodingcloses, run `node tools/capture-3d.mjs profile immersion-180-profile --qa-profile-seconds=180 --qa-profile-restore` onquietMac. This starts50helpers/80%clean, ringsactualbellat60wallseconds, andrecordsallworking/chorus/restoredframeintervals withnolaterstateinjection. Itmustreachrestoration; failureisnotapass. Avoidheavytasks/nativeappsfor180s, keepuserupdatedwithshortnonblockingpolls.
+
+Store_requirements owns read-onlynewpackagepreflight now, thenactualMac45processchecks onlyafterrootreleasesnative slot. It alsoowns finalstrictsource-boundreviewhub/gatesrefresh usingnewmanifest+fullfilm/profile/shortritual+actualreport. Do notoverwriteits tools/review-3d.mjs orhub. Native_icon artworkisdone; independentcriticownsallverdicts andcanreviewnewwholefilmwhenready. No moreoptionalarttuningbeforethisreviewablehandoffandhumanfeedback.
+
+PLAYTEST.md was amended **beforeanyhumans**: five-minuterequiredsegment thenneutralchoice/two-active-minutecontinuation. Theold12mincouldoutlastfinitecourtyard. Agreed12–20/80%/50%rules,originaldenominator,andending-limitedreasons remainexplicit. No invitationssent. CUAphysicalinput/Figmaunavailable; nativeUIfallback. Humanlistening,Windowsphysicalrun andowneracceptancestillabsent.
+
+Afterverification, saveexactnewbuild/media/checks/gaps andaskownerforcurrent-experienceobservationswithoutblockingauthorizedwork. An endedrun isnotafinishedgame. Continueusefulauthorizedwork; donotendbecausecheckpointorbuildfinished.
+
+---
+
+## Earlier checkpoint (historical status where superseded above)
+
 # Continuation checkpoint — 2026-09-10 09:51 UTC
 
 Session active. Milestone: exceptional real3D courtyard0.4.0-dev. Human sessions0; representative-player, presentation and owner acceptance pending. No further zones eligible. This checkpoint is not completion.

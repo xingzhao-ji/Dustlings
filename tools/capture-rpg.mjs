@@ -30,11 +30,14 @@ if(process.env.DUSTLINGS_RPG_SAVE){ const saveBytes=await fs.readFile(process.en
 await fs.writeFile(path.join(output,'capture-manifest.json'),JSON.stringify(manifest,null,2)+'\n');
 async function run(exe,args,log){return await new Promise((resolve,reject)=>{const child=spawn(exe,args,{stdio:['ignore','pipe','pipe']});let result='';child.stdout.on('data',d=>result+=d);child.stderr.on('data',d=>result+=d);child.on('error',reject);child.on('close',async code=>{await fs.writeFile(path.join(output,log),result);if(code!==0||/SCRIPT ERROR:|ERROR:/m.test(result))reject(Error(`${log} failed (${code}); inspect preserved log`));else resolve(result);});});}
 const engine=path.resolve('.tools/Godot.app/Contents/MacOS/Godot');
-await run(engine,['--headless','--path',snapshot,'--import'],'import.log');
 const args=['--path',snapshot,...manifest.nativeArguments];
 if(scenario!=='profile')args.push('--write-movie',path.join(output,scenario+'.avi'),'--fixed-fps','30');
 args.push('--','--rpg-qa','--rpg-case='+scenario,'--evidence='+output,...extra);
 try{
+ await run(engine,['--headless','--path',snapshot,'--import'],'import.log');
+ // Dynamic QA scripts may not be parsed by project import. Validate the exact
+ // frozen driver before a native window can start without its exit controller.
+ await run(engine,['--headless','--path',snapshot,'--script','res://scripts/rpg_qa.gd','--check-only'],'driver-parse.log');
  await run(engine,args,'native.log');
  manifest.result=JSON.parse(await fs.readFile(path.join(output,'results.json'),'utf8'));
  if(scenario!=='profile')await run('ffmpeg',['-hide_banner','-loglevel','error','-i',path.join(output,scenario+'.avi'),'-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-movflags','+faststart','-y',path.join(output,scenario+'.mp4')],'encode.log');

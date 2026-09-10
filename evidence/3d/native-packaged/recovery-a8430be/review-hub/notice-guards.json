@@ -1,0 +1,17 @@
+{
+  "kind": "Notice companion rejection checks; no app process",
+  "checks": [
+    {
+      "name": "Missing notice rejected",
+      "passed": true,
+      "exitCode": 1,
+      "hubAndGateUnchanged": true
+    },
+    {
+      "name": "Different notice rejected",
+      "passed": true,
+      "exitCode": 1,
+      "hubAndGateUnchanged": true
+    }
+  ]
+}

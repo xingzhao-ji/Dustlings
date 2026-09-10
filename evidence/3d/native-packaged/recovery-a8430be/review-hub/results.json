@@ -1,0 +1,45 @@
+{
+  "kind": "Local HTML layout simulations and muted movie decoding; no listening or human judgment",
+  "checks": [
+    {
+      "name": "desktop",
+      "viewport": [
+        1280,
+        900
+      ],
+      "passed": true
+    },
+    {
+      "name": "Current full actual decode",
+      "duration": 679.366667,
+      "width": 1280,
+      "height": 800,
+      "time": 0.269208,
+      "passed": true
+    },
+    {
+      "name": "Current ritual actual decode",
+      "duration": 41.3,
+      "width": 1280,
+      "height": 800,
+      "time": 0.269155,
+      "passed": true
+    },
+    {
+      "name": "Before full actual decode",
+      "duration": 679.366667,
+      "width": 1280,
+      "height": 800,
+      "time": 0.267338,
+      "passed": true
+    },
+    {
+      "name": "phone-layout",
+      "viewport": [
+        390,
+        844
+      ],
+      "passed": true
+    }
+  ]
+}

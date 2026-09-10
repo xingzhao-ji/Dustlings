@@ -1,0 +1,18 @@
+{
+  "kind": "Current review source, notice and local linked-byte verification",
+  "verifiedAt": "2026-09-10T11:09:48.884Z",
+  "status": "passed",
+  "linkedFiles": 77,
+  "current": {
+    "version": "0.4.0-dev",
+    "mode": "live-source-matched",
+    "manifest": "builds/3d/0.4.0-dev-2026-09-10T10-59-12-915Z-ee3a43ae3d/manifest.json",
+    "sourceSha256": "ee3a43ae3dcf50364bcdb3914c730f2cc459ebeb18559b39f376e3a3996ef920",
+    "pckSha256": "47f6dec84813aa1c8bb873ea5c2636720a404a7a1b54a57cd5409e863fec7d1c",
+    "knownGaps": []
+  },
+  "humanSessions": 0,
+  "reviewSha256": "e33b3273a368947dace760d30531cec228f6ff2d66946afcda1e62bdbceeeec2",
+  "generatorSha256": "304ffc311d56ed4da5a0692f19ddf5cd4346f2d58feae63eee045aebf25b3b83",
+  "ownerApproved": false
+}

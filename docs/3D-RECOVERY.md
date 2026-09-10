@@ -100,7 +100,7 @@ The Windows executable contained all six authored icon frames (16, 32, 48, 64, 1
 
 The unique cache profile `dustlings-qa-native3d_d0f725901cf94866bfa728080ebc4167.json` and temporary extracted bundle remain inspectable; their exact paths are in the report. The actual dirty-courtyard screenshot was inspected after launch. No human participant or owner acceptance was recorded. Next action: after the work-legibility correction is frozen and packaged, repeat this exact-manifest sequence for the new candidate and attach source-matched gameplay/performance evidence.
 
-### Current packaged result — `960d96b`
+### Earlier packaged result — `960d96b`
 
 The [new exact packaged report](../evidence/3d/native-packaged/recovery-960d96b/report.json) passed **45/45 checks** on 2026-09-10, 10:25:14–10:26:34 UTC. Four real release-app processes exited 0 with no recorded engine errors, warnings or leaked-resource diagnostics: opening PID 45791, resume 45879, primary hold 45887, second copy 45890. Conditions were the same Mac16,7 / Apple M4 Pro / 48 GiB / macOS 26.6.2 / Metal Forward+, logical viewport 1440×900. This is automated generated-input execution, not a human test or a performance measurement.
 
@@ -117,4 +117,21 @@ The opening created helpers, bought the brush upgrade, assigned the crew and per
 
 The separate [17-check preflight](../evidence/3d/native-packaged/preflight-960d96b/report.json) launched zero apps. Both this preflight and the full run inspected the actual Mac icon and all six Windows icon resources. Neither executed Windows. The prior `2572e2f` report remains historical, with its own package and results preserved.
 
-The current build still has a separately observed Settings save-copy notice visibility defect; these checks do not exercise that native file-dialog feedback. Full-crew/active-chorus process return, physical sleep/device interruption, Windows execution, human comfort and owner acceptance remain unverified. The next correction requires a new package and affected checks before its result can replace this exact candidate. Human sessions remain **0**.
+That earlier build still has a separately observed Settings save-copy notice visibility defect; these checks do not exercise that native file-dialog feedback. Full-crew/active-chorus process return, physical sleep/device interruption, Windows execution, human comfort and owner acceptance remain unverified. The next correction requires a new package and affected checks before its result can replace this exact candidate. Human sessions remain **0**.
+
+### Current packaged result — UI corrections and notices
+
+[The new packaged run](../evidence/3d/native-packaged/recovery-a8430be/report.json) passed **45/45 checks**, 2026-09-10 11:04:40–11:05:56 UTC. All four release-app processes exited 0 with no recorded engine error, warning or leaked-resource diagnostic: opening 48078, resume 48190, hold 48207, second copy 48213. The Mac16,7 / M4 Pro / 48 GiB / macOS 26.6.2 / Metal Forward+ conditions and automated input method are unchanged. This is not a performance or human usability measurement.
+
+| Identity | Exact value |
+| --- | --- |
+| Build | `builds/3d/0.4.0-dev-2026-09-10T10-59-12-915Z-ee3a43ae3d/manifest.json` |
+| Recorded repository revision | `b5034e421843efd22b195a5ec1b7a29d26b65b2e` |
+| Game source SHA-256 | `ee3a43ae3dcf50364bcdb3914c730f2cc459ebeb18559b39f376e3a3996ef920` |
+| Source dirty | `false` |
+| PCK SHA-256 | `47f6dec84813aa1c8bb873ea5c2636720a404a7a1b54a57cd5409e863fec7d1c` |
+| Mac executable SHA-256 | `9a95458266b01a2b861efc974bf20b24bd245dff85cbedb4f91630adf09500d0` |
+
+The report folder's `a8430be` label identifies the runtime freeze. The build's actual revision includes a later packaging-only checkpoint; the table and report preserve that distinction. The generated opening, complete saved-payload comparison, deliberate return, nondefault preference persistence and simultaneous second-writer guard all passed for these exact bytes. The unique cache profile `dustlings-qa-native3d_668811aed2f94eaa9699c56a09f1a4cc.json` and extracted bundle remain inspectable at their reported paths.
+
+The package now contains the Settings feedback, keyboard handoff, Help/recap focus and restoration-context changes. Their separate focused evidence is recorded in [the accessibility audit](3D-ACCESSIBILITY-AUDIT.md); this small opening runner does not independently exercise every modal or native file-picker interaction. [The engine notice bundle](3D-NOTICES.md) accompanies the new downloads without changing the game PCK. Full-crowd/active-chorus process return, physical device interruption, Windows execution, human satisfaction and owner approval remain open. The prior two package reports remain historical. Human sessions: **0**.

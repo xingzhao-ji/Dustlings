@@ -1,0 +1,843 @@
+{
+  "schema": 1,
+  "kind": "packaged-mac-isolated-process-recovery",
+  "started": "2026-09-10T11:04:40.514Z",
+  "manifest": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-59-12-915Z-ee3a43ae3d/manifest.json",
+  "output": "/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/recovery-a8430be",
+  "method": "Release Mac app extracted from the exact verified archive; separate OS processes, real-time engine-generated InputEvents. No Movie Maker, editor, progress injection, physical input or human playtest.",
+  "conditions": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.6.0",
+    "movieMaker": false,
+    "model": "Mac16,7",
+    "macOSVersion": "26.6.2",
+    "memoryBytes": 51539607552,
+    "engine": {
+      "build": "official",
+      "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+      "hex": 263938,
+      "major": 4,
+      "minor": 7,
+      "patch": 2,
+      "status": "stable",
+      "string": "4.7.2-stable (official)",
+      "timestamp": 0
+    },
+    "logicalViewport": "(1440.0, 900.0)",
+    "graphicsDevice": "Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)"
+  },
+  "humanTests": 0,
+  "ownerApproved": false,
+  "releaseReady": false,
+  "windowsExecution": "unrun",
+  "checks": {
+    "macHost": {
+      "passed": true,
+      "detail": "darwin"
+    },
+    "successfulNativeBuildManifest": {
+      "passed": true
+    },
+    "archiveHash": {
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-59-12-915Z-ee3a43ae3d/macOS/Dustlings.zip",
+        "expected": {
+          "bytes": 62081638,
+          "sha256": "fb75c4d221d42194ba1150adfc67dfd2cdff3eeef2019cb9f6611c2bed839110"
+        },
+        "actual": {
+          "bytes": 62081638,
+          "sha256": "fb75c4d221d42194ba1150adfc67dfd2cdff3eeef2019cb9f6611c2bed839110"
+        }
+      }
+    },
+    "singlePackagedApp": {
+      "passed": true,
+      "detail": [
+        "Dustlings 3D.app"
+      ]
+    },
+    "bundleMetadataHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/Info.plist",
+        "expected": {
+          "bytes": 1826,
+          "sha256": "c8be7f50d6ad8921ec6d934bc1613966a38debd3d4c0e21b18c58f8a49e1a51a"
+        },
+        "actual": {
+          "bytes": 1826,
+          "sha256": "c8be7f50d6ad8921ec6d934bc1613966a38debd3d4c0e21b18c58f8a49e1a51a"
+        }
+      }
+    },
+    "bundleIdentity": {
+      "passed": true,
+      "detail": {
+        "LSMinimumSystemVersionByArchitecture": {
+          "arm64": "13.00",
+          "x86_64": "11.00"
+        },
+        "CFBundleName": "Dustlings 3D",
+        "NSHumanReadableCopyright": "Dustlings development prototype",
+        "DTXcode": "1420",
+        "DTSDKName": "macosx13.1",
+        "DTSDKBuild": "22C55",
+        "CFBundleDevelopmentRegion": "English",
+        "CFBundleVersion": "0.4.0",
+        "LSArchitecturePriority": [
+          "arm64",
+          "x86_64"
+        ],
+        "NSPrincipalClass": "NSApplication",
+        "DTPlatformName": "macosx",
+        "CFBundlePackageType": "APPL",
+        "CFBundleIconFile": "icon.icns",
+        "CFBundleSupportedPlatforms": [
+          "MacOSX"
+        ],
+        "CFBundleShortVersionString": "0.4.0",
+        "NSHighResolutionCapable": true,
+        "CFBundleInfoDictionaryVersion": "6.0",
+        "CFBundleExecutable": "Dustlings 3D",
+        "CFBundleIdentifier": "com.dustlings.courtyard3d.prototype",
+        "LSApplicationCategoryType": "public.app-category.games",
+        "DTPlatformVersion": "13.1",
+        "DTXcodeBuild": "14C18",
+        "CFBundleDisplayName": "Dustlings 3D",
+        "CFBundleSignature": "",
+        "DTPlatformBuild": "14C18"
+      }
+    },
+    "safeExecutableName": {
+      "passed": true
+    },
+    "executableHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+        "expected": {
+          "bytes": 170963648,
+          "sha256": "9a95458266b01a2b861efc974bf20b24bd245dff85cbedb4f91630adf09500d0"
+        },
+        "actual": {
+          "bytes": 170963648,
+          "sha256": "9a95458266b01a2b861efc974bf20b24bd245dff85cbedb4f91630adf09500d0"
+        }
+      }
+    },
+    "singlePackagedPck": {
+      "passed": true,
+      "detail": [
+        "Contents/Resources/Dustlings 3D.pck"
+      ]
+    },
+    "pckHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/Resources/Dustlings 3D.pck",
+        "expected": {
+          "bytes": 2139668,
+          "sha256": "47f6dec84813aa1c8bb873ea5c2636720a404a7a1b54a57cd5409e863fec7d1c"
+        },
+        "actual": {
+          "bytes": 2139668,
+          "sha256": "47f6dec84813aa1c8bb873ea5c2636720a404a7a1b54a57cd5409e863fec7d1c"
+        }
+      }
+    },
+    "macSignature": {
+      "passed": true,
+      "detail": "Verified exact extracted app; development ad-hoc signing, no notarization or release approval."
+    },
+    "packagedIconHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/Resources/icon.icns",
+        "expected": {
+          "bytes": 83377,
+          "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+        },
+        "actual": {
+          "bytes": 83377,
+          "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+        }
+      }
+    },
+    "packagedMacIcon": {
+      "passed": true,
+      "detail": {
+        "iconRelative": "Contents/Resources/icon.icns",
+        "bytes": 83377,
+        "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2",
+        "interpretation": "Actual bundle resource and plist linkage; no aesthetic or Dock inspection claim."
+      }
+    },
+    "packagedMacIconMatchesAuthoredSource": {
+      "passed": true
+    },
+    "windowsExecutableHash": {
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-59-12-915Z-ee3a43ae3d/Windows/Dustlings.exe",
+        "expected": {
+          "bytes": 109136384,
+          "sha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512"
+        },
+        "actual": {
+          "bytes": 109136384,
+          "sha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512"
+        }
+      }
+    },
+    "authoredWindowsIconHash": {
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T10-59-12-915Z-ee3a43ae3d/source/godot/assets/ui/app-icon.ico",
+        "expected": {
+          "bytes": 10104,
+          "sha256": "617ec63012018f494c73c1c45d4a8c21c737bef5611e0da6f030a67577d8a211"
+        },
+        "actual": {
+          "bytes": 10104,
+          "sha256": "617ec63012018f494c73c1c45d4a8c21c737bef5611e0da6f030a67577d8a211"
+        }
+      }
+    },
+    "packagedWindowsIcon": {
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "expected": [
+          {
+            "width": 16,
+            "height": 16,
+            "bytes": 363,
+            "sha256": "f0909026f20604d32611998a00ef277042378e45ce4d2bf4ba2d1bfb27f35072"
+          },
+          {
+            "width": 32,
+            "height": 32,
+            "bytes": 667,
+            "sha256": "249a976db59de791ae33b9cd1f690c6699e3822c743c702a6c65eb874722bf44"
+          },
+          {
+            "width": 48,
+            "height": 48,
+            "bytes": 901,
+            "sha256": "13c5cdcd265b70dd25e833eb9700dcf29841780da4a7b1ea6db575236c2ed16e"
+          },
+          {
+            "width": 64,
+            "height": 64,
+            "bytes": 1165,
+            "sha256": "0f4efa076c49333e54e814a15372bf6045a58f93ee3945b9179ed7fc1d10d176"
+          },
+          {
+            "width": 128,
+            "height": 128,
+            "bytes": 2323,
+            "sha256": "bcd9ec9922f30e89360c8d9e5f75f030e12e62101cc75ad435e89c11a5c44150"
+          },
+          {
+            "width": 256,
+            "height": 256,
+            "bytes": 4583,
+            "sha256": "53cb140f3f69ceed3df15a2217b028206a1e7f737736c5001915973fe2ff29df"
+          }
+        ],
+        "icons": [
+          {
+            "ids": [
+              3,
+              1,
+              1033
+            ],
+            "bytes": 363,
+            "sha256": "f0909026f20604d32611998a00ef277042378e45ce4d2bf4ba2d1bfb27f35072"
+          },
+          {
+            "ids": [
+              3,
+              2,
+              1033
+            ],
+            "bytes": 667,
+            "sha256": "249a976db59de791ae33b9cd1f690c6699e3822c743c702a6c65eb874722bf44"
+          },
+          {
+            "ids": [
+              3,
+              3,
+              1033
+            ],
+            "bytes": 901,
+            "sha256": "13c5cdcd265b70dd25e833eb9700dcf29841780da4a7b1ea6db575236c2ed16e"
+          },
+          {
+            "ids": [
+              3,
+              4,
+              1033
+            ],
+            "bytes": 1165,
+            "sha256": "0f4efa076c49333e54e814a15372bf6045a58f93ee3945b9179ed7fc1d10d176"
+          },
+          {
+            "ids": [
+              3,
+              5,
+              1033
+            ],
+            "bytes": 2323,
+            "sha256": "bcd9ec9922f30e89360c8d9e5f75f030e12e62101cc75ad435e89c11a5c44150"
+          },
+          {
+            "ids": [
+              3,
+              6,
+              1033
+            ],
+            "bytes": 4583,
+            "sha256": "53cb140f3f69ceed3df15a2217b028206a1e7f737736c5001915973fe2ff29df"
+          }
+        ],
+        "groups": [
+          {
+            "ids": [
+              14,
+              2147484000,
+              1033
+            ],
+            "frames": [
+              {
+                "width": 16,
+                "height": 16,
+                "bytes": 363,
+                "iconId": 1
+              },
+              {
+                "width": 32,
+                "height": 32,
+                "bytes": 667,
+                "iconId": 2
+              },
+              {
+                "width": 48,
+                "height": 48,
+                "bytes": 901,
+                "iconId": 3
+              },
+              {
+                "width": 64,
+                "height": 64,
+                "bytes": 1165,
+                "iconId": 4
+              },
+              {
+                "width": 128,
+                "height": 128,
+                "bytes": 2323,
+                "iconId": 5
+              },
+              {
+                "width": 256,
+                "height": 256,
+                "bytes": 4583,
+                "iconId": 6
+              }
+            ]
+          }
+        ],
+        "method": "Read actual PE RT_ICON and RT_GROUP_ICON bytes and compare every authored ICO frame and group reference; Windows was not executed."
+      }
+    },
+    "uniqueIsolatedProfile": {
+      "passed": true
+    },
+    "openingProcessExit": {
+      "passed": true,
+      "detail": {
+        "case": "opening",
+        "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+        "args": [
+          "--",
+          "--qa",
+          "--qa-profile=native3d_668811aed2f94eaa9699c56a09f1a4cc",
+          "--qa-case=opening",
+          "--evidence=/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/recovery-a8430be/opening"
+        ],
+        "pid": 48078,
+        "started": "2026-09-10T11:04:41.220Z",
+        "finished": "2026-09-10T11:05:50.038Z",
+        "exitCode": 0,
+        "signal": null,
+        "spawnError": "",
+        "diagnostics": []
+      }
+    },
+    "openingEngineDiagnostics": {
+      "passed": true,
+      "detail": []
+    },
+    "openingRecorded": {
+      "passed": true
+    },
+    "openingProfilePath": {
+      "passed": true
+    },
+    "openingSaved": {
+      "passed": true
+    },
+    "openingPlay": {
+      "passed": true,
+      "detail": {
+        "firstHelper": 10.2500000000001,
+        "crew": 5,
+        "upgradeBought": true,
+        "directed": true
+      }
+    },
+    "openingPreferenceControls": {
+      "passed": true,
+      "detail": true
+    },
+    "diskProgressMatchesOpening": {
+      "passed": true,
+      "detail": []
+    },
+    "resumeProcessExit": {
+      "passed": true,
+      "detail": {
+        "case": "resume",
+        "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+        "args": [
+          "--",
+          "--qa",
+          "--qa-profile=native3d_668811aed2f94eaa9699c56a09f1a4cc",
+          "--qa-case=resume",
+          "--evidence=/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/recovery-a8430be/resume"
+        ],
+        "pid": 48190,
+        "started": "2026-09-10T11:05:50.044Z",
+        "finished": "2026-09-10T11:05:52.925Z",
+        "exitCode": 0,
+        "signal": null,
+        "spawnError": "",
+        "diagnostics": []
+      }
+    },
+    "resumeEngineDiagnostics": {
+      "passed": true,
+      "detail": []
+    },
+    "resumeRecorded": {
+      "passed": true
+    },
+    "resumeProfilePath": {
+      "passed": true
+    },
+    "allPersistedFieldsRestored": {
+      "passed": true,
+      "detail": {
+        "numericTolerance": "1e-9 × max(1, absolute values); all keys and array entries compared",
+        "differences": []
+      }
+    },
+    "resumeWaitsAndReturns": {
+      "passed": true
+    },
+    "nondefaultPreferencesRetained": {
+      "passed": true,
+      "detail": {
+        "ambience": 0.55,
+        "gentle": true,
+        "music": 0.25,
+        "quality": true,
+        "sfx": 0.8,
+        "tap": false
+      }
+    },
+    "primaryHoldsProfile": {
+      "passed": true,
+      "detail": {
+        "instance_primary": true,
+        "path": "/Users/xingzhaoji/Library/Caches/dustlings-qa-native3d_668811aed2f94eaa9699c56a09f1a4cc.json",
+        "pid": 48207
+      }
+    },
+    "secondProcessExit": {
+      "passed": true,
+      "detail": {
+        "case": "second",
+        "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+        "args": [
+          "--",
+          "--qa",
+          "--qa-profile=native3d_668811aed2f94eaa9699c56a09f1a4cc",
+          "--qa-case=second",
+          "--evidence=/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/recovery-a8430be/second"
+        ],
+        "pid": 48213,
+        "started": "2026-09-10T11:05:54.565Z",
+        "finished": "2026-09-10T11:05:56.502Z",
+        "exitCode": 0,
+        "signal": null,
+        "spawnError": "",
+        "diagnostics": []
+      }
+    },
+    "secondEngineDiagnostics": {
+      "passed": true,
+      "detail": []
+    },
+    "secondRecorded": {
+      "passed": true
+    },
+    "secondLaunchBlocked": {
+      "passed": true
+    },
+    "secondLeavesAllSaveBytesUnchanged": {
+      "passed": true,
+      "detail": {
+        "before": {
+          "primary": {
+            "bytes": 3981,
+            "sha256": "7c59fce49076012bcd48775ede5a2f59cede2148d4901d854f6d33f0492799f8"
+          },
+          ".new": null,
+          ".backup": {
+            "bytes": 3988,
+            "sha256": "e6be19bd10ecf49e56a25d8ebbc9b1026a3151999831447d7328ec46575d26de"
+          },
+          ".backup.new": null
+        },
+        "after": {
+          "primary": {
+            "bytes": 3981,
+            "sha256": "7c59fce49076012bcd48775ede5a2f59cede2148d4901d854f6d33f0492799f8"
+          },
+          ".new": null,
+          ".backup": {
+            "bytes": 3988,
+            "sha256": "e6be19bd10ecf49e56a25d8ebbc9b1026a3151999831447d7328ec46575d26de"
+          },
+          ".backup.new": null
+        }
+      }
+    },
+    "holdProcessExit": {
+      "passed": true,
+      "detail": {
+        "case": "hold",
+        "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+        "args": [
+          "--",
+          "--qa",
+          "--qa-profile=native3d_668811aed2f94eaa9699c56a09f1a4cc",
+          "--qa-case=hold",
+          "--evidence=/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/recovery-a8430be/hold"
+        ],
+        "pid": 48207,
+        "started": "2026-09-10T11:05:52.928Z",
+        "finished": "2026-09-10T11:05:56.760Z",
+        "exitCode": 0,
+        "signal": null,
+        "spawnError": "",
+        "diagnostics": []
+      }
+    },
+    "holdEngineDiagnostics": {
+      "passed": true,
+      "detail": []
+    },
+    "holdRecorded": {
+      "passed": true
+    },
+    "primaryRetainsLockUntilFinished": {
+      "passed": true
+    },
+    "welcomeExitLeavesSaveBytesUnchanged": {
+      "passed": true,
+      "detail": {
+        "before": {
+          "primary": {
+            "bytes": 3981,
+            "sha256": "7c59fce49076012bcd48775ede5a2f59cede2148d4901d854f6d33f0492799f8"
+          },
+          ".new": null,
+          ".backup": {
+            "bytes": 3988,
+            "sha256": "e6be19bd10ecf49e56a25d8ebbc9b1026a3151999831447d7328ec46575d26de"
+          },
+          ".backup.new": null
+        },
+        "after": {
+          "primary": {
+            "bytes": 3981,
+            "sha256": "7c59fce49076012bcd48775ede5a2f59cede2148d4901d854f6d33f0492799f8"
+          },
+          ".new": null,
+          ".backup": {
+            "bytes": 3988,
+            "sha256": "e6be19bd10ecf49e56a25d8ebbc9b1026a3151999831447d7328ec46575d26de"
+          },
+          ".backup.new": null
+        }
+      }
+    },
+    "nativeCasesPassed": {
+      "passed": true,
+      "detail": "Opening → fresh process restore → simultaneous hold and blocked second process; all owned app processes closed."
+    }
+  },
+  "processes": [
+    {
+      "case": "opening",
+      "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+      "args": [
+        "--",
+        "--qa",
+        "--qa-profile=native3d_668811aed2f94eaa9699c56a09f1a4cc",
+        "--qa-case=opening",
+        "--evidence=/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/recovery-a8430be/opening"
+      ],
+      "pid": 48078,
+      "started": "2026-09-10T11:04:41.220Z",
+      "finished": "2026-09-10T11:05:50.038Z",
+      "exitCode": 0,
+      "signal": null,
+      "spawnError": "",
+      "diagnostics": []
+    },
+    {
+      "case": "resume",
+      "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+      "args": [
+        "--",
+        "--qa",
+        "--qa-profile=native3d_668811aed2f94eaa9699c56a09f1a4cc",
+        "--qa-case=resume",
+        "--evidence=/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/recovery-a8430be/resume"
+      ],
+      "pid": 48190,
+      "started": "2026-09-10T11:05:50.044Z",
+      "finished": "2026-09-10T11:05:52.925Z",
+      "exitCode": 0,
+      "signal": null,
+      "spawnError": "",
+      "diagnostics": []
+    },
+    {
+      "case": "hold",
+      "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+      "args": [
+        "--",
+        "--qa",
+        "--qa-profile=native3d_668811aed2f94eaa9699c56a09f1a4cc",
+        "--qa-case=hold",
+        "--evidence=/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/recovery-a8430be/hold"
+      ],
+      "pid": 48207,
+      "started": "2026-09-10T11:05:52.928Z",
+      "finished": "2026-09-10T11:05:56.760Z",
+      "exitCode": 0,
+      "signal": null,
+      "spawnError": "",
+      "diagnostics": []
+    },
+    {
+      "case": "second",
+      "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+      "args": [
+        "--",
+        "--qa",
+        "--qa-profile=native3d_668811aed2f94eaa9699c56a09f1a4cc",
+        "--qa-case=second",
+        "--evidence=/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/recovery-a8430be/second"
+      ],
+      "pid": 48213,
+      "started": "2026-09-10T11:05:54.565Z",
+      "finished": "2026-09-10T11:05:56.502Z",
+      "exitCode": 0,
+      "signal": null,
+      "spawnError": "",
+      "diagnostics": []
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "This small opening save does not test a full crew or an active chorus return.",
+    "No physical sleep/interruption or native import/export file dialog interaction.",
+    "No sustained performance or human usability claim."
+  ],
+  "exitCode": 0,
+  "manifestSha256": "7c54caa2772dc45ddc09f2749ad7692c68b14bf6bed5c242cf4b0caed2141ba0",
+  "sourceSha256": "ee3a43ae3dcf50364bcdb3914c730f2cc459ebeb18559b39f376e3a3996ef920",
+  "sourceRevision": "b5034e421843efd22b195a5ec1b7a29d26b65b2e",
+  "sourceDirty": false,
+  "sourceChangedSinceSnapshot": false,
+  "version": "0.4.0-dev",
+  "extraction": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-QJnbcc",
+  "executableSha256": "9a95458266b01a2b861efc974bf20b24bd245dff85cbedb4f91630adf09500d0",
+  "pckSha256": "47f6dec84813aa1c8bb873ea5c2636720a404a7a1b54a57cd5409e863fec7d1c",
+  "windowsExecutableSha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512",
+  "windowsIcon": {
+    "passed": true,
+    "expected": [
+      {
+        "width": 16,
+        "height": 16,
+        "bytes": 363,
+        "sha256": "f0909026f20604d32611998a00ef277042378e45ce4d2bf4ba2d1bfb27f35072"
+      },
+      {
+        "width": 32,
+        "height": 32,
+        "bytes": 667,
+        "sha256": "249a976db59de791ae33b9cd1f690c6699e3822c743c702a6c65eb874722bf44"
+      },
+      {
+        "width": 48,
+        "height": 48,
+        "bytes": 901,
+        "sha256": "13c5cdcd265b70dd25e833eb9700dcf29841780da4a7b1ea6db575236c2ed16e"
+      },
+      {
+        "width": 64,
+        "height": 64,
+        "bytes": 1165,
+        "sha256": "0f4efa076c49333e54e814a15372bf6045a58f93ee3945b9179ed7fc1d10d176"
+      },
+      {
+        "width": 128,
+        "height": 128,
+        "bytes": 2323,
+        "sha256": "bcd9ec9922f30e89360c8d9e5f75f030e12e62101cc75ad435e89c11a5c44150"
+      },
+      {
+        "width": 256,
+        "height": 256,
+        "bytes": 4583,
+        "sha256": "53cb140f3f69ceed3df15a2217b028206a1e7f737736c5001915973fe2ff29df"
+      }
+    ],
+    "icons": [
+      {
+        "ids": [
+          3,
+          1,
+          1033
+        ],
+        "bytes": 363,
+        "sha256": "f0909026f20604d32611998a00ef277042378e45ce4d2bf4ba2d1bfb27f35072"
+      },
+      {
+        "ids": [
+          3,
+          2,
+          1033
+        ],
+        "bytes": 667,
+        "sha256": "249a976db59de791ae33b9cd1f690c6699e3822c743c702a6c65eb874722bf44"
+      },
+      {
+        "ids": [
+          3,
+          3,
+          1033
+        ],
+        "bytes": 901,
+        "sha256": "13c5cdcd265b70dd25e833eb9700dcf29841780da4a7b1ea6db575236c2ed16e"
+      },
+      {
+        "ids": [
+          3,
+          4,
+          1033
+        ],
+        "bytes": 1165,
+        "sha256": "0f4efa076c49333e54e814a15372bf6045a58f93ee3945b9179ed7fc1d10d176"
+      },
+      {
+        "ids": [
+          3,
+          5,
+          1033
+        ],
+        "bytes": 2323,
+        "sha256": "bcd9ec9922f30e89360c8d9e5f75f030e12e62101cc75ad435e89c11a5c44150"
+      },
+      {
+        "ids": [
+          3,
+          6,
+          1033
+        ],
+        "bytes": 4583,
+        "sha256": "53cb140f3f69ceed3df15a2217b028206a1e7f737736c5001915973fe2ff29df"
+      }
+    ],
+    "groups": [
+      {
+        "ids": [
+          14,
+          2147484000,
+          1033
+        ],
+        "frames": [
+          {
+            "width": 16,
+            "height": 16,
+            "bytes": 363,
+            "iconId": 1
+          },
+          {
+            "width": 32,
+            "height": 32,
+            "bytes": 667,
+            "iconId": 2
+          },
+          {
+            "width": 48,
+            "height": 48,
+            "bytes": 901,
+            "iconId": 3
+          },
+          {
+            "width": 64,
+            "height": 64,
+            "bytes": 1165,
+            "iconId": 4
+          },
+          {
+            "width": 128,
+            "height": 128,
+            "bytes": 2323,
+            "iconId": 5
+          },
+          {
+            "width": 256,
+            "height": 256,
+            "bytes": 4583,
+            "iconId": 6
+          }
+        ]
+      }
+    ],
+    "method": "Read actual PE RT_ICON and RT_GROUP_ICON bytes and compare every authored ICO frame and group reference; Windows was not executed."
+  },
+  "profile": {
+    "token": "native3d_668811aed2f94eaa9699c56a09f1a4cc",
+    "path": "/Users/xingzhaoji/Library/Caches/dustlings-qa-native3d_668811aed2f94eaa9699c56a09f1a4cc.json",
+    "retainedForInspection": true
+  },
+  "openingSave": {
+    "bytes": 3978,
+    "sha256": "6dd2c4e742e3b75c3f03ad34936875d26eef7dc4af86c86cae99537598caa9fc"
+  },
+  "finished": "2026-09-10T11:05:56.761Z",
+  "interrupted": null
+}

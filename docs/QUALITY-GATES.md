@@ -7,29 +7,22 @@ Use the existing [PLAYTEST.md](PLAYTEST.md) protocol for recruitment, observatio
 ## Current 3D review candidate
 
 <!-- 3D-REVIEW-CANDIDATE:START -->
-The packaged review candidate is **0.4.0-dev**, a real-geometry Godot courtyard, **awaiting human validation**.
+The current native review candidate is **0.4.0-dev**, a real-geometry Godot courtyard, **awaiting human validation**.
 
 | Field | Exact record |
 | --- | --- |
-| Export manifest | [builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/manifest.json](../builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00/manifest.json) |
-| Source revision | `960d96b7e464317eed8441c56446093b38661912` |
+| Export manifest | [builds/3d/0.4.0-dev-2026-09-10T10-59-12-915Z-ee3a43ae3d/manifest.json](../builds/3d/0.4.0-dev-2026-09-10T10-59-12-915Z-ee3a43ae3d/manifest.json) |
+| Source revision | `b5034e421843efd22b195a5ec1b7a29d26b65b2e` |
 | Source dirty / repository dirty | false / true |
-| Source SHA-256 | `056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313` |
-| Mac PCK SHA-256 | `3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47` |
-| Mac archive SHA-256 | `58b0a91c83859f6ed7e96706a3380bc19b069fa787dbfb72361c7b4a9d98c90e` |
+| Source SHA-256 | `ee3a43ae3dcf50364bcdb3914c730f2cc459ebeb18559b39f376e3a3996ef920` |
+| Mac PCK SHA-256 | `47f6dec84813aa1c8bb873ea5c2636720a404a7a1b54a57cd5409e863fec7d1c` |
+| Mac archive SHA-256 | `fb75c4d221d42194ba1150adfc67dfd2cdff3eeef2019cb9f6611c2bed839110` |
 | Windows executable SHA-256 | `56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512` |
-| Export finished | 2026-09-10T10:10:04.206Z |
+| Export finished | 2026-09-10T10:59:28.140Z |
 | Current review hub | [Actual gameplay, package links and provenance](../evidence/3d/REVIEW.html) |
 | Human / owner acceptance | Zero human sessions; no current-build owner approval |
 
 Mac signing is local ad-hoc, with no notarization. Windows execution, physical iPad/iPhone support and store readiness remain unverified. The hub verifies runtime source parity between the package and its captures; fixtures and movie-mode timing are labeled separately from human play.
-
-This package is separate from changed live development. Its frozen source and attached capture runtime bytes match; this record makes no parity claim for the working tree. Corrections in progress require a new package and verification.
-
-Known package gaps:
-
-- A Settings save-copy notice can be hidden. The current UI audit identified this feedback defect; the correction is not in this frozen package.
-- Live source is receiving clearer optional recap and post-restoration context, alongside Settings feedback correction. These UI changes are pending integration and are not included in this frozen package.
 <!-- 3D-REVIEW-CANDIDATE:END -->
 
 Bind every human review to the exact native PCK and executable/archive hashes, source revision and dirty state. If implementation or presentation changes, preserve old observations under their original identity and obtain fresh review for affected claims. An agent's critique, generated input recording or fixture is not a human session. No gate transfers from the old 2D prototype.

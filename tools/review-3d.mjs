@@ -170,6 +170,7 @@ print(json.dumps(result))`,local(archive),JSON.stringify(entries)],{timeout:3000
     const check=await readJSON(options.macCheck);
     if(check.pckSha256!==build.macOS.pck.sha256 || check.executableSha256!==build.macOS.executable.sha256) throw Error('Mac launch report does not identify this exact exported package');
     if(check.sourceSha256!==build.source.sha256 || check.kind!=='packaged-mac-isolated-process-recovery' || check.exitCode!==0 || check.checks?.nativeCasesPassed?.passed!==true || check.failures?.length) throw Error('Mac report is not a successful separate-process recovery run for this source; preflight alone is insufficient');
+    if(build.notices && check.conditions?.engine?.hash!==build.notices.engineHash) throw Error('Notice engine revision differs from the executed package');
     macStatus=`${Object.values(check.checks).filter(item=>item.passed).length} artifact and separate-process checks passed in ${await link(options.macCheck,'the exact packaged Mac report')}: opening save, fresh-process return, and blocked second-copy writes. Automated input; no human participant.`;
   }
   current={version:build.version,mode:options.candidate?'packaged-candidate':'live-source-matched',manifest:relative(local(options.build)),sourceSha256:build.source.sha256,pckSha256:build.macOS.pck.sha256,knownGaps:options.gaps};
@@ -196,7 +197,7 @@ for (const {label,file} of options.captures) {
   const folder=path.dirname(local(file)), report=manifest.result || {};
   const manifestLink=await link(file,'Capture source manifest');
   const movies=[];for(const name of ['full.mp4','opening.mp4','helper.mp4','ritual.mp4','restoration.mp4','overview.mp4','interaction.mp4']) if(await exists(relative(path.join(folder,name)))) movies.push(name);
-  const pictures=[];for(const name of ['dirty.png','first-helper.png','discoveries.png','discovery-brush.png','discovery-teamwork.png','discovery-bloom.png','purchase.png','direction.png','progress-25.png','progress-50.png','progress-75.png','before-restoration.png','chorus.png','completion.png','completed.png','recap.png','restored.png','restored-fixture.png','busy-fixture.png','settings.png']) if(await exists(relative(path.join(folder,name)))) pictures.push(name);
+  const pictures=[];for(const name of ['dirty.png','first-helper.png','discoveries.png','discovery-brush.png','discovery-teamwork.png','discovery-bloom.png','purchase.png','direction.png','progress-25.png','progress-50.png','progress-75.png','post-water-625.png','before-restoration.png','chorus.png','completion.png','completed.png','recap.png','restored.png','restored-fixture.png','busy-fixture.png','settings.png']) if(await exists(relative(path.join(folder,name)))) pictures.push(name);
   const performance=report.performance;
   const deviceFile=relative(path.join(folder,'device.json'));
   const device=await exists(deviceFile)?await readJSON(deviceFile):null;
@@ -217,8 +218,8 @@ for(const {label,file} of options.tests) {
   const report=await readJSON(file);
   const fail=Array.isArray(report.failures)?report.failures.length:'not recorded';
   const count=Array.isArray(report.checks)?report.checks.length:Array.isArray(report.cases)?report.cases.length:'see report';
-  const bound=build && report.source_sha256===build.source.files['scripts/simulation.gd']?.sha256;
-  technicalHTML+=`<li>${await link(file,label)} — ${esc(count)} checks/cases; ${esc(fail)} reported failures. ${bound?'Simulation source hash matches the package.':'Exact source binding is not established by this report alone.'}</li>`;
+  const bound=build && report.source_sha256===build.source.files['scripts/simulation.gd']?.sha256?'Simulation':build && report.main_sha256===build.source.files['scripts/main.gd']?.sha256?'Main script':null;
+  technicalHTML+=`<li>${await link(file,label)} — ${esc(count)} checks/cases; ${esc(fail)} reported failures. ${bound?bound+' source hash matches the package.':'Exact source binding is not established by this report alone.'}</li>`;
 }
 const history=[];
 if(options.beforeBuild) {
@@ -236,7 +237,11 @@ if(options.beforeBuild) {
     const folder=path.dirname(local(file));
     const movie=relative(path.join(folder,capture.scenario+'.mp4'));
     const dirty=relative(path.join(folder,'dirty.png'));
-    media+=`<h3>${esc(label)}</h3><p>${esc(capture.method)}</p>${await video(movie,label,await exists(dirty)?dirty:null)}<p>${await link(file,'Earlier capture identity')}${await exists(relative(path.join(folder,'completed.png')))?' · '+await link(relative(path.join(folder,'completed.png')),'Earlier completed courtyard frame'):''}</p>`;
+    const performance=capture.result.performance;
+    const recording=await exists(movie)?await video(movie,label,await exists(dirty)?dirty:null):'';
+    if(!recording && !performance) throw Error('Earlier capture has no recording or performance result');
+    const measured=performance?`<p>${esc(performance.duration_seconds)} wall-clock seconds; ${esc(performance.samples)} process callbacks; p95 ${esc(performance.p95_ms)}ms, p99 ${esc(performance.p99_ms)}ms, worst ${esc(performance.worst_ms)}ms. ${esc(performance.conditions)}</p><p>Earlier measurement with its own conditions. Duration and phases differ from the current working-crew profile; do not interpret this as a controlled before/after performance gain.</p>`:'';
+    media+=`<h3>${esc(label)}</h3><p>${esc(capture.method)}</p>${measured}${recording}<p>${await link(file,'Earlier capture identity')}${await exists(relative(path.join(folder,'post-water-625.png')))?' · '+await link(relative(path.join(folder,'post-water-625.png')),'Earlier post-water frame (625s)'):''}${await exists(relative(path.join(folder,'completed.png')))?' · '+await link(relative(path.join(folder,'completed.png')),'Earlier completed courtyard frame'):''}</p>`;
   }
   history.push(`<article><h3>Previous packaged courtyard · ${esc(previous.source.revision.slice(0,7))}</h3><p>This package predates the current corrections. Its own frozen source matches the earlier footage below; it is retained for comparison, not as the current download. Human approval was not obtained.</p>${media}<p>${archive} · ${manifestLink}</p></article>`);
 }
@@ -245,7 +250,7 @@ for(const [folder,title,note] of [['critic/baseline','Initial 3D baseline','Inde
   if(!await exists(base+'/opening.mp4')) continue;
   history.push(`<article><h3>${esc(title)}</h3><p>${esc(note)}</p>${await video(base+'/opening.mp4',title,base+'/dirty.png')}<p>${await link(base+'/dirty.png','Dirty courtyard')} · ${await link(base+'/direction.png','Crew direction')}${await exists(base+'/capture-manifest.json')?' · '+await link(base+'/capture-manifest.json','Historical source identity'):''}</p></article>`);
 }
-const supporting=await Promise.all([['docs/CRITIQUE-3D-0.4.md','Independent AI critique and review scope'],['docs/3D-CROWD.md','Crowd correction and remaining checks'],['docs/3D-WORK-SEATS.md','Measured work-seat tradeoff'],['docs/3D-WATER-FLOW.md','Water comparison and perception uncertainty'],['docs/3D-AUDIO.md','Audio evidence and listening gaps'],['docs/3D-BUILD.md','Native build and signing limits'],['docs/PERFORMANCE.md','Measured platform conditions and limits'],['evidence/3d/immersion-integration.log','Combined native integration log (before source freeze)'],['docs/3D-RECOVERY.md','Exact packaged recovery scope'],['docs/SKY-DIRECTION.md','Atmosphere and presentation direction'],['docs/PLAYTEST.md','Private human-test protocol'],['docs/QUALITY-GATES.md','Human and owner gate ledger']].map(async([file,label])=>`<li>${await link(file,label)}</li>`));
+const supporting=await Promise.all([['docs/CRITIQUE-3D-0.4.md','Independent AI critique and review scope'],['docs/3D-CROWD.md','Crowd correction and remaining checks'],['docs/3D-WORK-SEATS.md','Measured work-seat tradeoff'],['docs/3D-WATER-FLOW.md','Water comparison and perception uncertainty'],['docs/3D-AUDIO.md','Audio evidence and listening gaps'],['docs/3D-BUILD.md','Native build and signing limits'],['docs/3D-NOTICES.md','Exact engine attribution and package proof'],['docs/3D-ACCESSIBILITY-AUDIT.md','Settings feedback and keyboard corrections'],['docs/PERFORMANCE.md','Measured platform conditions and limits'],['evidence/3d/immersion-integration.log','Combined native integration log (before source freeze)'],['docs/3D-RECOVERY.md','Exact packaged recovery scope'],['docs/SKY-DIRECTION.md','Atmosphere and presentation direction'],['docs/3D-IMMERSION-UI.md','Current restoration context and recap evidence'],['docs/PLAYTEST.md','Private human-test protocol'],['docs/QUALITY-GATES.md','Human and owner gate ledger']].map(async([file,label])=>`<li>${await link(file,label)}</li>`));
 const provenance={schema:1,generated:new Date().toISOString(),arguments:process.argv.slice(2),current,humanSessions:0,ownerApproved:false,status:'awaiting human validation',records:[...records.values()]};
 // QUALITY-GATES is updated below, so register its final bytes instead of its old candidate block.
 const updatedGates=gates.replace(marker,`<!-- 3D-REVIEW-CANDIDATE:START -->\n${candidateMarkdown}\n<!-- 3D-REVIEW-CANDIDATE:END -->`);

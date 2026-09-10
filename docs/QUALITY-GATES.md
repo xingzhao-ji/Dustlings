@@ -7,7 +7,7 @@ Use the existing [PLAYTEST.md](PLAYTEST.md) protocol for recruitment, observatio
 ## Current 3D review candidate
 
 <!-- 3D-REVIEW-CANDIDATE:START -->
-The current native review candidate is **0.4.0-dev**, a real-geometry Godot courtyard, **awaiting human validation**.
+The packaged review candidate is **0.4.0-dev**, a real-geometry Godot courtyard, **awaiting human validation**.
 
 | Field | Exact record |
 | --- | --- |
@@ -24,9 +24,12 @@ The current native review candidate is **0.4.0-dev**, a real-geometry Godot cour
 
 Mac signing is local ad-hoc, with no notarization. Windows execution, physical iPad/iPhone support and store readiness remain unverified. The hub verifies runtime source parity between the package and its captures; fixtures and movie-mode timing are labeled separately from human play.
 
+This package is separate from changed live development. Its frozen source and attached capture runtime bytes match; this record makes no parity claim for the working tree. Corrections in progress require a new package and verification.
+
 Known package gaps:
 
 - A Settings save-copy notice can be hidden. The current UI audit identified this feedback defect; the correction is not in this frozen package.
+- Live source is receiving clearer optional recap and post-restoration context, alongside Settings feedback correction. These UI changes are pending integration and are not included in this frozen package.
 <!-- 3D-REVIEW-CANDIDATE:END -->
 
 Bind every human review to the exact native PCK and executable/archive hashes, source revision and dirty state. If implementation or presentation changes, preserve old observations under their original identity and obtain fresh review for affected claims. An agent's critique, generated input recording or fixture is not a human session. No gate transfers from the old 2D prototype.

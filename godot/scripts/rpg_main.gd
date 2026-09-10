@@ -8,6 +8,8 @@ const Soundscape = preload("res://scripts/rpg_audio.gd")
 const Save = preload("res://scripts/rpg_save.gd")
 const Navigation = preload("res://scripts/rpg_navigation.gd")
 var navigation = Navigation.new()
+var resident_navigation = Navigation.new()
+var resident_navigation_generation = -1
 var story = Story.new()
 var world: Node3D
 var player: CharacterBody3D
@@ -459,23 +461,25 @@ func _pose_brush():
 	brush_handle.basis=Basis(across,up,across.cross(up)).scaled(Vector3(.045,shaft.length(),.045))
 
 func _update_residents(delta):
+	if resident_navigation_generation!=navigation.generation:
+		resident_navigation.configure(world,.29)
+		resident_navigation_generation=navigation.generation
 	for id in residents:
 		var r = residents[id]
 		var body: CharacterBody3D = r.body
 		var target: Vector3 = r.target
-		if r.goal != target:
+		if r.goal != target or r.get("nav_generation",-1)!=resident_navigation.generation:
 			r.goal=target
-			r.route=[]
-			if body.position.z > -4 and target.z < -6:
-				r.route=[Vector3(0,0,1),Vector3(0,0,-3),Vector3(0,0,-7.5),target]
-			elif target.x>9 and target.z<-9: r.route=[Vector3(12,0,-8),Vector3(12,0,-10),target]
-			else: r.route=[target]
-		if not r.route.is_empty():
-			if Vector2(body.position.x-r.route[0].x,body.position.z-r.route[0].z).length()<.22: r.route.pop_front()
-			if not r.route.is_empty(): target=r.route[0]
+			r.route=resident_navigation.path(body.position,target)
+			r.nav_generation=resident_navigation.generation
+		if not r.route.is_empty() and not resident_navigation.segment_clear(body.position,r.route[0]):
+			r.route=resident_navigation.path(body.position,target)
+		while r.route.size()>1 and body.position.distance_to(r.route[0])<.25 and resident_navigation.segment_clear(body.position,r.route[1]): r.route.pop_front()
+		target=r.route[0] if not r.route.is_empty() else body.position
 		var offset = target-body.position
 		offset.y = 0
-		var velocity = offset.normalized()*.85 if offset.length()>.10 else Vector3.ZERO
+		var arrival=.025 if r.route.size()>1 else .10
+		var velocity = offset.normalized()*minf(.85,offset.length()*4) if offset.length()>arrival else Vector3.ZERO
 		body.velocity = Vector3(velocity.x,-1,velocity.z)
 		body.move_and_slide()
 		if velocity.length()>.1: r.visual.rotation.y=lerp_angle(r.visual.rotation.y,atan2(velocity.x,velocity.z),minf(1,delta*6))
@@ -519,7 +523,15 @@ func _update_companions(delta):
 		var steering: Vector3=c.nav_path[0] if not c.nav_path.is_empty() else body.position
 		var diff = steering-body.position
 		diff.y=0
-		var desired = diff.normalized()*minf(3,diff.length()*2) if diff.length()>.16 else Vector3.ZERO
+		# A detour corner must be reached accurately if the onward segment is
+		# still blocked. The relaxed final/orbit radius cannot stop us before it.
+		var precise=c.nav_path.size()>1 or (c.path.size()>1 and not navigation.segment_clear(body.position,c.path[1]))
+		var arrival=.025 if precise else .16
+		# Closely spaced trail points describe a route, not repeated destinations.
+		# Slowing at every .38m sample made a 3m/s follower actually trail at <1m/s.
+		var cruising=c.path.size()>1 or c.nav_path.size()>1
+		var travel_speed=minf(3,diff.length()/maxf(delta,.001)) if cruising else minf(3,diff.length()*2)
+		var desired = diff.normalized()*travel_speed if diff.length()>arrival else Vector3.ZERO
 		for other in companions:
 			if other.body==body: continue
 			var apart: Vector3=body.position-other.body.position

@@ -11,17 +11,19 @@ var obstacle_names: Array[String] = []
 var signature = ""
 var generation = 0
 var build_info: Dictionary = {}
+var body_radius = BODY_RADIUS
 
-func configure(world: Node3D) -> void:
+func configure(world: Node3D, radius: float = BODY_RADIUS) -> void:
 	var rects: Array[Rect2] = []
 	var names: Array[String] = []
 	_collect(world, rects, names)
-	var next_signature = str(rects).sha256_text()
+	var next_signature = (str(rects)+str(radius)).sha256_text()
 	if grid != null and next_signature == signature: return
 	var started = Time.get_ticks_usec()
 	obstacles = rects
 	obstacle_names = names
 	signature = next_signature
+	body_radius = radius
 	grid = AStarGrid2D.new()
 	grid.region = Rect2i(0, 0, 113, 107)
 	grid.cell_size = Vector2(CELL, CELL)
@@ -36,7 +38,7 @@ func configure(world: Node3D) -> void:
 	for y in grid.region.size.y:
 		for x in grid.region.size.x:
 			var id = Vector2i(x, y)
-			if not _point_clear(grid.get_point_position(id), NAV_RADIUS):
+			if not _point_clear(grid.get_point_position(id), body_radius + 0.04):
 				grid.set_point_solid(id, true)
 				blocked += 1
 	generation += 1
@@ -60,7 +62,8 @@ func _collect(node: Node, rects: Array[Rect2], names: Array[String]) -> void:
 			names.append(str(node.name))
 	for child in node.get_children(): _collect(child, rects, names)
 
-func _point_clear(point: Vector2, radius: float = BODY_RADIUS) -> bool:
+func _point_clear(point: Vector2, radius: float = -1.0) -> bool:
+	if radius < 0: radius=body_radius
 	if point.x < -17.85 or point.x > 17.85 or point.y < -17.55 or point.y > 15.55: return false
 	for rect in obstacles:
 		if point.distance_squared_to(point.clamp(rect.position,rect.end)) <= radius*radius: return false
@@ -92,7 +95,7 @@ func segment_clear(from: Vector3, to: Vector3) -> bool:
 	var b = Vector2(to.x, to.z)
 	if not _point_clear(a) or not _point_clear(b): return false
 	for rect in obstacles:
-		if _segment_touches_rect(a,b,rect,BODY_RADIUS): return false
+		if _segment_touches_rect(a,b,rect,body_radius): return false
 	return true
 
 func _segment_touches_rect(a: Vector2,b: Vector2,rect: Rect2,radius: float) -> bool:

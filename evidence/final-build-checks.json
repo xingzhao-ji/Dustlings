@@ -1,0 +1,64 @@
+{
+  "kind": "Final standalone build automation; no human review",
+  "build": {
+    "version": "0.1.0",
+    "builtAt": "2026-09-10T05:14:56.646Z",
+    "artifact": "Dustlings Courtyard.html",
+    "sha256": "440303008dc8fe688450beb6603a5571519e29e907d4e2315b2c2445fd8d6d21",
+    "bytes": 120379,
+    "runtimeDependencies": 0,
+    "scope": "Courtyard prototype; human acceptance pending"
+  },
+  "checks": [
+    "Standalone file opened, started audio without errors, and Escape pause/resume worked",
+    "Standalone save survived reload with completed courtyard",
+    "Four final-build viewport layouts have no horizontal document overflow; phone journal/zoom captured",
+    "Zero JS exceptions and zero network requests: offline self-contained build"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "performance": {
+    "samples": 3600,
+    "meanMs": 16.721527777777776,
+    "p95Ms": 16.799999999995634,
+    "p99Ms": 16.80000000000291,
+    "worstMs": 216.5999999999999,
+    "over33ms": 1,
+    "over500ms": 0,
+    "creatures": 50,
+    "dpr": 2,
+    "canvas": {
+      "width": 1020,
+      "height": 727
+    },
+    "audio": {
+      "ready": true,
+      "paused": false,
+      "contextState": "running",
+      "maxVoices": 48,
+      "peakVoices": 3,
+      "continuousSources": 3,
+      "progress": 0,
+      "mix": {
+        "music": 0.48,
+        "sfx": 0.65,
+        "ambience": 0.38,
+        "muted": false,
+        "reducedMotion": false
+      }
+    },
+    "conditions": {
+      "durationSeconds": 60,
+      "host": "MacBook Pro Mac16,7, Apple M4 Pro, 48GB",
+      "os": "macOS 26.6.2",
+      "browser": "152.0.7977.83",
+      "headless": true,
+      "viewport": "1440x900",
+      "dpr": 2,
+      "quality": "normal",
+      "audio": "playing, native listening unverified",
+      "fixture": "50 helpers at ~75% clear; chorus held for controlled active cleaning sample",
+      "concurrency": "No other agents running browser checks during this sample"
+    }
+  }
+}

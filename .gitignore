@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+test-results/
+builds/*.zip
+evidence/*.webm
+evidence/*.mp4
+evidence/*.wav
+evidence/raw-video/
+!evidence/interaction-ui.mp4
+!evidence/opening-with-sound.mp4
+!evidence/restoration-with-sound.mp4

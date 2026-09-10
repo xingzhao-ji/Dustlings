@@ -1,0 +1,15 @@
+import { mkdir, cp, writeFile, readFile } from 'node:fs/promises';
+import {build} from 'esbuild';
+import {createHash} from 'node:crypto';
+const dest='builds/courtyard';
+await mkdir(dest,{recursive:true});
+for(const f of ['index.html','style.css','src']) await cp(f,`${dest}/${f}`,{recursive:true});
+await cp('tools/serve.mjs', `${dest}/serve.mjs`);
+const bundled=await build({entryPoints:['src/main.js'],bundle:true,write:false,format:'iife',target:'es2022',legalComments:'none'});
+let html=await readFile('index.html','utf8');
+const css=await readFile('style.css','utf8');
+html=html.replace('<link rel="stylesheet" href="style.css">',`<style>${css}</style>`).replace('<script type="module" src="src/main.js"></script>',()=>`<script>${bundled.outputFiles[0].text.replaceAll('</script','<\\/script')}</script>`);
+await writeFile('builds/Dustlings Courtyard.html',html);
+await writeFile(`${dest}/PLAY.txt`,'DUSTLINGS — COURTYARD PROTOTYPE\n\nEASIEST: Open Dustlings Courtyard.html in a modern browser. No install or internet required.\n\nSOURCE BUILD: From this folder run: node serve.mjs\nOpen http://localhost:4173\n\nTested by browser automation on a MacBook Pro. Physical Windows, iPhone and iPad validation pending.\nYour progress is saved locally in this browser. Use Export save in Settings before moving between copies or browsers.\n');
+await writeFile('builds/build-manifest.json',JSON.stringify({version:'0.1.0',builtAt:new Date().toISOString(),artifact:'Dustlings Courtyard.html',sha256:createHash('sha256').update(html).digest('hex'),bytes:Buffer.byteLength(html),runtimeDependencies:0,scope:'Courtyard prototype; human acceptance pending'},null,2));
+console.log(`Playable build written to ${dest}`);

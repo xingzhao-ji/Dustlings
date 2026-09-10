@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e9e7dc"><meta name="description" content="A little dust. A little life. Restore a forgotten miniature courtyard with a crew of tiny helpers.">
+  <title>Dustlings — A little care brings life</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='24' r='14' fill='%237a8069'/%3E%3Cpath d='M20 14Q16 1 30 4Q31 15 20 14' fill='%2389ad8c'/%3E%3Ccircle cx='15' cy='23' r='2' fill='%23fff5da'/%3E%3Ccircle cx='25' cy='23' r='2' fill='%23fff5da'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-9M12 15C4 16 2 11 3 7c7-1 10 3 9 8Zm0-3C10 5 15 2 21 3c0 7-3 10-9 9Z"/></symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24"><path d="m13 13 7-8a2 2 0 0 0-3-3l-7 9M5 13l6-2 4 4-2 6H3l2-8Zm2 3-1 5m4-5-1 5"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 22V3m0 1c5-5 8 5 14 0v10c-6 5-9-5-14 0"/></symbol>
+    <symbol id="i-pair" viewBox="0 0 24 24"><path d="M3 16c-2-8 10-9 10 0 0 7-12 7-10 0Zm11-5c3-5 9-2 8 4-1 4-4 5-7 3M5 6l2 3m11-5-2 4"/><path d="M6 15h.01M10 15h.01m7-2h.01m3 0h.01"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M5 17c2-3 2-6 2-8a5 5 0 0 1 10 0c0 2 0 5 2 8H5Zm4 3c2 2 4 2 6 0M12 2V1"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="m4 9 4 0 5-5v16l-5-5H4V9Zm12-2c4 3 4 7 0 10m3-13c6 5 6 11 0 16"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="8" cy="18" r="2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 6"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-dust" viewBox="0 0 24 24"><path d="m12 2 2 7 7 3-7 2-2 8-2-8-8-2 8-3 2-7Z"/></symbol>
+  </defs></svg>
+  <div id="app">
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Dustlings home"><span class="brand-icon"><svg><use href="#i-sprout"/></svg></span><span>dustlings<small>A LITTLE CARE BRINGS LIFE</small></span></a>
+      <div class="place"><span class="eyebrow">THE SLEEPING VILLAGE</span><span>The courtyard <span class="chapter">01 / 03</span></span></div>
+      <div class="header-actions"><span id="save-status" class="save-status">Saved on this device</span><button id="sound-toggle" class="icon-button" aria-label="Mute sound" title="Mute sound"><svg><use href="#i-sound"/></svg></button><button id="pause-button" class="icon-button" aria-label="Pause and settings" title="Pause · Esc"><svg><use href="#i-settings"/></svg></button></div>
+    </header>
+    <main class="play-layout">
+      <section class="world-panel" aria-label="Courtyard game">
+        <div class="scene-caption"><span class="tiny-leaf">✦</span><span id="scene-caption-text">A place waiting to bloom</span></div>
+        <canvas id="world" tabindex="0" aria-label="Miniature courtyard. Hold and drag to brush dust. Press D then click an open spot to direct helpers. Use B to brush, U for upgrades, Escape to pause."></canvas>
+        <div class="scene-stats"><div><svg><use href="#i-pair"/></svg><strong id="crew-count">0</strong><span>little helpers</span></div><div><svg><use href="#i-dust"/></svg><strong id="mote-count">0</strong><span>motes</span></div></div>
+        <div id="birth-label" class="birth-label" hidden>Your first Dustling <span>Made from the dust you brushed</span></div>
+        <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+        <div id="game-tip" class="game-tip"><span class="tip-dot"></span><span id="tip-text">Hold & sweep over the dust. See what wakes up.</span></div>
+        <div class="tool-dock" aria-label="Tools">
+          <button id="brush-tool" class="tool selected" aria-pressed="true"><svg><use href="#i-brush"/></svg><span>Brush</span><kbd>B</kbd></button>
+          <span class="tool-divider"></span>
+          <button id="direct-tool" class="tool" aria-pressed="false"><svg><use href="#i-flag"/></svg><span>Direct crew</span><kbd>D</kbd></button>
+          <button id="mobile-journal" class="tool mobile-only"><svg><use href="#i-sprout"/></svg><span>Grow</span><span id="upgrade-dot" class="upgrade-dot" hidden></span></button>
+        </div>
+        <button id="free-roam" class="small-pill" hidden>↗ Let the crew roam</button>
+      </section>
+      <aside id="journal" class="journal" aria-label="Restoration journal">
+        <div class="journal-top"><span class="eyebrow">YOUR LITTLE RESTORATION</span><button id="close-journal" class="icon-button mobile-only" aria-label="Close journal"><svg><use href="#i-close"/></svg></button></div>
+        <h1 id="chapter-title">Let’s wake<br>the courtyard.</h1>
+        <p id="chapter-copy" class="chapter-copy">Under all this dust, something lovely is waiting. Every bit you brush away can become a little helper.</p>
+        <div class="progress-caption"><span id="progress-label">Courtyard cleared</span><strong id="progress-number">0%</strong></div>
+        <div class="progress-track" role="progressbar" aria-label="Courtyard cleared" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div>
+        <div class="journal-rule"></div>
+        <div class="section-label"><h2>A little room to grow</h2><span>3 discoveries</span></div>
+        <p class="upgrade-intro">Spend motes. Keep every helper.</p>
+        <div id="upgrades" class="upgrades"></div>
+        <div class="landmark-card"><div class="landmark-heading"><span class="landmark-icon"><svg><use href="#i-bell"/></svg></span><div><span class="eyebrow">THE COURTYARD LANDMARK</span><h2>The wishing fountain</h2></div></div><p id="landmark-copy">A quiet fountain with a song still in it.</p><button id="restore-button" disabled>Clear 75% & learn the chorus</button></div>
+        <button id="find-dust" class="text-button" hidden>Show me the remaining dust <span>↗</span></button>
+        <div class="journal-footer"><span class="little-star">✳</span><span>Little things, bringing life back.</span></div>
+      </aside>
+    </main>
+    <footer class="bottomline"><span>ONE SMALL COURTYARD. MANY LITTLE BEGINNINGS.</span><span id="control-note">Hold to brush · D to direct · Esc to pause</span></footer>
+  </div>
+  <dialog id="welcome" class="modal welcome-modal">
+    <div class="welcome-illustration" aria-hidden="true"><div class="welcome-leaf"></div><div class="welcome-creature"><i></i><i></i><span></span></div><div class="welcome-shadow"></div><span class="welcome-spark one">✧</span><span class="welcome-spark two">✦</span></div>
+    <span class="eyebrow">WELCOME TO DUSTLINGS</span><h2>A little dust.<br>A little life.</h2>
+    <p>A forgotten courtyard. A brush in your hand.<br>And something small, waiting to wake up.</p>
+    <button id="start-button" class="primary-button">Bring it to life <span>↗</span></button>
+    <p class="welcome-note">Take your time. Your progress stays with you.</p><p id="recovery-note" class="recovery-note" hidden></p>
+  </dialog>
+  <dialog id="settings" class="modal settings-modal">
+    <div class="modal-heading"><div><span class="eyebrow">A MOMENT OF QUIET</span><h2>Take a breather.</h2></div><button id="close-settings" class="icon-button" aria-label="Close settings"><svg><use href="#i-close"/></svg></button></div>
+    <p class="settings-intro">Your helpers will wait right here.</p>
+    <label class="slider-label">Music <input id="music-volume" type="range" min="0" max="100" value="48"><span id="music-value">48%</span></label>
+    <label class="slider-label">Little sounds <input id="sfx-volume" type="range" min="0" max="100" value="65"><span id="sfx-value">65%</span></label>
+    <label class="slider-label">Ambience <input id="ambience-volume" type="range" min="0" max="100" value="38"><span id="ambience-value">38%</span></label>
+    <label class="switch-label"><span>Gentle motion<small>Less bouncing, fewer particles</small></span><input id="reduced-motion" type="checkbox" role="switch"></label>
+    <label class="switch-label"><span>Tap to sweep<small>Tap once for a short sweep; holding still works</small></span><input id="tap-sweep" type="checkbox" role="switch"></label>
+    <label class="switch-label"><span>Lightweight scenery<small>Lower rendering resolution for quieter devices</small></span><input id="low-quality" type="checkbox" role="switch"></label>
+    <div class="save-tools"><button id="export-save" class="secondary-button">Export save</button><button id="import-save" class="secondary-button">Import save</button><input type="file" id="save-file" accept=".json,application/json" hidden></div>
+    <p id="settings-save-note" class="fineprint" role="status">Automatically saved on this browser. A backup keeps the previous checkpoint.</p>
+    <button id="resume-button" class="primary-button">Back to the courtyard <span>↗</span></button><button id="restart-button" class="text-button danger">Start a fresh courtyard</button>
+    <div id="restart-confirm" class="restart-confirm" hidden><p>Export your save first if you’d like to keep this courtyard. Starting fresh replaces its progress.</p><button id="confirm-restart" class="secondary-button danger">Start fresh</button><button id="cancel-restart" class="secondary-button">Keep this courtyard</button></div>
+  </dialog>
+  <dialog id="completion" class="modal completion-modal"><span class="completion-sprout"><svg><use href="#i-sprout"/></svg></span><span class="eyebrow">A SMALL PLACE, ALIVE AGAIN</span><h2>Look what you<br>made together.</h2><p>The water is singing. The flowers are open.<br>And the dust has found somewhere to belong.</p><div class="completion-stats"><span><strong id="finish-crew">50</strong>little helpers</span><span><strong>1</strong>courtyard restored</span></div><div class="next-chapter"><span class="eyebrow">BEYOND THE LITTLE GATE</span><h3>The canal is sleeping.</h3><p>That story comes later. For now, this courtyard is yours to enjoy.</p></div><button id="enjoy-button" class="primary-button">Stay a little longer <span>♡</span></button><button id="completion-save" class="text-button">Save a keepsake of your progress ↓</button></dialog>
+  <script type="module" src="src/main.js"></script>
+</body></html>

@@ -1,0 +1,373 @@
+{
+  "timestamp": "2026-09-10T05:10:09.146Z",
+  "kind": "Automated browser interaction checks; touch and layouts are emulated, not physical-device or human playtests",
+  "browser": "152.0.7977.83",
+  "checks": [
+    {
+      "name": "390\u00d7844 gameplay has no horizontal overflow",
+      "pass": true,
+      "viewport": 390,
+      "document": 390,
+      "body": 390,
+      "height": 844
+    },
+    {
+      "name": "Touch brush target is 42 CSS px above finger",
+      "pass": true,
+      "pointer": {
+        "x": 270.00000310498615,
+        "y": 505.0001109909335,
+        "touch": true,
+        "inside": true,
+        "active": true,
+        "preview": false
+      },
+      "screenOffsetY": 41.9999730487898,
+      "screenOffsetX": -1.0471718070448333e-06
+    },
+    {
+      "name": "Pointer cancellation stops manual cleaning",
+      "pass": true,
+      "active": false,
+      "before": 1.7283050000000015,
+      "after": 1.7283050000000015
+    },
+    {
+      "name": "Touch direct destination preview is visible before release",
+      "pass": true,
+      "pointer": {
+        "x": 689.9999964514443,
+        "y": 510.0000849681924,
+        "touch": true,
+        "inside": true,
+        "active": false,
+        "preview": true
+      },
+      "mode": "direct",
+      "renderChangesWithPreview": true,
+      "assignmentBeforeRelease": null
+    },
+    {
+      "name": "Touch release directs crew to the offset destination",
+      "pass": true,
+      "assignment": {
+        "x": 689.9999964514443,
+        "y": 510.0000849681924
+      },
+      "pointer": {
+        "x": 689.9999964514443,
+        "y": 510.0000849681924,
+        "touch": true,
+        "inside": false,
+        "active": false,
+        "preview": false
+      }
+    },
+    {
+      "name": "Blocked touch destination preserves assignment and explains rejection",
+      "pass": true,
+      "assignment": {
+        "x": 689.9999964514443,
+        "y": 510.0000849681924
+      },
+      "notice": "That spot is blocked. Choose an open patch of courtyard."
+    },
+    {
+      "name": "Mobile Grow drawer opens",
+      "pass": true
+    },
+    {
+      "name": "Mobile Grow drawer closes",
+      "pass": true
+    },
+    {
+      "name": "390\u00d7844 settings has no horizontal overflow",
+      "pass": true,
+      "viewport": 390,
+      "document": 390,
+      "body": 390,
+      "height": 844
+    },
+    {
+      "name": "Settings pause preserves elapsed time",
+      "pass": true,
+      "beforePause": 4.560499999999996,
+      "afterPause": 4.560499999999996
+    },
+    {
+      "name": "Native settings dialog prevents keyboard focus on background controls",
+      "pass": true,
+      "focus": [
+        {
+          "id": "music-volume",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "sfx-volume",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "ambience-volume",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "reduced-motion",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "tap-sweep",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "low-quality",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "export-save",
+          "tag": "BUTTON",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "import-save",
+          "tag": "BUTTON",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "resume-button",
+          "tag": "BUTTON",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "restart-button",
+          "tag": "BUTTON",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "",
+          "tag": "BODY",
+          "documentFocused": false,
+          "inside": false
+        },
+        {
+          "id": "close-settings",
+          "tag": "BUTTON",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "music-volume",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "sfx-volume",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "ambience-volume",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "reduced-motion",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "tap-sweep",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "low-quality",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
+        }
+      ],
+      "note": "Native Chrome dialog traversal may include a browser-chrome step represented by BODY. This is recorded separately from focus on background app controls."
+    },
+    {
+      "name": "Closing settings returns focus to game",
+      "pass": true
+    },
+    {
+      "name": "Reload restores progress and crew assignment",
+      "pass": true,
+      "before": {
+        "elapsed": 4.560499999999996,
+        "creatures": 2,
+        "assignment": {
+          "x": 689.9999964514443,
+          "y": 510.0000849681924
+        }
+      },
+      "after": {
+        "elapsed": 4.560499999999996,
+        "creatures": 2,
+        "assignment": {
+          "x": 689.9999964514443,
+          "y": 510.0000849681924
+        }
+      }
+    },
+    {
+      "name": "Settings persist through reload",
+      "pass": true,
+      "settings": {
+        "music": 0.23,
+        "sfx": 0.65,
+        "ambience": 0.38,
+        "muted": false,
+        "reducedMotion": true,
+        "tapSweep": true,
+        "lowQuality": false
+      },
+      "controls": {
+        "music": "23",
+        "tap": true,
+        "motion": true
+      }
+    },
+    {
+      "name": "Pointer cancellation stops tap-sweep assistance",
+      "pass": true
+    },
+    {
+      "name": "Zoom preserves round-trip world mapping",
+      "pass": true,
+      "camera": {
+        "zoom": 2,
+        "centerX": 500,
+        "centerY": 390
+      },
+      "points": [
+        {
+          "x": 270,
+          "y": 505,
+          "error": 0
+        },
+        {
+          "x": 690,
+          "y": 510,
+          "error": 0
+        },
+        {
+          "x": 500,
+          "y": 370,
+          "error": 5.684341886080802e-14
+        }
+      ]
+    },
+    {
+      "name": "Touch pan moves camera without activating brush",
+      "pass": true,
+      "panBefore": {
+        "zoom": 2,
+        "centerX": 500,
+        "centerY": 390
+      },
+      "panAfter": {
+        "zoom": 2,
+        "centerX": 455.5232558139535,
+        "centerY": 365.29076051342395
+      }
+    },
+    {
+      "name": "Touch destination mapping remains accurate after zoom and pan",
+      "pass": true,
+      "assignment": {
+        "x": 570.0000177427779,
+        "y": 529.9999403152661
+      }
+    },
+    {
+      "name": "844\u00d7390 gameplay has no horizontal overflow",
+      "pass": true,
+      "viewport": 844,
+      "document": 844,
+      "body": 844,
+      "height": 390
+    },
+    {
+      "name": "Landscape drawer fits viewport",
+      "pass": true,
+      "drawer": {
+        "x": 488,
+        "y": 13,
+        "width": 340,
+        "height": 365
+      }
+    },
+    {
+      "name": "844\u00d7390 settings has no horizontal overflow",
+      "pass": true,
+      "viewport": 844,
+      "document": 844,
+      "body": 844,
+      "height": 390
+    },
+    {
+      "name": "Landscape settings stays bounded and resume is reachable",
+      "pass": true,
+      "modal": {
+        "x": 199.5,
+        "y": 16,
+        "width": 445,
+        "height": 358
+      }
+    },
+    {
+      "name": "Mouse brushing maps canvas-relative coordinates at zoom",
+      "pass": true,
+      "x": 269.9999992385478,
+      "y": 505.0000378610976,
+      "touch": false,
+      "inside": true,
+      "active": true,
+      "preview": false
+    },
+    {
+      "name": "Escape opens pause settings",
+      "pass": true
+    },
+    {
+      "name": "Escape closes settings and resumes focus",
+      "pass": true
+    },
+    {
+      "name": "No browser console errors or uncaught exceptions",
+      "pass": true,
+      "count": 0
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "passed": 26,
+    "failed": 0,
+    "errors": 0
+  },
+  "conditions": "Headless installed Google Chrome, DPR 1, fresh isolated browser contexts. May overlap the main gameplay capture/performance run; this suite reports interaction correctness, not FPS or human task timings."
+}

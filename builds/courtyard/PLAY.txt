@@ -1,0 +1,9 @@
+DUSTLINGS — COURTYARD PROTOTYPE
+
+EASIEST: Open Dustlings Courtyard.html in a modern browser. No install or internet required.
+
+SOURCE BUILD: From this folder run: node serve.mjs
+Open http://localhost:4173
+
+Tested by browser automation on a MacBook Pro. Physical Windows, iPhone and iPad validation pending.
+Your progress is saved locally in this browser. Use Export save in Settings before moving between copies or browsers.

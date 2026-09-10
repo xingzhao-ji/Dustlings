@@ -1,0 +1,403 @@
+{
+  "recordedAt": "2026-09-10T06:26:38.927Z",
+  "kind": "Local-file review artifact QA. Headless Chrome, emulated layouts, muted video decoding; no human review or native audio audition.",
+  "conditions": "May run alongside the endurance test; this is not an isolated performance measurement.",
+  "checks": [
+    {
+      "name": "All local image/video/poster/source/link destinations exist",
+      "pass": true,
+      "localReferences": 30,
+      "broken": []
+    },
+    {
+      "name": "All review images decode and have descriptive text",
+      "pass": true,
+      "images": [
+        {
+          "src": "v0.2/final-dirty.png",
+          "loaded": true,
+          "width": 2880,
+          "height": 1800,
+          "alt": "Actual current build's dusty courtyard at opening"
+        },
+        {
+          "src": "v0.2/final-restored.png",
+          "loaded": true,
+          "width": 2880,
+          "height": 1800,
+          "alt": "Same courtyard restored, with flowers, water and little helpers"
+        },
+        {
+          "src": "camera-before-landscape-swarm-fixture.png",
+          "loaded": true,
+          "width": 844,
+          "height": 390,
+          "alt": "Previous landscape framing showing a very small village"
+        },
+        {
+          "src": "camera-after-landscape-swarm-fixture.png",
+          "loaded": true,
+          "width": 844,
+          "height": 390,
+          "alt": "Corrected landscape framing with a larger village and controls beside it"
+        },
+        {
+          "src": "v0.2/final-iphone.png",
+          "loaded": true,
+          "width": 780,
+          "height": 1688,
+          "alt": "Current restored courtyard in a simulated phone portrait layout"
+        },
+        {
+          "src": "v0.2/final-iphone-landscape.png",
+          "loaded": true,
+          "width": 1688,
+          "height": 780,
+          "alt": "Current restored courtyard in a simulated phone landscape layout"
+        }
+      ]
+    },
+    {
+      "name": "desktop: no horizontal overflow and readable body/captions",
+      "pass": true
+    },
+    {
+      "name": "desktop: Play action stays within viewport",
+      "pass": true
+    },
+    {
+      "name": "phone: no horizontal overflow and readable body/captions",
+      "pass": true
+    },
+    {
+      "name": "phone: Play action stays within viewport",
+      "pass": true
+    },
+    {
+      "name": "Video 1 metadata/play/seek",
+      "pass": true,
+      "src": "v0.2/interaction-ui.mp4",
+      "duration": 45,
+      "width": 1440,
+      "height": 900,
+      "readyState": 4,
+      "playedFrom": 0,
+      "playedTo": 0.238274,
+      "seekedTo": 24.75,
+      "error": null
+    },
+    {
+      "name": "Video 2 metadata/play/seek",
+      "pass": true,
+      "src": "v0.2/opening-with-sound.mp4",
+      "duration": 42.747,
+      "width": 1280,
+      "height": 912,
+      "readyState": 4,
+      "playedFrom": 0,
+      "playedTo": 0.134329,
+      "seekedTo": 23.51085,
+      "error": null
+    },
+    {
+      "name": "Video 3 metadata/play/seek",
+      "pass": true,
+      "src": "v0.2/restoration-with-sound.mp4",
+      "duration": 50.068,
+      "width": 1280,
+      "height": 912,
+      "readyState": 4,
+      "playedFrom": 0,
+      "playedTo": 0.252126,
+      "seekedTo": 27.5374,
+      "error": null
+    },
+    {
+      "name": "Artifact bytes and SHA-256 match build manifest and review page",
+      "pass": true,
+      "artifactHash": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
+      "manifestHash": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
+      "bytes": 148970,
+      "version": "0.2.0",
+      "sourceRevision": "4384d82d61210269332cb8568ef89c7399425b86"
+    },
+    {
+      "name": "media-manifest.json identifies the same artifact",
+      "pass": true
+    },
+    {
+      "name": "final-smoke.json identifies the same artifact",
+      "pass": true
+    },
+    {
+      "name": "final-build-checks.json identifies the same artifact",
+      "pass": true
+    },
+    {
+      "name": "evidence/v0.2/interaction-ui.mp4 hash and media metadata match",
+      "pass": true,
+      "sha256": "a607e6bc91aca6796820c4ce9cb4954c920f21ece5e76247baec5e271fbfd25b",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1440,
+            "height": 900
+          }
+        ],
+        "format": {
+          "duration": "45.000000",
+          "size": "2319255"
+        }
+      }
+    },
+    {
+      "name": "evidence/v0.2/opening-with-sound.mp4 hash and media metadata match",
+      "pass": true,
+      "sha256": "95f8cef67f500d3bd99360fa20055a06b7384c1f069c36c159b83dd1875359ec",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 912
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio"
+          }
+        ],
+        "format": {
+          "duration": "42.747000",
+          "size": "2045968"
+        }
+      }
+    },
+    {
+      "name": "evidence/v0.2/restoration-with-sound.mp4 hash and media metadata match",
+      "pass": true,
+      "sha256": "bd58df3ec07ece83758eacbedf409f52acba877dab6de19a229eabd0ee6c052f",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 912
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio"
+          }
+        ],
+        "format": {
+          "duration": "50.068000",
+          "size": "2906888"
+        }
+      }
+    },
+    {
+      "name": "No local-file browser errors",
+      "pass": true
+    },
+    {
+      "name": "Phone protocol link stays together without horizontal overflow",
+      "pass": true,
+      "width": 390,
+      "scrollWidth": 390,
+      "protocolText": "Private playtest protocol",
+      "protocolLineBoxes": 1,
+      "protocolRect": {
+        "x": 16,
+        "y": 368.3125,
+        "width": 176.0625,
+        "height": 26.390625,
+        "top": 368.3125,
+        "right": 192.0625,
+        "bottom": 394.703125,
+        "left": 16
+      },
+      "whiteSpace": "nowrap"
+    }
+  ],
+  "layouts": [
+    {
+      "label": "desktop",
+      "width": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "bodyFont": "16px",
+      "captionFont": "14px",
+      "main": {
+        "x": 160,
+        "y": 0,
+        "width": 1120,
+        "height": 4800.859375,
+        "top": 0,
+        "right": 1280,
+        "bottom": 4800.859375,
+        "left": 160
+      },
+      "play": {
+        "x": 184,
+        "y": 254.75,
+        "width": 241.46875,
+        "height": 50.390625,
+        "top": 254.75,
+        "right": 425.46875,
+        "bottom": 305.140625,
+        "left": 184
+      },
+      "videos": [
+        {
+          "x": 184,
+          "y": 1044.875,
+          "width": 527,
+          "height": 330.125,
+          "top": 1044.875,
+          "right": 711,
+          "bottom": 1375,
+          "left": 184
+        },
+        {
+          "x": 729,
+          "y": 1044.875,
+          "width": 527,
+          "height": 330.125,
+          "top": 1044.875,
+          "right": 1256,
+          "bottom": 1375,
+          "left": 729
+        },
+        {
+          "x": 184,
+          "y": 1468.171875,
+          "width": 1072,
+          "height": 670.75,
+          "top": 1468.171875,
+          "right": 1256,
+          "bottom": 2138.921875,
+          "left": 184
+        }
+      ]
+    },
+    {
+      "label": "phone",
+      "width": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "bodyFont": "16px",
+      "captionFont": "14px",
+      "main": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 6263.34375,
+        "top": 0,
+        "right": 390,
+        "bottom": 6263.34375,
+        "left": 0
+      },
+      "play": {
+        "x": 16,
+        "y": 305.921875,
+        "width": 241.46875,
+        "height": 50.390625,
+        "top": 305.921875,
+        "right": 257.46875,
+        "bottom": 356.3125,
+        "left": 16
+      },
+      "videos": [
+        {
+          "x": 16,
+          "y": 1518.03125,
+          "width": 358,
+          "height": 224.5,
+          "top": 1518.03125,
+          "right": 374,
+          "bottom": 1742.53125,
+          "left": 16
+        },
+        {
+          "x": 16,
+          "y": 1876.09375,
+          "width": 358,
+          "height": 224.5,
+          "top": 1876.09375,
+          "right": 374,
+          "bottom": 2100.59375,
+          "left": 16
+        },
+        {
+          "x": 16,
+          "y": 2216.15625,
+          "width": 358,
+          "height": 224.5,
+          "top": 2216.15625,
+          "right": 374,
+          "bottom": 2440.65625,
+          "left": 16
+        }
+      ]
+    }
+  ],
+  "media": [
+    {
+      "src": "v0.2/interaction-ui.mp4",
+      "duration": 45,
+      "width": 1440,
+      "height": 900,
+      "readyState": 4,
+      "playedFrom": 0,
+      "playedTo": 0.238274,
+      "seekedTo": 24.75,
+      "error": null
+    },
+    {
+      "src": "v0.2/opening-with-sound.mp4",
+      "duration": 42.747,
+      "width": 1280,
+      "height": 912,
+      "readyState": 4,
+      "playedFrom": 0,
+      "playedTo": 0.134329,
+      "seekedTo": 23.51085,
+      "error": null
+    },
+    {
+      "src": "v0.2/restoration-with-sound.mp4",
+      "duration": 50.068,
+      "width": 1280,
+      "height": 912,
+      "readyState": 4,
+      "playedFrom": 0,
+      "playedTo": 0.252126,
+      "seekedTo": 27.5374,
+      "error": null
+    }
+  ],
+  "mediaReadAborts": [
+    "file:///Users/xingzhaoji/Desktop/Dustlings/evidence/v0.2/interaction-ui.mp4 net::ERR_ABORTED",
+    "file:///Users/xingzhaoji/Desktop/Dustlings/evidence/v0.2/opening-with-sound.mp4 net::ERR_ABORTED",
+    "file:///Users/xingzhaoji/Desktop/Dustlings/evidence/v0.2/restoration-with-sound.mp4 net::ERR_ABORTED"
+  ],
+  "errors": [],
+  "browser": "152.0.7977.83",
+  "summary": {
+    "passed": 18,
+    "failed": 0,
+    "errors": 0
+  },
+  "focusedRecheckAt": "2026-09-10T06:28:54.850Z",
+  "reviewSha256": "a57a6a3e23ed0114f39cd878d7044876043aad86583c666877e4adff0c669cd9",
+  "mediaReadAbortNote": "Cancelled metadata/seek media reads retained here; all three media elements separately passed actual muted playback and seeking."
+}

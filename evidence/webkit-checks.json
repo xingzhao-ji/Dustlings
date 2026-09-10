@@ -1,15 +1,16 @@
 {
-  "timestamp": "2026-09-10T06:06:26.474Z",
+  "timestamp": "2026-09-10T06:18:20.344Z",
   "kind": "Playwright WebKit compatibility; not Safari app, physical iOS, human play, or performance validation",
   "sourceHashes": {
     "index.html": "fece434e5f17b3f08a56c3000434303e34b04fdb670a33022f8d02b96ac706f0",
     "style.css": "eb646aa87295b328aab02893cd7753bc514ea732e263edff8f351f61f5d7df11",
-    "src/main.js": "2c496cb0e4c902c64e9491f3f8dd901771cce03c775fd80484ba313a2d81e71c",
-    "src/game.js": "c31dab971d23839fa019b8dd7f3d7c7a7caa5a50dd3ed578c1c327f346829335",
-    "src/storage.js": "27931bc1cd5ca11704a3da8a0dc8ab22199552b263a5a90b6118d89bdf6d32bf",
-    "src/renderer.js": "e9b8862756956895fb9c3002bc4438f97c54d2dc9dbd1bdafa0449707d1c4a65",
     "src/audio.js": "fa3650b282b8ef8e41a86a65d314c1262d3b0c2ad61d5e76eabdb6888c1fe26f",
-    "src/keyboard.js": "1f1aa3dc6c9aa0eb1fec68ae3754f7a2abf67b914775965e5113402281566000"
+    "src/game.js": "c31dab971d23839fa019b8dd7f3d7c7a7caa5a50dd3ed578c1c327f346829335",
+    "src/keyboard.js": "1f1aa3dc6c9aa0eb1fec68ae3754f7a2abf67b914775965e5113402281566000",
+    "src/main.js": "1dbfc4eb30bcac39e7a5e1913b12678bf532536d13c55a29293d9b2959016908",
+    "src/renderer.js": "e9b8862756956895fb9c3002bc4438f97c54d2dc9dbd1bdafa0449707d1c4a65",
+    "src/settings.js": "55c8ee32f354cb4b2ebeed382937a0aac8441cb49a68ca03e9b202e7e549196d",
+    "src/storage.js": "51357ebe590b0057d8ca145ca0528097c6a6913e3e6a1ba882b8b8d33ff6fd69"
   },
   "conditions": {
     "hostPlatform": "darwin",
@@ -29,7 +30,7 @@
       "pass": true,
       "crew": 6,
       "motes": 42,
-      "brushed": 40.73236127828632,
+      "brushed": 40.791824916240465,
       "active": false,
       "timing": "48 seconds explicitly advanced simulation; not human or real-time pacing"
     },
@@ -44,7 +45,7 @@
     {
       "name": "Settings pause freezes simulation and suspends WebKit audio",
       "pass": true,
-      "elapsed": 48.06399999999941,
+      "elapsed": 48.11999999999941,
       "audio": {
         "ready": true,
         "prepared": false,
@@ -117,8 +118,8 @@
       "name": "390×844 tap-to-sweep continues cleaning after finger release",
       "pass": true,
       "brushedBefore": 0,
-      "brushedAfter": 0.7888000000000002,
-      "delta": 0.7888000000000002,
+      "brushedAfter": 0.6893500000000001,
+      "delta": 0.6893500000000001,
       "waitMs": 1100,
       "events": [
         {
@@ -232,8 +233,8 @@
       "name": "844×390 tap-to-sweep continues cleaning after finger release",
       "pass": true,
       "brushedBefore": 0,
-      "brushedAfter": 0.4250000000000002,
-      "delta": 0.4250000000000002,
+      "brushedAfter": 0.38420000000000015,
+      "delta": 0.38420000000000015,
       "waitMs": 1100,
       "events": [
         {

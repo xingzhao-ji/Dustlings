@@ -1,10 +1,15 @@
 import { webkit } from '@playwright/test';
-import { readFile, mkdir, writeFile } from 'node:fs/promises';
+import { readFile, readdir, mkdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import http from 'node:http';
 import os from 'node:os';
 
-const files = ['index.html', 'style.css', 'src/main.js', 'src/game.js', 'src/storage.js', 'src/renderer.js', 'src/audio.js', 'src/keyboard.js'];
+// Snapshot every top-level runtime module so new imports (such as settings.js)
+// are served and hashed automatically without silently testing an incomplete app.
+const runtimeFiles = (await readdir('src', { withFileTypes: true }))
+  .filter(entry => entry.isFile() && entry.name.endsWith('.js'))
+  .map(entry => `src/${entry.name}`).sort();
+const files = ['index.html', 'style.css', ...runtimeFiles];
 const snapshot = new Map(await Promise.all(files.map(async file => [file, await readFile(file)])));
 const hashes = Object.fromEntries([...snapshot].map(([name, data]) => [name, createHash('sha256').update(data).digest('hex')]));
 const evidence = { timestamp: new Date().toISOString(), kind: 'Playwright WebKit compatibility; not Safari app, physical iOS, human play, or performance validation', sourceHashes: hashes, conditions: { hostPlatform: process.platform, hostArchitecture: process.arch, kernel: os.release(), snapshot: 'In-memory source snapshot; no shared source files modified', headless: true, dpr: 1 }, checks: [], errors: [] };

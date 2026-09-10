@@ -1,0 +1,19 @@
+{
+  "artifact": "builds/Dustlings-Courtyard-0.2.0-Review.zip",
+  "sha256": "e0807128977dba1d05af7ad9870fbe372ac33aba034c61f1cd606ba87cb66398",
+  "bytes": 73364325,
+  "files": 233,
+  "gameBuild": {
+    "version": "0.2.0",
+    "sourceRevision": "4384d82d61210269332cb8568ef89c7399425b86",
+    "sourceDirty": false,
+    "builtAt": "2026-09-10T06:17:56.300Z",
+    "artifact": "Dustlings Courtyard.html",
+    "sha256": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
+    "bytes": 148970,
+    "runtimeDependencies": 0,
+    "scope": "Courtyard prototype; human acceptance pending"
+  },
+  "validation": "ZIP CRC integrity and contained game artifact hash match. No dependency install required to play the standalone HTML.",
+  "reviewLocalDestinationsVerified": 26
+}

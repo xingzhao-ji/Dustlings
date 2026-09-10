@@ -107,5 +107,21 @@
     "changedNativePackageReviewed": false,
     "listening": false,
     "humanSessions": 0
+  },
+  "fullProgressionReview": {
+    "record": "full-progression/provenance.json",
+    "finalizedAt": "2026-09-10T09:38:26.817082+00:00",
+    "changedCaptureEvidenceReviewed": true,
+    "changedNativePackageReviewed": false,
+    "listening": false,
+    "humanSessions": 0
+  },
+  "helperContactReview": {
+    "record": "helper-contact/provenance.json",
+    "finalizedAt": "2026-09-10T09:41:41.545208+00:00",
+    "changedCaptureEvidenceReviewed": true,
+    "changedNativePackageReviewed": false,
+    "listening": false,
+    "humanSessions": 0
   }
 }

@@ -1,0 +1,109 @@
+{
+  "reviewer": "Independent AI critic",
+  "humanSessions": 0,
+  "sourceHash": "158513063d1ebe97b1ebfd526bf07b372f950d1f03579f6c15d765cc273cac75",
+  "capturedAt": "2026-09-10T09:23:02.809Z",
+  "finalizedAt": "2026-09-10T09:38:26.817082+00:00",
+  "identityClarification": "Lead confirmed this is intended film. 2572e2f is Git revision; 158513063d1e\u2026 is capture file-map SHA. Findings bind preserved media and manifest, not claimed aggregate equivalence.",
+  "method": "Whole-film chronological overview sampled every 10 seconds; normal-size provided/extracted frames; 4 Hz birth samples at 19\u201325 s; 3 Hz intervals at 91\u201399, 319\u2013327, 455\u2013463, 509\u2013517 s; 1 Hz ritual at 536\u2013576 s and ending at 678\u2013705 s. Frame-based visual review, not uninterrupted audiovisual perception.",
+  "listening": false,
+  "nativeAppLaunched": false,
+  "directInput": false,
+  "gameSourceInspected": false,
+  "captureConditions": "Lead/manifest: generated native controls, 2 s brushing per 5 s cycle, scripted discovery purchases and periodic crew orders; no progress injection or accelerated simulation. MovieMaker fixed engine-time output is not wall-clock performance evidence.",
+  "timeBasis": "Movie 705.466667 s includes welcome/menu pauses. Result completed_at 681.733333333042 is simulation time, not movie timestamp or human timing.",
+  "completionFinding": "At extracted movie frame 704 s, Courtyard restored and The courtyard is awake coexist with 99% clear; persists in late movie. Lead reports later display-tolerance correction, unreviewed.",
+  "files": [
+    {
+      "source": "evidence/3d/full-courtyard-review/capture-manifest.json",
+      "reviewCopy": "evidence/3d/critic/full-progression/capture-manifest.json",
+      "sha256": "7f10e2447b82428f0c1a177492b3a799bb252dc4783ff7e3a0933a1d0cb6b7d0",
+      "bytes": 10238
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/completed.png",
+      "reviewCopy": "evidence/3d/critic/full-progression/completed.png",
+      "sha256": "1ffda53b9271582960134fac77914b567abff030c6a52ac6673f0155cfea2275",
+      "bytes": 663545
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/dirty.png",
+      "reviewCopy": "evidence/3d/critic/full-progression/dirty.png",
+      "sha256": "5fd7b94644d323dbce8f4eb89b0f4ae3fcc7f0c29c588fedf0cd7e934fbda8d2",
+      "bytes": 677922
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/discovery-bloom.png",
+      "reviewCopy": "evidence/3d/critic/full-progression/discovery-bloom.png",
+      "sha256": "e3db08fec8121fa37bf90e83c7561ca3eed3c975232363b4e922180aacb49f2e",
+      "bytes": 488380
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/discovery-brush.png",
+      "reviewCopy": "evidence/3d/critic/full-progression/discovery-brush.png",
+      "sha256": "732e608d05c386ba3e9883769c71a8bbe70315f99e460b3b56970aae53640ea6",
+      "bytes": 491946
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/discovery-teamwork.png",
+      "reviewCopy": "evidence/3d/critic/full-progression/discovery-teamwork.png",
+      "sha256": "ff3e6b989ec038b8a27f71bd8a0b022c8ae74b810405a6a5f3788fb9cac629ce",
+      "bytes": 489988
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/first-helper.png",
+      "reviewCopy": "evidence/3d/critic/full-progression/first-helper.png",
+      "sha256": "83d631e01b880500d064e5f52a61b6f37f34fb2d7f84f2ebf69aa1be7c8d04f7",
+      "bytes": 682648
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/full.mp4",
+      "reviewCopy": "evidence/3d/critic/full-progression/full.mp4",
+      "sha256": "5419cf6752a165afe4f6f409b668b805b5bbfb8a7d3d19d87434fc4165c0d27e",
+      "bytes": 80700103
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/progress-25.png",
+      "reviewCopy": "evidence/3d/critic/full-progression/progress-25.png",
+      "sha256": "1546f86a8faaf2a21afdc97d7c224515edd21783731577b11e0669a4ced25b14",
+      "bytes": 681047
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/progress-50.png",
+      "reviewCopy": "evidence/3d/critic/full-progression/progress-50.png",
+      "sha256": "bd83695fd6a287e18a5e6eeb63fb3b29dd2e95baf4300fb532250becd407dd95",
+      "bytes": 677958
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/progress-75.png",
+      "reviewCopy": "evidence/3d/critic/full-progression/progress-75.png",
+      "sha256": "3effd0348794781013e243aec7d81aa10da26b3df8208a35ea84b81d1312b63a",
+      "bytes": 671589
+    },
+    {
+      "source": "evidence/3d/full-courtyard-review/results.json",
+      "reviewCopy": "evidence/3d/critic/full-progression/results.json",
+      "sha256": "f64967edebe1132e0973ba06138e936d0dcc51a7da773e7f9678c5146e71c9de",
+      "bytes": 1079
+    }
+  ],
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 800,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "705.466667"
+    }
+  }
+}

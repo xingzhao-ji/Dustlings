@@ -1,0 +1,75 @@
+{
+  "reviewer": "Independent AI critic",
+  "humanSessions": 0,
+  "sourceHash": "90ed34f2fdfd57153c1f14a979e5d3035c42ca54643554e7e6ca6a80afc6ad47",
+  "capturedAt": "2026-09-10T09:37:38.152Z",
+  "finalizedAt": "2026-09-10T09:41:41.545208+00:00",
+  "beforeEvidence": "../helper-only/provenance.json",
+  "method": "Complete after chronology at 1 Hz, normal-size helping/travel/30-second frames, matched 4 Hz crop at 17\u201321 s. Not continuous audiovisual perception.",
+  "verdict": "Work legibility remains unresolved; face/eyes less readable during matched passive interval, cause not diagnosed. Travel remains readable. No excessive particle clutter observed in this one-helper capture; 50-helper comfort not established.",
+  "listening": false,
+  "nativeAppLaunched": false,
+  "directInput": false,
+  "gameSourceInspected": false,
+  "captureConditions": "Matched generated native brush input creates one helper; 20 s no player brushing, visible order/travel. No progress fixture or accelerated simulation.",
+  "leadProvidedChangeScope": "Work pose/signal/face/local dust plus ending counter display; rates/routes unchanged. Not source-audited.",
+  "reportedAssistanceBeforeAndAfter": 0.269126329591142,
+  "endingCounterFixVerified": false,
+  "files": [
+    {
+      "source": "evidence/3d/helper-work-contact/capture-manifest.json",
+      "reviewCopy": "evidence/3d/critic/helper-contact/capture-manifest.json",
+      "sha256": "442bf786de54726cae0ea70d05f49f0303ec2dacddbd346b9d6c46e00ef356ba",
+      "bytes": 10368
+    },
+    {
+      "source": "evidence/3d/helper-work-contact/first-helper.png",
+      "reviewCopy": "evidence/3d/critic/helper-contact/first-helper.png",
+      "sha256": "0c547dd08e83bdb178b8f91a76da54b96eeea066095ae18255cd49a87aa41393",
+      "bytes": 682767
+    },
+    {
+      "source": "evidence/3d/helper-work-contact/helper.mp4",
+      "reviewCopy": "evidence/3d/critic/helper-contact/helper.mp4",
+      "sha256": "3e4146b591097d77574fd0f34943ca9a83176112df49ed574de37555413d6b28",
+      "bytes": 1909999
+    },
+    {
+      "source": "evidence/3d/helper-work-contact/helping.png",
+      "reviewCopy": "evidence/3d/critic/helper-contact/helping.png",
+      "sha256": "32a008aab018de9370034be1197d953a183de85708af834d96655f17c34261e1",
+      "bytes": 678267
+    },
+    {
+      "source": "evidence/3d/helper-work-contact/results.json",
+      "reviewCopy": "evidence/3d/critic/helper-contact/results.json",
+      "sha256": "ad86e6742282f0e71b683054983dc15739a35d9275667e3297011f2c5d0a1282",
+      "bytes": 908
+    },
+    {
+      "source": "evidence/3d/helper-work-contact/travelling.png",
+      "reviewCopy": "evidence/3d/critic/helper-contact/travelling.png",
+      "sha256": "9d64a03926a5ea0169cefa1014d74d2394a97e88cb469bf2e52f28114b732825",
+      "bytes": 683046
+    }
+  ],
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 800,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "45.900000"
+    }
+  }
+}

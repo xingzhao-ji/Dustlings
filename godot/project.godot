@@ -3,11 +3,11 @@ config_version=5
 
 [application]
 config/name="Dustlings 3D"
-config/version="0.4.0-dev"
+config/version="0.5.0-rpg-dev"
 config/icon="res://assets/ui/app-icon.svg"
-run/main_scene="res://scenes/courtyard.tscn"
+run/main_scene="res://scenes/neighborhood.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/description="An original miniature restoration game. 3D courtyard in development."
+config/description="A home in Bellwether. Third-person cozy RPG neighborhood in development."
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Dustlings3D"
 

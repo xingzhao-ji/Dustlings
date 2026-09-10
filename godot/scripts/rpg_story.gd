@@ -83,7 +83,7 @@ func interact(id: String) -> Dictionary:
 		"greenhouse_memory":
 			if not has("greenhouse_open"): return _line("Beyond the ivy", "A faint glimmer lies beyond the glass.", [], false, false)
 			if has("memory_found"): return _line("A letter in the light", "‘If the door grows over, sing. Some things remember us longer than we expect.’ — Liora\n\nThe little lantern-moth rests beside your companion.")
-			return _line("Moonlit greenhouse", "A sleeping lantern-moth unfolds beside an unopened letter. Your companion answers with a small, curious chirp.", [_choice("Read the letter together", "greenhouse_memory")])
+			return _line("The old greenhouse", "A sleeping lantern-moth unfolds beside an unopened letter. Your companion answers with a small, curious chirp.", [_choice("Read the letter together", "greenhouse_memory")])
 		"alcove":
 			if has("alcove_found"): return _line("Mender's alcove", "A child's practice bridge spans a cracked teacup. Someone believed a way across could be made.")
 			if has("glow_unlocked"): return _line("Dark alcove", "A tiny bridge is scratched into the lintel. Your companion's light catches something inside.", [_choice("Ask for a little light", "light_alcove")])

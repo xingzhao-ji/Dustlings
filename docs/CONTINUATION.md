@@ -1,3 +1,21 @@
+# Continuation checkpoint — 2026-09-10 17:26 UTC
+
+**Session active. Owner explicitly replaced cleanup-only scope with a third-person cozy RPG.** Earlier no-expansion blocker below is historical. Current milestone: one complete Bellwether neighborhood; not polished, not human accepted. Human RPG sessions:0; owner acceptance:pending.
+
+Root is integrated lead. New main scene `godot/scenes/neighborhood.tscn`, version0.5.0-rpg-dev. Old courtyard scene/packages are preserved. Story specialist owns state/save/tests; world specialist owns environment/actor; independent critic owns only review. See RPG-DIRECTION.md, RPG-NARRATIVE.md, RPG-WORLD.md, RPG-INTEGRATION.md and RPG-CRITIQUE.md.
+
+Implemented: direct avatar/camera, solid connected lanes and enterable home/workshop, four named residents/short arcs, separate RPG saves, earned bridge/garden/melody/greenhouse/glow/alcove/table state. Actual124-step generated InputEvent route completes without progress/position injection in159engine seconds; this is not human pacing. Before media `evidence/rpg/neighborhood-first`; integrated route `evidence/rpg/neighborhood-route-corrected/route.mp4` source1a3ed24… Root visually inspected its arrival/dialogue/home/bridge/garden/greenhouse/gathering. No listening claim. Current source is newer than that movie.
+
+Corrections since first source: blank full-height panel fixed and visually verified; focused text contrast, compact dialogue, visible exit, Settings/journal scrolling, physical lantern, tiny powder, removed doorway beam occluding avatar, Tavi wall overlap, bridge-before-companion softlock, world animation during dialogue, save-copy controls. Save44/44 and story83/83 passed on their source. Initial actual integration34/38 reproduced imported-mix/patch/route reset + frozen dialogue background; these four now have targeted root fixes and specialist is retesting. Live saved wall overlap recovers to entry preserving flags. NPC mask5 and companion spacing/light restraint just added; fresh route required.
+
+Exact next action: finish world specialist’s bounded physical moth/recess/bridge animation correction, integrate actor activities already available, let story specialist run import/route/collision fixtures after latest main. Then record current native route, inspect resident queues/companion light/discovery objects/dialogue fit at1280×800 and960×640. Send actual updated media to independent critic. Run quiet native performance and packaged Mac/Windows export once this integration is verified. Windows remains unrun, Figma/physical CUA unavailable. Do not substitute human gates with agent verdicts.
+
+Known material gaps: current recording narrates moth/keepsakes missing in3D; world correction active. Current recording companions overlight outdoors; root restrained one light instead of4, needsnativecomparison. Resident activities are newly authored but currentfilm predates them. Scene still early: character appeal, attachment, cozy atmosphere, surprise and return desire are unvalidated. Full RPG campaign/canal/clocktower content not implemented; finish neighborhood first.
+
+---
+
+## Historical courtyard session checkpoint (superseded scope)
+
 # Continuation checkpoint — 2026-09-10 11:12 UTC
 
 **Session ended at a human/device validation blocker. The game is unfinished.** The current 3D courtyard is awaiting representative-player, presentation and owner acceptance. Human sessions: **0**. No further zones are eligible. No work continues after this session.

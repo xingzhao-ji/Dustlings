@@ -1,0 +1,31 @@
+{
+  "case": "workcrowd",
+  "cleaned": 417.773141666215,
+  "completed": false,
+  "draw_calls": 302.0,
+  "elapsed": 233.000000000026,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "first_helper_at": 200,
+  "fixture": "50 paired helpers and80%clean progress injected atstart;35seconds of real-time automatic cleaning and generated native direction/settings input. No human observation or performance claim.",
+  "gentle_active": true,
+  "gentle_peak_wisps": 10,
+  "helpers": 50,
+  "kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.",
+  "motes": 295,
+  "normal_peak_wisps": 32,
+  "objects": 668.0,
+  "restoration": 0.0,
+  "returned_to_work": true,
+  "status": "recorded",
+  "viewport": "(1440.0, 900.0)"
+}

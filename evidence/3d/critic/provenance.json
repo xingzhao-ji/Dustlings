@@ -132,5 +132,13 @@
     "changedNativePackageReviewed": false,
     "listening": false,
     "humanSessions": 0
+  },
+  "farSeatCrowdReturnReview": {
+    "recordedAt": "2026-09-10T09:51:54.568603+00:00",
+    "provenance": "far-seat-crowd-return/provenance.json",
+    "sourceHash": "a4c4d4dab9b85bd83c716b1cadbeb3c1f0100423ee3766b692409eaf948b2a61",
+    "movieSha256": "d90a6a286a296e3d0e406a696a4a3d57ec1cbd29e3a5859b930da169c0b6bad1",
+    "humanSessions": 0,
+    "nativeAppLaunched": false
   }
 }

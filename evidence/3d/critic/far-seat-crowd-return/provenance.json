@@ -1,0 +1,66 @@
+{
+  "reviewer": "independent AI critic, separate from development team",
+  "reviewedAt": "2026-09-10T09:51:54.568603+00:00",
+  "sourceDirectory": "evidence/3d/far-seat-crowd-return",
+  "sourceHash": "a4c4d4dab9b85bd83c716b1cadbeb3c1f0100423ee3766b692409eaf948b2a61",
+  "captureCreated": "2026-09-10T09:45:24.105Z",
+  "movieSha256": "d90a6a286a296e3d0e406a696a4a3d57ec1cbd29e3a5859b930da169c0b6bad1",
+  "movieDurationSeconds": 35.633333,
+  "movieSize": [
+    1280,
+    800
+  ],
+  "movieFPS": 30,
+  "fixture": "50 paired helpers and80%clean progress injected atstart;35seconds of real-time automatic cleaning and generated native direction/settings input. No human observation or performance claim.",
+  "method": "All chronology at one-second intervals; three supplied normal-size stills; full-size frames at7,15,31seconds; four-Hz cropped work samples5\u20139seconds and29\u201333seconds. Frame-based inspection, not uninterrupted audiovisual perception.",
+  "visualFinding": "Distinct bodies and many visible faces remain in the50-helper view; some hands are occluded by neighbors. No new persistent fused-body appearance, obvious hovering or broad particle-cloud defect in the reviewed samples. Direction and settings return remain visibly readable. Contribution recognition and comfort remain human-review questions.",
+  "sourceClaimsNotAudited": {
+    "sameFarSidePositionsWithQADriverChange": true,
+    "routeSafetyAndRateComparisons": "Lead supplied numerical route/rate results; not independently audited in this visual review."
+  },
+  "logsNotVisualProof": {
+    "normalPeakWisps": 32,
+    "gentlePeakWisps": 10,
+    "returnedToWork": true,
+    "gentleActive": true
+  },
+  "failedCaptureExcluded": "Earlier evidence/3d/far-seat-crowd capture reportedly failed the QA Return label; not reviewed or represented as a successful return.",
+  "humanSessions": 0,
+  "listening": false,
+  "directInput": false,
+  "nativeAppLaunched": false,
+  "performanceMeasured": false,
+  "implementationRead": false,
+  "limits": [
+    "Prepared50-helper/80%clean fixture, not natural progression.",
+    "Fixed30FPS engine-time recording may render faster than wall time; no frame-pacing/input-comfort claim.",
+    "Audio track exists but was not auditioned.",
+    "No human, presentation, owner or release gate passed."
+  ],
+  "preservedInputs": {
+    "capture-manifest.json": {
+      "sha256": "18927735285f8d7b070103ae7986aa3e4f73a1a78b9fbcd1e61b89639bd23b3f",
+      "bytes": 10560
+    },
+    "results.json": {
+      "sha256": "44a0648622f92641470957aa66bbce3b52e8c2d22979c7cf74ddbed1e2c85298",
+      "bytes": 949
+    },
+    "workcrowd.mp4": {
+      "sha256": "d90a6a286a296e3d0e406a696a4a3d57ec1cbd29e3a5859b930da169c0b6bad1",
+      "bytes": 6438816
+    },
+    "paired-working.png": {
+      "sha256": "77b14f1819355afbf7493c90973df4db8cae5766ff20a277af5409380e404409",
+      "bytes": 676181
+    },
+    "crowded-order.png": {
+      "sha256": "9e903ebcbb33fc2afaebb0bc7497047aa3cb036b4606945ae61df9f38b7dc1ed",
+      "bytes": 677210
+    },
+    "gentle-working.png": {
+      "sha256": "139061b27b521021983da8341c33ee526d56c98a92b7641720518eb30cbb24bd",
+      "bytes": 675224
+    }
+  }
+}

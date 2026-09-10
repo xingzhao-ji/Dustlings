@@ -9,6 +9,7 @@ var _restoration: float = 0.0
 var _gentle_motion: bool = false
 var _built: bool = false
 var _water_material: ShaderMaterial
+var _stream_material: ShaderMaterial
 var _plant_material: ShaderMaterial
 var _water_nodes: Array[Node3D] = []
 var _flower_parts: Array[Dictionary] = []
@@ -51,6 +52,8 @@ func _create_materials() -> void:
     _materials["windows"].emission_energy_multiplier = 0.0
     _water_material = ShaderMaterial.new()
     _water_material.shader = load("res://shaders/courtyard_environment_water.gdshader")
+    _stream_material = ShaderMaterial.new()
+    _stream_material.shader = load("res://shaders/courtyard_stream_flow.gdshader")
     _plant_material = ShaderMaterial.new()
     _plant_material.shader = load("res://shaders/courtyard_environment_vegetation.gdshader")
     _materials["plants"] = _plant_material
@@ -308,8 +311,9 @@ func _build_fountain() -> void:
             var t: float = i / 16.0
             points.append(Vector3(side * (0.51 + t * 0.37), 1.45 - t * t * 1.08, 0.0))
         var stream := MeshInstance3D.new()
-        stream.mesh = _tube_mesh(points, 0.035)
-        stream.material_override = _water_material
+        stream.mesh = _tube_mesh(points, 0.045)
+        stream.material_override = _stream_material
+        stream.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
         add_child(stream)
         _water_nodes.append(stream)
     _fountain_light = OmniLight3D.new()
@@ -393,6 +397,7 @@ func set_restoration(value: float) -> void:
         return
     _plant_material.set_shader_parameter("restoration", _restoration)
     _water_material.set_shader_parameter("restoration", _restoration)
+    _stream_material.set_shader_parameter("restoration", _restoration)
     _water_nodes[0].visible = _restoration > 0.12
     for i in range(1, _water_nodes.size()):
         _water_nodes[i].visible = _restoration > 0.54
@@ -415,6 +420,8 @@ func set_gentle_motion(enabled: bool) -> void:
     _gentle_motion = enabled
     if _water_material:
         _water_material.set_shader_parameter("motion_amount", 0.0 if enabled else 1.0)
+    if _stream_material:
+        _stream_material.set_shader_parameter("motion_amount", 0.0 if enabled else 1.0)
     if _plant_material:
         _plant_material.set_shader_parameter("motion_amount", 0.0 if enabled else 1.0)
 
@@ -422,4 +429,5 @@ func tick_environment(_delta: float, time: float) -> void:
     if not _built:
         return
     _water_material.set_shader_parameter("time_seconds", time)
+    _stream_material.set_shader_parameter("time_seconds", time)
     _plant_material.set_shader_parameter("time_seconds", time)

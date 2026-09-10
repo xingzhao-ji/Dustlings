@@ -1,6 +1,6 @@
 # Courtyard private playtest
 
-Status 2026-09-09: **0 unfamiliar target players tested; 0 human feedback sessions recorded.** No enjoyment score, demand estimate, or sales forecast is available. Agent walkthroughs, scripts, visual checks, and friends' opinions must be labeled separately.
+Status 2026-09-10: **0 unfamiliar target players tested; 0 human feedback sessions recorded.** No enjoyment score, demand estimate, or sales forecast is available. Agent walkthroughs, scripts, visual checks, and friends' opinions must be labeled separately.
 
 ## Recruitment and decision rules
 
@@ -8,12 +8,18 @@ Recruit 12–20 unfamiliar intended players for the first private round. Include
 
 Internal targets: at least 80% of unfamiliar target players reach a meaningful upgrade without coaching; at least half voluntarily continue after the required segment. Always report the exact n/N and reasons. At N=12, this means at least 10 upgrade successes and 6 continuing; at N=20, at least 16 and 10. These are refinement gates, not market estimates. Preserve segment disagreements even when pooled counts pass. Passing does not authorize more content while the courtyard's integration and recovery requirements remain incomplete.
 
+## Pre-data protocol amendment — 2026-09-10
+
+The required segment is now **five minutes**, followed by the same neutral voluntary-continuation choice and at least two active additional minutes for the primary continuation count. This amendment was made with zero enrolled/tested players, before observing any human outcome. The previous twelve-minute requirement could run beyond this finite courtyard's ending: the full native generated-input run reached completion at681.73simulation seconds (~705.47s total film including menus), and a separate controlled simulation finished sooner. Those are script timings, not human pacing estimates, but they expose a measurement-design problem: players need an unfinished opportunity when asked whether they want to continue.
+
+Keep the agreed12–20 unfamiliar participants,≥80% uncoached-upgrade and≥50% voluntary-continuation decision rules unchanged. Record upgrade time/success during the required segment and later separately; report the primary uncoached-upgrade result by the five-minute choice point. Do not quietly move that cutoff after seeing results. Record early natural endings and ending-limited continuers separately with actual actions, duration and reasons. Do not add chores, repeat the courtyard or unlock an unapproved zone to create more continuation time. Observe the full restoration only for those who choose to stay; report that selection when describing completion timing or finale reactions.
+
 ## Session protocol
 
 1. Record consent for observation/capture, anonymous ID, build/checkpoint, primary segment, relevant play/purchase history, device model, OS, browser/build, input, viewport, sound setup, and date. Use a fresh save unless testing return-to-play. Record prior exposure to Dustlings.
-2. Say: “Please play as you normally would. The required part lasts 12 minutes. You can stop at any time. I am testing the game, and won't explain its controls during this part.” Start the clock when the player can interact. Do not explain dust conversion, upgrades, or assignments. A neutral think-aloud request is allowed; record all intervention.
-3. Observe ordinary play for 12 minutes. Do not point to UI, hint at a choice, or praise continued play. If a defect blocks play, record the failure and assistance; do not count the upgrade as uncoached. Let the player stop without pressure.
-4. At 12 minutes say: “The required part is finished. You can stop now, or keep playing if you want.” Remove time-based reward incentives. Record stop/continue, actual additional active minutes, actions, and stated reason. Count continuation only if they freely choose it and actively play for at least two more minutes. Report people who elect to continue but hit the finite ending sooner separately, with actual duration and reason; do not silently exclude them.
+2. Say: “Please play as you normally would. The required part lasts five minutes. You can stop at any time. I am testing the game, and won't explain its controls during this part.” Start the clock when the player can interact. Do not explain dust conversion, upgrades, or assignments. A neutral think-aloud request is allowed; record all intervention.
+3. Observe ordinary play for five minutes. Do not point to UI, hint at a choice, or praise continued play. If a defect blocks play, record the failure and assistance; do not count the upgrade as uncoached. Let the player stop without pressure.
+4. At five minutes say: “The required part is finished. You can stop now, or keep playing if you want.” Remove time-based reward incentives. Record stop/continue, actual additional active minutes, actions, and stated reason. Count continuation only if they freely choose it and actively play for at least two more minutes. Report people who elect to continue but hit the finite ending sooner separately, with actual duration and reason; do not silently exclude them.
 5. After play, ask for the player's explanation of dust becoming helpers, how directing works, and what their upgrade changed. Ask what felt awkward, tiring, confusing, visually unpleasant, or repetitive; what changed at the landmark; and why they stopped or continued. Ask for specific moments before soliciting general preferences.
 6. In a separate prompted recovery segment, pause/resume, close/reopen, and revisit a saved active assignment. Check preserved progress/settings and whether the player understands what to do next. Prompted activity does not count as voluntary continuation.
 

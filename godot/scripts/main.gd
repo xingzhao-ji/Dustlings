@@ -61,7 +61,6 @@ var save_problem = ""
 var settings = {"music": 0.6, "sfx": 0.8, "ambience": 0.55, "gentle": false, "tap": false, "quality": true}
 var notice_timer = 0.0
 var ui_timer = 0.0
-var frame_times: Array = []
 var qa = false
 var qa_profile = ""
 var qa_time = 0.0
@@ -75,6 +74,9 @@ var qa_driving_pointer = false
 var qa_profile_started = 0
 var qa_profile_frames: Array = []
 var qa_profile_previous = 0
+var qa_profile_duration = 60.0
+var qa_profile_restore = false
+var qa_profile_phases = {"working": [], "chorus": [], "restored": []}
 var qa_next_stroke = 3.0
 var qa_release_stroke = 0.0
 var qa_next_order = 20.0
@@ -88,6 +90,7 @@ func _ready():
 	_fit_screen()
 	if get_window().has_signal("mouse_exited"): get_window().connect("mouse_exited", _stop_input)
 	qa = "--qa" in OS.get_cmdline_user_args()
+	qa_profile_restore = qa and "--qa-profile-restore" in OS.get_cmdline_user_args()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--evidence="): qa_output = arg.trim_prefix("--evidence=")
 		if arg.begins_with("--qa-case="): qa_case = arg.trim_prefix("--qa-case=")
@@ -95,6 +98,7 @@ func _ready():
 			var token = arg.trim_prefix("--qa-profile=")
 			if token.is_valid_identifier() and token.length() <= 48: qa_profile = token
 			else: push_error("Invalid isolated QA profile token"); get_tree().quit(1); return
+		if qa and arg.begins_with("--qa-profile-seconds="): qa_profile_duration = clampf(float(arg.trim_prefix("--qa-profile-seconds=")), 60.0, 600.0)
 		if qa and arg.begins_with("--qa-zoom="): zoom = clampf(float(arg.trim_prefix("--qa-zoom=")), 0.85, 1.8); desired_zoom = zoom
 	_acquire_instance()
 	_load_progress()
@@ -233,8 +237,6 @@ func _process(delta):
 		environment_node.tick_environment(delta, sim.elapsed)
 		_sync_world(delta)
 		notice_timer = maxf(0, notice_timer - delta)
-		frame_times.append(delta * 1000)
-		if frame_times.size() > 14400: frame_times.pop_front()
 		audio.set_activity(sim.ratio(), sim.restoration, (brushing or brush_keyboard_held) and cursor_valid and not pending_dust_aim and mode == "brush", cursor_world)
 	ui_timer += delta
 	if ui_timer > 0.12:
@@ -897,6 +899,7 @@ func _notification(what):
 
 func _qa_capture(name: String):
 	qa_capturing = true
+	_update_ui()
 	await RenderingServer.frame_post_draw
 	DirAccess.make_dir_recursive_absolute(qa_output)
 	var image = get_viewport().get_texture().get_image()
@@ -929,9 +932,10 @@ func _qa_finish():
 	if qa_case == "ritual" and (not sim.completed or sim.restoration < 1 or not qa_report.get("recap_closed", false) or not qa_report.get("celebration_unpaused", false)): qa_report.status = "failed"
 	if qa_case == "helper" and (sim.crew.size() != 1 or qa_report.get("passive_assistance", 0.0) < 0.12 or sim.assignment == Vector2.INF): qa_report.status = "failed"
 	if qa_case == "workcrowd" and (sim.crew.size() != 50 or not qa_report.get("returned_to_work", false) or not gentle_motion or sim.assignment == Vector2.INF or qa_report.get("normal_peak_wisps", 0) > 40 or qa_report.get("gentle_peak_wisps", 0) > 10): qa_report.status = "failed"
+	if qa_case == "profile" and qa_profile_restore and (not qa_report.get("profile_bell_clicked", false) or sim.restoration < 1): qa_report.status = "failed"
 	if qa_case == "full" and (not sim.completed or not qa_report.get("recap_closed", false)): qa_report.status = "failed"
 	if not qa_profile.is_empty(): qa_report.merge({"isolated_save_path": _save_path(), "saved_payload": _payload(), "instance_primary": instance_primary, "save_problem": save_problem})
-	qa_report.merge({"kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.", "engine": Engine.get_version_info(), "case": qa_case, "helpers": sim.crew.size(), "first_helper_at": sim.first_helper_at, "elapsed": sim.elapsed, "cleaned": sim.cleaned, "motes": sim.motes, "restoration": sim.restoration, "completed": sim.completed, "viewport": str(get_viewport().get_visible_rect().size), "draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME), "objects": Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME)})
+	qa_report.merge({"kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.", "engine": Engine.get_version_info(), "case": qa_case, "helpers": sim.crew.size(), "first_helper_at": sim.first_helper_at, "first_upgrade_at": sim.first_upgrade_at, "upgrades": sim.upgrades.duplicate(), "stats": sim.stats.duplicate(), "elapsed": sim.elapsed, "cleaned": sim.cleaned, "motes": sim.motes, "restoration": sim.restoration, "completed": sim.completed, "viewport": str(get_viewport().get_visible_rect().size), "draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME), "objects": Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME)})
 	var file = FileAccess.open(qa_output.path_join("results.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify(qa_report, "  "))
 	file.close()
@@ -1220,12 +1224,24 @@ func _qa_driver(delta):
 			qa_profile_previous = qa_profile_started
 		elif qa_stage == 2:
 			var now = Time.get_ticks_usec()
-			qa_profile_frames.append((now - qa_profile_previous) / 1000.0)
+			var interval_ms = (now - qa_profile_previous) / 1000.0
+			qa_profile_frames.append(interval_ms)
+			var phase = "chorus" if sim.ritual else ("restored" if sim.restoration >= 1 else "working")
+			qa_profile_phases[phase].append(interval_ms)
 			qa_profile_previous = now
-			if now - qa_profile_started >= 60000000:
+			if qa_profile_restore and now - qa_profile_started >= 60000000 and not qa_report.has("profile_bell_clicked"):
+				qa_report.profile_bell_clicked = _qa_click("Ring the fountain bell")
+				qa_report.profile_bell_at_wall_seconds = (now - qa_profile_started) / 1000000.0
+			if now - qa_profile_started >= qa_profile_duration * 1000000:
 				qa_profile_frames.sort()
 				var over = qa_profile_frames.filter(func(value): return value > 33.4)
-				qa_report.performance = {"duration_seconds": (now - qa_profile_started) / 1000000.0, "samples": qa_profile_frames.size(), "frame_measurement": "Monotonic wall-clock microseconds between every _process callback; no discarded outliers or engine delta smoothing.", "p95_ms": qa_profile_frames[int(qa_profile_frames.size() * 0.95)], "p99_ms": qa_profile_frames[int(qa_profile_frames.size() * 0.99)], "worst_ms": qa_profile_frames[-1], "over_33_4_ms": over, "conditions": "Visible native Godot Metal Forward+, 1280x800 window, normal MSAA/shadows/audio,50-helper fixture. No movie or screenshots during measured interval."}
+				var phase_results: Dictionary = {}
+				for name in qa_profile_phases:
+					var values: Array = qa_profile_phases[name]
+					if values.is_empty(): continue
+					values.sort()
+					phase_results[name] = {"samples": values.size(), "p95_ms": values[int(values.size() * 0.95)], "p99_ms": values[int(values.size() * 0.99)], "worst_ms": values[-1], "over_33_4_count": values.filter(func(value): return value > 33.4).size()}
+				qa_report.performance = {"phases": phase_results, "restoration_sequence_requested": qa_profile_restore, "duration_seconds": (now - qa_profile_started) / 1000000.0, "samples": qa_profile_frames.size(), "frame_measurement": "Monotonic wall-clock microseconds between every _process callback; no discarded outliers or engine delta smoothing.", "p95_ms": qa_profile_frames[int(qa_profile_frames.size() * 0.95)], "p99_ms": qa_profile_frames[int(qa_profile_frames.size() * 0.99)], "worst_ms": qa_profile_frames[-1], "over_33_4_ms": over, "conditions": "Visible native Godot Metal Forward+, 1280x800 window, normal MSAA/shadows/audio,50-helper80%-clean starting fixture. Optional --qa-profile-restore rings the real bell after60wallseconds; no later state injection. No movie or screenshots during measurement."}
 				_qa_finish()
 	elif qa_case == "ritual":
 		if qa_stage == 0 and qa_time >= 1:

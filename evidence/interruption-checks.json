@@ -1,0 +1,315 @@
+{
+  "recordedAt": "2026-09-10T06:16:16.523Z",
+  "browser": "152.0.7977.83",
+  "conditions": "Fresh isolated headless browser contexts. Real keyboard brush input and navigation; no q.save or simulation advance. Not physical-device lifecycle or human usability evidence.",
+  "interruptions": [
+    {
+      "case": "reload-after-fresh-brushing",
+      "trial": 1,
+      "before": {
+        "cleaned": 0.38241500000000045,
+        "elapsed": 0.4780999999940395,
+        "brushed": 0.38241500000000045,
+        "storedCleaned": 0,
+        "storedElapsed": 0.011499999994039542
+      },
+      "after": {
+        "cleaned": 0.3824149999999982,
+        "elapsed": 0.49479999999403956,
+        "brushed": 0.38241500000000045,
+        "storedCleaned": 0,
+        "storedElapsed": 0.011499999994039542
+      },
+      "retained": true,
+      "lostCleaned": 2.275957200481571e-15
+    },
+    {
+      "case": "reload-after-fresh-brushing",
+      "trial": 2,
+      "before": {
+        "cleaned": 0.38258500000000034,
+        "elapsed": 0.479,
+        "brushed": 0.38258500000000034,
+        "storedCleaned": 0,
+        "storedElapsed": 0.012400000000000007
+      },
+      "after": {
+        "cleaned": 0.3825849999999986,
+        "elapsed": 0.4956,
+        "brushed": 0.38258500000000034,
+        "storedCleaned": 0,
+        "storedElapsed": 0.012400000000000007
+      },
+      "retained": true,
+      "lostCleaned": 1.7208456881689926e-15
+    },
+    {
+      "case": "reload-after-fresh-brushing",
+      "trial": 3,
+      "before": {
+        "cleaned": 0.38250000000000034,
+        "elapsed": 0.4958000000059604,
+        "brushed": 0.38250000000000034,
+        "storedCleaned": 0,
+        "storedElapsed": 0.029100000005960452
+      },
+      "after": {
+        "cleaned": 0.38249999999999873,
+        "elapsed": 0.5124000000059604,
+        "brushed": 0.38250000000000034,
+        "storedCleaned": 0,
+        "storedElapsed": 0.029100000005960452
+      },
+      "retained": true,
+      "lostCleaned": 1.609823385706477e-15
+    },
+    {
+      "case": "history-back-and-forward-after-fresh-brushing",
+      "before": {
+        "cleaned": 0.3825000000000004,
+        "elapsed": 0.4796000000059605,
+        "brushed": 0.3825000000000004,
+        "storedCleaned": 0,
+        "storedElapsed": 0.013000000005960459
+      },
+      "awayStored": {
+        "cleaned": 0,
+        "elapsed": 0.013000000005960459,
+        "journalMatches": true,
+        "journalCleaned": 0.38249999999999806,
+        "recoverableCleaned": 0.38249999999999806
+      },
+      "after": {
+        "cleaned": 0.38249999999999806,
+        "elapsed": 0.4963000000059604,
+        "brushed": 0.3825000000000004,
+        "storedCleaned": 0,
+        "storedElapsed": 0.013000000005960459
+      },
+      "retained": true,
+      "durablyStored": true
+    },
+    {
+      "case": "close-and-reopen-after-fresh-brushing",
+      "before": {
+        "cleaned": 0.3825000000000005,
+        "elapsed": 0.47910000001788133,
+        "brushed": 0.3825000000000005,
+        "storedCleaned": 0,
+        "storedElapsed": 0.012500000017881405
+      },
+      "after": {
+        "cleaned": 0.3824999999999985,
+        "elapsed": 0.47910000001788133,
+        "brushed": 0.3825000000000005,
+        "storedCleaned": 0,
+        "storedElapsed": 0.012500000017881405
+      },
+      "retained": true,
+      "lostCleaned": 1.9984014443252818e-15
+    }
+  ],
+  "settings": [
+    {
+      "kind": "malformed-json",
+      "initial": {
+        "stored": null,
+        "controls": [
+          {
+            "id": "music",
+            "value": "48",
+            "label": "48%"
+          },
+          {
+            "id": "sfx",
+            "value": "65",
+            "label": "65%"
+          },
+          {
+            "id": "ambience",
+            "value": "38",
+            "label": "38%"
+          }
+        ],
+        "audio": {
+          "ready": true,
+          "prepared": true,
+          "paused": true,
+          "contextState": "running",
+          "maxVoices": 48,
+          "peakVoices": 2,
+          "continuousSources": 3,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        },
+        "tap": false,
+        "motion": false,
+        "lightweight": false
+      },
+      "changed": {
+        "music": 0.23,
+        "sfx": 0.65,
+        "ambience": 0.38,
+        "muted": true,
+        "reducedMotion": false,
+        "tapSweep": false,
+        "lowQuality": false
+      },
+      "reloaded": {
+        "settings": {
+          "music": 0.23,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": true,
+          "reducedMotion": false,
+          "tapSweep": false,
+          "lowQuality": false
+        },
+        "musicLabel": "23%",
+        "sfxLabel": "65%",
+        "ambienceLabel": "38%",
+        "audio": {
+          "ready": false,
+          "prepared": false,
+          "paused": false,
+          "contextState": "uninitialized",
+          "maxVoices": 48,
+          "peakVoices": 0,
+          "continuousSources": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.23,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": true,
+            "reducedMotion": false
+          }
+        }
+      },
+      "validVolumes": true,
+      "validFlags": true,
+      "changedVolumeRetained": true,
+      "changedMuteRetained": true
+    },
+    {
+      "kind": "wrong-types",
+      "initial": {
+        "stored": {
+          "music": "loud",
+          "sfx": {},
+          "ambience": -8,
+          "muted": "false",
+          "tapSweep": "false",
+          "lowQuality": "false",
+          "reducedMotion": "false"
+        },
+        "controls": [
+          {
+            "id": "music",
+            "value": "48",
+            "label": "48%"
+          },
+          {
+            "id": "sfx",
+            "value": "65",
+            "label": "65%"
+          },
+          {
+            "id": "ambience",
+            "value": "38",
+            "label": "38%"
+          }
+        ],
+        "audio": {
+          "ready": true,
+          "prepared": true,
+          "paused": true,
+          "contextState": "running",
+          "maxVoices": 48,
+          "peakVoices": 2,
+          "continuousSources": 3,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        },
+        "tap": false,
+        "motion": false,
+        "lightweight": false
+      },
+      "changed": {
+        "music": 0.23,
+        "sfx": 0.65,
+        "ambience": 0.38,
+        "muted": true,
+        "reducedMotion": false,
+        "tapSweep": false,
+        "lowQuality": false
+      },
+      "reloaded": {
+        "settings": {
+          "music": 0.23,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": true,
+          "reducedMotion": false,
+          "tapSweep": false,
+          "lowQuality": false
+        },
+        "musicLabel": "23%",
+        "sfxLabel": "65%",
+        "ambienceLabel": "38%",
+        "audio": {
+          "ready": false,
+          "prepared": false,
+          "paused": false,
+          "contextState": "uninitialized",
+          "maxVoices": 48,
+          "peakVoices": 0,
+          "continuousSources": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.23,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": true,
+            "reducedMotion": false
+          }
+        }
+      },
+      "validVolumes": true,
+      "validFlags": true,
+      "changedVolumeRetained": true,
+      "changedMuteRetained": true
+    }
+  ],
+  "errors": [],
+  "journalConflict": {
+    "kind": "Two actual tabs: B loaded the same canonical revision before A wrote a newer interruption journal",
+    "primaryUnchanged": true,
+    "backupUnchanged": true,
+    "journalUnchanged": true,
+    "conflictShown": true,
+    "beforeCleaned": 0.3825000000000004,
+    "recoveredCleaned": 0.3824999999999994,
+    "passed": true
+  },
+  "summary": {
+    "interruptionsRetained": 5,
+    "interruptionsTested": 5,
+    "validSettingsCases": 2,
+    "settingsCases": 2,
+    "journalConflictPassed": true,
+    "errors": 0
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "recordedAt": "2026-09-10T06:05:01.214Z",
+  "browser": "152.0.7977.83",
+  "conditions": "Fresh isolated headless browser contexts. Real keyboard brush input and navigation; no q.save or simulation advance. Not physical-device lifecycle or human usability evidence.",
+  "interruptions": [
+    {
+      "case": "reload-after-fresh-brushing",
+      "trial": 1,
+      "before": {
+        "cleaned": 0.38250000000000045,
+        "elapsed": 0.4770999999999999,
+        "brushed": 0.38250000000000045,
+        "storedCleaned": 0,
+        "storedElapsed": 0.010399999999999977
+      },
+      "after": {
+        "cleaned": 0,
+        "elapsed": 0.010399999999999977,
+        "brushed": 0,
+        "storedCleaned": 0,
+        "storedElapsed": 0.010399999999999977
+      },
+      "retained": false,
+      "lostCleaned": 0.38250000000000045
+    },
+    {
+      "case": "reload-after-fresh-brushing",
+      "trial": 2,
+      "before": {
+        "cleaned": 0.3824150000000004,
+        "elapsed": 0.49480000001192087,
+        "brushed": 0.3824150000000004,
+        "storedCleaned": 0,
+        "storedElapsed": 0.028200000011920932
+      },
+      "after": {
+        "cleaned": 0,
+        "elapsed": 0.028200000011920932,
+        "brushed": 0,
+        "storedCleaned": 0,
+        "storedElapsed": 0.028200000011920932
+      },
+      "retained": false,
+      "lostCleaned": 0.3824150000000004
+    },
+    {
+      "case": "reload-after-fresh-brushing",
+      "trial": 3,
+      "before": {
+        "cleaned": 0.3824150000000004,
+        "elapsed": 0.4803000000059604,
+        "brushed": 0.3824150000000004,
+        "storedCleaned": 0,
+        "storedElapsed": 0.013700000005960462
+      },
+      "after": {
+        "cleaned": 0,
+        "elapsed": 0.013700000005960462,
+        "brushed": 0,
+        "storedCleaned": 0,
+        "storedElapsed": 0.013700000005960462
+      },
+      "retained": false,
+      "lostCleaned": 0.3824150000000004
+    },
+    {
+      "case": "history-back-and-forward-after-fresh-brushing",
+      "before": {
+        "cleaned": 0.3825000000000004,
+        "elapsed": 0.47799999999403947,
+        "brushed": 0.3825000000000004,
+        "storedCleaned": 0,
+        "storedElapsed": 0.011399999994039532
+      },
+      "awayStored": {
+        "cleaned": 0,
+        "elapsed": 0.011399999994039532
+      },
+      "after": {
+        "cleaned": 0,
+        "elapsed": 0.011399999994039532,
+        "brushed": 0,
+        "storedCleaned": 0,
+        "storedElapsed": 0.011399999994039532
+      },
+      "retained": false,
+      "durablyStored": false
+    },
+    {
+      "case": "close-and-reopen-after-fresh-brushing",
+      "before": {
+        "cleaned": 0.38250000000000034,
+        "elapsed": 0.47970000000596036,
+        "brushed": 0.38250000000000034,
+        "storedCleaned": 0,
+        "storedElapsed": 0.013100000005960467
+      },
+      "after": {
+        "cleaned": 0,
+        "elapsed": 0.013100000005960467,
+        "brushed": 0,
+        "storedCleaned": 0,
+        "storedElapsed": 0.013100000005960467
+      },
+      "retained": false,
+      "lostCleaned": 0.38250000000000034
+    }
+  ],
+  "settings": [
+    {
+      "kind": "malformed-json",
+      "initial": {
+        "controls": [
+          {
+            "id": "music",
+            "value": "48",
+            "label": "48%"
+          },
+          {
+            "id": "sfx",
+            "value": "65",
+            "label": "65%"
+          },
+          {
+            "id": "ambience",
+            "value": "38",
+            "label": "38%"
+          }
+        ],
+        "audio": {
+          "ready": true,
+          "prepared": true,
+          "paused": true,
+          "contextState": "running",
+          "maxVoices": 48,
+          "peakVoices": 2,
+          "continuousSources": 3,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        },
+        "tap": false,
+        "motion": false,
+        "lightweight": false
+      },
+      "changed": {
+        "music": 0.23,
+        "sfx": 0.65,
+        "ambience": 0.38,
+        "muted": true,
+        "reducedMotion": false,
+        "tapSweep": false,
+        "lowQuality": false
+      },
+      "reloaded": {
+        "settings": {
+          "music": 0.23,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": true,
+          "reducedMotion": false,
+          "tapSweep": false,
+          "lowQuality": false
+        },
+        "musicLabel": "23%",
+        "sfxLabel": "65%",
+        "ambienceLabel": "38%",
+        "audio": {
+          "ready": false,
+          "prepared": false,
+          "paused": false,
+          "contextState": "uninitialized",
+          "maxVoices": 48,
+          "peakVoices": 0,
+          "continuousSources": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.23,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": true,
+            "reducedMotion": false
+          }
+        }
+      },
+      "validVolumes": true,
+      "validFlags": true,
+      "changedVolumeRetained": true,
+      "changedMuteRetained": true
+    },
+    {
+      "kind": "wrong-types",
+      "initial": {
+        "stored": {
+          "music": "loud",
+          "sfx": {},
+          "ambience": -8,
+          "muted": "false",
+          "tapSweep": "false",
+          "lowQuality": "false",
+          "reducedMotion": "false"
+        },
+        "controls": [
+          {
+            "id": "music",
+            "value": "50",
+            "label": "NaN%"
+          },
+          {
+            "id": "sfx",
+            "value": "50",
+            "label": "NaN%"
+          },
+          {
+            "id": "ambience",
+            "value": "0",
+            "label": "-800%"
+          }
+        ],
+        "audio": {
+          "ready": true,
+          "prepared": true,
+          "paused": true,
+          "contextState": "running",
+          "maxVoices": 48,
+          "peakVoices": 2,
+          "continuousSources": 3,
+          "progress": 0,
+          "mix": {
+            "music": 0.6,
+            "sfx": 0.8,
+            "ambience": 0,
+            "muted": true,
+            "reducedMotion": true
+          }
+        },
+        "tap": true,
+        "motion": true,
+        "lightweight": true
+      },
+      "changed": {
+        "music": 0.23,
+        "sfx": {},
+        "ambience": -8,
+        "muted": false,
+        "reducedMotion": "false",
+        "tapSweep": "false",
+        "lowQuality": "false"
+      },
+      "reloaded": {
+        "settings": {
+          "music": 0.23,
+          "sfx": {},
+          "ambience": -8,
+          "muted": false,
+          "reducedMotion": "false",
+          "tapSweep": "false",
+          "lowQuality": "false"
+        },
+        "musicLabel": "23%",
+        "sfxLabel": "NaN%",
+        "ambienceLabel": "-800%",
+        "audio": {
+          "ready": false,
+          "prepared": false,
+          "paused": false,
+          "contextState": "uninitialized",
+          "maxVoices": 48,
+          "peakVoices": 0,
+          "continuousSources": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.23,
+            "sfx": 0.8,
+            "ambience": 0,
+            "muted": false,
+            "reducedMotion": true
+          }
+        }
+      },
+      "validVolumes": false,
+      "validFlags": false,
+      "changedVolumeRetained": true,
+      "changedMuteRetained": true
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "interruptionsRetained": 0,
+    "interruptionsTested": 5,
+    "validSettingsCases": 1,
+    "settingsCases": 2,
+    "errors": 0
+  }
+}

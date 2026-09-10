@@ -50,6 +50,7 @@ var grow_button: Button
 var restore_button: Button
 var modal: PanelContainer
 var modal_kind = ""
+var settings_status: Label
 var upgrade_buttons = {}
 var save_timer = 0.0
 var saved_once = false
@@ -610,7 +611,10 @@ func _modal(title: String, kind: String, width = 450) -> VBoxContainer:
 
 func _fit_modal():
 	if not is_instance_valid(modal): return
-	var height = maxf(350, modal.get_combined_minimum_size().y)
+	if modal_kind == "settings" and is_instance_valid(settings_status):
+		var compact = settings_status.visible and get_viewport().get_visible_rect().size.y < 750
+		settings_status.get_parent().add_theme_constant_override("separation", 8 if compact else 14)
+	var height = maxf(220 if modal_kind == "complete" else 350, modal.get_combined_minimum_size().y)
 	modal.offset_top = -height * 0.5
 	modal.offset_bottom = height * 0.5
 
@@ -691,7 +695,11 @@ func _show_settings():
 	if not started: return
 	_save_progress()
 	var column = _modal("A quiet moment", "settings", 480)
-	if not save_problem.is_empty(): _body(column, save_problem)
+	settings_status = _label(save_problem, 17)
+	settings_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	settings_status.custom_minimum_size.x = 390
+	settings_status.visible = not save_problem.is_empty()
+	column.add_child(settings_status)
 	for key in ["music", "sfx", "ambience"]:
 		var row = HBoxContainer.new()
 		row.add_theme_constant_override("separation", 18)
@@ -757,10 +765,11 @@ func _show_help():
 	column.add_child(_button("Back to settings", _show_settings, 430))
 
 func _show_completion():
-	var column = _modal("The courtyard is awake", "complete")
-	_body(column, "Every little speck found its place.\nThe fountain flows again.")
-	_body(column, ("Your restored courtyard is saved." if save_problem.is_empty() else save_problem) + "\nThe canal is the next planned place; it is not in this development build.")
-	column.add_child(_button("Enjoy the courtyard", _close_modal, 390))
+	var column = _modal("Courtyard restored", "complete")
+	_body(column, "Your restored courtyard is saved." if save_problem.is_empty() else save_problem)
+	var enjoy = _button("Enjoy the courtyard", _close_modal, 390)
+	column.add_child(enjoy)
+	enjoy.grab_focus()
 
 func _restore():
 	if sim.completed:
@@ -779,6 +788,7 @@ func _update_ui():
 	if notice_timer <= 0:
 		if sim.completed: tip.text = "Courtyard restored"
 		elif sim.ritual: tip.text = "The fountain chorus…"
+		elif sim.restoration >= 1.0: tip.text = "Your helpers are finishing the cleanup."
 		elif sim.upgrades.bloom and sim.restoration < 1: tip.text = "Ring the fountain bell when you’re ready." if sim.ratio() >= 0.75 else "Clear 75%% to awaken the fountain  ·  %d%%" % floori(sim.ratio() * 100)
 		elif mode == "direct": tip.text = "Choose open paving. Your crew will tidy nearby."
 		elif sim.crew.is_empty(): tip.text = "Hold and sweep over a dusty patch."
@@ -838,7 +848,17 @@ func _load_settings(data: Variant):
 	for key in ["gentle", "tap", "quality"]:
 		if data.get(key) is bool: settings[key] = data[key]
 
+func _settings_notice(message: String):
+	if modal_kind != "settings" or not is_instance_valid(settings_status): return
+	settings_status.text = message + ("\nDevice saving is still unavailable." if not save_problem.is_empty() else "")
+	settings_status.show()
+	call_deferred("_fit_modal")
+
+func _restore_settings_focus(control: Control):
+	if modal_kind == "settings" and is_instance_valid(control) and control.is_visible_in_tree(): control.grab_focus()
+
 func _export_save():
+	var return_focus = get_viewport().gui_get_focus_owner()
 	var dialog = FileDialog.new()
 	dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
 	dialog.access = FileDialog.ACCESS_FILESYSTEM
@@ -847,13 +867,17 @@ func _export_save():
 	dialog.add_filter("*.json", "Dustlings save")
 	add_child(dialog)
 	dialog.file_selected.connect(func(file):
-		if save_store.export_copy(file, _payload()): _notice("A copy is saved.")
-		else: _notice("The copy could not be saved. Try another folder.")
-		dialog.queue_free())
-	dialog.canceled.connect(dialog.queue_free)
+		if save_store.export_copy(file, _payload()): _settings_notice("A copy is saved.")
+		else: _settings_notice("The copy could not be saved. Try another folder.")
+		dialog.queue_free()
+		_restore_settings_focus.call_deferred(return_focus))
+	dialog.canceled.connect(func():
+		dialog.queue_free()
+		_restore_settings_focus.call_deferred(return_focus))
 	dialog.popup_centered_ratio(0.7)
 
 func _import_save():
+	var return_focus = get_viewport().gui_get_focus_owner()
 	var dialog = FileDialog.new()
 	dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	dialog.access = FileDialog.ACCESS_FILESYSTEM
@@ -874,9 +898,12 @@ func _import_save():
 			_save_progress()
 			_close_modal()
 			_notice("Your courtyard is here.")
-		else: _notice("That is not a valid 3D courtyard save. Your progress is unchanged.")
-		dialog.queue_free())
-	dialog.canceled.connect(dialog.queue_free)
+		else: _settings_notice("That is not a valid 3D courtyard save. Your progress is unchanged.")
+		dialog.queue_free()
+		_restore_settings_focus.call_deferred(return_focus))
+	dialog.canceled.connect(func():
+		dialog.queue_free()
+		_restore_settings_focus.call_deferred(return_focus))
 	dialog.popup_centered_ratio(0.7)
 
 func _quit_safely(code = 0):
@@ -929,7 +956,7 @@ func _qa_fixture(restored: bool):
 func _qa_finish():
 	if not qa_profile.is_empty() and started and instance_primary: _save_progress()
 	qa_report["status"] = "failed" if qa_case == "opening" and (not sim.upgrades.brush or sim.assignment == Vector2.INF or sim.first_helper_at < 0 or sim.first_helper_at > 30) else "recorded"
-	if qa_case == "ritual" and (not sim.completed or sim.restoration < 1 or not qa_report.get("recap_closed", false) or not qa_report.get("celebration_unpaused", false)): qa_report.status = "failed"
+	if qa_case == "ritual" and (not sim.completed or sim.restoration < 1 or not qa_report.get("recap_closed", false) or not qa_report.get("recap_keyboard_focus", false) or not qa_report.get("celebration_unpaused", false)): qa_report.status = "failed"
 	if qa_case == "helper" and (sim.crew.size() != 1 or qa_report.get("passive_assistance", 0.0) < 0.12 or sim.assignment == Vector2.INF): qa_report.status = "failed"
 	if qa_case == "workcrowd" and (sim.crew.size() != 50 or not qa_report.get("returned_to_work", false) or not gentle_motion or sim.assignment == Vector2.INF or qa_report.get("normal_peak_wisps", 0) > 40 or qa_report.get("gentle_peak_wisps", 0) > 10): qa_report.status = "failed"
 	if qa_case == "profile" and qa_profile_restore and (not qa_report.get("profile_bell_clicked", false) or sim.restoration < 1): qa_report.status = "failed"
@@ -1270,7 +1297,10 @@ func _qa_driver(delta):
 			_qa_capture("recap")
 		elif qa_stage == 6 and qa_time >= qa_report.completed_at + 10:
 			qa_stage = 7
-			qa_report.recap_closed = _qa_click("Enjoy the courtyard") and modal_kind == "" and not paused
+			var focused = get_viewport().gui_get_focus_owner()
+			qa_report.recap_keyboard_focus = focused is Button and focused.text == "Enjoy the courtyard"
+			_qa_key(KEY_ENTER)
+			qa_report.recap_closed = modal_kind == "" and not paused
 		elif qa_stage == 7 and qa_time >= qa_report.completed_at + 12:
 			qa_report.fixture = "All cleanup completed; fountain unawakened. Real-time chorus and ending triggered through visible bell."
 			_qa_finish()

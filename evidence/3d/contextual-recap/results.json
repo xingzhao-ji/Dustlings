@@ -1,0 +1,43 @@
+{
+  "case": "ritual",
+  "celebration_unpaused": true,
+  "cleaned": 492.0,
+  "completed": true,
+  "completed_at": 28.6583333333339,
+  "draw_calls": 306.0,
+  "elapsed": 236.666666666696,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "first_helper_at": 200,
+  "first_upgrade_at": 200,
+  "fixture": "All cleanup completed; fountain unawakened. Real-time chorus and ending triggered through visible bell.",
+  "helpers": 50,
+  "kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.",
+  "motes": 370,
+  "objects": 604.0,
+  "recap_closed": true,
+  "recap_keyboard_focus": true,
+  "recap_opened": true,
+  "restoration": 1.0,
+  "stats": {
+    "assisted": 492.0,
+    "brushed": 0.0,
+    "orders": 0
+  },
+  "status": "recorded",
+  "upgrades": {
+    "bloom": true,
+    "brush": true,
+    "teamwork": true
+  },
+  "viewport": "(1440.0, 900.0)"
+}

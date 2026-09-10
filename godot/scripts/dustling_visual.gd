@@ -75,7 +75,7 @@ func pose(delta: float, elapsed: float, speed: float, working: float, birth_age:
 		contact = 0.30
 		sweep = 0.0
 		preparing = 0.0
-	_contact_strength = contact * work_weight if working_now else 0.0
+	_contact_strength = contact * work_weight if working_now and speed < 0.08 else 0.0
 	_contact_point = Vector3.ZERO
 	_stride += maxf(speed, 0) * dt * TAU / 0.28
 	var mood := elapsed + _phase

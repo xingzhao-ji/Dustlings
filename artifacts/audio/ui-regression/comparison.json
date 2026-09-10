@@ -1,0 +1,14 @@
+{
+  "comparison": [
+    "artifacts/audio/courtyard-audition.wav",
+    "artifacts/audio/ui-regression/courtyard-audition.wav"
+  ],
+  "samples": [
+    3175200,
+    3175200
+  ],
+  "changedSamples": 130,
+  "maximumPCM16Difference": 1,
+  "moreThanOneLSB": 0,
+  "interpretation": "Existing 36-second score/game-cue audition differs in 130 PCM16 samples by at most one least-significant bit; no game-cue level, motif, noise buffer, or reverb source was intentionally changed. This comparison is numerical, not a listening assessment."
+}

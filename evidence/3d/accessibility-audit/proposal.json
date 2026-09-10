@@ -1,7 +1,7 @@
 {
   "baseline_main_sha256": "4eb4f15e2d75b6337941c6bee880e762adc8ff5f86e8d65fb5ffd63d38e4e51b",
   "candidate_main_sha256": "7893e39a2af90360a2cb9c6e90a611e371fe5b1641f1976f649fb132b4ac0b22",
-  "status": "Lead integrated the Settings patch; merged native 133-check and separate 10-check valid-import runs passed",
+  "status": "Settings feedback integrated; final 30/30 native keyboard handoff/Tab/modal/deferred-free checks passed, with separate 5/5 Help checks",
   "scope": "Settings-local copy outcomes and dialog focus restoration; canonical runtime unchanged",
   "runs": {
     "baseline": {
@@ -38,6 +38,55 @@
       "passed": 10,
       "failed": 0,
       "report": "valid-import/results.json"
+    },
+    "focus-before": {
+      "main_sha256": "2f43c73116288e0e104523f220baab9942416dc68c6e03c7566d423318f4224f",
+      "pid": 46630,
+      "passed": 7,
+      "failed": 3,
+      "report": "focus-before/results.json"
+    },
+    "focus-after-initial": {
+      "main_sha256": "35519247e4c00627ba6d75f3e7fc6d36c5598c0946eaab4ffd851b9670b2ce18",
+      "pid": 46772,
+      "passed": 20,
+      "failed": 1,
+      "report": "focus-after-initial/results.json"
+    },
+    "focus-after-entry-only": {
+      "main_sha256": "8a0d276f5ddd84de959c09a80c91822049c74f38749779bdf0499267bae49b92",
+      "pid": 46845,
+      "passed": 21,
+      "failed": 2,
+      "report": "focus-after-entry-only/results.json"
+    },
+    "focus-after-combined-space": {
+      "main_sha256": "8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8",
+      "pid": 47003,
+      "passed": 27,
+      "failed": 1,
+      "report": "focus-after-combined-space/results.json"
+    },
+    "focus-after": {
+      "main_sha256": "8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8",
+      "pid": 47050,
+      "passed": 30,
+      "failed": 0,
+      "report": "focus-after/results.json"
+    },
+    "help-before": {
+      "main_sha256": "2f43c73116288e0e104523f220baab9942416dc68c6e03c7566d423318f4224f",
+      "pid": 46695,
+      "passed": 1,
+      "failed": 3,
+      "report": "help-before/results.json"
+    },
+    "help-after": {
+      "main_sha256": "8a0d276f5ddd84de959c09a80c91822049c74f38749779bdf0499267bae49b92",
+      "pid": 46855,
+      "passed": 5,
+      "failed": 0,
+      "report": "help-after/results.json"
     }
   },
   "limitations": [
@@ -49,5 +98,18 @@
     "pid": 46378,
     "path": "valid-import-initial/",
     "reason": "Probe accessed nonexistent serialized game.cleaned; fixed to derive through Sim.restore; terminated process and preserved failure"
-  }
+  },
+  "current_tested_main_sha256": "8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8",
+  "typed_deferred_control_failure": {
+    "pid": 46630,
+    "log": "focus-before.log",
+    "correction": "Lead changed typed Control argument to untyped so is_instance_valid can guard a freed reference",
+    "verification": "Eight actual valid-import/free cycles in final 30-check native run, no diagnostics"
+  },
+  "combined_space_probe_failure": {
+    "pid": 47003,
+    "path": "focus-after-combined-space/",
+    "reason": "Probe expected arrow after explicit Brush activation to stay in GUI; corrected checks separate GUI navigation, tool activation and subsequent world aim"
+  },
+  "help_after_implementation_identical_in_final_source": true
 }

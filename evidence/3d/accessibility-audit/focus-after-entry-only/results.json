@@ -1,0 +1,228 @@
+{
+  "cases": [
+    {
+      "after_D": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "direct",
+        "pointer": "(0.0, 0.0)"
+      },
+      "after_Enter": {
+        "assignment": "(-3.999999, 1.999998)",
+        "brushed": 14.0,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "direct",
+        "pointer": "(0.0, 0.0)"
+      },
+      "before": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(0.0, 0.0)"
+      },
+      "id": "Return-D-Enter"
+    },
+    {
+      "after_D": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "direct",
+        "pointer": "(0.0, 0.0)"
+      },
+      "after_Enter": {
+        "assignment": "(0.031574, -3.860968)",
+        "brushed": 14.0,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "direct",
+        "pointer": "(826.9617, 351.8908)"
+      },
+      "before": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(0.0, 0.0)"
+      },
+      "id": "Return-D-N-Enter"
+    },
+    {
+      "after": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(508.6153, 434.8898)"
+      },
+      "before": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(0.0, 0.0)"
+      },
+      "id": "Return-arrow"
+    },
+    {
+      "after": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0991666666667,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(490.6153, 434.8898)"
+      },
+      "during": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "<Object#null>",
+        "held": true,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(490.6153, 434.8898)"
+      },
+      "id": "Return-Space"
+    },
+    {
+      "after": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.1983333333334,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(863.3568, 358.6735)"
+      },
+      "during": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0991666666667,
+        "focus": "<Object#null>",
+        "held": true,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(863.3568, 358.6735)"
+      },
+      "id": "Return-N-arrow-Space"
+    },
+    {
+      "after_D": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.1983333333334,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "direct",
+        "pointer": "(863.3568, 358.6735)"
+      },
+      "after_Enter": {
+        "assignment": "(-3.999999, 1.999998)",
+        "brushed": 14.1983333333334,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "direct",
+        "pointer": "(863.3568, 358.6735)"
+      },
+      "before": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.1983333333334,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(863.3568, 358.6735)"
+      },
+      "id": "Import-D-Enter"
+    },
+    {
+      "after_ShiftTab": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.1983333333334,
+        "focus": "Settings",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(0.0, 0.0)"
+      },
+      "after_Tab": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.1983333333334,
+        "focus": "Settings",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(0.0, 0.0)"
+      },
+      "button_focus_mode": 2,
+      "id": "HUD-Tab",
+      "tab_matches_ui_focus_next": true
+    }
+  ],
+  "checks": [
+    "Return-D-Enter: D selects Direct",
+    "Return-D-Enter: Enter directs without a focused HUD action replacing the tool",
+    "Return-D-N-Enter: D selects Direct",
+    "Return-D-N-Enter: Enter directs without a focused HUD action replacing the tool",
+    "Return-arrow: arrow aims in the world",
+    "Return-Space: held Space brushes the visible ground target",
+    "Return-N-arrow: arrow changes the existing world aim",
+    "Return-N-Space: held Space brushes after the explicit N handoff",
+    "Import-D-Enter: D selects Direct",
+    "Import-D-Enter: Enter directs without a focused HUD action replacing the tool",
+    "Keyboard activation of Direct hands focus back to the world",
+    "Modal slider arrow changes volume while preserving modal focus and world pause",
+    "Tab traversal stays within all ten enabled Settings controls",
+    "Valid import cycle 1 frees Settings and leaves intended world focus",
+    "Valid import cycle 2 frees Settings and leaves intended world focus",
+    "Valid import cycle 3 frees Settings and leaves intended world focus",
+    "Valid import cycle 4 frees Settings and leaves intended world focus",
+    "Valid import cycle 5 frees Settings and leaves intended world focus",
+    "Valid import cycle 6 frees Settings and leaves intended world focus",
+    "Valid import cycle 7 frees Settings and leaves intended world focus",
+    "Valid import cycle 8 frees Settings and leaves intended world focus"
+  ],
+  "failures": [
+    "Tab/Shift-Tab can enter and traverse the visible HUD after world handoff",
+    "Subsequent Tab traversal reaches all seven visible HUD actions"
+  ],
+  "main_sha256": "8a0d276f5ddd84de959c09a80c91822049c74f38749779bdf0499267bae49b92",
+  "pid": 46845,
+  "qa_storage": "/Users/xingzhaoji/Library/Caches/dustlings-accessibility-46845-470654",
+  "scope": "Native viewport-generated key events after actual Enter-return and production valid-import callback. Controlled two-helper progress and parked valid pointer; no physical input/human claim."
+}

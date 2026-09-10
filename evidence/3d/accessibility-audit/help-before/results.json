@@ -1,0 +1,20 @@
+{
+  "after_initial_Enter": {
+    "focus": "<Object#null>",
+    "modal": "help"
+  },
+  "checks": [
+    "Keyboard Enter opens Help through its real Settings button"
+  ],
+  "failures": [
+    "Help gives the player a visible initial focused action",
+    "Default Tab traversal reaches only the two Help actions",
+    "Keyboard activation of Back returns safely to paused Settings"
+  ],
+  "first_Tab": "<Object#null>",
+  "initial_focus": "<Object#null>",
+  "main_sha256": "2f43c73116288e0e104523f220baab9942416dc68c6e03c7566d423318f4224f",
+  "pid": 46695,
+  "scope": "One native generated keyboard Help-entry/navigation check; no physical input or human comfort judgment",
+  "second_Tab": "<Object#null>"
+}

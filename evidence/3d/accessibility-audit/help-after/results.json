@@ -1,0 +1,20 @@
+{
+  "after_initial_Enter": {
+    "focus": "Return to the courtyard",
+    "modal": "settings"
+  },
+  "checks": [
+    "Keyboard Enter opens Help through its real Settings button",
+    "Help gives the player a visible initial focused action",
+    "A fresh Enter activates the explicit Help Back action",
+    "Default Tab traversal reaches only the two Help actions",
+    "Keyboard activation of Back returns safely to paused Settings"
+  ],
+  "failures": [],
+  "first_Tab": "Let the crew roam",
+  "initial_focus": "Back to settings",
+  "main_sha256": "8a0d276f5ddd84de959c09a80c91822049c74f38749779bdf0499267bae49b92",
+  "pid": 46855,
+  "scope": "One native generated keyboard Help-entry/navigation check; no physical input or human comfort judgment",
+  "second_Tab": "Back to settings"
+}

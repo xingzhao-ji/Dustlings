@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)
+
+FOCUS_PROBE pid=46630 isolated_storage=/Users/xingzhaoji/Library/Caches/dustlings-accessibility-46630-470191
+ERROR: Error calling deferred method: 'Node3D::_restore_settings_focus': Cannot convert argument 1 from Object to Object.
+   at: _call_function (core/object/message_queue.cpp:220)
+FOCUS_RESULT passed=7 failed=3
+OBSERVED_FAILURE: Return-D-Enter: Enter directs without a focused HUD action replacing the tool
+OBSERVED_FAILURE: Return-arrow: arrow aims in the world
+OBSERVED_FAILURE: Import-D-Enter: Enter directs without a focused HUD action replacing the tool

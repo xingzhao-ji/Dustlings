@@ -1,0 +1,190 @@
+{
+  "cases": [
+    {
+      "after_D": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "Brush  B",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "direct",
+        "pointer": "(0.0, 0.0)"
+      },
+      "after_Enter": {
+        "assignment": "(-3.999999, 1.999998)",
+        "brushed": 14.0,
+        "focus": "Brush  B",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(0.0, 0.0)"
+      },
+      "before": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "Brush  B",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(0.0, 0.0)"
+      },
+      "id": "Return-D-Enter"
+    },
+    {
+      "after_D": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "Brush  B",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "direct",
+        "pointer": "(0.0, 0.0)"
+      },
+      "after_Enter": {
+        "assignment": "(0.031574, -3.860968)",
+        "brushed": 14.0,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "direct",
+        "pointer": "(826.9617, 351.8908)"
+      },
+      "before": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "Brush  B",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(0.0, 0.0)"
+      },
+      "id": "Return-D-N-Enter"
+    },
+    {
+      "after": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "Direct  D",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(0.0, 0.0)"
+      },
+      "before": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "Brush  B",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(0.0, 0.0)"
+      },
+      "id": "Return-arrow"
+    },
+    {
+      "after": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.1133333333334,
+        "focus": "Brush  B",
+        "held": false,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(490.6153, 434.8898)"
+      },
+      "during": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.0,
+        "focus": "Brush  B",
+        "held": true,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(490.6153, 434.8898)"
+      },
+      "id": "Return-Space"
+    },
+    {
+      "after": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.2125,
+        "focus": "<Object#null>",
+        "held": false,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(863.3568, 358.6735)"
+      },
+      "during": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.1133333333334,
+        "focus": "<Object#null>",
+        "held": true,
+        "keyboard_aim": true,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(863.3568, 358.6735)"
+      },
+      "id": "Return-N-arrow-Space"
+    },
+    {
+      "after_D": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.2125,
+        "focus": "Brush  B",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "direct",
+        "pointer": "(863.3568, 358.6735)"
+      },
+      "after_Enter": {
+        "assignment": "(-3.999999, 1.999998)",
+        "brushed": 14.2125,
+        "focus": "Brush  B",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(863.3568, 358.6735)"
+      },
+      "before": {
+        "assignment": "(inf, inf)",
+        "brushed": 14.2125,
+        "focus": "Brush  B",
+        "held": false,
+        "keyboard_aim": false,
+        "modal": "",
+        "mode": "brush",
+        "pointer": "(863.3568, 358.6735)"
+      },
+      "id": "Import-D-Enter"
+    }
+  ],
+  "checks": [
+    "Return-D-Enter: D selects Direct",
+    "Return-D-N-Enter: D selects Direct",
+    "Return-D-N-Enter: Enter directs without a focused HUD action replacing the tool",
+    "Return-Space: held Space brushes the visible ground target",
+    "Return-N-arrow: arrow changes the existing world aim",
+    "Return-N-Space: held Space brushes after the explicit N handoff",
+    "Import-D-Enter: D selects Direct"
+  ],
+  "failures": [
+    "Return-D-Enter: Enter directs without a focused HUD action replacing the tool",
+    "Return-arrow: arrow aims in the world",
+    "Import-D-Enter: Enter directs without a focused HUD action replacing the tool"
+  ],
+  "main_sha256": "2f43c73116288e0e104523f220baab9942416dc68c6e03c7566d423318f4224f",
+  "pid": 46630,
+  "qa_storage": "/Users/xingzhaoji/Library/Caches/dustlings-accessibility-46630-470191",
+  "scope": "Native viewport-generated key events after actual Enter-return and production valid-import callback. Controlled two-helper progress and parked valid pointer; no physical input/human claim."
+}

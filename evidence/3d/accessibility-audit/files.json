@@ -1,8 +1,8 @@
 [
   {
     "file": "README.md",
-    "bytes": 3272,
-    "sha256": "a1471aab7250f28faf23a5fd93013d244a43b5f8c925e69800fef97a8e80a2b9"
+    "bytes": 4620,
+    "sha256": "56e5f1978fab3e7fade91d1765cb0062feb54171826fd41d0f09254b3ae77b45"
   },
   {
     "file": "baseline/1280-invalid-json.png",
@@ -160,6 +160,141 @@
     "sha256": "8ba6299a8c37b6309a53a222ac0323ca2ee0a806debabf98528339b7f65bb1b1"
   },
   {
+    "file": "focus-after/after-import-D-Enter.png",
+    "bytes": 661312,
+    "sha256": "509da658af39c5a824452dfce582798634fc8e1b43fd94975fe93bed8110cf3b"
+  },
+  {
+    "file": "focus-after/results.json",
+    "bytes": 8123,
+    "sha256": "5a4a407a14d87f39f4444bc6e90f51803e995a8153297db6a5ecbf50bc84772b"
+  },
+  {
+    "file": "focus-after-combined-space/after-import-D-Enter.png",
+    "bytes": 661316,
+    "sha256": "8f1a9014c5e3d2e1105ea7f594589b78e1c79c666b4cac5de3419792e0b81d26"
+  },
+  {
+    "file": "focus-after-combined-space/native_focus_probe.gd",
+    "bytes": 9823,
+    "sha256": "e354e4dfb6fd22ca3e5203deb78c9f58125f8c52d420053670aa104012fe7051"
+  },
+  {
+    "file": "focus-after-combined-space/results.json",
+    "bytes": 7350,
+    "sha256": "a522611b9f0d9a2712f1ebbffca46f3597bd5366b9af4c968028638eaeb4c28f"
+  },
+  {
+    "file": "focus-after-combined-space.log",
+    "bytes": 370,
+    "sha256": "e266535452f92c3b98e53978ec6744d07c10b183e391628d937c70ba23c93a32"
+  },
+  {
+    "file": "focus-after-entry-only/after-import-D-Enter.png",
+    "bytes": 661316,
+    "sha256": "5ceb370e8437847c48230e6fbfa22b550d01a9f4dd145c4bf308449082b03fb3"
+  },
+  {
+    "file": "focus-after-entry-only/main.gd",
+    "bytes": 58273,
+    "sha256": "8a0d276f5ddd84de959c09a80c91822049c74f38749779bdf0499267bae49b92"
+  },
+  {
+    "file": "focus-after-entry-only/native_focus_probe.gd",
+    "bytes": 7378,
+    "sha256": "e1a9ea62715a0b665da3c755e352cc7e342bb0430cc3b8319fff4c12a4a3bced"
+  },
+  {
+    "file": "focus-after-entry-only/results.json",
+    "bytes": 6955,
+    "sha256": "d72fedaf3cb03c3677ce304c18815547cbf50899a458f37de50c4e305c2d7b6b"
+  },
+  {
+    "file": "focus-after-entry-only.log",
+    "bytes": 456,
+    "sha256": "2a40df216c30726db97ddbde6e0e21b0f0f92d00c116e5659ae243aa16e9fdd6"
+  },
+  {
+    "file": "focus-after-initial/after-import-D-Enter.png",
+    "bytes": 661338,
+    "sha256": "b97d14fde2a6e8b7d10aaf8cf44028c764bd8ddf8d84eefc00227baa8d36ad3e"
+  },
+  {
+    "file": "focus-after-initial/native_focus_probe.gd",
+    "bytes": 6541,
+    "sha256": "f2bcdf26d487e7d0db2c6da3b0b6f638d333dbe538657c0b99edbf51226ed2d3"
+  },
+  {
+    "file": "focus-after-initial/results.json",
+    "bytes": 6827,
+    "sha256": "47ffeeea926869b27105df8e0c4b9311d9c73e68bc2b6ad7a1e83b3e17c3370b"
+  },
+  {
+    "file": "focus-after-initial.log",
+    "bytes": 375,
+    "sha256": "a67dc841875337d688fce9607b00b030de2680539c78c9b816fb83621a54bd8e"
+  },
+  {
+    "file": "focus-after.log",
+    "bytes": 284,
+    "sha256": "02df3bf36c2e4edbbfc20a4c84cad5ffb8fdde589afcfbe2c3314594652b9453"
+  },
+  {
+    "file": "focus-before/after-import-D-Enter.png",
+    "bytes": 662249,
+    "sha256": "5f2132ff144dcdc0811c10ae05d97497d929a30e337d0ab0c8dc53c06a8aabf4"
+  },
+  {
+    "file": "focus-before/native_focus_probe.gd",
+    "bytes": 4596,
+    "sha256": "d873524e05e3c6765b5c5445ff846d72f1456c5cafcc5b87769fc4dbddfed80a"
+  },
+  {
+    "file": "focus-before/results.json",
+    "bytes": 5239,
+    "sha256": "7af511d47e6bf6348cf92bce4ef353d3bddb402f1f3762ec09874d714b6276d6"
+  },
+  {
+    "file": "focus-before.log",
+    "bytes": 711,
+    "sha256": "14db8544980809b76a6ab4d8a2d9ba4462486eaee8e6e38e9f455e24835ca205"
+  },
+  {
+    "file": "help-after/help-entry.png",
+    "bytes": 472553,
+    "sha256": "485062ddcc2723320dbdc3241f7d3872d6a7b2d702b943efd1b2cc0cffab0ac2"
+  },
+  {
+    "file": "help-after/results.json",
+    "bytes": 784,
+    "sha256": "8eaf07d643330dbedcb1cffa73e6faf83149a0eb063d7c37ddcc1f9a21cfbead"
+  },
+  {
+    "file": "help-after.log",
+    "bytes": 214,
+    "sha256": "746ced467fa35bf374c2aeb3705e43b541f175a9a5905883f394e8427d0554a5"
+  },
+  {
+    "file": "help-before/help-entry.png",
+    "bytes": 471991,
+    "sha256": "f0a80206abf4e07caf0778452dbf0a838c521f1e1b00279f97cfd6d33d503d62"
+  },
+  {
+    "file": "help-before/native_help_probe.gd",
+    "bytes": 2202,
+    "sha256": "c823cfc6085c97e1088153b02d1cba08636622f927d2d3bf2a5fec36b0e2eaaa"
+  },
+  {
+    "file": "help-before/results.json",
+    "bytes": 701,
+    "sha256": "66f2d51226d2b20e2363cb2549ad47b249d8d81100932089a06fa83583e315eb"
+  },
+  {
+    "file": "help-before.log",
+    "bytes": 211,
+    "sha256": "69fa7ee2b357bfc309563df2c55d868307c6e69c60b12cd371bb149fd014067f"
+  },
+  {
     "file": "integrated/1280-invalid-json.png",
     "bytes": 411279,
     "sha256": "ef99da2485362300454693825e15f6907a0fd1990d0fc758d42c25ee0eecfab4"
@@ -215,6 +350,16 @@
     "sha256": "7893e39a2af90360a2cb9c6e90a611e371fe5b1641f1976f649fb132b4ac0b22"
   },
   {
+    "file": "main-focus-after-initial.gd",
+    "bytes": 57568,
+    "sha256": "35519247e4c00627ba6d75f3e7fc6d36c5598c0946eaab4ffd851b9670b2ce18"
+  },
+  {
+    "file": "main-focus-final.gd",
+    "bytes": 58908,
+    "sha256": "8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8"
+  },
+  {
     "file": "main-integrated.gd",
     "bytes": 57194,
     "sha256": "90bc802595b85af5d4fe45cb8a948af1a56df7808f4e45414afbc7567c5fc1bd"
@@ -235,6 +380,16 @@
     "sha256": "d56fc3c9fefcc90aa1e04ce9220b57aef26c8fed62a488f393d6afb7dd77d942"
   },
   {
+    "file": "native_focus_probe.gd",
+    "bytes": 10437,
+    "sha256": "cbae901f4a629b800e965af000c15dcf87702eee721d0bfdc3d02a67d005011b"
+  },
+  {
+    "file": "native_help_probe.gd",
+    "bytes": 2424,
+    "sha256": "4c9b35262e6b277a4aba3897ffb513bc5c3064c7459d0d3348178710cbdaf25e"
+  },
+  {
     "file": "native_valid_import_probe.gd",
     "bytes": 3903,
     "sha256": "74ccf41474befbf86e3f41f24cc1d39425aee41d5e9eae61c865427ee84946d2"
@@ -246,8 +401,8 @@
   },
   {
     "file": "proposal.json",
-    "bytes": 2163,
-    "sha256": "8a456feb2b313dfcec2986ec2e778d935f97562111147106aa45233eddffdb11"
+    "bytes": 4536,
+    "sha256": "fa2803ce45d3e82b3bcec763a2751508ec901e8a0e21a4cde2786578e1d5c261"
   },
   {
     "file": "valid-import/results.json",

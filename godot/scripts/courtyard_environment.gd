@@ -14,6 +14,7 @@ var _water_nodes: Array[Node3D] = []
 var _flower_parts: Array[Dictionary] = []
 var _flowers: MultiMeshInstance3D
 var _fountain_light: OmniLight3D
+var _window_lights: Array[OmniLight3D] = []
 var _last_growth: float = -1.0
 var _stone := Color("d9cdae")
 var _cream := Color("efe1bf")
@@ -35,7 +36,7 @@ func _ready() -> void:
     set_gentle_motion(_gentle_motion)
 
 func _create_materials() -> void:
-    for key in ["ground", "stone", "wood", "metal", "flowers"]:
+    for key in ["ground", "stone", "wood", "metal", "flowers", "windows"]:
         var material := StandardMaterial3D.new()
         material.vertex_color_use_as_albedo = true
         material.vertex_color_is_srgb = true
@@ -44,6 +45,10 @@ func _create_materials() -> void:
         material.metallic = 0.15 if key == "metal" else 0.0
         material.metallic_specular = 0.3
         _materials[key] = material
+    _materials["windows"].albedo_color = Color("d3dbc0")
+    _materials["windows"].emission_enabled = true
+    _materials["windows"].emission = Color("f1ca87")
+    _materials["windows"].emission_energy_multiplier = 0.0
     _water_material = ShaderMaterial.new()
     _water_material.shader = load("res://shaders/courtyard_environment_water.gdshader")
     _plant_material = ShaderMaterial.new()
@@ -232,10 +237,18 @@ func _build_house(origin: Vector3, green_roof: bool) -> void:
     _sphere(origin + Vector3(0.23, 0.67, 1.416), Vector3.ONE * 0.08, Color("d8b979"), "metal")
     for x in [-1.04, 1.04]:
         _box(origin + Vector3(x, 1.43, 1.365), Vector3(0.66, 0.84, 0.09), Color("98ae95"), 0.14)
-        _box(origin + Vector3(x, 1.43, 1.42), Vector3(0.48, 0.63, 0.04), Color("d3dbc0"), 0.10)
+        _box(origin + Vector3(x, 1.43, 1.42), Vector3(0.48, 0.63, 0.04), Color.WHITE, 0.10, "windows")
         _box(origin + Vector3(x, 1.42, 1.45), Vector3(0.035, 0.63, 0.055), _cream, 0.008)
         _box(origin + Vector3(x, 1.38, 1.45), Vector3(0.48, 0.035, 0.055), _cream, 0.008)
         _box(origin + Vector3(x, 0.99, 1.45), Vector3(0.77, 0.10, 0.21), _stone, 0.045)
+    var window_light := OmniLight3D.new()
+    window_light.position = origin + Vector3(0, 1.30, 1.68)
+    window_light.light_color = Color("f5cf91")
+    window_light.omni_range = 1.8
+    window_light.light_energy = 0.0
+    window_light.shadow_enabled = false
+    add_child(window_light)
+    _window_lights.append(window_light)
     _box(origin + Vector3(0, 0.07, 1.68), Vector3(1.18, 0.15, 0.40), _cream, 0.07)
     _pot(origin + Vector3(-1.71, 0, 1.25), 0.25)
     _pot(origin + Vector3(1.70, 0, 1.26), 0.24)
@@ -384,6 +397,10 @@ func set_restoration(value: float) -> void:
     for i in range(1, _water_nodes.size()):
         _water_nodes[i].visible = _restoration > 0.54
     _fountain_light.light_energy = _restoration * 0.20
+    var warmth := smoothstep(0.58, 0.98, _restoration)
+    _materials["windows"].albedo_color = Color("d3dbc0").lerp(Color("f1d29a"), warmth)
+    _materials["windows"].emission_energy_multiplier = warmth * 0.45
+    for light in _window_lights: light.light_energy = warmth * 0.14
     if absf(_last_growth - _restoration) > 0.005 or _last_growth < 0.0:
         _last_growth = _restoration
         var growth: float = lerpf(0.08, 1.0, smoothstep(0.35, 1.0, _restoration))

@@ -1,0 +1,2448 @@
+{
+	"checks": [
+		"N selects an in-view unobscured ground patch: (1280, 800) default",
+		"N selects an in-view unobscured ground patch: (1280, 800) frame",
+		"N selects an in-view unobscured ground patch: (1280, 800) close_center",
+		"N selects an in-view unobscured ground patch: (1280, 800) close_left_rear",
+		"N selects an in-view unobscured ground patch: (1280, 800) close_right_rear",
+		"N selects an in-view unobscured ground patch: (1280, 800) close_left_front",
+		"N selects an in-view unobscured ground patch: (1280, 800) close_right_front",
+		"N selects an in-view unobscured ground patch: (960, 640) default",
+		"N selects an in-view unobscured ground patch: (960, 640) frame",
+		"N selects an in-view unobscured ground patch: (960, 640) close_center",
+		"N selects an in-view unobscured ground patch: (960, 640) close_left_rear",
+		"N selects an in-view unobscured ground patch: (960, 640) close_right_rear",
+		"N selects an in-view unobscured ground patch: (960, 640) close_left_front",
+		"N selects an in-view unobscured ground patch: (960, 640) close_right_front",
+		"Read-only camera audit never creates game progress",
+		"Camera audit never starts the soundscape"
+	],
+	"display": "macOS",
+	"dust_cells": 492,
+	"engine": "4.7.2-stable (official)",
+	"failures": [
+		"Repeated N escapes an occluded remaining patch when a visible alternative exists",
+		"Home cancels a held mouse/keyboard/tap stroke before reframing",
+		"Frame cancels a held mouse/keyboard/tap stroke before reframing",
+		"Keyboard aiming remains usable while the pointer rests over HUD"
+	],
+	"findings": {
+		"blocked_remaining": {
+			"available_alternative": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 70,
+				"reachable": true,
+				"screen": [
+					763.084289550781,
+					358.7353515625
+				],
+				"ui": "",
+				"world": [
+					-0.960567057132721,
+					-2.96630716323853
+				]
+			},
+			"first": {
+				"ground_raycast": false,
+				"hit": "CourtyardBlockers_stone",
+				"in_view": true,
+				"index": 69,
+				"pointer_distance": 0.0,
+				"reachable": false,
+				"screen": [
+					735.336242675781,
+					352.201171875
+				],
+				"ui": "",
+				"world": [
+					-1.5732581615448,
+					-2.90778779983521
+				]
+			},
+			"second": {
+				"ground_raycast": false,
+				"hit": "CourtyardBlockers_stone",
+				"in_view": true,
+				"index": 69,
+				"pointer_distance": 0.0,
+				"reachable": false,
+				"screen": [
+					735.336242675781,
+					352.201171875
+				],
+				"ui": "",
+				"world": [
+					-1.5732581615448,
+					-2.90778779983521
+				]
+			}
+		},
+		"frame": {
+			"cancelled": false,
+			"target": "(0.0, 0.1, 0.4)",
+			"zoom": 1.0
+		},
+		"home": {
+			"cancelled": false,
+			"target": "(0.0, 0.1, 0.4)",
+			"zoom": 1.0
+		},
+		"keyboard_with_hud_hover": {
+			"cursor_valid": false,
+			"hovered": "@Button@30",
+			"target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 70,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					763.084289550781,
+					358.7353515625
+				],
+				"ui": "",
+				"world": [
+					-0.960567057132721,
+					-2.96630716323853
+				]
+			}
+		},
+		"never_reachable_in_tested_views": [
+			{
+				"index": 129,
+				"simulation_walkable": true,
+				"world": "(-0.560437, -1.85573)"
+			},
+			{
+				"index": 157,
+				"simulation_walkable": true,
+				"world": "(-1.047667, -1.496855)"
+			},
+			{
+				"index": 158,
+				"simulation_walkable": true,
+				"world": "(-0.514869, -1.514542)"
+			},
+			{
+				"index": 159,
+				"simulation_walkable": true,
+				"world": "(0.499986, -1.493307)"
+			},
+			{
+				"index": 184,
+				"simulation_walkable": true,
+				"world": "(-1.436161, -0.930808)"
+			},
+			{
+				"index": 208,
+				"simulation_walkable": true,
+				"world": "(-1.484575, -0.552098)"
+			}
+		]
+	},
+	"kind": "Native camera projection and actual physics raycasts with controlled remaining-dust/input fixtures; no human usability or physical-device claim",
+	"main_sha256": "c9dfe6d20214e64ed64ccd255e6ab599115e8dbcf99507cc2b07d354cc3ed977",
+	"ordinary_save_accessed": false,
+	"profile": "/Users/xingzhaoji/Library/Caches/dustlings-camera-audit-40972",
+	"views": [
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 69,
+					"reachable": false,
+					"screen": [
+						735.336242675781,
+						352.201171875
+					],
+					"ui": "",
+					"world": [
+						-1.5732581615448,
+						-2.90778779983521
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 98,
+					"reachable": false,
+					"screen": [
+						726.133911132812,
+						361.700347900391
+					],
+					"ui": "",
+					"world": [
+						-1.54680442810059,
+						-2.48876333236694
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 99,
+					"reachable": false,
+					"screen": [
+						745.776550292969,
+						371.125030517578
+					],
+					"ui": "",
+					"world": [
+						-1.02631938457489,
+						-2.37145066261292
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 127,
+					"reachable": false,
+					"screen": [
+						718.407165527344,
+						374.244323730469
+					],
+					"ui": "",
+					"world": [
+						-1.43691539764404,
+						-1.99363827705383
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 128,
+					"reachable": false,
+					"screen": [
+						739.38671875,
+						383.620666503906
+					],
+					"ui": "",
+					"world": [
+						-0.903150260448456,
+						-1.8980427980423
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 129,
+					"reachable": false,
+					"screen": [
+						753.57080078125,
+						389.298065185547
+					],
+					"ui": "",
+					"world": [
+						-0.560437142848969,
+						-1.85572957992554
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 157,
+					"reachable": false,
+					"screen": [
+						722.746704101562,
+						391.039154052734
+					],
+					"ui": "",
+					"world": [
+						-1.04766726493835,
+						-1.49685478210449
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 158,
+					"reachable": false,
+					"screen": [
+						747.020751953125,
+						398.038696289062
+					],
+					"ui": "",
+					"world": [
+						-0.514869332313538,
+						-1.51454210281372
+					]
+				}
+			],
+			"logical_viewport": [
+				1440.0,
+				900.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					542.562622070312,
+					271.00732421875
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 12,
+			"offscreen": 0,
+			"reachable": 480,
+			"scale_factor": 1.0,
+			"ui": 0,
+			"view": "default",
+			"window": [
+				1280,
+				800
+			],
+			"zoom": 1.12
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 69,
+					"reachable": false,
+					"screen": [
+						733.854187011719,
+						361.652526855469
+					],
+					"ui": "",
+					"world": [
+						-1.5732581615448,
+						-2.90778779983521
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 98,
+					"reachable": false,
+					"screen": [
+						725.535278320312,
+						370.318878173828
+					],
+					"ui": "",
+					"world": [
+						-1.54680442810059,
+						-2.48876333236694
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 99,
+					"reachable": false,
+					"screen": [
+						743.236022949219,
+						378.899047851562
+					],
+					"ui": "",
+					"world": [
+						-1.02631938457489,
+						-2.37145066261292
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 127,
+					"reachable": false,
+					"screen": [
+						718.564697265625,
+						381.734802246094
+					],
+					"ui": "",
+					"world": [
+						-1.43691539764404,
+						-1.99363827705383
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 128,
+					"reachable": false,
+					"screen": [
+						737.451477050781,
+						390.247009277344
+					],
+					"ui": "",
+					"world": [
+						-0.903150260448456,
+						-1.8980427980423
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 129,
+					"reachable": false,
+					"screen": [
+						750.200439453125,
+						395.392395019531
+					],
+					"ui": "",
+					"world": [
+						-0.560437142848969,
+						-1.85572957992554
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 157,
+					"reachable": false,
+					"screen": [
+						722.470458984375,
+						396.969085693359
+					],
+					"ui": "",
+					"world": [
+						-1.04766726493835,
+						-1.49685478210449
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 158,
+					"reachable": false,
+					"screen": [
+						744.2841796875,
+						403.301239013672
+					],
+					"ui": "",
+					"world": [
+						-0.514869332313538,
+						-1.51454210281372
+					]
+				}
+			],
+			"logical_viewport": [
+				1440.0,
+				900.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					558.231872558594,
+					286.813903808594
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 12,
+			"offscreen": 0,
+			"reachable": 480,
+			"scale_factor": 1.0,
+			"ui": 0,
+			"view": "frame",
+			"window": [
+				1280,
+				800
+			],
+			"zoom": 1.0
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 39,
+					"reachable": false,
+					"screen": [
+						734.816467285156,
+						283.949584960938
+					],
+					"ui": "",
+					"world": [
+						-1.93598413467407,
+						-3.31496000289917
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 69,
+					"reachable": false,
+					"screen": [
+						743.124267578125,
+						302.537750244141
+					],
+					"ui": "",
+					"world": [
+						-1.5732581615448,
+						-2.90778779983521
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 70,
+					"reachable": false,
+					"screen": [
+						785.215209960938,
+						311.856262207031
+					],
+					"ui": "",
+					"world": [
+						-0.960567057132721,
+						-2.96630716323853
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 97,
+					"reachable": false,
+					"screen": [
+						704.664184570312,
+						309.881225585938
+					],
+					"ui": "",
+					"world": [
+						-1.91670680046082,
+						-2.46995663642883
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 98,
+					"reachable": false,
+					"screen": [
+						729.301086425781,
+						316.108489990234
+					],
+					"ui": "",
+					"world": [
+						-1.54680442810059,
+						-2.48876333236694
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 99,
+					"reachable": false,
+					"screen": [
+						759.306213378906,
+						329.725219726562
+					],
+					"ui": "",
+					"world": [
+						-1.02631938457489,
+						-2.37145066261292
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 127,
+					"reachable": false,
+					"screen": [
+						717.566467285156,
+						334.265808105469
+					],
+					"ui": "",
+					"world": [
+						-1.43691539764404,
+						-1.99363827705383
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 128,
+					"reachable": false,
+					"screen": [
+						749.78515625,
+						348.017364501953
+					],
+					"ui": "",
+					"world": [
+						-0.903150260448456,
+						-1.8980427980423
+					]
+				}
+			],
+			"logical_viewport": [
+				1440.0,
+				900.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					464.717681884766,
+					192.479965209961
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 15,
+			"offscreen": 7,
+			"reachable": 468,
+			"scale_factor": 1.0,
+			"ui": 2,
+			"view": "close_center",
+			"window": [
+				1280,
+				800
+			],
+			"zoom": 1.8
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 23,
+					"reachable": false,
+					"screen": [
+						1458.93029785156,
+						593.150207519531
+					],
+					"ui": "",
+					"world": [
+						4.52750539779663,
+						-3.87156701087952
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 24,
+					"reachable": false,
+					"screen": [
+						1511.12841796875,
+						614.610778808594
+					],
+					"ui": "",
+					"world": [
+						5.00689792633057,
+						-3.78112316131592
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 25,
+					"reachable": false,
+					"screen": [
+						1557.55700683594,
+						620.185668945312
+					],
+					"ui": "",
+					"world": [
+						5.40354776382446,
+						-3.91912865638733
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 26,
+					"reachable": false,
+					"screen": [
+						1629.2841796875,
+						648.008117675781
+					],
+					"ui": "",
+					"world": [
+						6.01908206939697,
+						-3.82349538803101
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 27,
+					"reachable": false,
+					"screen": [
+						1689.03503417969,
+						666.581298828125
+					],
+					"ui": "",
+					"world": [
+						6.50914430618286,
+						-3.81799554824829
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 28,
+					"reachable": false,
+					"screen": [
+						1741.12670898438,
+						679.367004394531
+					],
+					"ui": "",
+					"world": [
+						6.92472648620605,
+						-3.86529016494751
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 52,
+					"reachable": false,
+					"screen": [
+						1449.62036132812,
+						625.973510742188
+					],
+					"ui": "",
+					"world": [
+						4.51104974746704,
+						-3.30036926269531
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 53,
+					"reachable": false,
+					"screen": [
+						1510.56518554688,
+						637.575073242188
+					],
+					"ui": "",
+					"world": [
+						5.03492307662964,
+						-3.4160532951355
+					]
+				}
+			],
+			"logical_viewport": [
+				1440.0,
+				900.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					517.444702148438,
+					308.97265625
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 10,
+			"offscreen": 160,
+			"reachable": 313,
+			"scale_factor": 1.0,
+			"ui": 9,
+			"view": "close_left_rear",
+			"window": [
+				1280,
+				800
+			],
+			"zoom": 1.8
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 96,
+					"reachable": false,
+					"screen": [
+						364.120300292969,
+						324.611999511719
+					],
+					"ui": "",
+					"world": [
+						-2.5760760307312,
+						-2.46661043167114
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 97,
+					"reachable": false,
+					"screen": [
+						402.810852050781,
+						337.195465087891
+					],
+					"ui": "",
+					"world": [
+						-1.91670680046082,
+						-2.46995663642883
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 125,
+					"reachable": false,
+					"screen": [
+						345.749267578125,
+						343.258880615234
+					],
+					"ui": "",
+					"world": [
+						-2.44612574577332,
+						-1.98003625869751
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 126,
+					"reachable": false,
+					"screen": [
+						366.451599121094,
+						352.861724853516
+					],
+					"ui": "",
+					"world": [
+						-2.05039620399475,
+						-1.93133652210236
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 127,
+					"reachable": false,
+					"screen": [
+						406.829376220703,
+						363.265350341797
+					],
+					"ui": "",
+					"world": [
+						-1.43691539764404,
+						-1.99363827705383
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 129,
+					"reachable": false,
+					"screen": [
+						454.457855224609,
+						386.995697021484
+					],
+					"ui": "",
+					"world": [
+						-0.560437142848969,
+						-1.85572957992554
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 154,
+					"reachable": false,
+					"screen": [
+						312.633361816406,
+						360.0361328125
+					],
+					"ui": "",
+					"world": [
+						-2.51449847221375,
+						-1.45454788208008
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 155,
+					"reachable": false,
+					"screen": [
+						341.890319824219,
+						372.114624023438
+					],
+					"ui": "",
+					"world": [
+						-1.99218285083771,
+						-1.42206335067749
+					]
+				}
+			],
+			"logical_viewport": [
+				1440.0,
+				900.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					200.677474975586,
+					212.405868530273
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 16,
+			"offscreen": 90,
+			"reachable": 376,
+			"scale_factor": 1.0,
+			"ui": 10,
+			"view": "close_right_rear",
+			"window": [
+				1280,
+				800
+			],
+			"zoom": 1.8
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 12,
+					"reachable": false,
+					"screen": [
+						1059.25280761719,
+						282.453369140625
+					],
+					"ui": "",
+					"world": [
+						-1.07980728149414,
+						-3.82194638252258
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 22,
+					"reachable": false,
+					"screen": [
+						1459.07446289062,
+						381.203552246094
+					],
+					"ui": "",
+					"world": [
+						4.02595710754395,
+						-3.80437302589417
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 23,
+					"reachable": false,
+					"screen": [
+						1504.39880371094,
+						389.649078369141
+					],
+					"ui": "",
+					"world": [
+						4.52750539779663,
+						-3.87156701087952
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 24,
+					"reachable": false,
+					"screen": [
+						1547.50341796875,
+						403.849365234375
+					],
+					"ui": "",
+					"world": [
+						5.00689792633057,
+						-3.78112316131592
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 25,
+					"reachable": false,
+					"screen": [
+						1585.31396484375,
+						407.521545410156
+					],
+					"ui": "",
+					"world": [
+						5.40354776382446,
+						-3.91912865638733
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 26,
+					"reachable": false,
+					"screen": [
+						1643.78405761719,
+						425.746032714844
+					],
+					"ui": "",
+					"world": [
+						6.01908206939697,
+						-3.82349538803101
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 27,
+					"reachable": false,
+					"screen": [
+						1692.06921386719,
+						437.818084716797
+					],
+					"ui": "",
+					"world": [
+						6.50914430618286,
+						-3.81799554824829
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 28,
+					"reachable": false,
+					"screen": [
+						1733.93859863281,
+						446.085205078125
+					],
+					"ui": "",
+					"world": [
+						6.92472648620605,
+						-3.86529016494751
+					]
+				}
+			],
+			"logical_viewport": [
+				1440.0,
+				900.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					688.564758300781,
+					191.449783325195
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 17,
+			"offscreen": 107,
+			"reachable": 368,
+			"scale_factor": 1.0,
+			"ui": 0,
+			"view": "close_left_front",
+			"window": [
+				1280,
+				800
+			],
+			"zoom": 1.8
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 9,
+					"reachable": false,
+					"screen": [
+						608.4111328125,
+						173.324768066406
+					],
+					"ui": "",
+					"world": [
+						-2.57276368141174,
+						-3.77427172660828
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "Ground",
+					"in_view": true,
+					"index": 30,
+					"reachable": false,
+					"screen": [
+						400.216705322266,
+						133.461730957031
+					],
+					"ui": "",
+					"world": [
+						-6.58839464187622,
+						-3.37770247459412
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 39,
+					"reachable": false,
+					"screen": [
+						625.675354003906,
+						191.856887817383
+					],
+					"ui": "",
+					"world": [
+						-1.93598413467407,
+						-3.31496000289917
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 67,
+					"reachable": false,
+					"screen": [
+						584.932312011719,
+						194.687759399414
+					],
+					"ui": "",
+					"world": [
+						-2.42513847351074,
+						-2.9056122303009
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 68,
+					"reachable": false,
+					"screen": [
+						605.920837402344,
+						202.16047668457
+					],
+					"ui": "",
+					"world": [
+						-1.98698782920837,
+						-2.84146428108215
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 69,
+					"reachable": false,
+					"screen": [
+						630.733154296875,
+						206.325759887695
+					],
+					"ui": "",
+					"world": [
+						-1.5732581615448,
+						-2.90778779983521
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "Ground",
+					"in_view": true,
+					"index": 90,
+					"reachable": false,
+					"screen": [
+						407.154632568359,
+						166.682525634766
+					],
+					"ui": "",
+					"world": [
+						-5.54236364364624,
+						-2.34634470939636
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 96,
+					"reachable": false,
+					"screen": [
+						560.504516601562,
+						202.873809814453
+					],
+					"ui": "",
+					"world": [
+						-2.5760760307312,
+						-2.46661043167114
+					]
+				}
+			],
+			"logical_viewport": [
+				1440.0,
+				900.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					395.101318359375,
+					119.487045288086
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 23,
+			"offscreen": 1,
+			"reachable": 468,
+			"scale_factor": 1.0,
+			"ui": 0,
+			"view": "close_right_front",
+			"window": [
+				1280,
+				800
+			],
+			"zoom": 1.8
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 69,
+					"reachable": false,
+					"screen": [
+						551.502197265625,
+						264.15087890625
+					],
+					"ui": "",
+					"world": [
+						-1.5732581615448,
+						-2.90778779983521
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 98,
+					"reachable": false,
+					"screen": [
+						544.600402832031,
+						271.275268554688
+					],
+					"ui": "",
+					"world": [
+						-1.54680442810059,
+						-2.48876333236694
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 99,
+					"reachable": false,
+					"screen": [
+						559.332397460938,
+						278.343780517578
+					],
+					"ui": "",
+					"world": [
+						-1.02631938457489,
+						-2.37145066261292
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 127,
+					"reachable": false,
+					"screen": [
+						538.805358886719,
+						280.683258056641
+					],
+					"ui": "",
+					"world": [
+						-1.43691539764404,
+						-1.99363827705383
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 128,
+					"reachable": false,
+					"screen": [
+						554.5400390625,
+						287.715515136719
+					],
+					"ui": "",
+					"world": [
+						-0.903150260448456,
+						-1.8980427980423
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 129,
+					"reachable": false,
+					"screen": [
+						565.178100585938,
+						291.973541259766
+					],
+					"ui": "",
+					"world": [
+						-0.560437142848969,
+						-1.85572957992554
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 157,
+					"reachable": false,
+					"screen": [
+						542.059997558594,
+						293.279388427734
+					],
+					"ui": "",
+					"world": [
+						-1.04766726493835,
+						-1.49685478210449
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 158,
+					"reachable": false,
+					"screen": [
+						560.265563964844,
+						298.529022216797
+					],
+					"ui": "",
+					"world": [
+						-0.514869332313538,
+						-1.51454210281372
+					]
+				}
+			],
+			"logical_viewport": [
+				1080.0,
+				675.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					406.921966552734,
+					203.255493164062
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 12,
+			"offscreen": 0,
+			"reachable": 480,
+			"scale_factor": 1.33333337306976,
+			"ui": 0,
+			"view": "default",
+			"window": [
+				960,
+				640
+			],
+			"zoom": 1.12
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 69,
+					"reachable": false,
+					"screen": [
+						550.390625,
+						271.239410400391
+					],
+					"ui": "",
+					"world": [
+						-1.5732581615448,
+						-2.90778779983521
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 98,
+					"reachable": false,
+					"screen": [
+						544.151489257812,
+						277.739166259766
+					],
+					"ui": "",
+					"world": [
+						-1.54680442810059,
+						-2.48876333236694
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 99,
+					"reachable": false,
+					"screen": [
+						557.427001953125,
+						284.174285888672
+					],
+					"ui": "",
+					"world": [
+						-1.02631938457489,
+						-2.37145066261292
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 127,
+					"reachable": false,
+					"screen": [
+						538.923522949219,
+						286.301116943359
+					],
+					"ui": "",
+					"world": [
+						-1.43691539764404,
+						-1.99363827705383
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 128,
+					"reachable": false,
+					"screen": [
+						553.088623046875,
+						292.685241699219
+					],
+					"ui": "",
+					"world": [
+						-0.903150260448456,
+						-1.8980427980423
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 129,
+					"reachable": false,
+					"screen": [
+						562.650329589844,
+						296.544281005859
+					],
+					"ui": "",
+					"world": [
+						-0.560437142848969,
+						-1.85572957992554
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 157,
+					"reachable": false,
+					"screen": [
+						541.852844238281,
+						297.726806640625
+					],
+					"ui": "",
+					"world": [
+						-1.04766726493835,
+						-1.49685478210449
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 158,
+					"reachable": false,
+					"screen": [
+						558.213134765625,
+						302.475921630859
+					],
+					"ui": "",
+					"world": [
+						-0.514869332313538,
+						-1.51454210281372
+					]
+				}
+			],
+			"logical_viewport": [
+				1080.0,
+				675.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					418.673919677734,
+					215.110427856445
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 12,
+			"offscreen": 0,
+			"reachable": 480,
+			"scale_factor": 1.33333337306976,
+			"ui": 0,
+			"view": "frame",
+			"window": [
+				960,
+				640
+			],
+			"zoom": 1.0
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 39,
+					"reachable": false,
+					"screen": [
+						551.112365722656,
+						212.962188720703
+					],
+					"ui": "",
+					"world": [
+						-1.93598413467407,
+						-3.31496000289917
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 69,
+					"reachable": false,
+					"screen": [
+						557.343200683594,
+						226.9033203125
+					],
+					"ui": "",
+					"world": [
+						-1.5732581615448,
+						-2.90778779983521
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 70,
+					"reachable": false,
+					"screen": [
+						588.911376953125,
+						233.892196655273
+					],
+					"ui": "",
+					"world": [
+						-0.960567057132721,
+						-2.96630716323853
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 97,
+					"reachable": false,
+					"screen": [
+						528.498168945312,
+						232.410919189453
+					],
+					"ui": "",
+					"world": [
+						-1.91670680046082,
+						-2.46995663642883
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 98,
+					"reachable": false,
+					"screen": [
+						546.975830078125,
+						237.08137512207
+					],
+					"ui": "",
+					"world": [
+						-1.54680442810059,
+						-2.48876333236694
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 99,
+					"reachable": false,
+					"screen": [
+						569.479675292969,
+						247.293914794922
+					],
+					"ui": "",
+					"world": [
+						-1.02631938457489,
+						-2.37145066261292
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 127,
+					"reachable": false,
+					"screen": [
+						538.174865722656,
+						250.699356079102
+					],
+					"ui": "",
+					"world": [
+						-1.43691539764404,
+						-1.99363827705383
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 128,
+					"reachable": false,
+					"screen": [
+						562.3388671875,
+						261.013031005859
+					],
+					"ui": "",
+					"world": [
+						-0.903150260448456,
+						-1.8980427980423
+					]
+				}
+			],
+			"logical_viewport": [
+				1080.0,
+				675.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					348.538269042969,
+					144.359970092773
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 15,
+			"offscreen": 7,
+			"reachable": 461,
+			"scale_factor": 1.33333337306976,
+			"ui": 9,
+			"view": "close_center",
+			"window": [
+				960,
+				640
+			],
+			"zoom": 1.8
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 23,
+					"reachable": false,
+					"screen": [
+						1094.19775390625,
+						444.862640380859
+					],
+					"ui": "",
+					"world": [
+						4.52750539779663,
+						-3.87156701087952
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 24,
+					"reachable": false,
+					"screen": [
+						1133.34631347656,
+						460.958068847656
+					],
+					"ui": "",
+					"world": [
+						5.00689792633057,
+						-3.78112316131592
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 25,
+					"reachable": false,
+					"screen": [
+						1168.16772460938,
+						465.139251708984
+					],
+					"ui": "",
+					"world": [
+						5.40354776382446,
+						-3.91912865638733
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 26,
+					"reachable": false,
+					"screen": [
+						1221.96313476562,
+						486.006103515625
+					],
+					"ui": "",
+					"world": [
+						6.01908206939697,
+						-3.82349538803101
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 27,
+					"reachable": false,
+					"screen": [
+						1266.7763671875,
+						499.935974121094
+					],
+					"ui": "",
+					"world": [
+						6.50914430618286,
+						-3.81799554824829
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 28,
+					"reachable": false,
+					"screen": [
+						1305.84497070312,
+						509.525268554688
+					],
+					"ui": "",
+					"world": [
+						6.92472648620605,
+						-3.86529016494751
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 52,
+					"reachable": false,
+					"screen": [
+						1087.21533203125,
+						469.480133056641
+					],
+					"ui": "",
+					"world": [
+						4.51104974746704,
+						-3.30036926269531
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 53,
+					"reachable": false,
+					"screen": [
+						1132.923828125,
+						478.181274414062
+					],
+					"ui": "",
+					"world": [
+						5.03492307662964,
+						-3.4160532951355
+					]
+				}
+			],
+			"logical_viewport": [
+				1080.0,
+				675.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					388.083557128906,
+					231.729507446289
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 10,
+			"offscreen": 160,
+			"reachable": 298,
+			"scale_factor": 1.33333337306976,
+			"ui": 24,
+			"view": "close_left_rear",
+			"window": [
+				960,
+				640
+			],
+			"zoom": 1.8
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 96,
+					"reachable": false,
+					"screen": [
+						273.090240478516,
+						243.458984375
+					],
+					"ui": "",
+					"world": [
+						-2.5760760307312,
+						-2.46661043167114
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 97,
+					"reachable": false,
+					"screen": [
+						302.108123779297,
+						252.896591186523
+					],
+					"ui": "",
+					"world": [
+						-1.91670680046082,
+						-2.46995663642883
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 125,
+					"reachable": false,
+					"screen": [
+						259.311950683594,
+						257.444152832031
+					],
+					"ui": "",
+					"world": [
+						-2.44612574577332,
+						-1.98003625869751
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 126,
+					"reachable": false,
+					"screen": [
+						274.838684082031,
+						264.646301269531
+					],
+					"ui": "",
+					"world": [
+						-2.05039620399475,
+						-1.93133652210236
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 127,
+					"reachable": false,
+					"screen": [
+						305.122039794922,
+						272.449005126953
+					],
+					"ui": "",
+					"world": [
+						-1.43691539764404,
+						-1.99363827705383
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 129,
+					"reachable": false,
+					"screen": [
+						340.843383789062,
+						290.246765136719
+					],
+					"ui": "",
+					"world": [
+						-0.560437142848969,
+						-1.85572957992554
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 154,
+					"reachable": false,
+					"screen": [
+						234.475006103516,
+						270.027099609375
+					],
+					"ui": "",
+					"world": [
+						-2.51449847221375,
+						-1.45454788208008
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 155,
+					"reachable": false,
+					"screen": [
+						256.417755126953,
+						279.085968017578
+					],
+					"ui": "",
+					"world": [
+						-1.99218285083771,
+						-1.42206335067749
+					]
+				}
+			],
+			"logical_viewport": [
+				1080.0,
+				675.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					150.508102416992,
+					159.304412841797
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 16,
+			"offscreen": 90,
+			"reachable": 371,
+			"scale_factor": 1.33333337306976,
+			"ui": 15,
+			"view": "close_right_rear",
+			"window": [
+				960,
+				640
+			],
+			"zoom": 1.8
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 12,
+					"reachable": false,
+					"screen": [
+						794.439636230469,
+						211.840026855469
+					],
+					"ui": "",
+					"world": [
+						-1.07980728149414,
+						-3.82194638252258
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 22,
+					"reachable": false,
+					"screen": [
+						1094.30590820312,
+						285.902648925781
+					],
+					"ui": "",
+					"world": [
+						4.02595710754395,
+						-3.80437302589417
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 23,
+					"reachable": false,
+					"screen": [
+						1128.29919433594,
+						292.236785888672
+					],
+					"ui": "",
+					"world": [
+						4.52750539779663,
+						-3.87156701087952
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 24,
+					"reachable": false,
+					"screen": [
+						1160.62756347656,
+						302.887023925781
+					],
+					"ui": "",
+					"world": [
+						5.00689792633057,
+						-3.78112316131592
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 25,
+					"reachable": false,
+					"screen": [
+						1188.98547363281,
+						305.641174316406
+					],
+					"ui": "",
+					"world": [
+						5.40354776382446,
+						-3.91912865638733
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 26,
+					"reachable": false,
+					"screen": [
+						1232.83801269531,
+						319.309539794922
+					],
+					"ui": "",
+					"world": [
+						6.01908206939697,
+						-3.82349538803101
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 27,
+					"reachable": false,
+					"screen": [
+						1269.05187988281,
+						328.363555908203
+					],
+					"ui": "",
+					"world": [
+						6.50914430618286,
+						-3.81799554824829
+					]
+				},
+				{
+					"ground_raycast": true,
+					"hit": "Ground",
+					"in_view": false,
+					"index": 28,
+					"reachable": false,
+					"screen": [
+						1300.45397949219,
+						334.563903808594
+					],
+					"ui": "",
+					"world": [
+						6.92472648620605,
+						-3.86529016494751
+					]
+				}
+			],
+			"logical_viewport": [
+				1080.0,
+				675.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					516.423583984375,
+					143.587326049805
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 17,
+			"offscreen": 107,
+			"reachable": 368,
+			"scale_factor": 1.33333337306976,
+			"ui": 0,
+			"view": "close_left_front",
+			"window": [
+				960,
+				640
+			],
+			"zoom": 1.8
+		},
+		{
+			"inaccessible_samples": [
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 9,
+					"reachable": false,
+					"screen": [
+						456.308349609375,
+						129.993576049805
+					],
+					"ui": "",
+					"world": [
+						-2.57276368141174,
+						-3.77427172660828
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "Ground",
+					"in_view": true,
+					"index": 30,
+					"reachable": false,
+					"screen": [
+						300.162536621094,
+						100.096298217773
+					],
+					"ui": "",
+					"world": [
+						-6.58839464187622,
+						-3.37770247459412
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 39,
+					"reachable": false,
+					"screen": [
+						469.256530761719,
+						143.892654418945
+					],
+					"ui": "",
+					"world": [
+						-1.93598413467407,
+						-3.31496000289917
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 67,
+					"reachable": false,
+					"screen": [
+						438.69921875,
+						146.015823364258
+					],
+					"ui": "",
+					"world": [
+						-2.42513847351074,
+						-2.9056122303009
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 68,
+					"reachable": false,
+					"screen": [
+						454.440612792969,
+						151.620361328125
+					],
+					"ui": "",
+					"world": [
+						-1.98698782920837,
+						-2.84146428108215
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 69,
+					"reachable": false,
+					"screen": [
+						473.049865722656,
+						154.744323730469
+					],
+					"ui": "",
+					"world": [
+						-1.5732581615448,
+						-2.90778779983521
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "Ground",
+					"in_view": true,
+					"index": 90,
+					"reachable": false,
+					"screen": [
+						305.365966796875,
+						125.011894226074
+					],
+					"ui": "",
+					"world": [
+						-5.54236364364624,
+						-2.34634470939636
+					]
+				},
+				{
+					"ground_raycast": false,
+					"hit": "CourtyardBlockers_stone",
+					"in_view": true,
+					"index": 96,
+					"reachable": false,
+					"screen": [
+						420.37841796875,
+						152.155364990234
+					],
+					"ui": "",
+					"world": [
+						-2.5760760307312,
+						-2.46661043167114
+					]
+				}
+			],
+			"logical_viewport": [
+				1080.0,
+				675.0
+			],
+			"n_target": {
+				"ground_raycast": true,
+				"hit": "Ground",
+				"in_view": true,
+				"index": 0,
+				"pointer_distance": 0.0,
+				"reachable": true,
+				"screen": [
+					296.325988769531,
+					89.6152877807617
+				],
+				"ui": "",
+				"world": [
+					-7.09470129013062,
+					-3.82491159439087
+				]
+			},
+			"obstacle": 23,
+			"offscreen": 1,
+			"reachable": 468,
+			"scale_factor": 1.33333337306976,
+			"ui": 0,
+			"view": "close_right_front",
+			"window": [
+				960,
+				640
+			],
+			"zoom": 1.8
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+  "after-final.json": "00e2374d659da887ebda99452f6e50a442ca2bc8de86cfdef9c26e4db96b5cfc",
+  "after-final.log": "9b0125898de02582a8cb80698ecdd26835c2216de0e50232bcbc68282e9b858f",
+  "after.json": "b5107a614ae90e6b7fe78edcb605a0b03146ba4f96c6fffa767155290d6bf1c8",
+  "after.log": "0454ef2409204b7f0cf708790a0aff0f2a5c316ea1260492887c7b371223d3fa",
+  "before-expanded.json": "2a22883ee01a76f36201769111483e32fbe842a1af6cf2415248926a9a4ce124",
+  "before-expanded.log": "eeffdc62e37655beea4b2844be7d11006441e724d684ef6cd8afe3b28ef4f4bd",
+  "before.json": "903ac27375efc1337cf61d49d940c91728740f560a48ac66bd8e49913a69614f",
+  "before.log": "b1b68147378786127096be8ceafed056b33e39aafc4d4761ea7f88474ce859cc",
+  "fixture/after-final-audit.gd": "29642a928a79ff49753674e54c4b261477789c884c45e994c846b26eb71318c5",
+  "fixture/after-first-audit.gd": "8ead4d1ced7b6f0457d04078d1ee9b6f8983f191bb1d9aee8766c04963d3561a",
+  "fixture/before-expanded-audit.gd": "0a4a58c8e99e0d371688fbe05ad91e5656e049d3de0b643110ab58c68eb92642",
+  "fixture/main-after.gd": "e44af73f26f887e682512bdbb440c92e2735cee8702a0f2a44c3426dc17eae0b",
+  "fixture/main-before.gd": "c9dfe6d20214e64ed64ccd255e6ab599115e8dbcf99507cc2b07d354cc3ed977"
+}

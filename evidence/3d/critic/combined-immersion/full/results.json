@@ -1,0 +1,43 @@
+{
+  "case": "full",
+  "celebration_unpaused": true,
+  "chorus_started_at": 521.666666666521,
+  "cleaned": 491.999999996625,
+  "completed": true,
+  "completed_at": 655.599999999732,
+  "draw_calls": 313.0,
+  "elapsed": 665.633333333057,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "first_helper_at": 22.2166666666667,
+  "first_upgrade_at": 92.4666666666627,
+  "first_view": 1,
+  "helpers": 50,
+  "input_kind": "Whole integrated play through generated native controls:2s brushing/5s cycle, scripted brush→teamwork→chorus purchases, periodic visible crew orders. No progress injection or accelerated simulation. Script choices are not player comprehension or human pacing.",
+  "kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.",
+  "motes": 370,
+  "objects": 609.0,
+  "recap_closed": true,
+  "restoration": 1.0,
+  "stats": {
+    "assisted": 219.629656373485,
+    "brushed": 272.370343626083,
+    "orders": 17
+  },
+  "status": "recorded",
+  "upgrades": {
+    "bloom": true,
+    "brush": true,
+    "teamwork": true
+  },
+  "viewport": "(1440.0, 900.0)"
+}

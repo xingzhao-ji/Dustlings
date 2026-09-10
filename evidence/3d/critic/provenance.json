@@ -158,5 +158,12 @@
     "provenance": "water-flow-v2/review-provenance.json",
     "humanSessions": 0,
     "nativeAppLaunched": false
+  },
+  "combinedImmersionReview": {
+    "recordedAt": "2026-09-10T10:32:47.406958+00:00",
+    "provenance": "combined-immersion/review-provenance.json",
+    "sourceHash": "38c8b21a78bc3485bcc6f10a7ca348b53deb4c40e3f44c394a7b692d7839ddfe",
+    "humanSessions": 0,
+    "nativeAppLaunched": false
   }
 }

@@ -1,0 +1,90 @@
+{
+  "reviewer": "Independent AI critic, separate from development team",
+  "reviewedAt": "2026-09-10T10:07:20.436846+00:00",
+  "sourceDirectory": "evidence/3d/water-flow/candidate-v2",
+  "movieSHA256": "168aa8dd5fd83e29d07cd49c727ed88f8a87d2fb4b58b07f41c2f9b3e4d14470",
+  "movieDurationSeconds": 12.6,
+  "movieSize": [
+    1280,
+    800
+  ],
+  "movieFPS": 30,
+  "sourceComponents": {
+    "environment_sha256": "5c9aefdf2e8628b6d2f9227b4f118e4afe03ccea2675fa31b0def6eacc81849f",
+    "stream_shader_sha256": "486bb08c715cfe189465a008d0c6ef906fa978dbffe414a911e5a34bd7c812eb"
+  },
+  "humanSessions": 0,
+  "listening": false,
+  "directInput": false,
+  "nativeAppLaunched": false,
+  "implementationRead": false,
+  "method": "Matched normal-size100/110 frames and Gentle still against preserved v1/baseline; complete1Hz chronology; matched12Hz3\u20134second crop. Frame-based, not uninterrupted audiovisual perception.",
+  "finding": "Dark brace-like edge materially reduced; lighter strands easier to read as falling water. Prefer v2 in these views. Straight uniform silhouettes remain; continuous water recognition/comfort is a smaller human-review uncertainty. No further microtuning requested from this review.",
+  "producerClaimsNotAudited": "Compared withv1 only stream cast shadows disabled and base emission floor0.065\u21920.24; no geometry/palette/pulse/rate change.",
+  "fixture": "Restored50-helper fixture;8snormal,2sGentle,2spaused source time plus0.6sshutdown. No natural restoration reveal or menu input.",
+  "pauseEndpointPNGsIdentical": true,
+  "limits": [
+    "Audio track not auditioned.",
+    "No continuous perception, performance or physical input assessment.",
+    "No combined warm-window/powder integration reviewed.",
+    "No human, presentation, owner or release gate passed."
+  ],
+  "preservedInputs": {
+    "flow-detail-3-4.png": {
+      "sha256": "7019cffa340da576b3c3120de10414488e6e4dc72b85010abeed81e2caec522a",
+      "bytes": 1047450
+    },
+    "flow.mp4": {
+      "sha256": "168aa8dd5fd83e29d07cd49c727ed88f8a87d2fb4b58b07f41c2f9b3e4d14470",
+      "bytes": 2265045
+    },
+    "gentle.png": {
+      "sha256": "d5db8f9f1017f7d20e4ca28505216e9fb51078d946aae2dbba28a0a0fee4e7b0",
+      "bytes": 661473
+    },
+    "normal-090.png": {
+      "sha256": "dd1fd9f3a32282d56b89b3322615a613689de985383ce1ba2703943b52bf833c",
+      "bytes": 664773
+    },
+    "normal-095.png": {
+      "sha256": "c9fe462c9fe1cdf298c31c0ca3b09801b58a534c52a5c46a90b37ad61af97c33",
+      "bytes": 664252
+    },
+    "normal-100.png": {
+      "sha256": "c524f9befca67a8ae998a0e286dfdee913c3fa250df8d29bca9dff578a6ba8ac",
+      "bytes": 664111
+    },
+    "normal-105.png": {
+      "sha256": "0fb7cbb191a4b278fb25e19268ec12bd02a54f3e6b7f177307d72342f7ceb212",
+      "bytes": 662839
+    },
+    "normal-110.png": {
+      "sha256": "995e06b74a11ef0f7eb310f3aba02a6a2096f5d682af05a9cea235d25cda1ec8",
+      "bytes": 663357
+    },
+    "normal-115.png": {
+      "sha256": "0dc3a24d0ebab91776ddb491a8fda9338f78293b4f251b0ca196e195eaf48f3e",
+      "bytes": 665102
+    },
+    "normal-120.png": {
+      "sha256": "87e885dfecb6a80f740c2dcbd0e11192a5b753e30b2f915e7813994258ad21df",
+      "bytes": 663356
+    },
+    "paused-end.png": {
+      "sha256": "80259f424f128c17cbe619abfa1d7ef7f6b981800ca24177eef54855195c68b1",
+      "bytes": 662343
+    },
+    "paused-start.png": {
+      "sha256": "80259f424f128c17cbe619abfa1d7ef7f6b981800ca24177eef54855195c68b1",
+      "bytes": 662343
+    },
+    "results.json": {
+      "sha256": "b5aee59835bfec71971196f14353c0ae99101d61254d28ec0be40fee269b8b1e",
+      "bytes": 1454
+    },
+    "sequence.png": {
+      "sha256": "991443ec53459400afc0af4b808d8ed7a707a62410c327a68791d9c2d7533a98",
+      "bytes": 760780
+    }
+  }
+}

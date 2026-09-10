@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+LowDustDrifts0 first transform: [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]
+LowDustDrifts1 first transform: [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]
+LowDustDrifts2 first transform: [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]
+GroundDustFibres first transform: [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.0, 0.0)]
+{"gentle_peak":8,"idle_empty":true,"interleaved120Hz_wisps_peak":14,"kind":"Headless native geometry/state checks, no human review","max_y":0.0665739551186562,"min_y":0.0,"reset_empty":true,"static_instances":997,"vertices_outside_flat_paver_faces":7266}
+FINAL {"gentle_peak":8,"idle_empty":true,"interleaved120Hz_wisps_peak":14,"kind":"Headless native geometry/state checks, no human review","max_y":0.0665739551186562,"min_y":0.0,"passed":false,"reset_empty":true,"static_instances":997,"vertices_outside_flat_paver_faces":7266}

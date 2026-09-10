@@ -1,0 +1,23 @@
+{
+  "after.png": "94af043c2cfda142a2ab1e7b0771b8a05b671d75ded3cf9085561ba2dfb06ba7",
+  "before.png": "45b0ab027393b9a075da4e393b48874abc201ee04b2b8fdc292313bfb9a07d7a",
+  "brushed.png": "e5ef3af42420e42b8939b7acb895a6f54c4122a62d32331b6a123d76aa5c6d56",
+  "cleared.png": "bef714a46a9a6983b86c4eca6e65620c6605ac3aee4486d269b59d709524c00e",
+  "fifty.png": "cb7ea3054d6708da6134752f22bfeb9ff301f43578679b09f946766495546c89",
+  "final-state-results.json": "b6ea7ac30f27882fbd561873ce2786fd44be9bc5697ee2853baaf81004794168",
+  "final-state.log": "4dc9c8a7aad4f885e5fe8a42b6e22ba9417a54ae1dbed7505f9bbed6589c9afa",
+  "fixture/dust-drift-rendered.gdshader": "cbdcaeb680b9ee9122da780a8b58333f1857ebe3cdd8bb774514d78040586c8f",
+  "fixture/dust-feedback-final.gd": "8a780184a505d5db4225fe9463aa36e4a3a6af0713c1446041f8a2af93050932",
+  "fixture/dust-feedback-rendered.gd": "ec6745c561792982b281fba531e4ed819213e8f209418be96ce00a72ede244df",
+  "fixture/main-frozen.gd": "fa2127b468309f371eb387dc375e6ef4236a777976332ed5bae0ea7b0252cd0b",
+  "fixture/render-check.gd": "127d877beb69f2dc5eb0d3df0c66e0d40270c4a14f7edc34ce9a14cf05d762fd",
+  "fixture/simulation-frozen.gd": "287a73b9d6323b7c2094f1394ee7e2cd7c7e7e4f4aea01f735848adf9c76129d",
+  "fixture/state-check.gd": "d547b0a1770e5ecdfc03a33c6ea1db422bd006c59d31a893f8ff0247f51aabaa",
+  "fixture/transform-probe.gd": "673e9a551132cc0b616be72d9b41fd16a9aed6e933cc3fa0e304b6602d21bdc2",
+  "invalid-gpu-readback-first.log": "8086e2a4892322a446ba8dc773277dd6fb136c292870364c3ed305f465a9c6ee",
+  "invalid-gpu-readback-identity.log": "2af732431bb8437ca65b2e1562dafe93807f273c61e70f89a298810e74ccdf62",
+  "motion.mp4": "3d0bd8a75ee4301212ee1ab2a942554173f734bb2bc17f07347e5d395cc83e1e",
+  "post-render-correction.diff": "978ae09da4c4fbf268e89217ac9af26166ab30b2a60db89759cdd6f7d4cf412f",
+  "render-results.json": "b6dc99d47961cd701b13dddfd70b488620a35739c2bd94b479f04ddbacd5b337",
+  "render.log": "d8d18c7b1515c4bad52facc01412c9a67c327f60f116d347fa5098475eddcf6e"
+}

@@ -1,0 +1,12 @@
+{
+	"gentle_peak": 8,
+	"idle_empty": true,
+	"interleaved120Hz_wisps_peak": 14,
+	"kind": "Headless CPU-submitted geometry and state checks, no GPU readback or human review",
+	"max_y": 0.0236034840345383,
+	"min_y": 0.00100000004749745,
+	"passed": true,
+	"reset_empty": true,
+	"static_instances": 997,
+	"vertices_outside_flat_paver_faces": 0
+}

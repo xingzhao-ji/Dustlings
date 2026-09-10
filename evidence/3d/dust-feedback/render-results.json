@@ -1,0 +1,28 @@
+{
+	"baseline_draw_calls": 36.0,
+	"checks": [
+		{
+			"initial_particles": 0,
+			"no_collision_nodes": true
+		},
+		{
+			"idle_response_after_settle": 0
+		},
+		{
+			"normal_cap": true
+		},
+		{
+			"gentle_cap": true
+		},
+		{
+			"brush_wisp_nodes": 0,
+			"reset_particles": 0
+		}
+	],
+	"fifty_draw_calls": 301.0,
+	"kind": "Frozen native dust-feedback comparison; controlled accelerated brushing and50-helper/end fixtures, not human play or pacing",
+	"removed_brushed": 8.30239560576663,
+	"static_instances": 997,
+	"variant_draw_calls": 40.0,
+	"variant_primitives": 217322.0
+}

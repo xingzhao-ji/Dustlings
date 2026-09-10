@@ -1,6 +1,15 @@
-# Continuation checkpoint — 2026-09-10 06:38 UTC
+# Continuation checkpoint — 2026-09-10 07:00 UTC
 
-**Run status: reached a human/device validation blocker; the game is not complete.** Courtyard0.2 is playable and technically verified with the available tools. Player experience, comparative presentation quality and owner acceptance remain separate, unpassed gates. Human sessions:0. Owner feedback was requested in this session and has not arrived. No development is implied to continue after this session ends.
+**Run status: active storefront packaging cycle.** The owner clarified Steam and the Apple iOS App Store after the prior validation checkpoint. This supplies useful authorized native-app preparation while the courtyard remains **awaiting human validation**. Player, presentation and owner gates are still unpassed; human sessions: 0. No store account, payment, upload or release approval has occurred.
+
+## Current task and exact continuation
+
+- Desktop Electron44.3.0 / packager20.3.0 packages exist for Mac ARM64 and Windows x64 under `builds/native/`, embedding the exact frozen0.2 HTML. Original Dustling icons replace Electron branding. Stable `dustlings://courtyard` origin, sandbox, persistent profile, native pause/quit save, native export destination and single-instance guard are implemented.
+- Actual packaged Mac launches and normal brushing forms a helper in about8.7s. Automated suspend pauses simulation and WebAudio. All8 desktopchecks pass, including native quit/relaunch, import/export, offline request blocking and no QA controls in normal launch. The60s sample retains3,600 rolling intervals (about30s on this120Hz host): p958.4ms, p999.3ms, one200ms worst interval. Other host activity was uncontrolled. **Exact next action: run one focused native60s profile recording every frame and interruptions to investigate the200ms pause, inspect captures/audio, and finish desktop build notes.**
+- iPhone/iPad universal Swift/WKWebView project saved; device and simulator ARM64 binaries compile/link. Full Xcode build and simulator execution are blocked by an installed IDESimulatorFoundation/DVTDownloads mismatch. Five WebKit interruption-script checks pass, with native delivery and all actual device behavior unverified. See APPLE-BUILD.md. An independent review of update/save origin and lifecycle is underway.
+- Official storefront preparation and current-vs-future SDK requirements are saved in STOREFRONTS.md. Mac App Store remains an optional unanswered preference; iPhone/iPad plus Steam Windows/Mac are the active targets.
+- When packaging checks finish, save source/evidence, update the prioritized backlog and make local app artifacts directly reviewable. Windows execution and Apple runtime checks need unavailable working environments; do not label packaged or compiled binaries as tested platforms.
+
 
 ## Exact current experience
 
@@ -28,4 +37,4 @@
 2. Obtain actual Windows/Mac mouse/trackpad and mobile touch/safe-area/sustained-device observations when access is available. Playwright WebKit is not branded Safari or physical iOS. Native computer-use access was unavailable; no working Windows guest was verified. Figma was unavailable; inspectable DOM/CSS/game prototypes are preserved.
 3. Implement the highest-impact newly evidenced weakness, check it, inspect actual gameplay/audio as available, obtain fresh human feedback where required, and save the next checkpoint. Preserve valued elements. Advance beyond the courtyard only when its gates pass.
 
-There is no remaining code correction justified by the presently available evidence. Do not manufacture feedback, add content, repeat completed research, request routine continuation permission, or arbitrarily polish to fill time. If the next invocation brings feedback or device access, immediately resume the applicable action above. Otherwise retain this accurate validation blocker. An ended session is not a finished game.
+The previous browser-only checkpoint had no further evidenced correction; the new storefront instruction has opened the native packaging cycle above. Do not manufacture feedback, add content, repeat completed research, request routine continuation permission, or arbitrarily polish to fill time. If the next invocation brings feedback or device access, immediately resume the applicable action above. Otherwise retain this accurate validation blocker. An ended session is not a finished game.

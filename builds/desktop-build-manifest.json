@@ -1,0 +1,34 @@
+{
+  "wrapperFiles": {
+    "platforms/desktop/main.cjs": "3b9de67856b923f53d4eab6df808173978021edec1a780d24cbdbf3e8066eac9",
+    "platforms/desktop/package.json": "74eaa1d1f215d5086932f9d8c9699bd2656feb9d050845fe031485921b85ba40",
+    "platforms/desktop/package-lock.json": "ce8f0124f8f7e4387b28af9be9cfdd3967be872a44374b29fd101552a8c71a9e",
+    "tools/build-desktop.mjs": "b782e3ea74e3cc43e29f9d1495cb9f253c6865770a0d80b5cb03e7971a2d49b8"
+  },
+  "builtAt": "2026-09-10T06:58:31.997Z",
+  "host": "darwin arm64",
+  "wrapperRevision": "22ef6d159db85d6b9a05a30003df0fba4f1b8dfa",
+  "wrapperWorkingTree": "May contain current uncommitted packaging changes; native source checkpoint recorded separately.",
+  "game": {
+    "version": "0.2.0",
+    "sourceRevision": "4384d82d61210269332cb8568ef89c7399425b86",
+    "sourceDirty": false,
+    "builtAt": "2026-09-10T06:17:56.300Z",
+    "artifact": "Dustlings Courtyard.html",
+    "sha256": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
+    "bytes": 148970,
+    "runtimeDependencies": 0,
+    "scope": "Courtyard prototype; human acceptance pending"
+  },
+  "electron": "44.3.0",
+  "packager": "20.3.0",
+  "targets": [
+    "darwin-arm64",
+    "win32-x64"
+  ],
+  "outputs": [
+    "builds/native/Dustlings-darwin-arm64",
+    "builds/native/Dustlings-win32-x64"
+  ],
+  "status": "Development packages only. No Steam submission, Apple notarization, release signing, or human acceptance."
+}

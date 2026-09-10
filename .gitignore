@@ -12,3 +12,6 @@ evidence/raw-video/
 evidence/**/raw-video/
 evidence/**/*.webm
 evidence/**/*.wav
+builds/native/
+platforms/desktop/game.html
+evidence/platforms/profiles/

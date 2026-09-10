@@ -14,7 +14,7 @@
   "files": [
     {
       "path": "evidence/v0.2/interaction-ui.mp4",
-      "sha256": "a607e6bc91aca6796820c4ce9cb4954c920f21ece5e76247baec5e271fbfd25b",
+      "sha256": "1cb5d5a86a77ac2c7631fd0018b26ba36f3b253a5a3211eab09ec356d1c0c20c",
       "probe": {
         "programs": [],
         "stream_groups": [],
@@ -27,10 +27,11 @@
           }
         ],
         "format": {
-          "duration": "45.000000",
-          "size": "2319255"
+          "duration": "43.000000",
+          "size": "3553469"
         }
-      }
+      },
+      "trimNote": "Cut at43s, before reload and any loaded QAfixture. Inspected40\u201343s and finalframe:4helpers, firstupgrade and livecrewdirection. Earlier45scut included subsequent fixture footage and was corrected."
     },
     {
       "path": "evidence/v0.2/opening-with-sound.mp4",

@@ -1,0 +1,89 @@
+--- a/godot/scripts/main.gd
++++ b/godot/scripts/main.gd
+@@ -50,6 +50,7 @@
+ var restore_button: Button
+ var modal: PanelContainer
+ var modal_kind = ""
++var settings_status: Label
+ var upgrade_buttons = {}
+ var save_timer = 0.0
+ var saved_once = false
+@@ -610,6 +611,9 @@
+ 
+ func _fit_modal():
+ 	if not is_instance_valid(modal): return
++	if modal_kind == "settings" and is_instance_valid(settings_status):
++		var compact = settings_status.visible and get_viewport().get_visible_rect().size.y < 750
++		settings_status.get_parent().add_theme_constant_override("separation", 8 if compact else 14)
+ 	var height = maxf(350, modal.get_combined_minimum_size().y)
+ 	modal.offset_top = -height * 0.5
+ 	modal.offset_bottom = height * 0.5
+@@ -691,7 +695,11 @@
+ 	if not started: return
+ 	_save_progress()
+ 	var column = _modal("A quiet moment", "settings", 480)
+-	if not save_problem.is_empty(): _body(column, save_problem)
++	settings_status = _label(save_problem, 17)
++	settings_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
++	settings_status.custom_minimum_size.x = 390
++	settings_status.visible = not save_problem.is_empty()
++	column.add_child(settings_status)
+ 	for key in ["music", "sfx", "ambience"]:
+ 		var row = HBoxContainer.new()
+ 		row.add_theme_constant_override("separation", 18)
+@@ -838,7 +846,17 @@
+ 	for key in ["gentle", "tap", "quality"]:
+ 		if data.get(key) is bool: settings[key] = data[key]
+ 
++func _settings_notice(message: String):
++	if modal_kind != "settings" or not is_instance_valid(settings_status): return
++	settings_status.text = message + ("\nDevice saving is still unavailable." if not save_problem.is_empty() else "")
++	settings_status.show()
++	call_deferred("_fit_modal")
++
++func _restore_settings_focus(control: Control):
++	if modal_kind == "settings" and is_instance_valid(control) and control.is_visible_in_tree(): control.grab_focus()
++
+ func _export_save():
++	var return_focus = get_viewport().gui_get_focus_owner()
+ 	var dialog = FileDialog.new()
+ 	dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+ 	dialog.access = FileDialog.ACCESS_FILESYSTEM
+@@ -847,13 +865,17 @@
+ 	dialog.add_filter("*.json", "Dustlings save")
+ 	add_child(dialog)
+ 	dialog.file_selected.connect(func(file):
+-		if save_store.export_copy(file, _payload()): _notice("A copy is saved.")
+-		else: _notice("The copy could not be saved. Try another folder.")
+-		dialog.queue_free())
+-	dialog.canceled.connect(dialog.queue_free)
++		if save_store.export_copy(file, _payload()): _settings_notice("A copy is saved.")
++		else: _settings_notice("The copy could not be saved. Try another folder.")
++		dialog.queue_free()
++		_restore_settings_focus.call_deferred(return_focus))
++	dialog.canceled.connect(func():
++		dialog.queue_free()
++		_restore_settings_focus.call_deferred(return_focus))
+ 	dialog.popup_centered_ratio(0.7)
+ 
+ func _import_save():
++	var return_focus = get_viewport().gui_get_focus_owner()
+ 	var dialog = FileDialog.new()
+ 	dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+ 	dialog.access = FileDialog.ACCESS_FILESYSTEM
+@@ -874,9 +896,12 @@
+ 			_save_progress()
+ 			_close_modal()
+ 			_notice("Your courtyard is here.")
+-		else: _notice("That is not a valid 3D courtyard save. Your progress is unchanged.")
+-		dialog.queue_free())
+-	dialog.canceled.connect(dialog.queue_free)
++		else: _settings_notice("That is not a valid 3D courtyard save. Your progress is unchanged.")
++		dialog.queue_free()
++		_restore_settings_focus.call_deferred(return_focus))
++	dialog.canceled.connect(func():
++		dialog.queue_free()
++		_restore_settings_focus.call_deferred(return_focus))
+ 	dialog.popup_centered_ratio(0.7)
+ 
+ func _quit_safely(code = 0):

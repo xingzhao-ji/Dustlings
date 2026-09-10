@@ -1,0 +1,53 @@
+{
+  "baseline_main_sha256": "4eb4f15e2d75b6337941c6bee880e762adc8ff5f86e8d65fb5ffd63d38e4e51b",
+  "candidate_main_sha256": "7893e39a2af90360a2cb9c6e90a611e371fe5b1641f1976f649fb132b4ac0b22",
+  "status": "Lead integrated the Settings patch; merged native 133-check and separate 10-check valid-import runs passed",
+  "scope": "Settings-local copy outcomes and dialog focus restoration; canonical runtime unchanged",
+  "runs": {
+    "baseline": {
+      "main_sha256": "4eb4f15e2d75b6337941c6bee880e762adc8ff5f86e8d65fb5ffd63d38e4e51b",
+      "pid": 46128,
+      "passed": 119,
+      "failed": 14,
+      "report": "baseline/results.json"
+    },
+    "candidate-initial": {
+      "main_sha256": "d4988a1ee084354780ac3a29139ca78430a5a8a4a7a0628488c94e8b768de7b1",
+      "pid": 46136,
+      "passed": 132,
+      "failed": 1,
+      "report": "candidate-initial/results.json"
+    },
+    "candidate": {
+      "main_sha256": "7893e39a2af90360a2cb9c6e90a611e371fe5b1641f1976f649fb132b4ac0b22",
+      "pid": 46204,
+      "passed": 133,
+      "failed": 0,
+      "report": "candidate/results.json"
+    },
+    "integrated": {
+      "main_sha256": "90bc802595b85af5d4fe45cb8a948af1a56df7808f4e45414afbc7567c5fc1bd",
+      "pid": 46324,
+      "passed": 133,
+      "failed": 0,
+      "report": "integrated/results.json"
+    },
+    "valid-import": {
+      "main_sha256": "2f43c73116288e0e104523f220baab9942416dc68c6e03c7566d423318f4224f",
+      "pid": 46408,
+      "passed": 10,
+      "failed": 0,
+      "report": "valid-import/results.json"
+    }
+  },
+  "limitations": [
+    "Generated production FileDialog callback outcomes with embedded Godot picker, not physical native-OS dialog interaction",
+    "The 133-check cases use a paused fixture with no soundscape start; the additional 10-check valid import starts/resumes audio but does not constitute audition",
+    "No keyboard traversal, Windows, sustained performance or human validation"
+  ],
+  "test_harness_failure": {
+    "pid": 46378,
+    "path": "valid-import-initial/",
+    "reason": "Probe accessed nonexistent serialized game.cleaned; fixed to derive through Sim.restore; terminated process and preserved failure"
+  }
+}

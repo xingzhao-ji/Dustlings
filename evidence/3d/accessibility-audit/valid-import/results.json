@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "A different real valid courtyard/settings copy is written and verified",
+    "Imported progress/preferences differ from the current courtyard",
+    "Valid import uses the actual production callback with an embedded-picker fixture",
+    "Selected valid copy immediately restores its intended progress and every preference",
+    "Settings and its initiating button are freed before deferred callback completion",
+    "World and started soundscape resume after successful import",
+    "Deferred file-dialog focus does not replace the live Brush focus",
+    "Successful load confirmation appears in the visible world",
+    "Valid load does not revive held input",
+    "Loaded progress/preferences are also saved through the production path"
+  ],
+  "failures": [],
+  "main_sha256": "2f43c73116288e0e104523f220baab9942416dc68c6e03c7566d423318f4224f",
+  "pid": 46408,
+  "qa_storage": "/Users/xingzhaoji/Library/Caches/dustlings-accessibility-46408-440015",
+  "scope": "Additional single valid-import production callback with different saved progress/preferences, started audio and deferred Settings free/focus processing. Generated embedded picker, not physical OS picker operation."
+}

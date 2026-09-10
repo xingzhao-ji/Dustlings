@@ -1,0 +1,442 @@
+{
+  "cases": [
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Save a copy",
+      "id": "1280-saved-copy",
+      "modal_rect": "[P: (480.0, 128.5), S: (480.0, 643.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1440.0, 900.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (494.0, 193.5), S: (452.0, 24.0)]",
+          "text": "A copy is saved."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Save a copy",
+      "id": "1280-failed-copy",
+      "modal_rect": "[P: (480.0, 128.5), S: (480.0, 643.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1440.0, 900.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (494.0, 193.5), S: (452.0, 24.0)]",
+          "text": "The copy could not be saved. Try another folder."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Load a copy",
+      "id": "1280-invalid-json",
+      "modal_rect": "[P: (480.0, 115.0), S: (480.0, 670.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1440.0, 900.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (494.0, 180.0), S: (452.0, 51.0)]",
+          "text": "That is not a valid 3D courtyard save. Your progress is unchanged."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Load a copy",
+      "id": "1280-invalid-schema",
+      "modal_rect": "[P: (480.0, 115.0), S: (480.0, 670.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1440.0, 900.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (494.0, 180.0), S: (452.0, 51.0)]",
+          "text": "That is not a valid 3D courtyard save. Your progress is unchanged."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Load a copy",
+      "id": "1280-missing-import",
+      "modal_rect": "[P: (480.0, 115.0), S: (480.0, 670.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1440.0, 900.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (494.0, 180.0), S: (452.0, 51.0)]",
+          "text": "That is not a valid 3D courtyard save. Your progress is unchanged."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Save a copy",
+      "id": "1280-cancel-export",
+      "modal_rect": "[P: (480.0, 115.0), S: (480.0, 670.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1440.0, 900.0)]",
+      "visible_status": []
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Load a copy",
+      "id": "1280-cancel-import",
+      "modal_rect": "[P: (480.0, 115.0), S: (480.0, 670.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1440.0, 900.0)]",
+      "visible_status": []
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Save a copy",
+      "id": "1280-recovery-copy",
+      "modal_rect": "[P: (480.0, 115.0), S: (480.0, 670.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1440.0, 900.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (494.0, 180.0), S: (452.0, 51.0)]",
+          "text": "A copy is saved.\nDevice saving is still unavailable."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Load a copy",
+      "id": "1280-recovery-invalid",
+      "modal_rect": "[P: (480.0, 101.5), S: (480.0, 697.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1440.0, 900.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (494.0, 166.5), S: (452.0, 78.0)]",
+          "text": "That is not a valid 3D courtyard save. Your progress is unchanged.\nDevice saving is still unavailable."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Save a copy",
+      "id": "960-saved-copy",
+      "modal_rect": "[P: (300.0, 46.0), S: (480.0, 583.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1080.0, 675.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (314.0, 105.0), S: (452.0, 24.0)]",
+          "text": "A copy is saved."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Save a copy",
+      "id": "960-failed-copy",
+      "modal_rect": "[P: (300.0, 46.0), S: (480.0, 583.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1080.0, 675.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (314.0, 105.0), S: (452.0, 24.0)]",
+          "text": "The copy could not be saved. Try another folder."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Load a copy",
+      "id": "960-invalid-json",
+      "modal_rect": "[P: (300.0, 32.5), S: (480.0, 610.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1080.0, 675.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (314.0, 91.5), S: (452.0, 51.0)]",
+          "text": "That is not a valid 3D courtyard save. Your progress is unchanged."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Load a copy",
+      "id": "960-invalid-schema",
+      "modal_rect": "[P: (300.0, 32.5), S: (480.0, 610.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1080.0, 675.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (314.0, 91.5), S: (452.0, 51.0)]",
+          "text": "That is not a valid 3D courtyard save. Your progress is unchanged."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Load a copy",
+      "id": "960-missing-import",
+      "modal_rect": "[P: (300.0, 32.5), S: (480.0, 610.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1080.0, 675.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (314.0, 91.5), S: (452.0, 51.0)]",
+          "text": "That is not a valid 3D courtyard save. Your progress is unchanged."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Save a copy",
+      "id": "960-cancel-export",
+      "modal_rect": "[P: (300.0, 32.5), S: (480.0, 610.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1080.0, 675.0)]",
+      "visible_status": []
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Load a copy",
+      "id": "960-cancel-import",
+      "modal_rect": "[P: (300.0, 32.5), S: (480.0, 610.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1080.0, 675.0)]",
+      "visible_status": []
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Save a copy",
+      "id": "960-recovery-copy",
+      "modal_rect": "[P: (300.0, 32.5), S: (480.0, 610.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1080.0, 675.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (314.0, 91.5), S: (452.0, 51.0)]",
+          "text": "A copy is saved.\nDevice saving is still unavailable."
+        }
+      ]
+    },
+    {
+      "audio_paused": true,
+      "fits": true,
+      "focus": "Load a copy",
+      "id": "960-recovery-invalid",
+      "modal_rect": "[P: (300.0, 19.0), S: (480.0, 637.0)]",
+      "paused": true,
+      "tip": "Hold and sweep over a dusty patch.",
+      "tip_visible": false,
+      "viewport": "[P: (0.0, 0.0), S: (1080.0, 675.0)]",
+      "visible_status": [
+        {
+          "rect": "[P: (314.0, 78.0), S: (452.0, 78.0)]",
+          "text": "That is not a valid 3D courtyard save. Your progress is unchanged.\nDevice saving is still unavailable."
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "Fresh QA path and ephemeral lock; welcome has not written progress",
+    "1280-saved-copy: actual production FileDialog callbacks with embedded-picker fixture",
+    "1280-saved-copy: operation result is immediately visible inside Settings",
+    "1280-saved-copy: status and essential controls fit the native viewport",
+    "1280-saved-copy: same Settings panel remains paused",
+    "1280-saved-copy: operation does not change current progress/preferences",
+    "1280-saved-copy: keyboard focus returns to the initiating control",
+    "1280-saved-copy: no held input resumes",
+    "1280-exported bytes pass the production copy validator",
+    "1280-failed-copy: actual production FileDialog callbacks with embedded-picker fixture",
+    "1280-failed-copy: operation result is immediately visible inside Settings",
+    "1280-failed-copy: status and essential controls fit the native viewport",
+    "1280-failed-copy: same Settings panel remains paused",
+    "1280-failed-copy: operation does not change current progress/preferences",
+    "1280-failed-copy: keyboard focus returns to the initiating control",
+    "1280-failed-copy: no held input resumes",
+    "1280-invalid-json: actual production FileDialog callbacks with embedded-picker fixture",
+    "1280-invalid-json: operation result is immediately visible inside Settings",
+    "1280-invalid-json: status and essential controls fit the native viewport",
+    "1280-invalid-json: same Settings panel remains paused",
+    "1280-invalid-json: operation does not change current progress/preferences",
+    "1280-invalid-json: keyboard focus returns to the initiating control",
+    "1280-invalid-json: no held input resumes",
+    "1280-invalid-schema: actual production FileDialog callbacks with embedded-picker fixture",
+    "1280-invalid-schema: operation result is immediately visible inside Settings",
+    "1280-invalid-schema: status and essential controls fit the native viewport",
+    "1280-invalid-schema: same Settings panel remains paused",
+    "1280-invalid-schema: operation does not change current progress/preferences",
+    "1280-invalid-schema: keyboard focus returns to the initiating control",
+    "1280-invalid-schema: no held input resumes",
+    "1280-missing-import: actual production FileDialog callbacks with embedded-picker fixture",
+    "1280-missing-import: operation result is immediately visible inside Settings",
+    "1280-missing-import: status and essential controls fit the native viewport",
+    "1280-missing-import: same Settings panel remains paused",
+    "1280-missing-import: operation does not change current progress/preferences",
+    "1280-missing-import: keyboard focus returns to the initiating control",
+    "1280-missing-import: no held input resumes",
+    "1280-cancel-export: actual production FileDialog callbacks with embedded-picker fixture",
+    "1280-cancel-export: cancel does not invent an operation result",
+    "1280-cancel-export: status and essential controls fit the native viewport",
+    "1280-cancel-export: same Settings panel remains paused",
+    "1280-cancel-export: operation does not change current progress/preferences",
+    "1280-cancel-export: keyboard focus returns to the initiating control",
+    "1280-cancel-export: no held input resumes",
+    "1280-cancel-import: actual production FileDialog callbacks with embedded-picker fixture",
+    "1280-cancel-import: cancel does not invent an operation result",
+    "1280-cancel-import: status and essential controls fit the native viewport",
+    "1280-cancel-import: same Settings panel remains paused",
+    "1280-cancel-import: operation does not change current progress/preferences",
+    "1280-cancel-import: keyboard focus returns to the initiating control",
+    "1280-cancel-import: no held input resumes",
+    "1280-existing device-save failure is real and remains recorded",
+    "1280-recovery-copy: actual production FileDialog callbacks with embedded-picker fixture",
+    "1280-recovery-copy: operation result is immediately visible inside Settings",
+    "1280-recovery-copy: status and essential controls fit the native viewport",
+    "1280-recovery-copy: same Settings panel remains paused",
+    "1280-recovery-copy: operation does not change current progress/preferences",
+    "1280-recovery-copy: keyboard focus returns to the initiating control",
+    "1280-recovery-copy: no held input resumes",
+    "1280-recovery-invalid: actual production FileDialog callbacks with embedded-picker fixture",
+    "1280-recovery-invalid: operation result is immediately visible inside Settings",
+    "1280-recovery-invalid: status and essential controls fit the native viewport",
+    "1280-recovery-invalid: same Settings panel remains paused",
+    "1280-recovery-invalid: operation does not change current progress/preferences",
+    "1280-recovery-invalid: keyboard focus returns to the initiating control",
+    "1280-recovery-invalid: no held input resumes",
+    "1280-copy/import feedback does not erase the separate device-save failure",
+    "960-saved-copy: actual production FileDialog callbacks with embedded-picker fixture",
+    "960-saved-copy: operation result is immediately visible inside Settings",
+    "960-saved-copy: status and essential controls fit the native viewport",
+    "960-saved-copy: same Settings panel remains paused",
+    "960-saved-copy: operation does not change current progress/preferences",
+    "960-saved-copy: keyboard focus returns to the initiating control",
+    "960-saved-copy: no held input resumes",
+    "960-exported bytes pass the production copy validator",
+    "960-failed-copy: actual production FileDialog callbacks with embedded-picker fixture",
+    "960-failed-copy: operation result is immediately visible inside Settings",
+    "960-failed-copy: status and essential controls fit the native viewport",
+    "960-failed-copy: same Settings panel remains paused",
+    "960-failed-copy: operation does not change current progress/preferences",
+    "960-failed-copy: keyboard focus returns to the initiating control",
+    "960-failed-copy: no held input resumes",
+    "960-invalid-json: actual production FileDialog callbacks with embedded-picker fixture",
+    "960-invalid-json: operation result is immediately visible inside Settings",
+    "960-invalid-json: status and essential controls fit the native viewport",
+    "960-invalid-json: same Settings panel remains paused",
+    "960-invalid-json: operation does not change current progress/preferences",
+    "960-invalid-json: keyboard focus returns to the initiating control",
+    "960-invalid-json: no held input resumes",
+    "960-invalid-schema: actual production FileDialog callbacks with embedded-picker fixture",
+    "960-invalid-schema: operation result is immediately visible inside Settings",
+    "960-invalid-schema: status and essential controls fit the native viewport",
+    "960-invalid-schema: same Settings panel remains paused",
+    "960-invalid-schema: operation does not change current progress/preferences",
+    "960-invalid-schema: keyboard focus returns to the initiating control",
+    "960-invalid-schema: no held input resumes",
+    "960-missing-import: actual production FileDialog callbacks with embedded-picker fixture",
+    "960-missing-import: operation result is immediately visible inside Settings",
+    "960-missing-import: status and essential controls fit the native viewport",
+    "960-missing-import: same Settings panel remains paused",
+    "960-missing-import: operation does not change current progress/preferences",
+    "960-missing-import: keyboard focus returns to the initiating control",
+    "960-missing-import: no held input resumes",
+    "960-cancel-export: actual production FileDialog callbacks with embedded-picker fixture",
+    "960-cancel-export: cancel does not invent an operation result",
+    "960-cancel-export: status and essential controls fit the native viewport",
+    "960-cancel-export: same Settings panel remains paused",
+    "960-cancel-export: operation does not change current progress/preferences",
+    "960-cancel-export: keyboard focus returns to the initiating control",
+    "960-cancel-export: no held input resumes",
+    "960-cancel-import: actual production FileDialog callbacks with embedded-picker fixture",
+    "960-cancel-import: cancel does not invent an operation result",
+    "960-cancel-import: status and essential controls fit the native viewport",
+    "960-cancel-import: same Settings panel remains paused",
+    "960-cancel-import: operation does not change current progress/preferences",
+    "960-cancel-import: keyboard focus returns to the initiating control",
+    "960-cancel-import: no held input resumes",
+    "960-existing device-save failure is real and remains recorded",
+    "960-recovery-copy: actual production FileDialog callbacks with embedded-picker fixture",
+    "960-recovery-copy: operation result is immediately visible inside Settings",
+    "960-recovery-copy: status and essential controls fit the native viewport",
+    "960-recovery-copy: same Settings panel remains paused",
+    "960-recovery-copy: operation does not change current progress/preferences",
+    "960-recovery-copy: keyboard focus returns to the initiating control",
+    "960-recovery-copy: no held input resumes",
+    "960-recovery-invalid: actual production FileDialog callbacks with embedded-picker fixture",
+    "960-recovery-invalid: operation result is immediately visible inside Settings",
+    "960-recovery-invalid: status and essential controls fit the native viewport",
+    "960-recovery-invalid: same Settings panel remains paused",
+    "960-recovery-invalid: operation does not change current progress/preferences",
+    "960-recovery-invalid: keyboard focus returns to the initiating control",
+    "960-recovery-invalid: no held input resumes",
+    "960-copy/import feedback does not erase the separate device-save failure"
+  ],
+  "display": "macOS",
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "failures": [],
+  "main_sha256": "90bc802595b85af5d4fe45cb8a948af1a56df7808f4e45414afbc7567c5fc1bd",
+  "pid": 46324,
+  "qa_storage": "/Users/xingzhaoji/Library/Caches/dustlings-accessibility-46324-457781",
+  "scope": "Actual native Godot rendering and production FileDialog signal callbacks, with embedded-picker fixture and generated outcomes. No physical/native-OS-picker interaction, human session, pacing or performance claim."
+}

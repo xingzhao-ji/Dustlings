@@ -328,6 +328,9 @@ func _unhandled_input(event):
 			else:
 				if not tap_sweep: brushing = false
 	if event is InputEventKey:
+		# A deliberately focused HUD control owns its activation/navigation keys.
+		# Tool shortcuts still provide an explicit way back to world aiming.
+		if get_viewport().gui_get_focus_owner() != null and event.keycode in [KEY_SPACE, KEY_ENTER, KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN]: return
 		if event.keycode == KEY_SPACE:
 			brush_keyboard_held = event.pressed
 			keyboard_aim = true
@@ -350,6 +353,21 @@ func _unhandled_input(event):
 					keyboard_pointer = (keyboard_pointer + direction).clamp(Vector2(10, 72), get_viewport().get_visible_rect().size - Vector2(10, 100))
 
 func _input(event):
+	# Returning to the courtyard gives aiming keys back to the world. Tab is an
+	# explicit way into the HUD; subsequent keys use Godot's normal UI navigation.
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_TAB and started and not paused and modal_kind == "":
+		var targets: Array[Control] = []
+		for control in hud.find_children("*", "Button", true, false):
+			if control.is_visible_in_tree() and not control.disabled and control.focus_mode != Control.FOCUS_NONE: targets.append(control)
+		if not targets.is_empty():
+			# The header and tool dock are separate Control roots. Explicit paths
+			# keep native Tab navigation connected as the fountain action appears.
+			for i in targets.size():
+				targets[i].focus_next = targets[(i + 1) % targets.size()].get_path()
+				targets[i].focus_previous = targets[(i - 1 + targets.size()) % targets.size()].get_path()
+			if get_viewport().gui_get_focus_owner() == null:
+				targets[-1 if event.shift_pressed else 0].grab_focus()
+				get_viewport().set_input_as_handled()
 	if event is InputEventMouseButton and event.button_index in [MOUSE_BUTTON_MIDDLE, MOUSE_BUTTON_RIGHT] and not event.pressed: dragging_camera = false
 	# Release a held stroke even when its ending lands on UI.
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and not tap_sweep: brushing = false
@@ -426,6 +444,8 @@ func _stop_input():
 func _set_mode(value: String):
 	_stop_input()
 	mode = value
+	var focus = get_viewport().gui_get_focus_owner()
+	if is_instance_valid(focus): focus.release_focus()
 	audio.ui()
 	_update_ui()
 
@@ -651,7 +671,8 @@ func _close_modal():
 	paused = false
 	_stop_input()
 	if audio: audio.set_paused(false); audio.ui()
-	if brush_button: brush_button.grab_focus()
+	var focus = get_viewport().gui_get_focus_owner()
+	if is_instance_valid(focus): focus.release_focus()
 	_update_ui()
 	_save_progress()
 
@@ -762,7 +783,9 @@ func _show_help():
 	_body(column, "Brush: hold and sweep over dusty paving. Dust becomes a new helper every seven motes.\n\nDirect: press D, then choose open paving. Your crew cleans around that spot.\n\nGrow: press U to discover wider brushing, paired helpers and the fountain chorus.")
 	_body(column, "Scroll or + / −: look closer\nRight-drag: frame the village · Home: reset\nKeyboard: N finds dust, arrows aim, Space brushes. Enter directs. Escape pauses.")
 	column.add_child(_button("Let the crew roam", func(): sim.release(); _close_modal(), 430))
-	column.add_child(_button("Back to settings", _show_settings, 430))
+	var back = _button("Back to settings", _show_settings, 430)
+	column.add_child(back)
+	back.grab_focus()
 
 func _show_completion():
 	var column = _modal("Courtyard restored", "complete")
@@ -854,7 +877,7 @@ func _settings_notice(message: String):
 	settings_status.show()
 	call_deferred("_fit_modal")
 
-func _restore_settings_focus(control: Control):
+func _restore_settings_focus(control):
 	if modal_kind == "settings" and is_instance_valid(control) and control.is_visible_in_tree(): control.grab_focus()
 
 func _export_save():

@@ -9,6 +9,20 @@ var _head: Node3D
 var _left_arm: Node3D
 var _right_arm: Node3D
 var _feet: Array[Node3D] = []
+var _legs: Array[Node3D] = []
+var _plants: Array[Vector3] = []
+var _swing_from: Array[Vector3] = []
+var _swing_to: Array[Vector3] = []
+var _was_stance: Array[bool] = []
+var _swing_phase: Array[float] = []
+var _feet_ready := false
+var _previous_actor_position := Vector3.ZERO
+var _walk_distance := 0.0
+var _attention_target := Vector3.ZERO
+var _attention_amount := 0.0
+var _attention := 0.0
+var _notice := 0.0
+var _map_grip_error := 0.0
 var _eyes: Array[MeshInstance3D] = []
 var _brows: Array[MeshInstance3D] = []
 var _scarf: Node3D
@@ -37,6 +51,14 @@ func configure(value: String) -> void:
             remove_child(child)
             child.queue_free()
         _feet.clear()
+        _legs.clear()
+        _plants.clear()
+        _swing_from.clear()
+        _swing_to.clear()
+        _was_stance.clear()
+        _swing_phase.clear()
+        _feet_ready = false
+        _walk_distance = 0.0
         _eyes.clear()
         _brows.clear()
         _activity_props.clear()
@@ -116,7 +138,8 @@ func _build() -> void:
         var foot := Node3D.new()
         foot.name = "LeftLegAndBoot" if i == 0 else "RightLegAndBoot"
         add_child(foot)
-        _round(foot, "TrouserLeg", Vector3(0, 0.28, 0), Vector3(0.18, 0.42, 0.20), Color("6d776d"))
+        var leg_mesh := _round(self, "TrouserLeg", Vector3(side * 0.125, 0.28, 0), Vector3(0.18, 0.42, 0.20), Color("6d776d"))
+        _legs.append(leg_mesh.get_parent())
         _round(foot, "Boot", Vector3(0, 0.08, 0.035), Vector3(0.21, 0.16, 0.31), Color("857360"))
         _feet.append(foot)
     _scarf = Node3D.new()
@@ -127,6 +150,9 @@ func _build() -> void:
     _make_activity_props()
     _made = true
     animate(0, 0)
+    # Root may place/turn a newly built actor after configure(). Initial boot
+    # contacts must be captured in that final transform on the first real tick.
+    _feet_ready = false
 
 func _accessories() -> void:
     match kind:
@@ -168,6 +194,18 @@ func set_activity(value: String) -> void:
 
 func set_gentle_motion(enabled: bool) -> void:
     _gentle = enabled
+
+func set_attention(world_target: Vector3, amount: float = 1.0) -> void:
+    if amount > 0.15 and _attention_amount <= 0.15: _notice = 0.7
+    _attention_target = world_target
+    _attention_amount = clampf(amount, 0, 1)
+
+func clear_attention() -> void:
+    _attention_amount = 0.0
+
+func get_hand_position(right: bool = true) -> Vector3:
+    var arm := _right_arm if right else _left_arm
+    return arm.get_node("HandShape").global_position if is_instance_valid(arm) else global_position
 
 func _make_activity_props() -> void:
     # Props belong to actions, not idle silhouettes. Root chooses routines.
@@ -214,16 +252,15 @@ func animate(delta: float, speed: float, talking: bool = false, joy: bool = fals
     if not _made: return
     var dt := clampf(delta, 0, 0.1)
     _clock += dt
-    _stride += maxf(speed, 0.0) * dt * TAU / 1.10
+    _walk_distance += maxf(speed, 0.0) * dt
+    _stride = _walk_distance * TAU / 1.10 + PI * 0.5
     _moving = move_toward(_moving, clampf(speed / 2.5, 0, 1), dt * 6)
     _chat = move_toward(_chat, 1.0 if talking else 0.0, dt * 5)
     _happy = move_toward(_happy, 1.0 if joy else 0.0, dt * 4)
+    _attention = move_toward(_attention, _attention_amount, dt * 3.5)
+    _notice = maxf(0, _notice - dt)
     var t := _clock + _phase
-    # Feet alternate planted stances. Visual foot soles are exactly y=0 at rest.
-    for i in 2:
-        var beat := _stride + float(i) * PI
-        _feet[i].position = Vector3(-0.125 if i == 0 else 0.125, (maxf(0, sin(beat)) * 0.11 + absf(sin(beat)) * 0.018) * _moving, -cos(beat) * 0.16 * _moving)
-        _feet[i].rotation.x = -sin(beat) * 0.10 * _moving
+    _pose_feet(dt, speed)
     var motion := 0.0 if _gentle else 1.0
     _body.position.y = (absf(sin(_stride)) * 0.025 * _moving + sin(t * 1.8) * 0.005) * motion
     _body.rotation.z = sin(_stride) * 0.027 * _moving * motion
@@ -232,14 +269,108 @@ func animate(delta: float, speed: float, talking: bool = false, joy: bool = fals
     _right_arm.rotation = Vector3(-sin(_stride) * 0.42 * _moving - 0.18 * _chat, 0, 0.045 + (0.24 + sin(t * 3.1) * 0.09) * _chat + 0.25 * _happy)
     _scarf.rotation.x = (sin(_stride - 0.4) * 0.10 * _moving + sin(t * 1.7) * 0.03) * motion
     _pose_activity(dt, t, speed, talking)
+    if _attention > 0.001:
+        var local := to_local(_attention_target) - Vector3(0, 1.27, 0)
+        var gaze := Vector3(clampf(-atan2(local.y, maxf(0.1, Vector2(local.x, local.z).length())), -0.24, 0.25), clampf(atan2(local.x, local.z), -0.55, 0.55), 0)
+        _head.rotation = _head.rotation.lerp(gaze, _attention)
     var blink := 1.0
     var blink_clock := fmod(t, 4.7)
     if blink_clock > 4.53: blink = 1.0 - sin((blink_clock - 4.53) / 0.17 * PI) * 0.92
     for eye in _eyes: eye.scale.y = blink * (1.0 - _happy * 0.18)
     for i in _brows.size():
-        _brows[i].rotation.z = (-1.0 if i == 0 else 1.0) * (_chat * 0.08 + _happy * 0.10)
+        _brows[i].rotation.z = (-1.0 if i == 0 else 1.0) * (_chat * 0.08 + _happy * 0.10 + sin(_notice / 0.7 * PI) * 0.06)
+
+func _pose_feet(dt: float, speed: float) -> void:
+    # A loaded save or safe-spawn recovery relocates the whole actor. Re-seed
+    # contacts there rather than leaving limbs stretched to a previous scene.
+    if _feet_ready and global_position.distance_to(_previous_actor_position) > 0.8:
+        _feet_ready = false
+        _plants.clear()
+        _swing_from.clear()
+        _swing_to.clear()
+        _was_stance.clear()
+        _swing_phase.clear()
+    _previous_actor_position = global_position
+    if not _feet_ready:
+        _plants.clear()
+        _swing_from.clear()
+        _swing_to.clear()
+        _was_stance.clear()
+        _swing_phase.clear()
+        for i in 2:
+            var side := -0.125 if i == 0 else 0.125
+            _feet[i].position = Vector3(side, 0, 0)
+            var at := to_global(_feet[i].position)
+            _plants.append(at)
+            _swing_from.append(at)
+            _swing_to.append(at)
+            _was_stance.append(true)
+            _swing_phase.append(0.6)
+        _feet_ready = true
+    for i in 2:
+        var foot := _feet[i]
+        var side := -0.125 if i == 0 else 0.125
+        var phase := fposmod(_stride / TAU + float(i) * 0.5, 1.0)
+        var stance := phase < 0.60
+        var at := foot.position
+        if speed < 0.04:
+            # A lifted foot completes a short settling step; grounded support
+            # does not scrub back to a cosmetic neutral stance when input stops.
+            if at.y > 0.001:
+                at = at.move_toward(Vector3(side, 0, clampf(at.z, -0.24, 0.24)), dt * 1.7)
+                _plants[i] = to_global(Vector3(at.x, 0, at.z))
+            else:
+                at = to_local(_plants[i])
+                at.y = 0
+                var neutral := Vector3(side, 0, 0)
+                # Turn-in-place recovery stays on the ground with a tiny lift;
+                # it is bounded, rather than swapping left/right boots instantly.
+                if at.distance_to(neutral) > 0.28 or at.x * side < 0:
+                    at = at.move_toward(neutral, dt * 0.9)
+                    at.y = minf(0.035, at.distance_to(neutral) * 0.1)
+                    _plants[i] = to_global(Vector3(at.x, 0, at.z))
+            _was_stance[i] = true
+            foot.rotation.x = move_toward(foot.rotation.x, 0, dt * 2)
+        elif stance:
+            if not _was_stance[i]: _plants[i] = _swing_to[i]
+            at = to_local(_plants[i])
+            at.y = 0
+            # During an abrupt reversal, recover an overextended contact with a
+            # short visible step. Normal straight stances remain world-locked.
+            var neutral := Vector3(side, 0, 0)
+            if at.distance_to(neutral) > 0.46:
+                at = at.move_toward(neutral, dt * 2.4)
+                at.y = 0.045
+                _plants[i] = to_global(Vector3(at.x, 0, at.z))
+            foot.rotation.x = 0
+            _was_stance[i] = true
+        else:
+            if _was_stance[i]:
+                _swing_from[i] = to_global(at)
+                _swing_phase[i] = phase
+                _swing_to[i] = to_global(Vector3(side, 0, 0.33 + (1.0 - phase) * 1.10 / _height))
+            var desired := to_global(Vector3(side, 0, 0.33 + (1.0 - phase) * 1.10 / _height))
+            _swing_to[i] = _swing_to[i].lerp(desired, 1.0 - exp(-dt * 13))
+            var u := clampf((phase - _swing_phase[i]) / maxf(0.02, 1.0 - _swing_phase[i]), 0, 1)
+            var travel := smoothstep(0, 1, u)
+            at = to_local(_swing_from[i].lerp(_swing_to[i], travel))
+            at.y = sin(u * PI) * (0.075 if _gentle else 0.105) * clampf(speed / 1.3, 0.55, 1)
+            foot.rotation.x = -sin(u * PI) * 0.075
+            _was_stance[i] = false
+        foot.position = at
+        # A separate leg joins the stationary hip to the moving ankle so a
+        # planted boot does not drag an upright trouser tube out of the coat.
+        var hip := Vector3(side, 0.46, 0)
+        var ankle := at + Vector3(0, 0.13, 0)
+        var limb := hip - ankle
+        _legs[i].position = (hip + ankle) * 0.5
+        _legs[i].quaternion = Quaternion(Vector3.UP, limb.normalized())
+        _legs[i].scale = Vector3(0.18, limb.length() + 0.12, 0.20)
 
 func _pose_activity(dt: float, t: float, speed: float, talking: bool) -> void:
+    if kind == "ivo" and _activity == "map":
+        _pose_map(dt, t, speed, talking)
+        return
     var working := not _activity.is_empty() and speed < 0.08 and not talking
     _activity_blend = move_toward(_activity_blend, 1.0 if working else 0.0, dt * 4)
     for key in _activity_props:
@@ -271,6 +402,36 @@ func _pose_activity(dt: float, t: float, speed: float, talking: bool) -> void:
     _left_arm.rotation = _left_arm.rotation.lerp(left, _activity_blend)
     _right_arm.rotation = _right_arm.rotation.lerp(right, _activity_blend)
     _head.rotation = _head.rotation.lerp(glance, _activity_blend)
+
+func _aim_hand(arm: Node3D, destination: Vector3, left: bool) -> void:
+    var bone := Vector3(-0.025 if left else 0.025, -0.41, 0.017)
+    arm.quaternion = Quaternion(bone.normalized(), (destination - arm.position).normalized())
+
+func _pose_map(dt: float, t: float, speed: float, talking: bool) -> void:
+    # Ivo carries the same full-size map through notice/conversation/walking.
+    # Its left grip is derived from the actual hand transform every frame.
+    for key in _activity_props:
+        _activity_props[key].visible = key == "map"
+        _activity_props[key].scale = Vector3.ONE
+    _activity_blend = move_toward(_activity_blend, 1.0, dt * 4)
+    var prop: Node3D = _activity_props["map"]
+    var attention := maxf(_chat, _attention)
+    var scan := sin(t * 0.52) * (0.018 if _gentle else 0.045)
+    var grip := Vector3(-0.215, 0.745 - attention * 0.035, 0.32 - attention * 0.035)
+    _aim_hand(_left_arm, grip, true)
+    prop.rotation = Vector3(-0.20 + attention * 0.16, 0, 0)
+    var left_hand := _left_arm.position + _left_arm.basis * Vector3(-0.025, -0.41, 0.017)
+    prop.position = left_hand - prop.basis * Vector3(-0.215, 0, 0)
+    var right_grip := prop.position + prop.basis * Vector3(0.215, 0, 0)
+    _aim_hand(_right_arm, right_grip, false)
+    var hold := _right_arm.quaternion
+    # A single open-hand beat at noticing, then a restrained conversational lift.
+    var greeting := sin(clampf(_notice / 0.7, 0, 1) * PI)
+    var gesture := maxf(greeting * 0.58, _chat * (0.30 + 0.05 * sin(t * 1.4)))
+    var open_hand := Quaternion.from_euler(Vector3(-1.12, -0.16, -0.58))
+    _right_arm.quaternion = hold.slerp(open_hand, gesture)
+    _head.rotation = _head.rotation.lerp(Vector3(0.22 * (1.0 - attention), scan * (1.0 - attention), -0.025 * (1.0 - attention)), 1.0 - _moving)
+    _map_grip_error = (left_hand - (prop.position + prop.basis * Vector3(-0.215, 0, 0))).length()
 
 static func _flat(parent: Node3D, at: Vector3, size: Vector3, color: Color) -> MeshInstance3D:
     var mesh := MeshInstance3D.new()

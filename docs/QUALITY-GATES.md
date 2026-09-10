@@ -4,11 +4,21 @@
 
 Use the existing [PLAYTEST.md](PLAYTEST.md) protocol for recruitment, observation, the required segment, continuation, coaching, and debrief. This document records provenance and gate decisions; it does not replace that protocol. [BACKLOG.md](BACKLOG.md) tracks concrete corrections. No outreach or recruitment has been performed through this ledger.
 
-## Review candidate
+## Current 3D review candidate
 
-The version 0.2 candidate is frozen below. Attach feedback only to this exact artifact. Automated candidate verification passes in the available engines, including a full normal-speed courtyard session with exact saved-ending recovery. Neither supplies human acceptance.
+<!-- 3D-REVIEW-CANDIDATE:START -->
+The active milestone is the real-geometry Godot courtyard, version `0.4.0-dev`, **awaiting human validation**. Final matching build metadata is pending. Earlier 3D packages and every 2D deliverable are historical; none establishes the current experience.
 
-| Field | Current record |
+See [the 3D review hub](../evidence/3d/REVIEW.html) for labeled references. Current player, presentation and owner gates are not passed. Human sessions: **0**. Windows execution and physical mobile support remain unverified.
+<!-- 3D-REVIEW-CANDIDATE:END -->
+
+Bind every human review to the exact native PCK and executable/archive hashes, source revision and dirty state. If implementation or presentation changes, preserve old observations under their original identity and obtain fresh review for affected claims. An agent's critique, generated input recording or fixture is not a human session. No gate transfers from the old 2D prototype.
+
+## Historical 2D candidate — retained provenance
+
+The following 0.2 record is historical. Its browser artifact, captures and tests do not validate the active 3D implementation or current native platform readiness.
+
+| Field | Historical record |
 | --- | --- |
 | Candidate ID / version | Courtyard 0.2.0 |
 | Playable artifact path / launch instructions | Open `builds/Dustlings Courtyard.html` in a modern browser; offline, no install |
@@ -19,7 +29,6 @@ The version 0.2 candidate is frozen below. Attach feedback only to this exact ar
 | Technical conditions and known limits | Attach test/performance records; Windows guest, physical mobile, native listening, and human reception remain unverified |
 | Human feedback linked to this exact candidate | None |
 
-If the artifact changes materially, create a new candidate row/history entry. Retain previous reviews with their original build hashes; explicitly identify which findings may transfer and which need another observation. Never silently carry acceptance to a changed experience.
 
 ## Gate ledger
 
@@ -115,4 +124,4 @@ Next required action and responsible person:
 Acceptance applies to this exact candidate; changes requiring re-review:
 ```
 
-The owner was invited to play the frozen 0.2 artifact through this session on 2026-09-10. No response or owner assessment is recorded. Do not infer approval from silence, authorization to keep developing, or technical test results. Continue authorized technical corrections while the human gates await evidence.
+The earlier session supplied a historical 2D 0.2 artifact for owner review on 2026-09-10. No owner assessment of it or the current 3D experience is recorded. Do not infer approval from silence, authorization to keep developing, or technical test results. Continue authorized technical corrections while the human gates await evidence.

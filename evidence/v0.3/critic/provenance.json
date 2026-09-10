@@ -1,0 +1,101 @@
+{
+  "reviewer": "independent AI critic",
+  "humanSessions": 0,
+  "firstPlay": "Visible-UI-directed, normal speed. README and DEVELOPMENT read as required; not an unfamiliar uncoached player.",
+  "manifest": {
+    "wrapperFiles": {
+      "platforms/desktop/main.cjs": "aa0dcc81b3c60a08cf8dbf9e6b4d5ee351f2b45aa7071089d42fa56da0d38cdc",
+      "platforms/desktop/package.json": "6cda3fc5a93c19a323b9286a845781d634897a34ef83fcaa46da1b85b95b26ad",
+      "platforms/desktop/package-lock.json": "08ccd3f1c090eda49ddf20ae20d719d419c55da5468c969ebd40738d5c3cbc8a",
+      "tools/build-desktop.mjs": "b782e3ea74e3cc43e29f9d1495cb9f253c6865770a0d80b5cb03e7971a2d49b8"
+    },
+    "builtAt": "2026-09-10T07:35:09.666Z",
+    "host": "darwin arm64",
+    "wrapperRevision": "fd6f3e6de9473a3f32291d8f767c9558747a2453",
+    "wrapperWorkingTree": "May contain current uncommitted packaging changes; native source checkpoint recorded separately.",
+    "game": {
+      "version": "0.3.0",
+      "sourceRevision": "fd6f3e6de9473a3f32291d8f767c9558747a2453",
+      "sourceDirty": false,
+      "builtAt": "2026-09-10T07:35:06.703Z",
+      "artifact": "Dustlings Courtyard.html",
+      "sha256": "87462fc27f21240cd0f3f067332005a33a36711dcc81ac1b89836c6b2173e637",
+      "bytes": 167925,
+      "runtimeDependencies": 0,
+      "scope": "Courtyard prototype; human acceptance pending"
+    },
+    "electron": "44.3.0",
+    "packager": "20.3.0",
+    "targets": [
+      "darwin-arm64",
+      "win32-x64"
+    ],
+    "outputs": [
+      "builds/native/Dustlings-darwin-arm64",
+      "builds/native/Dustlings-win32-x64"
+    ],
+    "status": "Development packages only. No Steam submission, Apple notarization, release signing, or human acceptance."
+  },
+  "packagedHtmlSha256": "87462fc27f21240cd0f3f067332005a33a36711dcc81ac1b89836c6b2173e637",
+  "profile": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-independent-critic-frnCpl",
+  "startedAt": "2026-09-10T07:37:48.060Z",
+  "video": "Silent Playwright recording of native Electron content; not OS chrome or live audio.",
+  "noQa": true,
+  "noStateInspection": true,
+  "closedAt": "2026-09-10T07:45:03.579Z",
+  "actualReviewSeconds": 435.5,
+  "plannedReviewSeconds": 720,
+  "stopReason": "Owner requirement changed to fully real 3D; review concluded as historical 2D baseline after lead notification.",
+  "finalVisibleState": {
+    "helpers": 43,
+    "motes": 185,
+    "clearPercent": 65,
+    "discoveriesPurchased": 3
+  },
+  "notReached": [
+    "50 helpers",
+    "fountain ending"
+  ],
+  "notAssessed": [
+    "audio listening",
+    "physical trackpad comfort",
+    "frame-time performance",
+    "quit/relaunch persistence",
+    "human or owner acceptance"
+  ],
+  "shortClip": {
+    "path": "upgrade-and-direction.mp4",
+    "sourceStartSeconds": 139,
+    "durationSeconds": 55,
+    "speed": 1,
+    "audio": false
+  },
+  "motionSamples": [
+    {
+      "path": "pair-motion-sequence.png",
+      "sourceStartSeconds": 236,
+      "durationSeconds": 4,
+      "framesPerSecond": 2,
+      "tile": "4x2",
+      "eachTileWidth": 640
+    },
+    {
+      "path": "assigned-crowd-sequence.png",
+      "sourceStartSeconds": 349,
+      "durationSeconds": 5,
+      "framesPerSecond": 1,
+      "tile": "5x1",
+      "eachTileWidth": 640
+    }
+  ],
+  "normalSizeFrames": [
+    {
+      "path": "13-pairs-normal-size.png",
+      "sourceSeconds": 245
+    },
+    {
+      "path": "19-crowd-normal-size.png",
+      "sourceSeconds": 408
+    }
+  ]
+}

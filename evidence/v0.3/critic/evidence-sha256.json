@@ -1,0 +1,126 @@
+{
+  "01-opening.png": {
+    "sha256": "c35a0995ade11d2fef6e980609ce7a279a4fbe0e4c8940cc866047b8a91e2583",
+    "bytes": 486666
+  },
+  "02-play-start.png": {
+    "sha256": "6ee34c202c2880b6a26b6b3b54eeb720887d74c7e046e5af7e89d7b3a73e6dff",
+    "bytes": 1425557
+  },
+  "03-first-brush.png": {
+    "sha256": "5073c2bdcaf81502696bcc66927764ae75b150f33e0a15d57082b6c7ce3e2b81",
+    "bytes": 1422273
+  },
+  "04-grow-menu.png": {
+    "sha256": "aca799aa446b67e6a4646207a1024180279cc65147b9ddd765d5906b9c84ed99",
+    "bytes": 1420470
+  },
+  "05-grow-open.png": {
+    "sha256": "0c243974394789d24a6373c5dd84b3fe11d48c9ed6e4b76fafbe5c45a60d7996",
+    "bytes": 1300579
+  },
+  "06-upgrade-ready.png": {
+    "sha256": "d6b4c0a401232865db0377a58cea6e291d1f152cbeece6e1f487359cd3da72e4",
+    "bytes": 1410560
+  },
+  "07-first-upgrade.png": {
+    "sha256": "11a8721e4dcc9b0d45779178cbd5ecb99991031143e74adf05208adb26912769",
+    "bytes": 1476222
+  },
+  "08-crew-order.png": {
+    "sha256": "bb6660262921f4c1631facaeb62e6bec8c044df0f08e3b36d46c5d68a2b03aba",
+    "bytes": 1416609
+  },
+  "09-crew-response.png": {
+    "sha256": "5b7d9ee8f903885e9ab6848daf62d9c2071cf74aa5a44e1e90beb6ed3759b31f",
+    "bytes": 1413878
+  },
+  "10-wide-brushing.png": {
+    "sha256": "a629f45c5fb31a3625ab0eeabf8a0de4b17633a5593a22ef310fce8f392d6c09",
+    "bytes": 1404916
+  },
+  "11-second-choice.png": {
+    "sha256": "28804cbfb8ef6161712ab0d8634c92f8cf24d5afe423f6f738319bcc1f8b30e6",
+    "bytes": 1276938
+  },
+  "12-pair-upgrade.png": {
+    "sha256": "df8942388df6faeb2c917c9578cc03f77d324d06eb88cc3435ded761fe89598b",
+    "bytes": 1264062
+  },
+  "13-pairs-normal-size.png": {
+    "sha256": "eb5d4b188f9d9d24fdcf47fcfb0861971b094048b669b010e9f2bc994a2d84c3",
+    "bytes": 490268
+  },
+  "13-pairs-working.png": {
+    "sha256": "25fce757d859f0b2c00e6a56a8ecc1572e17e9ff5f492eb26e1f0d36ea71ce16",
+    "bytes": 1348122
+  },
+  "14-cleaning-progress.png": {
+    "sha256": "bd7fb27670f20c52173ec4ff75aa61eb863f6dbb23e5b57587efee193aba0269",
+    "bytes": 1310119
+  },
+  "15-chorus-choice.png": {
+    "sha256": "9e150716280e1900f46038ebd3dd6c4ec5df688b621509b87749ca6a7fd88084",
+    "bytes": 1203095
+  },
+  "16-chorus-learned.png": {
+    "sha256": "8ea7446291b7fc166e89b8af0e56c87947f9dfbd5ffa36868dfaeaabfad0b04f",
+    "bytes": 1158675
+  },
+  "17-large-crew-order.png": {
+    "sha256": "90b07455c11777bfccfce459ba73818035c540846a3546a50d02c2f5e51c060a",
+    "bytes": 1305569
+  },
+  "18-halfway.png": {
+    "sha256": "20469b9e064b5a61d54c0a5ab78648e6e05892478f7d87d665f28d79b655c5a4",
+    "bytes": 1264025
+  },
+  "19-crowd-normal-size.png": {
+    "sha256": "3b32b4871f404588cdc578059473e6552bdfcd549ff2fa2c47dbf7eba720b5b1",
+    "bytes": 446715
+  },
+  "19-upper-court.png": {
+    "sha256": "7d110e23507f85b8acbe0c1d8098110c5cff5149243c6c85fe435ae31ec522b4",
+    "bytes": 1069034
+  },
+  "20-settings.png": {
+    "sha256": "9ecd55a8318ba11e16074949779814c45f59b85a3c3a648cae782d17c95a7728",
+    "bytes": 463425
+  },
+  "21-return.png": {
+    "sha256": "f5f39990e1a05a13c4358fe546de08ab8a77b1732f198d501367833a8a19c389",
+    "bytes": 1075088
+  },
+  "99-final.png": {
+    "sha256": "b47664393221bc0bab757de94309dcae4343b103a4cac1d6b2cc2b3925988953",
+    "bytes": 1075395
+  },
+  "actions.jsonl": {
+    "sha256": "f2a2453f38096d3fa582a9fe66a76fa8670c735dc67ce01fd2221b5fd4d79e3b",
+    "bytes": 18501
+  },
+  "assigned-crowd-sequence.png": {
+    "sha256": "b2e632d36ac36408dc36d094ffaff440e5a697cbcdc8f2303f3522957c09fb74",
+    "bytes": 400558
+  },
+  "pair-motion-sequence.png": {
+    "sha256": "3222fcc98a56ad3fd1fe51f8167c67f5d214023a01f5964ebf44bd8e6cd530b8",
+    "bytes": 664626
+  },
+  "provenance.json": {
+    "sha256": "7ac5e5c5ba6b527ddb9100db5e1535b311357c80284fa42f817df304a6f2d031",
+    "bytes": 3454
+  },
+  "review-driver.mjs": {
+    "sha256": "f573bd576298bbb952f552d3872d0613161ef3237f53b7ebe2069096839c02f8",
+    "bytes": 3900
+  },
+  "upgrade-and-direction.mp4": {
+    "sha256": "778309c3f06137d505458bbbd9f4dc6dd323a8822ea0f021ec76c5924ea96f61",
+    "bytes": 1164980
+  },
+  "video/page@a33bb8a520bcaf942801cdd6e83f221d.webm": {
+    "sha256": "c9a4a55cb635d6ed590f05ad51ed3bb204d20c74bb7f8055af67c2f063aca315",
+    "bytes": 38538918
+  }
+}

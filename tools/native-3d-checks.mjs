@@ -136,6 +136,11 @@ async function saveFamily(savePath) {
 }
 try {
   check('macHost', process.platform === 'darwin', process.platform);
+  const [model, macOSVersion] = await Promise.all([
+    exec('/usr/sbin/sysctl', ['-n', 'hw.model']),
+    exec('/usr/bin/sw_vers', ['-productVersion'])
+  ]);
+  Object.assign(report.conditions, { model: model.stdout.trim(), macOSVersion: macOSVersion.stdout.trim(), memoryBytes: os.totalmem() });
   const manifestBytes = await fs.readFile(manifestPath);
   const manifest = JSON.parse(manifestBytes);
   report.manifestSha256 = hash(manifestBytes);
@@ -179,6 +184,7 @@ try {
     check('uniqueIsolatedProfile', Object.values(await saveFamily(savePath)).every(value => value === null));
     for (const qaCase of ['opening', 'resume', 'hold', 'second']) await fs.mkdir(path.join(output, qaCase));
     const opening = await completed(launch(executable, 'opening', profile));
+    Object.assign(report.conditions, { engine: opening.engine, logicalViewport: opening.viewport, graphicsDevice: (await fs.readFile(path.join(output, 'opening/stdout.log'), 'utf8')).split('\n').find(line => /Using Device|OpenGL API/.test(line)) || 'not reported' });
     check('openingProfilePath', opening.isolated_save_path === savePath);
     check('openingSaved', opening.instance_primary === true && opening.save_problem === '' && opening.saved_payload?.game && opening.saved_payload?.settings);
     check('openingPlay', opening.first_helper_at >= 0 && opening.first_helper_at <= 30 && opening.opening_crew >= 2 && opening.upgrade_bought === true && opening.crew_directed === true, { firstHelper: opening.first_helper_at, crew: opening.opening_crew, upgradeBought: opening.upgrade_bought, directed: opening.crew_directed });

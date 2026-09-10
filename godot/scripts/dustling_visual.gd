@@ -19,6 +19,10 @@ var _work := 0.0
 var _anticipation := 0.0
 var _moving := false
 var _phase := 0.0
+var _work_clock := 0.0
+var _was_working := false
+var _contact_strength := 0.0
+var _contact_point := Vector3.ZERO
 
 func _ready() -> void:
 	_prepare_resources()
@@ -35,7 +39,9 @@ func _ready() -> void:
 	_eyes = _pair("Eyes", _meshes.round, _materials.eyes, _rig)
 	_glints = _pair("EyeGlints", _meshes.round, _materials.glints, _rig)
 	_feet = _pair("LittleFeet", _meshes.round, _materials.feet, _visual)
-	_hands = _pair("TidyingHands", _meshes.round, _materials.cream, _rig)
+	# Independent hand transforms let the working reach contact the paving while
+	# the body leans. Idle/travel retain the original body-relative transforms.
+	_hands = _pair("TidyingHands", _meshes.round, _materials.cream, _visual)
 	_leaves = _pair("TwoLeafSprout", _meshes.leaf, _materials.leaf, _rig)
 	_mouth = _part("QuietSmile", _meshes.smile, _materials.eyes, _rig)
 	_mouth.position = Vector3(0, 0.287, 0.213)
@@ -51,7 +57,26 @@ func pose(delta: float, elapsed: float, speed: float, working: float, birth_age:
 	_moving = moving_now
 	_anticipation = maxf(0, _anticipation - dt)
 	_walk = move_toward(_walk, clampf(speed / 0.8, 0, 1), dt * 7)
-	_work = move_toward(_work, clampf(working, 0, 1), dt * 7)
+	var working_now := working > 0.01 and birth_age > 0.8 and not celebrating
+	if working_now and not _was_working: _work_clock = 0.0
+	_was_working = working_now
+	_work = move_toward(_work, clampf(working, 0, 1) if working_now else 0.0, dt * 7)
+	if working_now: _work_clock += dt * (1.0 + sin(_phase) * 0.035)
+	# Work stays distinct from travel and the fountain celebration. This only
+	# changes pose; simulation speed, direction and actual production stay owned.
+	var work_weight := (0.0 if celebrating else _work) * (1.0 - smoothstep(0.12, 0.45, maxf(speed, 0)))
+	var cycle := fmod(_work_clock, 1.6) / 1.6
+	var reach := smoothstep(0.12, 0.30, cycle) * (1.0 - smoothstep(0.73, 0.94, cycle))
+	var contact := smoothstep(0.27, 0.34, cycle) * (1.0 - smoothstep(0.66, 0.75, cycle))
+	var sweep := lerpf(-1.0, 1.0, smoothstep(0.32, 0.68, cycle))
+	var preparing := sin(clampf(cycle / 0.16, 0, 1) * PI) if cycle < 0.16 else 0.0
+	if gentle_motion:
+		reach = 1.0
+		contact = 0.30
+		sweep = 0.0
+		preparing = 0.0
+	_contact_strength = contact * work_weight if working_now else 0.0
+	_contact_point = Vector3.ZERO
 	_stride += maxf(speed, 0) * dt * TAU / 0.28
 	var mood := elapsed + _phase
 	var growth := smoothstep(0.0, 0.62, maxf(0, birth_age))
@@ -71,13 +96,14 @@ func pose(delta: float, elapsed: float, speed: float, working: float, birth_age:
 			hop = pow(maxf(0, sin(beat * TAU)), 1.5) * 0.075
 			crouch = maxf(crouch, pow(maxf(0, -sin(beat * TAU)), 3) * 0.035)
 	_visual.position.y = hop
-	var breathing := sin(mood * 2.5) * (0.002 if gentle_motion else 0.012)
+	var breathing := sin(mood * 2.5) * (0.002 if gentle_motion else 0.012) * (1.0 - work_weight * 0.75)
 	_rig.scale = Vector3(1 + crouch * 0.55, 1 + breathing - crouch, 1 + crouch * 0.35)
-	_rig.position.y = 0.0 if gentle_motion else absf(sin(_stride)) * _walk * 0.012
+	_rig.position = Vector3(sweep * contact * work_weight * 0.016, -reach * work_weight * 0.012, -preparing * work_weight * 0.010)
+	if not gentle_motion: _rig.position.y += absf(sin(_stride)) * _walk * 0.012
 	var curiosity := sin(mood * 0.65) * sin(mood * 0.31) * (1 - _walk) * (1 - _work)
-	_rig.rotation = Vector3(_work * 0.10, curiosity * (0.025 if gentle_motion else 0.18), 0)
+	_rig.rotation = Vector3((reach * 0.34 - preparing * 0.065) * work_weight * (0.76 if gentle_motion else 1.0), curiosity * (0.025 if gentle_motion else 0.18), sweep * contact * work_weight * -0.045)
 	if not gentle_motion:
-		_rig.rotation.z = sin(_stride) * _walk * 0.035 + curiosity * 0.07
+		_rig.rotation.z += sin(_stride) * _walk * 0.035 + curiosity * 0.07
 	var blink_clock := fmod(mood, 4.4)
 	var blink := 1.0
 	if blink_clock > 4.23:
@@ -93,14 +119,48 @@ func pose(delta: float, elapsed: float, speed: float, working: float, birth_age:
 		var fore := -cos(foot_phase) * _walk * 0.067
 		# Ellipsoid half-height is0.040: stance feet touch y=0 exactly.
 		_put(_feet, i, Vector3(side * 0.087, 0.040 + lift, 0.047 + fore), Vector3(0.104, 0.080, 0.142))
-		var sweep := sin(mood * 11 + i * PI) * _work * (0.009 if gentle_motion else 0.034)
-		var hand_pos := Vector3(side * (0.193 - _work * 0.026), 0.212 - _work * 0.070, 0.065 + _work * 0.084 + sweep)
-		_put(_hands, i, hand_pos, Vector3(0.073, 0.105 + _work * 0.065, 0.085), Vector3(-_work * 0.8, 0, side * 0.20))
+		var idle_hand := Transform3D(Basis.from_euler(Vector3(0, 0, side * 0.20)).scaled(Vector3(0.073, 0.105, 0.085)), Vector3(side * 0.193, 0.212, 0.065))
+		idle_hand = _rig.transform * idle_hand
+		var shoulder := _rig.transform * Vector3(side * 0.17, 0.205, 0.075)
+		var hand_ground := Vector3(side * 0.155 + sweep * contact * 0.10, 0.018, 0.26 + contact * 0.028)
+		var ground_hand := _reaching_hand(shoulder, hand_ground)
+		# The existing round hand becomes a soft reaching arm. No extra mesh,
+		# material, particle or shadow is added to a crowded character.
+		var blend := reach * work_weight
+		var hand_transform := idle_hand if blend <= 0.00001 else idle_hand.interpolate_with(ground_hand, blend)
+		_hands.multimesh.set_instance_transform(i, hand_transform)
+		_contact_point += _ellipsoid_lowpoint(hand_transform) * 0.5
 		var leaf_growth := maxf(0.08, smoothstep(0.16, 0.72, birth_age))
 		var sway := sin(mood * 2.8 + i) * (0.01 if gentle_motion else 0.09)
-		var leaf_rotation := Vector3(sway + _work * 0.12, PI if i == 0 else 0.0, side * (-0.13 + sway))
+		var leaf_rotation := Vector3(sway + reach * work_weight * 0.08, PI if i == 0 else 0.0, side * (-0.13 + sway))
 		_put(_leaves, i, Vector3(side * 0.012, 0.503, 0), Vector3.ONE * leaf_growth, leaf_rotation)
 	_mouth.scale = Vector3(1.15 if celebrating else 1.0, 1.18 if celebrating else 1.0, 1)
+
+func work_stroke() -> float:
+	## Actual pose contact, not an authority to award or remove dust.
+	return _contact_strength
+
+func work_contact() -> Vector3:
+	## World-space ground point; caller controls all emitted feedback.
+	return _visual.to_global(_contact_point) if is_instance_valid(_visual) else global_position
+
+static func _reaching_hand(shoulder: Vector3, contact: Vector3) -> Transform3D:
+	var axis := (shoulder - contact).normalized()
+	var across := Vector3.FORWARD.cross(axis).normalized()
+	var forward := across.cross(axis).normalized()
+	var length := shoulder.distance_to(contact) + 0.040
+	var basis := Basis(across, axis, forward) * Basis.IDENTITY.scaled(Vector3(0.083, length, 0.083))
+	var center := (shoulder + contact) * 0.5
+	# Analytic ellipsoid bound keeps the complete round hand above the paving.
+	var half_y := Vector3(basis.x.y, basis.y.y, basis.z.y).length() * 0.5
+	center.y = maxf(center.y, half_y + 0.003)
+	return Transform3D(basis, center)
+
+static func _ellipsoid_lowpoint(transform: Transform3D) -> Vector3:
+	var basis := transform.basis
+	var extent := Vector3(basis.x.y, basis.y.y, basis.z.y).length()
+	var weighted := basis.x * basis.x.y + basis.y * basis.y.y + basis.z * basis.z.y
+	return transform.origin - weighted / maxf(0.00001, 2.0 * extent)
 
 static func _put(group: MultiMeshInstance3D, index: int, origin: Vector3, size: Vector3, rotation_angles := Vector3.ZERO) -> void:
 	group.multimesh.set_instance_transform(index, Transform3D(Basis.from_euler(rotation_angles).scaled(size), origin))

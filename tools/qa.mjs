@@ -56,7 +56,7 @@ try{
     const blob=new Blob(window.__captureChunks,{type:'video/webm'});return await new Promise(resolve=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result.split(',')[1]);reader.readAsDataURL(blob);});
   });
   await writeFile(`${output}/opening-with-sound.webm`,Buffer.from(liveRecording,'base64'));
-  const saved=await page.evaluate(()=>{window.__dustlings.save();return window.__dustlings.serialise();});
+  const saved=await page.evaluate(async()=>{await window.__dustlings.save();return window.__dustlings.serialise();});
   await page.reload();await page.getByRole('button',{name:'Return to your courtyard'}).click();
   const returned=await page.evaluate(()=>window.__dustlings.serialise());assert(returned.elapsed>=saved.elapsed&&returned.elapsed<saved.elapsed+2);assert(returned.upgrades.brush===saved.upgrades.brush);
   results.checks.push('Reload preserved normal-play progress, crew and upgrade');

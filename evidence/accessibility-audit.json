@@ -1,0 +1,322 @@
+{
+  "timestamp": "2026-09-10T05:49:25.390Z",
+  "browser": "152.0.7977.83",
+  "kind": "Focused automated accessibility and interaction audit. No screen reader was operated, no human enjoyment or usability claim, and touch is CDP emulation.",
+  "conditions": "Fresh isolated contexts, DPR 1. May overlap root performance/capture work. These are functional observations, not timing or performance benchmarks.",
+  "checks": [
+    {
+      "id": "welcome-dialog-has-accessible-name",
+      "pass": true,
+      "nodes": [
+        {
+          "role": "dialog",
+          "name": "A little dust. A little life."
+        }
+      ]
+    },
+    {
+      "id": "keyboard-can-perform-first-brush",
+      "pass": true,
+      "before": 0,
+      "after": 0.8499999999999993,
+      "pointer": {
+        "x": 270,
+        "y": 505,
+        "active": true,
+        "inside": true,
+        "touch": false,
+        "preview": false,
+        "keyboard": true
+      }
+    },
+    {
+      "id": "unchanged-status-is-not-repeatedly-replaced",
+      "pass": true,
+      "unchangedMessage": "Your little crew is ready.",
+      "replacements": 1,
+      "windowMs": 750,
+      "ariaLive": "polite"
+    },
+    {
+      "id": "settings-dialog-has-accessible-name",
+      "pass": true,
+      "nodes": [
+        {
+          "role": "dialog",
+          "name": "Take a breather."
+        }
+      ]
+    },
+    {
+      "id": "settings-pauses-audio",
+      "pass": true,
+      "ready": true,
+      "paused": true,
+      "contextState": "suspended",
+      "maxVoices": 48,
+      "peakVoices": 2,
+      "continuousSources": 3,
+      "progress": 0,
+      "mix": {
+        "music": 0.48,
+        "sfx": 0.65,
+        "ambience": 0.38,
+        "muted": false,
+        "reducedMotion": false
+      }
+    },
+    {
+      "id": "invalid-import-keeps-current-courtyard",
+      "pass": true,
+      "status": "Could not import. Expected property name or '}' in JSON at position 1 (line 1 column 2) Your current courtyard is safe."
+    },
+    {
+      "id": "import-restores-progress-and-audio-stage-while-paused",
+      "pass": true,
+      "restoration": 0.4,
+      "cleaned": 400,
+      "audio": {
+        "ready": true,
+        "paused": true,
+        "contextState": "suspended",
+        "maxVoices": 48,
+        "peakVoices": 2,
+        "continuousSources": 3,
+        "progress": 0.4,
+        "mix": {
+          "music": 0.48,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": false,
+          "reducedMotion": false
+        }
+      },
+      "status": "Your courtyard has been recovered. Ready when you are."
+    },
+    {
+      "id": "restart-restores-brush-control-as-well-as-progress",
+      "pass": true,
+      "cleaned": 0,
+      "restoration": 0,
+      "upgrades": {
+        "brush": false,
+        "teamwork": false,
+        "bloom": false
+      },
+      "mode": "brush",
+      "panPressed": "false",
+      "audio": {
+        "ready": true,
+        "paused": false,
+        "contextState": "running",
+        "maxVoices": 48,
+        "peakVoices": 3,
+        "continuousSources": 3,
+        "progress": 0,
+        "mix": {
+          "music": 0.48,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": false,
+          "reducedMotion": false
+        }
+      }
+    },
+    {
+      "id": "choosing-brush-exits-pan-mode",
+      "pass": true,
+      "brushSelected": "true",
+      "panSelected": "false",
+      "pointer": {
+        "x": 270.00000310498615,
+        "y": 505.0001109909335,
+        "touch": true,
+        "inside": true,
+        "active": true,
+        "preview": false
+      }
+    },
+    {
+      "id": "second-finger-does-not-steal-active-brush",
+      "pass": true,
+      "primary": {
+        "x": 270.00000310498615,
+        "y": 505.0001109909335,
+        "touch": true,
+        "inside": true,
+        "active": true,
+        "preview": false
+      },
+      "afterSecondFingerMove": {
+        "x": 270.00000310498615,
+        "y": 505.0001109909335,
+        "touch": true,
+        "inside": true,
+        "active": true,
+        "preview": false
+      }
+    },
+    {
+      "id": "grow-button-exposes-drawer-state",
+      "pass": true,
+      "expanded": "true",
+      "controls": "journal",
+      "journalOpen": true,
+      "focused": "mobile-journal"
+    },
+    {
+      "id": "completion-dialog-has-accessible-name",
+      "pass": true,
+      "nodes": [
+        {
+          "role": "dialog",
+          "name": "Look what you made together."
+        }
+      ]
+    },
+    {
+      "id": "backgrounding-completion-pauses-audio",
+      "pass": true,
+      "before": {
+        "ready": true,
+        "paused": false,
+        "contextState": "running",
+        "maxVoices": 48,
+        "peakVoices": 4,
+        "continuousSources": 3,
+        "progress": 1,
+        "mix": {
+          "music": 0.48,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": false,
+          "reducedMotion": false
+        }
+      },
+      "after": {
+        "ready": true,
+        "paused": true,
+        "contextState": "suspended",
+        "maxVoices": 48,
+        "peakVoices": 4,
+        "continuousSources": 3,
+        "progress": 1,
+        "mix": {
+          "music": 0.48,
+          "sfx": 0.65,
+          "ambience": 0.38,
+          "muted": false,
+          "reducedMotion": false
+        }
+      },
+      "completionOpen": true,
+      "visibility": "Synthetic document.hidden + visibilitychange"
+    },
+    {
+      "id": "corrupt-primary-recovers-backup-with-explanation",
+      "pass": true,
+      "cleaned": 400,
+      "restoration": 0.4,
+      "note": "Your previous save was recovered from its backup.",
+      "visible": true
+    },
+    {
+      "id": "storage-unavailable-still-plays-and-exports-recovery",
+      "pass": true,
+      "notice": "Browser saving is unavailable. Export a save from Settings before leaving.",
+      "exportVersion": 1,
+      "dustEntries": 466,
+      "filename": "dustlings-courtyard-save.json"
+    },
+    {
+      "id": "browser-keyboard-arrows-move-visible-cursor",
+      "pass": true,
+      "before": {
+        "x": 234.87749138870277,
+        "y": 473.7747668772936,
+        "active": false,
+        "inside": true,
+        "touch": false,
+        "keyboard": true,
+        "preview": false
+      },
+      "after": {
+        "pointer": {
+          "x": 260.38940756804,
+          "y": 473.7747668772936,
+          "active": false,
+          "inside": true,
+          "touch": false,
+          "keyboard": true,
+          "preview": false
+        },
+        "screen": {
+          "x": 317.33505655549294,
+          "y": 433.022645601563
+        },
+        "width": 1020,
+        "height": 727
+      }
+    },
+    {
+      "id": "browser-keyboard-route-earns-helper-and-upgrade-choice",
+      "pass": true,
+      "helpers": 4,
+      "motes": 33,
+      "firstHelperAt": 8.49480000002383,
+      "elapsed": 50.27810000002312,
+      "brushed": 32.14624743835694,
+      "explicitlyAdvancedSeconds": 50,
+      "note": "Real N/Space key input, accelerated simulation; not human pacing evidence."
+    },
+    {
+      "id": "browser-keyboard-space-halts-brushing",
+      "pass": true,
+      "before": 32.14624743835694,
+      "after": 32.14624743835694,
+      "active": false
+    },
+    {
+      "id": "browser-keyboard-d-enter-directs-crew",
+      "pass": true,
+      "target": {
+        "x": 240.4226401716005,
+        "y": 551.5697079803795,
+        "active": false,
+        "inside": true,
+        "touch": false,
+        "keyboard": true,
+        "preview": true
+      },
+      "assignment": {
+        "x": 240.4226401716005,
+        "y": 551.5697079803795
+      },
+      "mode": "direct"
+    },
+    {
+      "id": "browser-keyboard-tab-enter-buys-upgrade",
+      "pass": true,
+      "tabRoute": [
+        "brush-tool",
+        "direct-tool",
+        "free-roam",
+        "zoom-in",
+        "pan-toggle",
+        "upgrade-brush"
+      ],
+      "upgrades": {
+        "brush": true,
+        "teamwork": false,
+        "bloom": false
+      },
+      "firstUpgradeAt": 51.278100000023066
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "passed": 20,
+    "issues": 0,
+    "errors": 0
+  }
+}

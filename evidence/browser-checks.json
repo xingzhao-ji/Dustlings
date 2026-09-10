@@ -1,10 +1,11 @@
 {
-  "timestamp": "2026-09-10T05:10:09.146Z",
+  "timestamp": "2026-09-10T05:50:46.980Z",
   "kind": "Automated browser interaction checks; touch and layouts are emulated, not physical-device or human playtests",
+  "conditions": "Headless installed Google Chrome, DPR 1, fresh isolated browser contexts. May overlap the main gameplay capture/performance run; this suite reports interaction correctness, not FPS or human task timings.",
   "browser": "152.0.7977.83",
   "checks": [
     {
-      "name": "390\u00d7844 gameplay has no horizontal overflow",
+      "name": "390×844 gameplay has no horizontal overflow",
       "pass": true,
       "viewport": 390,
       "document": 390,
@@ -23,7 +24,7 @@
         "preview": false
       },
       "screenOffsetY": 41.9999730487898,
-      "screenOffsetX": -1.0471718070448333e-06
+      "screenOffsetX": -0.0000010471718070448333
     },
     {
       "name": "Pointer cancellation stops manual cleaning",
@@ -81,7 +82,7 @@
       "pass": true
     },
     {
-      "name": "390\u00d7844 settings has no horizontal overflow",
+      "name": "390×844 settings has no horizontal overflow",
       "pass": true,
       "viewport": 390,
       "document": 390,
@@ -91,13 +92,19 @@
     {
       "name": "Settings pause preserves elapsed time",
       "pass": true,
-      "beforePause": 4.560499999999996,
-      "afterPause": 4.560499999999996
+      "beforePause": 4.559499999994036,
+      "afterPause": 4.559499999994036
     },
     {
       "name": "Native settings dialog prevents keyboard focus on background controls",
       "pass": true,
       "focus": [
+        {
+          "id": "",
+          "tag": "SUMMARY",
+          "documentFocused": true,
+          "inside": true
+        },
         {
           "id": "music-volume",
           "tag": "INPUT",
@@ -165,8 +172,20 @@
           "inside": false
         },
         {
+          "id": "settings",
+          "tag": "DIALOG",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
           "id": "close-settings",
           "tag": "BUTTON",
+          "documentFocused": true,
+          "inside": true
+        },
+        {
+          "id": "",
+          "tag": "SUMMARY",
           "documentFocused": true,
           "inside": true
         },
@@ -187,24 +206,6 @@
           "tag": "INPUT",
           "documentFocused": true,
           "inside": true
-        },
-        {
-          "id": "reduced-motion",
-          "tag": "INPUT",
-          "documentFocused": true,
-          "inside": true
-        },
-        {
-          "id": "tap-sweep",
-          "tag": "INPUT",
-          "documentFocused": true,
-          "inside": true
-        },
-        {
-          "id": "low-quality",
-          "tag": "INPUT",
-          "documentFocused": true,
-          "inside": true
         }
       ],
       "note": "Native Chrome dialog traversal may include a browser-chrome step represented by BODY. This is recorded separately from focus on background app controls."
@@ -217,7 +218,7 @@
       "name": "Reload restores progress and crew assignment",
       "pass": true,
       "before": {
-        "elapsed": 4.560499999999996,
+        "elapsed": 4.559499999994036,
         "creatures": 2,
         "assignment": {
           "x": 689.9999964514443,
@@ -225,7 +226,7 @@
         }
       },
       "after": {
-        "elapsed": 4.560499999999996,
+        "elapsed": 4.559499999994036,
         "creatures": 2,
         "assignment": {
           "x": 689.9999964514443,
@@ -304,7 +305,7 @@
       }
     },
     {
-      "name": "844\u00d7390 gameplay has no horizontal overflow",
+      "name": "844×390 gameplay has no horizontal overflow",
       "pass": true,
       "viewport": 844,
       "document": 844,
@@ -316,13 +317,13 @@
       "pass": true,
       "drawer": {
         "x": 488,
-        "y": 13,
+        "y": 12,
         "width": 340,
-        "height": 365
+        "height": 366
       }
     },
     {
-      "name": "844\u00d7390 settings has no horizontal overflow",
+      "name": "844×390 settings has no horizontal overflow",
       "pass": true,
       "viewport": 844,
       "document": 844,
@@ -368,6 +369,5 @@
     "passed": 26,
     "failed": 0,
     "errors": 0
-  },
-  "conditions": "Headless installed Google Chrome, DPR 1, fresh isolated browser contexts. May overlap the main gameplay capture/performance run; this suite reports interaction correctness, not FPS or human task timings."
+  }
 }

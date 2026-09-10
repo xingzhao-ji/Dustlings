@@ -1,0 +1,150 @@
+{
+  "reviewer": "Independent AI critic; separate from developer team",
+  "reviewedAt": "2026-09-10T09:56:57.538647+00:00",
+  "humanSessions": 0,
+  "nativeAppLaunched": false,
+  "directInput": false,
+  "listening": false,
+  "sourceImplementationRead": false,
+  "method": "Normal-size supplied stills for each before/after; full dust movie chronology at4Hz; full warm-window movie chronology at1Hz; full-size movie frames at1.25 and4.5seconds for dust and14seconds for windows. Frame-based review, not uninterrupted audiovisual perception.",
+  "dustDistribution": {
+    "source": "builds/3d/experiments/dust-distribution",
+    "movieSHA256": "b91c903d888a0154e52ec33b6c3e10a6b187505de4221bcac7a1bb4ba03460a6",
+    "durationSeconds": 6.8,
+    "size": [
+      1280,
+      800
+    ],
+    "fps": 30,
+    "audio": "No audio track; deliberately silent by construction according to producer provenance.",
+    "baselineComponentSHA256": "2e5098956ea8aa03fefbba3f244be1b5151c07864feaf81e7181e17b69dd4425",
+    "candidateComponentSHA256": "e78aeb0979e1223b4bc237d08a06236c6a4451d48d28b28121208d9fd3f59fa8",
+    "capturePreservedAt": "2026-09-10T09:51:55.027228+00:00",
+    "producerClaimsNotAudited": [
+      "Only distribution/size/clustering changes; unchanged meshes/materials/work feedback.",
+      "Four seconds real engine-time generated brushing.",
+      "997 baseline vs623 candidate instances."
+    ],
+    "fixture": "50-helper80%-clean and completed states injected after the brushing interval. Earlier initial-stale-hud attempt excluded.",
+    "finding": "Less regular stamp rhythm; dirty-vs-clean separation remains visible. Some sparse tiles have weaker debris cues; local first-stroke change remains subtle. Dust-versus-weathering understanding requires unfamiliar-player evidence.",
+    "statusAtSubmission": "isolated proposal, not canonical"
+  },
+  "warmWindows": {
+    "source": "evidence/3d/warm-windows-overview",
+    "sourceHash": "1f2bb95b3c3c349a1457c081bf5f6e995bf174b91362a90a685508b8275ef11e",
+    "movieSHA256": "929757c99c4faf2db93bf00bdeab962d5980021d4cc227d0d743a750e7afd33e",
+    "durationSeconds": 19.633333,
+    "size": [
+      1280,
+      800
+    ],
+    "fps": 30,
+    "audio": "Track present, not auditioned.",
+    "captureCreated": "2026-09-10T09:51:46.340Z",
+    "beforeStillSource": "evidence/3d/work-feedback-crowd-overview/restored-fixture.png",
+    "beforeSourceHash": "90ed34f2fdfd57153c1f14a979e5d3035c42ca54643554e7e6ca6a80afc6ad47",
+    "fixture": "Overview jumps among dirty,50-helper,close-camera and restored fixtures. No natural18-second lighting transition reviewed. Restored before/after use matching overview framing identified by producer aszoom1.0.",
+    "finding": "Pale amber panes visible, frames and dividers legible, no broad glare obscures architecture or helpers. Effect is restrained; frame evidence cannot decide whether panes imply inhabited warmth or only a color change.",
+    "statusAtSubmission": "isolated proposal, not canonical"
+  },
+  "limits": [
+    "No performance or input-comfort measurement.",
+    "No human, presentation, owner or release gate passed.",
+    "Source component hashes/producer claims are preserved, not source-audited.",
+    "No full-progress residual-completion path reviewed."
+  ],
+  "preservedInputs": {
+    "dust-distribution/after.png": {
+      "sha256": "99e272375efb2d93d80be0184fda2df3f8ba9fda54345586411fc8d833399e87",
+      "bytes": 662543
+    },
+    "dust-distribution/before.png": {
+      "sha256": "6609f4a40bf7ee2fa3803d01224b51a3d23603cde2e56ece8aed8c10f6b781bb",
+      "bytes": 680734
+    },
+    "dust-distribution/brush-later-4.5.png": {
+      "sha256": "ef7e642ed6444db66bae8e9c446106a821ec3955c06e3d4cbb24dd0575d0c0c4",
+      "bytes": 619845
+    },
+    "dust-distribution/brush-start-1.25.png": {
+      "sha256": "e3b6e262fc14eb46a31fb69e849ddb6a3ed81a2183602029837b2e5e43c10f07",
+      "bytes": 618981
+    },
+    "dust-distribution/brushed.png": {
+      "sha256": "ffc6c4b8b2ae2cba07bd460cf6f16d2688ee729a26823f5c63a9422b9751ebf2",
+      "bytes": 663139
+    },
+    "dust-distribution/cleared.png": {
+      "sha256": "bf98f14c411b5d92d357097ac2298df8a16e6bce3741200ea11b351be02fb0f0",
+      "bytes": 672464
+    },
+    "dust-distribution/comparison.mp4": {
+      "sha256": "b91c903d888a0154e52ec33b6c3e10a6b187505de4221bcac7a1bb4ba03460a6",
+      "bytes": 222292
+    },
+    "dust-distribution/fifty-after.png": {
+      "sha256": "f9ec5bab62ae8d63bc1770a96f2939b745e68e8cb9e78b2ff45a095cf8734a54",
+      "bytes": 677230
+    },
+    "dust-distribution/fifty-before.png": {
+      "sha256": "cda4e8cc9e33b211da3520b7152a7a752db51d9010d80789e53bc9608c0ad52c",
+      "bytes": 680564
+    },
+    "dust-distribution/provenance.json": {
+      "sha256": "1e4f6e56ae8824b8537b6bbd8c9fa07ca3e8e6dbc6eb816224fec21d4173d929",
+      "bytes": 1562
+    },
+    "dust-distribution/render-results.json": {
+      "sha256": "b491fc1dbb9430900ce7f3a3d049bac8ebe9549523e540117486610ecc7363b4",
+      "bytes": 560
+    },
+    "dust-distribution/sequence-01.png": {
+      "sha256": "2b619672e8898a367d8d63765e348887549bf443478cd73d6e306a9821877ca8",
+      "bytes": 721172
+    },
+    "dust-distribution/sequence-02.png": {
+      "sha256": "cf8d30514cc6d4cf1a8d9036cba239c05518c48c86f2f47493329cd03e98a34a",
+      "bytes": 355724
+    },
+    "warm-windows/capture-manifest.json": {
+      "sha256": "8adc61ef293b0897e4c6d2af136700cd070ae5a74f729d899c5447cd7db422d1",
+      "bytes": 10221
+    },
+    "warm-windows/dirty.png": {
+      "sha256": "6609f4a40bf7ee2fa3803d01224b51a3d23603cde2e56ece8aed8c10f6b781bb",
+      "bytes": 680734
+    },
+    "warm-windows/overview.mp4": {
+      "sha256": "929757c99c4faf2db93bf00bdeab962d5980021d4cc227d0d743a750e7afd33e",
+      "bytes": 4802238
+    },
+    "warm-windows/restored-14.png": {
+      "sha256": "fea86883b1393794a25637148068e4e371ad7f19d41fd0c74db4fe7ed707de53",
+      "bytes": 607558
+    },
+    "warm-windows/restored-fixture.png": {
+      "sha256": "99605bceaa6ffc661b940df6f8c71208b179d4ab9d6d3a04db06659033a6e6ae",
+      "bytes": 549515
+    },
+    "warm-windows/results.json": {
+      "sha256": "cee96668be1f7a3fb3b67c7b1f4f2f314212ff3c88c53d021ec3deafecb4a307",
+      "bytes": 625
+    },
+    "warm-windows/sequence-01.png": {
+      "sha256": "0d148a25200732689d1110357a4c435feefc2532bae7ccca04a8aaba34ab6d1e",
+      "bytes": 1448085
+    },
+    "windows-before/capture-manifest.json": {
+      "sha256": "9a550cac182ff9e400d0cf2c6c8cacdff8e3f38ba9594e01af220b20f6a31fcd",
+      "bytes": 10090
+    },
+    "windows-before/restored-fixture.png": {
+      "sha256": "9189ec3d3c9f861baddee446ec728111274698af78d0ea701db178072e056adf",
+      "bytes": 550150
+    },
+    "windows-before/results.json": {
+      "sha256": "520d989ba9bf07006fd7958e76da227cad59242d4fed99f71fca3f038315e31a",
+      "bytes": 625
+    }
+  }
+}

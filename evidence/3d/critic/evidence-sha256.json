@@ -764,8 +764,104 @@
     "bytes": 903356
   },
   "provenance.json": {
-    "sha256": "df5ce48f2aa6d85f2dc85408eaeece8a45864c4302447c563615ec300f4ecf5e",
-    "bytes": 5780
+    "sha256": "2096c98687ffa6e8551af4813331c41a5b4b40434f85ac56876c87fe263c7c3d",
+    "bytes": 5989
+  },
+  "surface-and-windows/dust-distribution/after.png": {
+    "sha256": "99e272375efb2d93d80be0184fda2df3f8ba9fda54345586411fc8d833399e87",
+    "bytes": 662543
+  },
+  "surface-and-windows/dust-distribution/before.png": {
+    "sha256": "6609f4a40bf7ee2fa3803d01224b51a3d23603cde2e56ece8aed8c10f6b781bb",
+    "bytes": 680734
+  },
+  "surface-and-windows/dust-distribution/brush-later-4.5.png": {
+    "sha256": "ef7e642ed6444db66bae8e9c446106a821ec3955c06e3d4cbb24dd0575d0c0c4",
+    "bytes": 619845
+  },
+  "surface-and-windows/dust-distribution/brush-start-1.25.png": {
+    "sha256": "e3b6e262fc14eb46a31fb69e849ddb6a3ed81a2183602029837b2e5e43c10f07",
+    "bytes": 618981
+  },
+  "surface-and-windows/dust-distribution/brushed.png": {
+    "sha256": "ffc6c4b8b2ae2cba07bd460cf6f16d2688ee729a26823f5c63a9422b9751ebf2",
+    "bytes": 663139
+  },
+  "surface-and-windows/dust-distribution/cleared.png": {
+    "sha256": "bf98f14c411b5d92d357097ac2298df8a16e6bce3741200ea11b351be02fb0f0",
+    "bytes": 672464
+  },
+  "surface-and-windows/dust-distribution/comparison.mp4": {
+    "sha256": "b91c903d888a0154e52ec33b6c3e10a6b187505de4221bcac7a1bb4ba03460a6",
+    "bytes": 222292
+  },
+  "surface-and-windows/dust-distribution/fifty-after.png": {
+    "sha256": "f9ec5bab62ae8d63bc1770a96f2939b745e68e8cb9e78b2ff45a095cf8734a54",
+    "bytes": 677230
+  },
+  "surface-and-windows/dust-distribution/fifty-before.png": {
+    "sha256": "cda4e8cc9e33b211da3520b7152a7a752db51d9010d80789e53bc9608c0ad52c",
+    "bytes": 680564
+  },
+  "surface-and-windows/dust-distribution/provenance.json": {
+    "sha256": "1e4f6e56ae8824b8537b6bbd8c9fa07ca3e8e6dbc6eb816224fec21d4173d929",
+    "bytes": 1562
+  },
+  "surface-and-windows/dust-distribution/render-results.json": {
+    "sha256": "b491fc1dbb9430900ce7f3a3d049bac8ebe9549523e540117486610ecc7363b4",
+    "bytes": 560
+  },
+  "surface-and-windows/dust-distribution/sequence-01.png": {
+    "sha256": "2b619672e8898a367d8d63765e348887549bf443478cd73d6e306a9821877ca8",
+    "bytes": 721172
+  },
+  "surface-and-windows/dust-distribution/sequence-02.png": {
+    "sha256": "cf8d30514cc6d4cf1a8d9036cba239c05518c48c86f2f47493329cd03e98a34a",
+    "bytes": 355724
+  },
+  "surface-and-windows/review-provenance.json": {
+    "sha256": "c3babe8e9f626ad558c2195fbd91bd4c40cc493a80d3e6fbde5427eca8dab2af",
+    "bytes": 6827
+  },
+  "surface-and-windows/warm-windows/capture-manifest.json": {
+    "sha256": "8adc61ef293b0897e4c6d2af136700cd070ae5a74f729d899c5447cd7db422d1",
+    "bytes": 10221
+  },
+  "surface-and-windows/warm-windows/dirty.png": {
+    "sha256": "6609f4a40bf7ee2fa3803d01224b51a3d23603cde2e56ece8aed8c10f6b781bb",
+    "bytes": 680734
+  },
+  "surface-and-windows/warm-windows/overview.mp4": {
+    "sha256": "929757c99c4faf2db93bf00bdeab962d5980021d4cc227d0d743a750e7afd33e",
+    "bytes": 4802238
+  },
+  "surface-and-windows/warm-windows/restored-14.png": {
+    "sha256": "fea86883b1393794a25637148068e4e371ad7f19d41fd0c74db4fe7ed707de53",
+    "bytes": 607558
+  },
+  "surface-and-windows/warm-windows/restored-fixture.png": {
+    "sha256": "99605bceaa6ffc661b940df6f8c71208b179d4ab9d6d3a04db06659033a6e6ae",
+    "bytes": 549515
+  },
+  "surface-and-windows/warm-windows/results.json": {
+    "sha256": "cee96668be1f7a3fb3b67c7b1f4f2f314212ff3c88c53d021ec3deafecb4a307",
+    "bytes": 625
+  },
+  "surface-and-windows/warm-windows/sequence-01.png": {
+    "sha256": "0d148a25200732689d1110357a4c435feefc2532bae7ccca04a8aaba34ab6d1e",
+    "bytes": 1448085
+  },
+  "surface-and-windows/windows-before/capture-manifest.json": {
+    "sha256": "9a550cac182ff9e400d0cf2c6c8cacdff8e3f38ba9594e01af220b20f6a31fcd",
+    "bytes": 10090
+  },
+  "surface-and-windows/windows-before/restored-fixture.png": {
+    "sha256": "9189ec3d3c9f861baddee446ec728111274698af78d0ea701db178072e056adf",
+    "bytes": 550150
+  },
+  "surface-and-windows/windows-before/results.json": {
+    "sha256": "520d989ba9bf07006fd7958e76da227cad59242d4fed99f71fca3f038315e31a",
+    "bytes": 625
   },
   "travel-detail-sequence.png": {
     "sha256": "dee04d52b6462b802f54d84d8ddd8fd13318585f669830057822a79ade30bf45",

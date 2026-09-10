@@ -1,0 +1,31 @@
+{
+  "preserved_at_utc": "2026-09-10T09:51:55.027228+00:00",
+  "kind": "Isolated static distribution candidate; no canonical runtime merge",
+  "baseline_sha256": "2e5098956ea8aa03fefbba3f244be1b5151c07864feaf81e7181e17b69dd4425",
+  "candidate_sha256": "e78aeb0979e1223b4bc237d08a06236c6a4451d48d28b28121208d9fd3f59fa8",
+  "unchanged_existing_functions_except_build": {
+    "configure": true,
+    "_ready": true,
+    "reset": true,
+    "_on_paver": true,
+    "_static_batch": true,
+    "_drift_mesh": true,
+    "_fibre_mesh": true,
+    "tick": true,
+    "_tick_work": true
+  },
+  "normal_engine_time_brushing": true,
+  "audio_track": "deliberately omitted; soundscape never started",
+  "normal_capture": "PID43575; fixed30fps6.8s; current HUD refreshed",
+  "initial_capture": "PID43463; same game/candidate source; HUD refresh missing in fixture, kept in initial-stale-hud",
+  "known_probe_mistakes": [
+    "First command used a script path relative to project incorrectly.",
+    "Next probe asked for tick_work instead of the existing _tick_work method; corrected probe passed."
+  ],
+  "source_dependencies": {
+    "godot/scripts/courtyard_environment.gd": "9eb274e439ea6fb913486f4944d3bf55e459d5790e37983cb1fea5be71128bc8",
+    "godot/scripts/dustling_visual.gd": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc",
+    "godot/shaders/dust_drift.gdshader": "cbdcaeb680b9ee9122da780a8b58333f1857ebe3cdd8bb774514d78040586c8f",
+    "godot/shaders/courtyard_surface.gdshader": "d2492f80369252073d6ace8fb25ae2e573ba938d6fd079bf22613595aa9460a7"
+  }
+}

@@ -1,6 +1,6 @@
 # Grounded crowd separation
 
-Status: the observed body-overlap defect has a focused simulation correction and automated/rendered comparison. Current-build player enjoyment, creature appeal and owner acceptance remain unverified. Human sessions: **0**. This is courtyard-only work with the existing 50-helper cap.
+Status: body separation has an automated/rendered comparison; a subsequent spatial work-reservation correction has passed automated checks and **awaits fresh gameplay capture**. The earlier recording below is the spacing-only snapshot. Current-build player enjoyment, creature appeal and owner acceptance remain unverified. Human sessions: **0**. This is courtyard-only work with the existing 50-helper cap.
 
 ## Problem and bounded correction
 
@@ -50,6 +50,27 @@ The first render harness failed because the historical simulation lacked the new
 
 ## Remaining review
 
-The forced crowded corner-order fixture cleans more slowly once bodies must occupy real space: paired 50-helper assistance was 8.88 motes/45s versus 39.98 in the overlapping baseline. Normal full-game completion still passes, and rates were not arbitrarily increased to conceal that difference. Review whether normal crew orders feel responsive and useful, including queueing near the fountain. If they do not, investigate assignment distribution before changing progression values.
+The first spacing correction exposed a crowded corner-order slowdown: paired 50-helper assistance was 8.88 motes/45s versus 39.98 in the overlapping baseline. The follow-up below corrects its measured cause while preserving rates. Normal crew-order responsiveness, queueing and perceived comfort still require fresh review.
 
-Root's next action is to review this recording, compare the planned closer camera separately, and include the correction in a fresh native build and sustained 50-helper profile. Intended players must judge whether creatures remain appealing/readable and directing them feels comfortable. Windows execution, mobile interaction, human quality gates and current-build owner approval remain outstanding.
+Root's next action is to capture the current reservation correction, compare the planned closer camera separately, and include it in a fresh native build and sustained 50-helper profile. Intended players must judge whether creatures remain appealing/readable and directing them feels comfortable. Windows execution, mobile interaction, human quality gates and current-build owner approval remain outstanding.
+
+## Follow-up: reserve actual work space
+
+The next bounded ten-minute investigation sampled the paired 50-helper fixture every five seconds. Before correction, 47–49 of 50 reserved work seats overlapped another seat by less than 0.50m. Workers reached the general area but could not physically occupy their assigned places; only nine were cleaning at 45 seconds. This supports a destination-selection correction rather than changing cleaning rates or weakening separation.
+
+`choose_target()` now reserves the ground-projected positions of a worker and its explicit teammate, including fountain/boundary adjustment, before selecting a dust patch. A neighboring dust cell is skipped when its work positions intersect those already reserved. The same position calculation drives movement. Existing speed, rates, costs, cap, assignment anchor and save format are retained.
+
+Actual deterministic results:
+
+| Check | Spacing only | Spatial reservation |
+| --- | ---: | ---: |
+| 50 paired assistance /45s | 8.88 | 33.99 |
+| 50 solo assistance /45s | 8.22 | 22.07 |
+| Worst 50-helper center gap | 0.524m | 0.536m |
+| Maximum 50-helper speed | 1.424m/s | 1.580m/s |
+| Average paired simulation tick | 2.78ms | 2.04ms |
+| Controlled whole courtyard completion | 640.5s | 586.5s |
+
+The follow-up's sampled reserved-seat overlap count was zero; 40 workers were cleaning at the 20–35-second samples, versus 8–11 previously. All four five/50 solo/paired cases passed clearance, speed, reachable-ground and useful-cleaning checks. All 5,904 routes and the full ending/save suite passed. A regression floor of 25 assisted motes/45s for this specific crowded paired fixture prevents the measured 8.88-mote queue from silently returning; it is an engineering guard below the observed 33.99 result, not a human pacing target.
+
+The current simulation SHA-256 is `33a7c45f685ded18447dbfdf4575518a8b91aa6720df9af080a93e5fea286b18`. Reports are `builds/3d/crowd-reservations-after.json`, `crowd-diagnosis-before.json` and `crowd-diagnosis-after.json`. These results use headless Mac-host simulation, not Windows execution. No native window was launched during this follow-up because root owned the capture slot. The earlier movie proves only the preceding spacing correction; inspect a fresh current capture for queue flow, foot motion, jitter and the meaning of directing a crew before closing the presentation gap.

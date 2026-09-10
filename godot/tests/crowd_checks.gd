@@ -73,4 +73,8 @@ func run_case(script: GDScript, count: int, teamwork: bool) -> Dictionary:
 	if invalid_positions > 0: failures.append(name + " left walkable ground")
 	if not arrived or working_frames == 0 or sim.stats.assisted <= assisted_before: failures.append(name + " did not reach and clean assigned area")
 	if max_speed > 1.7: failures.append(name + " jumped instead of walking")
+	# Regression floor for the measured overlapping-seat queue (8.88 motes/45s),
+	# deliberately below the corrected33.99 result; not a player pacing target.
+	if count == 50 and teamwork and sim.stats.assisted - assisted_before < 25.0:
+		failures.append(name + " physical work reservations caused a long queue")
 	return {"initial_helpers": count, "final_helpers": sim.crew.size(), "teamwork": teamwork, "seconds": 45, "minimum_distance_m": min_distance, "minimum_travel_distance_m": min_travel, "minimum_work_distance_m": min_work, "maximum_speed_m_s": max_speed, "invalid_positions": invalid_positions, "arrived": arrived, "working_frames": working_frames, "assisted": sim.stats.assisted - assisted_before, "average_simulation_tick_ms": tick_usec / 2700000.0}

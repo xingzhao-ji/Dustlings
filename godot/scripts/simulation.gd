@@ -94,20 +94,32 @@ func choose_target(c: Dictionary) -> int:
 	var best = -1
 	var score = INF
 	var anchor = c.p if assignment == Vector2.INF else assignment
+	var reserved = PackedVector2Array()
+	for other in crew:
+		if other.id != c.id and other.target >= 0 and dust[other.target].amount > 0.00001:
+			reserved.append(_work_position(dust[other.target].p, other.id))
 	for i in range(dust.size()):
 		if dust[i].amount <= 0.00001: continue
-		var occupied = 0
-		for other in crew:
-			if other.target == i: occupied += 1
-		# A work spot holds one worker or its explicit teammate. Overbooking made
-		# otherwise separated crews queue behind several bodies at the same goal.
-		if occupied > 0: continue
-		var value = dust[i].p.distance_to(anchor) + occupied * (0.5 if upgrades.teamwork else 0.7)
+		var first = _work_position(dust[i].p, c.id)
+		var second = _work_position(dust[i].p, c.id + 1) if upgrades.teamwork and c.id % 2 == 0 and c.id + 1 < crew.size() else first
+		var has_room = true
+		for position in reserved:
+			if first.distance_squared_to(position) < HELPER_SPACING * HELPER_SPACING or second.distance_squared_to(position) < HELPER_SPACING * HELPER_SPACING:
+				has_room = false
+				break
+		if not has_room: continue
+		var value = dust[i].p.distance_to(anchor)
 		if assignment != Vector2.INF: value += dust[i].p.distance_to(c.p) * 0.1
 		if value < score:
 			score = value
 			best = i
 	return best
+
+func _work_position(patch: Vector2, id: int) -> Vector2:
+	var offset = Vector2(PAIR_OFFSET if id % 2 == 1 else -PAIR_OFFSET, 0.12) if upgrades.teamwork else Vector2(0, 0.15)
+	var goal = _walk_position(patch + offset)
+	if goal.length() < 1.79: goal = goal.normalized() * 1.79
+	return goal
 
 func _walk_position(p: Vector2) -> Vector2:
 	p = p.clamp(Vector2(-7.0, -3.8), Vector2(7.0, 4.4))
@@ -224,8 +236,7 @@ func tick(delta: float, brushing: bool, brush_point: Vector2):
 		if c.target < 0 or dust[c.target].amount <= 0.00001: c.target = choose_target(c)
 		if c.target >= 0:
 			var d = dust[c.target]
-			var offset = Vector2(PAIR_OFFSET if c.id % 2 == 1 else -PAIR_OFFSET, 0.12) if upgrades.teamwork else Vector2(0, 0.15)
-			move(c, d.p + offset, delta, 1.02 if upgrades.teamwork else 0.86)
+			move(c, _work_position(d.p, c.id), delta, 1.02 if upgrades.teamwork else 0.86)
 	_separate_crew()
 	for index in range(previous_positions.size()):
 		var c = crew[index]

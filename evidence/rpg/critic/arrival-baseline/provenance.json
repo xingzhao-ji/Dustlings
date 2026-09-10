@@ -1,0 +1,27 @@
+{
+  "review_kind": "independent AI frame-based visual inspection",
+  "human_sessions": 0,
+  "native_input": false,
+  "audio_listened": false,
+  "continuous_audiovisual_perception": false,
+  "source_hash": "91764c3e8514abc4a3f024613662cc72cf2ad8cfd285f1f85e5d18991410b40b",
+  "inputs": {
+    "evidence/rpg/neighborhood-first/overview.mp4": {
+      "sha256": "6e633330d4edd55565bf4e6b4ed3f0004a2d59f978f6d51d685f9c0289f6d9a2",
+      "bytes": 286437
+    },
+    "evidence/rpg/neighborhood-first/arrival.png": {
+      "sha256": "90c0857e584a79717691458d5d4228209734c58938df24c21bf497d4d9910b32",
+      "bytes": 386763
+    },
+    "evidence/rpg/neighborhood-first/capture-manifest.json": {
+      "sha256": "07dc83d8998bb41d0f0f1c6f44f034268eeecd013df7b6c56442676c6ad42a9c",
+      "bytes": 12788
+    },
+    "evidence/rpg/neighborhood-first/results.json": {
+      "sha256": "4fbae2484797e1958f88b54e72289c5872a6e483df93f0e565b8ee2a2414a532",
+      "bytes": 1262
+    }
+  },
+  "samples": "Movie chronology sampled at 1fps plus original normal-size arrival and 0.9s welcome frame. No traversal in this overview; only start button and idle."
+}

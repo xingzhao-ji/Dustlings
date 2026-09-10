@@ -32,6 +32,17 @@ var _story_ready := false
 var _reveal := 0.0
 var _garden_growth := 0.0
 var _world_time := 0.0
+var _story_seen := false
+var _bridge_settle := 1.0
+var _bridge_planks: Array[Dictionary] = []
+var _moth: Node3D
+var _moth_wings: Array[Node3D] = []
+var _moth_wake := 0.0
+var _moth_glow: OmniLight3D
+var _alcove_glow: OmniLight3D
+var _alcove_treasure: Node3D
+var _alcove_star: Node3D
+var _alcove_reveal := 0.0
 
 func _ready() -> void:
     _create_materials()
@@ -56,6 +67,10 @@ func _ready() -> void:
         _flowers.multimesh.set_instance_transform(i, Transform3D(Basis.IDENTITY.scaled(part["size"]), part["center"] + part["offset"]))
     _story_ready = true
     set_story(_story)
+    # The first external story application is a load, not a live repair event.
+    _story_seen = false
+    _moth_wake = 1.0 if _flag("memory_found") else 0.0
+    _alcove_reveal = 1.0 if _flag("alcove_found") else 0.0
     _reveal = 1.0 if _flag("greenhouse_open") else 0.0
     _garden_growth = 1.0 if _flag("garden_watered") else 0.0
     _apply_animated_story()
@@ -64,9 +79,18 @@ func get_spawn() -> Vector3:
     return Vector3(0, 0, 9)
 
 func set_story(state: Dictionary) -> void:
+    var was_repaired := _flag("bridge_repaired")
     _story = state.duplicate(true)
     if not _story_ready: return
     var repaired := _flag("bridge_repaired")
+    if repaired and not was_repaired and _story_seen:
+        _bridge_settle = 0.0
+    elif not _story_seen or not repaired:
+        _bridge_settle = 1.0
+    if not _story_seen:
+        _moth_wake = 1.0 if _flag("memory_found") else 0.0
+        _alcove_reveal = 1.0 if _flag("alcove_found") else 0.0
+    _story_seen = true
     _bridge_parts.visible = repaired
     _broken_parts.visible = not repaired
     _bridge_stop.collision_layer = 0 if repaired else 1
@@ -94,6 +118,9 @@ func _process(delta: float) -> void:
     _plant_material.set_shader_parameter("time_seconds", _world_time)
     _reveal = move_toward(_reveal, 1.0 if _flag("greenhouse_open") else 0.0, delta * 0.38)
     _garden_growth = move_toward(_garden_growth, 1.0 if _flag("garden_watered") else 0.0, delta * 0.45)
+    _bridge_settle = move_toward(_bridge_settle, 1.0, delta / 2.8)
+    _moth_wake = move_toward(_moth_wake, 1.0 if _flag("memory_found") else 0.0, delta * 0.48)
+    _alcove_reveal = move_toward(_alcove_reveal, 1.0 if _flag("alcove_found") else 0.0, delta * 0.7)
     if _story_ready: _apply_animated_story()
 
 func _apply_animated_story() -> void:
@@ -107,6 +134,27 @@ func _apply_animated_story() -> void:
         blossom.scale = part.size * growth
         blossom.position.y = float(part.height) * growth
     _garden_blooms.visible = _garden_growth > 0.005
+    for i in _bridge_planks.size():
+        var plank: MeshInstance3D = _bridge_planks[i].node
+        var place := clampf((_bridge_settle - float(i) * 0.058) / 0.42, 0, 1)
+        var settle := 1.0 - smoothstep(0, 1, place)
+        plank.visible = place > 0 or i < 2 or i > 7
+        plank.position = _bridge_planks[i].at + Vector3((1.0 if i % 2 else -1.0) * settle * 0.10, settle * (0.03 if _gentle_motion else 0.16), 0)
+        plank.rotation = Vector3(0, settle * (0.025 if _gentle_motion else 0.08) * (1.0 if i % 2 else -1.0), 0)
+    if _moth:
+        var awaken := smoothstep(0, 1, _moth_wake)
+        var hover := sin(_world_time * 2.6) * (0.004 if _gentle_motion else 0.025) * awaken
+        _moth.position = Vector3(12, 1.17 + awaken * 0.32 + hover, -13.6 + awaken * 0.22)
+        _moth.rotation.y = sin(_world_time * 0.8) * 0.07 * awaken
+        for i in _moth_wings.size():
+            var side := -1.0 if i == 0 else 1.0
+            var flutter := sin(_world_time * 7.5) * (0.045 if _gentle_motion else 0.20) * awaken
+            _moth_wings[i].rotation.z = side * (lerpf(1.1, 0.10, awaken) + flutter)
+        _moth_glow.light_energy = 0.035 + awaken * 0.10
+    if _alcove_glow:
+        _alcove_glow.light_energy = _alcove_reveal * 0.48
+        _alcove_treasure.visible = true
+        _alcove_star.visible = _alcove_reveal < 0.99
 
 func _finish_batches() -> void:
     # Geometry is visual; broad, deliberate colliders below avoid leaf/handle snags.
@@ -290,7 +338,7 @@ func _workshop() -> void:
     _post_lamp(Vector3(13.6, 0, 2.5))
 
 func _canal_bridge() -> void:
-    _box(Vector3(0, -0.02, -5), Vector3(36, 0.10, 1.75), Color("78988e"), 0.03, "ground")
+    _box(Vector3(0, -0.09, -5), Vector3(36, 0.10, 1.75), Color("78988e"), 0.03, "ground")
     var water := MeshInstance3D.new()
     var water_plane := PlaneMesh.new()
     water_plane.size = Vector2(36, 1.70)
@@ -311,7 +359,9 @@ func _canal_bridge() -> void:
     _bridge_parts.name = "RepairedBridge"
     add_child(_bridge_parts)
     for i in 10:
-        _dynamic_box(_bridge_parts, Vector3(0, 0.020, -6.04 + i * 0.232), Vector3(2.75, 0.10, 0.218), Color("beaa80").lightened(float(i % 3) * 0.018))
+        var at := Vector3(0, 0.020, -6.04 + i * 0.232)
+        var plank := _dynamic_box(_bridge_parts, at, Vector3(2.75, 0.10, 0.218), Color("beaa80").lightened(float(i % 3) * 0.018))
+        _bridge_planks.append({"node": plank, "at": at})
     for side in [-1.0, 1.0]:
         for z in [-6.0, -5.0, -4.0]:
             _box(Vector3(side * 1.45, 0.5, z), Vector3(0.17, 1.0, 0.18), Color("9d906e"), 0.05, "wood")
@@ -407,6 +457,7 @@ func _greenhouse() -> void:
     for side in [-1.0, 1.0]:
         for z in [-1.7, -0.3, 1.0]:
             _pot(p + Vector3(side * 2.13, 0, z), 0.35)
+    _sleeping_moth()
     _greenhouse_glow = OmniLight3D.new()
     _greenhouse_glow.position = p + Vector3(0, 1.6, -0.8)
     _greenhouse_glow.light_color = Color("cfe5c1")
@@ -425,6 +476,7 @@ func _quiet_alcove() -> void:
     for i in 3:
         _ring(p + Vector3(-0.55 + i * 0.55, 0.03, 0.50), 0.12, 0.18, Color("d2ccb0"))
     _pot(p + Vector3(-1.6, 0, -0.9), 0.30)
+    _alcove_discovery(p)
 
 func _table(at: Vector3, width: float, depth: float) -> void:
     _box(at + Vector3(0, 0.76, 0), Vector3(width, 0.12, depth), Color("bca27a"), 0.075, "wood")
@@ -506,3 +558,69 @@ func _old_lantern() -> void:
     _old_lantern_light.shadow_enabled = false
     add_child(_old_lantern_light)
     _solid("OldLanternBase", at + Vector3(0, 0.28, 0), Vector3(0.40, 0.56, 0.40))
+
+func _sleeping_moth() -> void:
+    _moth = Node3D.new()
+    _moth.name = "SleepingLanternMoth"
+    _moth.position = Vector3(12, 1.17, -13.6)
+    add_child(_moth)
+    _dynamic_round(_moth, Vector3(0, 0.03, 0), Vector3(0.10, 0.13, 0.25), Color("d9cdab"))
+    _dynamic_round(_moth, Vector3(0, 0.07, 0.12), Vector3(0.16, 0.15, 0.14), Color("e5d9b4"))
+    for side in [-1.0, 1.0]:
+        _dynamic_round(_moth, Vector3(side * 0.040, 0.09, 0.178), Vector3(0.023, 0.030, 0.015), Color("657569"))
+        var antenna := _dynamic_box(_moth, Vector3(side * 0.075, 0.19, 0.12), Vector3(0.016, 0.17, 0.017), Color("a4ad89"))
+        antenna.rotation.z = -side * 0.4
+        _dynamic_round(_moth, Vector3(side * 0.11, 0.265, 0.12), Vector3(0.040, 0.030, 0.040), Color("daca9b"))
+        var wing := Node3D.new()
+        wing.position = Vector3(side * 0.035, 0.045, 0)
+        _moth.add_child(wing)
+        _moth_wings.append(wing)
+        var fore := _dynamic_round(wing, Vector3(side * 0.18, 0, 0.05), Vector3(0.38, 0.032, 0.30), Color("c6d3b0"))
+        fore.rotation.y = -side * 0.25
+        _dynamic_round(wing, Vector3(side * 0.13, -0.003, -0.13), Vector3(0.28, 0.028, 0.25), Color("b6c7a3"))
+        _dynamic_round(wing, Vector3(side * 0.205, 0.017, 0.057), Vector3(0.11, 0.014, 0.12), Color("e8dbad"))
+        _dynamic_round(wing, Vector3(side * 0.205, 0.026, 0.057), Vector3(0.047, 0.010, 0.048), Color("a3b594"))
+    _moth_glow = OmniLight3D.new()
+    _moth_glow.position = Vector3(0, 0.15, 0)
+    _moth_glow.light_color = Color("e5deb1")
+    _moth_glow.omni_range = 1.2
+    _moth_glow.shadow_enabled = false
+    _moth.add_child(_moth_glow)
+
+func _alcove_discovery(p: Vector3) -> void:
+    # A low recess beside the bench holds Mara's intimate first attempt.
+    # Dark inner stone and an overhang support the clue without changing day/night.
+    var at := p + Vector3(1.05, 0, -0.48)
+    _box(at + Vector3(0, 0.32, 0), Vector3(1.02, 0.64, 0.74), Color("7a8b78"), 0.12)
+    _box(at + Vector3(0, 0.83, -0.30), Vector3(1.03, 0.49, 0.15), Color("788876"), 0.06)
+    for side in [-1.0, 1.0]:
+        _box(at + Vector3(side * 0.47, 0.80, 0), Vector3(0.13, 0.42, 0.76), Color("859680"), 0.05)
+    _box(at + Vector3(0, 1.055, 0), Vector3(1.12, 0.15, 0.85), Color("8a9a82"), 0.08)
+    _solid("AlcoveKeepsakeRecess", at + Vector3(0, 0.53, 0), Vector3(1.1, 1.07, 0.80))
+    _alcove_treasure = Node3D.new()
+    _alcove_treasure.name = "MarasFirstBridge"
+    _alcove_treasure.position = at + Vector3(0, 0.69, 0.10)
+    add_child(_alcove_treasure)
+    _dynamic_round(_alcove_treasure, Vector3(0, 0.035, 0), Vector3(0.45, 0.11, 0.38), Color("c9c7ad"))
+    _dynamic_round(_alcove_treasure, Vector3(0, 0.082, 0), Vector3(0.36, 0.035, 0.30), Color("889f91"))
+    _dynamic_round(_alcove_treasure, Vector3(0.24, 0.048, 0), Vector3(0.14, 0.10, 0.09), Color("b8bea4"))
+    for i in 5:
+        var plank := _dynamic_box(_alcove_treasure, Vector3(-0.15 + i * 0.075, 0.117 + sin(float(i) * 1.2) * 0.015, 0), Vector3(0.069, 0.025, 0.22), Color("cbb68a"))
+        plank.rotation.y = sin(float(i) * 1.7) * 0.13
+    for side in [-1.0, 1.0]:
+        _dynamic_box(_alcove_treasure, Vector3(side * 0.13, 0.12, -0.105), Vector3(0.022, 0.14, 0.021), Color("b6a174"))
+    var crack := _dynamic_box(_alcove_treasure, Vector3(-0.16, 0.065, 0.119), Vector3(0.012, 0.082, 0.012), Color("8e9781"))
+    crack.rotation.z = -0.30
+    _alcove_star = Node3D.new()
+    _alcove_star.name = "WaitingPaperStar"
+    _alcove_star.position = Vector3(0.36, 0.037, 0.12)
+    _alcove_treasure.add_child(_alcove_star)
+    for i in 5:
+        var point := _dynamic_box(_alcove_star, Vector3.ZERO, Vector3(0.038, 0.15, 0.012), Color("e8d5a2"))
+        point.rotation = Vector3(PI * 0.5, 0, float(i) * TAU / 5.0)
+    _alcove_glow = OmniLight3D.new()
+    _alcove_glow.position = at + Vector3(0, 0.94, 0.30)
+    _alcove_glow.light_color = Color("e8d9aa")
+    _alcove_glow.omni_range = 1.25
+    _alcove_glow.shadow_enabled = false
+    add_child(_alcove_glow)

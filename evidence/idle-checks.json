@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-09-10T06:00:10.849Z",
+  "browser": "152.0.7977.83",
+  "conditions": "Headless Chrome on host MacBook, 1440×900 DPR2. Instrumented rendering and state checks, not measured energy or human responsiveness.",
+  "checks": [
+    {
+      "name": "Welcome audio is suspended with no graph or sources",
+      "pass": true,
+      "data": {
+        "contextState": "suspended",
+        "ready": false,
+        "voices": 0,
+        "sources": 0
+      }
+    },
+    {
+      "name": "Active scene still animates",
+      "pass": true
+    },
+    {
+      "name": "Stationary pause performs zero canvas redraws and no simulation",
+      "pass": true,
+      "data": {
+        "renders": 0,
+        "elapsed": 0.6606000000000001
+      }
+    },
+    {
+      "name": "Resize redraws paused scene at current dimensions",
+      "pass": true
+    },
+    {
+      "name": "Quality change redraws paused scene at reduced resolution",
+      "pass": true
+    },
+    {
+      "name": "Updated pause returns to zero redraws",
+      "pass": true
+    },
+    {
+      "name": "Resume restores simulation, rendering, and sound",
+      "pass": true
+    },
+    {
+      "name": "No browser errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "errors": 0
+  }
+}

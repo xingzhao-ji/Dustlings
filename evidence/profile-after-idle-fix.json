@@ -1,0 +1,64 @@
+{
+  "conditions": {
+    "viewport": [
+      1440,
+      900
+    ],
+    "dpr": 2,
+    "helpers": 50,
+    "headless": true,
+    "kind": "Instrumented browser probe; not human responsiveness or energy measurement"
+  },
+  "active": {
+    "render": {
+      "count": 604,
+      "mean": 2.0753311252850573,
+      "p95": 3.399999976158142,
+      "max": 4.899999976158142,
+      "over33": 0
+    },
+    "frames": {
+      "count": 620,
+      "mean": 16.64209677421275,
+      "p95": 16.700000000000728,
+      "max": 16.80000000000109,
+      "over33": 0
+    }
+  },
+  "paused": {
+    "render": {
+      "count": 0,
+      "mean": 0,
+      "p95": 0,
+      "max": 0,
+      "over33": 0
+    },
+    "frames": {
+      "count": 300,
+      "mean": 16.666000000000004,
+      "p95": 16.700000000000728,
+      "max": 16.80000000000109,
+      "over33": 0
+    }
+  },
+  "uiMutations": 2,
+  "longTasks": [],
+  "longFrames": [
+    {
+      "start": 104,
+      "ms": 154.2999999821186,
+      "phase": "active",
+      "scripts": [
+        {
+          "duration": 138.7000000178814,
+          "sourceURL": "http://localhost:4173/src/main.js",
+          "sourceFunctionName": "start",
+          "invoker": "BUTTON#start-button.onclick",
+          "forcedStyleAndLayoutDuration": 0.6
+        }
+      ]
+    }
+  ],
+  "browser": "152.0.7977.83",
+  "recordedAt": "2026-09-10T05:52:26.960Z"
+}

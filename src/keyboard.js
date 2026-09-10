@@ -32,9 +32,10 @@ export function createKeyboardControls({ canvas, getState, renderer, onMode = ()
     const height = renderer.height || canvas.clientHeight;
     if (!width || !height) return;
     const point = renderer.worldToScreen(cursor.x, cursor.y);
-    const top = Math.min(height / 3, (renderer.insets?.top || 25) + 18);
-    const bottom = Math.max(top + 40, height - (renderer.insets?.bottom || 25) - 18);
-    const x = bounded(point.x, 30, Math.max(31, width - 30));
+    const viewport=renderer.viewport||{x:0,y:renderer.insets?.top||25,width,height:height-(renderer.insets?.top||25)-(renderer.insets?.bottom||25)};
+    const top = viewport.y+18;
+    const bottom = Math.max(top+1,viewport.y+viewport.height-18);
+    const x = bounded(point.x, viewport.x+18,Math.max(viewport.x+19,viewport.x+viewport.width-18));
     const y = bounded(point.y, top, bottom);
     const scale = Math.max(.1, Number(renderer.scale) || 1);
     if (Math.abs(point.x - x) > .5 || Math.abs(point.y - y) > .5) onPan((point.x - x) / scale, (point.y - y) / (scale * .72));

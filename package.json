@@ -1,6 +1,6 @@
 {
   "name": "dustlings",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "A miniature restoration game. Courtyard prototype.",
@@ -8,7 +8,9 @@
     "start": "node tools/serve.mjs",
     "test": "node --test tests/*.test.mjs",
     "build": "node tools/build.mjs",
-    "qa": "node tools/qa.mjs"
+    "qa": "node tools/qa.mjs",
+    "test:audit": "node --test newtests/*.test.mjs",
+    "test:browser": "node tools/browser-checks.mjs && node tools/accessibility-audit.mjs && node tools/idle-checks.mjs && node tools/save-conflict-checks.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",

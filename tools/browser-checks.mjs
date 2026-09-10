@@ -51,7 +51,7 @@ try{
  result('Settings persist through reload',restored.music==='23'&&restored.tap&&restored.motion,{settings:restored.settings,controls:{music:restored.music,tap:restored.tap,motion:restored.motion}});
  await page.locator('#start-button').click();await page.locator('#brush-tool').click();p=await screenPoint(page,650,560,true);await touch('touchStart',p);await touch('touchCancel');
  result('Pointer cancellation stops tap-sweep assistance',await page.evaluate(()=>{const q=window.__dustlings,before=q.state.stats.brushed;q.advance(1.5);return !q.state.pointer.active&&q.state.stats.brushed===before;}));
- await page.locator('#zoom-in').click();await page.locator('#zoom-in').click();
+ await page.locator('#zoom-in').click();
  const mapping=await page.evaluate(()=>{const r=window.__dustlings.renderer;return {camera:r.camera,points:[[270,505],[690,510],[500,370]].map(([x,y])=>{const p=r.worldToScreen(x,y),w=r.screenToWorld(p.x,p.y);return {x,y,error:Math.hypot(w.x-x,w.y-y)};})};});
  result('Zoom preserves round-trip world mapping',mapping.camera.zoom>1&&mapping.points.every(p=>p.error<1e-8),mapping);
  const panBefore=await page.evaluate(()=>({...window.__dustlings.renderer.camera}));await page.locator('#pan-toggle').click();p=await screenPoint(page,500,420,true);await touch('touchStart',p);await touch('touchMove',{x:p.x+30,y:p.y+12});await touch('touchEnd');

@@ -1,6 +1,10 @@
 import { mkdir, cp, writeFile, readFile } from 'node:fs/promises';
 import {build} from 'esbuild';
 import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+const {version}=JSON.parse(await readFile('package.json','utf8'));
+const sourceRevision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
+const sourceDirty=!!execFileSync('git',['status','--porcelain','--','index.html','style.css','src','package.json','tools/build.mjs'],{encoding:'utf8'}).trim();
 const dest='builds/courtyard';
 await mkdir(dest,{recursive:true});
 for(const f of ['index.html','style.css','src']) await cp(f,`${dest}/${f}`,{recursive:true});
@@ -11,5 +15,5 @@ const css=await readFile('style.css','utf8');
 html=html.replace('<link rel="stylesheet" href="style.css">',`<style>${css}</style>`).replace('<script type="module" src="src/main.js"></script>',()=>`<script>${bundled.outputFiles[0].text.replaceAll('</script','<\\/script')}</script>`);
 await writeFile('builds/Dustlings Courtyard.html',html);
 await writeFile(`${dest}/PLAY.txt`,'DUSTLINGS — COURTYARD PROTOTYPE\n\nEASIEST: Open Dustlings Courtyard.html in a modern browser. No install or internet required.\n\nSOURCE BUILD: From this folder run: node serve.mjs\nOpen http://localhost:4173\n\nTested by browser automation on a MacBook Pro. Physical Windows, iPhone and iPad validation pending.\nYour progress is saved locally in this browser. Use Export save in Settings before moving between copies or browsers.\n');
-await writeFile('builds/build-manifest.json',JSON.stringify({version:'0.1.0',builtAt:new Date().toISOString(),artifact:'Dustlings Courtyard.html',sha256:createHash('sha256').update(html).digest('hex'),bytes:Buffer.byteLength(html),runtimeDependencies:0,scope:'Courtyard prototype; human acceptance pending'},null,2));
+await writeFile('builds/build-manifest.json',JSON.stringify({version,sourceRevision,sourceDirty,builtAt:new Date().toISOString(),artifact:'Dustlings Courtyard.html',sha256:createHash('sha256').update(html).digest('hex'),bytes:Buffer.byteLength(html),runtimeDependencies:0,scope:'Courtyard prototype; human acceptance pending'},null,2));
 console.log(`Playable build written to ${dest}`);

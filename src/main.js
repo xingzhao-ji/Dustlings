@@ -10,8 +10,8 @@ try{browserStorage=window.localStorage;}catch{browserStorage={getItem(){throw Er
 const store=new SaveStore(browserStorage);
 let state=store.load()||createState();
 const canvas=$('world'),renderer=new Renderer(canvas),audio=new DustAudio();
-let started=false,paused=true,lastTime=performance.now(),lastSave=0,lastUI=0,autoSweep=0,birth=null,birthUntil=0,completionShown=state.completed;
-let zoom=1,camera={x:500,y:390},lastPointer=null,pointerId=null,panning=false,pointerMoved=false;
+let started=false,paused=true,lastTime=performance.now(),lastSave=0,lastUI=0,autoSweep=0,birth=null,birthUntil=0,completionShown=state.completed,sceneDirty=true;
+let zoom=1,camera={x:500,y:390},lastPointer=null,pointerId=null,panning=false,pointerMoved=false,viewportMode=null;
 const frames=[];
 const htmlValues=new WeakMap();
 function text(el,value){value=String(value);if(el.textContent!==value)el.textContent=value;}
@@ -23,7 +23,11 @@ let settings={music:.48,sfx:.65,ambience:.38,muted:false,reducedMotion:matchMedi
 try{Object.assign(settings,JSON.parse(localStorage.getItem('dustlings.settings')||'{}'));}catch{}
 state.reducedMotion=settings.reducedMotion;audio.setMix(settings);
 function saveSettings(){try{localStorage.setItem('dustlings.settings',JSON.stringify(settings));}catch{}audio.setMix(settings);}
-function resize(){const r=canvas.getBoundingClientRect();renderer.resize(r.width,r.height,Math.min(settings.lowQuality?1:2,devicePixelRatio||1));renderer.setCamera?.(zoom,camera.x,camera.y);}
+function resize(){
+  const r=canvas.getBoundingClientRect();renderer.resize(r.width,r.height,Math.min(settings.lowQuality?1:2,devicePixelRatio||1));
+  if(viewportMode!==renderer.viewportMode){viewportMode=renderer.viewportMode;zoom=renderer.recommendedZoom;camera={x:500,y:390};}
+  renderer.setCamera(zoom,camera.x,camera.y);if($('zoom-out')){$('zoom-out').disabled=zoom<=1;$('zoom-in').disabled=zoom>=2;}sceneDirty=true;
+}
 new ResizeObserver(resize).observe(canvas);resize();
 
 for(const u of UPGRADES){
@@ -52,6 +56,7 @@ function updateSaveStatus(){
   $('save-conflict').hidden=store.status!=='conflict';
 }
 function updateUI(){
+  sceneDirty=true;
   const percent=Math.min(100,Math.floor(state.cleaned/state.totalDust*100));
   text($('crew-count'),state.creatures.length);text($('mote-count'),state.motes);
   text($('scene-caption-text'),state.completed?'A little place, alive again':state.restoration>=1?'The fountain is singing':'A place waiting to bloom');
@@ -96,7 +101,7 @@ $('find-dust').onclick=()=>{
 function closeJournal(){$('journal').classList.remove('open');$('mobile-journal').setAttribute('aria-expanded','false');}
 function toggleJournal(){const opened=$('journal').classList.toggle('open');$('mobile-journal').setAttribute('aria-expanded',opened);}
 $('mobile-journal').onclick=toggleJournal;$('close-journal').onclick=closeJournal;
-function stopInput(){keyboard.stop();state.pointer.active=false;state.pointer.preview=false;pointerId=null;autoSweep=0;panning=false;audio.setBrushing(false);}
+function stopInput(){keyboard.stop();state.pointer.active=false;state.pointer.preview=false;pointerId=null;autoSweep=0;panning=false;audio.setBrushing(false);sceneDirty=true;}
 function openSettings(){if(!started)return;stopInput();paused=true;audio.pause();save();$('settings').showModal();}
 function closeSettings(){if(!$('settings').open)return;if(store.status==='conflict'){$('load-latest-save').focus();return;}$('settings').close();$('restart-confirm').hidden=true;paused=false;lastTime=performance.now();audio.resume();canvas.focus({preventScroll:true});}
 $('pause-button').onclick=openSettings;$('close-settings').onclick=closeSettings;$('resume-button').onclick=closeSettings;
@@ -145,10 +150,10 @@ document.querySelector('.wordmark').onclick=e=>{e.preventDefault();openSettings(
 function locate(e){
   const r=canvas.getBoundingClientRect(),touch=e.pointerType==='touch';
   const sx=e.clientX-r.left,sy=e.clientY-r.top-(touch?42:0);
-  const p=renderer.screenToWorld(sx,sy);return {...p,touch,inside:true,active:state.pointer.active,preview:state.pointer.preview};
+  const p=renderer.screenToWorld(sx,sy);return {...p,touch,inside:renderer.containsScreenPoint(sx,sy),active:state.pointer.active,preview:state.pointer.preview};
 }
 canvas.addEventListener('pointerdown',e=>{
-  if(paused||!started||pointerId!==null)return;e.preventDefault();keyboard.stop();canvas.focus({preventScroll:true});canvas.setPointerCapture(e.pointerId);pointerId=e.pointerId;
+  if(paused||!started||pointerId!==null)return;const target=locate(e);if(!target.inside)return;e.preventDefault();keyboard.stop();canvas.focus({preventScroll:true});canvas.setPointerCapture(e.pointerId);pointerId=e.pointerId;
   lastPointer={x:e.clientX,y:e.clientY};pointerMoved=false;panning=e.button===1||e.shiftKey;
   state.pointer=locate(e);state.pointer.active=state.mode==='brush'&&!panning;
   state.pointer.preview=state.mode==='direct'&&!panning;
@@ -159,13 +164,14 @@ canvas.addEventListener('pointermove',e=>{
   if(panning&&pointerId===e.pointerId&&lastPointer){
     const a=renderer.screenToWorld(lastPointer.x,lastPointer.y),b=renderer.screenToWorld(e.clientX,e.clientY);
     camera.x=Math.max(180,Math.min(820,camera.x-(b.x-a.x)));camera.y=Math.max(220,Math.min(600,camera.y-(b.y-a.y)));renderer.setCamera?.(zoom,camera.x,camera.y);
-  }else{state.pointer=locate(e);}
+  }else{const target=locate(e);if(!target.inside){target.active=false;target.preview=false;}else if(pointerId===e.pointerId){target.active=state.mode==='brush';target.preview=state.mode==='direct';}state.pointer=target;}
   if(pointerId===e.pointerId){if(lastPointer&&Math.hypot(e.clientX-lastPointer.x,e.clientY-lastPointer.y)>3)pointerMoved=true;lastPointer={x:e.clientX,y:e.clientY};}
 });
 function pointerUp(e,cancel=false){
   if(e.pointerId!==pointerId)return;
-  if(!cancel&&!panning&&state.mode==='direct'){state.pointer=locate(e);assignCrew(state,state.pointer.x,state.pointer.y);save();}
-  state.pointer.active=!cancel&&!panning&&state.mode==='brush'&&settings.tapSweep&&autoSweep>0;
+  const target=locate(e);
+  if(!cancel&&!panning&&state.mode==='direct'&&target.inside){state.pointer=target;assignCrew(state,state.pointer.x,state.pointer.y);save();}
+  state.pointer.active=!cancel&&!panning&&target.inside&&state.mode==='brush'&&settings.tapSweep&&autoSweep>0;
   state.pointer.preview=false;
   if(cancel)autoSweep=0;pointerId=null;panning=false;audio.setBrushing(false);updateUI();
 }
@@ -183,11 +189,12 @@ document.addEventListener('keydown',e=>{
 });
 document.addEventListener('keyup',e=>{if(keyboard.handleKeyUp(e))e.preventDefault();});
 canvas.addEventListener('blur',()=>keyboard.stop());
-function setZoom(value){zoom=value;if(zoom===1)camera={x:500,y:390};renderer.setCamera?.(zoom,camera.x,camera.y);$('zoom-in').disabled=zoom>=2;$('zoom-out').disabled=zoom<=1;}
+function setZoom(value){zoom=value;if(zoom===1)camera={x:500,y:390};renderer.setCamera?.(zoom,camera.x,camera.y);sceneDirty=true;$('zoom-in').disabled=zoom>=2;$('zoom-out').disabled=zoom<=1;}
 const cameraControls=document.createElement('div');cameraControls.className='camera-controls';cameraControls.innerHTML='<button id="zoom-out" aria-label="Zoom out" title="Zoom out · −" disabled>−</button><button id="zoom-in" aria-label="Zoom in" title="Zoom in · +">+</button><button id="pan-toggle" aria-label="Pan courtyard" aria-pressed="false" title="Pan courtyard">↔</button>';
 document.querySelector('.world-panel').append(cameraControls);
+setZoom(zoom);
 let panMode=false;$('zoom-in').onclick=()=>setZoom(Math.min(2,zoom+(canvas.clientWidth<500?.7:.25)));$('zoom-out').onclick=()=>setZoom(Math.max(1,zoom-(canvas.clientWidth<500?.7:.25)));$('pan-toggle').onclick=()=>{panMode=!panMode;$('pan-toggle').setAttribute('aria-pressed',panMode);$('pan-toggle').classList.toggle('selected',panMode);notify(state,panMode?'Drag the courtyard to look around. Tap ↔ again to brush.':'Ready to brush again.');};
-canvas.addEventListener('pointerdown',e=>{if(panMode&&!paused){panning=true;state.pointer.active=false;autoSweep=0;}},false);
+canvas.addEventListener('pointerdown',e=>{if(panMode&&!paused&&pointerId===e.pointerId){panning=true;state.pointer.active=false;autoSweep=0;}},false);
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&started){stopInput();audio.pause();save();if(!paused){paused=true;$('settings').showModal();}}});
 window.addEventListener('pagehide',()=>{stopInput();save();});window.addEventListener('blur',()=>{stopInput();});
 
@@ -213,14 +220,20 @@ function frame(now){
     // Keep every foreground frame, including stalls, so performance evidence is honest.
     frames.push(raw*1000);if(frames.length>3600)frames.shift();
   }
-  renderer.render(state,state.elapsed);
-  if(birth&&state.elapsed<birthUntil&&!paused){const p=renderer.worldToScreen(birth.x,birth.y);$('birth-label').hidden=false;$('birth-label').style.left=`${Math.max(110,Math.min(canvas.clientWidth-110,p.x))}px`;$('birth-label').style.top=`${p.y-33}px`;}else $('birth-label').hidden=true;
-  if(now-lastUI>150){updateUI();lastUI=now;}
+  if(!paused||sceneDirty){renderer.render(state,state.elapsed);sceneDirty=false;}
+  if(birth&&state.elapsed<birthUntil&&!paused){const p=renderer.worldToScreen(birth.x,birth.y),v=renderer.viewport;$('birth-label').hidden=false;$('birth-label').style.left=`${Math.max(v.x+100,Math.min(v.x+v.width-100,p.x))}px`;$('birth-label').style.top=`${Math.max(v.y+55,Math.min(v.y+v.height-12,p.y-33))}px`;}else $('birth-label').hidden=true;
+  if(!paused&&now-lastUI>150){updateUI();lastUI=now;}
   requestAnimationFrame(frame);
 }
 if(state.elapsed>0)$('start-button').innerHTML='Return to your courtyard <span>↗</span>';
 if(store.recovered||store.status==='damaged'||store.status==='unavailable'){$('recovery-note').hidden=false;$('recovery-note').textContent=store.recovered?'Your previous save was recovered from its backup.':store.status==='damaged'?'The saved courtyard could not be read. You can import a backup from Settings after starting.':'Browser saving is unavailable. Export a save from Settings before leaving.';}
 updateUI();updateSaveStatus();$('welcome').showModal();requestAnimationFrame(frame);
+// Native audio setup is costly on the measured MacBook. Do it only after the
+// welcome has painted; sources and music still begin from the Start gesture.
+requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  const prepare=()=>{if(!started&&!document.hidden){try{audio.prepare();}catch{}}};
+  if('requestIdleCallback' in window)requestIdleCallback(prepare,{timeout:1500});else setTimeout(prepare,100);
+}));
 
 // Local QA hooks exist only in an explicitly requested test URL. Never used as player evidence.
 if(new URLSearchParams(location.search).has('qa'))window.__dustlings={
@@ -228,5 +241,5 @@ if(new URLSearchParams(location.search).has('qa'))window.__dustlings={
   advance(seconds){const n=Math.ceil(seconds/.05);for(let i=0;i<n;i++)tick(state,.05);processEvents();updateUI();},
   load(data){state=restore(data);completionShown=state.completed;state.reducedMotion=settings.reducedMotion;updateUI();},
   getPerformance(){const sorted=[...frames].sort((a,b)=>a-b);return {samples:frames.length,meanMs:frames.reduce((a,b)=>a+b,0)/frames.length,p95Ms:sorted[Math.floor(sorted.length*.95)],p99Ms:sorted[Math.floor(sorted.length*.99)],worstMs:sorted.at(-1),over33ms:frames.filter(n=>n>33.4).length,over500ms:frames.filter(n=>n>=500).length,creatures:state.creatures.length,dpr:devicePixelRatio,canvas:{width:canvas.clientWidth,height:canvas.clientHeight},audio:audio.getDiagnostics?.()};},
-  resetPerformance(){frames.length=0;},pause(value){paused=value;},beginRitual:()=>beginRitual(state),setZoom,save,
+  resetPerformance(){frames.length=0;},pause(value){paused=value;sceneDirty=true;},beginRitual:()=>beginRitual(state),setZoom,save,
 };

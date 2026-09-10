@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-10T05:50:46.980Z",
+  "timestamp": "2026-09-10T05:59:39.095Z",
   "kind": "Automated browser interaction checks; touch and layouts are emulated, not physical-device or human playtests",
   "conditions": "Headless installed Google Chrome, DPR 1, fresh isolated browser contexts. May overlap the main gameplay capture/performance run; this suite reports interaction correctness, not FPS or human task timings.",
   "browser": "152.0.7977.83",
@@ -17,28 +17,28 @@
       "pass": true,
       "pointer": {
         "x": 270.00000310498615,
-        "y": 505.0001109909335,
+        "y": 504.99993712330576,
         "touch": true,
         "inside": true,
         "active": true,
         "preview": false
       },
-      "screenOffsetY": 41.9999730487898,
-      "screenOffsetX": -0.0000010471718070448333
+      "screenOffsetY": 42.00002595549938,
+      "screenOffsetX": -0.0000017801920648707892
     },
     {
       "name": "Pointer cancellation stops manual cleaning",
       "pass": true,
       "active": false,
-      "before": 1.7283050000000015,
-      "after": 1.7283050000000015
+      "before": 1.7141950000000006,
+      "after": 1.7141950000000006
     },
     {
       "name": "Touch direct destination preview is visible before release",
       "pass": true,
       "pointer": {
-        "x": 689.9999964514443,
-        "y": 510.0000849681924,
+        "x": 689.9999751601108,
+        "y": 509.9999998144546,
         "touch": true,
         "inside": true,
         "active": false,
@@ -52,12 +52,12 @@
       "name": "Touch release directs crew to the offset destination",
       "pass": true,
       "assignment": {
-        "x": 689.9999964514443,
-        "y": 510.0000849681924
+        "x": 689.9999751601108,
+        "y": 509.9999998144546
       },
       "pointer": {
-        "x": 689.9999964514443,
-        "y": 510.0000849681924,
+        "x": 689.9999751601108,
+        "y": 509.9999998144546,
         "touch": true,
         "inside": false,
         "active": false,
@@ -68,8 +68,8 @@
       "name": "Blocked touch destination preserves assignment and explains rejection",
       "pass": true,
       "assignment": {
-        "x": 689.9999964514443,
-        "y": 510.0000849681924
+        "x": 689.9999751601108,
+        "y": 509.9999998144546
       },
       "notice": "That spot is blocked. Choose an open patch of courtyard."
     },
@@ -92,8 +92,8 @@
     {
       "name": "Settings pause preserves elapsed time",
       "pass": true,
-      "beforePause": 4.559499999994036,
-      "afterPause": 4.559499999994036
+      "beforePause": 4.427599999994037,
+      "afterPause": 4.427599999994037
     },
     {
       "name": "Native settings dialog prevents keyboard focus on background controls",
@@ -218,19 +218,19 @@
       "name": "Reload restores progress and crew assignment",
       "pass": true,
       "before": {
-        "elapsed": 4.559499999994036,
+        "elapsed": 4.427599999994037,
         "creatures": 2,
         "assignment": {
-          "x": 689.9999964514443,
-          "y": 510.0000849681924
+          "x": 689.9999751601108,
+          "y": 509.9999998144546
         }
       },
       "after": {
-        "elapsed": 4.559499999994036,
+        "elapsed": 4.427599999994037,
         "creatures": 2,
         "assignment": {
-          "x": 689.9999964514443,
-          "y": 510.0000849681924
+          "x": 689.9999751601108,
+          "y": 509.9999998144546
         }
       }
     },

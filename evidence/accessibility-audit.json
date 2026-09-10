@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-10T05:49:25.390Z",
+  "timestamp": "2026-09-10T06:02:07.719Z",
   "browser": "152.0.7977.83",
   "kind": "Focused automated accessibility and interaction audit. No screen reader was operated, no human enjoyment or usability claim, and touch is CDP emulation.",
   "conditions": "Fresh isolated contexts, DPR 1. May overlap root performance/capture work. These are functional observations, not timing or performance benchmarks.",
@@ -51,6 +51,7 @@
       "id": "settings-pauses-audio",
       "pass": true,
       "ready": true,
+      "prepared": true,
       "paused": true,
       "contextState": "suspended",
       "maxVoices": 48,
@@ -77,6 +78,7 @@
       "cleaned": 400,
       "audio": {
         "ready": true,
+        "prepared": true,
         "paused": true,
         "contextState": "suspended",
         "maxVoices": 48,
@@ -107,6 +109,7 @@
       "panPressed": "false",
       "audio": {
         "ready": true,
+        "prepared": true,
         "paused": false,
         "contextState": "running",
         "maxVoices": 48,
@@ -129,7 +132,7 @@
       "panSelected": "false",
       "pointer": {
         "x": 270.00000310498615,
-        "y": 505.0001109909335,
+        "y": 504.99993712330576,
         "touch": true,
         "inside": true,
         "active": true,
@@ -141,7 +144,7 @@
       "pass": true,
       "primary": {
         "x": 270.00000310498615,
-        "y": 505.0001109909335,
+        "y": 504.99993712330576,
         "touch": true,
         "inside": true,
         "active": true,
@@ -149,7 +152,7 @@
       },
       "afterSecondFingerMove": {
         "x": 270.00000310498615,
-        "y": 505.0001109909335,
+        "y": 504.99993712330576,
         "touch": true,
         "inside": true,
         "active": true,
@@ -179,6 +182,7 @@
       "pass": true,
       "before": {
         "ready": true,
+        "prepared": true,
         "paused": false,
         "contextState": "running",
         "maxVoices": 48,
@@ -195,6 +199,7 @@
       },
       "after": {
         "ready": true,
+        "prepared": true,
         "paused": true,
         "contextState": "suspended",
         "maxVoices": 48,
@@ -242,7 +247,7 @@
       },
       "after": {
         "pointer": {
-          "x": 260.38940756804,
+          "x": 260.37261809435574,
           "y": 473.7747668772936,
           "active": false,
           "inside": true,
@@ -251,7 +256,7 @@
           "preview": false
         },
         "screen": {
-          "x": 317.33505655549294,
+          "x": 317.3215565554929,
           "y": 433.022645601563
         },
         "width": 1020,
@@ -263,17 +268,17 @@
       "pass": true,
       "helpers": 4,
       "motes": 33,
-      "firstHelperAt": 8.49480000002383,
-      "elapsed": 50.27810000002312,
-      "brushed": 32.14624743835694,
+      "firstHelperAt": 8.496800000011907,
+      "elapsed": 50.2634000000112,
+      "brushed": 32.134956299346825,
       "explicitlyAdvancedSeconds": 50,
       "note": "Real N/Space key input, accelerated simulation; not human pacing evidence."
     },
     {
       "id": "browser-keyboard-space-halts-brushing",
       "pass": true,
-      "before": 32.14624743835694,
-      "after": 32.14624743835694,
+      "before": 32.134956299346825,
+      "after": 32.134956299346825,
       "active": false
     },
     {
@@ -310,7 +315,7 @@
         "teamwork": false,
         "bloom": false
       },
-      "firstUpgradeAt": 51.278100000023066
+      "firstUpgradeAt": 51.280100000011146
     }
   ],
   "errors": [],

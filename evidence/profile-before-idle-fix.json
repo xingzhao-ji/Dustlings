@@ -1,0 +1,49 @@
+{
+  "conditions": {
+    "viewport": [
+      1440,
+      900
+    ],
+    "dpr": 2,
+    "helpers": 50,
+    "headless": true,
+    "kind": "Instrumented browser probe; not human responsiveness or energy measurement"
+  },
+  "active": {
+    "render": {
+      "count": 617,
+      "mean": 1.4578606153036826,
+      "p95": 1.7000000178813934,
+      "max": 2,
+      "over33": 0
+    },
+    "frames": {
+      "count": 617,
+      "mean": 16.65526742301456,
+      "p95": 16.700000000000728,
+      "max": 16.800000000000182,
+      "over33": 0
+    }
+  },
+  "paused": {
+    "render": {
+      "count": 300,
+      "mean": 1.5809999991456667,
+      "p95": 1.800000011920929,
+      "max": 2.5,
+      "over33": 0
+    },
+    "frames": {
+      "count": 300,
+      "mean": 16.66566666666667,
+      "p95": 16.799999999999272,
+      "max": 16.80000000000109,
+      "over33": 0
+    }
+  },
+  "uiMutations": 2,
+  "longTasks": [],
+  "longFrames": [],
+  "browser": "152.0.7977.83",
+  "recordedAt": "2026-09-10T05:51:09.523Z"
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "run": 1,
+    "exit": 0,
+    "diagnostics": [
+      "Leaked instance: AudioStreamSynchronized:9223372070241437231 - Reference count: 1",
+      "Leaked instance: AudioStreamWAV:9223372069352244787 - Reference count: 1",
+      "Leaked instance: AudioStreamWAV:9223372070191105592 - Reference count: 2",
+      "Leaked instance: OggPacketSequence:9223372071046743620 - Reference count: 3",
+      "Leaked instance: AudioStreamOggVorbis:9223372071063520837 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackSynchronized:9223372073965979331 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackOggVorbis:9223372074083419860 - Reference count: 1",
+      "Leaked instance: OggPacketSequencePlayback:9223372074100197077 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackWAV:9223372078395164446 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackWAV:9223372103024117861 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackWAV:9223372103074449512 - Reference count: 1",
+      "WARNING: 11 ObjectDB instances were leaked at exit (run with `--verbose` for details).",
+      "ERROR: 4 resources still in use at exit."
+    ]
+  },
+  {
+    "run": 2,
+    "exit": 0,
+    "diagnostics": [
+      "Leaked instance: AudioStreamSynchronized:9223372070241437231 - Reference count: 1",
+      "Leaked instance: AudioStreamWAV:9223372069352244787 - Reference count: 1",
+      "Leaked instance: AudioStreamWAV:9223372070191105592 - Reference count: 2",
+      "Leaked instance: OggPacketSequence:9223372071046743620 - Reference count: 3",
+      "Leaked instance: AudioStreamOggVorbis:9223372071063520837 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackSynchronized:9223372073965979331 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackOggVorbis:9223372074083419860 - Reference count: 1",
+      "Leaked instance: OggPacketSequencePlayback:9223372074100197077 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackWAV:9223372078395164446 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackWAV:9223372103024117861 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackWAV:9223372103074449512 - Reference count: 1",
+      "WARNING: 11 ObjectDB instances were leaked at exit (run with `--verbose` for details).",
+      "ERROR: 4 resources still in use at exit."
+    ]
+  },
+  {
+    "run": 3,
+    "exit": 0,
+    "diagnostics": [
+      "Leaked instance: AudioStreamSynchronized:9223372070241437231 - Reference count: 1",
+      "Leaked instance: AudioStreamWAV:9223372069352244787 - Reference count: 1",
+      "Leaked instance: AudioStreamWAV:9223372070191105592 - Reference count: 2",
+      "Leaked instance: OggPacketSequence:9223372071046743620 - Reference count: 3",
+      "Leaked instance: AudioStreamOggVorbis:9223372071063520837 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackSynchronized:9223372073965979331 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackOggVorbis:9223372074083419860 - Reference count: 1",
+      "Leaked instance: OggPacketSequencePlayback:9223372074100197077 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackWAV:9223372078395164446 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackWAV:9223372103024117861 - Reference count: 1",
+      "Leaked instance: AudioStreamPlaybackWAV:9223372103074449512 - Reference count: 1",
+      "WARNING: 11 ObjectDB instances were leaked at exit (run with `--verbose` for details).",
+      "ERROR: 4 resources still in use at exit."
+    ]
+  }
+]

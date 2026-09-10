@@ -1,0 +1,66 @@
+WorkerThreadPool: 14 threads, 4 max low-priority.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+SDL: Init OK!
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+CORE API HASH: 2004498165
+EDITOR API HASH: 1696660745
+Loading resource: /tmp/dustlings-check-long_drain.gd remapped: /tmp/dustlings-check-long_drain.gd
+Loading resource: res://shaders/courtyard_surface.gdshader remapped: res://shaders/courtyard_surface.gdshader
+Completed load for: 'res://shaders/courtyard_surface.gdshader' remapped 'res://shaders/courtyard_surface.gdshader' at thread -1
+Completed load for: '/tmp/dustlings-check-long_drain.gd' remapped '/tmp/dustlings-check-long_drain.gd' at thread -1
+SceneTreeFTI: traversal method DEFAULT
+Loaded system CA certificates
+Loading resource: res://shaders/courtyard_environment_water.gdshader remapped: res://shaders/courtyard_environment_water.gdshader
+Completed load for: 'res://shaders/courtyard_environment_water.gdshader' remapped 'res://shaders/courtyard_environment_water.gdshader' at thread -1
+Loading resource: res://shaders/courtyard_environment_vegetation.gdshader remapped: res://shaders/courtyard_environment_vegetation.gdshader
+Completed load for: 'res://shaders/courtyard_environment_vegetation.gdshader' remapped 'res://shaders/courtyard_environment_vegetation.gdshader' at thread -1
+Loading resource: res://assets/audio/birth.wav remapped: res://assets/audio/birth.wav
+Loading resource: res://.godot/imported/birth.wav-07649e5f69b99b71a58ca6d800148968.sample remapped: res://.godot/imported/birth.wav-07649e5f69b99b71a58ca6d800148968.sample
+Completed load for: 'res://assets/audio/birth.wav' remapped 'res://assets/audio/birth.wav' at thread -1
+Loading resource: res://assets/audio/assign.wav remapped: res://assets/audio/assign.wav
+Loading resource: res://.godot/imported/assign.wav-b17893fc201528e90b6babe81cb3ba05.sample remapped: res://.godot/imported/assign.wav-b17893fc201528e90b6babe81cb3ba05.sample
+Completed load for: 'res://assets/audio/assign.wav' remapped 'res://assets/audio/assign.wav' at thread -1
+Loading resource: res://assets/audio/upgrade.wav remapped: res://assets/audio/upgrade.wav
+Loading resource: res://.godot/imported/upgrade.wav-6853b7f856a19267cd7715d3e916de87.sample remapped: res://.godot/imported/upgrade.wav-6853b7f856a19267cd7715d3e916de87.sample
+Completed load for: 'res://assets/audio/upgrade.wav' remapped 'res://assets/audio/upgrade.wav' at thread -1
+Loading resource: res://assets/audio/chorus.wav remapped: res://assets/audio/chorus.wav
+Loading resource: res://.godot/imported/chorus.wav-f23ef23e667cc2044bbe8c1b4e857fb7.sample remapped: res://.godot/imported/chorus.wav-f23ef23e667cc2044bbe8c1b4e857fb7.sample
+Completed load for: 'res://assets/audio/chorus.wav' remapped 'res://assets/audio/chorus.wav' at thread -1
+Loading resource: res://assets/audio/restored.wav remapped: res://assets/audio/restored.wav
+Loading resource: res://.godot/imported/restored.wav-51f75af9f8168594e3a1a8934263d987.sample remapped: res://.godot/imported/restored.wav-51f75af9f8168594e3a1a8934263d987.sample
+Completed load for: 'res://assets/audio/restored.wav' remapped 'res://assets/audio/restored.wav' at thread -1
+Loading resource: res://assets/audio/complete.wav remapped: res://assets/audio/complete.wav
+Loading resource: res://.godot/imported/complete.wav-c68699f1d953f56f7d9d6484d4ef9d4f.sample remapped: res://.godot/imported/complete.wav-c68699f1d953f56f7d9d6484d4ef9d4f.sample
+Completed load for: 'res://assets/audio/complete.wav' remapped 'res://assets/audio/complete.wav' at thread -1
+Loading resource: res://assets/audio/blocked.wav remapped: res://assets/audio/blocked.wav
+Loading resource: res://.godot/imported/blocked.wav-4769128089d798a34f8ebe08d8540eed.sample remapped: res://.godot/imported/blocked.wav-4769128089d798a34f8ebe08d8540eed.sample
+Completed load for: 'res://assets/audio/blocked.wav' remapped 'res://assets/audio/blocked.wav' at thread -1
+Loading resource: res://assets/audio/ui.wav remapped: res://assets/audio/ui.wav
+Loading resource: res://.godot/imported/ui.wav-d54e8bc37b8ccee18240932350cecc18.sample remapped: res://.godot/imported/ui.wav-d54e8bc37b8ccee18240932350cecc18.sample
+Completed load for: 'res://assets/audio/ui.wav' remapped 'res://assets/audio/ui.wav' at thread -1
+Loading resource: res://assets/audio/music-base.ogg remapped: res://assets/audio/music-base.ogg
+Loading resource: res://.godot/imported/music-base.ogg-447b20b7ccfbb87198f266a143d5c715.oggvorbisstr remapped: res://.godot/imported/music-base.ogg-447b20b7ccfbb87198f266a143d5c715.oggvorbisstr
+Completed load for: 'res://assets/audio/music-base.ogg' remapped 'res://assets/audio/music-base.ogg' at thread -1
+Loading resource: res://assets/audio/music-warm.ogg remapped: res://assets/audio/music-warm.ogg
+Loading resource: res://.godot/imported/music-warm.ogg-2eb81a01f6aef47d29f01c21cc40cb60.oggvorbisstr remapped: res://.godot/imported/music-warm.ogg-2eb81a01f6aef47d29f01c21cc40cb60.oggvorbisstr
+Completed load for: 'res://assets/audio/music-warm.ogg' remapped 'res://assets/audio/music-warm.ogg' at thread -1
+Loading resource: res://assets/audio/music-bloom.ogg remapped: res://assets/audio/music-bloom.ogg
+Loading resource: res://.godot/imported/music-bloom.ogg-75d8fde58b1f932ead6c4708f0acabfb.oggvorbisstr remapped: res://.godot/imported/music-bloom.ogg-75d8fde58b1f932ead6c4708f0acabfb.oggvorbisstr
+Completed load for: 'res://assets/audio/music-bloom.ogg' remapped 'res://assets/audio/music-bloom.ogg' at thread -1
+Loading resource: res://assets/audio/air.ogg remapped: res://assets/audio/air.ogg
+Loading resource: res://.godot/imported/air.ogg-abffaea210340a33b280d4c7833c61d1.oggvorbisstr remapped: res://.godot/imported/air.ogg-abffaea210340a33b280d4c7833c61d1.oggvorbisstr
+Completed load for: 'res://assets/audio/air.ogg' remapped 'res://assets/audio/air.ogg' at thread -1
+Loading resource: res://assets/audio/brush.ogg remapped: res://assets/audio/brush.ogg
+Loading resource: res://.godot/imported/brush.ogg-de9a0d83c84227a6d47497927d4f39d9.oggvorbisstr remapped: res://.godot/imported/brush.ogg-de9a0d83c84227a6d47497927d4f39d9.oggvorbisstr
+Completed load for: 'res://assets/audio/brush.ogg' remapped 'res://assets/audio/brush.ogg' at thread -1
+Loading resource: res://assets/audio/water.ogg remapped: res://assets/audio/water.ogg
+Loading resource: res://.godot/imported/water.ogg-9008a769ce039af30c6b47a761ff0bef.oggvorbisstr remapped: res://.godot/imported/water.ogg-9008a769ce039af30c6b47a761ff0bef.oggvorbisstr
+Completed load for: 'res://assets/audio/water.ogg' remapped 'res://assets/audio/water.ogg' at thread -1
+{"brushed":44.9991340208587,"checks":["Welcome has no game progression or audio playback","Native pointer event brushes the visible raycast ground surface","Raycast and visible target agree spatially","Releasing a stroke over interface stops cleaning","Visible fountain blocks brushing through to the ground","Pause stops held input, progression and the soundscape","Returning does not resume a stale held stroke","Direct mode does not invent helpers or clean before a crew exists","Brushing produces helpers and upgrade currency through real raycast input","Purchase changes the visible brush capability","Crew direction uses the visible destination surface","Changing camera zoom cancels the old brush target","Keyboard dust finding selects an aimable visible target","Focus loss preserves and pauses the courtyard","Integrated current state passes verified native save"],"failures":[],"helpers":6,"kind":"Headless Godot integration: generated local viewport input, actual3D physics raycasts, accelerated test steps. Not human timing, native physical input or presentation evidence."}
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"

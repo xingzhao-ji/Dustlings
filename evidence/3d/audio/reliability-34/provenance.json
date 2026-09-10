@@ -1,0 +1,101 @@
+{
+  "kind": "Preserved actual Godot audio-engine and integration evidence; no human audition or market evidence",
+  "preserved_date": "2026-09-10",
+  "final_sound_checkpoint": "40da583",
+  "checks": "34 passed; exact mixed PCM silence checks, spatial panning, voice limits and resource weak references; Dummy audio driver on Mac host",
+  "before": "0.15-second Dummy drain: three full integration repeats retained audio resources despite exit code0; diagnostics are preserved",
+  "after": "Isolated0.6-second drain candidate: three full integration repeats with no diagnostics; final shared-source integration also clean",
+  "nonfix": "Unpause-before-stop variant still leaked; retained for provenance, not integrated",
+  "harness": "Actual Godot audio-bus output from deliberately constructed technical scenarios; not ordinary gameplay, not human listening",
+  "limitations": [
+    "Initial isolated shutdown passed but did not establish integrated cleanup reliability.",
+    "The normal-device0.15-second drain remains separately subject to native hardware checks.",
+    "JSON recording paths still name original /tmp paths; artifact mapping here identifies preserved copies."
+  ],
+  "files": [
+    {
+      "source": "/tmp/dustlings-3d-audio-checks.json",
+      "artifact": "reliability-34/checks.json",
+      "bytes": 3968,
+      "sha256": "5f58c728a240c6c8d6c80a862033c24a15c246e255598a3b5b25c504fbde64f3"
+    },
+    {
+      "source": "/tmp/dustlings-3d-audio-checks-final.log",
+      "artifact": "reliability-34/checks.log",
+      "bytes": 3510,
+      "sha256": "14aee139d8f84d9724319f88211b95f0692340f0ef173f1584b8fa6b903bd771"
+    },
+    {
+      "source": "/tmp/dustlings-3d-audio-checks-harness.wav",
+      "artifact": "reliability-34/checks-harness.wav",
+      "bytes": 1474604,
+      "sha256": "e87a77af30289d5e8075b0cc848f36ba63ddce9a079d51a7afe6f35d13572d71"
+    },
+    {
+      "source": "/tmp/dustlings-audio-integration-final.log",
+      "artifact": "reliability-34/integration-final.log",
+      "bytes": 7975,
+      "sha256": "d5cbd7729f64afeafa22612ea492f27c78acaa408febe13ff2a2da8fe9f5e036"
+    },
+    {
+      "source": "/tmp/dustlings-audio-integration-repeat.json",
+      "artifact": "reliability-34/drain-before/results.json",
+      "bytes": 3590,
+      "sha256": "380404c0ea27dad9f1e146d1dc238d75a7e701a372bb469f157b7ffe2ca185a4"
+    },
+    {
+      "source": "/tmp/dustlings-audio-drain-repeat.json",
+      "artifact": "reliability-34/drain-after/results.json",
+      "bytes": 182,
+      "sha256": "c8bace167352bf72abe3e057e58cadf06ed9b4ccb9e8a53bb4903de4841cfd94"
+    },
+    {
+      "source": "/tmp/dustlings-audio-shutdown.log",
+      "artifact": "reliability-34/initial-isolated-shutdown.log",
+      "bytes": 73,
+      "sha256": "6d1c065383a27c36804949b6ffa4b09714470b112e5dacc0bd5aeb7b9c147c4e"
+    },
+    {
+      "source": "/tmp/dustlings-unpause.log",
+      "artifact": "reliability-34/rejected-unpause-variant.log",
+      "bytes": 9614,
+      "sha256": "02260dbd65941ca1fe2bce68d7880a6fec6223fe65045fb4485bda169caeea40"
+    },
+    {
+      "source": "/tmp/dustlings-audio-integration-repeat-1.log",
+      "artifact": "reliability-34/drain-before/run-1.log",
+      "bytes": 9630,
+      "sha256": "a39417d3814a667e96b26d6e7e0ac2a2598d063dcd7b7864eafb7f3b32325b64"
+    },
+    {
+      "source": "/tmp/dustlings-audio-drain-repeat-1.log",
+      "artifact": "reliability-34/drain-after/run-1.log",
+      "bytes": 7971,
+      "sha256": "ee76e437dcfc45146b74bc7e2108f3e005957e2f46b06fafcd50b27b01f71c1d"
+    },
+    {
+      "source": "/tmp/dustlings-audio-integration-repeat-2.log",
+      "artifact": "reliability-34/drain-before/run-2.log",
+      "bytes": 9630,
+      "sha256": "a39417d3814a667e96b26d6e7e0ac2a2598d063dcd7b7864eafb7f3b32325b64"
+    },
+    {
+      "source": "/tmp/dustlings-audio-drain-repeat-2.log",
+      "artifact": "reliability-34/drain-after/run-2.log",
+      "bytes": 7971,
+      "sha256": "ee76e437dcfc45146b74bc7e2108f3e005957e2f46b06fafcd50b27b01f71c1d"
+    },
+    {
+      "source": "/tmp/dustlings-audio-integration-repeat-3.log",
+      "artifact": "reliability-34/drain-before/run-3.log",
+      "bytes": 9630,
+      "sha256": "a39417d3814a667e96b26d6e7e0ac2a2598d063dcd7b7864eafb7f3b32325b64"
+    },
+    {
+      "source": "/tmp/dustlings-audio-drain-repeat-3.log",
+      "artifact": "reliability-34/drain-after/run-3.log",
+      "bytes": 7971,
+      "sha256": "ee76e437dcfc45146b74bc7e2108f3e005957e2f46b06fafcd50b27b01f71c1d"
+    }
+  ]
+}

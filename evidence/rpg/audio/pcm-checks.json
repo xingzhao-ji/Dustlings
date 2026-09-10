@@ -1,0 +1,196 @@
+{
+  "origin": "Original deterministic synthesis; no external audio or licensed samples",
+  "sample_rate": 44100,
+  "audition": "Not auditioned. Numerical inspection does not establish pleasing sound or mix.",
+  "files": {
+    "rpg-step-stone-1": {
+      "path": "godot/assets/audio/rpg-step-stone-1.wav",
+      "sha256": "ec81acd82225b0e1bf6747b629791eac4b01b663ed02f843b1f0c91c1bac4a24",
+      "seconds": 0.19,
+      "peak_dbfs": -20.068659309271823,
+      "rms_dbfs": -37.25725159514827,
+      "dc": -1.3381260536012651e-05,
+      "maximum_neighbor_step": 0.0328369140625,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    },
+    "rpg-step-stone-2": {
+      "path": "godot/assets/audio/rpg-step-stone-2.wav",
+      "sha256": "e3b5ccd42b91dc55cc50673becec0dcdd75e1db6abe874e8a584d82127dc98fa",
+      "seconds": 0.19,
+      "peak_dbfs": -20.450998477020292,
+      "rms_dbfs": -37.36380673029514,
+      "dc": -1.0696995697950233e-05,
+      "maximum_neighbor_step": 0.030426025390625,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    },
+    "rpg-step-stone-3": {
+      "path": "godot/assets/audio/rpg-step-stone-3.wav",
+      "sha256": "60787ffb3a6f41a08c09bbaab1bb5553db27fd411e29c5bdd5d8502393bc54f4",
+      "seconds": 0.19,
+      "peak_dbfs": -18.82374210505382,
+      "rms_dbfs": -37.57554622087628,
+      "dc": -6.62507156097088e-06,
+      "maximum_neighbor_step": 0.03607177734375,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    },
+    "rpg-step-wood-1": {
+      "path": "godot/assets/audio/rpg-step-wood-1.wav",
+      "sha256": "d6e8010ba83c2469b874de3bfaa88b2186a33001f10ce0c10175ad594c1c0986",
+      "seconds": 0.25,
+      "peak_dbfs": -21.421856186073803,
+      "rms_dbfs": -38.6920047610955,
+      "dc": -8.348391439909297e-06,
+      "maximum_neighbor_step": 0.0216064453125,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    },
+    "rpg-step-wood-2": {
+      "path": "godot/assets/audio/rpg-step-wood-2.wav",
+      "sha256": "f0aed809a480b0e80dbb8f2c2f86c03cbfccc4e5c87227132d3b811d6c2fe3e3",
+      "seconds": 0.25,
+      "peak_dbfs": -19.57278137936353,
+      "rms_dbfs": -38.57076035619528,
+      "dc": -7.42663601899093e-06,
+      "maximum_neighbor_step": 0.026458740234375,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    },
+    "rpg-step-wood-3": {
+      "path": "godot/assets/audio/rpg-step-wood-3.wav",
+      "sha256": "9c34e13867469f8aa6b84475ce162c76a3995ace7f9043c6ee046cc2a773a4d0",
+      "seconds": 0.25,
+      "peak_dbfs": -21.497113462397742,
+      "rms_dbfs": -38.723652668022474,
+      "dc": -6.50211256377551e-06,
+      "maximum_neighbor_step": 0.023712158203125,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    },
+    "rpg-step-grass-1": {
+      "path": "godot/assets/audio/rpg-step-grass-1.wav",
+      "sha256": "b567e649684db827efe745b0b4844f9c908984ed30c9e85cbe857ec69a4de26c",
+      "seconds": 0.27,
+      "peak_dbfs": -21.707497588155572,
+      "rms_dbfs": -39.91455946444295,
+      "dc": -4.377594980893592e-06,
+      "maximum_neighbor_step": 0.027496337890625,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    },
+    "rpg-step-grass-2": {
+      "path": "godot/assets/audio/rpg-step-grass-2.wav",
+      "sha256": "477dedabcf81427ac1cea0f0ae94d0b8b80d2ad694e11e33a6332251a3ddf8b4",
+      "seconds": 0.27,
+      "peak_dbfs": -21.71718265472833,
+      "rms_dbfs": -40.20183197592089,
+      "dc": 1.209733507600571e-06,
+      "maximum_neighbor_step": 0.023193359375,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    },
+    "rpg-step-grass-3": {
+      "path": "godot/assets/audio/rpg-step-grass-3.wav",
+      "sha256": "15fc99fbe8aadf473e35723f8b6e1e3b08687ab1a36ac57df0a742d93308f0fc",
+      "seconds": 0.27,
+      "peak_dbfs": -22.636281331956766,
+      "rms_dbfs": -39.94363474857335,
+      "dc": -1.0131518126154784e-05,
+      "maximum_neighbor_step": 0.026824951171875,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    },
+    "rpg-melody-taught": {
+      "path": "godot/assets/audio/rpg-melody-taught.wav",
+      "sha256": "315795c50accd045ce0ad59c174e40b1ab491e0a4980eab4df060377709381e0",
+      "seconds": 1.98,
+      "peak_dbfs": -16.104958406086663,
+      "rms_dbfs": -26.021994512294924,
+      "dc": -4.124091503183765e-07,
+      "maximum_neighbor_step": 0.0108642578125,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    },
+    "rpg-melody-answer": {
+      "path": "godot/assets/audio/rpg-melody-answer.wav",
+      "sha256": "6fd8648e3a1601564b1d36ca1e1cc5f4735d7aa8177ca3d8c87d2df617c42031",
+      "seconds": 3.25,
+      "peak_dbfs": -15.948935333854008,
+      "rms_dbfs": -25.690798592941782,
+      "dc": 9.355955924036281e-07,
+      "maximum_neighbor_step": 0.0108642578125,
+      "checks": {
+        "finite": true,
+        "headroom": true,
+        "dc_below_0.0002": true,
+        "silent_endpoints": true,
+        "bounded_neighbor_step": true,
+        "duration": true
+      }
+    }
+  },
+  "check_count": 66,
+  "all_checks_pass": true
+}

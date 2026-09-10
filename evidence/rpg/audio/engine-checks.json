@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "All11 original cues load in actual Godot",
+    "No contacts/melody before gesture-start",
+    "Walking contact uses spatial cue",
+    "Global contact cooldown prevents rapid material switching spam",
+    "Cue uses neighborhood-scale attenuation and actual contact position",
+    "Two overlapping contacts permitted",
+    "Third overlapping footstep refused",
+    "Ongoing mix preserves restrained contact gain",
+    "Family melody replaces contacts without adding crowd noise",
+    "Melody cooldown prevents overlap with its answering cadence",
+    "Explicit pause pauses live melody and prevents new world cues",
+    "Effects mute immediately clears tails and blocks future cues",
+    "Unmute cannot resurrect tails",
+    "Earned answer includes the full five-note cadence",
+    "Focus loss blocks new contacts and melody",
+    "New cues share base world8 cap and leave contact priority lower",
+    "Melody never exceeds8 world voices or steals meaningful cues",
+    "Unknown material falls back to restrained stone contact",
+    "One-shot contact finishes and releases its actual world voice",
+    "Actual 0.212-second walking contacts are admitted without alternating drops"
+  ],
+  "driver": "Dummy",
+  "failures": [],
+  "kind": "Actual headless Godot audio-state and loaded-stream checks; no audition or native sound-device claim",
+  "source_sha256": "e82d0a7ab45de1a058cb868a447908edcd91c0ade08f1fdeb0d3810256e32574"
+}

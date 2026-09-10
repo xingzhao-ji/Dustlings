@@ -1,0 +1,118 @@
+{
+  "date": "2026-09-10T07:22:23.595Z",
+  "kind": "Automated current-source UI interaction and simulated layouts; zero human sessions.",
+  "checks": [
+    "Desktop normal play uses full-width courtyard; discoveries are closed until requested.",
+    "Direct→Pan→return preserves the actual tool and matching instruction/selected state.",
+    "Mute has a distinct full-opacity icon and accurate action label.",
+    "Settings return action is entirely visible at all four layouts, without reducing essential text.",
+    "In-game Gentle motion disables UI transitions immediately.",
+    "Grow moves focus inside and Escape restores its trigger at desktop, tablet and phone layouts.",
+    "Affordable upgrades have visual capability previews; purchase confirmation remains visible above the open panel at every tested layout.",
+    "Fresh and unavailable storage onboarding avoids claiming an existing successful save."
+  ],
+  "errors": [],
+  "layouts": [
+    {
+      "width": 1280,
+      "height": 796,
+      "dialog": {
+        "x": 405,
+        "y": 18,
+        "width": 470,
+        "height": 760,
+        "top": 18,
+        "right": 875,
+        "bottom": 778,
+        "left": 405
+      },
+      "button": {
+        "x": 431,
+        "y": 703.609375,
+        "width": 418,
+        "height": 52.390625,
+        "top": 703.609375,
+        "right": 849,
+        "bottom": 756,
+        "left": 431
+      },
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "dialog": {
+        "x": 13,
+        "y": 13,
+        "width": 364,
+        "height": 818,
+        "top": 13,
+        "right": 377,
+        "bottom": 831,
+        "left": 13
+      },
+      "button": {
+        "x": 34,
+        "y": 760.609375,
+        "width": 322,
+        "height": 52.390625,
+        "top": 760.609375,
+        "right": 356,
+        "bottom": 813,
+        "left": 34
+      },
+      "overflow": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "dialog": {
+        "x": 187,
+        "y": 16,
+        "width": 470,
+        "height": 358,
+        "top": 16,
+        "right": 657,
+        "bottom": 374,
+        "left": 187
+      },
+      "button": {
+        "x": 208,
+        "y": 310.609375,
+        "width": 428,
+        "height": 52.390625,
+        "top": 310.609375,
+        "right": 636,
+        "bottom": 363,
+        "left": 208
+      },
+      "overflow": false
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "dialog": {
+        "x": 175,
+        "y": 210,
+        "width": 470,
+        "height": 760,
+        "top": 210,
+        "right": 645,
+        "bottom": 970,
+        "left": 175
+      },
+      "button": {
+        "x": 201,
+        "y": 895.609375,
+        "width": 418,
+        "height": 52.390625,
+        "top": 895.609375,
+        "right": 619,
+        "bottom": 948,
+        "left": 201
+      },
+      "overflow": false
+    }
+  ],
+  "status": "passed"
+}

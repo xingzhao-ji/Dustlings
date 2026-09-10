@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-10T06:02:07.719Z",
+  "timestamp": "2026-09-10T07:22:29.529Z",
   "browser": "152.0.7977.83",
   "kind": "Focused automated accessibility and interaction audit. No screen reader was operated, no human enjoyment or usability claim, and touch is CDP emulation.",
   "conditions": "Fresh isolated contexts, DPR 1. May overlap root performance/capture work. These are functional observations, not timing or performance benchmarks.",
@@ -55,8 +55,9 @@
       "paused": true,
       "contextState": "suspended",
       "maxVoices": 48,
-      "peakVoices": 2,
+      "peakVoices": 4,
       "continuousSources": 3,
+      "uiEventsAccepted": 1,
       "progress": 0,
       "mix": {
         "music": 0.48,
@@ -64,7 +65,12 @@
         "ambience": 0.38,
         "muted": false,
         "reducedMotion": false
-      }
+      },
+      "scoreQuiet": {
+        "paused": true,
+        "master": 0
+      },
+      "note": "Explicit pause-button UI cue may briefly play; game score stays silent and context then suspends."
     },
     {
       "id": "invalid-import-keeps-current-courtyard",
@@ -82,8 +88,9 @@
         "paused": true,
         "contextState": "suspended",
         "maxVoices": 48,
-        "peakVoices": 2,
+        "peakVoices": 4,
         "continuousSources": 3,
+        "uiEventsAccepted": 1,
         "progress": 0.4,
         "mix": {
           "music": 0.48,
@@ -113,8 +120,9 @@
         "paused": false,
         "contextState": "running",
         "maxVoices": 48,
-        "peakVoices": 3,
+        "peakVoices": 7,
         "continuousSources": 3,
+        "uiEventsAccepted": 4,
         "progress": 0,
         "mix": {
           "music": 0.48,
@@ -165,7 +173,7 @@
       "expanded": "true",
       "controls": "journal",
       "journalOpen": true,
-      "focused": "mobile-journal"
+      "focused": "close-journal"
     },
     {
       "id": "completion-dialog-has-accessible-name",
@@ -186,8 +194,9 @@
         "paused": false,
         "contextState": "running",
         "maxVoices": 48,
-        "peakVoices": 4,
+        "peakVoices": 7,
         "continuousSources": 3,
+        "uiEventsAccepted": 4,
         "progress": 1,
         "mix": {
           "music": 0.48,
@@ -203,8 +212,9 @@
         "paused": true,
         "contextState": "suspended",
         "maxVoices": 48,
-        "peakVoices": 4,
+        "peakVoices": 7,
         "continuousSources": 3,
+        "uiEventsAccepted": 4,
         "progress": 1,
         "mix": {
           "music": 0.48,
@@ -247,7 +257,7 @@
       },
       "after": {
         "pointer": {
-          "x": 260.37261809435574,
+          "x": 256.74872884689677,
           "y": 473.7747668772936,
           "active": false,
           "inside": true,
@@ -256,11 +266,11 @@
           "preview": false
         },
         "screen": {
-          "x": 317.3215565554929,
-          "y": 433.022645601563
+          "x": 470.99959224207566,
+          "y": 489.5273724556231
         },
-        "width": 1020,
-        "height": 727
+        "width": 1398,
+        "height": 812
       }
     },
     {
@@ -268,25 +278,25 @@
       "pass": true,
       "helpers": 4,
       "motes": 33,
-      "firstHelperAt": 8.496800000011907,
-      "elapsed": 50.2634000000112,
-      "brushed": 32.134956299346825,
-      "explicitlyAdvancedSeconds": 50,
+      "firstHelperAt": 8.495899999999986,
+      "elapsed": 40.26249999999985,
+      "brushed": 32.74209856090956,
+      "explicitlyAdvancedSeconds": 40,
       "note": "Real N/Space key input, accelerated simulation; not human pacing evidence."
     },
     {
       "id": "browser-keyboard-space-halts-brushing",
       "pass": true,
-      "before": 32.134956299346825,
-      "after": 32.134956299346825,
+      "before": 32.74209856090956,
+      "after": 32.74209856090956,
       "active": false
     },
     {
       "id": "browser-keyboard-d-enter-directs-crew",
       "pass": true,
       "target": {
-        "x": 240.4226401716005,
-        "y": 551.5697079803795,
+        "x": 149.19899131683633,
+        "y": 166.08357597049326,
         "active": false,
         "inside": true,
         "touch": false,
@@ -294,8 +304,8 @@
         "preview": true
       },
       "assignment": {
-        "x": 240.4226401716005,
-        "y": 551.5697079803795
+        "x": 149.19899131683633,
+        "y": 166.08357597049326
       },
       "mode": "direct"
     },
@@ -305,9 +315,8 @@
       "tabRoute": [
         "brush-tool",
         "direct-tool",
-        "free-roam",
-        "zoom-in",
-        "pan-toggle",
+        "mobile-journal",
+        "opened-discoveries",
         "upgrade-brush"
       ],
       "upgrades": {
@@ -315,7 +324,7 @@
         "teamwork": false,
         "bloom": false
       },
-      "firstUpgradeAt": 51.280100000011146
+      "firstUpgradeAt": 41.27929999999979
     }
   ],
   "errors": [],

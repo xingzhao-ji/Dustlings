@@ -24,7 +24,8 @@ try{
  await desktop.locator('#pause-button').click();await desktop.waitForTimeout(150);
  const settingsAX=(await ax.send('Accessibility.getFullAXTree')).nodes.filter(n=>n.role?.value==='dialog').map(n=>({role:n.role.value,name:n.name?.value||''}));
  record('settings-dialog-has-accessible-name',settingsAX.length>0&&settingsAX.every(n=>n.name.trim()),{nodes:settingsAX});
- const audioPaused=await desktop.evaluate(()=>window.__dustlings.audio.getDiagnostics());record('settings-pauses-audio',audioPaused.paused&&audioPaused.contextState==='suspended',audioPaused);
+ const scoreQuiet=await desktop.evaluate(()=>({paused:window.__dustlings.audio.paused,master:window.__dustlings.audio.master.gain.value}));
+ await desktop.waitForTimeout(550);const audioPaused=await desktop.evaluate(()=>window.__dustlings.audio.getDiagnostics());record('settings-pauses-audio',scoreQuiet.paused&&scoreQuiet.master<.001&&audioPaused.paused&&audioPaused.contextState==='suspended',{...audioPaused,scoreQuiet,note:'Explicit pause-button UI cue may briefly play; game score stays silent and context then suspends.'});
  const beforeImport=await desktop.evaluate(()=>window.__dustlings.serialise());
  await desktop.locator('#save-file').setInputFiles({name:'damaged.json',mimeType:'application/json',buffer:Buffer.from('{broken')});
  const invalid=await desktop.evaluate(()=>({save:window.__dustlings.serialise(),status:document.querySelector('#settings-save-note').textContent}));
@@ -88,11 +89,11 @@ try{
  const directed=await route.evaluate(()=>({assignment:window.__dustlings.state.assignment,mode:window.__dustlings.state.mode}));
  record('browser-keyboard-d-enter-directs-crew',directed.mode==='direct'&&Math.hypot((directed.assignment?.x??0)-target.x,(directed.assignment?.y??0)-target.y)<.01,{target,...directed});
  const tabRoute=[];
- for(let i=0;i<20;i++){await route.keyboard.press('Tab');const id=await route.evaluate(()=>document.activeElement?.id);tabRoute.push(id);if(id==='upgrade-brush')break;}
+ for(let i=0;i<20;i++){await route.keyboard.press('Tab');const id=await route.evaluate(()=>document.activeElement?.id);tabRoute.push(id);if(id==='mobile-journal'){await route.keyboard.press('Enter');tabRoute.push('opened-discoveries');}if(id==='upgrade-brush')break;}
  const reached=await route.evaluate(()=>document.activeElement?.id==='upgrade-brush');
  if(reached)await route.keyboard.press('Enter');
  const upgraded=await route.evaluate(()=>({upgrades:window.__dustlings.state.upgrades,firstUpgradeAt:window.__dustlings.state.firstUpgradeAt}));
  record('browser-keyboard-tab-enter-buys-upgrade',reached&&upgraded.upgrades.brush,{tabRoute,...upgraded});
  await route.evaluate(async()=>{await window.__dustlings.save();});
 }catch(error){report.errors.push(error.stack);}
-finally{report.summary={passed:report.checks.filter(c=>c.pass).length,issues:report.checks.filter(c=>!c.pass).length,errors:report.errors.length};await mkdir('evidence',{recursive:true});await writeFile('evidence/accessibility-audit.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({summary:report.summary,issues:report.checks.filter(c=>!c.pass),errors:report.errors},null,2));await browser.close();}
+finally{report.summary={passed:report.checks.filter(c=>c.pass).length,issues:report.checks.filter(c=>!c.pass).length,errors:report.errors.length};await mkdir('evidence',{recursive:true});await writeFile('evidence/accessibility-audit.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({summary:report.summary,issues:report.checks.filter(c=>!c.pass),errors:report.errors},null,2));await browser.close();if(report.summary.issues||report.summary.errors)process.exitCode=1;}

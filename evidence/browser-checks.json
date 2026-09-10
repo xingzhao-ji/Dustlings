@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-10T06:15:45.926Z",
+  "timestamp": "2026-09-10T07:18:29.507Z",
   "kind": "Automated browser interaction checks; touch and layouts are emulated, not physical-device or human playtests",
   "conditions": "Headless installed Google Chrome, DPR 1, fresh isolated browser contexts. May overlap the main gameplay capture/performance run; this suite reports interaction correctness, not FPS or human task timings.",
   "browser": "152.0.7977.83",
@@ -30,8 +30,8 @@
       "name": "Pointer cancellation stops manual cleaning",
       "pass": true,
       "active": false,
-      "before": 1.714280000000001,
-      "after": 1.714280000000001
+      "before": 1.7283900000000005,
+      "after": 1.7283900000000005
     },
     {
       "name": "Touch direct destination preview is visible before release",
@@ -92,8 +92,8 @@
     {
       "name": "Settings pause preserves elapsed time",
       "pass": true,
-      "beforePause": 4.427899999999996,
-      "afterPause": 4.427899999999996
+      "beforePause": 4.526900000005954,
+      "afterPause": 4.526900000005954
     },
     {
       "name": "Native settings dialog prevents keyboard focus on background controls",
@@ -154,13 +154,13 @@
           "inside": true
         },
         {
-          "id": "resume-button",
+          "id": "restart-button",
           "tag": "BUTTON",
           "documentFocused": true,
           "inside": true
         },
         {
-          "id": "restart-button",
+          "id": "resume-button",
           "tag": "BUTTON",
           "documentFocused": true,
           "inside": true
@@ -170,12 +170,6 @@
           "tag": "BODY",
           "documentFocused": false,
           "inside": false
-        },
-        {
-          "id": "settings",
-          "tag": "DIALOG",
-          "documentFocused": true,
-          "inside": true
         },
         {
           "id": "close-settings",
@@ -206,6 +200,12 @@
           "tag": "INPUT",
           "documentFocused": true,
           "inside": true
+        },
+        {
+          "id": "reduced-motion",
+          "tag": "INPUT",
+          "documentFocused": true,
+          "inside": true
         }
       ],
       "note": "Native Chrome dialog traversal may include a browser-chrome step represented by BODY. This is recorded separately from focus on background app controls."
@@ -218,7 +218,7 @@
       "name": "Reload restores progress and crew assignment",
       "pass": true,
       "before": {
-        "elapsed": 4.427899999999996,
+        "elapsed": 4.526900000005954,
         "creatures": 2,
         "assignment": {
           "x": 689.9999751601108,
@@ -226,7 +226,7 @@
         }
       },
       "after": {
-        "elapsed": 4.427899999999996,
+        "elapsed": 4.526900000005954,
         "creatures": 2,
         "assignment": {
           "x": 689.9999751601108,
@@ -316,9 +316,9 @@
       "name": "Landscape drawer fits viewport",
       "pass": true,
       "drawer": {
-        "x": 488,
-        "y": 12,
-        "width": 340,
+        "x": 434,
+        "y": 17,
+        "width": 380,
         "height": 366
       }
     },
@@ -334,17 +334,17 @@
       "name": "Landscape settings stays bounded and resume is reachable",
       "pass": true,
       "modal": {
-        "x": 199.5,
-        "y": 16,
-        "width": 445,
+        "x": 187,
+        "y": 21,
+        "width": 470,
         "height": 358
       }
     },
     {
       "name": "Mouse brushing maps canvas-relative coordinates at zoom",
       "pass": true,
-      "x": 269.9999992385478,
-      "y": 505.0000378610976,
+      "x": 270.0000060422763,
+      "y": 505.0000034475451,
       "touch": false,
       "inside": true,
       "active": true,

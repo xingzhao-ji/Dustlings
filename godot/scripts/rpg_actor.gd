@@ -19,6 +19,10 @@ var _chat := 0.0
 var _happy := 0.0
 var _phase := 0.0
 var _height := 1.0
+var _activity := ""
+var _activity_blend := 0.0
+var _activity_props: Dictionary = {}
+var _gentle := false
 var _skin := Color("c79a75")
 var _cloth := Color("7d9b8a")
 var _hair := Color("685b50")
@@ -35,6 +39,7 @@ func configure(value: String) -> void:
         _feet.clear()
         _eyes.clear()
         _brows.clear()
+        _activity_props.clear()
         _build()
 
 func _ready() -> void:
@@ -119,6 +124,7 @@ func _build() -> void:
     _body.add_child(_scarf)
     _round(_scarf, "ScarfTail", Vector3(0, -0.16, -0.17), Vector3(0.18, 0.39, 0.07), _accent)
     _accessories()
+    _make_activity_props()
     _made = true
     animate(0, 0)
 
@@ -157,6 +163,53 @@ func _accessories() -> void:
             _round(_head, "HairPart", Vector3(0.09, 0.16, 0.11), Vector3(0.28, 0.23, 0.26), _hair)
             _round(_body, "LeafBrooch", Vector3(-0.12, 1.035, 0.188), Vector3(0.064, 0.094, 0.025), Color("d9c893"))
 
+func set_activity(value: String) -> void:
+    _activity = value if value in ["mend", "map", "tend", "knead", "tea"] else ""
+
+func set_gentle_motion(enabled: bool) -> void:
+    _gentle = enabled
+
+func _make_activity_props() -> void:
+    # Props belong to actions, not idle silhouettes. Root chooses routines.
+    for action in ["mend", "map", "tend", "knead", "tea"]:
+        var prop := Node3D.new()
+        prop.name = "Activity_" + action
+        prop.visible = false
+        _body.add_child(prop)
+        _activity_props[action] = prop
+    var prop: Node3D = _activity_props["map"]
+    prop.position = Vector3(0, 0.75, 0.32)
+    prop.rotation.x = -0.20
+    _flat(prop, Vector3.ZERO, Vector3(0.48, 0.018, 0.31), Color("e8d9b7"))
+    _flat(prop, Vector3(0, 0.012, 0), Vector3(0.018, 0.008, 0.28), Color("b9ae8a"))
+    for i in 3:
+        var line := _flat(prop, Vector3(-0.14 + i * 0.13, 0.015, -0.06 + i * 0.025), Vector3(0.085, 0.006, 0.02), Color("7f9d8b"))
+        line.rotation.y = float(i - 1) * 0.30
+    prop = _activity_props["mend"]
+    prop.position = Vector3(-0.03, 0.74, 0.34)
+    _flat(prop, Vector3.ZERO, Vector3(0.28, 0.09, 0.20), Color("b59b76"))
+    _round(prop, "RepairPin", Vector3(0.06, 0.062, 0.02), Vector3(0.09, 0.085, 0.09), Color("9fae99"))
+    _flat(prop, Vector3(-0.045, 0.07, 0), Vector3(0.027, 0.015, 0.19), Color("dcc99d"))
+    prop = _activity_props["tend"]
+    prop.position = Vector3(-0.06, 0.70, 0.34)
+    _round(prop, "SeedlingPot", Vector3.ZERO, Vector3(0.22, 0.19, 0.20), Color("bb9574"))
+    _round(prop, "SeedlingSoil", Vector3(0, 0.068, 0), Vector3(0.17, 0.032, 0.16), Color("797d58"))
+    _round(prop, "SeedlingStem", Vector3(0, 0.16, 0), Vector3(0.026, 0.20, 0.026), Color("79967b"))
+    var leaf := _round(prop, "SeedlingLeaf", Vector3(-0.045, 0.21, 0), Vector3(0.15, 0.065, 0.06), Color("92ac86"))
+    leaf.rotation.z = -0.3
+    _round(prop, "SeedlingLeaf", Vector3(0.042, 0.17, 0), Vector3(0.13, 0.06, 0.08), Color("89a580"))
+    prop = _activity_props["knead"]
+    prop.position = Vector3(0, 0.67, 0.32)
+    _round(prop, "BreadBasket", Vector3.ZERO, Vector3(0.44, 0.18, 0.30), Color("a58c67"))
+    for i in 3:
+        _round(prop, "SmallLoaf", Vector3(-0.13 + i * 0.13, 0.092, 0), Vector3(0.15, 0.13, 0.20), Color("d3b481"))
+        _flat(prop, Vector3(-0.13 + i * 0.13, 0.153, 0), Vector3(0.022, 0.005, 0.09), Color("ead0a1"))
+    prop = _activity_props["tea"]
+    prop.position = Vector3(0.08, 0.76, 0.33)
+    _round(prop, "Cup", Vector3.ZERO, Vector3(0.17, 0.19, 0.17), Color("c4cbb1"))
+    _round(prop, "Tea", Vector3(0, 0.074, 0), Vector3(0.137, 0.025, 0.137), Color("8f7e5e"))
+    _round(prop, "CupHandle", Vector3(0.10, 0, 0), Vector3(0.09, 0.11, 0.055), Color("c4cbb1"))
+
 func animate(delta: float, speed: float, talking: bool = false, joy: bool = false) -> void:
     if not _made: return
     var dt := clampf(delta, 0, 0.1)
@@ -171,18 +224,67 @@ func animate(delta: float, speed: float, talking: bool = false, joy: bool = fals
         var beat := _stride + float(i) * PI
         _feet[i].position = Vector3(-0.125 if i == 0 else 0.125, (maxf(0, sin(beat)) * 0.11 + absf(sin(beat)) * 0.018) * _moving, -cos(beat) * 0.16 * _moving)
         _feet[i].rotation.x = -sin(beat) * 0.10 * _moving
-    _body.position.y = absf(sin(_stride)) * 0.025 * _moving + sin(t * 1.8) * 0.005
-    _body.rotation.z = sin(_stride) * 0.027 * _moving
-    _head.rotation = Vector3(sin(t * 3.4) * 0.035 * _chat, sin(t * 0.61) * 0.065 * (1.0 - _moving), sin(t * 1.2) * 0.045 * _chat)
+    var motion := 0.0 if _gentle else 1.0
+    _body.position.y = (absf(sin(_stride)) * 0.025 * _moving + sin(t * 1.8) * 0.005) * motion
+    _body.rotation.z = sin(_stride) * 0.027 * _moving * motion
+    _head.rotation = Vector3(sin(t * 3.4) * 0.035 * _chat, sin(t * 0.61) * 0.065 * (1.0 - _moving) * motion, sin(t * 1.2) * 0.045 * _chat)
     _left_arm.rotation = Vector3(sin(_stride) * 0.42 * _moving, 0, -0.045 - sin(t * 2.6) * 0.08 * _chat - 0.25 * _happy)
     _right_arm.rotation = Vector3(-sin(_stride) * 0.42 * _moving - 0.18 * _chat, 0, 0.045 + (0.24 + sin(t * 3.1) * 0.09) * _chat + 0.25 * _happy)
-    _scarf.rotation.x = sin(_stride - 0.4) * 0.10 * _moving + sin(t * 1.7) * 0.03
+    _scarf.rotation.x = (sin(_stride - 0.4) * 0.10 * _moving + sin(t * 1.7) * 0.03) * motion
+    _pose_activity(dt, t, speed, talking)
     var blink := 1.0
     var blink_clock := fmod(t, 4.7)
     if blink_clock > 4.53: blink = 1.0 - sin((blink_clock - 4.53) / 0.17 * PI) * 0.92
     for eye in _eyes: eye.scale.y = blink * (1.0 - _happy * 0.18)
     for i in _brows.size():
         _brows[i].rotation.z = (-1.0 if i == 0 else 1.0) * (_chat * 0.08 + _happy * 0.10)
+
+func _pose_activity(dt: float, t: float, speed: float, talking: bool) -> void:
+    var working := not _activity.is_empty() and speed < 0.08 and not talking
+    _activity_blend = move_toward(_activity_blend, 1.0 if working else 0.0, dt * 4)
+    for key in _activity_props:
+        var prop: Node3D = _activity_props[key]
+        prop.visible = key == _activity and _activity_blend > 0.03
+        prop.scale = Vector3.ONE * maxf(0.01, smoothstep(0, 0.5, _activity_blend))
+    if _activity_blend < 0.001: return
+    var rhythm := sin(t * 2.0) * (0.25 if _gentle else 1.0)
+    var left := Vector3(-0.95, 0, 0.30)
+    var right := Vector3(-0.95, 0, -0.30)
+    var glance := Vector3(0.15, 0, -0.025)
+    match _activity:
+        "mend":
+            right = Vector3(-1.05 + rhythm * 0.13, 0.02, -0.35)
+            glance = Vector3(0.18, -0.04, 0.025)
+        "map":
+            glance.y = sin(t * 0.7) * (0.025 if _gentle else 0.07)
+        "tend":
+            right = Vector3(-1.15 + rhythm * 0.08, -0.1, -0.38)
+            glance = Vector3(0.19, -0.05, -0.06)
+        "knead":
+            left = Vector3(-0.81 + rhythm * 0.045, 0, 0.32)
+            right = Vector3(-0.87 - rhythm * 0.045, 0, -0.32)
+            glance = Vector3(0.13, 0, 0.035)
+        "tea":
+            left = Vector3(-0.89, 0, 0.36)
+            right = Vector3(-1.02, 0, -0.35)
+            glance = Vector3(0.035, sin(t * 0.65) * 0.04, -0.025)
+    _left_arm.rotation = _left_arm.rotation.lerp(left, _activity_blend)
+    _right_arm.rotation = _right_arm.rotation.lerp(right, _activity_blend)
+    _head.rotation = _head.rotation.lerp(glance, _activity_blend)
+
+static func _flat(parent: Node3D, at: Vector3, size: Vector3, color: Color) -> MeshInstance3D:
+    var mesh := MeshInstance3D.new()
+    var box := BoxMesh.new()
+    box.size = size
+    mesh.mesh = box
+    var material := StandardMaterial3D.new()
+    material.albedo_color = color
+    material.roughness = 0.94
+    mesh.material_override = material
+    mesh.position = at
+    mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+    parent.add_child(mesh)
+    return mesh
 
 static func _round(parent: Node3D, label: String, at: Vector3, size: Vector3, color: Color) -> MeshInstance3D:
     if not _shared_meshes.has("round"):

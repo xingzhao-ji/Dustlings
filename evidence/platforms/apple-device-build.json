@@ -1,0 +1,32 @@
+{
+  "started": "2026-09-10T06:53:44.163Z",
+  "finished": "2026-09-10T06:53:44.613Z",
+  "mode": "device",
+  "command": [
+    "xcodebuild",
+    "-project",
+    "platforms/apple/Dustlings.xcodeproj",
+    "-scheme",
+    "Dustlings",
+    "-configuration",
+    "Release",
+    "-sdk",
+    "iphoneos",
+    "-destination",
+    "generic/platform=iOS",
+    "-derivedDataPath",
+    "platforms/apple/DerivedData",
+    "CODE_SIGNING_ALLOWED=NO",
+    "CODE_SIGNING_REQUIRED=NO",
+    "build"
+  ],
+  "exitCode": 70,
+  "timedOut": false,
+  "webVersion": "0.2.0",
+  "webSourceRevision": "4384d82d61210269332cb8568ef89c7399425b86",
+  "webSHA256": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
+  "artifact": "platforms/apple/DerivedData/Build/Products/Release-iphoneos/Dustlings.app",
+  "signing": "disabled",
+  "execution": "not run on a simulator or physical device",
+  "gate": "native packaging experiment; human validation pending"
+}

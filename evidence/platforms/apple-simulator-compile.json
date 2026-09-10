@@ -1,0 +1,33 @@
+{
+  "started": "2026-09-10T06:56:24.965Z",
+  "finished": "2026-09-10T06:56:26.050Z",
+  "mode": "simulator",
+  "command": [
+    "xcrun",
+    "--sdk",
+    "iphonesimulator",
+    "swiftc",
+    "-parse-as-library",
+    "-O",
+    "-target",
+    "arm64-apple-ios16.0-simulator",
+    "-sdk",
+    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk",
+    "/Users/xingzhaoji/Desktop/Dustlings/platforms/apple/Dustlings/App.swift",
+    "-o",
+    "/Users/xingzhaoji/Desktop/Dustlings/platforms/apple/DerivedData/CompileOnly-simulator/Dustlings.app/Dustlings"
+  ],
+  "exitCode": 0,
+  "error": null,
+  "artifact": "platforms/apple/DerivedData/CompileOnly-simulator/Dustlings.app",
+  "webSHA256": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
+  "machO": {
+    "platform": 7,
+    "minimumOS": "16.0",
+    "sdk": "26.5"
+  },
+  "signing": "no distribution signing; linker may embed ad-hoc signature",
+  "assetCatalog": "not compiled in fallback; project driver remains blocked",
+  "execution": "not run",
+  "status": "native executable linked; full Xcode packaging and runtime validation blocked"
+}

@@ -1,0 +1,2697 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e9e7dc"><meta name="description" content="A little dust. A little life. Restore a forgotten miniature courtyard with a crew of tiny helpers.">
+  <title>Dustlings — A little care brings life</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='24' r='14' fill='%237a8069'/%3E%3Cpath d='M20 14Q16 1 30 4Q31 15 20 14' fill='%2389ad8c'/%3E%3Ccircle cx='15' cy='23' r='2' fill='%23fff5da'/%3E%3Ccircle cx='25' cy='23' r='2' fill='%23fff5da'/%3E%3C/svg%3E">
+  <style>:root{--ink:#32483e;--muted:#778276;--cream:#f6f3e9;--line:#d9ddce;--sage:#63836c;--accent:#db9d65;--serif:Georgia,'Times New Roman',serif;--sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color-scheme:light;font-family:var(--sans);color:var(--ink);background:#e9e7dc;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer;color:inherit}button:disabled{cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,canvas:focus-visible{outline:3px solid #bd814c;outline-offset:4px}button{transition:background .16s,transform .16s,box-shadow .16s}button:active:not(:disabled){transform:translateY(1px)}button:hover:not(:disabled){filter:brightness(.97)}svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.icon-defs{position:absolute;width:0;height:0;overflow:hidden}[hidden]{display:none!important}#app{height:100svh;min-height:680px;display:flex;flex-direction:column;padding:0 32px}.topbar{display:flex;align-items:center;justify-content:space-between;height:105px;flex-shrink:0;border-bottom:1px solid #cfd5c5;gap:16px}.wordmark{text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:12px;font:36px/1 var(--serif);letter-spacing:-1.5px}.wordmark small{font:8px/1.4 var(--sans);letter-spacing:2px;display:block;margin-top:8px}.brand-icon{height:47px;width:42px;display:grid;place-items:center;background:#d6dfcb;border-radius:50% 50% 42% 42%;transform:rotate(-8deg)}.brand-icon svg{width:27px;height:27px;stroke-width:1.5}.place{display:flex;flex-direction:column;gap:9px;padding-left:26px;border-left:1px solid #c8d0bf;font-size:15px;margin-right:auto;margin-left:35px}.eyebrow{font-size:9px;font-weight:650;letter-spacing:1.7px;line-height:1.5}.chapter{font-size:10px;color:var(--muted);margin-left:16px;letter-spacing:1px}.header-actions{display:flex;align-items:center;gap:10px}.save-status{font-size:11px;color:var(--muted);margin-right:14px}.save-status:before{content:'';display:inline-block;width:5px;height:5px;background:#8aa07c;border-radius:50%;margin-right:7px}.icon-button{border:1px solid #ccd3c1;border-radius:50%;height:42px;width:42px;background:transparent;display:inline-grid;place-items:center;padding:9px}.icon-button.muted{opacity:.5}.play-layout{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:24px;padding-top:25px}.world-panel{position:relative;min-width:0;min-height:0;background:radial-gradient(ellipse at 50% 43%,#eff0de 0%,#e3e5d3 53%,#daddcd 100%);border-radius:18px;overflow:hidden;border:1px solid #d4dbc7}#world{display:block;position:absolute;inset:0;width:100%;height:100%;touch-action:none;outline-offset:-5px!important}.scene-caption{position:absolute;z-index:1;top:23px;left:27px;display:flex;align-items:center;gap:9px;font-family:var(--serif);font-style:italic;font-size:15px;color:#6e7b64;pointer-events:none}.tiny-leaf{font-size:15px;color:#9caa79}.scene-stats{position:absolute;top:60px;left:26px;z-index:2;display:flex;gap:19px;pointer-events:none}.scene-stats>div{display:flex;align-items:center;gap:5px;font-size:11px;color:#70806b}.scene-stats svg{width:18px;height:18px}.scene-stats strong{font-size:15px;color:var(--ink);font-weight:600}.tool-dock{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:5px;padding:6px;background:#f9f7eef5;border:1px solid #d6dac9;border-radius:15px;box-shadow:0 8px 25px #42513a12;z-index:3;white-space:nowrap}.tool{min-height:45px;border:0;background:transparent;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:10px 16px;font-size:12px;position:relative}.tool svg{width:21px;height:21px}.tool.selected{background:#dce6d5;color:#34543f}.tool kbd{font:9px var(--sans);color:#7d8d74;border:1px solid #c8d2bf;border-radius:4px;padding:2px 4px;margin-left:3px}.tool-divider{height:24px;width:1px;background:#dce0d1}.game-tip{position:absolute;bottom:96px;left:10px;right:10px;text-align:center;font-size:12px;display:flex;justify-content:center;align-items:center;gap:8px;color:#67775d;pointer-events:none}.tip-dot{width:5px;height:5px;border-radius:50%;background:#97a281}.small-pill{position:absolute;bottom:25px;left:18px;z-index:4;min-height:38px;padding:8px 13px;border:1px solid #c6d1ba;border-radius:20px;background:#f5f5e7e8;font-size:11px}.toast{position:absolute;z-index:5;top:108px;left:50%;transform:translateX(-50%);width:max-content;max-width:88%;padding:11px 18px;border:1px solid #d2daca;background:#fffdf2ed;box-shadow:0 5px 18px #45543b10;border-radius:10px;text-align:center;font-size:12px;line-height:1.5;pointer-events:none}.birth-label{position:absolute;z-index:3;transform:translate(-50%,-100%);background:#fbf8e8;padding:10px 15px;border-radius:12px;box-shadow:0 4px 20px #41563b25;font-family:var(--serif);font-size:16px;text-align:center;pointer-events:none;white-space:nowrap}.birth-label span{display:block;font:10px var(--sans);color:#768568;margin-top:4px}.birth-label:after{content:'';position:absolute;bottom:-6px;left:50%;border-top:7px solid #fbf8e8;border-left:6px solid transparent;border-right:6px solid transparent}.journal{padding:7px 8px 0 5px;overflow:auto;scrollbar-width:thin;scrollbar-color:#c5cdb8 transparent}.journal-top{display:flex;align-items:center;justify-content:space-between}.journal-top .eyebrow{color:#7c8975}.journal h1{font:38px/1.12 var(--serif);letter-spacing:-1.3px;margin:15px 0 13px;font-weight:400}.chapter-copy{font-size:12px;line-height:1.8;color:#71806b;margin:0 0 21px;max-width:290px}.progress-caption{display:flex;justify-content:space-between;font-size:10px;color:#7a8570;margin-bottom:9px}.progress-caption strong{color:#506b52;font-weight:500}.progress-track{height:5px;background:#d5dcc9;border-radius:5px;overflow:hidden}.progress-track>div{height:100%;width:0;background:#719373;border-radius:5px;transition:width .3s}.journal-rule{height:1px;background:#d1d8c7;margin:23px 0 20px}.section-label{display:flex;align-items:center;justify-content:space-between;gap:8px}.section-label h2{font:17px var(--serif);margin:0}.section-label>span{font-size:9px;color:#88927b}.upgrade-intro{font-size:10px;color:#87917b;margin:7px 0 13px}.upgrades{display:flex;flex-direction:column;gap:8px}.upgrade-card{border:1px solid #d1d9c4;border-radius:12px;background:#f4f4e9;padding:13px 11px;text-align:left;display:grid;grid-template-columns:32px 1fr auto;gap:9px;position:relative;width:100%;align-items:start}.upgrade-card .upgrade-icon{width:31px;height:34px;display:grid;place-items:center;color:#748563;background:#e8eddc;border-radius:8px}.upgrade-card .upgrade-icon svg{width:20px;height:20px}.upgrade-card strong{display:block;font:14px/1.25 var(--serif);margin:0 0 5px}.upgrade-card .upgrade-description{font-size:10px;line-height:1.6;display:block;color:#7a856d}.upgrade-card .upgrade-cost{font-size:11px;white-space:nowrap;padding:3px 0;display:flex;align-items:center;gap:3px}.upgrade-cost svg{width:12px;height:12px}.upgrade-card:disabled{background:#e7eadc;opacity:.78}.upgrade-card.affordable{border-color:#94ab84;background:#f8f9ed;box-shadow:0 2px 9px #5975450b}.upgrade-card.owned{background:#dce6d2;border-color:#c4d2b8;opacity:1}.upgrade-card.owned .upgrade-cost{color:#6c8960}.upgrade-card .branch-label{font-size:8px;display:block;margin-top:4px;letter-spacing:.2px;color:#7c8b70}.landmark-card{margin-top:19px;padding:16px 14px;border:1px solid #c9d3be;border-radius:12px;background:#dfe6d4}.landmark-heading{display:flex;gap:10px;align-items:center}.landmark-icon{color:#788966}.landmark-heading .eyebrow{font-size:7px;letter-spacing:1px;color:#7a8a6e}.landmark-heading h2{font:17px var(--serif);margin:5px 0 0}.landmark-card p{font-size:10px;line-height:1.6;color:#7b896e;margin:10px 0 12px}.landmark-card button{width:100%;min-height:38px;border:0;border-radius:7px;color:#f7f7ea;background:#587655;font-size:10px;font-weight:500}.landmark-card button:disabled{background:#cbd5bf;color:#819073}.journal-footer{display:flex;justify-content:center;align-items:center;gap:7px;font:italic 12px var(--serif);color:#94a080;margin:21px 0}.little-star{font:18px var(--serif);color:#9baa83}.text-button{display:block;border:0;background:transparent;min-height:40px;font-size:11px;text-align:center;margin:8px auto;color:#71836b}.text-button>span{margin-left:6px}.bottomline{height:41px;display:flex;align-items:center;justify-content:space-between;color:#93a087;font-size:8px;letter-spacing:1.4px;flex-shrink:0}.bottomline span:last-child{font-size:9px;letter-spacing:.2px}.mobile-only{display:none}.upgrade-dot{background:#c48a50;border-radius:50%;width:6px;height:6px;position:absolute;right:8px;top:8px}.modal{background:#f8f5eb;border:1px solid #dedfcc;color:var(--ink);border-radius:23px;box-shadow:0 25px 90px #263b3630;padding:33px 35px;max-width:calc(100% - 32px);max-height:calc(100svh - 32px);overflow:auto}.modal::backdrop{background:#314c4242;backdrop-filter:blur(7px)}.modal h2{font:43px/1.09 var(--serif);letter-spacing:-1.2px;font-weight:400;margin:15px 0}.modal p{font-size:12px;line-height:1.85;color:#7d8874}.welcome-modal{width:415px;text-align:center;padding-top:20px}.welcome-modal .eyebrow{color:#8a9678}.welcome-modal p{margin-bottom:24px}.primary-button{display:flex;align-items:center;justify-content:center;gap:34px;width:100%;background:#567653;color:#fffbed;border:1px solid #52704d;border-radius:10px;min-height:49px;padding:14px 20px;font-size:12px}.primary-button span{font-size:16px}.welcome-modal .welcome-note{font-size:9px;margin:14px 0 2px;color:#959d85}.welcome-illustration{height:132px;position:relative;width:170px;margin:auto}.welcome-creature{position:absolute;width:77px;height:65px;border-radius:46% 48% 40% 45%;background:radial-gradient(ellipse at 40% 25%,#e8e4ca 0,#b7b6a0 65%,#9b9d85 100%);top:39px;left:45px;box-shadow:inset -5px -4px 6px #9399814a;transform:rotate(-6deg);z-index:2}.welcome-creature:before,.welcome-creature:after{content:'';position:absolute;width:18px;height:12px;background:#c09760;bottom:-5px;left:11px;border-radius:50%;transform:rotate(-10deg)}.welcome-creature:after{left:auto;right:10px;transform:rotate(10deg)}.welcome-creature i{position:absolute;width:8px;height:12px;top:25px;left:20px;background:#39493a;border-radius:50%;box-shadow:inset 2px 2px #faf5d4}.welcome-creature i+i{left:49px}.welcome-creature span{position:absolute;top:40px;left:35px;width:11px;height:5px;border-bottom:2px solid #6e7860;border-radius:50%}.welcome-leaf{position:absolute;left:81px;top:19px;width:26px;height:30px;transform:rotate(26deg);background:#84a177;border-radius:90% 0 90% 0;z-index:3}.welcome-leaf:after{content:'';position:absolute;height:23px;width:1px;background:#adc4a0;left:12px;top:6px;transform:rotate(15deg)}.welcome-shadow{position:absolute;width:92px;height:13px;border-radius:50%;background:#80916b28;filter:blur(3px);top:102px;left:38px}.welcome-spark{position:absolute;font-size:24px;color:#cba674}.welcome-spark.one{left:16px;top:53px}.welcome-spark.two{right:11px;top:35px;font-size:16px}.settings-modal{width:445px}.modal-heading{display:flex;justify-content:space-between;align-items:center}.modal-heading h2{font-size:31px;margin:8px 0}.settings-intro{margin:0 0 20px}.slider-label{display:grid;grid-template-columns:92px 1fr 36px;align-items:center;gap:12px;font-size:12px;margin:13px 0;min-height:32px}.slider-label input{width:100%;accent-color:#668962}.slider-label>span{font-size:10px;color:#7e8c74;text-align:right}.switch-label{display:flex;justify-content:space-between;align-items:center;font-size:12px;border-top:1px solid #dee1d2;padding:13px 0;gap:18px}.switch-label small{display:block;font-size:10px;line-height:1.4;color:#8a937e;margin-top:5px}.switch-label input{width:20px;height:20px;accent-color:#62895b;flex-shrink:0}.save-tools{display:flex;gap:10px;margin-top:9px}.secondary-button{border:1px solid #c9d3bc;background:#e8eddc;border-radius:8px;padding:12px 15px;font-size:11px;min-height:42px;flex:1}.settings-modal .fineprint{font-size:9px;line-height:1.6;margin:11px 0 16px}.settings-modal .text-button{margin-bottom:0}.danger{color:#9b7359}.restart-confirm{background:#eee5d5;border-radius:10px;padding:12px;margin-top:12px}.restart-confirm p{margin:0 0 10px;font-size:10px}.completion-modal{width:455px;text-align:center}.completion-sprout{display:block;color:#739866;margin-bottom:18px}.completion-sprout svg{width:43px;height:43px}.completion-stats{display:flex;justify-content:center;gap:44px;margin:23px 0;font-size:10px;color:#8b967d}.completion-stats strong{display:block;font:28px var(--serif);color:#52764d;margin-bottom:5px}.next-chapter{background:#e8eddf;border-radius:12px;padding:17px;margin-bottom:20px}.next-chapter .eyebrow{font-size:8px;color:#8c987c}.next-chapter h3{font:22px var(--serif);margin:8px}.next-chapter p{font-size:10px;line-height:1.7;margin-bottom:0}.recovery-note{font-size:10px!important;color:#9b7457!important}.completion-modal .text-button{margin-bottom:0}
+@media(min-width:1600px){#app{padding:0 48px}.play-layout{grid-template-columns:minmax(0,1fr) 350px;gap:36px}.journal{padding:15px}.journal h1{font-size:43px}.chapter-copy{font-size:13px;max-width:320px}.upgrade-card{padding:16px 13px}.upgrade-card strong{font-size:16px}.upgrade-card .upgrade-description{font-size:11px}.landmark-card{padding:20px}.journal-rule{margin:28px 0}}
+@media(max-height:850px) and (min-width:901px){#app{min-height:620px}.topbar{height:85px}.play-layout{padding-top:18px}.journal h1{font-size:32px;margin-top:10px;margin-bottom:10px}.chapter-copy{font-size:11px;line-height:1.65;margin-bottom:15px}.journal-rule{margin:17px 0 15px}.upgrade-card{padding:10px}.landmark-card{margin-top:14px;padding:12px}.journal-footer{margin:14px 0}.bottomline{height:34px}}
+@media(max-width:1100px) and (min-width:901px){#app{padding:0 20px}.play-layout{gap:18px;grid-template-columns:minmax(0,1fr) 280px}.place{margin-left:10px;padding-left:15px}.save-status{display:none}.small-pill{bottom:87px;left:50%;transform:translateX(-50%)}.game-tip{bottom:134px}.scene-caption{font-size:13px}}
+@media(max-width:900px){#app{height:100svh;min-height:480px;padding:0 16px;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}.topbar{height:86px}.wordmark{font-size:30px}.brand-icon{height:40px;width:36px}.wordmark small{font-size:6px;letter-spacing:1.6px}.place{margin-left:20px;font-size:13px;gap:6px}.place .eyebrow{font-size:7px}.save-status{display:none}.play-layout{display:block;padding-top:16px}.world-panel{height:100%}.journal{display:none;position:fixed;right:16px;bottom:calc(25px + env(safe-area-inset-bottom));width:340px;max-width:calc(100% - 32px);max-height:calc(100svh - 110px);z-index:10;background:#f2f3e6;border:1px solid #d2dbc5;border-radius:18px;padding:21px;box-shadow:0 12px 80px #2f493842}.journal.open{display:block}.journal h1{font-size:32px}.chapter-copy{font-size:12px;max-width:none}.journal-top .icon-button{width:33px;height:33px}.journal-rule{margin:19px 0}.mobile-only{display:flex}.header-actions .icon-button{height:39px;width:39px}.bottomline{height:32px;font-size:7px;letter-spacing:.5px}.bottomline span:last-child{font-size:8px}.scene-stats{top:61px}.tool{padding:10px 14px;min-height:47px}.tool-dock{bottom:22px}.small-pill{bottom:89px;left:50%;transform:translateX(-50%);white-space:nowrap}.game-tip{bottom:135px}.tool kbd{display:none}.scene-caption{font-size:14px}}
+@media(max-width:560px){#app{padding-left:10px;padding-right:10px}.topbar{height:76px;gap:7px}.wordmark{font-size:28px;gap:8px}.brand-icon{height:35px;width:32px}.brand-icon svg{width:23px;height:23px}.wordmark small{letter-spacing:1.15px;font-size:6px}.place{border-left:0;padding:0;margin:0 0 0 auto}.place>.eyebrow,.chapter{display:none}.place>span{font-size:10px}.header-actions{gap:5px}.header-actions .icon-button{height:35px;width:35px;padding:8px}.header-actions svg{width:17px;height:17px}.play-layout{padding-top:10px}.world-panel{border-radius:14px}.scene-caption{top:19px;left:18px;font-size:13px}.scene-stats{left:18px;top:48px;gap:17px}.scene-stats>div{font-size:10px}.scene-stats strong{font-size:14px}.scene-stats svg{width:16px;height:16px}.tool-dock{gap:2px;padding:5px;bottom:17px;border-radius:13px}.tool{padding:10px 11px;font-size:11px;gap:6px}.tool svg{width:19px;height:19px}.game-tip{font-size:10px;line-height:1.5;padding:0 13px;bottom:83px}.small-pill{bottom:113px;font-size:10px;min-height:34px}.toast{font-size:11px;top:87px;padding:9px 12px;max-width:90%}.bottomline{height:24px;font-size:6px}.bottomline span:last-child{display:none}.journal{right:10px;bottom:34px;max-width:calc(100% - 20px);width:350px;padding:20px;max-height:calc(100svh - 99px)}.modal{padding:25px;max-width:calc(100% - 26px)}.modal h2{font-size:37px}.welcome-illustration{height:120px}.welcome-modal p{font-size:11px}.modal-heading h2{font-size:29px}.slider-label{grid-template-columns:83px 1fr 28px;gap:8px}.settings-modal{padding:24px}.birth-label{font-size:14px;padding:8px 10px}.birth-label span{font-size:8px}.completion-modal h2{font-size:35px}}
+@media(max-height:550px) and (max-width:900px){#app{min-height:0}.topbar{height:58px}.wordmark small{display:none}.place .eyebrow{display:none}.play-layout{padding-top:7px}.bottomline{height:18px}.scene-caption{top:12px}.scene-stats{top:36px}.tool-dock{bottom:10px}.tool{min-height:40px;padding:8px 13px}.game-tip{bottom:67px}.small-pill{bottom:64px;left:auto;right:13px;transform:none}.toast{top:64px}.journal{max-height:calc(100svh - 25px);bottom:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
+.camera-controls{position:absolute;z-index:4;right:18px;top:20px;display:flex;gap:5px}.camera-controls button{width:34px;height:34px;border:1px solid #cbd4bd;border-radius:50%;background:#f5f5e6cb;font-size:18px;display:grid;place-items:center}.camera-controls button:disabled{opacity:.35}.camera-controls button.selected{background:#cadbbd}.camera-controls button:last-child{font-size:16px}
+@media(max-width:560px){.camera-controls{right:12px;top:16px;gap:4px}.camera-controls button{width:34px;height:34px}.scene-caption{max-width:calc(100% - 140px);line-height:1.3;font-size:11px}}
+/* Reading text keeps a deliberate minimum; the journal scrolls on short screens. */
+.chapter-copy{font-size:14px;line-height:1.65;color:#64735c}.upgrade-card strong{font-size:16px}.upgrade-card .upgrade-description{font-size:12px;line-height:1.5;color:#69775e}.upgrade-card .upgrade-cost{font-size:13px}.upgrade-card .branch-label{font-size:10px;line-height:1.45;color:#687c5c}.upgrade-card:disabled{opacity:1}.upgrade-intro{font-size:12px;color:#727e64}.progress-caption{font-size:12px}.landmark-card p{font-size:12px;color:#697a5b}.landmark-card button{font-size:12px;min-height:44px}.section-label>span{font-size:10px}.scene-stats>div{font-size:12px}.tool{font-size:13px}.toast{font-size:13px}.game-tip{font-size:13px}.slider-label,.switch-label{font-size:14px}.switch-label small{font-size:12px}.settings-modal .fineprint{font-size:11px}.text-button{font-size:12px}.primary-button{font-size:14px}.welcome-modal p,.completion-modal p{font-size:14px}.welcome-modal .welcome-note{font-size:11px}.camera-controls button{width:44px;height:44px}.icon-button{width:44px;height:44px}.scene-caption{max-width:calc(100% - 180px)}#world:focus-visible{outline:1px solid #96a887;outline-offset:-2px!important}
+@media(min-width:1101px){.play-layout{grid-template-columns:minmax(0,1fr) 330px}.journal h1{font-size:35px}.upgrade-card{padding:13px 11px}.journal-footer{margin:18px 0}}
+@media(max-width:560px){.header-actions .icon-button{width:44px;height:44px}.header-actions{gap:3px}.wordmark{font-size:25px}.place{display:none}.header-actions{margin-left:auto}.scene-stats>div{font-size:11px}.scene-caption{font-size:12px;max-width:calc(100% - 175px)}.scene-stats{top:62px}.camera-controls{top:17px;right:10px;gap:3px}.camera-controls button{width:44px;height:44px}.tool{font-size:12px}.game-tip{font-size:12px}.journal-top .icon-button{width:44px;height:44px}.chapter-copy{font-size:14px}.toast{top:98px;font-size:12px}.small-pill{min-height:44px;bottom:113px}.slider-label{font-size:13px}.welcome-modal p{font-size:13px}.journal .upgrade-card .upgrade-description{font-size:13px}}
+.header-actions .icon-button,.journal-top .icon-button{min-width:44px;min-height:44px}.tool,.secondary-button,.text-button{min-height:44px}
+
+/* Essential reading text: tested over the courtyard and each panel state. */
+:root{--body-ink:#52634e;--muted:#52634e}
+.save-status,.scene-stats>div,.scene-caption,.game-tip,.toast,.birth-label span,
+.chapter-copy,.progress-caption,.upgrade-intro,.upgrade-card .upgrade-description,
+.upgrade-card .branch-label,.landmark-card p,.text-button,.modal p,
+.slider-label>span,.switch-label small,.completion-stats,.next-chapter p,
+.welcome-modal .welcome-note{color:var(--body-ink)}
+.chapter-copy{font-size:16px;line-height:1.55;max-width:100%;margin-bottom:20px}
+.journal{overscroll-behavior:contain;scrollbar-gutter:stable;scroll-padding:18px;padding-bottom:24px}
+.journal h1{font-size:35px;line-height:1.13}
+.section-label h2,.landmark-heading h2{font-size:19px;line-height:1.25}
+.section-label>span{font-size:12px;color:var(--body-ink);white-space:nowrap}
+.progress-caption,.upgrade-intro{font-size:14px;line-height:1.5}
+.progress-caption{margin-bottom:8px}
+.upgrade-intro{margin:8px 0 13px}
+.upgrade-card{grid-template-columns:28px minmax(0,1fr) auto;gap:8px;padding:14px 11px}
+.upgrade-card .upgrade-icon{width:28px;height:31px}
+.upgrade-card strong{font-size:18px;line-height:1.2;margin-bottom:7px}
+.upgrade-card .upgrade-description,.journal .upgrade-card .upgrade-description{font-size:14px;line-height:1.45}
+.upgrade-card .branch-label{font-size:14px;line-height:1.4;letter-spacing:0;margin-top:7px}
+.upgrade-card .upgrade-cost{font-size:14px;line-height:1.4;color:var(--ink);padding-top:2px}
+.upgrade-card.owned .upgrade-cost{color:#4f6b47}
+.landmark-card{padding:16px 14px;margin-top:17px}
+.landmark-card p{font-size:14px;line-height:1.5}
+.landmark-card button{font-size:14px;line-height:1.4;min-height:46px;padding:10px 8px;background:#526e4f;color:#fffbed}
+.landmark-card button:disabled{background:#cbd5bf;color:#41543e}
+.text-button,.secondary-button,.small-pill{font-size:14px;line-height:1.4;min-height:44px}
+.danger{color:#825236}
+.save-status{font-size:14px;line-height:1.4}
+.scene-stats>div{font-size:14px;line-height:1.4}
+.scene-stats strong{font-size:16px}
+.scene-caption{font-size:15px;line-height:1.35}
+.tool{font-size:14px;line-height:1.4;min-height:46px}
+.tool kbd{font-size:12px;color:#52664b}
+.game-tip{font-size:14px;line-height:1.45;padding:0 16px}
+.toast{font-size:14px;line-height:1.5;background:#fffdf2;max-width:calc(100% - 32px)}
+.small-pill{background:#f5f5e7;color:var(--body-ink)}
+.birth-label{font-size:17px;line-height:1.25;width:220px;max-width:calc(100% - 24px);white-space:normal;padding:11px 12px}
+.birth-label span{font-size:14px;line-height:1.4;margin-top:6px}
+.bottomline #control-note{font-size:14px;letter-spacing:0;color:var(--body-ink)}
+.modal p,.welcome-modal p,.completion-modal p{font-size:16px;line-height:1.55}
+.primary-button{font-size:16px;line-height:1.4;min-height:50px}
+.welcome-modal .welcome-note{font-size:14px;line-height:1.45}
+.slider-label,.switch-label{font-size:16px;line-height:1.4}
+.slider-label{grid-template-columns:105px 1fr 42px;min-height:44px}
+.slider-label>span{font-size:14px}
+.switch-label small{font-size:14px;line-height:1.45}
+.settings-modal .fineprint,.restart-confirm p{font-size:14px;line-height:1.5;color:var(--body-ink)}
+.recovery-note{font-size:14px!important;line-height:1.5!important;color:#805438!important}
+.completion-stats{font-size:14px;line-height:1.4}
+.next-chapter p{font-size:14px;line-height:1.5}
+@media(max-height:850px) and (min-width:901px){
+  .journal h1{font-size:32px;margin:10px 0 12px}
+  .chapter-copy{font-size:16px;line-height:1.5;margin-bottom:17px}
+  .journal-rule{margin:19px 0 17px}
+  .upgrade-card{padding:12px 10px}
+}
+@media(max-width:900px){
+  .journal{padding:20px;max-height:calc(100svh - 106px)}
+  .journal-top{position:sticky;top:0;z-index:2;background:#f2f3e6;box-shadow:0 8px 0 #f2f3e6;margin-bottom:4px}
+  .journal-top:before{content:'';position:absolute;inset:-22px -20px -7px;background:#f2f3e6;z-index:-1;pointer-events:none}
+  .chapter-copy{font-size:16px}
+  .journal h1{font-size:32px}
+}
+@media(max-width:560px){
+  .scene-caption{font-size:14px;max-width:calc(100% - 169px)}
+  .scene-stats{top:64px;gap:16px}
+  .scene-stats>div{font-size:14px}
+  .tool{font-size:14px;padding:10px 10px;gap:6px}
+  .tool-dock{gap:2px;max-width:calc(100% - 20px)}
+  .game-tip{font-size:14px;bottom:87px;line-height:1.4;padding:0 10px}
+  .small-pill{font-size:14px;bottom:134px}
+  .toast{font-size:14px;top:100px;padding:10px 13px}
+  .journal{width:360px;max-width:calc(100% - 20px);padding:18px;bottom:34px;max-height:calc(100svh - 100px)}
+  .journal-top{top:0}
+  .modal{padding:24px}
+  .welcome-modal p{font-size:16px}
+  .slider-label{grid-template-columns:94px 1fr 38px;gap:8px;font-size:16px}
+  .switch-label{gap:14px}
+  .save-tools{gap:8px}
+  .secondary-button{padding:11px 10px}
+  .birth-label{font-size:17px}
+  .birth-label span{font-size:14px}
+}
+@media(max-height:550px) and (max-width:900px){
+  .scene-caption{font-size:14px;top:11px}
+  .scene-stats{top:36px}
+  .game-tip{bottom:68px;font-size:14px;max-width:calc(100% - 32px);margin:auto}
+  .small-pill{bottom:65px;font-size:14px}
+  .journal{max-height:calc(100svh - 24px);bottom:12px}
+  .welcome-modal{width:550px;padding:17px 24px}
+  .welcome-illustration{display:none}
+  .welcome-modal h2{font-size:32px;line-height:1.08;margin:8px 0}
+  .welcome-modal p{font-size:16px;line-height:1.5;margin:10px 0}
+  .welcome-modal .welcome-note{font-size:14px;margin:8px 0 0}
+}
+
+.controls-help{border-bottom:1px solid var(--line);margin-bottom:16px;font-size:14px;color:#415a3c}.controls-help summary{min-height:44px;padding:10px 0;cursor:pointer}.controls-help p{font-size:14px;color:#415a3c;line-height:1.6;margin-top:0}
+
+/* The renderer exposes its measured viewport mode, keeping CSS and clipping aligned. */
+.world-panel:has(#world[data-viewport-mode="landscape"]) .scene-caption{left:18px;top:13px;max-width:264px;font-size:15px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .scene-stats{left:18px;top:43px;gap:13px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .camera-controls{left:18px;right:auto;top:76px;gap:6px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .camera-controls button{width:44px;height:44px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .game-tip{left:18px;right:auto;top:125px;bottom:auto;width:264px;max-width:264px;margin:0;padding:0;text-align:left;justify-content:flex-start;align-items:flex-start;font-size:14px;line-height:1.4}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .game-tip .tip-dot{margin-top:7px;flex-shrink:0}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .small-pill{left:168px;right:auto;top:76px;bottom:auto;transform:none;min-height:44px;width:120px;padding:4px 6px;white-space:normal;border-radius:12px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool-dock{left:12px;right:auto;bottom:12px;transform:none;width:276px;max-width:276px;padding:6px;gap:4px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool{flex:1;min-width:0;min-height:58px;flex-direction:column;padding:6px 3px;gap:4px;font-size:14px;line-height:1.15;white-space:normal}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool svg{width:20px;height:20px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool-divider,
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool kbd{display:none}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .toast{left:calc(300px + (100% - 312px)/2);top:12px;max-width:calc(100% - 332px);transform:translateX(-50%);padding:9px 12px}
+</style>
+</head>
+<body>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-9M12 15C4 16 2 11 3 7c7-1 10 3 9 8Zm0-3C10 5 15 2 21 3c0 7-3 10-9 9Z"/></symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24"><path d="m13 13 7-8a2 2 0 0 0-3-3l-7 9M5 13l6-2 4 4-2 6H3l2-8Zm2 3-1 5m4-5-1 5"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 22V3m0 1c5-5 8 5 14 0v10c-6 5-9-5-14 0"/></symbol>
+    <symbol id="i-pair" viewBox="0 0 24 24"><path d="M3 16c-2-8 10-9 10 0 0 7-12 7-10 0Zm11-5c3-5 9-2 8 4-1 4-4 5-7 3M5 6l2 3m11-5-2 4"/><path d="M6 15h.01M10 15h.01m7-2h.01m3 0h.01"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M5 17c2-3 2-6 2-8a5 5 0 0 1 10 0c0 2 0 5 2 8H5Zm4 3c2 2 4 2 6 0M12 2V1"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="m4 9 4 0 5-5v16l-5-5H4V9Zm12-2c4 3 4 7 0 10m3-13c6 5 6 11 0 16"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="8" cy="18" r="2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 6"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-dust" viewBox="0 0 24 24"><path d="m12 2 2 7 7 3-7 2-2 8-2-8-8-2 8-3 2-7Z"/></symbol>
+  </defs></svg>
+  <div id="app">
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Dustlings home"><span class="brand-icon"><svg><use href="#i-sprout"/></svg></span><span>dustlings<small>A LITTLE CARE BRINGS LIFE</small></span></a>
+      <div class="place"><span class="eyebrow">THE SLEEPING VILLAGE</span><span>The courtyard <span class="chapter">01 / 03</span></span></div>
+      <div class="header-actions"><span id="save-status" class="save-status">Saved on this device</span><button id="sound-toggle" class="icon-button" aria-label="Mute sound" title="Mute sound"><svg><use href="#i-sound"/></svg></button><button id="pause-button" class="icon-button" aria-label="Pause and settings" title="Pause · Esc"><svg><use href="#i-settings"/></svg></button></div>
+    </header>
+    <main class="play-layout">
+      <section class="world-panel" aria-label="Courtyard game">
+        <div class="scene-caption"><span class="tiny-leaf">✦</span><span id="scene-caption-text">A place waiting to bloom</span></div>
+        <canvas id="world" tabindex="0" role="group" aria-label="Miniature courtyard" aria-describedby="keyboard-help"></canvas>
+        <div class="scene-stats"><div><svg><use href="#i-pair"/></svg><strong id="crew-count">0</strong><span>little helpers</span></div><div><svg><use href="#i-dust"/></svg><strong id="mote-count">0</strong><span>motes</span></div></div>
+        <div id="birth-label" class="birth-label" hidden>Your first Dustling <span>Made from the dust you brushed</span></div>
+        <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+        <div id="game-tip" class="game-tip"><span class="tip-dot"></span><span id="tip-text">Hold & sweep over the dust. See what wakes up.</span></div>
+        <div class="tool-dock" aria-label="Tools">
+          <button id="brush-tool" class="tool selected" aria-pressed="true"><svg><use href="#i-brush"/></svg><span>Brush</span><kbd>B</kbd></button>
+          <span class="tool-divider"></span>
+          <button id="direct-tool" class="tool" aria-pressed="false"><svg><use href="#i-flag"/></svg><span>Direct crew</span><kbd>D</kbd></button>
+          <button id="mobile-journal" class="tool mobile-only" aria-controls="journal" aria-expanded="false"><svg><use href="#i-sprout"/></svg><span>Grow</span><span id="upgrade-dot" class="upgrade-dot" hidden></span></button>
+        </div>
+        <button id="free-roam" class="small-pill" hidden>↗ Let the crew roam</button>
+      </section>
+      <aside id="journal" class="journal" aria-label="Restoration journal">
+        <div class="journal-top"><span class="eyebrow">YOUR LITTLE RESTORATION</span><button id="close-journal" class="icon-button mobile-only" aria-label="Close journal"><svg><use href="#i-close"/></svg></button></div>
+        <h1 id="chapter-title">Let’s wake<br>the courtyard.</h1>
+        <p id="chapter-copy" class="chapter-copy">Under all this dust, something lovely is waiting. Every bit you brush away can become a little helper.</p>
+        <div class="progress-caption"><span id="progress-label">Courtyard cleared</span><strong id="progress-number">0%</strong></div>
+        <div class="progress-track" role="progressbar" aria-label="Courtyard cleared" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div>
+        <div class="journal-rule"></div>
+        <div class="section-label"><h2>A little room to grow</h2><span>3 discoveries</span></div>
+        <p class="upgrade-intro">Spend motes. Keep every helper.</p>
+        <div id="upgrades" class="upgrades"></div>
+        <div class="landmark-card"><div class="landmark-heading"><span class="landmark-icon"><svg><use href="#i-bell"/></svg></span><div><span class="eyebrow">THE COURTYARD LANDMARK</span><h2>The wishing fountain</h2></div></div><p id="landmark-copy">A quiet fountain with a song still in it.</p><button id="restore-button" disabled>Clear 75% & learn the chorus</button></div>
+        <button id="find-dust" class="text-button" hidden>Show me the remaining dust <span>↗</span></button>
+        <div class="journal-footer"><span class="little-star">✳</span><span>Little things, bringing life back.</span></div>
+      </aside>
+    </main>
+    <footer class="bottomline"><span>ONE SMALL COURTYARD. MANY LITTLE BEGINNINGS.</span><span id="control-note">Hold to brush · D to direct · Esc to pause</span></footer>
+  </div>
+  <dialog id="welcome" class="modal welcome-modal" aria-labelledby="welcome-title">
+    <div class="welcome-illustration" aria-hidden="true"><div class="welcome-leaf"></div><div class="welcome-creature"><i></i><i></i><span></span></div><div class="welcome-shadow"></div><span class="welcome-spark one">✧</span><span class="welcome-spark two">✦</span></div>
+    <span class="eyebrow">WELCOME TO DUSTLINGS</span><h2 id="welcome-title">A little dust.<br>A little life.</h2>
+    <p>A forgotten courtyard. A brush in your hand.<br>And something small, waiting to wake up.</p>
+    <button id="start-button" class="primary-button">Bring it to life <span>↗</span></button>
+    <p class="welcome-note">Take your time. Your progress stays with you.</p><p id="recovery-note" class="recovery-note" hidden></p>
+  </dialog>
+  <dialog id="settings" class="modal settings-modal" aria-labelledby="settings-title">
+    <div class="modal-heading"><div><span class="eyebrow">A MOMENT OF QUIET</span><h2 id="settings-title">Take a breather.</h2></div><button id="close-settings" class="icon-button" aria-label="Close settings"><svg><use href="#i-close"/></svg></button></div>
+    <p class="settings-intro">Your helpers will wait right here.</p>
+    <details class="controls-help"><summary>Keyboard controls</summary><p id="keyboard-help">Focus the courtyard. Arrow keys aim. Space starts or stops brushing; N finds another dusty patch. D selects Direct crew, then Enter sends helpers. B selects Brush. Shift + arrows pans; + and − zoom. Tab reaches discoveries and settings. Escape pauses.</p></details>
+    <label class="slider-label">Music <input id="music-volume" type="range" min="0" max="100" value="48"><span id="music-value">48%</span></label>
+    <label class="slider-label">Little sounds <input id="sfx-volume" type="range" min="0" max="100" value="65"><span id="sfx-value">65%</span></label>
+    <label class="slider-label">Ambience <input id="ambience-volume" type="range" min="0" max="100" value="38"><span id="ambience-value">38%</span></label>
+    <label class="switch-label"><span>Gentle motion<small>Less bouncing, fewer particles</small></span><input id="reduced-motion" type="checkbox" role="switch"></label>
+    <label class="switch-label"><span>Tap to sweep<small>Tap once for a short sweep; holding still works</small></span><input id="tap-sweep" type="checkbox" role="switch"></label>
+    <label class="switch-label"><span>Lightweight scenery<small>Lower rendering resolution for quieter devices</small></span><input id="low-quality" type="checkbox" role="switch"></label>
+    <div class="save-tools"><button id="export-save" class="secondary-button">Export save</button><button id="import-save" class="secondary-button">Import save</button><input type="file" id="save-file" accept=".json,application/json" hidden></div>
+    <p id="settings-save-note" class="fineprint" role="status">Automatically saved on this browser. A backup keeps the previous checkpoint.</p>
+    <div id="save-conflict" class="restart-confirm" hidden><p>Another window saved a different courtyard. This window is paused so neither version is overwritten. Export this window’s progress above if you want to keep it, then load the saved courtyard.</p><button id="load-latest-save" class="secondary-button">Load the saved courtyard</button></div>
+    <button id="resume-button" class="primary-button">Back to the courtyard <span>↗</span></button><button id="restart-button" class="text-button danger">Start a fresh courtyard</button>
+    <div id="restart-confirm" class="restart-confirm" hidden><p>Export your save first if you’d like to keep this courtyard. Starting fresh replaces its progress.</p><button id="confirm-restart" class="secondary-button danger">Start fresh</button><button id="cancel-restart" class="secondary-button">Keep this courtyard</button></div>
+  </dialog>
+  <dialog id="completion" class="modal completion-modal" aria-labelledby="completion-title"><span class="completion-sprout"><svg><use href="#i-sprout"/></svg></span><span class="eyebrow">A SMALL PLACE, ALIVE AGAIN</span><h2 id="completion-title">Look what you<br>made together.</h2><p>The water is singing. The flowers are open.<br>And the dust has found somewhere to belong.</p><div class="completion-stats"><span><strong id="finish-crew">50</strong>little helpers</span><span><strong>1</strong>courtyard restored</span></div><div class="next-chapter"><span class="eyebrow">BEYOND THE LITTLE GATE</span><h3>The canal is sleeping.</h3><p>That story comes later. For now, this courtyard is yours to enjoy.</p></div><button id="enjoy-button" class="primary-button">Stay a little longer <span>♡</span></button><button id="completion-save" class="text-button">Save a keepsake of your progress ↓</button></dialog>
+  <script>(() => {
+  // src/game.js
+  var SAVE_VERSION = 1;
+  var FOUNTAIN = { x: 500, y: 370, r: 83 };
+  var UPGRADES = [
+    { id: "brush", name: "A softer sweep", cost: 32, icon: "brush", detail: "A wider brush. More dust with every gentle stroke.", effect: "Brush width +45% \xB7 brushing +35%" },
+    { id: "teamwork", name: "Better together", cost: 32, icon: "pair", detail: "Dustlings work in little pairs, tidying almost twice as fast.", effect: "Paired cleaning \xB7 crew work +75%" },
+    { id: "bloom", name: "The fountain chorus", cost: 58, icon: "bell", detail: "Gather your crew in a circle to bring the old fountain to life.", effect: "Unlocks a shared restoration ritual" }
+  ];
+  function random(seed = 71) {
+    return () => {
+      seed = seed * 1664525 + 1013904223 >>> 0;
+      return seed / 4294967296;
+    };
+  }
+  function walkable(x, y, margin = 0) {
+    return x >= 110 + margin && x <= 890 - margin && y >= 155 + margin && y <= 660 - margin && Math.hypot(x - 500, y - 370) >= FOUNTAIN.r + margin;
+  }
+  function makeDust() {
+    const rng = random(617);
+    const dust = [];
+    for (let y = 166; y <= 650; y += 26) for (let x = 123; x <= 880; x += 29) {
+      const px = x + (rng() - 0.5) * 13, py = y + (rng() - 0.5) * 12;
+      if (walkable(px, py, 8)) dust.push({ id: dust.length, x: px, y: py, amount: 1, initial: 1, kind: Math.floor(rng() * 3) });
+    }
+    return dust;
+  }
+  function createState() {
+    const dust = makeDust();
+    return { version: SAVE_VERSION, dust, totalDust: dust.length, cleaned: 0, motes: 0, earned: 0, creatures: [], particles: [], elapsed: 0, restoration: 0, completed: false, celebration: 0, upgrades: { brush: false, teamwork: false, bloom: false }, assignment: null, assignmentPulse: 0, mode: "brush", pointer: { x: 270, y: 505, active: false, inside: false, touch: false }, brushRadius: 44, reducedMotion: false, hintTarget: { x: 270, y: 505 }, ritual: false, ritualTime: 0, events: [], firstUpgradeAt: null, firstHelperAt: null, completedAt: null, stats: { brushed: 0, assisted: 0, assignments: 0, upgrades: [] }, notice: null, noticeTime: 0, findDust: false };
+  }
+  function event(s, name, data = {}) {
+    s.events.push({ name, ...data });
+  }
+  function burst(s, x, y, color, count = 9) {
+    if (s.reducedMotion) return;
+    for (let i = 0; i < count; i++) {
+      const a = i / count * Math.PI * 2;
+      s.particles.push({ x, y, vx: Math.cos(a) * 23, vy: Math.sin(a) * 20 - 13, life: 0.7, maxLife: 0.7, color, size: 2 + i % 3 });
+    }
+    if (s.particles.length > 100) s.particles.splice(0, s.particles.length - 100);
+  }
+  function notify(s, text2) {
+    s.notice = text2;
+    s.noticeTime = 5;
+  }
+  function collect(s, node, n, source) {
+    const before = s.cleaned;
+    const removed = Math.min(node.amount, n);
+    node.amount = Math.max(0, node.amount - removed);
+    s.cleaned += removed;
+    s.stats[source === "brush" ? "brushed" : "assisted"] += removed;
+    const fresh = Math.floor(s.cleaned + 1e-6) - s.earned;
+    if (fresh > 0) {
+      s.earned += fresh;
+      s.motes += fresh;
+    }
+    const shouldHave = Math.min(50, Math.floor((s.cleaned + 1e-5) / 7));
+    while (s.creatures.length < shouldHave) {
+      const id = s.creatures.length;
+      const angle = id * 2.4;
+      let x = node.x + Math.cos(angle) * 9, y = node.y + Math.sin(angle) * 9;
+      if (!walkable(x, y)) {
+        x = node.x;
+        y = node.y;
+      }
+      s.creatures.push({ id, x, y, tx: x, ty: y, phase: id * 2.399, born: s.elapsed, dir: 0, work: 0, target: null });
+      burst(s, x, y, "#ead9a6", 13);
+      event(s, "birth", { x, y, first: id === 0 });
+      if (id === 0) {
+        s.firstHelperAt = s.elapsed;
+        s.hintTarget = null;
+        notify(s, "That dust is alive! Your first Dustling is here to help.");
+      }
+      if (id === 3) notify(s, "A little crew, all from the dust. Try \u201CDirect crew\u201D to show them where to help.");
+    }
+    if (before < 32 && s.cleaned >= 32) event(s, "upgradeAvailable");
+    if (node.amount === 0 && removed > 0 && source === "brush") burst(s, node.x, node.y, "#c9b48c", 2);
+  }
+  function buyUpgrade(s, id) {
+    const u = UPGRADES.find((x) => x.id === id);
+    if (!u || s.upgrades[id] || s.motes < u.cost) return false;
+    if (id === "bloom" && (!s.upgrades.brush || !s.upgrades.teamwork)) return false;
+    s.motes -= u.cost;
+    s.upgrades[id] = true;
+    s.brushRadius = s.upgrades.brush ? 64 : 44;
+    if (s.firstUpgradeAt === null) s.firstUpgradeAt = s.elapsed;
+    s.stats.upgrades.push({ id, at: s.elapsed });
+    event(s, "upgrade", { id });
+    notify(s, id === "brush" ? "A softer sweep. Your brush now reaches a little further." : id === "teamwork" ? "Better together. Your Dustlings are pairing up to clean." : "The crew knows its song. Clear 75% of the courtyard, then ring the fountain bell.");
+    if (id === "teamwork") for (const c of s.creatures) c.target = null;
+    return true;
+  }
+  function assignCrew(s, x, y) {
+    if (!s.creatures.length) {
+      notify(s, "Brush a little dust first. Your helpers will come from it.");
+      return false;
+    }
+    if (s.ritual) {
+      notify(s, "Your crew is singing to the fountain. They\u2019ll return to tidying in a moment.");
+      return false;
+    }
+    if (!walkable(x, y, 3)) {
+      event(s, "blocked", { x, y });
+      notify(s, "That spot is blocked. Choose an open patch of courtyard.");
+      return false;
+    }
+    s.assignment = { x, y };
+    s.assignmentPulse = 2.5;
+    s.stats.assignments++;
+    for (const c of s.creatures) c.target = null;
+    event(s, "assign", { x, y });
+    notify(s, "This way, little ones. Your crew will tidy around the flag.");
+    return true;
+  }
+  function releaseCrew(s) {
+    s.assignment = null;
+    for (const c of s.creatures) c.target = null;
+    notify(s, "Free to roam. Your crew will find the remaining dust.");
+  }
+  function beginRitual(s) {
+    if (!s.upgrades.bloom || s.cleaned / s.totalDust < 0.75 || s.restoration >= 1 || s.ritual) return false;
+    s.ritual = true;
+    s.ritualTime = 0;
+    s.assignment = null;
+    s.pointer.active = false;
+    event(s, "landmark");
+    notify(s, "A circle of little helpers. A song for the sleeping fountain.");
+    return true;
+  }
+  function chooseTarget(s, c) {
+    if (s.upgrades.teamwork && c.id % 2 === 1) {
+      const lead = s.creatures[c.id - 1];
+      if (lead?.target !== null && s.dust[lead?.target]?.amount > 1e-4) return lead.target;
+    }
+    let best = null, score = Infinity;
+    const anchor = s.assignment || c;
+    for (const d of s.dust) {
+      if (d.amount <= 1e-5) continue;
+      const dist = Math.hypot(d.x - anchor.x, d.y - anchor.y);
+      const occupied = s.creatures.reduce((n, other) => n + (other.target === d.id ? 1 : 0), 0);
+      const v = dist + (s.assignment ? Math.hypot(d.x - c.x, d.y - c.y) * 0.1 : 0) + occupied * (s.upgrades.teamwork ? 12 : 24);
+      if (v < score) {
+        score = v;
+        best = d.id;
+      }
+    }
+    return best;
+  }
+  function moveCreature(c, tx, ty, dt, speed = 43) {
+    c.tx = tx;
+    c.ty = ty;
+    const clearance = 96, orbit = 103;
+    let fx = c.x - 500, fy = c.y - 370, fd = Math.hypot(fx, fy);
+    if (fd < clearance) {
+      const a = fd ? Math.atan2(fy, fx) : Math.PI / 2;
+      c.x = 500 + Math.cos(a) * clearance;
+      c.y = 370 + Math.sin(a) * clearance;
+      fx = c.x - 500;
+      fy = c.y - 370;
+      fd = clearance;
+    }
+    const workDistance = Math.hypot(tx - c.x, ty - c.y);
+    let gx = Math.max(115, Math.min(885, tx)), gy = Math.max(160, Math.min(655, ty));
+    const goalRadius = Math.hypot(gx - 500, gy - 370);
+    if (goalRadius < 98) {
+      const a = goalRadius ? Math.atan2(gy - 370, gx - 500) : Math.atan2(fy, fx);
+      gx = 500 + Math.cos(a) * 98;
+      gy = 370 + Math.sin(a) * 98;
+    }
+    let dx = gx - c.x, dy = gy - c.y, dist = Math.hypot(dx, dy);
+    if (dist < 2) return workDistance;
+    const nearest = Math.max(0, Math.min(1, -(fx * dx + fy * dy) / (dist * dist)));
+    if (Math.hypot(fx + dx * nearest, fy + dy * nearest) < clearance) {
+      const from = Math.atan2(fy, fx), to = Math.atan2(gy - 370, gx - 500);
+      const turn = Math.atan2(Math.sin(to - from), Math.cos(to - from));
+      const angle = from + Math.sign(turn || 1) * Math.min(0.28, Math.abs(turn));
+      gx = 500 + Math.cos(angle) * orbit;
+      gy = 370 + Math.sin(angle) * orbit;
+      dx = gx - c.x;
+      dy = gy - c.y;
+      dist = Math.hypot(dx, dy);
+    }
+    const step = Math.min(dist, speed * dt), ux = dx / dist, uy = dy / dist;
+    let nx = c.x + ux * step, ny = c.y + uy * step;
+    const nd = Math.hypot(nx - 500, ny - 370);
+    if (nd < clearance) {
+      nx = 500 + (nx - 500) / nd * clearance;
+      ny = 370 + (ny - 370) / nd * clearance;
+    }
+    c.x = Math.max(115, Math.min(885, nx));
+    c.y = Math.max(160, Math.min(655, ny));
+    c.dir = Math.atan2(uy, ux);
+    return workDistance;
+  }
+  function tick(s, dt) {
+    dt = Math.min(0.1, Math.max(0, dt));
+    s.elapsed += dt;
+    s.noticeTime = Math.max(0, s.noticeTime - dt);
+    s.assignmentPulse = Math.max(0, s.assignmentPulse - dt);
+    s.celebration = Math.max(0, s.celebration - dt);
+    if (!s.completed && s.pointer.active && s.mode === "brush" && walkable(s.pointer.x, s.pointer.y)) {
+      const inBrush = s.dust.filter((d) => d.amount > 0 && Math.hypot(d.x - s.pointer.x, d.y - s.pointer.y) < s.brushRadius);
+      const weights = inBrush.map((d) => 1 - Math.hypot(d.x - s.pointer.x, d.y - s.pointer.y) / (s.brushRadius + 10));
+      const sum = weights.reduce((a, b) => a + b, 0);
+      const rate = s.upgrades.brush ? 1.148 : 0.85;
+      inBrush.forEach((d, i) => collect(s, d, rate * dt * weights[i] / sum, "brush"));
+    }
+    const remainingRatio = 1 - s.cleaned / s.totalDust;
+    for (const c of s.creatures) {
+      c.work = 0;
+      if (s.elapsed - c.born < 0.65) continue;
+      if (s.ritual || s.completed) {
+        const ring = c.id % 2, ringCount = Math.ceil((s.creatures.length - ring) / 2);
+        const a = Math.floor(c.id / 2) / Math.max(1, ringCount) * Math.PI * 2 - Math.PI / 2 + ring * 0.13;
+        const radius = (ring ? 150 : 112) + (s.completed ? 9 : 0);
+        const dist = moveCreature(c, 500 + Math.cos(a) * radius, 370 + Math.sin(a) * radius, dt, 52);
+        c.work = dist < 6 ? 1 : 0;
+        continue;
+      }
+      if (c.target === null || s.dust[c.target]?.amount <= 1e-5) c.target = chooseTarget(s, c);
+      if (c.target !== null) {
+        const d = s.dust[c.target];
+        const offset = s.upgrades.teamwork ? c.id % 2 ? 7 : -7 : 0;
+        const dist = moveCreature(c, d.x + offset, d.y + 7, dt, s.upgrades.teamwork ? 51 : 43);
+        if (dist < 17) {
+          c.work = 1;
+          collect(s, d, dt * (s.upgrades.teamwork ? 0.0245 : 0.014) * (remainingRatio < 0.06 ? 3 : 1), "crew");
+        }
+      } else if (s.assignment) moveCreature(c, s.assignment.x + Math.cos(c.phase) * 23, s.assignment.y + Math.sin(c.phase) * 20, dt);
+    }
+    if (s.ritual) {
+      const gathered = s.creatures.filter((c) => Math.hypot(c.x - 500, c.y - 370) < 164 && Math.hypot(c.x - 500, c.y - 370) > 98).length;
+      if (gathered >= Math.min(12, s.creatures.length) * 0.8) {
+        s.ritualTime += dt;
+        s.restoration = Math.min(1, s.ritualTime / 38);
+      }
+      if (s.restoration >= 1) {
+        s.ritual = false;
+        s.celebration = 7;
+        event(s, "fountainRestored");
+        notify(s, "Water, at last. Your crew will gather the last few specks.");
+        for (const c of s.creatures) c.target = null;
+      }
+    }
+    if (s.creatures.length && remainingRatio < 0.015 && !s.ritual) {
+      for (const d of s.dust) if (d.amount > 0) collect(s, d, dt * 0.08, "crew");
+    }
+    if (s.cleaned >= s.totalDust - 1e-4 && s.restoration >= 1 && !s.completed) {
+      s.cleaned = s.totalDust;
+      s.completed = true;
+      s.completedAt = s.elapsed;
+      s.celebration = 12;
+      event(s, "complete");
+      notify(s, "The courtyard is awake. All those little things made something beautiful.");
+    }
+    for (const p of s.particles) {
+      p.life -= dt;
+      p.x += p.vx * dt;
+      p.y += p.vy * dt;
+      p.vy += 14 * dt;
+    }
+    s.particles = s.particles.filter((p) => p.life > 0);
+  }
+  function serialise(s) {
+    return { version: SAVE_VERSION, savedAt: Date.now(), dust: s.dust.map((d) => d.amount), motes: s.motes, upgrades: { ...s.upgrades }, elapsed: s.elapsed, restoration: s.restoration, ritual: s.ritual, ritualTime: s.ritualTime, completed: s.completed, firstHelperAt: s.firstHelperAt, firstUpgradeAt: s.firstUpgradeAt, completedAt: s.completedAt, assignment: s.assignment, creatures: s.creatures.map(({ x, y, id, phase }) => ({ x, y, id, phase })), stats: structuredClone(s.stats) };
+  }
+  function restore(data) {
+    if (!data || data.version !== SAVE_VERSION) throw Error("This save uses an unsupported version.");
+    const s = createState();
+    if (!Array.isArray(data.dust) || data.dust.length !== s.dust.length || data.dust.some((n) => !Number.isFinite(n) || n < 0 || n > 1)) throw Error("This save contains damaged courtyard data.");
+    for (let i = 0; i < s.dust.length; i++) s.dust[i].amount = data.dust[i];
+    s.cleaned = s.dust.reduce((n, d) => n + 1 - d.amount, 0);
+    s.earned = Math.floor(s.cleaned + 1e-6);
+    for (const k of ["brush", "teamwork", "bloom"]) s.upgrades[k] = data.upgrades?.[k] === true;
+    if (s.upgrades.bloom && (!s.upgrades.brush || !s.upgrades.teamwork)) throw Error("This save contains an incomplete upgrade tree.");
+    const spent = UPGRADES.reduce((n, u) => n + (s.upgrades[u.id] ? u.cost : 0), 0);
+    if (spent > s.earned) throw Error("This save contains inconsistent progress.");
+    s.motes = Math.max(0, s.earned - spent);
+    s.brushRadius = s.upgrades.brush ? 64 : 44;
+    s.elapsed = Number.isFinite(data.elapsed) ? Math.max(0, data.elapsed) : 0;
+    if (data.restoration !== void 0 && (!Number.isFinite(data.restoration) || data.restoration < 0 || data.restoration > 1)) throw Error("This save contains damaged fountain progress.");
+    if (data.ritual !== void 0 && typeof data.ritual !== "boolean") throw Error("This save contains damaged chorus data.");
+    s.restoration = data.restoration ?? 0;
+    s.ritual = data.ritual === true;
+    if ((s.restoration > 0 || s.ritual) && (!s.upgrades.bloom || s.cleaned / s.totalDust < 0.75)) throw Error("This save contains inconsistent fountain progress.");
+    if (s.ritual && s.restoration >= 1) throw Error("This save contains an already finished chorus.");
+    s.ritualTime = s.restoration * 38;
+    s.completed = s.cleaned >= s.totalDust - 1e-4 && s.restoration >= 1;
+    for (const k of ["firstHelperAt", "firstUpgradeAt", "completedAt"]) s[k] = Number.isFinite(data[k]) ? data[k] : null;
+    if (data.assignment && Number.isFinite(data.assignment.x) && Number.isFinite(data.assignment.y) && walkable(data.assignment.x, data.assignment.y, 3)) s.assignment = { x: data.assignment.x, y: data.assignment.y };
+    const count = Math.min(50, Math.floor((s.cleaned + 1e-5) / 7));
+    for (let i = 0; i < count; i++) {
+      const c = data.creatures?.[i];
+      let x = c?.x, y = c?.y;
+      if (!Number.isFinite(x) || !Number.isFinite(y) || !walkable(x, y)) {
+        x = 250 + i % 8 * 17;
+        y = 460 + Math.floor(i / 8) * 17;
+      }
+      s.creatures.push({ id: i, x, y, tx: x, ty: y, phase: i * 2.399, born: -5, dir: 0, work: 0, target: null });
+    }
+    if (count) s.hintTarget = null;
+    if (data.stats && typeof data.stats === "object") s.stats = { brushed: Number.isFinite(data.stats.brushed) ? data.stats.brushed : 0, assisted: Number.isFinite(data.stats.assisted) ? data.stats.assisted : 0, assignments: Number.isFinite(data.stats.assignments) ? data.stats.assignments : 0, upgrades: Array.isArray(data.stats.upgrades) ? data.stats.upgrades.filter((x) => UPGRADES.some((u) => u.id === x.id) && Number.isFinite(x.at)) : [] };
+    return s;
+  }
+
+  // src/storage.js
+  var SAVE_KEY = "dustlings.courtyard.v1";
+  var INTERRUPTED_KEY = SAVE_KEY + ".interrupted";
+  var BACKUP = SAVE_KEY + ".backup";
+  function interruptedState(raw, baseline) {
+    if (!raw) return null;
+    try {
+      const entry = JSON.parse(raw);
+      if (!entry || Array.isArray(entry) || !Object.hasOwn(entry, "baseline") || entry.baseline !== baseline) return null;
+      return restore(entry.state);
+    } catch {
+      return null;
+    }
+  }
+  var SaveStore = class {
+    constructor(storage) {
+      this.storage = storage;
+      this.status = "ready";
+      this.recovered = false;
+      this.recoverySource = null;
+      this.baseline = void 0;
+      this.journalBaseline = void 0;
+    }
+    load() {
+      let primary, backup, journal;
+      try {
+        primary = this.storage.getItem(SAVE_KEY);
+        backup = this.storage.getItem(BACKUP);
+        journal = this.storage.getItem(INTERRUPTED_KEY);
+        this.baseline = primary;
+        this.journalBaseline = journal;
+        this.recovered = false;
+        this.recoverySource = null;
+      } catch {
+        this.status = "unavailable";
+        return null;
+      }
+      const interrupted = interruptedState(journal, primary);
+      if (interrupted) {
+        this.recovered = true;
+        this.recoverySource = "interrupted";
+        this.status = "recovered";
+        return interrupted;
+      }
+      for (const [index, raw] of [primary, backup].entries()) {
+        if (!raw) continue;
+        try {
+          const state2 = restore(JSON.parse(raw));
+          this.recovered = index === 1;
+          this.recoverySource = this.recovered ? "backup" : null;
+          this.status = this.recovered ? "recovered" : "saved";
+          return state2;
+        } catch {
+        }
+      }
+      this.status = primary || backup ? "damaged" : "ready";
+      return null;
+    }
+    _current() {
+      const primary = this.storage.getItem(SAVE_KEY), journal = this.storage.getItem(INTERRUPTED_KEY);
+      if (this.baseline !== void 0 && primary !== this.baseline) {
+        this.status = "conflict";
+        return null;
+      }
+      if (this.journalBaseline === void 0 && interruptedState(journal, primary)) {
+        this.status = "conflict";
+        return null;
+      }
+      if (this.journalBaseline !== void 0 && journal !== this.journalBaseline && interruptedState(journal, primary)) {
+        this.status = "conflict";
+        return null;
+      }
+      if (this.baseline === void 0) this.baseline = primary;
+      if (this.journalBaseline === void 0) this.journalBaseline = journal;
+      return { primary, journal };
+    }
+    /** Synchronous teardown journal; never writes the canonical save or backup. */
+    checkpoint(state2) {
+      try {
+        const current = this._current();
+        if (!current) return false;
+        const raw = JSON.stringify({ baseline: current.primary, state: serialise(state2) });
+        this.storage.setItem(INTERRUPTED_KEY, raw);
+        this.journalBaseline = raw;
+        this.status = "saved";
+        return true;
+      } catch {
+        this.status = "unavailable";
+        return false;
+      }
+    }
+    /** Root calls canonical save/reset under its cross-window Web Lock. */
+    save(state2) {
+      try {
+        const current = this._current();
+        if (!current) return false;
+        const next = JSON.stringify({ ...serialise(state2), saveRevision: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}` });
+        if (current.primary) {
+          try {
+            restore(JSON.parse(current.primary));
+            this.storage.setItem(BACKUP, current.primary);
+          } catch {
+          }
+        }
+        this.storage.setItem(SAVE_KEY, next);
+        this.baseline = next;
+        try {
+          const journal = this.storage.getItem(INTERRUPTED_KEY);
+          if (journal === current.journal) {
+            this.storage.removeItem(INTERRUPTED_KEY);
+            this.journalBaseline = null;
+          } else this.journalBaseline = journal;
+        } catch {
+        }
+        this.status = "saved";
+        return true;
+      } catch {
+        this.status = "unavailable";
+        return false;
+      }
+    }
+    hasConflict() {
+      try {
+        return this._current() === null;
+      } catch {
+        this.status = "unavailable";
+        return false;
+      }
+    }
+    clear() {
+      try {
+        if (!this._current()) return false;
+        this.storage.removeItem(SAVE_KEY);
+        this.storage.removeItem(BACKUP);
+        this.storage.removeItem(INTERRUPTED_KEY);
+        this.baseline = null;
+        this.journalBaseline = null;
+        this.recovered = false;
+        this.recoverySource = null;
+        this.status = "ready";
+        return true;
+      } catch {
+        this.status = "unavailable";
+        return false;
+      }
+    }
+  };
+
+  // src/renderer.js
+  var TAU = Math.PI * 2;
+  var GROUND_Y = 0.72;
+  var clamp = (n, a = 0, b = 1) => Math.max(a, Math.min(b, n));
+  var noise = (n) => {
+    const v = Math.sin(n * 127.1 + 311.7) * 43758.5453;
+    return v - Math.floor(v);
+  };
+  var lerp = (a, b, t) => a + (b - a) * t;
+  var blend = (a, b, t) => `rgb(${a.map((v, i) => Math.round(lerp(v, b[i], clamp(t)))).join(",")})`;
+  function ellipse(c, x, y, rx, ry, fill, stroke, line2 = 1) {
+    c.beginPath();
+    c.ellipse(x, y, rx, ry, 0, 0, TAU);
+    if (fill) {
+      c.fillStyle = fill;
+      c.fill();
+    }
+    if (stroke) {
+      c.strokeStyle = stroke;
+      c.lineWidth = line2;
+      c.stroke();
+    }
+  }
+  function round(c, x, y, w, h, r, fill, stroke, line2 = 1) {
+    c.beginPath();
+    c.roundRect(x, y, w, h, r);
+    if (fill) {
+      c.fillStyle = fill;
+      c.fill();
+    }
+    if (stroke) {
+      c.strokeStyle = stroke;
+      c.lineWidth = line2;
+      c.stroke();
+    }
+  }
+  function poly(c, points, fill, stroke, line2 = 1) {
+    c.beginPath();
+    points.forEach(([x, y], i) => i ? c.lineTo(x, y) : c.moveTo(x, y));
+    c.closePath();
+    if (fill) {
+      c.fillStyle = fill;
+      c.fill();
+    }
+    if (stroke) {
+      c.strokeStyle = stroke;
+      c.lineWidth = line2;
+      c.stroke();
+    }
+  }
+  function line(c, x1, y1, x2, y2, color, width = 1) {
+    c.beginPath();
+    c.moveTo(x1, y1);
+    c.lineTo(x2, y2);
+    c.strokeStyle = color;
+    c.lineWidth = width;
+    c.stroke();
+  }
+  var Renderer = class {
+    constructor(canvas2) {
+      this.canvas = canvas2;
+      this.ctx = canvas2.getContext("2d", { alpha: false });
+      this.width = 1e3;
+      this.height = 740;
+      this.scale = 1;
+      this.offsetX = 0;
+      this.offsetY = 70;
+      this.camera = { zoom: 1, centerX: 500, centerY: 390 };
+      this.insets = { top: 80, bottom: 110, left: 0, right: 0 };
+      this.viewportMode = "desktop";
+      this.recommendedZoom = 1;
+      this.manualInsets = false;
+      this.staticScene = null;
+      this.dustSprites = [];
+      this.createArt();
+    }
+    resize(width, height, dpr = 1) {
+      this.width = Math.max(1, width);
+      this.height = Math.max(1, height);
+      this.dpr = Math.min(2, Math.max(1, dpr));
+      this.canvas.width = Math.round(this.width * this.dpr);
+      this.canvas.height = Math.round(this.height * this.dpr);
+      if (this.manualInsets) this.updateTransform();
+      else this.setResponsiveViewport(this.width, this.height);
+    }
+    setCamera(zoom2, centerX = 500, centerY = 390) {
+      if (typeof zoom2 === "object") ({ zoom: zoom2 = 1, centerX = 500, centerY = 390 } = zoom2);
+      this.camera = { zoom: clamp(Number(zoom2) || 1, 1, 3), centerX: clamp(Number(centerX) || 500, 110, 890), centerY: clamp(Number(centerY) || 390, 155, 660) };
+      this.updateTransform();
+    }
+    setViewportInsets(top = 80, bottom = 110, left = 0, right = 0) {
+      if (typeof top === "object") ({ top = 80, bottom = 110, left = 0, right = 0 } = top);
+      this.manualInsets = true;
+      this.insets = { top: Math.max(0, top), bottom: Math.max(0, bottom), left: Math.max(0, left), right: Math.max(0, right) };
+      this.updateTransform();
+    }
+    /** Derive framing only. The caller retains ownership of its zoom controls. */
+    setResponsiveViewport(width = this.width, height = this.height) {
+      this.manualInsets = false;
+      if (width >= 620 && height <= 420) {
+        this.viewportMode = "landscape";
+        this.insets = { top: 12, bottom: 12, left: 300, right: 12 };
+        this.recommendedZoom = 1;
+      } else if (width <= 560 && height > width) {
+        this.viewportMode = "portrait";
+        this.insets = { top: 88, bottom: 122, left: 0, right: 0 };
+        this.recommendedZoom = 1.7;
+      } else {
+        this.viewportMode = "desktop";
+        this.insets = { top: 80, bottom: 110, left: 0, right: 0 };
+        this.recommendedZoom = 1;
+      }
+      this.canvas.dataset.viewportMode = this.viewportMode;
+      this.updateTransform();
+      return { mode: this.viewportMode, recommendedZoom: this.recommendedZoom, ...this.viewport };
+    }
+    updateTransform() {
+      const availableWidth = Math.max(1, this.width - this.insets.left - this.insets.right);
+      const availableHeight = Math.max(1, this.height - this.insets.top - this.insets.bottom);
+      this.viewport = { x: this.insets.left, y: this.insets.top, width: availableWidth, height: availableHeight };
+      this.fitScale = Math.max(0.1, Math.min((availableWidth - 24) / 1020, (availableHeight - 24) / 638));
+      const baseX = this.insets.left + (availableWidth - 1e3 * this.fitScale) / 2;
+      const baseY = this.insets.top + (availableHeight - 638 * this.fitScale) / 2 + 83 * this.fitScale;
+      this.scale = this.fitScale * this.camera.zoom;
+      this.offsetX = baseX + 500 * this.fitScale - this.camera.centerX * this.scale;
+      this.offsetY = baseY + 390 * GROUND_Y * this.fitScale - this.camera.centerY * GROUND_Y * this.scale;
+    }
+    worldToScreen(x, y) {
+      return { x: this.offsetX + x * this.scale, y: this.offsetY + y * GROUND_Y * this.scale };
+    }
+    screenToWorld(x, y) {
+      return { x: (x - this.offsetX) / this.scale, y: (y - this.offsetY) / (this.scale * GROUND_Y) };
+    }
+    containsScreenPoint(x, y) {
+      const v = this.viewport;
+      return !!v && x >= v.x && y >= v.y && x <= v.x + v.width && y <= v.y + v.height;
+    }
+    createArt() {
+      const layer = (draw) => {
+        const cache = document.createElement("canvas");
+        cache.width = 2240;
+        cache.height = 1480;
+        const c = cache.getContext("2d");
+        c.scale(2, 2);
+        c.translate(60, 100);
+        draw(c);
+        return cache;
+      };
+      this.staticScene = layer((c) => this.drawGround(c));
+      this.gardenLayers = [0, 1].map((life) => {
+        this.artLife = life;
+        return layer((c) => {
+          this.drawArchitecture(c);
+          this.drawGarden(c);
+        });
+      });
+      this.artLife = 1;
+      for (let variant = 0; variant < 12; variant++) {
+        const kind = variant % 3, seed = variant * 137 + 9;
+        const sprite = document.createElement("canvas");
+        sprite.width = 144;
+        sprite.height = 104;
+        const d = sprite.getContext("2d");
+        d.translate(72, 54);
+        const stain = d.createRadialGradient(-3, 2, 3, 0, 3, 57);
+        stain.addColorStop(0, "rgba(113,109,88,.36)");
+        stain.addColorStop(0.5, "rgba(123,115,92,.19)");
+        stain.addColorStop(1, "rgba(123,115,92,0)");
+        ellipse(d, 0, 3, 63, 39, stain);
+        for (let j = 0; j < 4; j++) {
+          const x = (noise(seed + j * 3) - 0.5) * 47, y = (noise(seed + j * 5 + 7) - 0.5) * 18;
+          const r = 6 + noise(seed + j + 21) * 8;
+          ellipse(d, x + 2, y + 3, r * 1.25, r * 0.47, "rgba(76,84,65,.12)");
+          ellipse(d, x, y, r, r * (0.42 + noise(seed + j) * 0.3), ["#ada68e", "#b9ad92", "#9fa38a"][kind]);
+          ellipse(d, x - 1, y - r * 0.25, r * 0.63, r * 0.17, "rgba(219,211,185,.38)");
+        }
+        ellipse(d, 0, -1, 8 + noise(seed) * 5, 5, "#b8b19a");
+        for (let j = 0; j < 19; j++) {
+          const x = (noise(seed + j * 4) - 0.5) * 81, y = (noise(seed + j * 8 + 20) - 0.5) * 43;
+          ellipse(d, x, y, 0.6 + noise(j + seed) * 1.4, 0.4 + noise(j + seed + 1) * 0.7, j % 3 ? "rgba(116,111,86,.43)" : "rgba(222,212,182,.55)");
+        }
+        if (kind === 2) {
+          d.save();
+          d.translate(12, -4);
+          d.rotate(-0.8 + noise(seed) * 1.5);
+          d.beginPath();
+          d.moveTo(-10, 0);
+          d.quadraticCurveTo(-3, -9, 9, 0);
+          d.quadraticCurveTo(-3, 6, -10, 0);
+          d.fillStyle = "#a39869";
+          d.fill();
+          line(d, -10, 0, 10, 0, "#7e8764", 0.9);
+          d.restore();
+        } else if (variant % 4 === 0) {
+          line(d, -17, 11, 7, 6, "#a19271", 1.6);
+          line(d, -7, 9, -11, 4, "#a19271", 1.1);
+        }
+        this.dustSprites.push(sprite);
+      }
+    }
+    drawGround(c) {
+      ellipse(c, 505, 496, 438, 68, "rgba(97,108,79,.09)");
+      ellipse(c, 505, 488, 418, 52, "rgba(97,108,79,.06)");
+      round(c, 76, 81, 848, 433, 45, "#c8b49a");
+      round(c, 76, 65, 848, 432, 45, "#e8ddc5", "#c2b598", 2);
+      round(c, 88, 70, 824, 418, 38, "#f2e8d0", "#fff4db", 2);
+      round(c, 112, 93, 776, 372, 23, "#b9baa0");
+      round(c, 117, 96, 766, 365, 22, "#d8cfb6");
+      c.save();
+      c.beginPath();
+      c.roundRect(118, 96, 764, 365, 21);
+      c.clip();
+      for (let row = 0; row < 11; row++) {
+        for (let col = -1; col < 13; col++) {
+          const n = row * 27 + col + 70, x = 112 + col * 66 + row % 2 * 33, y = 95 + row * 35;
+          const tint = noise(n);
+          const tile = tint < 0.12 ? "#ded4bc" : tint < 0.4 ? "#e9dfc9" : tint < 0.7 ? "#e7dbc2" : "#ece3ce";
+          round(c, x + 1.8, y + 1.5, 62.5, 31.8, 5, tile);
+          line(c, x + 7, y + 3.2, x + 57, y + 3.2, "rgba(255,252,234,.45)", 1.2);
+          if (tint > 0.65) line(c, x + 10, y + 27, x + 16 + noise(n + 21) * 18, y + 27, "rgba(166,147,111,.1)");
+          for (let j = 0; j < 2; j++) ellipse(c, x + 8 + noise(n * 2 + j) * 48, y + 8 + noise(n + j + 60) * 18, 0.7, 0.5, "rgba(151,135,101,.13)");
+        }
+      }
+      c.restore();
+      ellipse(c, 500, 370 * GROUND_Y, 111, 78, "#d0cbb0");
+      ellipse(c, 500, 370 * GROUND_Y, 106, 74, "#eee4ca", "#f9f0db", 2);
+      ellipse(c, 500, 370 * GROUND_Y, 88, 61, "#d7d2b6", "#c5c3a7", 1);
+      for (let i = 0; i < 18; i++) {
+        const a = i / 18 * TAU;
+        line(c, 500 + Math.cos(a) * 90, 370 * GROUND_Y + Math.sin(a) * 62, 500 + Math.cos(a) * 104, 370 * GROUND_Y + Math.sin(a) * 73, "#cdc4ac", 1.5);
+      }
+      for (let i = 0; i < 17; i++) {
+        round(c, 104 + i * 47, 473, 43, 10, 3, i % 3 ? "#eadfc6" : "#dfd0b5");
+        line(c, 108 + i * 47, 474.5, 140 + i * 47, 474.5, "#fcf1d8");
+      }
+      for (let i = 0; i < 8; i++) {
+        const y = 123 + i * 42;
+        round(c, 90, y, 15, 37, 3, "#e6dac0");
+        round(c, 895, y, 15, 37, 3, "#e6dac0");
+      }
+      round(c, 447, 505, 106, 15, 5, "#c7b599");
+      round(c, 438, 515, 124, 12, 4, "#d4c3a5");
+      round(c, 430, 525, 140, 10, 4, "#e2d3b7");
+      line(c, 434, 527, 566, 527, "#f5e9d0", 2);
+    }
+    drawArchitecture(c) {
+      this.house(c, 229, 99, 143, 92, "terracotta");
+      this.house(c, 751, 98, 147, 103, "sage");
+      for (const [x, w] of [[349, 95], [558, 93]]) {
+        round(c, x, 37, w, 45, 5, "#d2ccb2");
+        for (let r = 0; r < 3; r++) for (let col = 0; col < 3; col++) round(c, x + col * 34 - r % 2 * 11, 42 + r * 12, 31, 10, 2, "#dfd8bd");
+        round(c, x - 5, 30, w + 10, 9, 3, "#eee5cd");
+      }
+      for (const x of [445, 555]) {
+        round(c, x - 7, 22, 14, 62, 3, "#c8c7a9");
+        round(c, x - 10, 17, 20, 8, 3, "#ebe3c9");
+        ellipse(c, x, 13, 6, 5, "#cbcbb0");
+      }
+      c.strokeStyle = "#778776";
+      c.lineWidth = 3;
+      c.beginPath();
+      c.moveTo(454, 72);
+      c.lineTo(454, 36);
+      c.bezierCurveTo(470, 24, 484, 34, 484, 46);
+      c.lineTo(484, 78);
+      c.stroke();
+      for (const x of [463, 474]) line(c, x, 40, x, 76, "#86917b", 2);
+      line(c, 454, 58, 484, 65, "#86917b", 2);
+      this.shrub(c, 386, 35, 30, 1);
+      this.shrub(c, 611, 32, 32, 2);
+    }
+    house(c, x, foot, width, height, style) {
+      c.save();
+      c.translate(x, foot);
+      const left = -width / 2, top = -height;
+      ellipse(c, 10, 4, width * 0.59, 14, "rgba(83,98,71,.12)");
+      poly(c, [[left + width, top + 14], [left + width + 24, top], [left + width + 24, -14], [left + width, 4]], "#c5c5a7");
+      round(c, left, top + 5, width, height, 5, "#f0e5cc");
+      round(c, left + 4, -5, width - 8, 9, 2, "#d8c9ac");
+      const roof = style === "sage" ? "#7b9882" : "#c98769";
+      const roofDark = style === "sage" ? "#617d69" : "#b07459";
+      poly(c, [[left - 12, top + 10], [left + 17, top - 30], [width / 2 + 24, top - 30], [width / 2 + 14, top + 10]], roof, roofDark, 2);
+      poly(c, [[width / 2 + 14, top + 10], [width / 2 + 24, top - 30], [width / 2 + 36, top - 4]], roofDark);
+      for (let r = 0; r < 4; r++) {
+        const ry = top - 22 + r * 9;
+        line(c, left + 13 - r * 6, ry, width / 2 + 18 - r, ry, style === "sage" ? "#a0b299" : "#dd9e7a", 1.5);
+        for (let col = 0; col < 7; col++) line(c, left + 20 + col * 19 + r % 2 * 8 - r * 4, ry, left + 16 + col * 19 + r % 2 * 8 - r * 4, ry + 7, "rgba(65,76,52,.15)", 1);
+      }
+      round(c, left - 10, top + 8, width + 25, 6, 2, roofDark);
+      round(c, width * 0.22, top - 44, 16, 27, 2, "#cbb8a1");
+      round(c, width * 0.22 - 3, top - 47, 22, 6, 2, "#e0cfb5");
+      round(c, -20, -53, 38, 54, [19, 19, 2, 2], style === "sage" ? "#aa8666" : "#738b77", "#d5c9ad", 4);
+      for (let i = 0; i < 4; i++) line(c, -14 + i * 8, -32, -14 + i * 8, -3, "rgba(49,65,50,.18)", 1);
+      ellipse(c, 9, -22, 2.3, 2.3, "#e7d29d");
+      for (const wx of [-width * 0.34, width * 0.32]) {
+        round(c, wx - 13, -64, 26, 31, [9, 9, 2, 2], "#71857a", "#d6cdb3", 4);
+        round(c, wx - 10, -60, 20, 23, [6, 6, 0, 0], "#c7d6bd");
+        line(c, wx, -60, wx, -36, "#f6ebcc", 2);
+        line(c, wx - 10, -48, wx + 10, -48, "#f6ebcc", 2);
+        round(c, wx - 17, -34, 34, 6, 2, "#bba78a");
+      }
+      round(c, -27, 1, 51, 7, 3, "#e1d2b3");
+      ellipse(c, 0, -70, 8, 7, "#dfd1b3");
+      ellipse(c, 0, -71, 3, 2, "#9ca788");
+      for (let i = 0; i < 22; i++) ellipse(c, left + 8 + noise(i + x) * (width - 16), top + 22 + noise(i + 84) * (height - 30), 0.6, 0.4, "rgba(155,137,105,.18)");
+      c.restore();
+      this.pot(c, x - width / 2 - 9, foot + 1, 12, 2);
+      this.pot(c, x + width / 2 + 11, foot + 5, 10, 1);
+    }
+    shrub(c, x, y, size, seed = 1) {
+      const alive = this.artLife !== 0;
+      size *= alive ? 1 : 0.83;
+      ellipse(c, x + 3, y + 4, size, size * 0.27, "rgba(87,104,68,.12)");
+      const palette = alive ? ["#839773", "#9caa83", "#b1b793", "#617e65"] : ["#959984", "#a6a88f", "#b5b298", "#77846e"];
+      for (let j = 0; j < (alive ? 12 : 8); j++) {
+        const a = noise(seed * 20 + j) * TAU, r = noise(seed + j * 11) * size * 0.6;
+        const lx = x + Math.cos(a) * r, ly = y - size * 0.35 + Math.sin(a) * r * 0.54;
+        ellipse(c, lx, ly, size * 0.38, size * 0.29, palette[j % 4]);
+      }
+      for (let j = 0; j < 7; j++) {
+        const lx = x + (noise(seed + j) - 0.5) * size * 1.4, ly = y - size * 0.3 - noise(seed + j + 38) * size * 0.3;
+        ellipse(c, lx, ly, 1.3, 0.9, alive ? "#c4cba7" : "#c1bba0");
+      }
+      if (!alive) for (let j = 0; j < 3; j++) {
+        const sx = x + (noise(seed + j) - 0.5) * size;
+        line(c, sx, y - size * 0.15, sx - 3, y - size * 0.8, "#8f9075", 1);
+      }
+    }
+    pot(c, x, y, r, flowers = 0) {
+      ellipse(c, x + 3, y + 2, r * 1.15, r * 0.36, "rgba(88,86,59,.15)");
+      poly(c, [[x - r, y - r * 1.2], [x + r, y - r * 1.2], [x + r * 0.74, y], [x - r * 0.74, y]], "#bd896d");
+      ellipse(c, x, y - r * 1.2, r, r * 0.34, "#d5a186");
+      ellipse(c, x, y - r * 1.3, r * 0.77, r * 0.24, "#8a8060");
+      this.shrub(c, x, y - r * 1.5, r * 1.25, Math.round(x));
+      if (flowers) for (let j = 0; j < 5; j++) {
+        const fx = x + (noise(j + x) - 0.5) * r * 1.8, fy = y - r * (1.7 + noise(j + 7) * 0.8);
+        this.flower(c, fx, fy, 2.5, flowers === 2 ? "#f4d897" : "#e5b3a8");
+      }
+    }
+    flower(c, x, y, r, color = "#efd39b") {
+      if (this.artLife === 0) return;
+      for (let i = 0; i < 5; i++) ellipse(c, x + Math.cos(i * TAU / 5) * r * 0.7, y + Math.sin(i * TAU / 5) * r * 0.7, r * 0.6, r * 0.5, color);
+      ellipse(c, x, y, r * 0.4, r * 0.32, "#bf9463");
+    }
+    drawGarden(c) {
+      for (const [x, y, w, h] of [[37, 163, 59, 122], [906, 170, 58, 128], [104, 475, 195, 25], [701, 475, 195, 25]]) {
+        round(c, x + 3, y + 6, w, h, 14, "#c3b08c");
+        round(c, x, y, w, h, 14, "#d9caad", "#eddfc1", 2);
+        round(c, x + 6, y + 5, w - 12, h - 10, 11, this.artLife === 0 ? "#999478" : "#8c9871");
+        const count = w > h ? 7 : 5;
+        for (let j = 0; j < count; j++) {
+          const sx = w > h ? x + 18 + j * (w - 36) / (count - 1) : x + w / 2 + (j % 2 ? 8 : -7);
+          const sy = w > h ? y + 10 : y + 17 + j * (h - 30) / (count - 1);
+          this.shrub(c, sx, sy, w > h ? 19 : 20, j + x);
+          for (let k = 0; k < 3; k++) this.flower(c, sx + (noise(j * 7 + k) - 0.5) * 25, sy - 10 - noise(j + k) * 8, 2.6, j % 3 ? "#f2d79f" : "#d7b0a8");
+        }
+      }
+      this.pot(c, 347, 489, 15, 2);
+      this.pot(c, 652, 488, 15, 1);
+      c.save();
+      c.translate(67, 368);
+      ellipse(c, 3, 5, 28, 12, "rgba(90,90,65,.13)");
+      for (const x of [-19, 19]) {
+        line(c, x, -7, x + 2, 7, "#798775", 4);
+        line(c, x, -33, x, -5, "#798775", 3);
+      }
+      round(c, -27, -36, 54, 9, 3, "#b99b6c");
+      round(c, -27, -24, 54, 8, 2, "#c4a77a");
+      round(c, -29, -9, 58, 12, 3, "#d0b789");
+      line(c, -25, -5, 25, -5, "#ebd19b", 1.5);
+      c.restore();
+      c.save();
+      c.translate(931, 383);
+      c.rotate(0.12);
+      ellipse(c, 3, 6, 17, 5, "rgba(87,98,73,.12)");
+      round(c, -9, -15, 18, 21, 5, "#7eaaa0");
+      ellipse(c, 0, -15, 9, 3, "#a9c6b0");
+      poly(c, [[6, -9], [19, -18], [22, -16], [9, 1]], "#7eaaa0");
+      c.beginPath();
+      c.ellipse(-12, -7, 8, 10, -0.3, 0.8, 5.5);
+      c.strokeStyle = "#6e978c";
+      c.lineWidth = 3;
+      c.stroke();
+      c.restore();
+      for (const x of [379, 620]) {
+        ellipse(c, x + 3, 500, 10, 3, "rgba(86,98,68,.14)");
+        round(c, x - 3, 468, 6, 32, 2, "#768777");
+        round(c, x - 9, 450, 18, 21, 3, "#d9c795", "#718272", 2);
+        line(c, x, 451, x, 469, "#7b8b76", 2);
+        poly(c, [[x - 12, 450], [x, 442], [x + 12, 450]], "#81917a");
+      }
+    }
+    render(state2, time = 0) {
+      const c = this.ctx, t = state2.reducedMotion ? 0 : state2.elapsed ?? time / 1e3;
+      c.setTransform(this.dpr || 1, 0, 0, this.dpr || 1, 0, 0);
+      c.fillStyle = "#f4f0e5";
+      c.fillRect(0, 0, this.width, this.height);
+      const bg = c.createRadialGradient(this.width * 0.5, this.height * 0.52, 1, this.width * 0.5, this.height * 0.52, Math.max(this.width, this.height) * 0.6);
+      bg.addColorStop(0, "#edf0df");
+      bg.addColorStop(1, "#f4f0e5");
+      c.fillStyle = bg;
+      c.fillRect(0, 0, this.width, this.height);
+      c.save();
+      c.beginPath();
+      c.rect(this.viewport.x, this.viewport.y, this.viewport.width, this.viewport.height);
+      c.clip();
+      c.translate(this.offsetX, this.offsetY);
+      c.scale(this.scale, this.scale);
+      c.drawImage(this.staticScene, -60, -100, 1120, 740);
+      this.drawDust(c, state2.dust || []);
+      c.drawImage(this.gardenLayers[0], -60, -100, 1120, 740);
+      const gardenLife = clamp((state2.cleaned || 0) / Math.max(1, state2.totalDust || 1) * 0.72 + (state2.restoration || 0) * 0.28);
+      if (gardenLife > 0) {
+        c.globalAlpha = gardenLife;
+        c.drawImage(this.gardenLayers[1], -60, -100, 1120, 740);
+        c.globalAlpha = 1;
+      }
+      this.drawGuides(c, state2, t);
+      const actors = (state2.creatures || []).map((creature) => ({ y: creature.y, creature }));
+      actors.push({ y: 386, fountain: true });
+      actors.sort((a, b) => a.y - b.y);
+      for (const actor of actors) actor.fountain ? this.drawFountain(c, state2, t) : this.drawCreature(c, actor.creature, state2, t);
+      this.drawParticles(c, state2.particles || []);
+      if (state2.celebration > 0 && !state2.reducedMotion) this.drawCelebration(c, state2, t);
+      this.drawPointer(c, state2, t);
+      c.restore();
+    }
+    drawDust(c, dust) {
+      c.save();
+      c.beginPath();
+      c.roundRect(108, 155 * GROUND_Y, 784, (660 - 155) * GROUND_Y, 12);
+      c.clip();
+      for (const d of dust) {
+        if (d.amount <= 2e-3) continue;
+        const amount = clamp(d.amount / (d.initial || 1));
+        const seed = typeof d.id === "number" ? d.id : d.x + d.y;
+        const size = (0.7 + noise(seed + 7) * 0.65) * (0.65 + Math.sqrt(amount) * 0.35);
+        const variant = Math.abs(d.kind || 0) % 3 + Math.floor(noise(seed + 481) * 4) * 3;
+        c.save();
+        c.translate(d.x, d.y * GROUND_Y);
+        c.rotate((noise(seed + 39) - 0.5) * 0.8);
+        c.globalAlpha = clamp(amount * 1.15);
+        c.drawImage(this.dustSprites[variant], -48 * size, -36 * size, 96 * size, 69.333 * size);
+        c.restore();
+      }
+      c.restore();
+    }
+    drawGuides(c, state2, t) {
+      if (state2.assignment) {
+        const { x, y } = state2.assignment, py = y * GROUND_Y;
+        const pulse = Math.sin(t * 4) * 1.5;
+        ellipse(c, x, py, 23 + pulse, 15 + pulse * 0.72, "rgba(72,132,114,.10)", "#648e76", 1.8);
+        ellipse(c, x, py, 5, 3, "#75937a");
+        line(c, x, py - 2, x, py - 34, "#648470", 2.3);
+        c.beginPath();
+        c.moveTo(x + 1, py - 34);
+        c.quadraticCurveTo(x + 9, py - 38, x + 17, py - 30);
+        c.quadraticCurveTo(x + 9, py - 24, x + 1, py - 28);
+        c.closePath();
+        c.fillStyle = "#e1b66f";
+        c.fill();
+        if (state2.assignmentPulse > 0) {
+          c.globalAlpha = clamp(state2.assignmentPulse);
+          ellipse(c, x, py, 23 + (1 - clamp(state2.assignmentPulse)) * 33, 16 + (1 - clamp(state2.assignmentPulse)) * 23, null, "#6b967c", 2);
+          c.globalAlpha = 1;
+        }
+      }
+      if (state2.hintTarget && !state2.creatures?.length) {
+        const { x, y } = state2.hintTarget, pulse = 0.5 + Math.sin(t * 3) * 0.5;
+        ellipse(c, x, y * GROUND_Y, 30 + pulse * 4, 21 + pulse * 3, "rgba(255,249,218,.18)", "#e6bd73", 2);
+        c.save();
+        c.setLineDash([2, 7]);
+        ellipse(c, x, y * GROUND_Y, 40, 28, null, "rgba(179,153,92,.6)", 1.5);
+        c.restore();
+      }
+    }
+    drawFountain(c, state2, t) {
+      const p = clamp(state2.restoration || 0), x = 500, y = 370 * GROUND_Y;
+      const stone = blend([165, 162, 139], [235, 230, 205], p);
+      const side = blend([131, 140, 120], [195, 206, 178], p);
+      const light = blend([184, 181, 153], [255, 245, 219], p);
+      c.save();
+      c.translate(x, y);
+      ellipse(c, 7, 27, 90, 45, "rgba(82,101,78,.13)");
+      const rim = (cy, rx, ry) => Array.from({ length: 8 }, (_, i) => {
+        const a = (i / 8 + 1 / 16) * TAU;
+        return [Math.cos(a) * rx, cy + Math.sin(a) * ry];
+      });
+      poly(c, rim(14, 83, 51), side, "#a7b397", 1);
+      for (let i = 0; i < 8; i++) {
+        const a = (i / 8 + 1 / 16) * TAU;
+        if (Math.sin(a) > 0) line(c, Math.cos(a) * 83, 4 + Math.sin(a) * 51, Math.cos(a) * 83, 14 + Math.sin(a) * 51, "rgba(109,130,104,.25)", 1);
+      }
+      poly(c, rim(3, 83, 51), stone, light, 3);
+      poly(c, rim(2, 69, 40), blend([121, 139, 118], [114, 180, 163], p), blend([148, 153, 124], [169, 213, 184], p), 2);
+      if (p > 0.22) {
+        const waterAlpha = clamp((p - 0.22) / 0.65);
+        c.globalAlpha = waterAlpha;
+        const water = c.createLinearGradient(0, -35, 0, 43);
+        water.addColorStop(0, "#8ec4b0");
+        water.addColorStop(0.7, "#62a99c");
+        water.addColorStop(1, "#a9d5bd");
+        poly(c, rim(3, 66, 37), water);
+        c.save();
+        c.beginPath();
+        rim(3, 65, 36).forEach(([px, py], i) => i ? c.lineTo(px, py) : c.moveTo(px, py));
+        c.closePath();
+        c.clip();
+        for (let i = 0; i < 5; i++) {
+          const r = 15 + (t * 8 + i * 13) % 58;
+          c.globalAlpha = waterAlpha * (1 - r / 80) * 0.6;
+          ellipse(c, 0, 6, r, r * 0.48, null, "#e4f1cd", 1.2);
+        }
+        c.restore();
+        c.globalAlpha = 1;
+      }
+      ellipse(c, 0, 12, 25, 13, side);
+      ellipse(c, 0, 7, 25, 12, stone, light, 1.5);
+      c.beginPath();
+      c.moveTo(-13, 5);
+      c.bezierCurveTo(-8, -9, -8, -32, -14, -40);
+      c.lineTo(14, -40);
+      c.bezierCurveTo(8, -28, 8, -7, 13, 5);
+      c.closePath();
+      c.fillStyle = stone;
+      c.fill();
+      c.beginPath();
+      c.moveTo(-4, 1);
+      c.bezierCurveTo(-1, -12, -3, -24, -5, -35);
+      c.strokeStyle = light;
+      c.lineWidth = 4;
+      c.stroke();
+      ellipse(c, 0, -39, 34, 13, side);
+      c.beginPath();
+      c.moveTo(-34, -43);
+      c.quadraticCurveTo(-26, -19, 0, -21);
+      c.quadraticCurveTo(26, -20, 34, -43);
+      c.closePath();
+      c.fillStyle = stone;
+      c.fill();
+      ellipse(c, 0, -43, 34, 13, light);
+      ellipse(c, 0, -44, 28, 9, p > 0.5 ? "#83b7a1" : "#929c80");
+      if (p > 0.55) {
+        c.globalAlpha = clamp((p - 0.55) * 3);
+        for (const sx of [-27, 27]) {
+          c.beginPath();
+          c.moveTo(sx, -40);
+          c.bezierCurveTo(sx * 1.3, -26, sx * 1.15 + Math.sin(t * 3) * 1.5, -4, sx * 1.35, 6);
+          c.strokeStyle = "#cce8cc";
+          c.lineWidth = 3;
+          c.stroke();
+          ellipse(c, sx * 1.35, 7, 6 + Math.sin(t * 5) * 1.5, 2.5, null, "#cbe5c7", 1);
+        }
+        c.globalAlpha = 1;
+      }
+      round(c, -6, -66, 12, 22, 5, stone);
+      ellipse(c, 0, -67, 11, 8, light);
+      ellipse(c, 0, -73, 7, 8, p > 0.75 ? "#d7bb80" : "#949e7d");
+      if (p > 0.85) {
+        c.globalAlpha = clamp((p - 0.85) / 0.15);
+        c.beginPath();
+        c.moveTo(0, -69);
+        c.bezierCurveTo(-12, -98, -24, -82, -19, -46);
+        c.moveTo(0, -69);
+        c.bezierCurveTo(12, -98, 24, -82, 19, -46);
+        c.strokeStyle = "#d3ecda";
+        c.lineWidth = 2;
+        c.stroke();
+        ellipse(c, -19, -46, 4 + Math.sin(t * 5), 1.5, "#dbeed5");
+        ellipse(c, 19, -46, 4 + Math.cos(t * 5), 1.5, "#dbeed5");
+        c.globalAlpha = 1;
+      }
+      c.globalAlpha = (1 - p) * 0.9;
+      for (let i = 0; i < 20; i++) {
+        const a = noise(i) * Math.PI;
+        ellipse(c, Math.cos(a) * (72 + noise(i + 9) * 8), 3 + Math.sin(a) * 48, 4 + noise(i + 33) * 5, 2 + noise(i + 77) * 2, i % 2 ? "#879879" : "#9a9d7c");
+      }
+      ellipse(c, -21, -31, 7, 3, "#91a080");
+      ellipse(c, 8, -7, 4, 5, "#899a7b");
+      c.globalAlpha = 1;
+      if (p > 0.45) {
+        const bloom = clamp((p - 0.45) / 0.55);
+        for (let i = 0; i < 7; i++) {
+          const a = 0.12 + i / 6 * (Math.PI - 0.24), fx = Math.cos(a) * 86, fy = Math.sin(a) * 50 + 12;
+          c.globalAlpha = bloom;
+          line(c, fx, fy, fx - 1, fy - 9 * bloom, "#87a17d", 1.3);
+          this.flower(c, fx - 1, fy - 9 * bloom, 3 * bloom, i % 2 ? "#f7e7bb" : "#e8bdaf");
+        }
+        c.globalAlpha = 1;
+      }
+      c.restore();
+    }
+    drawCreature(c, creature, state2, t) {
+      const age = Math.max(0, (state2.elapsed || 0) - (creature.born || 0));
+      const birth2 = clamp(age / 0.65);
+      const phase = creature.phase || creature.id || 0;
+      const moving = Math.hypot((creature.tx ?? creature.x) - creature.x, (creature.ty ?? creature.y) - creature.y) > 5;
+      const singing = !!(state2.ritual || state2.completed);
+      const working = creature.work > 0 && !singing;
+      const walk = state2.reducedMotion ? 0 : Math.sin(t * (working ? 13 : moving ? 10 : 2.4) + phase);
+      const radius = 9.7 + noise(phase + 5) * 1.8;
+      const hop = moving || working ? Math.abs(walk) * 2.2 : Math.sin(t * 2.4 + phase) * 0.45;
+      const opticalSize = clamp(0.65 / this.scale, 1, 1.35);
+      const bornScale = (birth2 < 1 ? 0.35 + 0.65 * Math.sin(birth2 * Math.PI / 2) : 1) * opticalSize;
+      const x = creature.x, y = creature.y * GROUND_Y;
+      ellipse(c, x + 1.5, y + 1, radius * 0.95 * bornScale, radius * 0.34 * bornScale, "rgba(85,93,72,.21)");
+      c.save();
+      c.translate(x, y);
+      c.scale(bornScale, bornScale);
+      ellipse(c, -4.4 - walk * 1.3, -1 + Math.max(0, -walk), 3.2, 1.8, "#b79559");
+      ellipse(c, 4.4 + walk * 1.3, -1 + Math.max(0, walk), 3.2, 1.8, "#c6a66a");
+      c.translate(0, -radius * 0.75 - hop);
+      const squash = working ? 1 + walk * 0.035 : 1;
+      c.scale(squash, 1 / squash);
+      for (let i = 0; i < 9; i++) {
+        const a = (i + 0.2) / 9 * TAU;
+        ellipse(c, Math.cos(a) * radius * 0.68, Math.sin(a) * radius * 0.64, radius * 0.39, radius * 0.37, i > 0 && i < 4 ? "#bec2ac" : "#d4d8c2");
+      }
+      const fur = c.createRadialGradient(-3, -4, 1, 0, 0, radius * 1.2);
+      fur.addColorStop(0, "#f1edd6");
+      fur.addColorStop(0.62, "#e0dfc7");
+      fur.addColorStop(1, "#b9c1aa");
+      ellipse(c, 0, 0, radius * 0.93, radius * 0.89, fur);
+      c.save();
+      c.translate(1.5, -radius * 0.8);
+      c.rotate(-0.22 + walk * 0.07 + Math.sin(phase) * 0.15);
+      line(c, 0, 1, 2, -6, "#7a9974", 1.4);
+      c.beginPath();
+      c.moveTo(1, -3);
+      c.bezierCurveTo(-5, -13, -9, -9, -7, -5);
+      c.quadraticCurveTo(-3, -2, 1, -3);
+      c.fillStyle = "#a5b991";
+      c.fill();
+      c.beginPath();
+      c.moveTo(1, -4);
+      c.bezierCurveTo(3, -13, 10, -14, 10, -10);
+      c.quadraticCurveTo(9, -4, 1, -4);
+      c.fillStyle = "#799d7e";
+      c.fill();
+      line(c, 3, -5, 8, -10, "#bfd0a2", 0.7);
+      c.restore();
+      const dir = creature.dir || 0, gazeX = moving ? Math.cos(dir) * 1.5 : 0, gazeY = moving ? Math.sin(dir) * 0.65 : 0.25;
+      const blink = !state2.reducedMotion && Math.sin(t * 1.1 + phase * 2) > 0.995;
+      for (const eyeX of [-3.5, 3.5]) {
+        if (blink) line(c, eyeX - 1.4 + gazeX, -1 + gazeY, eyeX + 1.4 + gazeX, -1 + gazeY, "#415850", 1.2);
+        else {
+          ellipse(c, eyeX + gazeX, -1 + gazeY, 1.55, 2, "#415850");
+          ellipse(c, eyeX - 0.4 + gazeX, -1.7 + gazeY, 0.4, 0.5, "#fff9df");
+        }
+      }
+      ellipse(c, -6, 2.2, 2, 1, "rgba(207,143,119,.35)");
+      ellipse(c, 6, 2.2, 2, 1, "rgba(207,143,119,.35)");
+      if (singing && !moving) ellipse(c, gazeX, 3.4, 1.25, 1.5 + Math.sin(t * 3.5 + phase) * 0.3, "#718272");
+      else {
+        c.beginPath();
+        c.moveTo(-1.7 + gazeX, 3);
+        c.quadraticCurveTo(gazeX, working ? 5.4 : 4.3, 1.7 + gazeX, 3);
+        c.strokeStyle = "#718272";
+        c.lineWidth = 0.9;
+        c.stroke();
+      }
+      line(c, -5, -7, -3.4, -8, "#f5f0d9", 0.9);
+      line(c, -1, -8, 0.2, -9, "#f5f0d9", 0.9);
+      line(c, 6, -5, 7, -4, "#f5f0d9", 0.9);
+      if (working) {
+        c.save();
+        c.translate(8, 6);
+        c.rotate(0.5 + walk * 0.35);
+        line(c, 0, -3, 5, 4, "#9c8862", 1.7);
+        poly(c, [[2, 3], [7, 0], [10, 5], [5, 8]], "#c6b787");
+        line(c, 5, 4, 7, 7, "#e6d6a3", 0.8);
+        c.restore();
+      }
+      if (singing && !moving && creature.id % 7 === 0 && !state2.reducedMotion) {
+        const float = (t * 0.65 + phase) % 1;
+        c.globalAlpha = Math.sin(float * Math.PI) * 0.72;
+        ellipse(c, 12, -17 - float * 12, 2.1, 1.4, "#7b9d81");
+        line(c, 13.8, -17 - float * 12, 13.8, -24 - float * 12, "#7b9d81", 1.1);
+        line(c, 13.8, -24 - float * 12, 17, -23 - float * 12, "#7b9d81", 1.1);
+        c.globalAlpha = 1;
+      }
+      c.restore();
+    }
+    drawParticles(c, particles) {
+      for (const p of particles) {
+        c.globalAlpha = clamp(p.life / (p.maxLife || 1));
+        ellipse(c, p.x, p.y * GROUND_Y, Math.max(0.2, p.size || 2), Math.max(0.2, (p.size || 2) * 0.8), p.color || "#d7c79d");
+      }
+      c.globalAlpha = 1;
+    }
+    drawCelebration(c, state2, t) {
+      const alpha = clamp(state2.celebration / 2);
+      for (let i = 0; i < 22; i++) {
+        const angle = i / 22 * TAU, radius = 100 + Math.sin(t + i) * 15;
+        const x = 500 + Math.cos(angle) * radius, y = 370 * GROUND_Y + Math.sin(angle) * radius * 0.5 - 20 - (t * 15 + i * 5) % 55;
+        c.globalAlpha = alpha * (0.4 + noise(i) * 0.5);
+        c.save();
+        c.translate(x, y);
+        c.rotate(t + i);
+        ellipse(c, 0, 0, 2.4, 1.2, i % 2 ? "#d8ac6d" : "#91ae83");
+        c.restore();
+      }
+      c.globalAlpha = 1;
+    }
+    drawPointer(c, state2, t) {
+      const p = state2.pointer;
+      if (!p?.inside) return;
+      const x = p.x, y = p.y * GROUND_Y, radius = state2.mode === "direct" ? 20 : state2.brushRadius || 35;
+      c.save();
+      c.globalAlpha = p.touch && !p.active && !p.preview ? 0 : 1;
+      if (state2.mode === "direct") {
+        c.setLineDash([4, 5]);
+        ellipse(c, x, y, radius, radius * GROUND_Y, "rgba(232,243,217,.12)", "#638b73", 1.8);
+        c.setLineDash([]);
+        line(c, x - 4, y, x + 4, y, "#638b73", 1.5);
+        line(c, x, y - 3, x, y + 3, "#638b73", 1.5);
+      } else {
+        ellipse(c, x, y, radius, radius * GROUND_Y, p.active ? "rgba(255,249,212,.16)" : "rgba(255,251,230,.07)", p.active ? "#f9edc0" : "rgba(116,131,104,.55)", 1.6);
+        if (p.active) {
+          c.beginPath();
+          c.ellipse(x, y, radius + 3, radius * GROUND_Y + 3, 0, t * 3, t * 3 + 1.3);
+          c.strokeStyle = "#c5a774";
+          c.lineWidth = 2.5;
+          c.stroke();
+        }
+        if (p.touch && p.active) {
+          line(c, x, y - radius * GROUND_Y - 3, x, y - radius * GROUND_Y - 18, "rgba(115,134,107,.5)", 1.1);
+          ellipse(c, x, y - radius * GROUND_Y - 22, 3, 3, "#8aa27e", "#f9f0d4", 1.5);
+        }
+      }
+      c.restore();
+    }
+  };
+
+  // src/audio.js
+  var clamp2 = (value, fallback = 0) => Number.isFinite(value) ? Math.max(0, Math.min(1, value)) : fallback;
+  var note = (midi) => 440 * 2 ** ((midi - 69) / 12);
+  var BEAT = 60 / 72;
+  var HALF_BEAT = BEAT / 2;
+  var MOTIF = [[0, 74], [3, 78], [5, 76], [8, 69], [12, 74]];
+  var CHORDS = [[50, 57, 64, 66], [43, 50, 57, 59], [47, 54, 57, 62], [45, 52, 59, 62]];
+  var COOLDOWNS = { brush: 0.16, birth: 0.65, assign: 0.18, blocked: 0.7, upgrade: 0.6, landmark: 4, complete: 5 };
+  var DustAudio = class {
+    constructor(context = null) {
+      this.context = context?.context || context;
+      this.ownsContext = !this.context;
+      this.mix = { music: 0.6, sfx: 0.8, ambience: 0.55, muted: false, reducedMotion: false };
+      this.progress = 0;
+      this.ready = false;
+      this.paused = false;
+      this.destroyed = false;
+      this.lastEvents = /* @__PURE__ */ new Map();
+      this.voices = [];
+      this.maxVoices = 48;
+      this.peakVoices = 0;
+      this.birthIndex = 0;
+      this.tick = 0;
+      this.brushing = false;
+      this.lastAudioProgress = -1;
+      this.lastBrushState = null;
+      this.continuous = [];
+      this.prepared = false;
+    }
+    /** Optional welcome-idle preparation. Creates no sources and plays no sound. */
+    prepare() {
+      if (this.destroyed) return false;
+      if (this.context) return true;
+      const Context = globalThis.AudioContext || globalThis.webkitAudioContext;
+      if (!Context) return false;
+      this.context = new Context({ latencyHint: "interactive" });
+      this.prepared = true;
+      if (this.context.state === "running") this.context.suspend().catch(() => {
+      });
+      return true;
+    }
+    /** Call from a click/tap/keyboard gesture. Returns false if audio is unavailable. */
+    async start() {
+      if (this.destroyed) return false;
+      if (!this.context) {
+        const Context = globalThis.AudioContext || globalThis.webkitAudioContext;
+        if (!Context) return false;
+        this.context = new Context({ latencyHint: "interactive" });
+      }
+      if (!this.ready) this._buildGraph();
+      await this.resume();
+      return true;
+    }
+    _buildGraph() {
+      const ctx = this.context;
+      this.offline = typeof ctx.startRendering === "function";
+      this.master = ctx.createGain();
+      this.master.gain.value = this.mix.muted ? 0 : 0.58;
+      this.limiter = ctx.createDynamicsCompressor();
+      this.limiter.threshold.value = -12;
+      this.limiter.knee.value = 12;
+      this.limiter.ratio.value = 12;
+      this.limiter.attack.value = 4e-3;
+      this.limiter.release.value = 0.18;
+      this.master.connect(this.limiter);
+      this.limiter.connect(ctx.destination);
+      if (typeof ctx.createMediaStreamDestination === "function") {
+        this.capture = ctx.createMediaStreamDestination();
+        this.limiter.connect(this.capture);
+      }
+      this.musicBus = ctx.createGain();
+      this.sfxBus = ctx.createGain();
+      this.ambienceBus = ctx.createGain();
+      this.musicDuck = ctx.createGain();
+      this.musicBus.gain.value = this.mix.music;
+      this.sfxBus.gain.value = this.mix.sfx;
+      this.ambienceBus.gain.value = this.mix.ambience;
+      this.musicBus.connect(this.musicDuck);
+      this.musicDuck.connect(this.master);
+      this.sfxBus.connect(this.master);
+      this.ambienceBus.connect(this.master);
+      const reverb = ctx.createConvolver();
+      reverb.buffer = this._impulse(1.45);
+      this.reverbSend = ctx.createGain();
+      this.reverbSend.gain.value = 0.16;
+      this.reverbSend.connect(reverb);
+      const reverbLowpass = ctx.createBiquadFilter();
+      reverbLowpass.type = "lowpass";
+      reverbLowpass.frequency.value = 3400;
+      reverb.connect(reverbLowpass);
+      reverbLowpass.connect(this.master);
+      this.musicDuck.connect(this.reverbSend);
+      this.sfxBus.connect(this.reverbSend);
+      this.noise = this._noiseBuffer(4);
+      this.wind = this._texture("lowpass", 680, 0.016, this.ambienceBus);
+      this.water = this._texture("bandpass", 1500, 0, this.ambienceBus, 0.45);
+      this.brush = this._texture("bandpass", 2100, 0, this.sfxBus, 0.55);
+      this.ready = true;
+      this._setProgressAt(this.progress, ctx.currentTime);
+    }
+    _noiseBuffer(seconds) {
+      const ctx = this.context;
+      const buffer = ctx.createBuffer(1, Math.ceil(ctx.sampleRate * seconds), ctx.sampleRate);
+      const out = buffer.getChannelData(0);
+      let seed = 23831, smooth = 0;
+      for (let i = 0; i < out.length; i++) {
+        seed = 1664525 * seed + 1013904223 >>> 0;
+        const white = seed / 2147483648 - 1;
+        smooth = 0.96 * smooth + 0.04 * white;
+        out[i] = 0.58 * white + 1.8 * smooth;
+      }
+      const fade = Math.min(1600, Math.floor(out.length / 8));
+      for (let i = 0; i < fade; i++) {
+        const t = i / fade;
+        out[out.length - fade + i] = out[out.length - fade + i] * (1 - t) + out[i] * t;
+      }
+      return buffer;
+    }
+    _impulse(seconds) {
+      const ctx = this.context;
+      const buffer = ctx.createBuffer(2, Math.ceil(ctx.sampleRate * seconds), ctx.sampleRate);
+      let seed = 5831;
+      for (let channel = 0; channel < 2; channel++) {
+        const data = buffer.getChannelData(channel);
+        let smooth = 0;
+        for (let i = 0; i < data.length; i++) {
+          seed = 1664525 * seed + 1013904223 >>> 0;
+          smooth = 0.55 * smooth + 0.45 * (seed / 2147483648 - 1);
+          data[i] = smooth * Math.exp(-i / (ctx.sampleRate * 0.29)) * Math.min(1, i / 90);
+        }
+      }
+      return buffer;
+    }
+    _texture(type, frequency, volume, destination, q = 0.7) {
+      const ctx = this.context;
+      const source = ctx.createBufferSource();
+      source.buffer = this.noise;
+      source.loop = true;
+      const filter = ctx.createBiquadFilter();
+      filter.type = type;
+      filter.frequency.value = frequency;
+      filter.Q.value = q;
+      const gain = ctx.createGain();
+      gain.gain.value = volume;
+      source.connect(filter);
+      filter.connect(gain);
+      gain.connect(destination);
+      source.start();
+      this.continuous.push(source);
+      return { source, filter, gain };
+    }
+    _ramp(param, value, time, duration = 0.06) {
+      if (typeof param.cancelAndHoldAtTime === "function") param.cancelAndHoldAtTime(time);
+      else {
+        param.cancelScheduledValues(time);
+        param.setValueAtTime(param.value, time);
+      }
+      param.linearRampToValueAtTime(value, time + duration);
+    }
+    setMix(values = {}) {
+      for (const key of ["music", "sfx", "ambience"]) {
+        if (key in values) this.mix[key] = clamp2(values[key], this.mix[key]);
+      }
+      for (const key of ["muted", "reducedMotion"]) if (key in values) this.mix[key] = Boolean(values[key]);
+      if (!this.ready || this.destroyed) return;
+      const now = this.context.currentTime;
+      this._ramp(this.musicBus.gain, this.mix.music, now);
+      this._ramp(this.sfxBus.gain, this.mix.sfx, now);
+      this._ramp(this.ambienceBus.gain, this.mix.ambience, now);
+      this._ramp(this.master.gain, this.mix.muted || this.paused ? 0 : 0.58, now);
+    }
+    setProgress(progress) {
+      this.progress = clamp2(progress);
+      if (this.ready && !this.destroyed && (Math.abs(this.progress - this.lastAudioProgress) >= 2e-3 || this.progress === 1 && this.lastAudioProgress !== 1)) {
+        this._setProgressAt(this.progress, this.context.currentTime);
+      }
+    }
+    _setProgressAt(progress, time) {
+      this.lastAudioProgress = progress;
+      this.wind.gain.gain.setTargetAtTime(0.016 - progress * 5e-3, time, 0.6);
+      this.water.gain.gain.setTargetAtTime(Math.max(0, (progress - 0.78) / 0.22) * 0.046, time, 1.1);
+      this.water.filter.frequency.setTargetAtTime(1250 + progress * 500, time, 0.8);
+    }
+    _claimVoice(time, duration) {
+      this.voices = this.voices.filter((voice) => voice.end > this.context.currentTime);
+      const concurrent = this.voices.reduce((count, voice) => count + Number(voice.start <= time && voice.end > time), 0);
+      if (concurrent >= this.maxVoices) return false;
+      this.voices.push({ start: time, end: time + duration + 0.03 });
+      this.peakVoices = Math.max(this.peakVoices, concurrent + 1);
+      return true;
+    }
+    _tone(midi, time, duration, volume, destination = this.sfxBus, kind = "pluck", pan = 0) {
+      if (!this._claimVoice(time, duration)) return;
+      const ctx = this.context;
+      const frequency = note(midi);
+      const oscillator = ctx.createOscillator();
+      const partial = ctx.createOscillator();
+      const partialGain = ctx.createGain();
+      const gain = ctx.createGain();
+      gain.gain.value = 1e-4;
+      const filter = ctx.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.value = kind === "pad" ? 1050 : kind === "wood" ? 1900 : 3800;
+      oscillator.type = kind === "wood" ? "triangle" : "sine";
+      oscillator.frequency.value = frequency;
+      partial.type = "sine";
+      partial.frequency.value = frequency * (kind === "pad" ? 1.002 : kind === "wood" ? 2 : 3);
+      partialGain.gain.value = kind === "pad" ? 0.22 : kind === "wood" ? 0.1 : 0.085;
+      oscillator.connect(filter);
+      partial.connect(partialGain);
+      partialGain.connect(filter);
+      filter.connect(gain);
+      const panner = typeof ctx.createStereoPanner === "function" ? ctx.createStereoPanner() : null;
+      if (panner) {
+        panner.pan.value = this.mix.reducedMotion ? 0 : Math.max(-0.65, Math.min(0.65, pan));
+        gain.connect(panner);
+        panner.connect(destination);
+      } else gain.connect(destination);
+      const attack = kind === "pad" ? Math.min(0.7, duration * 0.2) : kind === "wood" ? 7e-3 : 0.016;
+      gain.gain.setValueAtTime(1e-4, time);
+      gain.gain.exponentialRampToValueAtTime(Math.max(2e-4, volume), time + attack);
+      if (kind === "pad") {
+        gain.gain.exponentialRampToValueAtTime(Math.max(2e-4, volume * 0.8), time + duration * 0.65);
+      }
+      gain.gain.exponentialRampToValueAtTime(1e-4, time + duration);
+      oscillator.start(time);
+      partial.start(time);
+      oscillator.stop(time + duration + 0.02);
+      partial.stop(time + duration + 0.02);
+      oscillator.onended = () => {
+        oscillator.disconnect();
+        partial.disconnect();
+        partialGain.disconnect();
+        filter.disconnect();
+        gain.disconnect();
+        panner?.disconnect();
+      };
+    }
+    _noiseHit(time, duration, volume, frequency = 2200) {
+      if (!this._claimVoice(time, duration)) return;
+      const ctx = this.context;
+      const source = ctx.createBufferSource();
+      source.buffer = this.noise;
+      const filter = ctx.createBiquadFilter();
+      filter.type = "bandpass";
+      filter.frequency.value = frequency;
+      filter.Q.value = 0.5;
+      const gain = ctx.createGain();
+      gain.gain.value = 1e-4;
+      gain.gain.setValueAtTime(1e-4, time);
+      gain.gain.exponentialRampToValueAtTime(Math.max(2e-4, volume), time + 0.014);
+      gain.gain.exponentialRampToValueAtTime(1e-4, time + duration);
+      source.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.sfxBus);
+      source.start(time, this.birthIndex * 0.137 % 2);
+      source.stop(time + duration + 0.02);
+      source.onended = () => {
+        source.disconnect();
+        filter.disconnect();
+        gain.disconnect();
+      };
+    }
+    _musicTick(tick2, time, progress = this.progress) {
+      const position = tick2 % 32;
+      const phrase = Math.floor(tick2 / 32);
+      const chord = CHORDS[phrase % CHORDS.length];
+      const motifNote = MOTIF.find(([step]) => step === position);
+      if (motifNote) this._tone(motifNote[1], time, 1.6, 0.095, this.musicBus, "pluck", -0.15);
+      if (position === 0) {
+        this._tone(chord[0] - 12, time, 3.8, 0.055, this.musicBus, "pad");
+        if (progress > 0.2) chord.slice(1).forEach((midi, index) => this._tone(midi, time + index * 0.07, 5.7, 0.019 + progress * 0.01, this.musicBus, "pad", (index - 1) * 0.22));
+      }
+      if (position === 16 && progress > 0.35) this._tone(chord[0], time, 2.8, 0.045, this.musicBus, "pad", 0.1);
+      if (progress > 0.48 && [18, 22, 26].includes(position)) {
+        this._tone(chord[1 + [18, 22, 26].indexOf(position)] + 12, time, 1.3, 0.04, this.musicBus, "pluck", 0.25);
+      }
+      if (progress > 0.84 && position === 28) this._tone(86, time, 2.2, 0.025, this.musicBus, "pluck", 0.3);
+    }
+    _schedule() {
+      if (!this.ready || this.paused || this.destroyed) return;
+      const now = this.context.currentTime;
+      if (this.nextTick < now - HALF_BEAT) this.nextTick = now + 0.04;
+      while (this.nextTick < now + 0.22) {
+        this._musicTick(this.tick++, this.nextTick);
+        this.nextTick += HALF_BEAT;
+      }
+    }
+    event(name, intensity = 1) {
+      if (!this.ready || this.paused || this.destroyed || !(name in COOLDOWNS)) return false;
+      const now = this.context.currentTime;
+      if (now - (this.lastEvents.get(name) ?? -Infinity) < COOLDOWNS[name]) return false;
+      this.lastEvents.set(name, now);
+      this._eventAt(name, now + 5e-3, clamp2(intensity, 1));
+      return true;
+    }
+    _eventAt(name, time, intensity = 1) {
+      const level = 0.5 + 0.5 * intensity;
+      if (name === "brush") this._noiseHit(time, 0.12, 0.025 * level, 1900);
+      if (name === "birth") {
+        const pitch = [74, 76, 78, 81, 78][this.birthIndex++ % 5];
+        this._tone(pitch - 12, time, 0.23, 0.095 * level, this.sfxBus, "wood", -0.12);
+        this._tone(pitch, time + 0.1, 0.85, 0.1 * level, this.sfxBus, "pluck", 0.12);
+        this._noiseHit(time, 0.15, 0.017 * level, 3200);
+      }
+      if (name === "assign") {
+        this._tone(62, time, 0.14, 0.15 * level, this.sfxBus, "wood");
+        this._tone(69, time + 0.09, 0.28, 0.085 * level, this.sfxBus, "wood");
+      }
+      if (name === "blocked") {
+        this._tone(57, time, 0.13, 0.1 * level, this.sfxBus, "wood");
+        this._tone(54, time + 0.13, 0.18, 0.075 * level, this.sfxBus, "wood");
+      }
+      if (name === "upgrade") {
+        [74, 78, 81, 86].forEach((pitch, index) => this._tone(pitch, time + index * 0.15, 1.2, 0.105 * level, this.sfxBus, "pluck", (index - 1.5) * 0.09));
+        this._tone(50, time, 1.9, 0.08 * level, this.sfxBus, "pad");
+      }
+      if (name === "landmark") {
+        [62, 69, 74, 78].forEach((pitch, index) => this._tone(pitch, time + index * 0.16, 2.6, 0.073 * level, this.sfxBus, index < 2 ? "pad" : "pluck", (index - 1.5) * 0.12));
+        this._noiseHit(time + 0.1, 1.7, 0.06 * level, 1300);
+      }
+      if (name === "complete") {
+        this.musicDuck.gain.setTargetAtTime(0.38, time, 0.15);
+        this.musicDuck.gain.setTargetAtTime(1, time + 4.2, 1);
+        [50, 57, 62, 66].forEach((pitch, index) => this._tone(pitch, time + index * 0.1, 4.7, 0.055 * level, this.sfxBus, "pad", (index - 1.5) * 0.15));
+        [[0, 74], [0.55, 78], [0.95, 76], [1.65, 69], [2.5, 74], [2.54, 86]].forEach(([offset, pitch]) => this._tone(pitch, time + offset, 2.2, (pitch > 80 ? 0.045 : 0.135) * level, this.sfxBus, "pluck", 0.08));
+        this._noiseHit(time + 0.25, 2.4, 0.07 * level, 1100);
+      }
+    }
+    setBrushing(active, intensity = 1) {
+      this.brushing = Boolean(active);
+      if (!this.ready || this.destroyed) return;
+      this._setBrushingAt(active && !this.paused, intensity, this.context.currentTime);
+    }
+    _setBrushingAt(active, intensity, time) {
+      const amount = clamp2(intensity, 1);
+      if (this.lastBrushState?.active === Boolean(active) && (!active || Math.abs(this.lastBrushState.amount - amount) < 0.015)) return;
+      this.lastBrushState = { active: Boolean(active), amount };
+      this.brush.gain.gain.setTargetAtTime(active ? 0.028 + 0.045 * amount : 0, time, active ? 0.055 : 0.045);
+      this.brush.filter.frequency.setTargetAtTime(1500 + amount * 1400, time, 0.1);
+    }
+    pause() {
+      this.paused = true;
+      clearInterval(this.timer);
+      this.timer = null;
+      if (!this.ready || this.destroyed) return;
+      this._setBrushingAt(false, 0, this.context.currentTime);
+      this._ramp(this.master.gain, 0, this.context.currentTime, 0.07);
+      clearTimeout(this.suspendTimer);
+      if (!this.offline) this.suspendTimer = setTimeout(() => {
+        if (this.paused && !this.destroyed && this.context.state === "running") this.context.suspend().catch(() => {
+        });
+      }, 100);
+    }
+    async resume() {
+      if (!this.ready || this.destroyed) return false;
+      clearTimeout(this.suspendTimer);
+      this.paused = false;
+      if (!this.offline) await this.context.resume();
+      this._ramp(this.master.gain, this.mix.muted ? 0 : 0.58, this.context.currentTime, 0.1);
+      if (!this.offline && !this.timer) {
+        this.nextTick = this.context.currentTime + 0.1;
+        this._schedule();
+        this.timer = setInterval(() => this._schedule(), 100);
+      }
+      return true;
+    }
+    getCaptureStream() {
+      return this.capture?.stream || null;
+    }
+    getDiagnostics() {
+      return { ready: this.ready, prepared: this.prepared, paused: this.paused, contextState: this.context?.state || "uninitialized", maxVoices: this.maxVoices, peakVoices: this.peakVoices, continuousSources: this.continuous.length, progress: this.progress, mix: { ...this.mix } };
+    }
+    /** Schedule a reproducible 36-second audition on an injected OfflineAudioContext. */
+    scheduleAudition(duration = 36) {
+      if (!this.ready || !this.offline) throw new Error("Call start() with an OfflineAudioContext before scheduleAudition().");
+      const segments = [[0, 0], [9, 0.36], [18, 0.72], [27, 1]];
+      segments.forEach(([time, progress]) => {
+        if (time < duration) this._setProgressAt(progress, time);
+      });
+      for (let tick2 = 0, time = 0.2; time < duration - 3; tick2++, time += HALF_BEAT) {
+        const progress = segments.filter(([at]) => at <= time).at(-1)[1];
+        this._musicTick(tick2, time, progress);
+      }
+      const cues = [[1, "brush"], [2.2, "birth"], [4.5, "birth"], [7, "assign"], [10, "upgrade"], [13, "blocked"], [16, "birth"], [24, "landmark"], [28, "complete"]];
+      cues.forEach(([time, name]) => {
+        if (time < duration - 4) this._eventAt(name, time);
+      });
+      [[0.8, true, 0.45], [3.3, false, 0], [14.3, true, 0.8], [16.8, false, 0]].forEach(([time, active, intensity]) => {
+        if (time < duration) this._setBrushingAt(active, intensity, time);
+      });
+      this.progress = segments.filter(([time]) => time < duration).at(-1)?.[1] || 0;
+      this.master.gain.setTargetAtTime(0, Math.max(0, duration - 1.3), 0.3);
+      return { duration, segments, cues };
+    }
+    destroy() {
+      if (this.destroyed) return;
+      this.destroyed = true;
+      clearInterval(this.timer);
+      clearTimeout(this.suspendTimer);
+      if (this.ready) {
+        this.master.gain.value = 0;
+        for (const source of this.continuous) {
+          try {
+            source.stop();
+          } catch {
+          }
+          source.disconnect();
+        }
+        this.limiter.disconnect();
+        this.master.disconnect();
+        this.capture?.stream.getTracks().forEach((track) => track.stop());
+      }
+      if (this.ownsContext && this.context && this.context.state !== "closed") this.context.close().catch(() => {
+      });
+      this.ready = false;
+    }
+  };
+
+  // src/keyboard.js
+  var ARROWS = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] };
+  var bounded = (value, min, max) => Math.max(min, Math.min(max, value));
+  function createKeyboardControls({ canvas: canvas2, getState, renderer: renderer2, onMode = () => {
+  }, onAssign = () => {
+  }, onPan = () => {
+  }, onNotice = () => {
+  }, onChange = () => {
+  } }) {
+    const held = /* @__PURE__ */ new Set();
+    let enabled = false;
+    let brushing = false;
+    let cursor = { x: 270, y: 505 };
+    let lastHintId = null;
+    function focused() {
+      return canvas2?.ownerDocument?.activeElement === canvas2;
+    }
+    function changed() {
+      onChange({ ...cursor, brushing, enabled });
+    }
+    function applyCursor() {
+      const state2 = getState();
+      state2.pointer = { ...state2.pointer, ...cursor, inside: true, touch: false, keyboard: true, active: brushing && state2.mode === "brush", preview: state2.mode === "direct" };
+    }
+    function activate() {
+      if (!enabled) {
+        const state2 = getState();
+        const point = state2.pointer || state2.hintTarget || cursor;
+        cursor = { x: bounded(Number.isFinite(point.x) ? point.x : 270, 113, 887), y: bounded(Number.isFinite(point.y) ? point.y : 505, 158, 657) };
+        enabled = true;
+      }
+      applyCursor();
+    }
+    function keepVisible() {
+      if (typeof renderer2?.worldToScreen !== "function") return;
+      const width = renderer2.width || canvas2.clientWidth;
+      const height = renderer2.height || canvas2.clientHeight;
+      if (!width || !height) return;
+      const point = renderer2.worldToScreen(cursor.x, cursor.y);
+      const viewport = renderer2.viewport || { x: 0, y: renderer2.insets?.top || 25, width, height: height - (renderer2.insets?.top || 25) - (renderer2.insets?.bottom || 25) };
+      const top = viewport.y + 18;
+      const bottom = Math.max(top + 1, viewport.y + viewport.height - 18);
+      const x = bounded(point.x, viewport.x + 18, Math.max(viewport.x + 19, viewport.x + viewport.width - 18));
+      const y = bounded(point.y, top, bottom);
+      const scale = Math.max(0.1, Number(renderer2.scale) || 1);
+      if (Math.abs(point.x - x) > 0.5 || Math.abs(point.y - y) > 0.5) onPan((point.x - x) / scale, (point.y - y) / (scale * 0.72));
+    }
+    function move(dx, dy, pixels) {
+      const scale = Math.max(0.1, Number(renderer2?.scale) || 1);
+      cursor.x = bounded(cursor.x + dx * pixels / scale, 113, 887);
+      cursor.y = bounded(cursor.y + dy * pixels / (scale * 0.72), 158, 657);
+      applyCursor();
+      keepVisible();
+    }
+    function aimAtDust() {
+      activate();
+      const state2 = getState();
+      const remaining = state2.dust.filter((d) => d.amount > 1e-5);
+      if (!remaining.length) {
+        onNotice("Every dust patch is clear.");
+        return;
+      }
+      const radius = state2.brushRadius || 44;
+      const near = (a, b) => Math.hypot(a.x - cursor.x, a.y - cursor.y) - Math.hypot(b.x - cursor.x, b.y - cursor.y) || a.id - b.id;
+      const outside = remaining.filter((d) => d.id !== lastHintId && Math.hypot(d.x - cursor.x, d.y - cursor.y) > radius * 1.05);
+      const target = (outside.length ? outside : remaining.filter((d) => d.id !== lastHintId).length ? remaining.filter((d) => d.id !== lastHintId) : remaining).sort(near)[0];
+      cursor = { x: target.x, y: target.y };
+      lastHintId = target.id;
+      applyCursor();
+      keepVisible();
+      const horizontal = cursor.x < 390 ? "left" : cursor.x > 610 ? "right" : "middle";
+      const vertical = cursor.y < 320 ? "upper" : cursor.y > 480 ? "lower" : "central";
+      onNotice(`${remaining.length} dust patches remain. Aiming at the ${vertical} ${horizontal} courtyard. ${state2.mode === "direct" ? "Press Enter to send the crew." : brushing ? "Your brush is sweeping here. Space stops it." : "Press Space to sweep here."}`);
+      changed();
+    }
+    function handleKeyDown(event2) {
+      if (!focused() || event2.altKey || event2.ctrlKey || event2.metaKey) return false;
+      const key = event2.key;
+      if (ARROWS[key]) {
+        const [dx, dy] = ARROWS[key];
+        if (event2.shiftKey) {
+          held.delete(key);
+          onPan(dx * 42, dy * 42);
+          return true;
+        }
+        activate();
+        if (!held.has(key)) {
+          held.add(key);
+          move(dx, dy, 7);
+          changed();
+        }
+        return true;
+      }
+      if (key === " " || key === "Spacebar" || event2.code === "Space") {
+        if (event2.repeat) return true;
+        if (getState().completed || getState().ritual) {
+          onNotice(getState().completed ? "The courtyard is restored. Enjoy your little place." : "Your crew is singing. Brushing can wait a moment.");
+          return true;
+        }
+        const wasBrushing = brushing;
+        if (getState().mode !== "brush" || !wasBrushing) onMode("brush");
+        activate();
+        if (!wasBrushing && !walkable(cursor.x, cursor.y)) {
+          brushing = false;
+          applyCursor();
+          onNotice("The fountain blocks this spot. Press N to find remaining dust.");
+          return true;
+        }
+        brushing = !wasBrushing;
+        applyCursor();
+        onNotice(brushing ? "Sweeping. Move with the arrow keys, or press N for another patch. Space stops your brush." : "Brush resting. Space starts another sweep.");
+        changed();
+        return true;
+      }
+      if (key.toLowerCase() === "n") {
+        if (!event2.repeat) aimAtDust();
+        return true;
+      }
+      if (key === "Enter" && getState().mode === "direct") {
+        if (!event2.repeat) {
+          activate();
+          onAssign(cursor.x, cursor.y);
+          changed();
+        }
+        return true;
+      }
+      return false;
+    }
+    function handleKeyUp(event2) {
+      if (ARROWS[event2.key]) {
+        const used = held.delete(event2.key);
+        return used || focused();
+      }
+      return false;
+    }
+    function stop() {
+      held.clear();
+      brushing = false;
+      const state2 = getState();
+      if (enabled || state2.pointer?.keyboard) {
+        state2.pointer.active = false;
+        state2.pointer.preview = false;
+        state2.pointer.inside = false;
+        state2.pointer.keyboard = false;
+      }
+      enabled = false;
+    }
+    function update(dt) {
+      if (!enabled) return;
+      if (!focused()) {
+        stop();
+        return;
+      }
+      const state2 = getState();
+      if (state2.completed || state2.ritual) brushing = false;
+      let dx = Number(held.has("ArrowRight")) - Number(held.has("ArrowLeft"));
+      let dy = Number(held.has("ArrowDown")) - Number(held.has("ArrowUp"));
+      const length = Math.hypot(dx, dy);
+      if (length) {
+        dx /= length;
+        dy /= length;
+        move(dx, dy, 135 * bounded(Number.isFinite(dt) ? dt : 0, 0, 0.05));
+      } else applyCursor();
+    }
+    return { handleKeyDown, handleKeyUp, update, stop };
+  }
+
+  // src/settings.js
+  function normaliseSettings(value, prefersReducedMotion = false) {
+    const settings2 = { music: 0.48, sfx: 0.65, ambience: 0.38, muted: false, reducedMotion: !!prefersReducedMotion, tapSweep: false, lowQuality: false };
+    if (!value || typeof value !== "object" || Array.isArray(value)) return settings2;
+    for (const key of ["music", "sfx", "ambience"]) if (typeof value[key] === "number" && Number.isFinite(value[key]) && value[key] >= 0 && value[key] <= 1) settings2[key] = value[key];
+    for (const key of ["muted", "reducedMotion", "tapSweep", "lowQuality"]) if (typeof value[key] === "boolean") settings2[key] = value[key];
+    return settings2;
+  }
+
+  // src/main.js
+  var $ = (id) => document.getElementById(id);
+  var browserStorage;
+  try {
+    browserStorage = window.localStorage;
+  } catch {
+    browserStorage = { getItem() {
+      throw Error("Storage unavailable");
+    }, setItem() {
+      throw Error("Storage unavailable");
+    }, removeItem() {
+      throw Error("Storage unavailable");
+    } };
+  }
+  var store = new SaveStore(browserStorage);
+  var state = store.load() || createState();
+  var canvas = $("world");
+  var renderer = new Renderer(canvas);
+  var audio = new DustAudio();
+  var started = false;
+  var paused = true;
+  var lastTime = performance.now();
+  var lastSave = 0;
+  var lastUI = 0;
+  var autoSweep = 0;
+  var birth = null;
+  var birthUntil = 0;
+  var completionShown = state.completed;
+  var sceneDirty = true;
+  var zoom = 1;
+  var camera = { x: 500, y: 390 };
+  var lastPointer = null;
+  var pointerId = null;
+  var panning = false;
+  var pointerMoved = false;
+  var viewportMode = null;
+  var frames = [];
+  var htmlValues = /* @__PURE__ */ new WeakMap();
+  function text(el, value) {
+    value = String(value);
+    if (el.textContent !== value) el.textContent = value;
+  }
+  function html(el, value) {
+    if (htmlValues.get(el) !== value) {
+      el.innerHTML = value;
+      htmlValues.set(el, value);
+    }
+  }
+  function attr(el, key, value) {
+    value = String(value);
+    if (el.getAttribute(key) !== value) el.setAttribute(key, value);
+  }
+  function panCamera(dx, dy) {
+    camera.x = Math.max(180, Math.min(820, camera.x + dx));
+    camera.y = Math.max(200, Math.min(610, camera.y + dy));
+    renderer.setCamera(zoom, camera.x, camera.y);
+  }
+  var keyboard = createKeyboardControls({ canvas, getState: () => state, renderer, onMode: setMode, onAssign: (x, y) => {
+    assignCrew(state, x, y);
+    save();
+    updateUI();
+  }, onPan: panCamera, onNotice: (message) => notify(state, message), onChange: updateUI });
+  var settings = normaliseSettings(null, matchMedia("(prefers-reduced-motion: reduce)").matches);
+  try {
+    settings = normaliseSettings(JSON.parse(localStorage.getItem("dustlings.settings") || "null"), settings.reducedMotion);
+  } catch {
+  }
+  state.reducedMotion = settings.reducedMotion;
+  audio.setMix(settings);
+  function saveSettings() {
+    try {
+      localStorage.setItem("dustlings.settings", JSON.stringify(settings));
+    } catch {
+    }
+    audio.setMix(settings);
+  }
+  function resize() {
+    if (started) stopInput();
+    const r = canvas.getBoundingClientRect();
+    renderer.resize(r.width, r.height, Math.min(settings.lowQuality ? 1 : 2, devicePixelRatio || 1));
+    if (viewportMode !== renderer.viewportMode) {
+      viewportMode = renderer.viewportMode;
+      zoom = renderer.recommendedZoom;
+      camera = { x: 500, y: 390 };
+    }
+    renderer.setCamera(zoom, camera.x, camera.y);
+    if ($("zoom-out")) {
+      $("zoom-out").disabled = zoom <= 1;
+      $("zoom-in").disabled = zoom >= 2;
+    }
+    sceneDirty = true;
+  }
+  new ResizeObserver(resize).observe(canvas);
+  resize();
+  for (const u of UPGRADES) {
+    const b = document.createElement("button");
+    b.className = "upgrade-card";
+    b.id = `upgrade-${u.id}`;
+    b.innerHTML = `<span class="upgrade-icon"><svg><use href="#i-${u.icon}"/></svg></span><span><strong>${u.name}</strong><span class="upgrade-description">${u.detail}</span><span class="branch-label"></span></span><span class="upgrade-cost"><span>${u.cost}</span><svg><use href="#i-dust"/></svg></span>`;
+    b.title = u.effect;
+    b.addEventListener("click", () => {
+      if (buyUpgrade(state, u.id)) {
+        save();
+        updateUI();
+      }
+    });
+    $("upgrades").append(b);
+  }
+  function withSaveLock(action) {
+    return navigator.locks?.request ? navigator.locks.request(SAVE_KEY, action) : Promise.resolve().then(action);
+  }
+  function showSaveConflict() {
+    if (!started) return;
+    stopInput();
+    paused = true;
+    audio.pause();
+    if ($("completion").open) $("completion").close();
+    if (!$("settings").open) $("settings").showModal();
+    updateSaveStatus();
+  }
+  async function save() {
+    let success = false;
+    try {
+      if (started) success = await withSaveLock(() => store.save(state));
+    } catch {
+      store.status = "unavailable";
+    }
+    updateSaveStatus();
+    if (store.status === "conflict") showSaveConflict();
+    return success;
+  }
+  function checkpoint() {
+    if (started) {
+      store.checkpoint(state);
+      updateSaveStatus();
+    }
+  }
+  function updateSaveStatus() {
+    $("save-status").textContent = store.status === "conflict" ? "Newer progress in another window" : store.status === "unavailable" ? "Save unavailable \u2014 export a backup" : store.status === "damaged" ? "Save needs recovery" : "Saved on this device";
+    $("settings-save-note").textContent = store.status === "conflict" ? "Your progress is still in this window. Export it before loading the saved courtyard if you want to keep both." : store.status === "unavailable" ? "Browser storage is unavailable. Use Export save to keep your progress." : "Automatically saved in this browser. A backup keeps the previous checkpoint.";
+    $("save-conflict").hidden = store.status !== "conflict";
+  }
+  function updateUI() {
+    sceneDirty = true;
+    const percent = Math.min(100, Math.floor(state.cleaned / state.totalDust * 100));
+    text($("crew-count"), state.creatures.length);
+    text($("mote-count"), state.motes);
+    text($("scene-caption-text"), state.completed ? "A little place, alive again" : state.restoration >= 1 ? "The fountain is singing" : "A place waiting to bloom");
+    text($("progress-number"), `${percent}%`);
+    if ($("progress-fill").style.width !== `${percent}%`) $("progress-fill").style.width = `${percent}%`;
+    attr(document.querySelector(".progress-track"), "aria-valuenow", percent);
+    let title = "Let\u2019s wake<br>the courtyard.", copy = "Under all this dust, something lovely is waiting. Every bit you brush away can become a little helper.";
+    if (state.completed) {
+      title = "A little place,<br>alive again.";
+      copy = "The courtyard is yours. Stay with the fountain, watch your little crew, and enjoy what you made together.";
+    } else if (state.ritual) {
+      title = "Listen.<br>They\u2019re singing.";
+      copy = "Your helpers are gathering around the fountain. Even the smallest voice has a part to play.";
+    } else if (state.restoration >= 1) {
+      title = "The last<br>little things.";
+      copy = "Water is flowing again. Your helpers will find the remaining specks. There\u2019s no need to chase every grain.";
+    } else if (state.upgrades.bloom) {
+      title = "A song for<br>the fountain.";
+      copy = percent >= 75 ? "There\u2019s room for a circle now. Ring the bell and watch your little crew wake the wishing fountain." : "The crew has learned its song. Clear three quarters of the courtyard to make room for the fountain chorus.";
+    } else if (state.creatures.length) {
+      title = "From dust,<br>a little life.";
+      copy = "Your Dustlings are already helping. Grow your crew with each sweep, or point them toward a patch that needs care.";
+    }
+    html($("chapter-title"), title);
+    text($("chapter-copy"), copy);
+    let available = false;
+    for (const u of UPGRADES) {
+      const el = $(`upgrade-${u.id}`), owned = state.upgrades[u.id], locked = u.id === "bloom" && (!state.upgrades.brush || !state.upgrades.teamwork), afford = state.motes >= u.cost && !locked && !owned;
+      const disabled = owned || locked || state.motes < u.cost;
+      if (el.disabled !== disabled) el.disabled = disabled;
+      el.classList.toggle("owned", owned);
+      el.classList.toggle("affordable", afford);
+      html(el.querySelector(".upgrade-cost"), owned ? '<svg><use href="#i-check"/></svg>' : `<span>${u.cost}</span><svg><use href="#i-dust"/></svg>`);
+      text(el.querySelector(".branch-label"), owned ? u.effect : locked ? "After A softer sweep + Better together" : afford ? "Ready to discover" : `${Math.max(0, u.cost - state.motes)} more motes to discover`);
+      attr(el, "aria-label", `${u.name}. ${u.detail} ${owned ? "Discovered" : locked ? "Requires both earlier discoveries" : `${u.cost} motes. ${state.motes} available.`}`);
+      available ||= afford;
+    }
+    $("upgrade-dot").hidden = !available;
+    const restoreReady = state.upgrades.bloom && percent >= 75 && !state.ritual && state.restoration < 1;
+    $("restore-button").disabled = !restoreReady;
+    text($("restore-button"), state.restoration >= 1 ? "The fountain is awake \u2713" : state.ritual ? `A little song\u2026 ${Math.round(state.restoration * 100)}%` : restoreReady ? "Ring the fountain bell \u266B" : !state.upgrades.bloom ? "Clear 75% & learn the chorus" : `Clear ${75 - percent}% more to gather the crew`);
+    text($("landmark-copy"), state.restoration >= 1 ? "A little water. A little music. A new beginning." : state.ritual ? "Watch the crew form a circle. The water remembers." : "A quiet fountain with a song still in it.");
+    $("free-roam").hidden = !state.assignment || state.ritual || state.completed;
+    $("find-dust").hidden = percent < 60 || state.completed;
+    $("toast").hidden = state.noticeTime <= 0 || !state.notice;
+    if (state.notice) text($("toast"), state.notice);
+    const isTouch = matchMedia("(pointer:coarse)").matches;
+    text($("tip-text"), state.completed ? "Stay a while. You brought this place back to life." : state.ritual ? "A chorus of little things." : state.pointer.keyboard ? state.mode === "direct" ? "Arrows aim \xB7 Enter sends crew \xB7 N finds dust" : "Arrows aim \xB7 Space starts/stops brushing \xB7 N finds dust" : state.mode === "direct" ? isTouch ? "Place the flag above your finger. Lift to send the crew." : "Click an open patch to send your crew there." : isTouch ? "Sweep with the circle just above your finger." : settings.tapSweep ? "Tap for a sweep, or hold & brush at your own pace." : "Hold & sweep over the dust. See what wakes up.");
+    $("sound-toggle").classList.toggle("muted", settings.muted);
+    $("sound-toggle").setAttribute("aria-label", settings.muted ? "Unmute sound" : "Mute sound");
+    $("sound-toggle").title = settings.muted ? "Sound off \xB7 click to unmute" : "Sound on \xB7 click to mute";
+  }
+  function setMode(mode) {
+    keyboard.stop();
+    panMode = false;
+    $("pan-toggle").setAttribute("aria-pressed", "false");
+    $("pan-toggle").classList.remove("selected");
+    state.mode = mode;
+    state.pointer.active = false;
+    state.pointer.preview = false;
+    autoSweep = 0;
+    audio.setBrushing(false);
+    $("brush-tool").classList.toggle("selected", mode === "brush");
+    $("direct-tool").classList.toggle("selected", mode === "direct");
+    $("brush-tool").setAttribute("aria-pressed", mode === "brush");
+    $("direct-tool").setAttribute("aria-pressed", mode === "direct");
+    updateUI();
+  }
+  $("brush-tool").onclick = () => setMode("brush");
+  $("direct-tool").onclick = () => setMode("direct");
+  $("free-roam").onclick = () => {
+    releaseCrew(state);
+    updateUI();
+    save();
+  };
+  $("restore-button").onclick = () => {
+    if (beginRitual(state)) {
+      closeJournal();
+      save();
+      updateUI();
+    }
+  };
+  $("find-dust").onclick = () => {
+    const d = state.dust.filter((d2) => d2.amount > 1e-4).sort((a, b) => b.amount - a.amount)[0];
+    if (d) {
+      state.hintTarget = { x: d.x, y: d.y };
+      camera = { x: d.x, y: d.y };
+      renderer.setCamera?.(zoom, camera.x, camera.y);
+      assignCrew(state, d.x, d.y);
+      notify(state, "A little dust is glowing. Your crew is on its way.");
+      closeJournal();
+    }
+  };
+  function closeJournal() {
+    $("journal").classList.remove("open");
+    $("mobile-journal").setAttribute("aria-expanded", "false");
+  }
+  function toggleJournal() {
+    const opened = $("journal").classList.toggle("open");
+    $("mobile-journal").setAttribute("aria-expanded", opened);
+  }
+  $("mobile-journal").onclick = toggleJournal;
+  $("close-journal").onclick = closeJournal;
+  function stopInput() {
+    const captured = pointerId;
+    keyboard.stop();
+    state.pointer.active = false;
+    state.pointer.preview = false;
+    state.pointer.inside = false;
+    pointerId = null;
+    lastPointer = null;
+    autoSweep = 0;
+    panning = false;
+    audio.setBrushing(false);
+    sceneDirty = true;
+    if (captured !== null && canvas.hasPointerCapture(captured)) canvas.releasePointerCapture(captured);
+  }
+  function openSettings() {
+    if (!started) return;
+    stopInput();
+    paused = true;
+    audio.pause();
+    save();
+    $("settings").showModal();
+  }
+  function closeSettings() {
+    if (!$("settings").open) return;
+    if (store.status === "conflict") {
+      $("load-latest-save").focus();
+      return;
+    }
+    $("settings").close();
+    $("restart-confirm").hidden = true;
+    paused = false;
+    lastTime = performance.now();
+    audio.resume();
+    canvas.focus({ preventScroll: true });
+  }
+  $("pause-button").onclick = openSettings;
+  $("close-settings").onclick = closeSettings;
+  $("resume-button").onclick = closeSettings;
+  $("settings").addEventListener("cancel", (e) => {
+    e.preventDefault();
+    closeSettings();
+  });
+  $("welcome").addEventListener("cancel", (e) => e.preventDefault());
+  $("completion").addEventListener("cancel", (e) => {
+    e.preventDefault();
+    enjoy();
+  });
+  async function start() {
+    $("welcome").close();
+    started = true;
+    paused = false;
+    lastTime = performance.now();
+    try {
+      await audio.start();
+      audio.setMix(settings);
+      audio.setProgress(state.restoration);
+    } catch {
+      notify(state, "Sound couldn\u2019t start. You can still enjoy the courtyard.");
+    }
+    canvas.focus({ preventScroll: true });
+    save();
+    updateUI();
+  }
+  $("start-button").onclick = start;
+  $("sound-toggle").onclick = async () => {
+    settings.muted = !settings.muted;
+    saveSettings();
+    if (started && !paused) {
+      try {
+        await audio.start();
+      } catch {
+      }
+    }
+    updateUI();
+  };
+  for (const key of ["music", "sfx", "ambience"]) {
+    $(`${key}-volume`).value = Math.round(settings[key] * 100);
+    $(`${key}-value`).textContent = `${Math.round(settings[key] * 100)}%`;
+    $(`${key}-volume`).oninput = (e) => {
+      settings[key] = Number(e.target.value) / 100;
+      $(`${key}-value`).textContent = `${e.target.value}%`;
+      saveSettings();
+    };
+  }
+  for (const [id, key] of [["reduced-motion", "reducedMotion"], ["tap-sweep", "tapSweep"], ["low-quality", "lowQuality"]]) {
+    $(id).checked = !!settings[key];
+    $(id).onchange = (e) => {
+      settings[key] = e.target.checked;
+      state.reducedMotion = settings.reducedMotion;
+      saveSettings();
+      resize();
+      updateUI();
+    };
+  }
+  function exportSave() {
+    const blob = new Blob([JSON.stringify(serialise(state), null, 2)], { type: "application/json" }), url = URL.createObjectURL(blob), a = document.createElement("a");
+    a.href = url;
+    a.download = "dustlings-courtyard-save.json";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1e3);
+  }
+  $("export-save").onclick = exportSave;
+  $("completion-save").onclick = exportSave;
+  $("import-save").onclick = () => $("save-file").click();
+  $("save-file").onchange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    try {
+      if (file.size > 3e5) throw Error("That file is too large to be a courtyard save.");
+      const next = restore(JSON.parse(await file.text()));
+      if (store.hasConflict()) {
+        showSaveConflict();
+        e.target.value = "";
+        return;
+      }
+      state = next;
+      state.reducedMotion = settings.reducedMotion;
+      completionShown = state.completed;
+      birth = null;
+      const saved = await save();
+      audio.setProgress(state.restoration);
+      setMode("brush");
+      if (saved) $("settings-save-note").textContent = "Your courtyard has been recovered. Ready when you are.";
+    } catch (err) {
+      $("settings-save-note").textContent = `Could not import. ${err.message} Your current courtyard is safe.`;
+    }
+    e.target.value = "";
+  };
+  $("restart-button").onclick = () => $("restart-confirm").hidden = false;
+  $("cancel-restart").onclick = () => $("restart-confirm").hidden = true;
+  $("confirm-restart").onclick = async () => {
+    const reset = await withSaveLock(() => {
+      if (!store.clear()) return false;
+      state = createState();
+      state.reducedMotion = settings.reducedMotion;
+      completionShown = false;
+      birth = null;
+      return store.save(state);
+    });
+    if (!reset) {
+      updateSaveStatus();
+      if (store.status === "conflict") showSaveConflict();
+      return;
+    }
+    audio.setProgress(0);
+    setMode("brush");
+    updateSaveStatus();
+    closeSettings();
+  };
+  $("load-latest-save").onclick = async () => {
+    await withSaveLock(() => {
+      const latest = store.load();
+      if (!latest && store.status !== "ready") return;
+      state = latest || createState();
+      state.reducedMotion = settings.reducedMotion;
+      completionShown = state.completed;
+      birth = null;
+      store.save(state);
+    });
+    updateSaveStatus();
+    if (store.status === "saved" || store.status === "recovered" || store.status === "ready") {
+      audio.setProgress(state.restoration);
+      setMode("brush");
+      closeSettings();
+    }
+  };
+  window.addEventListener("storage", (e) => {
+    if ((e.key === SAVE_KEY || e.key === INTERRUPTED_KEY) && store.hasConflict()) showSaveConflict();
+  });
+  function enjoy() {
+    $("completion").close();
+    paused = false;
+    lastTime = performance.now();
+    audio.resume();
+    canvas.focus({ preventScroll: true });
+  }
+  $("enjoy-button").onclick = enjoy;
+  document.querySelector(".wordmark").onclick = (e) => {
+    e.preventDefault();
+    openSettings();
+  };
+  function locate(e) {
+    const r = canvas.getBoundingClientRect(), touch = e.pointerType === "touch";
+    const sx = e.clientX - r.left, sy = e.clientY - r.top - (touch ? 42 : 0);
+    const p = renderer.screenToWorld(sx, sy);
+    return { ...p, touch, inside: renderer.containsScreenPoint(sx, sy), active: state.pointer.active, preview: state.pointer.preview };
+  }
+  canvas.addEventListener("pointerdown", (e) => {
+    if (paused || !started || pointerId !== null) return;
+    const target = locate(e);
+    if (!target.inside) return;
+    e.preventDefault();
+    keyboard.stop();
+    canvas.focus({ preventScroll: true });
+    canvas.setPointerCapture(e.pointerId);
+    pointerId = e.pointerId;
+    lastPointer = { x: e.clientX, y: e.clientY };
+    pointerMoved = false;
+    panning = e.button === 1 || e.shiftKey;
+    state.pointer = locate(e);
+    state.pointer.active = state.mode === "brush" && !panning;
+    state.pointer.preview = state.mode === "direct" && !panning;
+    if (state.pointer.active && settings.tapSweep) autoSweep = 1.35;
+  });
+  canvas.addEventListener("pointermove", (e) => {
+    if (paused || pointerId !== null && pointerId !== e.pointerId) return;
+    if (panning && pointerId === e.pointerId && lastPointer) {
+      const a = renderer.screenToWorld(lastPointer.x, lastPointer.y), b = renderer.screenToWorld(e.clientX, e.clientY);
+      camera.x = Math.max(180, Math.min(820, camera.x - (b.x - a.x)));
+      camera.y = Math.max(220, Math.min(600, camera.y - (b.y - a.y)));
+      renderer.setCamera?.(zoom, camera.x, camera.y);
+    } else {
+      const target = locate(e);
+      if (!target.inside) {
+        target.active = false;
+        target.preview = false;
+      } else if (pointerId === e.pointerId) {
+        target.active = state.mode === "brush";
+        target.preview = state.mode === "direct";
+      }
+      state.pointer = target;
+    }
+    if (pointerId === e.pointerId) {
+      if (lastPointer && Math.hypot(e.clientX - lastPointer.x, e.clientY - lastPointer.y) > 3) pointerMoved = true;
+      lastPointer = { x: e.clientX, y: e.clientY };
+    }
+  });
+  function pointerUp(e, cancel = false) {
+    if (e.pointerId !== pointerId) return;
+    const target = locate(e);
+    if (!cancel && !panning && state.mode === "direct" && target.inside) {
+      state.pointer = target;
+      assignCrew(state, state.pointer.x, state.pointer.y);
+      save();
+    }
+    state.pointer.active = !cancel && !panning && target.inside && state.mode === "brush" && settings.tapSweep && autoSweep > 0;
+    state.pointer.preview = false;
+    if (cancel) autoSweep = 0;
+    pointerId = null;
+    panning = false;
+    audio.setBrushing(false);
+    updateUI();
+  }
+  canvas.addEventListener("pointerup", (e) => pointerUp(e));
+  canvas.addEventListener("pointercancel", (e) => pointerUp(e, true));
+  canvas.addEventListener("lostpointercapture", (e) => {
+    if (pointerId === e.pointerId) pointerUp(e, true);
+  });
+  canvas.addEventListener("pointerleave", () => {
+    if (pointerId === null && !(settings.tapSweep && autoSweep > 0 && state.pointer.active)) {
+      state.pointer.inside = false;
+      state.pointer.active = false;
+      audio.setBrushing(false);
+    }
+  });
+  canvas.addEventListener("contextmenu", (e) => e.preventDefault());
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      if ($("journal").classList.contains("open")) {
+        e.preventDefault();
+        closeJournal();
+        return;
+      }
+      if (started && !paused) {
+        e.preventDefault();
+        openSettings();
+      }
+      return;
+    }
+    if (!started || paused || /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if (keyboard.handleKeyDown(e)) {
+      e.preventDefault();
+      return;
+    }
+    const key = e.key.toLowerCase();
+    if (key === "b") setMode("brush");
+    if (key === "d") setMode("direct");
+    if (key === "u") toggleJournal();
+    if (key === "r") releaseCrew(state);
+    if (key === "+" || key === "=") setZoom(Math.min(2, zoom + 0.25));
+    if (key === "-") setZoom(Math.max(1, zoom - 0.25));
+  });
+  document.addEventListener("keyup", (e) => {
+    if (keyboard.handleKeyUp(e)) e.preventDefault();
+  });
+  canvas.addEventListener("blur", () => keyboard.stop());
+  function setZoom(value) {
+    zoom = value;
+    if (zoom === 1) camera = { x: 500, y: 390 };
+    renderer.setCamera?.(zoom, camera.x, camera.y);
+    sceneDirty = true;
+    $("zoom-in").disabled = zoom >= 2;
+    $("zoom-out").disabled = zoom <= 1;
+  }
+  var cameraControls = document.createElement("div");
+  cameraControls.className = "camera-controls";
+  cameraControls.innerHTML = '<button id="zoom-out" aria-label="Zoom out" title="Zoom out \xB7 \u2212" disabled>\u2212</button><button id="zoom-in" aria-label="Zoom in" title="Zoom in \xB7 +">+</button><button id="pan-toggle" aria-label="Pan courtyard" aria-pressed="false" title="Pan courtyard">\u2194</button>';
+  document.querySelector(".world-panel").append(cameraControls);
+  setZoom(zoom);
+  var panMode = false;
+  $("zoom-in").onclick = () => setZoom(Math.min(2, zoom + (canvas.clientWidth < 500 ? 0.7 : 0.25)));
+  $("zoom-out").onclick = () => setZoom(Math.max(1, zoom - (canvas.clientWidth < 500 ? 0.7 : 0.25)));
+  $("pan-toggle").onclick = () => {
+    panMode = !panMode;
+    $("pan-toggle").setAttribute("aria-pressed", panMode);
+    $("pan-toggle").classList.toggle("selected", panMode);
+    notify(state, panMode ? "Drag the courtyard to look around. Tap \u2194 again to brush." : "Ready to brush again.");
+  };
+  canvas.addEventListener("pointerdown", (e) => {
+    if (panMode && !paused && pointerId === e.pointerId) {
+      panning = true;
+      state.pointer.active = false;
+      autoSweep = 0;
+    }
+  }, false);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && started) {
+      stopInput();
+      audio.pause();
+      checkpoint();
+      save();
+      if (!paused) {
+        paused = true;
+        $("settings").showModal();
+      }
+    }
+  });
+  window.addEventListener("pagehide", () => {
+    stopInput();
+    checkpoint();
+    save();
+  });
+  window.addEventListener("blur", () => {
+    stopInput();
+  });
+  function processEvents() {
+    for (const e of state.events.splice(0)) {
+      if (["birth", "assign", "blocked", "upgrade", "landmark", "complete"].includes(e.name)) audio.event(e.name);
+      if (e.name === "birth" && e.first) {
+        birth = { x: e.x, y: e.y };
+        birthUntil = state.elapsed + 6;
+      }
+      if (e.name === "upgradeAvailable") notify(state, "A new discovery is ready. Choose how you\u2019d like to help your crew grow.");
+      if (e.name === "fountainRestored") audio.event("complete", 0.6);
+      if (e.name === "complete") save();
+    }
+  }
+  function frame(now) {
+    const raw = (now - lastTime) / 1e3;
+    lastTime = now;
+    if (started && !paused) {
+      const dt = Math.min(0.05, raw);
+      keyboard.update(dt);
+      tick(state, dt);
+      if (autoSweep > 0) {
+        autoSweep -= dt;
+        if (autoSweep <= 0 && pointerId === null) state.pointer.active = false;
+      }
+      processEvents();
+      audio.setProgress(state.restoration);
+      const brushHasDust = state.pointer.active && state.mode === "brush" && state.dust.some((d) => d.amount > 1e-3 && Math.hypot(d.x - state.pointer.x, d.y - state.pointer.y) < state.brushRadius);
+      audio.setBrushing(brushHasDust, settings.tapSweep ? 0.6 : 0.8);
+      if (now - lastSave > 5e3) {
+        save();
+        lastSave = now;
+      }
+      if (state.completed && !completionShown && state.celebration < 4) {
+        completionShown = true;
+        paused = true;
+        stopInput();
+        $("finish-crew").textContent = state.creatures.length;
+        $("completion").showModal();
+      }
+      frames.push(raw * 1e3);
+      if (frames.length > 3600) frames.shift();
+    }
+    if (!paused || sceneDirty) {
+      renderer.render(state, state.elapsed);
+      sceneDirty = false;
+    }
+    if (birth && state.elapsed < birthUntil && !paused) {
+      const p = renderer.worldToScreen(birth.x, birth.y), v = renderer.viewport;
+      $("birth-label").hidden = false;
+      $("birth-label").style.left = `${Math.max(v.x + 100, Math.min(v.x + v.width - 100, p.x))}px`;
+      $("birth-label").style.top = `${Math.max(v.y + 55, Math.min(v.y + v.height - 12, p.y - 33))}px`;
+    } else $("birth-label").hidden = true;
+    if (!paused && now - lastUI > 150) {
+      updateUI();
+      lastUI = now;
+    }
+    requestAnimationFrame(frame);
+  }
+  if (state.elapsed > 0) $("start-button").innerHTML = "Return to your courtyard <span>\u2197</span>";
+  if (store.recovered || store.status === "damaged" || store.status === "unavailable") {
+    $("recovery-note").hidden = false;
+    $("recovery-note").textContent = store.recovered ? store.recoverySource === "interrupted" ? "Your last sweep was recovered after an interruption." : "Your previous save was recovered from its backup." : store.status === "damaged" ? "The saved courtyard could not be read. You can import a backup from Settings after starting." : "Browser saving is unavailable. Export a save from Settings before leaving.";
+  }
+  updateUI();
+  updateSaveStatus();
+  $("welcome").showModal();
+  requestAnimationFrame(frame);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    const prepare = () => {
+      if (!started && !document.hidden) {
+        try {
+          audio.prepare();
+        } catch {
+        }
+      }
+    };
+    if ("requestIdleCallback" in window) requestIdleCallback(prepare, { timeout: 1500 });
+    else setTimeout(prepare, 100);
+  }));
+  if (new URLSearchParams(location.search).has("qa")) window.__dustlings = {
+    get state() {
+      return state;
+    },
+    renderer,
+    audio,
+    serialise: () => serialise(state),
+    advance(seconds) {
+      const n = Math.ceil(seconds / 0.05);
+      for (let i = 0; i < n; i++) tick(state, 0.05);
+      processEvents();
+      updateUI();
+    },
+    load(data) {
+      state = restore(data);
+      completionShown = state.completed;
+      state.reducedMotion = settings.reducedMotion;
+      updateUI();
+    },
+    getPerformance() {
+      const sorted = [...frames].sort((a, b) => a - b);
+      return { samples: frames.length, meanMs: frames.reduce((a, b) => a + b, 0) / frames.length, p95Ms: sorted[Math.floor(sorted.length * 0.95)], p99Ms: sorted[Math.floor(sorted.length * 0.99)], worstMs: sorted.at(-1), over33ms: frames.filter((n) => n > 33.4).length, over500ms: frames.filter((n) => n >= 500).length, creatures: state.creatures.length, dpr: devicePixelRatio, canvas: { width: canvas.clientWidth, height: canvas.clientHeight }, audio: audio.getDiagnostics?.() };
+    },
+    resetPerformance() {
+      frames.length = 0;
+    },
+    pause(value) {
+      paused = value;
+      sceneDirty = true;
+    },
+    beginRitual: () => beginRitual(state),
+    setZoom,
+    save
+  };
+})();
+</script>
+</body></html>

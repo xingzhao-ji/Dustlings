@@ -1,0 +1,68 @@
+{
+  "cases": [
+    {
+      "arrived": true,
+      "assisted": 2.14223333333326,
+      "average_simulation_tick_ms": 0.023322962962963,
+      "final_helpers": 5,
+      "initial_helpers": 5,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 0.947260446846485,
+      "minimum_distance_m": 0.540002882480621,
+      "minimum_travel_distance_m": 0.540002882480621,
+      "minimum_work_distance_m": 0.554300546646118,
+      "seconds": 45,
+      "teamwork": false,
+      "working_frames": 9181
+    },
+    {
+      "arrived": true,
+      "assisted": 4.04289166666566,
+      "average_simulation_tick_ms": 0.0233422222222222,
+      "final_helpers": 5,
+      "initial_helpers": 5,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 1.02001436054707,
+      "minimum_distance_m": 0.540099740028381,
+      "minimum_travel_distance_m": 0.540099740028381,
+      "minimum_work_distance_m": 0.547450661659241,
+      "seconds": 45,
+      "teamwork": true,
+      "working_frames": 9901
+    },
+    {
+      "arrived": true,
+      "assisted": 22.2870666667031,
+      "average_simulation_tick_ms": 1.55432925925926,
+      "final_helpers": 50,
+      "initial_helpers": 50,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 1.32146548479795,
+      "minimum_distance_m": 0.536512672901154,
+      "minimum_travel_distance_m": 0.536512672901154,
+      "minimum_work_distance_m": 0.539611876010895,
+      "seconds": 45,
+      "teamwork": false,
+      "working_frames": 95516
+    },
+    {
+      "arrived": true,
+      "assisted": 33.7861249999594,
+      "average_simulation_tick_ms": 2.23938888888889,
+      "final_helpers": 50,
+      "initial_helpers": 50,
+      "invalid_positions": 0,
+      "maximum_speed_m_s": 1.58010698854923,
+      "minimum_distance_m": 0.536160945892334,
+      "minimum_travel_distance_m": 0.536160945892334,
+      "minimum_work_distance_m": 0.537131488323212,
+      "seconds": 45,
+      "teamwork": true,
+      "working_frames": 82742
+    }
+  ],
+  "failures": [],
+  "kind": "Isolated deterministic 5/50-helper travel/work fixtures; no visual or human acceptance",
+  "route_coverage": "Separate simulation_driver.gd tests all5904 actual _work_position seats; no approximate offsets in this crowd driver.",
+  "source_sha256": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b"
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "Far-side work-seat numerical experiment; no production edit, no human approval",
+  "baseline": "builds/3d/capture-snapshots/helper-work-contact",
+  "experiment": "builds/3d/experiments/far-work-seats",
+  "onlyRuntimeChange": "_work_position: solo z +0.15 to -0.27; paired z +0.12 to -0.20, x stays \u00b10.29",
+  "baselineSimulationSha256": "d8d819791edf69bc9973a21ec173424fc69c35f64a226cd29ff572e8e0459fc5",
+  "experimentSimulationSha256": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b",
+  "drivers": {
+    "simulation_driver.gd": "fdb3f31c80184348b546aa6602a25b73e6c5984ce3aa561c9ae53a9545861e30",
+    "phase_driver.gd": "4fdbe0ca0b47bb60d38ad7d2865532514683dafe3a1433c32f6e69dd6fb21b5d",
+    "crowd_driver.gd": "4f207eaa40060dcdd552dde0ad8e331cadf76c15eca47e7b44cc206ca56c6327"
+  },
+  "scope": "Existing production tests copied with isolated output paths; crowd movement/service fixture unchanged; actual-seat route coverage comes from the simulation test, not old approximate crowd offsets.",
+  "humanTests": 0,
+  "completedUTC": "2026-09-10T09:47:36.964710+00:00",
+  "sourceUnchangedDuringChecks": true,
+  "onlySeatOffsetsDiffer": true,
+  "conditions": "Godot4.7.2 headless on Mac host; baseline and far variants ran in parallel while root captured native gameplay. Deterministic simulation results, not sustained renderer performance or physical-device play.",
+  "diagnostics": {
+    "far-crowd.log": [],
+    "baseline-simulation.log": [],
+    "baseline-crowd.log": [],
+    "far-simulation.log": [],
+    "baseline-phases.log": [],
+    "far-phases.log": []
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "kind": "Isolated far-side work-seat numerical comparison; no visual or human verdict",
+  "allChecksPassed": true,
+  "sourceUnchanged": true,
+  "onlySeatOffsetsDiffer": true,
+  "routeCounts": {
+    "baseline": 5904,
+    "far": 5904
+  },
+  "failedRoutes": {
+    "baseline": 0,
+    "far": 0
+  },
+  "crowd": [
+    {
+      "helpers": 5,
+      "teamwork": false,
+      "baselineAssisted45s": 2.15366666666661,
+      "farAssisted45s": 2.14223333333326,
+      "changePercent": -0.5308775731318827,
+      "farMinimumDistanceM": 0.540002882480621,
+      "farMaximumSpeedM_s": 0.947260446846485,
+      "farInvalidPositions": 0
+    },
+    {
+      "helpers": 5,
+      "teamwork": true,
+      "baselineAssisted45s": 4.04983333333233,
+      "farAssisted45s": 4.04289166666566,
+      "changePercent": -0.17140623070922567,
+      "farMinimumDistanceM": 0.540099740028381,
+      "farMaximumSpeedM_s": 1.02001436054707,
+      "farInvalidPositions": 0
+    },
+    {
+      "helpers": 50,
+      "teamwork": false,
+      "baselineAssisted45s": 22.0745000000359,
+      "farAssisted45s": 22.2870666667031,
+      "changePercent": 0.9629512182239841,
+      "farMinimumDistanceM": 0.536512672901154,
+      "farMaximumSpeedM_s": 1.32146548479795,
+      "farInvalidPositions": 0
+    },
+    {
+      "helpers": 50,
+      "teamwork": true,
+      "baselineAssisted45s": 33.9915083332924,
+      "farAssisted45s": 33.7861249999594,
+      "changePercent": -0.6042195342412793,
+      "farMinimumDistanceM": 0.536160945892334,
+      "farMaximumSpeedM_s": 1.58010698854923,
+      "farInvalidPositions": 0
+    }
+  ],
+  "completion": {
+    "baseline": 561.100000000037,
+    "far": 566.200000000033,
+    "deltaSeconds": 5.099999999996044,
+    "phaseDeltaSeconds": {
+      "beforeChorus": 2.650000000000034,
+      "gatherAndChorus": 1.0500000000009777,
+      "afterChorus": 1.3999999999950319
+    }
+  },
+  "humanTests": 0
+}

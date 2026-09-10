@@ -1,0 +1,39 @@
+{
+  "checks": [
+    "Compact courtyard contains a reachable dust field",
+    "All actual solo/paired work seats and four approach corners reach cleaning range",
+    "40% brush-duty fixture forms first helper within the 30-second hypothesis",
+    "Controlled fixture reaches meaningful upgrade under five minutes",
+    "Normal simulation step completes all dust and fountain with 50 helpers",
+    "Completed 3D save round-trips through JSON",
+    "Inconsistent currency / completion save is rejected atomically",
+    "Non-finite creature position is rejected",
+    "Chorus requires both earlier capabilities",
+    "Blocked/no-crew orders and premature restoration are rejected"
+  ],
+  "chorus_duration": 18.0,
+  "dust_count": 492,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "failed_routes": [],
+  "failures": [],
+  "kind": "Deterministic automated3D simulation fixtures; no human pacing or enjoyment evidence.",
+  "pacing": {
+    "brush_duty": 0.4,
+    "completed_at": 566.200000000033,
+    "first_helper": 20.2500000000002,
+    "first_upgrade": 86.2999999999972
+  },
+  "route_count": 5904,
+  "route_method": "Actual _work_position for solo and both paired seats, including boundary/fountain projection",
+  "source_sha256": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b"
+}

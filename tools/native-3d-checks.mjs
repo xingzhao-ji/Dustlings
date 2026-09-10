@@ -71,6 +71,52 @@ function differences(a, b, at = '$', out = []) {
   return out;
 }
 async function readJSON(file) { return JSON.parse(await fs.readFile(file, 'utf8')); }
+function windowsIconResources(pe, ico) {
+  const header = pe.readUInt32LE(60), optional = header + 24;
+  if (pe.toString('ascii', 0, 2) !== 'MZ' || pe.toString('ascii', header, header + 4) !== 'PE\0\0' || pe.readUInt16LE(header + 4) !== 0x8664 || pe.readUInt16LE(optional) !== 0x20b) throw new Error('Expected Windows x64 PE32+');
+  if (ico.readUInt16LE(0) !== 0 || ico.readUInt16LE(2) !== 1) throw new Error('Invalid authored ICO header');
+  const count = pe.readUInt16LE(header + 6), optionalBytes = pe.readUInt16LE(header + 20);
+  if (count < 1 || count > 96) throw new Error('Invalid PE section count');
+  const sections = Array.from({ length: count }, (_, i) => {
+    const entry = optional + optionalBytes + i * 40;
+    return { rva: pe.readUInt32LE(entry + 12), bytes: pe.readUInt32LE(entry + 16), offset: pe.readUInt32LE(entry + 20) };
+  });
+  function offset(rva, bytes = 1) {
+    const section = sections.find(item => rva >= item.rva && rva + bytes <= item.rva + item.bytes);
+    if (!section || section.offset + rva - section.rva + bytes > pe.length) throw new Error('PE resource points outside file bytes');
+    return section.offset + rva - section.rva;
+  }
+  const base = offset(pe.readUInt32LE(optional + 112 + 16)), resources = [];
+  function visit(relative, ids = []) {
+    if (ids.length > 3) throw new Error('Unexpectedly deep PE resource directory');
+    const directory = base + relative, entries = pe.readUInt16LE(directory + 12) + pe.readUInt16LE(directory + 14);
+    if (entries > 512) throw new Error('Unexpected PE resource count');
+    for (let i = 0; i < entries; i++) {
+      const entry = directory + 16 + i * 8, name = pe.readUInt32LE(entry), child = pe.readUInt32LE(entry + 4), next = [...ids, name];
+      if (child & 0x80000000) visit(child & 0x7fffffff, next);
+      else {
+        const leaf = base + child, size = pe.readUInt32LE(leaf + 4), start = offset(pe.readUInt32LE(leaf), size);
+        resources.push({ ids: next, data: pe.subarray(start, start + size) });
+      }
+    }
+  }
+  visit(0);
+  const expected = Array.from({ length: ico.readUInt16LE(4) }, (_, i) => {
+    const entry = 6 + i * 16, bytes = ico.readUInt32LE(entry + 8), start = ico.readUInt32LE(entry + 12);
+    if (start + bytes > ico.length) throw new Error('ICO frame exceeds file');
+    return { width: ico[entry] || 256, height: ico[entry + 1] || 256, bytes, sha256: hash(ico.subarray(start, start + bytes)) };
+  });
+  const icons = resources.filter(item => item.ids[0] === 3).map(item => ({ ids: item.ids, bytes: item.data.length, sha256: hash(item.data) }));
+  const groups = resources.filter(item => item.ids[0] === 14).map(item => {
+    const frames = Array.from({ length: item.data.readUInt16LE(4) }, (_, i) => {
+      const entry = 6 + i * 14;
+      return { width: item.data[entry] || 256, height: item.data[entry + 1] || 256, bytes: item.data.readUInt32LE(entry + 8), iconId: item.data.readUInt16LE(entry + 12) };
+    });
+    return { ids: item.ids, frames };
+  });
+  const matchingGroup = groups.some(group => group.frames.length === expected.length && group.frames.every((frame, i) => frame.width === expected[i].width && frame.height === expected[i].height && frame.bytes === expected[i].bytes && icons.some(icon => icon.ids[1] === frame.iconId && icon.ids[2] === group.ids[2] && icon.sha256 === expected[i].sha256)));
+  return { passed: expected.length > 0 && matchingGroup, expected, icons, groups, method: 'Read actual PE RT_ICON and RT_GROUP_ICON bytes and compare every authored ICO frame and group reference; Windows was not executed.' };
+}
 async function terminate(handle) {
   if (handle.closed) return;
   handle.child.kill('SIGTERM');
@@ -176,7 +222,13 @@ try {
     const icon = await verifyFile('packagedIconHash', path.join(app, iconRelative), manifest.macOS.files[iconRelative]);
     const header = await fs.readFile(path.join(app, iconRelative));
     check('packagedMacIcon', header.toString('ascii', 0, 4) === 'icns' && header.readUInt32BE(4) === icon.bytes, { iconRelative, ...icon, interpretation: 'Actual bundle resource and plist linkage; no aesthetic or Dock inspection claim.' });
+    check('packagedMacIconMatchesAuthoredSource', icon.sha256 === manifest.source.files['assets/ui/app-icon.icns']?.sha256);
   } else check('packagedMacIcon', false, 'No safe CFBundleIconFile in exported app');
+  const windowsExe = contained(path.dirname(manifestPath), manifest.windows.path);
+  report.windowsExecutableSha256 = (await verifyFile('windowsExecutableHash', windowsExe, manifest.windows.executable)).sha256;
+  const authoredIco = contained(path.dirname(manifestPath), manifest.snapshot + '/assets/ui/app-icon.ico');
+  await verifyFile('authoredWindowsIconHash', authoredIco, manifest.source.files['assets/ui/app-icon.ico']);
+  check('packagedWindowsIcon', (report.windowsIcon = windowsIconResources(await fs.readFile(windowsExe), await fs.readFile(authoredIco))).passed, report.windowsIcon);
   if (!preflightOnly) {
     const profile = 'native3d_' + crypto.randomUUID().replaceAll('-', '');
     const savePath = path.join(os.homedir(), 'Library/Caches', `dustlings-qa-${profile}.json`);

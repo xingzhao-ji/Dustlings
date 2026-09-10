@@ -52,11 +52,11 @@ Exact next action: preserve the final native report and integrate the lead's uni
 
 ## Packaged operating-system process check
 
-Prepared 2026-09-10: `tools/native-3d-checks.mjs`. **The packaged sequence has not yet run.** It awaits the final exact native build manifest and the shared interactive app slot. The 25 checks above remain the separate native engine integration result; they do not establish packaged multi-process recovery.
+Prepared and executed 2026-09-10: `tools/native-3d-checks.mjs`. **45 packaged-process and artifact checks passed for the exact `2572e2f` candidate.** This build predates the active helper-work legibility correction; it is historical evidence for that exact package, not proof of later source changes. The 25 checks above remain the separate native engine integration result.
 
 Preparation checks passed: Node syntax validation, and a deliberately incorrect archive hash was rejected with exit code 1 before extraction or any app process. That negative fixture is a tool guard check, not a game recovery result.
 
-The runner requires an explicit build manifest and verifies the successful build record, Mac archive SHA-256, extracted executable and PCK SHA-256, bundle metadata, ad-hoc signature, and the actual ICNS resource linked by the plist. It never selects a `latest` build implicitly or launches the editor. The exported archive is extracted to a unique operating-system temporary directory so its exact signed bytes remain inspectable. Icon verification establishes that the bundle contains and references a valid resource; it does not constitute a visual review of the Dock icon.
+The runner requires an explicit build manifest and verifies the successful build record, Mac archive SHA-256, extracted executable and PCK SHA-256, bundle metadata, ad-hoc signature, and the actual ICNS resource linked by the plist. The Mac icon must match authored source bytes. A read-only Windows PE check verifies every authored ICO frame in actual RT_ICON resources and their RT_GROUP_ICON references. It never selects a `latest` build implicitly or launches the editor. The exported archive is extracted to a unique operating-system temporary directory so its exact signed bytes remain inspectable. Icon verification establishes actual resource contents and linkage; it does not constitute a visual review of the Dock or Windows shell.
 
 Run only after coordinating the app slot:
 
@@ -75,3 +75,27 @@ The intended sequence uses four actual packaged Mac processes and one random `--
 Timeouts or failures terminate only the runner's own app PIDs. Its isolated profile, extraction, per-process logs/results and top-level `report.json` remain available for inspection. The report binds `pckSha256`, `executableSha256`, `sourceSha256`, build revision/dirty status, exit code and individual checks to that exact artifact. A later source change requires a new build and new execution before calling this evidence current.
 
 Remaining scope: this small opening save does not establish full-crowd or active-chorus return, physical sleep/device interruption, native file-dialog comfort, Windows execution, mobile support, human satisfaction or owner release approval. Human test count remains **0**.
+
+### Actual packaged result
+
+[Exact report and check details](../evidence/3d/native-packaged/recovery-2572e2f/report.json), with per-process logs, results and actual opening images beside it. The preliminary [13-check artifact preflight](../evidence/3d/native-packaged/preflight-2572e2f/report.json) launched zero apps and is preserved separately.
+
+| Identity or condition | Recorded value |
+| --- | --- |
+| Exact build manifest | `builds/3d/0.4.0-dev-2026-09-10T09-23-03-961Z-0db02d30ce/manifest.json` |
+| Source revision | `2572e2f84d83f4175fac879e6735ee490fcfe47d` |
+| Source SHA-256 | `0db02d30cecf84b28fce7919352f9ca2fd79c9deb82d5a7deffdb40e69d7d431` |
+| Source dirty at build | `false`; repository separately recorded dirty |
+| Mac PCK SHA-256 | `a55ebb8d8ec501f8cb9d5484d2e9a473d3b443224bbec0ad4915b4171c8adb04` |
+| Mac executable SHA-256 | `1b048dabb863b272ae4bf91d5270f0a2c28a3b701723265fd8134b2354b32b7f` |
+| Machine | Mac16,7; Apple M4 Pro; 48 GiB; macOS 26.6.2 |
+| Runtime | Godot 4.7.2 release export; Metal 4.0 Forward+; logical viewport 1440×900 |
+| Recorded interval | 2026-09-10 09:31:36–09:33:21 UTC |
+| Processes | Opening 42210; resume 42272; hold 42280; second 42281; all exited 0 |
+| Diagnostics | Zero recorded engine errors, warnings or leaked-resource messages in these four processes |
+
+The generated opening created its first helper at 10.25 **simulation seconds**, produced five helpers, bought the brush upgrade and assigned the crew. It set music to 0.25 and gentle motion on through controls. A fresh process restored every compared game/settings field before resuming. Return started play/audio without held input. The concurrent second copy had disabled Start, rejected direct Start and left the primary, staged and backup bytes unchanged; closing the waiting primary also left them unchanged. This establishes the stated automated recovery checks, not representative-player timings or preference.
+
+The Windows executable contained all six authored icon frames (16, 32, 48, 64, 128 and 256 pixels) byte for byte, with matching group references. This is structural resource verification on Mac. Windows execution is still **unrun**.
+
+The unique cache profile `dustlings-qa-native3d_d0f725901cf94866bfa728080ebc4167.json` and temporary extracted bundle remain inspectable; their exact paths are in the report. The actual dirty-courtyard screenshot was inspected after launch. No human participant or owner acceptance was recorded. Next action: after the work-legibility correction is frozen and packaged, repeat this exact-manifest sequence for the new candidate and attach source-matched gameplay/performance evidence.

@@ -1,0 +1,186 @@
+{
+  "schema": 1,
+  "kind": "packaged-mac-preflight-only",
+  "started": "2026-09-10T09:28:53.120Z",
+  "manifest": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T09-23-03-961Z-0db02d30ce/manifest.json",
+  "output": "/Users/xingzhaoji/Desktop/Dustlings/evidence/3d/native-packaged/preflight-2572e2f",
+  "method": "Release Mac app extracted from the exact verified archive; separate OS processes, real-time engine-generated InputEvents. No Movie Maker, editor, progress injection, physical input or human playtest.",
+  "conditions": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.6.0",
+    "movieMaker": false,
+    "model": "Mac16,7",
+    "macOSVersion": "26.6.2",
+    "memoryBytes": 51539607552
+  },
+  "humanTests": 0,
+  "ownerApproved": false,
+  "releaseReady": false,
+  "windowsExecution": "unrun",
+  "checks": {
+    "macHost": {
+      "passed": true,
+      "detail": "darwin"
+    },
+    "successfulNativeBuildManifest": {
+      "passed": true
+    },
+    "archiveHash": {
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/Dustlings/builds/3d/0.4.0-dev-2026-09-10T09-23-03-961Z-0db02d30ce/macOS/Dustlings.zip",
+        "expected": {
+          "bytes": 62045043,
+          "sha256": "7d7699265376fe475c699dcce10157d44aaa2523919e431a201b5431770d417b"
+        },
+        "actual": {
+          "bytes": 62045043,
+          "sha256": "7d7699265376fe475c699dcce10157d44aaa2523919e431a201b5431770d417b"
+        }
+      }
+    },
+    "singlePackagedApp": {
+      "passed": true,
+      "detail": [
+        "Dustlings 3D.app"
+      ]
+    },
+    "bundleMetadataHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-Utedc9/Dustlings 3D.app/Contents/Info.plist",
+        "expected": {
+          "bytes": 1826,
+          "sha256": "c8be7f50d6ad8921ec6d934bc1613966a38debd3d4c0e21b18c58f8a49e1a51a"
+        },
+        "actual": {
+          "bytes": 1826,
+          "sha256": "c8be7f50d6ad8921ec6d934bc1613966a38debd3d4c0e21b18c58f8a49e1a51a"
+        }
+      }
+    },
+    "bundleIdentity": {
+      "passed": true,
+      "detail": {
+        "LSMinimumSystemVersionByArchitecture": {
+          "arm64": "13.00",
+          "x86_64": "11.00"
+        },
+        "CFBundleName": "Dustlings 3D",
+        "NSHumanReadableCopyright": "Dustlings development prototype",
+        "DTXcode": "1420",
+        "DTSDKName": "macosx13.1",
+        "DTSDKBuild": "22C55",
+        "CFBundleDevelopmentRegion": "English",
+        "CFBundleVersion": "0.4.0",
+        "LSArchitecturePriority": [
+          "arm64",
+          "x86_64"
+        ],
+        "NSPrincipalClass": "NSApplication",
+        "DTPlatformName": "macosx",
+        "CFBundlePackageType": "APPL",
+        "CFBundleIconFile": "icon.icns",
+        "CFBundleSupportedPlatforms": [
+          "MacOSX"
+        ],
+        "CFBundleShortVersionString": "0.4.0",
+        "NSHighResolutionCapable": true,
+        "CFBundleInfoDictionaryVersion": "6.0",
+        "CFBundleExecutable": "Dustlings 3D",
+        "CFBundleIdentifier": "com.dustlings.courtyard3d.prototype",
+        "LSApplicationCategoryType": "public.app-category.games",
+        "DTPlatformVersion": "13.1",
+        "DTXcodeBuild": "14C18",
+        "CFBundleDisplayName": "Dustlings 3D",
+        "CFBundleSignature": "",
+        "DTPlatformBuild": "14C18"
+      }
+    },
+    "safeExecutableName": {
+      "passed": true
+    },
+    "executableHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-Utedc9/Dustlings 3D.app/Contents/MacOS/Dustlings 3D",
+        "expected": {
+          "bytes": 170963648,
+          "sha256": "1b048dabb863b272ae4bf91d5270f0a2c28a3b701723265fd8134b2354b32b7f"
+        },
+        "actual": {
+          "bytes": 170963648,
+          "sha256": "1b048dabb863b272ae4bf91d5270f0a2c28a3b701723265fd8134b2354b32b7f"
+        }
+      }
+    },
+    "singlePackagedPck": {
+      "passed": true,
+      "detail": [
+        "Contents/Resources/Dustlings 3D.pck"
+      ]
+    },
+    "pckHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-Utedc9/Dustlings 3D.app/Contents/Resources/Dustlings 3D.pck",
+        "expected": {
+          "bytes": 2123092,
+          "sha256": "a55ebb8d8ec501f8cb9d5484d2e9a473d3b443224bbec0ad4915b4171c8adb04"
+        },
+        "actual": {
+          "bytes": 2123092,
+          "sha256": "a55ebb8d8ec501f8cb9d5484d2e9a473d3b443224bbec0ad4915b4171c8adb04"
+        }
+      }
+    },
+    "macSignature": {
+      "passed": true,
+      "detail": "Verified exact extracted app; development ad-hoc signing, no notarization or release approval."
+    },
+    "packagedIconHash": {
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-Utedc9/Dustlings 3D.app/Contents/Resources/icon.icns",
+        "expected": {
+          "bytes": 83377,
+          "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+        },
+        "actual": {
+          "bytes": 83377,
+          "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+        }
+      }
+    },
+    "packagedMacIcon": {
+      "passed": true,
+      "detail": {
+        "iconRelative": "Contents/Resources/icon.icns",
+        "bytes": 83377,
+        "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2",
+        "interpretation": "Actual bundle resource and plist linkage; no aesthetic or Dock inspection claim."
+      }
+    }
+  },
+  "processes": [],
+  "failures": [],
+  "limitations": [
+    "This small opening save does not test a full crew or an active chorus return.",
+    "No physical sleep/interruption or native import/export file dialog interaction.",
+    "No sustained performance or human usability claim.",
+    "Preflight only: no game process was launched and no recovery test passed."
+  ],
+  "exitCode": 0,
+  "manifestSha256": "7d9b8ec6387ae50c1676270ad6fb5f7c426021fab82fe75f9fd1efff8e80f586",
+  "sourceSha256": "0db02d30cecf84b28fce7919352f9ca2fd79c9deb82d5a7deffdb40e69d7d431",
+  "sourceRevision": "2572e2f84d83f4175fac879e6735ee490fcfe47d",
+  "sourceDirty": false,
+  "sourceChangedSinceSnapshot": false,
+  "version": "0.4.0-dev",
+  "extraction": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-packaged-check-Utedc9",
+  "executableSha256": "1b048dabb863b272ae4bf91d5270f0a2c28a3b701723265fd8134b2354b32b7f",
+  "pckSha256": "a55ebb8d8ec501f8cb9d5484d2e9a473d3b443224bbec0ad4915b4171c8adb04",
+  "finished": "2026-09-10T09:28:53.978Z",
+  "interrupted": null
+}

@@ -1,0 +1,86 @@
+{
+  "reviewer": "independent AI critic",
+  "revision_review_media_first": true,
+  "developer_change_explanation_read_before_initial_verdict": false,
+  "prior_game_and_critique_context_known": true,
+  "human_sessions": 0,
+  "native_input": false,
+  "audio_listened": false,
+  "continuous_audiovisual_perception": false,
+  "source_hash": "01004fc4ec0036508395f1ecd5b6e09e4460c810c9e36927607377ce099a2dc6",
+  "inputs": {
+    "evidence/rpg/neighborhood-art-motion/art.mp4": {
+      "sha256": "dc9ce03d18394d898127ae73677f4f990c11f409ff9c9d2bb2c00ccaac892bd2",
+      "bytes": 28147190
+    },
+    "evidence/rpg/neighborhood-art-motion/capture-manifest.json": {
+      "sha256": "3c8eb2cab740489105e31f184587de5c4673ac33aa93c1df51b37b7d5a5243bd",
+      "bytes": 50360
+    },
+    "evidence/rpg/neighborhood-art-motion/results.json": {
+      "sha256": "9375d4e1ed265e8f2d1d4cde43794d1d24c02fc2c27bfca8c07fc7f9dd051ba8",
+      "bytes": 27575
+    },
+    "evidence/rpg/neighborhood-art-motion/art-reversal-stop.png": {
+      "sha256": "10ee7196d5de34e72104b5f3c5e93093fdcb5fe956e1b05494a99a91ce4b8ef6",
+      "bytes": 429504
+    },
+    "evidence/rpg/neighborhood-art-motion/art-ivo-notice.png": {
+      "sha256": "4ba37237e11bf0fd261aca51911bd09d97bdb97c66ecc045594e703f1db2a377",
+      "bytes": 483991
+    },
+    "evidence/rpg/neighborhood-art-motion/art-returned-view.png": {
+      "sha256": "0d22c6a98a08afe55db3058ef0d1ab615351ffa41ae311a6ea081bc8d19edb38",
+      "bytes": 464169
+    },
+    "evidence/rpg/neighborhood-art-motion/art-orbit-quarter.png": {
+      "sha256": "22f3405469c9909ce1df7efef2b35b2629b4f70fa40ec3e7b5d01efc778efbab",
+      "bytes": 411761
+    },
+    "evidence/rpg/neighborhood-art-motion/art-first-companion.png": {
+      "sha256": "ad90d55aa8cafd659f613c99ba35bf5f333f23d79f4eae97a32a6159e2167841",
+      "bytes": 431722
+    },
+    "evidence/rpg/neighborhood-art-motion/art-orbit-three-quarter.png": {
+      "sha256": "c677ec73a51d8cc3688b7755500796eb165d19fb2ef86edc79f44872de81c165",
+      "bytes": 424290
+    },
+    "evidence/rpg/neighborhood-art-motion/art-arrival.png": {
+      "sha256": "e998407d6e195719154e1b1a19d7764f1edb51ce75ea80a80a8456568ea547d0",
+      "bytes": 392641
+    },
+    "evidence/rpg/neighborhood-art-motion/art-stop-start.png": {
+      "sha256": "13336ee77d2a333d02f8a517808d1a42e3024de601b2c46eeb6a9690e0a9302c",
+      "bytes": 425930
+    },
+    "evidence/rpg/neighborhood-art-motion/art-orbit-front.png": {
+      "sha256": "4fc9cc410cc3f385a3d5cfc4d9f5c1da8a42a9d62de0d2eef555f0d165387e38",
+      "bytes": 465559
+    },
+    "evidence/rpg/neighborhood-art-motion/art-ivo-gesture.png": {
+      "sha256": "2dd76dddd8f613c31c3372072cf0adf5e355bdf4825291657e0e20f8448251eb",
+      "bytes": 523446
+    },
+    "evidence/rpg/neighborhood-art-motion/art-orbit-back.png": {
+      "sha256": "a64302cb05c44f2af8853b2dc64d1486c89c8e2c38842efc4de31c9621e740df",
+      "bytes": 362512
+    },
+    "evidence/rpg/neighborhood-art-motion/art-orbit-high.png": {
+      "sha256": "d3f0e931f76d7dab0facbc9b749c39c6766e65fa95fcd21223fc606415954220",
+      "bytes": 410726
+    },
+    "evidence/rpg/neighborhood-art-motion/art-orbit-low.png": {
+      "sha256": "df6ca78526325c489939851fa64ba53b76fd769fd3a4285eba1c71523cc8d9a7",
+      "bytes": 353528
+    },
+    "evidence/rpg/neighborhood-art-motion/art-ivo-return.png": {
+      "sha256": "aceac7e631a747e796034a5eb5f2987d4985c4e849ef9f5d444b165c51f130e3",
+      "bytes": 578781
+    },
+    "evidence/rpg/neighborhood-art-motion/welcome.png": {
+      "sha256": "5c64832c266142b2dbfdac271e1cd844a080c5025c94c56e123e84db18e56cef",
+      "bytes": 322222
+    }
+  },
+  "samples": "57.333333s movie fullchronology at1fps; normal-size supplied stills;9.5\u201314.5s at4fps croppedmovement samples;16\u201324s at3fps croppedmeeting samples; everydecodedframe18\u201320s forpaneljump. Exactfullmovie decodedframe554 confirms top-positionresponsepanel (~18.467s). Seek-to-time extractions may roundpastthatframe; exactindex evidence takesprecedence."
+}

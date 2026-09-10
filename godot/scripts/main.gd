@@ -928,6 +928,7 @@ func _qa_finish():
 	qa_report["status"] = "failed" if qa_case == "opening" and (not sim.upgrades.brush or sim.assignment == Vector2.INF or sim.first_helper_at < 0 or sim.first_helper_at > 30) else "recorded"
 	if qa_case == "ritual" and (not sim.completed or sim.restoration < 1 or not qa_report.get("recap_closed", false) or not qa_report.get("celebration_unpaused", false)): qa_report.status = "failed"
 	if qa_case == "helper" and (sim.crew.size() != 1 or qa_report.get("passive_assistance", 0.0) < 0.12 or sim.assignment == Vector2.INF): qa_report.status = "failed"
+	if qa_case == "workcrowd" and (sim.crew.size() != 50 or not qa_report.get("returned_to_work", false) or not gentle_motion or sim.assignment == Vector2.INF or qa_report.get("normal_peak_wisps", 0) > 40 or qa_report.get("gentle_peak_wisps", 0) > 10): qa_report.status = "failed"
 	if qa_case == "full" and (not sim.completed or not qa_report.get("recap_closed", false)): qa_report.status = "failed"
 	if not qa_profile.is_empty(): qa_report.merge({"isolated_save_path": _save_path(), "saved_payload": _payload(), "instance_primary": instance_primary, "save_problem": save_problem})
 	qa_report.merge({"kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.", "engine": Engine.get_version_info(), "case": qa_case, "helpers": sim.crew.size(), "first_helper_at": sim.first_helper_at, "elapsed": sim.elapsed, "cleaned": sim.cleaned, "motes": sim.motes, "restoration": sim.restoration, "completed": sim.completed, "viewport": str(get_viewport().get_visible_rect().size), "draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME), "objects": Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME)})
@@ -997,6 +998,39 @@ func _qa_driver(delta):
 				if button.is_visible_in_tree() and button.text in ["Bring it to life", "Return to the courtyard"]: start_disabled = button.disabled
 			_start()
 			qa_report.second_launch_blocked = not instance_primary and start_disabled and not started
+			_qa_finish()
+	elif qa_case == "workcrowd":
+		var live_wisps = dust_feedback._work_particles.size()
+		var counter = "gentle_peak_wisps" if gentle_motion else "normal_peak_wisps"
+		if not paused: qa_report[counter] = maxi(int(qa_report.get(counter, 0)), live_wisps)
+		if qa_stage == 0 and qa_time >= 1:
+			qa_stage = 1
+			_start()
+			_qa_fixture(false)
+		elif qa_stage == 1 and qa_time >= 11:
+			qa_stage = 2
+			_qa_capture("paired-working")
+		elif qa_stage == 2 and qa_time >= 13:
+			qa_stage = 3
+			_qa_click("Direct  D")
+			_qa_mouse(camera.unproject_position(Vector3(-4, 0, 3)), true)
+			_qa_mouse(qa_pointer, false)
+		elif qa_stage == 3 and qa_time >= 18:
+			qa_stage = 4
+			_qa_capture("crowded-order")
+		elif qa_stage == 4 and qa_time >= 23:
+			qa_stage = 5
+			_qa_click("Settings")
+		elif qa_stage == 5 and qa_time >= 24:
+			qa_stage = 6
+			_qa_click("Gentle motion")
+			qa_report.returned_to_work = _qa_click("Return to the courtyard") and not paused
+		elif qa_stage == 6 and qa_time >= 29:
+			qa_stage = 7
+			_qa_capture("gentle-working")
+		elif qa_stage == 7 and qa_time >= 35:
+			qa_report.fixture = "50 paired helpers and80%clean progress injected atstart;35seconds of real-time automatic cleaning and generated native direction/settings input. No human observation or performance claim."
+			qa_report.gentle_active = gentle_motion
 			_qa_finish()
 	elif qa_case == "helper":
 		if qa_stage == 0 and qa_time >= 1:

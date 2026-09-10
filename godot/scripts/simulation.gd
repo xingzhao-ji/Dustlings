@@ -119,7 +119,7 @@ func choose_target(c: Dictionary) -> int:
 	return best
 
 func _work_position(patch: Vector2, id: int) -> Vector2:
-	var offset = Vector2(PAIR_OFFSET if id % 2 == 1 else -PAIR_OFFSET, 0.12) if upgrades.teamwork else Vector2(0, 0.15)
+	var offset = Vector2(PAIR_OFFSET if id % 2 == 1 else -PAIR_OFFSET, -0.20) if upgrades.teamwork else Vector2(0, -0.27)
 	var goal = _walk_position(patch + offset)
 	if goal.length() < 1.79: goal = goal.normalized() * 1.79
 	return goal

@@ -1,3 +1,29 @@
+# Continuation checkpoint — 2026-09-10 09:51 UTC
+
+Session active. Milestone: exceptional real3D courtyard0.4.0-dev. Human sessions0; representative-player, presentation and owner acceptance pending. No further zones eligible. This checkpoint is not completion.
+
+## Latest handoff — read this first
+
+**Integrated since09:30:** actual-removal helper activity, purposeful grounded reach/sweep/recovery, bounded local work dust40normal/10gentle, and HUD100% tolerance. The first target-facing candidate hid the helper’s face; critic rejected that regression. A focused far-side work-seat alternative restored visible eyes/hands and made work more discernible. Root integrated solo(0,-0.27) and paired(+/-0.29,-0.20). Critic326de96 prefers it over the blank-face candidate; normal-size comprehension remains a human question. Subsequent50-helper native review found no new concrete fused-body/hover/cloud defect. Do not claim player approval.
+
+**Checks and evidence:** root8work-feedback and16integration checks pass; actor10analytic checks pass. Both near/far variants5904routes and10ending/save checks pass. Far50paired contribution33.7861/45s(-0.60%), minbodygap0.53616m,maxspeed1.58011m/s,no invalidposition; controlledending566.2s(+5.1s), firsthelper/upgradeunchanged. Exact evidence430d5b8 in docs/3D-WORK-SEATS.md. `helper-far-seat/helper.mp4` is matched single-helper after; `far-seat-crowd-return/workcrowd.mp4` is35.6s generatedinput/50crew80%fixture, actualDirect+Gentlemotion/return, peaks32normal/10gentle. The first `far-seat-crowd` driver used the wrong Settingsreturnlabel, remainedpaused, and failed; preserve it. `work-feedback-crowd-overview` shows100% in an exact-clean fixture; full normal-end counterfix still needs current longplay verification.
+
+**Playable saved candidate:** review hub evidence/3d/REVIEW.html now honestly exposes the packaged2572e2f before-correction candidate, exactMac/Windows files, full705.467sfilm and source-matched60sprofile. Mac actual4processes/45checks pass. Windowsmetadata/PCK/iconresources verified butWindowsunrun. Hubcandidate41links/hashes pass; it explicitly marks the99% andworklegibility defects and changedlive source. Currentworkingfixes are newer; do not callthisoldpackage polished/current-source. Runtime97fafd7 is the priorwork checkpoint; currentfar-seat/QA edits are being saved now.
+
+**Active independent work / next action:** native_icon owns an isolated dustdistribution candidate (only placement/cluster changes; unchanged4batches/materials/field/work APIs). Final623vs997instances, allgeometryinsideflatpaverfaces; correctednative before/after/4sbrushing/50fixture/cleared comparison justclosed. It is encoding/committing evidence under evidence/3d/dust-distribution and docs/3D-DUST-DISTRIBUTION.md. Root must inspect and sendto independentcritic beforeintegration; do not copywholefileblindly overrootworkfeedback.
+
+Root is running `DUSTLINGS_CAPTURE_SOURCE=builds/3d/experiments/warm-windows node tools/capture-3d.mjs overview warm-windows-overview` now. This is an isolated confirmed-requirement candidate: existinghousepanes graduallywarm duringrestoration withoneglazingbatch andtwo faintshadowlessfacadelights. No canonicalenvironmentchange yet. Pollreturnedexecution session, inspectunlit/restorednormal-size captures; noqualityclaimuntilactualreview. Userexplicitlyrequestedwarm lights; see3D-WINDOW-WARMTH.md.
+
+store_requirements owns isolatedwater-flow experiment only (newshader/geometryregiondiff, docs/3D-WATER-FLOW.md/evidence). Criticnotesstreamslookthin/pipe-like. It prepares one calm flow-reading correction, preservesrealcurve/source-time/Gentlemotion/pause. Waitforrootwarmwindowcapture toclosebeforegivingitnative slot. Rootmergesonlyspecificenvironmentregions sequentially. Independentcritic owns allverdicts and mayreviewdistribution/water/lightingwhenactualmediaready; developmentagentsmustnotwriteapproval.
+
+**After these bounded corrections:** integrateonlythoseaddressingvisible/confirmedgaps, runrelevantcurrentchecks, recordfullsame-sourceplaythrough/counterend andshortopening/chorus, quiet60s50-helperprofile. Freeze/exportfreshMac/Windows, exactpackaged45processchecks, refreshsource-boundreviewhub. Thenhumanplay/listening/ownerreview stillrequired. Do notrepeatmicro-polish ofsubtlehelperworkwithoutnewhuman evidence. Fulloldfilmreveals~2minutescleanupafterwater; pacingquestionawaitshumans, notautomaticreasontochangerates. CUAphysicalinput/Figmaunavailable; nohumanlistening/Windowsphysicalrunclaimed.
+
+Continue useful authorized work, preservecheckpoints about20min apart, and do notendbecauseataskorcheckpointfinished.
+
+---
+
+## Earlier checkpoint (historical status where superseded above)
+
 # Continuation checkpoint — 2026-09-10 09:30 UTC
 
 Session active. Milestone: exceptional real 3D courtyard, Godot 4.7.2, version 0.4.0-dev. No additional zones eligible. Human sessions **0**; player, presentation and owner acceptance all pending. This is a development checkpoint, not product completion.

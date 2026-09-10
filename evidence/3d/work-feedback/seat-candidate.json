@@ -1,0 +1,7 @@
+{
+  "purpose": "Isolated response to observed face/hand occlusion in helper-work-contact. Natural far-side work seat, same actual target facing; no production or gait changes. Not integrated or approved.",
+  "source_snapshot": "builds/3d/capture-snapshots/helper-work-contact",
+  "before_simulation_sha256": "d8d819791edf69bc9973a21ec173424fc69c35f64a226cd29ff572e8e0459fc5",
+  "candidate_simulation_sha256": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b",
+  "change": "solo (0,+0.15) -> (0,-0.27); paired (+/-0.29,+0.12) -> (+/-0.29,-0.20)"
+}

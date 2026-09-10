@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)
+
+Movie Maker mode enabled, recording movie in 1280×800 @ 30 FPS...
+{"case":"workcrowd","cleaned":407.621591666408,"completed":false,"draw_calls":306.0,"elapsed":222.000000000018,"engine":{"build":"official","hash":"ed1daf0bf001b61586d9930840f2f1394092c079","hex":263938,"major":4,"minor":7,"patch":2,"status":"stable","string":"4.7.2-stable (official)","timestamp":0},"first_helper_at":200,"fixture":"50 paired helpers and80%clean progress injected atstart;35seconds of real-time automatic cleaning and generated native direction/settings input. No human observation or performance claim.","gentle_active":true,"gentle_peak_wisps":23,"helpers":50,"kind":"Native Godot automated inspection; fixtures are explicitly labelled. No human test.","motes":285,"normal_peak_wisps":32,"objects":592.0,"restoration":0.0,"status":"failed","viewport":"(1440.0, 900.0)"}
+--------------------------------------------------------------------------------
+Done recording movie at path: /Users/xingzhaoji/Desktop/Dustlings/evidence/3d/far-seat-crowd/workcrowd.avi
+1069 frames at 30 FPS (movie length: 00:00:35:19), recorded in 00:00:19 (184% of real-time speed).
+CPU render time: 0.32 seconds (average: 0.30 ms/frame)
+GPU render time: 0.00 seconds (average: 0.00 ms/frame)
+Encoding time: 6.05 seconds (average: 5.66 ms/frame)
+--------------------------------------------------------------------------------

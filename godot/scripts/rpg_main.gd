@@ -4,8 +4,10 @@ const Story = preload("res://scripts/rpg_story.gd")
 const Village = preload("res://scripts/rpg_environment.gd")
 const Actor = preload("res://scripts/rpg_actor.gd")
 const Companion = preload("res://scripts/dustling_visual.gd")
-const Soundscape = preload("res://scripts/soundscape.gd")
+const Soundscape = preload("res://scripts/rpg_audio.gd")
 const Save = preload("res://scripts/rpg_save.gd")
+const Navigation = preload("res://scripts/rpg_navigation.gd")
+var navigation = Navigation.new()
 var story = Story.new()
 var world: Node3D
 var player: CharacterBody3D
@@ -61,6 +63,13 @@ var waypoints: Array[Vector3] = []
 var _last_trail = Vector3.ZERO
 var _ui_buttons: Array[Button] = []
 var _start_saved = false
+var exiting=false
+var step_distance=0.0
+var moth_pending=false
+var moth_phase=0
+var moth_clock=0.0
+var moth_meeting=Vector3(12.85,0,-12.55)
+var moth_contact_sounded=false
 
 func _ready():
 	qa = "--rpg-qa" in OS.get_cmdline_user_args()
@@ -261,6 +270,9 @@ func _input(event):
 			get_viewport().set_input_as_handled()
 			return
 		if is_instance_valid(modal): return
+		if event.keycode in [KEY_W,KEY_A,KEY_S,KEY_D,KEY_Q,KEY_COMMA,KEY_PERIOD]:
+			var focused=get_viewport().gui_get_focus_owner()
+			if focused: focused.release_focus()
 		match event.keycode:
 			KEY_E: _interact_nearest(); get_viewport().set_input_as_handled()
 			KEY_J: _show_journal(); get_viewport().set_input_as_handled()
@@ -275,7 +287,11 @@ func _input(event):
 			orbiting = event.pressed and not is_instance_valid(modal)
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed: brush_mouse = false
 		if not is_instance_valid(modal) and not _over_ui():
-			if event.button_index == MOUSE_BUTTON_LEFT: brush_mouse = event.pressed
+			if event.button_index == MOUSE_BUTTON_LEFT:
+				brush_mouse = event.pressed
+				if event.pressed:
+					var focused=get_viewport().gui_get_focus_owner()
+					if focused: focused.release_focus()
 			if event.pressed and event.button_index == MOUSE_BUTTON_WHEEL_UP: distance = maxf(4.8,distance-.5)
 			if event.pressed and event.button_index == MOUSE_BUTTON_WHEEL_DOWN: distance = minf(10.5,distance+.5)
 	if event is InputEventMouseMotion and orbiting:
@@ -300,18 +316,27 @@ func _physics_process(delta):
 	player.velocity.x = direction.x*2.6
 	player.velocity.z = direction.z*2.6
 	player.velocity.y = -1 if player.is_on_floor() else maxf(-12,player.velocity.y-18*delta)
+	var before_walk=player.position
 	player.move_and_slide()
+	if player.is_on_floor():
+		step_distance+=Vector2(player.position.x-before_walk.x,player.position.z-before_walk.z).length()
+		if step_distance>=.55:
+			step_distance=fmod(step_distance,.55)
+			audio.footstep(player.position,_surface_at(player.position))
 	if player.position.y < -2: player.position = world.get_spawn(); player.velocity = Vector3.ZERO
 	if direction.length() > .05:
 		avatar.rotation.y = lerp_angle(avatar.rotation.y,atan2(direction.x,direction.z),minf(1,delta*13))
 	if player.position.distance_to(_last_trail) > .38:
 		waypoints.append(player.position)
+		for c in companions:
+			c.path.append(player.position)
 		_last_trail = player.position
 		if waypoints.size()>100: waypoints.pop_front()
 	_find_nearest()
 	_update_brush(delta)
 	_update_residents(delta)
 	_update_companions(delta)
+	_update_moth_scene(delta)
 	save_clock += delta
 	if save_clock > 10: save_clock=0; _save()
 
@@ -320,6 +345,9 @@ func _process(delta):
 	_place_camera(delta)
 	if is_instance_valid(modal) and modal_kind == "dialogue":
 		if residents.has(dialogue_id): residents[dialogue_id].visual.animate(delta,0,true,false)
+		for c in companions:
+			c.age+=delta
+			c.visual.pose(delta,elapsed,0,0,c.age,false,settings.gentle)
 		return
 	if not active or is_instance_valid(modal): return
 	elapsed += delta
@@ -361,6 +389,8 @@ func _find_nearest():
 		var d = player.position.distance_to(p)
 		if d < best and _line_clear(p): best=d; nearest=id
 	var names = {"lantern":"Dusty lantern","bridge":"Brook crossing","wood":"Salvaged wood","garden":"Thirsty seedlings","vine_wall":"Overgrown wall","greenhouse_memory":"Weathered letter","alcove":"Hollow in the stone","home":"Your home","bed":"Rest","parcel":"Ivo’s parcel","herbs":"Garden herbs","table":"The long table","workshop":"Mara’s workshop"}
+	if story.has("first_companion"): names.lantern="Old lantern"
+	if story.has("garden_watered"): names.garden="Nell’s seedlings"
 	prompt.text = "E  ·  "+(nearest.capitalize() if residents.has(nearest) else names.get(nearest,nearest.capitalize())) if not nearest.is_empty() else "WASD  Walk   ·   Right-drag  Look   ·   E  Interact"
 	if nearest in ["lantern","bridge"] and patch_amount.get(nearest,0)>.001: prompt.text += "    /    Hold Space  Brush"
 
@@ -413,6 +443,7 @@ func _update_residents(delta):
 			r.route=[]
 			if body.position.z > -4 and target.z < -6:
 				r.route=[Vector3(0,0,1),Vector3(0,0,-3),Vector3(0,0,-7.5),target]
+			elif target.x>9 and target.z<-9: r.route=[Vector3(12,0,-8),Vector3(12,0,-10),target]
 			else: r.route=[target]
 		if not r.route.is_empty():
 			if Vector2(body.position.x-r.route[0].x,body.position.z-r.route[0].z).length()<.22: r.route.pop_front()
@@ -432,12 +463,35 @@ func _update_companions(delta):
 		var c = companions[i]
 		var body: CharacterBody3D = c.body
 		var target: Vector3 = player.position+Vector3(cos(elapsed*.2+float(i)*2.1),0,sin(elapsed*.2+float(i)*2.1))*1.1
-		if waypoints.size()>4+i*2 and body.position.distance_to(player.position)>2.0: target=waypoints[maxi(0,waypoints.size()-4-i*2)]
+		while not c.path.is_empty() and body.position.distance_to(c.path[0])<.32:
+			if c.path.size()>1 and not navigation.segment_clear(body.position,c.path[1]): break
+			c.path.pop_front()
+		if not c.path.is_empty(): target=c.path[0]
 		var working = brush_valid and (brush_held or brush_mouse)
-		if c.age < 1.2: target=body.position
+		if c.age < 1.4:
+			target=body.position
+			c.visual.rotation.y=atan2(player.position.x-body.position.x,player.position.z-body.position.z)
 		if care_time>0: target=care_point+Vector3(cos(float(i)*2.1),0,sin(float(i)*2.1))*.8; working=true
 		if working and care_time<=0: target=brush_point+Vector3(cos(float(i)*2.1),0,sin(float(i)*2.1))*.6
-		var diff = target-body.position
+		if moth_phase>0 and i==0: target=moth_meeting; working=false
+		# Orbit/work goals can lie beyond a prop. Choose a reachable floor point and
+		# cache the actual collider detour; never discard a blocked breadcrumb.
+		if not navigation.point_clear(target):
+			var found=false
+			for step in 12:
+				var angle=float(i)*2.1+float(step)*TAU/12.0
+				var candidate=player.position+Vector3(cos(angle),0,sin(angle))*.85
+				if navigation.point_clear(candidate): target=candidate; found=true; break
+			if not found: target=player.position
+		if c.get("nav_generation",-1)!=navigation.generation or c.get("nav_goal",Vector3.INF).distance_to(target)>.22:
+			c.nav_path=navigation.path(body.position,target)
+			c.nav_goal=target
+			c.nav_generation=navigation.generation
+		if not c.nav_path.is_empty() and not navigation.segment_clear(body.position,c.nav_path[0]):
+			c.nav_path=navigation.path(body.position,target)
+		while c.nav_path.size()>1 and body.position.distance_to(c.nav_path[0])<.32 and navigation.segment_clear(body.position,c.nav_path[1]): c.nav_path.pop_front()
+		var steering: Vector3=c.nav_path[0] if not c.nav_path.is_empty() else body.position
+		var diff = steering-body.position
 		diff.y=0
 		var desired = diff.normalized()*minf(3,diff.length()*2) if diff.length()>.16 else Vector3.ZERO
 		for other in companions:
@@ -445,13 +499,37 @@ func _update_companions(delta):
 			var apart: Vector3=body.position-other.body.position
 			apart.y=0
 			if apart.length()<.48 and apart.length()>.001: desired+=apart.normalized()*(.48-apart.length())*4
+		if moth_phase==2 and i==0: desired=Vector3.ZERO
 		body.velocity=Vector3(desired.x,-1,desired.z)
 		body.move_and_slide()
 		if desired.length()>.08: c.visual.rotation.y=lerp_angle(c.visual.rotation.y,atan2(desired.x,desired.z),minf(1,delta*8))
+		if moth_phase>0 and i==0 and body.position.distance_to(moth_meeting)<.4:
+			c.visual.rotation.y=lerp_angle(c.visual.rotation.y,atan2(12.0-body.position.x,-13.6-body.position.z),minf(1,delta*5))
 		c.age += delta
 		c.visual.pose(delta,elapsed,Vector2(body.velocity.x,body.velocity.z).length(),1.0 if working and diff.length()<.3 else 0.0,c.age,joy>0,settings.gentle)
 		if c.has("light"):
 			c.light.light_energy=(.18 if player.position.distance_to(anchors.alcove)<3 else .035) if i==0 and story.state.flags.get("glow_unlocked",false) else 0
+			if moth_pending or moth_phase==1: c.light.light_energy=0
+			elif moth_phase==2: c.light.light_energy*=smoothstep(1.65,2.3,moth_clock)
+
+func _update_moth_scene(delta):
+	if moth_phase==0 or companions.is_empty(): return
+	moth_clock+=delta
+	if moth_phase==1 and companions[0].body.position.distance_to(moth_meeting)<.38:
+		moth_phase=2
+		moth_meeting=companions[0].body.position
+		moth_clock=0.0
+		world.moth_greet(companions[0].body.position+Vector3(0,.48,0))
+	if moth_phase==2:
+		if moth_clock>=1.75 and not moth_contact_sounded:
+			moth_contact_sounded=true
+			audio.melody(companions[0].body.position,true)
+		if moth_clock>5.6:
+			moth_phase=0
+			_toast("A little light to carry with you.",4)
+	# The player may freely leave. The durable ability never depends on watching
+	# a scene, and interrupting does not move either character or camera.
+	if player.position.distance_to(moth_meeting)>6: moth_phase=0
 
 func _interact_nearest():
 	if nearest.is_empty(): return
@@ -466,6 +544,7 @@ func _interact_nearest():
 
 func _apply_story():
 	world.set_story(story.state)
+	navigation.configure(world)
 	var flags: Dictionary = story.state.flags
 	for id in patches:
 		patches[id].visible=patch_amount[id]>.001
@@ -485,17 +564,18 @@ func _apply_story():
 		body.collision_layer=0
 		body.collision_mask=1
 		add_child(body)
-		body.position=brush_point if companions.is_empty() else player.position+Vector3(cos(float(companions.size())*2.1),0,sin(float(companions.size())*2.1))*.9
+		body.position=brush_point+Vector3(.65,0,.1) if companions.is_empty() else player.position+Vector3(cos(float(companions.size())*2.1),0,sin(float(companions.size())*2.1))*.9
 		if _start_saved: body.position=player.position+Vector3(.6,0,.8)
 		var visual = Companion.new()
 		body.add_child(visual)
+		visual.pose(0,elapsed,0,0,0,false,settings.gentle)
 		var light = OmniLight3D.new()
 		light.position.y=.5
 		light.light_color=Color("cbe4b7")
 		light.omni_range=1.7
 		light.light_energy=0
 		body.add_child(light)
-		companions.append({"body":body,"visual":visual,"age":0.0,"light":light})
+		companions.append({"body":body,"visual":visual,"age":0.0,"light":light,"path":[],"nav_path":[],"nav_goal":Vector3.INF,"nav_generation":-1})
 	if flags.get("bridge_repaired",false):
 		residents.nell.target=Vector3(-4,0,-8)
 		residents.ivo.target=Vector3(1,0,-7.3)
@@ -679,9 +759,15 @@ func _choose(action: String):
 		if action in ["repair_bridge","water_garden","sing_wall"]:
 			care_time=3.0
 			care_point=anchors.get({"repair_bridge":"bridge","water_garden":"garden","sing_wall":"vine_wall"}[action],player.position)
-		audio.cue("restored" if action=="repair_bridge" else "upgrade",player.position)
+		if action in ["nell_melody","sing_wall"]: audio.melody(residents.nell.body.position if action=="nell_melody" else anchors.vine_wall,action=="sing_wall")
+		elif action!="greenhouse_memory": audio.cue("restored" if action=="repair_bridge" else "upgrade",player.position)
 		_save()
-	if story.state.flags.get("bridge_repaired",false) and not before.flags.get("bridge_repaired",false):
+	if action=="greenhouse_memory" and result.get("changed",false):
+		moth_pending=true
+		result.text="‘Nell — If the door grows over, sing. Some things remember us longer than we expect.’"
+	if action=="share_table" and result.get("changed",false):
+		_close_modal(); _toast("The table is ready for company.",5)
+	elif story.state.flags.get("bridge_repaired",false) and not before.flags.get("bridge_repaired",false):
 		_close_modal()
 		_toast("The crossing is open. Nell and Ivo are heading to the garden.",6)
 	elif story.state.flags.get("greenhouse_open",false) and not before.flags.get("greenhouse_open",false):
@@ -695,6 +781,11 @@ func _close_modal():
 	modal_kind=""
 	dialogue_id=""
 	active=true
+	if moth_pending:
+		moth_pending=false
+		moth_phase=1
+		moth_clock=0.0
+		moth_contact_sounded=false
 	world.set_process(true)
 	prompt.visible=true
 	_stop_input()
@@ -714,7 +805,7 @@ func _show_journal():
 	var box=_panel("journal",690)
 	_copy(box,"Your days in Bellwether",29)
 	var scroll=ScrollContainer.new()
-	scroll.custom_minimum_size=Vector2(0,360)
+	scroll.custom_minimum_size=Vector2(0,clampf(story.journal().size()*52,110,360))
 	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	box.add_child(scroll)
 	var entries=VBoxContainer.new()
@@ -759,6 +850,9 @@ func _show_settings():
 		b.add_theme_font_size_override("font_size",19)
 		b.add_theme_color_override("font_color",Color("334b43"))
 		b.add_theme_color_override("font_focus_color",Color("334b43"))
+		b.add_theme_color_override("font_pressed_color",Color("334b43"))
+		b.add_theme_color_override("font_hover_color",Color("334b43"))
+		b.add_theme_color_override("font_hover_pressed_color",Color("334b43"))
 		b.button_pressed=settings[item[1]]
 		var key=item[1]
 		b.toggled.connect(func(v): settings[key]=v; _apply_settings())
@@ -847,7 +941,10 @@ func _notification(what):
 		if not is_instance_valid(modal): _show_settings()
 
 func _quit():
+	if exiting: return
 	if is_instance_valid(player) and primary and not _save(): _show_settings(); return
+	exiting=true
+	if is_instance_valid(audio): await audio.shutdown()
 	get_tree().quit()
 
 func _recover_position():
@@ -864,6 +961,9 @@ func _recover_position():
 	if not get_world_3d().direct_space_state.intersect_shape(query).is_empty():
 		player.position=world.get_spawn()
 		camera_focus=player.position+Vector3(0,1.1,0)
+		waypoints=[player.position]
+		_last_trail=player.position
+		for i in companions.size(): companions[i].body.position=player.position+Vector3(.6,0,.6+float(i)*.5)
 		save_message="Returned you to the village path. Your progress is safe."
 		if modal_kind=="welcome": _show_welcome()
 		else: _save_feedback(save_message)
@@ -879,6 +979,11 @@ func _tick_formation(delta: float):
 		var p=formation[i]
 		p.age+=delta
 		var t=clampf(p.age/1.25,0,1)
-		p.node.position=p.center+Vector3(cos(p.angle+t*TAU)*.8*(1-t),sin(t*PI)*.4+.15,sin(p.angle+t*TAU)*.8*(1-t))
+		p.node.position=p.center+Vector3(.65*t,0,.1*t)+Vector3(cos(p.angle+t*TAU)*.8*(1-t),sin(t*PI)*.4+.15,sin(p.angle+t*TAU)*.8*(1-t))
 		p.node.scale=Vector3.ONE*(.09*(1-t)+.005)
 		if t>=1: p.node.queue_free(); formation.remove_at(i)
+
+func _surface_at(at: Vector3) -> String:
+	if (at.x>-12.9 and at.x<-7.1 and at.z>1.5 and at.z<6.5) or (at.x>7 and at.x<13 and at.z>-2.7 and at.z<1.7) or (absf(at.x)<1.45 and at.z>-6.2 and at.z<-3.8): return "wood"
+	if (absf(at.x)<7.5 and at.z>-3.8 and at.z<5.7) or (absf(at.z+9)<1.1 and absf(at.x)<13) or (absf(at.x)<1.5 and at.z>-9 and at.z<-3) or (at.x<-5 and at.x>-11 and absf(at.z-7.5)<1.1): return "stone"
+	return "grass"

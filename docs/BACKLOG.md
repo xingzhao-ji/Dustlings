@@ -1,3 +1,19 @@
+# Active RPG neighborhood backlog — owner direction supersedes cleanup-only scope
+
+Current milestone is an integrated opening in Bellwether, not a completed RPG. Root lead. Human RPG sessions0; presentation and owner gates pending. Existing courtyard backlog below is historical.
+
+1. Finish evidenced scene/story continuity: visible dust curl into first companion, actual moth encounter, teacup bridge/keepsake, calm useful light, purposeful resident work and shared activity. Corrections are active; compare actual current native film.
+2. Protect controls and restoration: readable dialogue while retaining character views, predictable nearby targets, solid avatar/NPC collision, clear bridge queues, reach every interior/prop, safe loaded position. Test pause/interrupt and earlier-save rollback.
+3. Verify current small/minimum-window UI, save copies and resumed world state. Preserve corrupted files, report failures visibly, no duplicate writer. Test physical OS picker/input when available.
+4. Produce current packaged Windows/Mac artifacts, source-bound media and quiet native performance; Windows physical execution remains separate.
+5. Observe unfamiliar cozy RPG players and owner on exact current build using RPG-PLAYTEST.md. Assess attachment, meaningful choice, fair surprise, atmosphere, comfort, and desire to return. Human/audio gates remain open.
+6. Refine neighborhood depth and routines based on observed gaps. No additional destinations/campaign chapters merely to inflate breadth. Finish first neighborhood before full campaign production.
+7. Remaining product foundations after neighborhood evidence: campaign structure and ending, Steam identity/store assets/entitlements/signing/release QA; Mac physical testing; mobile ports later. No publication or sales-readiness claim.
+
+---
+
+## Historical courtyard backlog
+
 # Active quality gaps — 3D courtyard, 2026-09-10 11:12 UTC
 
 Human sessions: **0**. Player, presentation and current-build owner gates remain open. The courtyard is the only eligible zone, with at most50 helpers. A working package and independent AI review do not establish benchmark quality or readiness to sell.

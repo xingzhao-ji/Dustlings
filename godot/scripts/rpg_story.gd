@@ -83,7 +83,7 @@ func interact(id: String) -> Dictionary:
 		"greenhouse_memory":
 			if not has("greenhouse_open"): return _line("Beyond the ivy", "A faint glimmer lies beyond the glass.", [], false, false)
 			if has("memory_found"): return _line("A letter in the light", "‘If the door grows over, sing. Some things remember us longer than we expect.’ — Liora\n\nThe little lantern-moth rests beside your companion.")
-			return _line("The old greenhouse", "A sleeping lantern-moth unfolds beside an unopened letter. Your companion answers with a small, curious chirp.", [_choice("Read the letter together", "greenhouse_memory")])
+			return _line("The old greenhouse", "A lantern-moth sleeps on a music box. An unopened letter rests beside it.", [_choice("Read the letter together", "greenhouse_memory")])
 		"alcove":
 			if has("alcove_found"): return _line("Mender's alcove", "A child's practice bridge spans a cracked teacup. Someone believed a way across could be made.")
 			if has("glow_unlocked"): return _line("Dark alcove", "A tiny bridge is scratched into the lintel. Your companion's light catches something inside.", [_choice("Ask for a little light", "light_alcove")])
@@ -227,7 +227,7 @@ func perform(action: String) -> Dictionary:
 			if not has("met_tavi"): return _missing("Say hello to Tavi before helping with the table.")
 			if not has("bridge_repaired"): return _missing("Tavi's guests need the crossing repaired before everyone can gather.")
 			if not has("herbs_gathered"): return _missing("A few sprigs of lemon thyme grow beside Nell's garden. Leave their roots to grow.")
-			return _line("A table with room", "Tavi scatters thyme over warm bread. Cups settle into waiting hands.\n\nYour companion curls beneath the fifth chair — yours.", [], _mark("shared_table"), true, "shared_table")
+			return _line("A table with room", "Tavi smiles at the thyme. ‘I’ll bring the bread. You bring whoever you find.’", [], _mark("shared_table"), true, "shared_table")
 		"tavi_recipe":
 			if not has("met_tavi") or not has("shared_table"): return _missing("Share the first table with Tavi, then ask about the bread.")
 			return _line("Tavi", "Flour, warm water, thyme. Let it rest longer than you think.\n\nTake my spare kettle home. Next cup's at yours, if you'd like.", [], _mark("recipe_shared"), true, "recipe_shared")

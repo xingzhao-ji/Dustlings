@@ -38,6 +38,8 @@ var _bridge_planks: Array[Dictionary] = []
 var _moth: Node3D
 var _moth_wings: Array[Node3D] = []
 var _moth_wake := 0.0
+var _moth_greeting := 10.0
+var _moth_target := Vector3.ZERO
 var _moth_glow: OmniLight3D
 var _alcove_glow: OmniLight3D
 var _alcove_treasure: Node3D
@@ -124,6 +126,7 @@ func _flag(key: String) -> bool:
 
 func _process(delta: float) -> void:
     _world_time += delta
+    _moth_greeting += delta
     _water_material.set_shader_parameter("time_seconds", _world_time)
     _plant_material.set_shader_parameter("time_seconds", _world_time)
     _reveal = move_toward(_reveal, 1.0 if _flag("greenhouse_open") else 0.0, delta * 0.38)
@@ -155,6 +158,9 @@ func _apply_animated_story() -> void:
         var awaken := smoothstep(0, 1, _moth_wake)
         var hover := sin(_world_time * 2.6) * (0.004 if _gentle_motion else 0.025) * awaken
         _moth.position = Vector3(12, 1.17 + awaken * 0.32 + hover, -13.6 + awaken * 0.22)
+        if _moth_greeting < 5.5:
+            var greeting := smoothstep(0, 1, _moth_greeting / 1.8) * (1.0 - smoothstep(0, 1, (_moth_greeting - 2.6) / 2.9))
+            _moth.position = _moth.position.lerp(_moth_target, greeting) + Vector3(0, sin(greeting * PI) * 0.25, 0)
         _moth.rotation.y = sin(_world_time * 0.8) * 0.07 * awaken
         for i in _moth_wings.size():
             var side := -1.0 if i == 0 else 1.0
@@ -430,8 +436,8 @@ func _garden() -> void:
     _gathering_props = Node3D.new()
     _gathering_props.name = "SharedTea"
     add_child(_gathering_props)
-    for i in 4:
-        _dynamic_round(_gathering_props, Vector3(-3.7 + i * 0.46, 0.87, -12.0), Vector3(0.17, 0.19, 0.17), Color("e6d8bb"))
+    for i in 5:
+        _dynamic_round(_gathering_props, Vector3(-3.7 + i * 0.37, 0.87, -12.0), Vector3(0.17, 0.19, 0.17), Color("e6d8bb"))
     _dynamic_round(_gathering_props, Vector3(-3, 0.91, -12.30), Vector3(0.40, 0.37, 0.35), Color("a4b29b"))
     # Accessible herbs beside, not inside, the solid raised beds.
     for i in 5:
@@ -664,3 +670,7 @@ func _alcove_discovery(p: Vector3) -> void:
     _alcove_glow.omni_range = 1.25
     _alcove_glow.shadow_enabled = false
     add_child(_alcove_glow)
+
+func moth_greet(companion_head: Vector3) -> void:
+    _moth_target = companion_head
+    _moth_greeting = 0.0

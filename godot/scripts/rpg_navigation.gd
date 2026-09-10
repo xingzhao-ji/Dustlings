@@ -63,7 +63,7 @@ func _collect(node: Node, rects: Array[Rect2], names: Array[String]) -> void:
 func _point_clear(point: Vector2, radius: float = BODY_RADIUS) -> bool:
 	if point.x < -17.85 or point.x > 17.85 or point.y < -17.55 or point.y > 15.55: return false
 	for rect in obstacles:
-		if rect.grow(radius).has_point(point): return false
+		if point.distance_squared_to(point.clamp(rect.position,rect.end)) <= radius*radius: return false
 	return true
 
 func point_clear(point: Vector3) -> bool:
@@ -92,8 +92,19 @@ func segment_clear(from: Vector3, to: Vector3) -> bool:
 	var b = Vector2(to.x, to.z)
 	if not _point_clear(a) or not _point_clear(b): return false
 	for rect in obstacles:
-		if _crosses_rect(a, b, rect.grow(BODY_RADIUS)): return false
+		if _segment_touches_rect(a,b,rect,BODY_RADIUS): return false
 	return true
+
+func _segment_touches_rect(a: Vector2,b: Vector2,rect: Rect2,radius: float) -> bool:
+	if not _crosses_rect(a,b,rect.grow(radius)): return false
+	if _crosses_rect(a,b,rect): return true
+	# A real capsule rounds a box corner. Square-expanded rectangles incorrectly
+	# rejected valid contact positions and stranded a follower at the home door.
+	var distance=minf(a.distance_squared_to(a.clamp(rect.position,rect.end)),b.distance_squared_to(b.clamp(rect.position,rect.end)))
+	for corner in [rect.position,Vector2(rect.end.x,rect.position.y),rect.end,Vector2(rect.position.x,rect.end.y)]:
+		var nearest=Geometry2D.get_closest_point_to_segment(corner,a,b)
+		distance=minf(distance,corner.distance_squared_to(nearest))
+	return distance<=radius*radius
 
 func _cell_for(point: Vector3) -> Vector2i:
 	var p = Vector2(point.x, point.z)

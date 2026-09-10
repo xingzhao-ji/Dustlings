@@ -1,3 +1,19 @@
+# Continuation checkpoint — 2026-09-10 17:53 UTC
+
+**Session active. New owner steering makes art and animation direction the immediate priority within the RPG.** See RPG-ART-DIRECTION.md and docs/art-direction/bellwether-direction.svg. Three timestamped priorities from independent473140e: discovery continuity109–119s, individual resident acting2–16/41–48s, arrival light/material hierarchy2–11s. No additional destinations. Figma unavailable. Future critic reviews must receive media/source/method before developer explanation.
+
+Root owns main, actor animation, light/camera and integrated reveal staging. rpg_story now owns collision-aware companion navigation/test module after real lantern obstruction was reproduced; rpg_world is ready for bounded existing arrival/material work and has prepared packagedMac runner8a0b20c. Critic remains separate.
+
+Latest source includes3D moth greeting/recess, compactdialogue, small-windowSettings/journal corrections, original quiet footsteps/familymelody, imported-save rollback fixes. Story83/83, save44/44, integration45/45, audio66PCM+20engine checks passed on their recorded sources. No listening or human verdict. NativeUI960×640actual captures `neighborhood-ui-final` source372223… fit and show readabletoggletext/adaptivejournal.
+
+Exact next action: let navigation specialist finish rpg_navigation.gd and actual lantern/bridge/home/greenhouse companionroute checks; root integrates call sites. Main currently uses per-helper breadcrumbs and can strand a follower behind OldLanternBase. Do not claimthatresolved. Root also must initialize newbornpose correctly and stage the moth exchange in clear view. Then apply the bounded arrival/material and Ivo acting proposal under sharedboard, capture same route plusorbit/interruption, obtain blindcritic findings, correctverified regressions. Onlythen sourcefreeze/package/quietperformance.
+
+Existing complete but earlier124step route `neighborhood-route-corrected` finishes159engine sec. Newer `neighborhood-discoveries` and `neighborhood-integrated` movies are explicitlyfailedscriptedroutes(blockedbyNell/Ivo); preservedfilesdiagnostics. Latestdriver usesnorthlanez−6.5. Current films do not yet prove allfourresidentrewardarcs orreliablefollowerreturn. Four-companionfixture foundonephysicallystrandedatlantern, nothumenfrustrationcount. Avoidinventingsatisfaction.
+
+RPG Steam Windows/Macpackages pending. Prepared runner `tools/rpg-package-check.mjs`; WindowsREADMEhelper nowRPG-aware, preservingoldarchives. Rootstillneeds build/export, exactpackagedMac, WindowsZIP, quietnativecallbackprofile andsourceboundreviewpage. Macactualperformancefromoldcourtyard ishistorical; Windowsphysicalinput/audioaudition/playerandowner gatespending.13GiBdiskavailableat17:45; root-createdrawAVIsmayberemovedonlyafterverifiedMP4/framecount+hashrecord, neverdeleteuserassets/history.
+
+---
+
 # Continuation checkpoint — 2026-09-10 17:26 UTC
 
 **Session active. Owner explicitly replaced cleanup-only scope with a third-person cozy RPG.** Earlier no-expansion blocker below is historical. Current milestone: one complete Bellwether neighborhood; not polished, not human accepted. Human RPG sessions:0; owner acceptance:pending.

@@ -17,3 +17,9 @@ A separate startup long frame was traced to native AudioContext creation, approx
 ## Current limits and next checks
 
 A sustained50-helper profile must identify the exact standalone artifact, browser, viewport, DPR, audio/quality settings and concurrent workload. Keep all stalls in reported statistics. Record physical Windows/MacBook input and mobile hardware only when actually tested. Performance acceptance is also contingent on target players finding movement readable and controls comfortable; no automated threshold substitutes for those judgments.
+
+## Frozen 0.2 artifact sample
+
+Artifact `cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea` was sampled for 60 seconds with 50 helpers, normal rendering at DPR2 and audio playing. Installed headless Chrome152.0.7977.83, 1440×900 viewport on the host described above. No other agent browser checks or video recording overlapped this sample; other host background work was not controlled.
+
+The 3,600 retained foreground intervals had mean16.666ms, p95/p99/worst16.8ms, zero over33.4ms, zero at least500ms. [Exact artifact report](../evidence/v0.2/final-build-checks.json). The earlier isolated216.6ms interval remains documented and unexplained. This single desktop sample is not mobile, weak-device, thermal, or human responsiveness validation.

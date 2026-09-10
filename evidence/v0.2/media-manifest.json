@@ -1,0 +1,84 @@
+{
+  "build": {
+    "version": "0.2.0",
+    "sourceRevision": "4384d82d61210269332cb8568ef89c7399425b86",
+    "sourceDirty": false,
+    "builtAt": "2026-09-10T06:17:56.300Z",
+    "artifact": "Dustlings Courtyard.html",
+    "sha256": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
+    "bytes": 148970,
+    "runtimeDependencies": 0,
+    "scope": "Courtyard prototype; human acceptance pending"
+  },
+  "kind": "Actual normal-speed automated gameplay recordings, H.264 derivatives of original browser capture. No human playtest or native listening claim.",
+  "files": [
+    {
+      "path": "evidence/v0.2/interaction-ui.mp4",
+      "sha256": "a607e6bc91aca6796820c4ce9cb4954c920f21ece5e76247baec5e271fbfd25b",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1440,
+            "height": 900
+          }
+        ],
+        "format": {
+          "duration": "45.000000",
+          "size": "2319255"
+        }
+      }
+    },
+    {
+      "path": "evidence/v0.2/opening-with-sound.mp4",
+      "sha256": "95f8cef67f500d3bd99360fa20055a06b7384c1f069c36c159b83dd1875359ec",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 912
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio"
+          }
+        ],
+        "format": {
+          "duration": "42.747000",
+          "size": "2045968"
+        }
+      }
+    },
+    {
+      "path": "evidence/v0.2/restoration-with-sound.mp4",
+      "sha256": "bd58df3ec07ece83758eacbedf409f52acba877dab6de19a229eabd0ee6c052f",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 912
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio"
+          }
+        ],
+        "format": {
+          "duration": "50.068000",
+          "size": "2906888"
+        }
+      }
+    }
+  ]
+}

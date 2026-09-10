@@ -1,3 +1,11 @@
+# Current continuation pointer
+
+The active source/build is courtyard0.2, frozen at source `4384d82d61210269332cb8568ef89c7399425b86`; artifact SHA-256 `cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea`. See [CONTINUATION.md](CONTINUATION.md) for the exact resumable task and [BACKLOG.md](BACKLOG.md) for current statuses. The entries below are historical0.1 development observations; they are preserved and do not describe the latest typography, camera, input, or recovery state.
+
+Current milestone remains **awaiting human validation**. No human or owner gate has passed. Current artifact [review page](../evidence/REVIEW.html) includes matching gameplay views and recordings.
+
+---
+
 # Development checkpoint and evidence ledger
 
 Started 2026-09-09. Scope is the courtyard milestone described in [DESIGN.md](DESIGN.md). The full game's courtyard → canal → clocktower garden arc remains a requirement; additional zones are deferred until the integrated courtyard has player evidence. [PLAYTEST.md](PLAYTEST.md) defines the first human round.

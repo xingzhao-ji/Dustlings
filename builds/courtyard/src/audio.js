@@ -26,6 +26,21 @@ export class DustAudio {
     this.lastAudioProgress = -1;
     this.lastBrushState = null;
     this.continuous = [];
+    this.prepared = false;
+  }
+
+  /** Optional welcome-idle preparation. Creates no sources and plays no sound. */
+  prepare() {
+    if (this.destroyed) return false;
+    if (this.context) return true;
+    const Context = globalThis.AudioContext || globalThis.webkitAudioContext;
+    if (!Context) return false;
+    this.context = new Context({ latencyHint: 'interactive' });
+    this.prepared = true;
+    // Browsers normally create this suspended before activation. If autoplay is
+    // permitted, explicitly suspend the source-free context to keep idle work low.
+    if (this.context.state === 'running') this.context.suspend().catch(() => {});
+    return true;
   }
 
   /** Call from a click/tap/keyboard gesture. Returns false if audio is unavailable. */
@@ -352,7 +367,9 @@ export class DustAudio {
     if (!this.ready || this.destroyed) return false;
     clearTimeout(this.suspendTimer);
     this.paused = false;
-    if (!this.offline && this.context.state === 'suspended') await this.context.resume();
+    // Always request resume: a welcome-idle suspension may still be pending when
+    // the Start gesture arrives. Queueing resume last preserves the user's action.
+    if (!this.offline) await this.context.resume();
     this._ramp(this.master.gain, this.mix.muted ? 0 : .58, this.context.currentTime, .1);
     if (!this.offline && !this.timer) {
       this.nextTick = this.context.currentTime + .1;
@@ -365,7 +382,7 @@ export class DustAudio {
   getCaptureStream() { return this.capture?.stream || null; }
 
   getDiagnostics() {
-    return { ready: this.ready, paused: this.paused, contextState: this.context?.state || 'uninitialized', maxVoices: this.maxVoices, peakVoices: this.peakVoices, continuousSources: this.continuous.length, progress: this.progress, mix: { ...this.mix } };
+    return { ready: this.ready, prepared: this.prepared, paused: this.paused, contextState: this.context?.state || 'uninitialized', maxVoices: this.maxVoices, peakVoices: this.peakVoices, continuousSources: this.continuous.length, progress: this.progress, mix: { ...this.mix } };
   }
 
   /** Schedule a reproducible 36-second audition on an injected OfflineAudioContext. */
@@ -396,8 +413,8 @@ export class DustAudio {
       this.limiter.disconnect();
       this.master.disconnect();
       this.capture?.stream.getTracks().forEach(track => track.stop());
-      if (this.ownsContext && this.context.state !== 'closed') this.context.close().catch(() => {});
     }
+    if (this.ownsContext && this.context && this.context.state !== 'closed') this.context.close().catch(() => {});
     this.ready = false;
   }
 }

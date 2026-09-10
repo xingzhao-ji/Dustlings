@@ -9,3 +9,6 @@ evidence/raw-video/
 !evidence/interaction-ui.mp4
 !evidence/opening-with-sound.mp4
 !evidence/restoration-with-sound.mp4
+evidence/**/raw-video/
+evidence/**/*.webm
+evidence/**/*.wav

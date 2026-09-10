@@ -6,16 +6,16 @@ Use the existing [PLAYTEST.md](PLAYTEST.md) protocol for recruitment, observatio
 
 ## Review candidate
 
-Freeze the exact playable artifact before attaching human feedback. The current source is undergoing integration after navigation/save, readability, keyboard, and interruption corrections. The prior prototype's artifact hash must not be relabeled as this candidate.
+The version 0.2 candidate is frozen below. Attach feedback only to this exact artifact. Automated candidate verification passes in the available engines; a full-session endurance check is still running. Neither supplies human acceptance.
 
 | Field | Current record |
 | --- | --- |
-| Candidate ID / version | Pending final integrated build |
-| Playable artifact path / launch instructions | Pending root's build checkpoint |
-| Artifact SHA-256 | Not yet recorded for this candidate |
-| Full source checkpoint / build date | Pending integration checkpoint; navigation/save sub-checkpoint is `ef1ae41`, which alone does not identify the entire candidate |
+| Candidate ID / version | Courtyard 0.2.0 |
+| Playable artifact path / launch instructions | Open `builds/Dustlings Courtyard.html` in a modern browser; offline, no install |
+| Artifact SHA-256 | `cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea` |
+| Full source checkpoint / build date | `4384d82d61210269332cb8568ef89c7399425b86`; 2026-09-10T06:17:56.300Z; source dirty: false |
 | Change summary since previous reviewed build | Navigation around fountain, restoration save validation, stale-tab recovery, typography/layout, keyboard access, and background audio corrections |
-| Before/after gameplay / normal-speed recording / audio | Attach root's evidence for this exact artifact; distinguish controlled fixtures and synthetic timings |
+| Before/after gameplay / normal-speed recording / audio | `evidence/v0.2/` and `evidence/REVIEW.html`; actual opening and chorus recordings with artifact hashes, controlled fixtures explicitly labeled |
 | Technical conditions and known limits | Attach test/performance records; Windows guest, physical mobile, native listening, and human reception remain unverified |
 | Human feedback linked to this exact candidate | None |
 
@@ -115,4 +115,4 @@ Next required action and responsible person:
 Acceptance applies to this exact candidate; changes requiring re-review:
 ```
 
-No owner assessment is recorded. Do not infer approval from silence, authorization to keep developing, or technical test results. Continue authorized technical corrections while the human gates await evidence.
+The owner was invited to play the frozen 0.2 artifact through this session on 2026-09-10. No response or owner assessment is recorded. Do not infer approval from silence, authorization to keep developing, or technical test results. Continue authorized technical corrections while the human gates await evidence.

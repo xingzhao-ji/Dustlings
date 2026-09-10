@@ -1,0 +1,67 @@
+{
+  "kind": "Final standalone build automation; no human review",
+  "build": {
+    "version": "0.2.0",
+    "sourceRevision": "4384d82d61210269332cb8568ef89c7399425b86",
+    "sourceDirty": false,
+    "builtAt": "2026-09-10T06:17:56.300Z",
+    "artifact": "Dustlings Courtyard.html",
+    "sha256": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
+    "bytes": 148970,
+    "runtimeDependencies": 0,
+    "scope": "Courtyard prototype; human acceptance pending"
+  },
+  "checks": [
+    "Standalone file opened, started audio without errors, and Escape pause/resume worked",
+    "Standalone save survived reload with completed courtyard",
+    "Four final-build viewport layouts have no horizontal document overflow; phone journal/zoom captured",
+    "Zero JS exceptions and zero network requests: offline self-contained build"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "performance": {
+    "samples": 3600,
+    "meanMs": 16.666027777777778,
+    "p95Ms": 16.799999999995634,
+    "p99Ms": 16.80000000000291,
+    "worstMs": 16.80000000000291,
+    "over33ms": 0,
+    "over500ms": 0,
+    "creatures": 50,
+    "dpr": 2,
+    "canvas": {
+      "width": 1020,
+      "height": 727
+    },
+    "audio": {
+      "ready": true,
+      "prepared": true,
+      "paused": false,
+      "contextState": "running",
+      "maxVoices": 48,
+      "peakVoices": 3,
+      "continuousSources": 3,
+      "progress": 0,
+      "mix": {
+        "music": 0.48,
+        "sfx": 0.65,
+        "ambience": 0.38,
+        "muted": false,
+        "reducedMotion": false
+      }
+    },
+    "conditions": {
+      "durationSeconds": 60,
+      "host": "MacBook Pro Mac16,7, Apple M4 Pro, 48GB",
+      "os": "macOS 26.6.2",
+      "browser": "152.0.7977.83",
+      "headless": true,
+      "viewport": "1440x900",
+      "dpr": 2,
+      "quality": "normal",
+      "audio": "playing, native listening unverified",
+      "fixture": "50 helpers at ~75% clear; chorus held for controlled active cleaning sample",
+      "concurrency": "No other agent browser checks or video recording during this sample; other host background activity not controlled"
+    }
+  }
+}

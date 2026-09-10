@@ -14,3 +14,117 @@
 @media(min-width:1101px){.play-layout{grid-template-columns:minmax(0,1fr) 330px}.journal h1{font-size:35px}.upgrade-card{padding:13px 11px}.journal-footer{margin:18px 0}}
 @media(max-width:560px){.header-actions .icon-button{width:44px;height:44px}.header-actions{gap:3px}.wordmark{font-size:25px}.place{display:none}.header-actions{margin-left:auto}.scene-stats>div{font-size:11px}.scene-caption{font-size:12px;max-width:calc(100% - 175px)}.scene-stats{top:62px}.camera-controls{top:17px;right:10px;gap:3px}.camera-controls button{width:44px;height:44px}.tool{font-size:12px}.game-tip{font-size:12px}.journal-top .icon-button{width:44px;height:44px}.chapter-copy{font-size:14px}.toast{top:98px;font-size:12px}.small-pill{min-height:44px;bottom:113px}.slider-label{font-size:13px}.welcome-modal p{font-size:13px}.journal .upgrade-card .upgrade-description{font-size:13px}}
 .header-actions .icon-button,.journal-top .icon-button{min-width:44px;min-height:44px}.tool,.secondary-button,.text-button{min-height:44px}
+
+/* Essential reading text: tested over the courtyard and each panel state. */
+:root{--body-ink:#52634e;--muted:#52634e}
+.save-status,.scene-stats>div,.scene-caption,.game-tip,.toast,.birth-label span,
+.chapter-copy,.progress-caption,.upgrade-intro,.upgrade-card .upgrade-description,
+.upgrade-card .branch-label,.landmark-card p,.text-button,.modal p,
+.slider-label>span,.switch-label small,.completion-stats,.next-chapter p,
+.welcome-modal .welcome-note{color:var(--body-ink)}
+.chapter-copy{font-size:16px;line-height:1.55;max-width:100%;margin-bottom:20px}
+.journal{overscroll-behavior:contain;scrollbar-gutter:stable;scroll-padding:18px;padding-bottom:24px}
+.journal h1{font-size:35px;line-height:1.13}
+.section-label h2,.landmark-heading h2{font-size:19px;line-height:1.25}
+.section-label>span{font-size:12px;color:var(--body-ink);white-space:nowrap}
+.progress-caption,.upgrade-intro{font-size:14px;line-height:1.5}
+.progress-caption{margin-bottom:8px}
+.upgrade-intro{margin:8px 0 13px}
+.upgrade-card{grid-template-columns:28px minmax(0,1fr) auto;gap:8px;padding:14px 11px}
+.upgrade-card .upgrade-icon{width:28px;height:31px}
+.upgrade-card strong{font-size:18px;line-height:1.2;margin-bottom:7px}
+.upgrade-card .upgrade-description,.journal .upgrade-card .upgrade-description{font-size:14px;line-height:1.45}
+.upgrade-card .branch-label{font-size:14px;line-height:1.4;letter-spacing:0;margin-top:7px}
+.upgrade-card .upgrade-cost{font-size:14px;line-height:1.4;color:var(--ink);padding-top:2px}
+.upgrade-card.owned .upgrade-cost{color:#4f6b47}
+.landmark-card{padding:16px 14px;margin-top:17px}
+.landmark-card p{font-size:14px;line-height:1.5}
+.landmark-card button{font-size:14px;line-height:1.4;min-height:46px;padding:10px 8px;background:#526e4f;color:#fffbed}
+.landmark-card button:disabled{background:#cbd5bf;color:#41543e}
+.text-button,.secondary-button,.small-pill{font-size:14px;line-height:1.4;min-height:44px}
+.danger{color:#825236}
+.save-status{font-size:14px;line-height:1.4}
+.scene-stats>div{font-size:14px;line-height:1.4}
+.scene-stats strong{font-size:16px}
+.scene-caption{font-size:15px;line-height:1.35}
+.tool{font-size:14px;line-height:1.4;min-height:46px}
+.tool kbd{font-size:12px;color:#52664b}
+.game-tip{font-size:14px;line-height:1.45;padding:0 16px}
+.toast{font-size:14px;line-height:1.5;background:#fffdf2;max-width:calc(100% - 32px)}
+.small-pill{background:#f5f5e7;color:var(--body-ink)}
+.birth-label{font-size:17px;line-height:1.25;width:220px;max-width:calc(100% - 24px);white-space:normal;padding:11px 12px}
+.birth-label span{font-size:14px;line-height:1.4;margin-top:6px}
+.bottomline #control-note{font-size:14px;letter-spacing:0;color:var(--body-ink)}
+.modal p,.welcome-modal p,.completion-modal p{font-size:16px;line-height:1.55}
+.primary-button{font-size:16px;line-height:1.4;min-height:50px}
+.welcome-modal .welcome-note{font-size:14px;line-height:1.45}
+.slider-label,.switch-label{font-size:16px;line-height:1.4}
+.slider-label{grid-template-columns:105px 1fr 42px;min-height:44px}
+.slider-label>span{font-size:14px}
+.switch-label small{font-size:14px;line-height:1.45}
+.settings-modal .fineprint,.restart-confirm p{font-size:14px;line-height:1.5;color:var(--body-ink)}
+.recovery-note{font-size:14px!important;line-height:1.5!important;color:#805438!important}
+.completion-stats{font-size:14px;line-height:1.4}
+.next-chapter p{font-size:14px;line-height:1.5}
+@media(max-height:850px) and (min-width:901px){
+  .journal h1{font-size:32px;margin:10px 0 12px}
+  .chapter-copy{font-size:16px;line-height:1.5;margin-bottom:17px}
+  .journal-rule{margin:19px 0 17px}
+  .upgrade-card{padding:12px 10px}
+}
+@media(max-width:900px){
+  .journal{padding:20px;max-height:calc(100svh - 106px)}
+  .journal-top{position:sticky;top:0;z-index:2;background:#f2f3e6;box-shadow:0 8px 0 #f2f3e6;margin-bottom:4px}
+  .journal-top:before{content:'';position:absolute;inset:-22px -20px -7px;background:#f2f3e6;z-index:-1;pointer-events:none}
+  .chapter-copy{font-size:16px}
+  .journal h1{font-size:32px}
+}
+@media(max-width:560px){
+  .scene-caption{font-size:14px;max-width:calc(100% - 169px)}
+  .scene-stats{top:64px;gap:16px}
+  .scene-stats>div{font-size:14px}
+  .tool{font-size:14px;padding:10px 10px;gap:6px}
+  .tool-dock{gap:2px;max-width:calc(100% - 20px)}
+  .game-tip{font-size:14px;bottom:87px;line-height:1.4;padding:0 10px}
+  .small-pill{font-size:14px;bottom:134px}
+  .toast{font-size:14px;top:100px;padding:10px 13px}
+  .journal{width:360px;max-width:calc(100% - 20px);padding:18px;bottom:34px;max-height:calc(100svh - 100px)}
+  .journal-top{top:0}
+  .modal{padding:24px}
+  .welcome-modal p{font-size:16px}
+  .slider-label{grid-template-columns:94px 1fr 38px;gap:8px;font-size:16px}
+  .switch-label{gap:14px}
+  .save-tools{gap:8px}
+  .secondary-button{padding:11px 10px}
+  .birth-label{font-size:17px}
+  .birth-label span{font-size:14px}
+}
+@media(max-height:550px) and (max-width:900px){
+  .scene-caption{font-size:14px;top:11px}
+  .scene-stats{top:36px}
+  .game-tip{bottom:68px;font-size:14px;max-width:calc(100% - 32px);margin:auto}
+  .small-pill{bottom:65px;font-size:14px}
+  .journal{max-height:calc(100svh - 24px);bottom:12px}
+  .welcome-modal{width:550px;padding:17px 24px}
+  .welcome-illustration{display:none}
+  .welcome-modal h2{font-size:32px;line-height:1.08;margin:8px 0}
+  .welcome-modal p{font-size:16px;line-height:1.5;margin:10px 0}
+  .welcome-modal .welcome-note{font-size:14px;margin:8px 0 0}
+}
+
+.controls-help{border-bottom:1px solid var(--line);margin-bottom:16px;font-size:14px;color:#415a3c}.controls-help summary{min-height:44px;padding:10px 0;cursor:pointer}.controls-help p{font-size:14px;color:#415a3c;line-height:1.6;margin-top:0}
+
+/* The renderer exposes its measured viewport mode, keeping CSS and clipping aligned. */
+.world-panel:has(#world[data-viewport-mode="landscape"]) .scene-caption{left:18px;top:13px;max-width:264px;font-size:15px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .scene-stats{left:18px;top:43px;gap:13px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .camera-controls{left:18px;right:auto;top:76px;gap:6px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .camera-controls button{width:44px;height:44px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .game-tip{left:18px;right:auto;top:125px;bottom:auto;width:264px;max-width:264px;margin:0;padding:0;text-align:left;justify-content:flex-start;align-items:flex-start;font-size:14px;line-height:1.4}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .game-tip .tip-dot{margin-top:7px;flex-shrink:0}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .small-pill{left:168px;right:auto;top:76px;bottom:auto;transform:none;min-height:44px;width:120px;padding:4px 6px;white-space:normal;border-radius:12px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool-dock{left:12px;right:auto;bottom:12px;transform:none;width:276px;max-width:276px;padding:6px;gap:4px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool{flex:1;min-width:0;min-height:58px;flex-direction:column;padding:6px 3px;gap:4px;font-size:14px;line-height:1.15;white-space:normal}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool svg{width:20px;height:20px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool-divider,
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool kbd{display:none}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .toast{left:calc(300px + (100% - 312px)/2);top:12px;max-width:calc(100% - 332px);transform:translateX(-50%);padding:9px 12px}

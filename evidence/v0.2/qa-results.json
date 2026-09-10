@@ -1,0 +1,75 @@
+{
+  "kind": "Automated browser/simulation evidence. Not human playtesting.",
+  "date": "2026-09-10T06:18:11.423Z",
+  "build": {
+    "version": "0.2.0",
+    "sourceRevision": "4384d82d61210269332cb8568ef89c7399425b86",
+    "sourceDirty": false,
+    "builtAt": "2026-09-10T06:17:56.300Z",
+    "artifact": "Dustlings Courtyard.html",
+    "sha256": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
+    "bytes": 148970,
+    "runtimeDependencies": 0,
+    "scope": "Courtyard prototype; human acceptance pending"
+  },
+  "environment": {
+    "host": "MacBook Pro Mac16,7",
+    "chip": "Apple M4 Pro",
+    "memoryGB": 48,
+    "os": "macOS 26.6.2",
+    "browser": "152.0.7977.83",
+    "mode": "headless Chrome; native screen/audio review unavailable",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "checks": [
+    "Bought first upgrade through actual UI after normal-speed brush input",
+    "Reload preserved normal-play progress, crew and upgrade",
+    "Restored scene rendered from fully completed automated simulation save",
+    "macbook 1280x800: no document horizontal overflow (simulated viewport)",
+    "ipad-portrait 820x1180: no document horizontal overflow (simulated viewport)",
+    "iphone-portrait 390x844: no document horizontal overflow (simulated viewport)",
+    "iphone-landscape 844x390: no document horizontal overflow (simulated viewport)"
+  ],
+  "pacing": [
+    {
+      "brushDutyCycle": 1,
+      "firstHelperSeconds": 8.299999999999983,
+      "firstUpgradeSeconds": 36.70000000000005,
+      "ritualStartSeconds": 223.55000000001658,
+      "completionSeconds": 297.2000000000333,
+      "helpers": 50,
+      "description": "Automated target selection every 3 simulation seconds, immediate purchases, immediate ritual. No human decisions."
+    },
+    {
+      "brushDutyCycle": 0.4,
+      "firstHelperSeconds": 20.250000000000153,
+      "firstUpgradeSeconds": 83.34999999999741,
+      "ritualStartSeconds": 411.85000000005937,
+      "completionSeconds": 506.30000000008084,
+      "helpers": 50,
+      "description": "Automated target selection every 3 simulation seconds, immediate purchases, immediate ritual. No human decisions."
+    },
+    {
+      "brushDutyCycle": 0.15,
+      "firstHelperSeconds": 50.79999999999925,
+      "firstUpgradeSeconds": 210.4000000000136,
+      "ritualStartSeconds": 711.4999999999006,
+      "completionSeconds": 830.6999999997922,
+      "helpers": 50,
+      "description": "Automated target selection every 3 simulation seconds, immediate purchases, immediate ritual. No human decisions."
+    }
+  ],
+  "opening": {
+    "elapsed": 39.11040000000003,
+    "firstHelperAt": 8.728300000000031,
+    "crew": 4,
+    "motes": 33
+  },
+  "performance": null,
+  "performanceNote": "Interaction capture only. Use the separate exact-build profile without video recording for sustained performance.",
+  "consoleErrors": []
+}

@@ -1,0 +1,49 @@
+
+> dustlings@0.2.0 test
+> node --test tests/*.test.mjs
+
+✔ opening brush forms a helper locally within 30 simulation seconds (4.1105ms)
+✔ cleaning, autonomous assistance, and purchases conserve courtyard resources (33.845666ms)
+✔ upgrade choices charge once, reject unavailable choices, and change capability (1.569792ms)
+✔ teamwork increases actual crew cleaning in an identical controlled work scene (0.742916ms)
+✔ blocked destinations preserve the last valid crew assignment (0.9125ms)
+✔ helpers traverse around the fountain and reach destinations on its opposite sides (0.645958ms)
+✔ a live chorus survives save/restore and can finish the landmark (16.671291ms)
+✔ helpers clear tiny remnants and complete without pixel hunting (2.823458ms)
+✔ large or negative frame deltas do not advance unbounded simulation time (0.148208ms)
+✔ invalid saved progress is rejected and currency derives from actual cleaned dust (0.746458ms)
+✔ synchronous checkpoint recovers just-brushed work without changing primary or backup (6.092ms)
+✔ checkpoint can recover before the first canonical save (0.776708ms)
+✔ a completed queued canonical save makes its earlier interruption journal obsolete (1.099459ms)
+✔ stale checkpoints cannot change newer primary, backup, or recovery journal (1.229625ms)
+✔ a second window sharing the primary revision cannot overwrite a newer journal (1.166458ms)
+✔ a caller must read an existing valid recovery journal before replacing it (1.03375ms)
+✔ malformed and semantically invalid journals fall back to readable primary (1.0685ms)
+✔ reset clears the recovery journal and cannot revive the prior courtyard (0.656583ms)
+✔ denied checkpoint storage preserves the previous durable save (0.525167ms)
+✔ failed cleanup after successful canonical write leaves only an ignored stale journal (0.850167ms)
+✔ keyboard route creates helpers, earns an upgrade, and assigns the crew (17.294375ms)
+✔ Space toggles without repeating, and focus loss stops every held action (0.5465ms)
+✔ arrow taps move cursor, held arrows remain bounded, Shift delegates pan (0.971375ms)
+✔ N announces only explicit requests and works when every dust patch is clear (0.571333ms)
+✔ stale windows cannot replace primary or backup progress on repeated autosaves (4.542333ms)
+✔ stale restart cannot erase another window and loading the latest resolves conflict (0.459417ms)
+✔ a reset in another window is also a conflicting revision (0.27325ms)
+✔ invalid settings fields cannot create NaN labels or truthy false preferences (0.855375ms)
+✔ valid zero/full volumes and explicit motion choices survive normalization (0.093708ms)
+✔ invalid containers and nonfinite volumes retain independent accessible defaults (0.13925ms)
+✔ save and load preserve active progress and assignment (8.081917ms)
+✔ corrupt primary recovers the previous valid checkpoint from backup (0.925542ms)
+✔ semantically corrupt primary also falls back to valid backup (0.470667ms)
+✔ fully damaged saves are reported without throwing or silently overwriting data (0.558125ms)
+✔ denied storage is graceful for load, save, and clear (0.210292ms)
+✔ quota failure preserves the last successfully saved progress (0.414875ms)
+✔ clearing a save also clears its recovery backup (0.282583ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 119.336667

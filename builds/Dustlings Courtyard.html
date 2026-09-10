@@ -21,6 +21,120 @@
 @media(min-width:1101px){.play-layout{grid-template-columns:minmax(0,1fr) 330px}.journal h1{font-size:35px}.upgrade-card{padding:13px 11px}.journal-footer{margin:18px 0}}
 @media(max-width:560px){.header-actions .icon-button{width:44px;height:44px}.header-actions{gap:3px}.wordmark{font-size:25px}.place{display:none}.header-actions{margin-left:auto}.scene-stats>div{font-size:11px}.scene-caption{font-size:12px;max-width:calc(100% - 175px)}.scene-stats{top:62px}.camera-controls{top:17px;right:10px;gap:3px}.camera-controls button{width:44px;height:44px}.tool{font-size:12px}.game-tip{font-size:12px}.journal-top .icon-button{width:44px;height:44px}.chapter-copy{font-size:14px}.toast{top:98px;font-size:12px}.small-pill{min-height:44px;bottom:113px}.slider-label{font-size:13px}.welcome-modal p{font-size:13px}.journal .upgrade-card .upgrade-description{font-size:13px}}
 .header-actions .icon-button,.journal-top .icon-button{min-width:44px;min-height:44px}.tool,.secondary-button,.text-button{min-height:44px}
+
+/* Essential reading text: tested over the courtyard and each panel state. */
+:root{--body-ink:#52634e;--muted:#52634e}
+.save-status,.scene-stats>div,.scene-caption,.game-tip,.toast,.birth-label span,
+.chapter-copy,.progress-caption,.upgrade-intro,.upgrade-card .upgrade-description,
+.upgrade-card .branch-label,.landmark-card p,.text-button,.modal p,
+.slider-label>span,.switch-label small,.completion-stats,.next-chapter p,
+.welcome-modal .welcome-note{color:var(--body-ink)}
+.chapter-copy{font-size:16px;line-height:1.55;max-width:100%;margin-bottom:20px}
+.journal{overscroll-behavior:contain;scrollbar-gutter:stable;scroll-padding:18px;padding-bottom:24px}
+.journal h1{font-size:35px;line-height:1.13}
+.section-label h2,.landmark-heading h2{font-size:19px;line-height:1.25}
+.section-label>span{font-size:12px;color:var(--body-ink);white-space:nowrap}
+.progress-caption,.upgrade-intro{font-size:14px;line-height:1.5}
+.progress-caption{margin-bottom:8px}
+.upgrade-intro{margin:8px 0 13px}
+.upgrade-card{grid-template-columns:28px minmax(0,1fr) auto;gap:8px;padding:14px 11px}
+.upgrade-card .upgrade-icon{width:28px;height:31px}
+.upgrade-card strong{font-size:18px;line-height:1.2;margin-bottom:7px}
+.upgrade-card .upgrade-description,.journal .upgrade-card .upgrade-description{font-size:14px;line-height:1.45}
+.upgrade-card .branch-label{font-size:14px;line-height:1.4;letter-spacing:0;margin-top:7px}
+.upgrade-card .upgrade-cost{font-size:14px;line-height:1.4;color:var(--ink);padding-top:2px}
+.upgrade-card.owned .upgrade-cost{color:#4f6b47}
+.landmark-card{padding:16px 14px;margin-top:17px}
+.landmark-card p{font-size:14px;line-height:1.5}
+.landmark-card button{font-size:14px;line-height:1.4;min-height:46px;padding:10px 8px;background:#526e4f;color:#fffbed}
+.landmark-card button:disabled{background:#cbd5bf;color:#41543e}
+.text-button,.secondary-button,.small-pill{font-size:14px;line-height:1.4;min-height:44px}
+.danger{color:#825236}
+.save-status{font-size:14px;line-height:1.4}
+.scene-stats>div{font-size:14px;line-height:1.4}
+.scene-stats strong{font-size:16px}
+.scene-caption{font-size:15px;line-height:1.35}
+.tool{font-size:14px;line-height:1.4;min-height:46px}
+.tool kbd{font-size:12px;color:#52664b}
+.game-tip{font-size:14px;line-height:1.45;padding:0 16px}
+.toast{font-size:14px;line-height:1.5;background:#fffdf2;max-width:calc(100% - 32px)}
+.small-pill{background:#f5f5e7;color:var(--body-ink)}
+.birth-label{font-size:17px;line-height:1.25;width:220px;max-width:calc(100% - 24px);white-space:normal;padding:11px 12px}
+.birth-label span{font-size:14px;line-height:1.4;margin-top:6px}
+.bottomline #control-note{font-size:14px;letter-spacing:0;color:var(--body-ink)}
+.modal p,.welcome-modal p,.completion-modal p{font-size:16px;line-height:1.55}
+.primary-button{font-size:16px;line-height:1.4;min-height:50px}
+.welcome-modal .welcome-note{font-size:14px;line-height:1.45}
+.slider-label,.switch-label{font-size:16px;line-height:1.4}
+.slider-label{grid-template-columns:105px 1fr 42px;min-height:44px}
+.slider-label>span{font-size:14px}
+.switch-label small{font-size:14px;line-height:1.45}
+.settings-modal .fineprint,.restart-confirm p{font-size:14px;line-height:1.5;color:var(--body-ink)}
+.recovery-note{font-size:14px!important;line-height:1.5!important;color:#805438!important}
+.completion-stats{font-size:14px;line-height:1.4}
+.next-chapter p{font-size:14px;line-height:1.5}
+@media(max-height:850px) and (min-width:901px){
+  .journal h1{font-size:32px;margin:10px 0 12px}
+  .chapter-copy{font-size:16px;line-height:1.5;margin-bottom:17px}
+  .journal-rule{margin:19px 0 17px}
+  .upgrade-card{padding:12px 10px}
+}
+@media(max-width:900px){
+  .journal{padding:20px;max-height:calc(100svh - 106px)}
+  .journal-top{position:sticky;top:0;z-index:2;background:#f2f3e6;box-shadow:0 8px 0 #f2f3e6;margin-bottom:4px}
+  .journal-top:before{content:'';position:absolute;inset:-22px -20px -7px;background:#f2f3e6;z-index:-1;pointer-events:none}
+  .chapter-copy{font-size:16px}
+  .journal h1{font-size:32px}
+}
+@media(max-width:560px){
+  .scene-caption{font-size:14px;max-width:calc(100% - 169px)}
+  .scene-stats{top:64px;gap:16px}
+  .scene-stats>div{font-size:14px}
+  .tool{font-size:14px;padding:10px 10px;gap:6px}
+  .tool-dock{gap:2px;max-width:calc(100% - 20px)}
+  .game-tip{font-size:14px;bottom:87px;line-height:1.4;padding:0 10px}
+  .small-pill{font-size:14px;bottom:134px}
+  .toast{font-size:14px;top:100px;padding:10px 13px}
+  .journal{width:360px;max-width:calc(100% - 20px);padding:18px;bottom:34px;max-height:calc(100svh - 100px)}
+  .journal-top{top:0}
+  .modal{padding:24px}
+  .welcome-modal p{font-size:16px}
+  .slider-label{grid-template-columns:94px 1fr 38px;gap:8px;font-size:16px}
+  .switch-label{gap:14px}
+  .save-tools{gap:8px}
+  .secondary-button{padding:11px 10px}
+  .birth-label{font-size:17px}
+  .birth-label span{font-size:14px}
+}
+@media(max-height:550px) and (max-width:900px){
+  .scene-caption{font-size:14px;top:11px}
+  .scene-stats{top:36px}
+  .game-tip{bottom:68px;font-size:14px;max-width:calc(100% - 32px);margin:auto}
+  .small-pill{bottom:65px;font-size:14px}
+  .journal{max-height:calc(100svh - 24px);bottom:12px}
+  .welcome-modal{width:550px;padding:17px 24px}
+  .welcome-illustration{display:none}
+  .welcome-modal h2{font-size:32px;line-height:1.08;margin:8px 0}
+  .welcome-modal p{font-size:16px;line-height:1.5;margin:10px 0}
+  .welcome-modal .welcome-note{font-size:14px;margin:8px 0 0}
+}
+
+.controls-help{border-bottom:1px solid var(--line);margin-bottom:16px;font-size:14px;color:#415a3c}.controls-help summary{min-height:44px;padding:10px 0;cursor:pointer}.controls-help p{font-size:14px;color:#415a3c;line-height:1.6;margin-top:0}
+
+/* The renderer exposes its measured viewport mode, keeping CSS and clipping aligned. */
+.world-panel:has(#world[data-viewport-mode="landscape"]) .scene-caption{left:18px;top:13px;max-width:264px;font-size:15px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .scene-stats{left:18px;top:43px;gap:13px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .camera-controls{left:18px;right:auto;top:76px;gap:6px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .camera-controls button{width:44px;height:44px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .game-tip{left:18px;right:auto;top:125px;bottom:auto;width:264px;max-width:264px;margin:0;padding:0;text-align:left;justify-content:flex-start;align-items:flex-start;font-size:14px;line-height:1.4}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .game-tip .tip-dot{margin-top:7px;flex-shrink:0}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .small-pill{left:168px;right:auto;top:76px;bottom:auto;transform:none;min-height:44px;width:120px;padding:4px 6px;white-space:normal;border-radius:12px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool-dock{left:12px;right:auto;bottom:12px;transform:none;width:276px;max-width:276px;padding:6px;gap:4px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool{flex:1;min-width:0;min-height:58px;flex-direction:column;padding:6px 3px;gap:4px;font-size:14px;line-height:1.15;white-space:normal}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool svg{width:20px;height:20px}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool-divider,
+.world-panel:has(#world[data-viewport-mode="landscape"]) .tool kbd{display:none}
+.world-panel:has(#world[data-viewport-mode="landscape"]) .toast{left:calc(300px + (100% - 312px)/2);top:12px;max-width:calc(100% - 332px);transform:translateX(-50%);padding:9px 12px}
 </style>
 </head>
 <body>
@@ -46,7 +160,7 @@
     <main class="play-layout">
       <section class="world-panel" aria-label="Courtyard game">
         <div class="scene-caption"><span class="tiny-leaf">✦</span><span id="scene-caption-text">A place waiting to bloom</span></div>
-        <canvas id="world" tabindex="0" aria-label="Miniature courtyard. Hold and drag to brush dust. Press D then click an open spot to direct helpers. Use B to brush, U for upgrades, Escape to pause."></canvas>
+        <canvas id="world" tabindex="0" role="group" aria-label="Miniature courtyard" aria-describedby="keyboard-help"></canvas>
         <div class="scene-stats"><div><svg><use href="#i-pair"/></svg><strong id="crew-count">0</strong><span>little helpers</span></div><div><svg><use href="#i-dust"/></svg><strong id="mote-count">0</strong><span>motes</span></div></div>
         <div id="birth-label" class="birth-label" hidden>Your first Dustling <span>Made from the dust you brushed</span></div>
         <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
@@ -55,7 +169,7 @@
           <button id="brush-tool" class="tool selected" aria-pressed="true"><svg><use href="#i-brush"/></svg><span>Brush</span><kbd>B</kbd></button>
           <span class="tool-divider"></span>
           <button id="direct-tool" class="tool" aria-pressed="false"><svg><use href="#i-flag"/></svg><span>Direct crew</span><kbd>D</kbd></button>
-          <button id="mobile-journal" class="tool mobile-only"><svg><use href="#i-sprout"/></svg><span>Grow</span><span id="upgrade-dot" class="upgrade-dot" hidden></span></button>
+          <button id="mobile-journal" class="tool mobile-only" aria-controls="journal" aria-expanded="false"><svg><use href="#i-sprout"/></svg><span>Grow</span><span id="upgrade-dot" class="upgrade-dot" hidden></span></button>
         </div>
         <button id="free-roam" class="small-pill" hidden>↗ Let the crew roam</button>
       </section>
@@ -76,16 +190,17 @@
     </main>
     <footer class="bottomline"><span>ONE SMALL COURTYARD. MANY LITTLE BEGINNINGS.</span><span id="control-note">Hold to brush · D to direct · Esc to pause</span></footer>
   </div>
-  <dialog id="welcome" class="modal welcome-modal">
+  <dialog id="welcome" class="modal welcome-modal" aria-labelledby="welcome-title">
     <div class="welcome-illustration" aria-hidden="true"><div class="welcome-leaf"></div><div class="welcome-creature"><i></i><i></i><span></span></div><div class="welcome-shadow"></div><span class="welcome-spark one">✧</span><span class="welcome-spark two">✦</span></div>
-    <span class="eyebrow">WELCOME TO DUSTLINGS</span><h2>A little dust.<br>A little life.</h2>
+    <span class="eyebrow">WELCOME TO DUSTLINGS</span><h2 id="welcome-title">A little dust.<br>A little life.</h2>
     <p>A forgotten courtyard. A brush in your hand.<br>And something small, waiting to wake up.</p>
     <button id="start-button" class="primary-button">Bring it to life <span>↗</span></button>
     <p class="welcome-note">Take your time. Your progress stays with you.</p><p id="recovery-note" class="recovery-note" hidden></p>
   </dialog>
-  <dialog id="settings" class="modal settings-modal">
-    <div class="modal-heading"><div><span class="eyebrow">A MOMENT OF QUIET</span><h2>Take a breather.</h2></div><button id="close-settings" class="icon-button" aria-label="Close settings"><svg><use href="#i-close"/></svg></button></div>
+  <dialog id="settings" class="modal settings-modal" aria-labelledby="settings-title">
+    <div class="modal-heading"><div><span class="eyebrow">A MOMENT OF QUIET</span><h2 id="settings-title">Take a breather.</h2></div><button id="close-settings" class="icon-button" aria-label="Close settings"><svg><use href="#i-close"/></svg></button></div>
     <p class="settings-intro">Your helpers will wait right here.</p>
+    <details class="controls-help"><summary>Keyboard controls</summary><p id="keyboard-help">Focus the courtyard. Arrow keys aim. Space starts or stops brushing; N finds another dusty patch. D selects Direct crew, then Enter sends helpers. B selects Brush. Shift + arrows pans; + and − zoom. Tab reaches discoveries and settings. Escape pauses.</p></details>
     <label class="slider-label">Music <input id="music-volume" type="range" min="0" max="100" value="48"><span id="music-value">48%</span></label>
     <label class="slider-label">Little sounds <input id="sfx-volume" type="range" min="0" max="100" value="65"><span id="sfx-value">65%</span></label>
     <label class="slider-label">Ambience <input id="ambience-volume" type="range" min="0" max="100" value="38"><span id="ambience-value">38%</span></label>
@@ -94,10 +209,11 @@
     <label class="switch-label"><span>Lightweight scenery<small>Lower rendering resolution for quieter devices</small></span><input id="low-quality" type="checkbox" role="switch"></label>
     <div class="save-tools"><button id="export-save" class="secondary-button">Export save</button><button id="import-save" class="secondary-button">Import save</button><input type="file" id="save-file" accept=".json,application/json" hidden></div>
     <p id="settings-save-note" class="fineprint" role="status">Automatically saved on this browser. A backup keeps the previous checkpoint.</p>
+    <div id="save-conflict" class="restart-confirm" hidden><p>Another window saved a different courtyard. This window is paused so neither version is overwritten. Export this window’s progress above if you want to keep it, then load the saved courtyard.</p><button id="load-latest-save" class="secondary-button">Load the saved courtyard</button></div>
     <button id="resume-button" class="primary-button">Back to the courtyard <span>↗</span></button><button id="restart-button" class="text-button danger">Start a fresh courtyard</button>
     <div id="restart-confirm" class="restart-confirm" hidden><p>Export your save first if you’d like to keep this courtyard. Starting fresh replaces its progress.</p><button id="confirm-restart" class="secondary-button danger">Start fresh</button><button id="cancel-restart" class="secondary-button">Keep this courtyard</button></div>
   </dialog>
-  <dialog id="completion" class="modal completion-modal"><span class="completion-sprout"><svg><use href="#i-sprout"/></svg></span><span class="eyebrow">A SMALL PLACE, ALIVE AGAIN</span><h2>Look what you<br>made together.</h2><p>The water is singing. The flowers are open.<br>And the dust has found somewhere to belong.</p><div class="completion-stats"><span><strong id="finish-crew">50</strong>little helpers</span><span><strong>1</strong>courtyard restored</span></div><div class="next-chapter"><span class="eyebrow">BEYOND THE LITTLE GATE</span><h3>The canal is sleeping.</h3><p>That story comes later. For now, this courtyard is yours to enjoy.</p></div><button id="enjoy-button" class="primary-button">Stay a little longer <span>♡</span></button><button id="completion-save" class="text-button">Save a keepsake of your progress ↓</button></dialog>
+  <dialog id="completion" class="modal completion-modal" aria-labelledby="completion-title"><span class="completion-sprout"><svg><use href="#i-sprout"/></svg></span><span class="eyebrow">A SMALL PLACE, ALIVE AGAIN</span><h2 id="completion-title">Look what you<br>made together.</h2><p>The water is singing. The flowers are open.<br>And the dust has found somewhere to belong.</p><div class="completion-stats"><span><strong id="finish-crew">50</strong>little helpers</span><span><strong>1</strong>courtyard restored</span></div><div class="next-chapter"><span class="eyebrow">BEYOND THE LITTLE GATE</span><h3>The canal is sleeping.</h3><p>That story comes later. For now, this courtyard is yours to enjoy.</p></div><button id="enjoy-button" class="primary-button">Stay a little longer <span>♡</span></button><button id="completion-save" class="text-button">Save a keepsake of your progress ↓</button></dialog>
   <script>(() => {
   // src/game.js
   var SAVE_VERSION = 1;
@@ -140,8 +256,8 @@
     }
     if (s.particles.length > 100) s.particles.splice(0, s.particles.length - 100);
   }
-  function notify(s, text) {
-    s.notice = text;
+  function notify(s, text2) {
+    s.notice = text2;
     s.noticeTime = 5;
   }
   function collect(s, node, n, source) {
@@ -250,32 +366,48 @@
   function moveCreature(c, tx, ty, dt, speed = 43) {
     c.tx = tx;
     c.ty = ty;
-    const dx = tx - c.x, dy = ty - c.y, dist = Math.hypot(dx, dy);
-    if (dist < 2) return dist;
-    let ux = dx / dist, uy = dy / dist;
-    const fx = c.x - 500, fy = c.y - 370, fd = Math.hypot(fx, fy);
-    const aheadX = c.x + ux * Math.min(dist, 45), aheadY = c.y + uy * Math.min(dist, 45);
-    const dot = fx * ux + fy * uy;
-    if ((Math.hypot(aheadX - 500, aheadY - 370) < 98 || fd < 98) && dot < 8) {
-      const cross = fx * dy - fy * dx;
-      const sign = cross >= 0 ? 1 : -1;
-      ux = -fy / fd * sign + fx / fd * Math.max(0, (99 - fd) / 20);
-      uy = fx / fd * sign + fy / fd * Math.max(0, (99 - fd) / 20);
-      const len = Math.hypot(ux, uy);
-      ux /= len;
-      uy /= len;
+    const clearance = 96, orbit = 103;
+    let fx = c.x - 500, fy = c.y - 370, fd = Math.hypot(fx, fy);
+    if (fd < clearance) {
+      const a = fd ? Math.atan2(fy, fx) : Math.PI / 2;
+      c.x = 500 + Math.cos(a) * clearance;
+      c.y = 370 + Math.sin(a) * clearance;
+      fx = c.x - 500;
+      fy = c.y - 370;
+      fd = clearance;
     }
-    const step = Math.min(dist, speed * dt);
+    const workDistance = Math.hypot(tx - c.x, ty - c.y);
+    let gx = Math.max(115, Math.min(885, tx)), gy = Math.max(160, Math.min(655, ty));
+    const goalRadius = Math.hypot(gx - 500, gy - 370);
+    if (goalRadius < 98) {
+      const a = goalRadius ? Math.atan2(gy - 370, gx - 500) : Math.atan2(fy, fx);
+      gx = 500 + Math.cos(a) * 98;
+      gy = 370 + Math.sin(a) * 98;
+    }
+    let dx = gx - c.x, dy = gy - c.y, dist = Math.hypot(dx, dy);
+    if (dist < 2) return workDistance;
+    const nearest = Math.max(0, Math.min(1, -(fx * dx + fy * dy) / (dist * dist)));
+    if (Math.hypot(fx + dx * nearest, fy + dy * nearest) < clearance) {
+      const from = Math.atan2(fy, fx), to = Math.atan2(gy - 370, gx - 500);
+      const turn = Math.atan2(Math.sin(to - from), Math.cos(to - from));
+      const angle = from + Math.sign(turn || 1) * Math.min(0.28, Math.abs(turn));
+      gx = 500 + Math.cos(angle) * orbit;
+      gy = 370 + Math.sin(angle) * orbit;
+      dx = gx - c.x;
+      dy = gy - c.y;
+      dist = Math.hypot(dx, dy);
+    }
+    const step = Math.min(dist, speed * dt), ux = dx / dist, uy = dy / dist;
     let nx = c.x + ux * step, ny = c.y + uy * step;
     const nd = Math.hypot(nx - 500, ny - 370);
-    if (nd < 91) {
-      nx = 500 + (nx - 500) / nd * 91;
-      ny = 370 + (ny - 370) / nd * 91;
+    if (nd < clearance) {
+      nx = 500 + (nx - 500) / nd * clearance;
+      ny = 370 + (ny - 370) / nd * clearance;
     }
     c.x = Math.max(115, Math.min(885, nx));
     c.y = Math.max(160, Math.min(655, ny));
     c.dir = Math.atan2(uy, ux);
-    return dist;
+    return workDistance;
   }
   function tick(s, dt) {
     dt = Math.min(0.1, Math.max(0, dt));
@@ -363,12 +495,16 @@
     s.motes = Math.max(0, s.earned - spent);
     s.brushRadius = s.upgrades.brush ? 64 : 44;
     s.elapsed = Number.isFinite(data.elapsed) ? Math.max(0, data.elapsed) : 0;
-    s.restoration = Number.isFinite(data.restoration) ? Math.max(0, Math.min(1, data.restoration)) : 0;
-    s.ritual = !!data.ritual && s.upgrades.bloom && s.restoration < 1;
+    if (data.restoration !== void 0 && (!Number.isFinite(data.restoration) || data.restoration < 0 || data.restoration > 1)) throw Error("This save contains damaged fountain progress.");
+    if (data.ritual !== void 0 && typeof data.ritual !== "boolean") throw Error("This save contains damaged chorus data.");
+    s.restoration = data.restoration ?? 0;
+    s.ritual = data.ritual === true;
+    if ((s.restoration > 0 || s.ritual) && (!s.upgrades.bloom || s.cleaned / s.totalDust < 0.75)) throw Error("This save contains inconsistent fountain progress.");
+    if (s.ritual && s.restoration >= 1) throw Error("This save contains an already finished chorus.");
     s.ritualTime = s.restoration * 38;
     s.completed = s.cleaned >= s.totalDust - 1e-4 && s.restoration >= 1;
     for (const k of ["firstHelperAt", "firstUpgradeAt", "completedAt"]) s[k] = Number.isFinite(data[k]) ? data[k] : null;
-    if (data.assignment && walkable(data.assignment.x, data.assignment.y, 3)) s.assignment = { x: data.assignment.x, y: data.assignment.y };
+    if (data.assignment && Number.isFinite(data.assignment.x) && Number.isFinite(data.assignment.y) && walkable(data.assignment.x, data.assignment.y, 3)) s.assignment = { x: data.assignment.x, y: data.assignment.y };
     const count = Math.min(50, Math.floor((s.cleaned + 1e-5) / 7));
     for (let i = 0; i < count; i++) {
       const c = data.creatures?.[i];
@@ -385,28 +521,55 @@
   }
 
   // src/storage.js
-  var KEY = "dustlings.courtyard.v1";
-  var BACKUP = KEY + ".backup";
+  var SAVE_KEY = "dustlings.courtyard.v1";
+  var INTERRUPTED_KEY = SAVE_KEY + ".interrupted";
+  var BACKUP = SAVE_KEY + ".backup";
+  function interruptedState(raw, baseline) {
+    if (!raw) return null;
+    try {
+      const entry = JSON.parse(raw);
+      if (!entry || Array.isArray(entry) || !Object.hasOwn(entry, "baseline") || entry.baseline !== baseline) return null;
+      return restore(entry.state);
+    } catch {
+      return null;
+    }
+  }
   var SaveStore = class {
     constructor(storage) {
       this.storage = storage;
       this.status = "ready";
       this.recovered = false;
+      this.recoverySource = null;
+      this.baseline = void 0;
+      this.journalBaseline = void 0;
     }
     load() {
-      let primary = null, backup = null;
+      let primary, backup, journal;
       try {
-        primary = this.storage.getItem(KEY);
+        primary = this.storage.getItem(SAVE_KEY);
         backup = this.storage.getItem(BACKUP);
+        journal = this.storage.getItem(INTERRUPTED_KEY);
+        this.baseline = primary;
+        this.journalBaseline = journal;
+        this.recovered = false;
+        this.recoverySource = null;
       } catch {
         this.status = "unavailable";
         return null;
       }
-      for (const [i, raw] of [primary, backup].entries()) {
+      const interrupted = interruptedState(journal, primary);
+      if (interrupted) {
+        this.recovered = true;
+        this.recoverySource = "interrupted";
+        this.status = "recovered";
+        return interrupted;
+      }
+      for (const [index, raw] of [primary, backup].entries()) {
         if (!raw) continue;
         try {
           const state2 = restore(JSON.parse(raw));
-          this.recovered = i === 1;
+          this.recovered = index === 1;
+          this.recoverySource = this.recovered ? "backup" : null;
           this.status = this.recovered ? "recovered" : "saved";
           return state2;
         } catch {
@@ -415,17 +578,32 @@
       this.status = primary || backup ? "damaged" : "ready";
       return null;
     }
-    save(state2) {
+    _current() {
+      const primary = this.storage.getItem(SAVE_KEY), journal = this.storage.getItem(INTERRUPTED_KEY);
+      if (this.baseline !== void 0 && primary !== this.baseline) {
+        this.status = "conflict";
+        return null;
+      }
+      if (this.journalBaseline === void 0 && interruptedState(journal, primary)) {
+        this.status = "conflict";
+        return null;
+      }
+      if (this.journalBaseline !== void 0 && journal !== this.journalBaseline && interruptedState(journal, primary)) {
+        this.status = "conflict";
+        return null;
+      }
+      if (this.baseline === void 0) this.baseline = primary;
+      if (this.journalBaseline === void 0) this.journalBaseline = journal;
+      return { primary, journal };
+    }
+    /** Synchronous teardown journal; never writes the canonical save or backup. */
+    checkpoint(state2) {
       try {
-        const previous = this.storage.getItem(KEY);
-        if (previous) {
-          try {
-            restore(JSON.parse(previous));
-            this.storage.setItem(BACKUP, previous);
-          } catch {
-          }
-        }
-        this.storage.setItem(KEY, JSON.stringify(serialise(state2)));
+        const current = this._current();
+        if (!current) return false;
+        const raw = JSON.stringify({ baseline: current.primary, state: serialise(state2) });
+        this.storage.setItem(INTERRUPTED_KEY, raw);
+        this.journalBaseline = raw;
         this.status = "saved";
         return true;
       } catch {
@@ -433,10 +611,54 @@
         return false;
       }
     }
+    /** Root calls canonical save/reset under its cross-window Web Lock. */
+    save(state2) {
+      try {
+        const current = this._current();
+        if (!current) return false;
+        const next = JSON.stringify({ ...serialise(state2), saveRevision: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}` });
+        if (current.primary) {
+          try {
+            restore(JSON.parse(current.primary));
+            this.storage.setItem(BACKUP, current.primary);
+          } catch {
+          }
+        }
+        this.storage.setItem(SAVE_KEY, next);
+        this.baseline = next;
+        try {
+          const journal = this.storage.getItem(INTERRUPTED_KEY);
+          if (journal === current.journal) {
+            this.storage.removeItem(INTERRUPTED_KEY);
+            this.journalBaseline = null;
+          } else this.journalBaseline = journal;
+        } catch {
+        }
+        this.status = "saved";
+        return true;
+      } catch {
+        this.status = "unavailable";
+        return false;
+      }
+    }
+    hasConflict() {
+      try {
+        return this._current() === null;
+      } catch {
+        this.status = "unavailable";
+        return false;
+      }
+    }
     clear() {
       try {
-        this.storage.removeItem(KEY);
+        if (!this._current()) return false;
+        this.storage.removeItem(SAVE_KEY);
         this.storage.removeItem(BACKUP);
+        this.storage.removeItem(INTERRUPTED_KEY);
+        this.baseline = null;
+        this.journalBaseline = null;
+        this.recovered = false;
+        this.recoverySource = null;
         this.status = "ready";
         return true;
       } catch {
@@ -514,7 +736,10 @@
       this.offsetX = 0;
       this.offsetY = 70;
       this.camera = { zoom: 1, centerX: 500, centerY: 390 };
-      this.insets = { top: 80, bottom: 110 };
+      this.insets = { top: 80, bottom: 110, left: 0, right: 0 };
+      this.viewportMode = "desktop";
+      this.recommendedZoom = 1;
+      this.manualInsets = false;
       this.staticScene = null;
       this.dustSprites = [];
       this.createArt();
@@ -525,21 +750,46 @@
       this.dpr = Math.min(2, Math.max(1, dpr));
       this.canvas.width = Math.round(this.width * this.dpr);
       this.canvas.height = Math.round(this.height * this.dpr);
-      this.updateTransform();
+      if (this.manualInsets) this.updateTransform();
+      else this.setResponsiveViewport(this.width, this.height);
     }
     setCamera(zoom2, centerX = 500, centerY = 390) {
       if (typeof zoom2 === "object") ({ zoom: zoom2 = 1, centerX = 500, centerY = 390 } = zoom2);
       this.camera = { zoom: clamp(Number(zoom2) || 1, 1, 3), centerX: clamp(Number(centerX) || 500, 110, 890), centerY: clamp(Number(centerY) || 390, 155, 660) };
       this.updateTransform();
     }
-    setViewportInsets(top = 80, bottom = 110) {
-      this.insets = { top: Math.max(0, top), bottom: Math.max(0, bottom) };
+    setViewportInsets(top = 80, bottom = 110, left = 0, right = 0) {
+      if (typeof top === "object") ({ top = 80, bottom = 110, left = 0, right = 0 } = top);
+      this.manualInsets = true;
+      this.insets = { top: Math.max(0, top), bottom: Math.max(0, bottom), left: Math.max(0, left), right: Math.max(0, right) };
       this.updateTransform();
     }
+    /** Derive framing only. The caller retains ownership of its zoom controls. */
+    setResponsiveViewport(width = this.width, height = this.height) {
+      this.manualInsets = false;
+      if (width >= 620 && height <= 420) {
+        this.viewportMode = "landscape";
+        this.insets = { top: 12, bottom: 12, left: 300, right: 12 };
+        this.recommendedZoom = 1;
+      } else if (width <= 560 && height > width) {
+        this.viewportMode = "portrait";
+        this.insets = { top: 88, bottom: 122, left: 0, right: 0 };
+        this.recommendedZoom = 1.7;
+      } else {
+        this.viewportMode = "desktop";
+        this.insets = { top: 80, bottom: 110, left: 0, right: 0 };
+        this.recommendedZoom = 1;
+      }
+      this.canvas.dataset.viewportMode = this.viewportMode;
+      this.updateTransform();
+      return { mode: this.viewportMode, recommendedZoom: this.recommendedZoom, ...this.viewport };
+    }
     updateTransform() {
-      const availableHeight = Math.max(100, this.height - this.insets.top - this.insets.bottom);
-      this.fitScale = Math.max(0.1, Math.min((this.width - 24) / 1020, (availableHeight - 24) / 638));
-      const baseX = (this.width - 1e3 * this.fitScale) / 2;
+      const availableWidth = Math.max(1, this.width - this.insets.left - this.insets.right);
+      const availableHeight = Math.max(1, this.height - this.insets.top - this.insets.bottom);
+      this.viewport = { x: this.insets.left, y: this.insets.top, width: availableWidth, height: availableHeight };
+      this.fitScale = Math.max(0.1, Math.min((availableWidth - 24) / 1020, (availableHeight - 24) / 638));
+      const baseX = this.insets.left + (availableWidth - 1e3 * this.fitScale) / 2;
       const baseY = this.insets.top + (availableHeight - 638 * this.fitScale) / 2 + 83 * this.fitScale;
       this.scale = this.fitScale * this.camera.zoom;
       this.offsetX = baseX + 500 * this.fitScale - this.camera.centerX * this.scale;
@@ -550,6 +800,10 @@
     }
     screenToWorld(x, y) {
       return { x: (x - this.offsetX) / this.scale, y: (y - this.offsetY) / (this.scale * GROUND_Y) };
+    }
+    containsScreenPoint(x, y) {
+      const v = this.viewport;
+      return !!v && x >= v.x && y >= v.y && x <= v.x + v.width && y <= v.y + v.height;
     }
     createArt() {
       const layer = (draw) => {
@@ -818,7 +1072,7 @@
       c.fillRect(0, 0, this.width, this.height);
       c.save();
       c.beginPath();
-      c.rect(0, this.insets.top, this.width, Math.max(1, this.height - this.insets.top - this.insets.bottom));
+      c.rect(this.viewport.x, this.viewport.y, this.viewport.width, this.viewport.height);
       c.clip();
       c.translate(this.offsetX, this.offsetY);
       c.scale(this.scale, this.scale);
@@ -1175,6 +1429,19 @@
       this.lastAudioProgress = -1;
       this.lastBrushState = null;
       this.continuous = [];
+      this.prepared = false;
+    }
+    /** Optional welcome-idle preparation. Creates no sources and plays no sound. */
+    prepare() {
+      if (this.destroyed) return false;
+      if (this.context) return true;
+      const Context = globalThis.AudioContext || globalThis.webkitAudioContext;
+      if (!Context) return false;
+      this.context = new Context({ latencyHint: "interactive" });
+      this.prepared = true;
+      if (this.context.state === "running") this.context.suspend().catch(() => {
+      });
+      return true;
     }
     /** Call from a click/tap/keyboard gesture. Returns false if audio is unavailable. */
     async start() {
@@ -1493,7 +1760,7 @@
       if (!this.ready || this.destroyed) return false;
       clearTimeout(this.suspendTimer);
       this.paused = false;
-      if (!this.offline && this.context.state === "suspended") await this.context.resume();
+      if (!this.offline) await this.context.resume();
       this._ramp(this.master.gain, this.mix.muted ? 0 : 0.58, this.context.currentTime, 0.1);
       if (!this.offline && !this.timer) {
         this.nextTick = this.context.currentTime + 0.1;
@@ -1506,7 +1773,7 @@
       return this.capture?.stream || null;
     }
     getDiagnostics() {
-      return { ready: this.ready, paused: this.paused, contextState: this.context?.state || "uninitialized", maxVoices: this.maxVoices, peakVoices: this.peakVoices, continuousSources: this.continuous.length, progress: this.progress, mix: { ...this.mix } };
+      return { ready: this.ready, prepared: this.prepared, paused: this.paused, contextState: this.context?.state || "uninitialized", maxVoices: this.maxVoices, peakVoices: this.peakVoices, continuousSources: this.continuous.length, progress: this.progress, mix: { ...this.mix } };
     }
     /** Schedule a reproducible 36-second audition on an injected OfflineAudioContext. */
     scheduleAudition(duration = 36) {
@@ -1547,12 +1814,188 @@
         this.limiter.disconnect();
         this.master.disconnect();
         this.capture?.stream.getTracks().forEach((track) => track.stop());
-        if (this.ownsContext && this.context.state !== "closed") this.context.close().catch(() => {
-        });
       }
+      if (this.ownsContext && this.context && this.context.state !== "closed") this.context.close().catch(() => {
+      });
       this.ready = false;
     }
   };
+
+  // src/keyboard.js
+  var ARROWS = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] };
+  var bounded = (value, min, max) => Math.max(min, Math.min(max, value));
+  function createKeyboardControls({ canvas: canvas2, getState, renderer: renderer2, onMode = () => {
+  }, onAssign = () => {
+  }, onPan = () => {
+  }, onNotice = () => {
+  }, onChange = () => {
+  } }) {
+    const held = /* @__PURE__ */ new Set();
+    let enabled = false;
+    let brushing = false;
+    let cursor = { x: 270, y: 505 };
+    let lastHintId = null;
+    function focused() {
+      return canvas2?.ownerDocument?.activeElement === canvas2;
+    }
+    function changed() {
+      onChange({ ...cursor, brushing, enabled });
+    }
+    function applyCursor() {
+      const state2 = getState();
+      state2.pointer = { ...state2.pointer, ...cursor, inside: true, touch: false, keyboard: true, active: brushing && state2.mode === "brush", preview: state2.mode === "direct" };
+    }
+    function activate() {
+      if (!enabled) {
+        const state2 = getState();
+        const point = state2.pointer || state2.hintTarget || cursor;
+        cursor = { x: bounded(Number.isFinite(point.x) ? point.x : 270, 113, 887), y: bounded(Number.isFinite(point.y) ? point.y : 505, 158, 657) };
+        enabled = true;
+      }
+      applyCursor();
+    }
+    function keepVisible() {
+      if (typeof renderer2?.worldToScreen !== "function") return;
+      const width = renderer2.width || canvas2.clientWidth;
+      const height = renderer2.height || canvas2.clientHeight;
+      if (!width || !height) return;
+      const point = renderer2.worldToScreen(cursor.x, cursor.y);
+      const viewport = renderer2.viewport || { x: 0, y: renderer2.insets?.top || 25, width, height: height - (renderer2.insets?.top || 25) - (renderer2.insets?.bottom || 25) };
+      const top = viewport.y + 18;
+      const bottom = Math.max(top + 1, viewport.y + viewport.height - 18);
+      const x = bounded(point.x, viewport.x + 18, Math.max(viewport.x + 19, viewport.x + viewport.width - 18));
+      const y = bounded(point.y, top, bottom);
+      const scale = Math.max(0.1, Number(renderer2.scale) || 1);
+      if (Math.abs(point.x - x) > 0.5 || Math.abs(point.y - y) > 0.5) onPan((point.x - x) / scale, (point.y - y) / (scale * 0.72));
+    }
+    function move(dx, dy, pixels) {
+      const scale = Math.max(0.1, Number(renderer2?.scale) || 1);
+      cursor.x = bounded(cursor.x + dx * pixels / scale, 113, 887);
+      cursor.y = bounded(cursor.y + dy * pixels / (scale * 0.72), 158, 657);
+      applyCursor();
+      keepVisible();
+    }
+    function aimAtDust() {
+      activate();
+      const state2 = getState();
+      const remaining = state2.dust.filter((d) => d.amount > 1e-5);
+      if (!remaining.length) {
+        onNotice("Every dust patch is clear.");
+        return;
+      }
+      const radius = state2.brushRadius || 44;
+      const near = (a, b) => Math.hypot(a.x - cursor.x, a.y - cursor.y) - Math.hypot(b.x - cursor.x, b.y - cursor.y) || a.id - b.id;
+      const outside = remaining.filter((d) => d.id !== lastHintId && Math.hypot(d.x - cursor.x, d.y - cursor.y) > radius * 1.05);
+      const target = (outside.length ? outside : remaining.filter((d) => d.id !== lastHintId).length ? remaining.filter((d) => d.id !== lastHintId) : remaining).sort(near)[0];
+      cursor = { x: target.x, y: target.y };
+      lastHintId = target.id;
+      applyCursor();
+      keepVisible();
+      const horizontal = cursor.x < 390 ? "left" : cursor.x > 610 ? "right" : "middle";
+      const vertical = cursor.y < 320 ? "upper" : cursor.y > 480 ? "lower" : "central";
+      onNotice(`${remaining.length} dust patches remain. Aiming at the ${vertical} ${horizontal} courtyard. ${state2.mode === "direct" ? "Press Enter to send the crew." : brushing ? "Your brush is sweeping here. Space stops it." : "Press Space to sweep here."}`);
+      changed();
+    }
+    function handleKeyDown(event2) {
+      if (!focused() || event2.altKey || event2.ctrlKey || event2.metaKey) return false;
+      const key = event2.key;
+      if (ARROWS[key]) {
+        const [dx, dy] = ARROWS[key];
+        if (event2.shiftKey) {
+          held.delete(key);
+          onPan(dx * 42, dy * 42);
+          return true;
+        }
+        activate();
+        if (!held.has(key)) {
+          held.add(key);
+          move(dx, dy, 7);
+          changed();
+        }
+        return true;
+      }
+      if (key === " " || key === "Spacebar" || event2.code === "Space") {
+        if (event2.repeat) return true;
+        if (getState().completed || getState().ritual) {
+          onNotice(getState().completed ? "The courtyard is restored. Enjoy your little place." : "Your crew is singing. Brushing can wait a moment.");
+          return true;
+        }
+        const wasBrushing = brushing;
+        if (getState().mode !== "brush" || !wasBrushing) onMode("brush");
+        activate();
+        if (!wasBrushing && !walkable(cursor.x, cursor.y)) {
+          brushing = false;
+          applyCursor();
+          onNotice("The fountain blocks this spot. Press N to find remaining dust.");
+          return true;
+        }
+        brushing = !wasBrushing;
+        applyCursor();
+        onNotice(brushing ? "Sweeping. Move with the arrow keys, or press N for another patch. Space stops your brush." : "Brush resting. Space starts another sweep.");
+        changed();
+        return true;
+      }
+      if (key.toLowerCase() === "n") {
+        if (!event2.repeat) aimAtDust();
+        return true;
+      }
+      if (key === "Enter" && getState().mode === "direct") {
+        if (!event2.repeat) {
+          activate();
+          onAssign(cursor.x, cursor.y);
+          changed();
+        }
+        return true;
+      }
+      return false;
+    }
+    function handleKeyUp(event2) {
+      if (ARROWS[event2.key]) {
+        const used = held.delete(event2.key);
+        return used || focused();
+      }
+      return false;
+    }
+    function stop() {
+      held.clear();
+      brushing = false;
+      const state2 = getState();
+      if (enabled || state2.pointer?.keyboard) {
+        state2.pointer.active = false;
+        state2.pointer.preview = false;
+        state2.pointer.inside = false;
+        state2.pointer.keyboard = false;
+      }
+      enabled = false;
+    }
+    function update(dt) {
+      if (!enabled) return;
+      if (!focused()) {
+        stop();
+        return;
+      }
+      const state2 = getState();
+      if (state2.completed || state2.ritual) brushing = false;
+      let dx = Number(held.has("ArrowRight")) - Number(held.has("ArrowLeft"));
+      let dy = Number(held.has("ArrowDown")) - Number(held.has("ArrowUp"));
+      const length = Math.hypot(dx, dy);
+      if (length) {
+        dx /= length;
+        dy /= length;
+        move(dx, dy, 135 * bounded(Number.isFinite(dt) ? dt : 0, 0, 0.05));
+      } else applyCursor();
+    }
+    return { handleKeyDown, handleKeyUp, update, stop };
+  }
+
+  // src/settings.js
+  function normaliseSettings(value, prefersReducedMotion = false) {
+    const settings2 = { music: 0.48, sfx: 0.65, ambience: 0.38, muted: false, reducedMotion: !!prefersReducedMotion, tapSweep: false, lowQuality: false };
+    if (!value || typeof value !== "object" || Array.isArray(value)) return settings2;
+    for (const key of ["music", "sfx", "ambience"]) if (typeof value[key] === "number" && Number.isFinite(value[key]) && value[key] >= 0 && value[key] <= 1) settings2[key] = value[key];
+    for (const key of ["muted", "reducedMotion", "tapSweep", "lowQuality"]) if (typeof value[key] === "boolean") settings2[key] = value[key];
+    return settings2;
+  }
 
   // src/main.js
   var $ = (id) => document.getElementById(id);
@@ -1582,16 +2025,43 @@
   var birth = null;
   var birthUntil = 0;
   var completionShown = state.completed;
+  var sceneDirty = true;
   var zoom = 1;
   var camera = { x: 500, y: 390 };
   var lastPointer = null;
   var pointerId = null;
   var panning = false;
   var pointerMoved = false;
+  var viewportMode = null;
   var frames = [];
-  var settings = { music: 0.48, sfx: 0.65, ambience: 0.38, muted: false, reducedMotion: matchMedia("(prefers-reduced-motion: reduce)").matches, tapSweep: false, lowQuality: false };
+  var htmlValues = /* @__PURE__ */ new WeakMap();
+  function text(el, value) {
+    value = String(value);
+    if (el.textContent !== value) el.textContent = value;
+  }
+  function html(el, value) {
+    if (htmlValues.get(el) !== value) {
+      el.innerHTML = value;
+      htmlValues.set(el, value);
+    }
+  }
+  function attr(el, key, value) {
+    value = String(value);
+    if (el.getAttribute(key) !== value) el.setAttribute(key, value);
+  }
+  function panCamera(dx, dy) {
+    camera.x = Math.max(180, Math.min(820, camera.x + dx));
+    camera.y = Math.max(200, Math.min(610, camera.y + dy));
+    renderer.setCamera(zoom, camera.x, camera.y);
+  }
+  var keyboard = createKeyboardControls({ canvas, getState: () => state, renderer, onMode: setMode, onAssign: (x, y) => {
+    assignCrew(state, x, y);
+    save();
+    updateUI();
+  }, onPan: panCamera, onNotice: (message) => notify(state, message), onChange: updateUI });
+  var settings = normaliseSettings(null, matchMedia("(prefers-reduced-motion: reduce)").matches);
   try {
-    Object.assign(settings, JSON.parse(localStorage.getItem("dustlings.settings") || "{}"));
+    settings = normaliseSettings(JSON.parse(localStorage.getItem("dustlings.settings") || "null"), settings.reducedMotion);
   } catch {
   }
   state.reducedMotion = settings.reducedMotion;
@@ -1604,9 +2074,20 @@
     audio.setMix(settings);
   }
   function resize() {
+    if (started) stopInput();
     const r = canvas.getBoundingClientRect();
     renderer.resize(r.width, r.height, Math.min(settings.lowQuality ? 1 : 2, devicePixelRatio || 1));
-    renderer.setCamera?.(zoom, camera.x, camera.y);
+    if (viewportMode !== renderer.viewportMode) {
+      viewportMode = renderer.viewportMode;
+      zoom = renderer.recommendedZoom;
+      camera = { x: 500, y: 390 };
+    }
+    renderer.setCamera(zoom, camera.x, camera.y);
+    if ($("zoom-out")) {
+      $("zoom-out").disabled = zoom <= 1;
+      $("zoom-in").disabled = zoom >= 2;
+    }
+    sceneDirty = true;
   }
   new ResizeObserver(resize).observe(canvas);
   resize();
@@ -1624,22 +2105,49 @@
     });
     $("upgrades").append(b);
   }
-  function save() {
-    if (started) store.save(state);
+  function withSaveLock(action) {
+    return navigator.locks?.request ? navigator.locks.request(SAVE_KEY, action) : Promise.resolve().then(action);
+  }
+  function showSaveConflict() {
+    if (!started) return;
+    stopInput();
+    paused = true;
+    audio.pause();
+    if ($("completion").open) $("completion").close();
+    if (!$("settings").open) $("settings").showModal();
     updateSaveStatus();
   }
+  async function save() {
+    let success = false;
+    try {
+      if (started) success = await withSaveLock(() => store.save(state));
+    } catch {
+      store.status = "unavailable";
+    }
+    updateSaveStatus();
+    if (store.status === "conflict") showSaveConflict();
+    return success;
+  }
+  function checkpoint() {
+    if (started) {
+      store.checkpoint(state);
+      updateSaveStatus();
+    }
+  }
   function updateSaveStatus() {
-    $("save-status").textContent = store.status === "unavailable" ? "Save unavailable \u2014 export a backup" : store.status === "damaged" ? "Save needs recovery" : "Saved on this device";
-    $("settings-save-note").textContent = store.status === "unavailable" ? "Browser storage is unavailable. Use Export save to keep your progress." : "Automatically saved in this browser. A backup keeps the previous checkpoint.";
+    $("save-status").textContent = store.status === "conflict" ? "Newer progress in another window" : store.status === "unavailable" ? "Save unavailable \u2014 export a backup" : store.status === "damaged" ? "Save needs recovery" : "Saved on this device";
+    $("settings-save-note").textContent = store.status === "conflict" ? "Your progress is still in this window. Export it before loading the saved courtyard if you want to keep both." : store.status === "unavailable" ? "Browser storage is unavailable. Use Export save to keep your progress." : "Automatically saved in this browser. A backup keeps the previous checkpoint.";
+    $("save-conflict").hidden = store.status !== "conflict";
   }
   function updateUI() {
+    sceneDirty = true;
     const percent = Math.min(100, Math.floor(state.cleaned / state.totalDust * 100));
-    $("crew-count").textContent = state.creatures.length;
-    $("mote-count").textContent = state.motes;
-    $("scene-caption-text").textContent = state.completed ? "A little place, alive again" : state.restoration >= 1 ? "The fountain is singing" : "A place waiting to bloom";
-    $("progress-number").textContent = `${percent}%`;
-    $("progress-fill").style.width = `${percent}%`;
-    document.querySelector(".progress-track").setAttribute("aria-valuenow", percent);
+    text($("crew-count"), state.creatures.length);
+    text($("mote-count"), state.motes);
+    text($("scene-caption-text"), state.completed ? "A little place, alive again" : state.restoration >= 1 ? "The fountain is singing" : "A place waiting to bloom");
+    text($("progress-number"), `${percent}%`);
+    if ($("progress-fill").style.width !== `${percent}%`) $("progress-fill").style.width = `${percent}%`;
+    attr(document.querySelector(".progress-track"), "aria-valuenow", percent);
     let title = "Let\u2019s wake<br>the courtyard.", copy = "Under all this dust, something lovely is waiting. Every bit you brush away can become a little helper.";
     if (state.completed) {
       title = "A little place,<br>alive again.";
@@ -1657,37 +2165,43 @@
       title = "From dust,<br>a little life.";
       copy = "Your Dustlings are already helping. Grow your crew with each sweep, or point them toward a patch that needs care.";
     }
-    $("chapter-title").innerHTML = title;
-    $("chapter-copy").textContent = copy;
+    html($("chapter-title"), title);
+    text($("chapter-copy"), copy);
     let available = false;
     for (const u of UPGRADES) {
       const el = $(`upgrade-${u.id}`), owned = state.upgrades[u.id], locked = u.id === "bloom" && (!state.upgrades.brush || !state.upgrades.teamwork), afford = state.motes >= u.cost && !locked && !owned;
-      el.disabled = owned || locked || state.motes < u.cost;
+      const disabled = owned || locked || state.motes < u.cost;
+      if (el.disabled !== disabled) el.disabled = disabled;
       el.classList.toggle("owned", owned);
       el.classList.toggle("affordable", afford);
-      el.querySelector(".upgrade-cost").innerHTML = owned ? '<svg><use href="#i-check"/></svg>' : `<span>${u.cost}</span><svg><use href="#i-dust"/></svg>`;
-      el.querySelector(".branch-label").textContent = owned ? u.effect : locked ? "After A softer sweep + Better together" : afford ? "Ready to discover" : `${Math.max(0, u.cost - state.motes)} more motes to discover`;
-      el.setAttribute("aria-label", `${u.name}. ${u.detail} ${owned ? "Discovered" : locked ? "Requires both earlier discoveries" : `${u.cost} motes. ${state.motes} available.`}`);
+      html(el.querySelector(".upgrade-cost"), owned ? '<svg><use href="#i-check"/></svg>' : `<span>${u.cost}</span><svg><use href="#i-dust"/></svg>`);
+      text(el.querySelector(".branch-label"), owned ? u.effect : locked ? "After A softer sweep + Better together" : afford ? "Ready to discover" : `${Math.max(0, u.cost - state.motes)} more motes to discover`);
+      attr(el, "aria-label", `${u.name}. ${u.detail} ${owned ? "Discovered" : locked ? "Requires both earlier discoveries" : `${u.cost} motes. ${state.motes} available.`}`);
       available ||= afford;
     }
     $("upgrade-dot").hidden = !available;
     const restoreReady = state.upgrades.bloom && percent >= 75 && !state.ritual && state.restoration < 1;
     $("restore-button").disabled = !restoreReady;
-    $("restore-button").textContent = state.restoration >= 1 ? "The fountain is awake \u2713" : state.ritual ? `A little song\u2026 ${Math.round(state.restoration * 100)}%` : restoreReady ? "Ring the fountain bell \u266B" : !state.upgrades.bloom ? "Clear 75% & learn the chorus" : `Clear ${75 - percent}% more to gather the crew`;
-    $("landmark-copy").textContent = state.restoration >= 1 ? "A little water. A little music. A new beginning." : state.ritual ? "Watch the crew form a circle. The water remembers." : "A quiet fountain with a song still in it.";
+    text($("restore-button"), state.restoration >= 1 ? "The fountain is awake \u2713" : state.ritual ? `A little song\u2026 ${Math.round(state.restoration * 100)}%` : restoreReady ? "Ring the fountain bell \u266B" : !state.upgrades.bloom ? "Clear 75% & learn the chorus" : `Clear ${75 - percent}% more to gather the crew`);
+    text($("landmark-copy"), state.restoration >= 1 ? "A little water. A little music. A new beginning." : state.ritual ? "Watch the crew form a circle. The water remembers." : "A quiet fountain with a song still in it.");
     $("free-roam").hidden = !state.assignment || state.ritual || state.completed;
     $("find-dust").hidden = percent < 60 || state.completed;
     $("toast").hidden = state.noticeTime <= 0 || !state.notice;
-    if (state.notice) $("toast").textContent = state.notice;
+    if (state.notice) text($("toast"), state.notice);
     const isTouch = matchMedia("(pointer:coarse)").matches;
-    $("tip-text").textContent = state.completed ? "Stay a while. You brought this place back to life." : state.ritual ? "A chorus of little things." : state.mode === "direct" ? isTouch ? "Place the flag above your finger. Lift to send the crew." : "Click an open patch to send your crew there." : isTouch ? "Sweep with the circle just above your finger." : settings.tapSweep ? "Tap for a sweep, or hold & brush at your own pace." : "Hold & sweep over the dust. See what wakes up.";
+    text($("tip-text"), state.completed ? "Stay a while. You brought this place back to life." : state.ritual ? "A chorus of little things." : state.pointer.keyboard ? state.mode === "direct" ? "Arrows aim \xB7 Enter sends crew \xB7 N finds dust" : "Arrows aim \xB7 Space starts/stops brushing \xB7 N finds dust" : state.mode === "direct" ? isTouch ? "Place the flag above your finger. Lift to send the crew." : "Click an open patch to send your crew there." : isTouch ? "Sweep with the circle just above your finger." : settings.tapSweep ? "Tap for a sweep, or hold & brush at your own pace." : "Hold & sweep over the dust. See what wakes up.");
     $("sound-toggle").classList.toggle("muted", settings.muted);
     $("sound-toggle").setAttribute("aria-label", settings.muted ? "Unmute sound" : "Mute sound");
     $("sound-toggle").title = settings.muted ? "Sound off \xB7 click to unmute" : "Sound on \xB7 click to mute";
   }
   function setMode(mode) {
+    keyboard.stop();
+    panMode = false;
+    $("pan-toggle").setAttribute("aria-pressed", "false");
+    $("pan-toggle").classList.remove("selected");
     state.mode = mode;
     state.pointer.active = false;
+    state.pointer.preview = false;
     autoSweep = 0;
     audio.setBrushing(false);
     $("brush-tool").classList.toggle("selected", mode === "brush");
@@ -1723,18 +2237,27 @@
   };
   function closeJournal() {
     $("journal").classList.remove("open");
+    $("mobile-journal").setAttribute("aria-expanded", "false");
   }
-  $("mobile-journal").onclick = () => {
-    $("journal").classList.toggle("open");
-  };
+  function toggleJournal() {
+    const opened = $("journal").classList.toggle("open");
+    $("mobile-journal").setAttribute("aria-expanded", opened);
+  }
+  $("mobile-journal").onclick = toggleJournal;
   $("close-journal").onclick = closeJournal;
   function stopInput() {
+    const captured = pointerId;
+    keyboard.stop();
     state.pointer.active = false;
     state.pointer.preview = false;
+    state.pointer.inside = false;
     pointerId = null;
+    lastPointer = null;
     autoSweep = 0;
     panning = false;
     audio.setBrushing(false);
+    sceneDirty = true;
+    if (captured !== null && canvas.hasPointerCapture(captured)) canvas.releasePointerCapture(captured);
   }
   function openSettings() {
     if (!started) return;
@@ -1746,6 +2269,10 @@
   }
   function closeSettings() {
     if (!$("settings").open) return;
+    if (store.status === "conflict") {
+      $("load-latest-save").focus();
+      return;
+    }
     $("settings").close();
     $("restart-confirm").hidden = true;
     paused = false;
@@ -1828,14 +2355,19 @@
     try {
       if (file.size > 3e5) throw Error("That file is too large to be a courtyard save.");
       const next = restore(JSON.parse(await file.text()));
+      if (store.hasConflict()) {
+        showSaveConflict();
+        e.target.value = "";
+        return;
+      }
       state = next;
       state.reducedMotion = settings.reducedMotion;
       completionShown = state.completed;
       birth = null;
-      save();
+      const saved = await save();
       audio.setProgress(state.restoration);
       setMode("brush");
-      $("settings-save-note").textContent = "Your courtyard has been recovered. Ready when you are.";
+      if (saved) $("settings-save-note").textContent = "Your courtyard has been recovered. Ready when you are.";
     } catch (err) {
       $("settings-save-note").textContent = `Could not import. ${err.message} Your current courtyard is safe.`;
     }
@@ -1843,17 +2375,45 @@
   };
   $("restart-button").onclick = () => $("restart-confirm").hidden = false;
   $("cancel-restart").onclick = () => $("restart-confirm").hidden = true;
-  $("confirm-restart").onclick = () => {
-    store.clear();
-    state = createState();
-    state.reducedMotion = settings.reducedMotion;
-    completionShown = false;
-    birth = null;
+  $("confirm-restart").onclick = async () => {
+    const reset = await withSaveLock(() => {
+      if (!store.clear()) return false;
+      state = createState();
+      state.reducedMotion = settings.reducedMotion;
+      completionShown = false;
+      birth = null;
+      return store.save(state);
+    });
+    if (!reset) {
+      updateSaveStatus();
+      if (store.status === "conflict") showSaveConflict();
+      return;
+    }
     audio.setProgress(0);
-    save();
     setMode("brush");
+    updateSaveStatus();
     closeSettings();
   };
+  $("load-latest-save").onclick = async () => {
+    await withSaveLock(() => {
+      const latest = store.load();
+      if (!latest && store.status !== "ready") return;
+      state = latest || createState();
+      state.reducedMotion = settings.reducedMotion;
+      completionShown = state.completed;
+      birth = null;
+      store.save(state);
+    });
+    updateSaveStatus();
+    if (store.status === "saved" || store.status === "recovered" || store.status === "ready") {
+      audio.setProgress(state.restoration);
+      setMode("brush");
+      closeSettings();
+    }
+  };
+  window.addEventListener("storage", (e) => {
+    if ((e.key === SAVE_KEY || e.key === INTERRUPTED_KEY) && store.hasConflict()) showSaveConflict();
+  });
   function enjoy() {
     $("completion").close();
     paused = false;
@@ -1870,11 +2430,14 @@
     const r = canvas.getBoundingClientRect(), touch = e.pointerType === "touch";
     const sx = e.clientX - r.left, sy = e.clientY - r.top - (touch ? 42 : 0);
     const p = renderer.screenToWorld(sx, sy);
-    return { ...p, touch, inside: true, active: state.pointer.active, preview: state.pointer.preview };
+    return { ...p, touch, inside: renderer.containsScreenPoint(sx, sy), active: state.pointer.active, preview: state.pointer.preview };
   }
   canvas.addEventListener("pointerdown", (e) => {
     if (paused || !started || pointerId !== null) return;
+    const target = locate(e);
+    if (!target.inside) return;
     e.preventDefault();
+    keyboard.stop();
     canvas.focus({ preventScroll: true });
     canvas.setPointerCapture(e.pointerId);
     pointerId = e.pointerId;
@@ -1887,14 +2450,22 @@
     if (state.pointer.active && settings.tapSweep) autoSweep = 1.35;
   });
   canvas.addEventListener("pointermove", (e) => {
-    if (paused) return;
+    if (paused || pointerId !== null && pointerId !== e.pointerId) return;
     if (panning && pointerId === e.pointerId && lastPointer) {
       const a = renderer.screenToWorld(lastPointer.x, lastPointer.y), b = renderer.screenToWorld(e.clientX, e.clientY);
       camera.x = Math.max(180, Math.min(820, camera.x - (b.x - a.x)));
       camera.y = Math.max(220, Math.min(600, camera.y - (b.y - a.y)));
       renderer.setCamera?.(zoom, camera.x, camera.y);
     } else {
-      state.pointer = locate(e);
+      const target = locate(e);
+      if (!target.inside) {
+        target.active = false;
+        target.preview = false;
+      } else if (pointerId === e.pointerId) {
+        target.active = state.mode === "brush";
+        target.preview = state.mode === "direct";
+      }
+      state.pointer = target;
     }
     if (pointerId === e.pointerId) {
       if (lastPointer && Math.hypot(e.clientX - lastPointer.x, e.clientY - lastPointer.y) > 3) pointerMoved = true;
@@ -1903,12 +2474,13 @@
   });
   function pointerUp(e, cancel = false) {
     if (e.pointerId !== pointerId) return;
-    if (!cancel && !panning && state.mode === "direct") {
-      state.pointer = locate(e);
+    const target = locate(e);
+    if (!cancel && !panning && state.mode === "direct" && target.inside) {
+      state.pointer = target;
       assignCrew(state, state.pointer.x, state.pointer.y);
       save();
     }
-    state.pointer.active = !cancel && !panning && state.mode === "brush" && settings.tapSweep && autoSweep > 0;
+    state.pointer.active = !cancel && !panning && target.inside && state.mode === "brush" && settings.tapSweep && autoSweep > 0;
     state.pointer.preview = false;
     if (cancel) autoSweep = 0;
     pointerId = null;
@@ -1922,7 +2494,7 @@
     if (pointerId === e.pointerId) pointerUp(e, true);
   });
   canvas.addEventListener("pointerleave", () => {
-    if (pointerId === null) {
+    if (pointerId === null && !(settings.tapSweep && autoSweep > 0 && state.pointer.active)) {
       state.pointer.inside = false;
       state.pointer.active = false;
       audio.setBrushing(false);
@@ -1943,26 +2515,27 @@
       return;
     }
     if (!started || paused || /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if (keyboard.handleKeyDown(e)) {
+      e.preventDefault();
+      return;
+    }
     const key = e.key.toLowerCase();
     if (key === "b") setMode("brush");
     if (key === "d") setMode("direct");
-    if (key === "u") $("journal").classList.toggle("open");
+    if (key === "u") toggleJournal();
     if (key === "r") releaseCrew(state);
     if (key === "+" || key === "=") setZoom(Math.min(2, zoom + 0.25));
     if (key === "-") setZoom(Math.max(1, zoom - 0.25));
-    if (e.key.startsWith("Arrow")) {
-      e.preventDefault();
-      camera.x += e.key === "ArrowRight" ? 55 : e.key === "ArrowLeft" ? -55 : 0;
-      camera.y += e.key === "ArrowDown" ? 55 : e.key === "ArrowUp" ? -55 : 0;
-      camera.x = Math.max(180, Math.min(820, camera.x));
-      camera.y = Math.max(200, Math.min(610, camera.y));
-      renderer.setCamera?.(zoom, camera.x, camera.y);
-    }
   });
+  document.addEventListener("keyup", (e) => {
+    if (keyboard.handleKeyUp(e)) e.preventDefault();
+  });
+  canvas.addEventListener("blur", () => keyboard.stop());
   function setZoom(value) {
     zoom = value;
     if (zoom === 1) camera = { x: 500, y: 390 };
     renderer.setCamera?.(zoom, camera.x, camera.y);
+    sceneDirty = true;
     $("zoom-in").disabled = zoom >= 2;
     $("zoom-out").disabled = zoom <= 1;
   }
@@ -1970,6 +2543,7 @@
   cameraControls.className = "camera-controls";
   cameraControls.innerHTML = '<button id="zoom-out" aria-label="Zoom out" title="Zoom out \xB7 \u2212" disabled>\u2212</button><button id="zoom-in" aria-label="Zoom in" title="Zoom in \xB7 +">+</button><button id="pan-toggle" aria-label="Pan courtyard" aria-pressed="false" title="Pan courtyard">\u2194</button>';
   document.querySelector(".world-panel").append(cameraControls);
+  setZoom(zoom);
   var panMode = false;
   $("zoom-in").onclick = () => setZoom(Math.min(2, zoom + (canvas.clientWidth < 500 ? 0.7 : 0.25)));
   $("zoom-out").onclick = () => setZoom(Math.max(1, zoom - (canvas.clientWidth < 500 ? 0.7 : 0.25)));
@@ -1980,7 +2554,7 @@
     notify(state, panMode ? "Drag the courtyard to look around. Tap \u2194 again to brush." : "Ready to brush again.");
   };
   canvas.addEventListener("pointerdown", (e) => {
-    if (panMode && !paused) {
+    if (panMode && !paused && pointerId === e.pointerId) {
       panning = true;
       state.pointer.active = false;
       autoSweep = 0;
@@ -1989,16 +2563,18 @@
   document.addEventListener("visibilitychange", () => {
     if (document.hidden && started) {
       stopInput();
+      audio.pause();
+      checkpoint();
       save();
       if (!paused) {
         paused = true;
-        audio.pause();
         $("settings").showModal();
       }
     }
   });
   window.addEventListener("pagehide", () => {
     stopInput();
+    checkpoint();
     save();
   });
   window.addEventListener("blur", () => {
@@ -2021,6 +2597,7 @@
     lastTime = now;
     if (started && !paused) {
       const dt = Math.min(0.05, raw);
+      keyboard.update(dt);
       tick(state, dt);
       if (autoSweep > 0) {
         autoSweep -= dt;
@@ -2044,14 +2621,17 @@
       frames.push(raw * 1e3);
       if (frames.length > 3600) frames.shift();
     }
-    renderer.render(state, state.elapsed);
+    if (!paused || sceneDirty) {
+      renderer.render(state, state.elapsed);
+      sceneDirty = false;
+    }
     if (birth && state.elapsed < birthUntil && !paused) {
-      const p = renderer.worldToScreen(birth.x, birth.y);
+      const p = renderer.worldToScreen(birth.x, birth.y), v = renderer.viewport;
       $("birth-label").hidden = false;
-      $("birth-label").style.left = `${Math.max(110, Math.min(canvas.clientWidth - 110, p.x))}px`;
-      $("birth-label").style.top = `${p.y - 33}px`;
+      $("birth-label").style.left = `${Math.max(v.x + 100, Math.min(v.x + v.width - 100, p.x))}px`;
+      $("birth-label").style.top = `${Math.max(v.y + 55, Math.min(v.y + v.height - 12, p.y - 33))}px`;
     } else $("birth-label").hidden = true;
-    if (now - lastUI > 150) {
+    if (!paused && now - lastUI > 150) {
       updateUI();
       lastUI = now;
     }
@@ -2060,12 +2640,24 @@
   if (state.elapsed > 0) $("start-button").innerHTML = "Return to your courtyard <span>\u2197</span>";
   if (store.recovered || store.status === "damaged" || store.status === "unavailable") {
     $("recovery-note").hidden = false;
-    $("recovery-note").textContent = store.recovered ? "Your previous save was recovered from its backup." : store.status === "damaged" ? "The saved courtyard could not be read. You can import a backup from Settings after starting." : "Browser saving is unavailable. Export a save from Settings before leaving.";
+    $("recovery-note").textContent = store.recovered ? store.recoverySource === "interrupted" ? "Your last sweep was recovered after an interruption." : "Your previous save was recovered from its backup." : store.status === "damaged" ? "The saved courtyard could not be read. You can import a backup from Settings after starting." : "Browser saving is unavailable. Export a save from Settings before leaving.";
   }
   updateUI();
   updateSaveStatus();
   $("welcome").showModal();
   requestAnimationFrame(frame);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    const prepare = () => {
+      if (!started && !document.hidden) {
+        try {
+          audio.prepare();
+        } catch {
+        }
+      }
+    };
+    if ("requestIdleCallback" in window) requestIdleCallback(prepare, { timeout: 1500 });
+    else setTimeout(prepare, 100);
+  }));
   if (new URLSearchParams(location.search).has("qa")) window.__dustlings = {
     get state() {
       return state;
@@ -2094,6 +2686,7 @@
     },
     pause(value) {
       paused = value;
+      sceneDirty = true;
     },
     beginRitual: () => beginRitual(state),
     setZoom,

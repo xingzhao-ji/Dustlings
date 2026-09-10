@@ -1,0 +1,22 @@
+{
+  "preserved_at_utc": "2026-09-10T09:37:53.182675+00:00",
+  "kind": "Headless animation-state and analytic ellipsoid tests; no GPU readback, native input, frame-rate or human judgment",
+  "initial_9": {
+    "runtime_source_commit": "0dbc51c",
+    "runtime_source_sha256": "a21373f3b30ce49f6af905cdae31caa0e4862c5cf49a2843c7dd84b1f24e88b2",
+    "result": "9 passed,0 failed",
+    "scope": "Original grounded sweep/contact implementation; normal-speed travel check"
+  },
+  "stationary_10": {
+    "runtime_source_commit": "0452e95",
+    "runtime_source_sha256": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc",
+    "result": "10 passed,0 failed",
+    "scope": "Same animation plus getter guard at speed>=0.08; added slow-travel boundary check"
+  },
+  "before_source_sha256": "7115a48cd6444d3b7b8907cf2fd35992e700fec76c3c46e228f181d258e95109",
+  "notes": [
+    "Raw probe logs/results are preserved unchanged.",
+    "The source-only analytic bound is not GPU MultiMesh transform readback.",
+    "Root owns native matched helper footage and integrated actual-removal tests."
+  ]
+}

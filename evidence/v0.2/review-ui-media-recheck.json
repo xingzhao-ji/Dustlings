@@ -1,0 +1,106 @@
+{
+  "recordedAt": "2026-09-10T06:35:44.534Z",
+  "kind": "Focused corrected UI-video artifact check; headless Chrome muted playback, not a human playtest or native audio audition.",
+  "conditions": "Nonisolated browser work; no performance conclusion.",
+  "scope": "Supersedes only the UI-video/hash and current review-page-hash portions of the historical 18-check report. Layouts and other video playback were not repeated.",
+  "priorDefect": "The previous 45-second UI cut included subsequent QA fixture footage after its normal opening. Root recut the original recording to 43 seconds.",
+  "checks": [
+    {
+      "name": "Corrected UI movie matches current manifest and 43-second trim",
+      "pass": true,
+      "path": "evidence/v0.2/interaction-ui.mp4",
+      "sha256": "1cb5d5a86a77ac2c7631fd0018b26ba36f3b253a5a3211eab09ec356d1c0c20c",
+      "bytes": 3553469,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1440,
+            "height": 900
+          }
+        ],
+        "format": {
+          "duration": "43.000000",
+          "size": "3553469"
+        }
+      }
+    },
+    {
+      "name": "Playable artifact is unchanged and matches both manifests",
+      "pass": true,
+      "sha256": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
+      "bytes": 148970
+    },
+    {
+      "name": "Other movie unchanged: evidence/v0.2/opening-with-sound.mp4",
+      "pass": true,
+      "sha256": "95f8cef67f500d3bd99360fa20055a06b7384c1f069c36c159b83dd1875359ec",
+      "playback": "Not repeated; same bytes as historical check."
+    },
+    {
+      "name": "Other movie unchanged: evidence/v0.2/restoration-with-sound.mp4",
+      "pass": true,
+      "sha256": "bd58df3ec07ece83758eacbedf409f52acba877dab6de19a229eabd0ee6c052f",
+      "playback": "Not repeated; same bytes as historical check."
+    },
+    {
+      "name": "Current review UI movie plays and reaches its corrected endpoint",
+      "pass": true,
+      "src": "v0.2/interaction-ui.mp4",
+      "duration": 43,
+      "width": 1440,
+      "height": 900,
+      "playedTo": 0.127495,
+      "currentTime": 43,
+      "ended": true,
+      "error": null
+    },
+    {
+      "name": "No script or failed-file errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "mediaReadAborts": [
+    "file:///Users/xingzhaoji/Desktop/Dustlings/evidence/v0.2/interaction-ui.mp4 net::ERR_ABORTED",
+    "file:///Users/xingzhaoji/Desktop/Dustlings/evidence/v0.2/opening-with-sound.mp4 net::ERR_ABORTED",
+    "file:///Users/xingzhaoji/Desktop/Dustlings/evidence/v0.2/restoration-with-sound.mp4 net::ERR_ABORTED"
+  ],
+  "historicalReport": {
+    "path": "evidence/v0.2/review-page-checks.json",
+    "sha256": "47cc4ef14391ab6b5848bda4d974a7425238c6d2891cc679671f1960141211ec",
+    "summary": {
+      "passed": 18,
+      "failed": 0,
+      "errors": 0
+    }
+  },
+  "reviewSha256": "e0197381a5bf585168f8836c22cd6e28d1f8cf92fb943cf5ce25d12d90a6caf2",
+  "visualInspection": {
+    "observer": "Assistant visual inspection of extracted frame artifacts, not human player feedback.",
+    "observations": "40-second, 42-second, and final frames show four helpers, one mote, 7% cleared, A softer sweep owned, and the crew direction flag/toast. Helpers move toward the right-side assignment across these frames; no restored/large-population fixture state is visible in these samples.",
+    "frames": [
+      {
+        "path": "evidence/v0.2/interaction-frame-40.png",
+        "sha256": "d1e3607982c86c88bf3e1e69882ca4aef89faf1536addadf03a9c3af9a17fecb"
+      },
+      {
+        "path": "evidence/v0.2/interaction-frame-42.png",
+        "sha256": "677ae6521abc5ecc4537629ef71fca5bc329ea90700afdfeea50f40b9b75049d"
+      },
+      {
+        "path": "evidence/v0.2/interaction-last-frame.png",
+        "sha256": "ed9cdeedef7fa595b961fd1d0a336edbcc4abae19236852f3144f7c59a3c7342"
+      }
+    ]
+  },
+  "browser": "152.0.7977.83",
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "errors": 0
+  }
+}

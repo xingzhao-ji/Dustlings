@@ -49,3 +49,29 @@ The lead separately identified that the completion modal immediately paused newl
 Remaining player-facing reliability checks are packaged multi-process second launch, physical Windows/macOS sleep and device interruption, actual import/export file dialogs, full crew and active-ritual return, and human comfort with the conflict/recovery messages. The current engine fixture does not establish those results.
 
 Exact next action: preserve the final native report and integrate the lead's uninterrupted completion change, then run its focused completion/save check. Do not repeat broader checks or change already-passing storage behavior without new evidence.
+
+## Packaged operating-system process check
+
+Prepared 2026-09-10: `tools/native-3d-checks.mjs`. **The packaged sequence has not yet run.** It awaits the final exact native build manifest and the shared interactive app slot. The 25 checks above remain the separate native engine integration result; they do not establish packaged multi-process recovery.
+
+Preparation checks passed: Node syntax validation, and a deliberately incorrect archive hash was rejected with exit code 1 before extraction or any app process. That negative fixture is a tool guard check, not a game recovery result.
+
+The runner requires an explicit build manifest and verifies the successful build record, Mac archive SHA-256, extracted executable and PCK SHA-256, bundle metadata, ad-hoc signature, and the actual ICNS resource linked by the plist. It never selects a `latest` build implicitly or launches the editor. The exported archive is extracted to a unique operating-system temporary directory so its exact signed bytes remain inspectable. Icon verification establishes that the bundle contains and references a valid resource; it does not constitute a visual review of the Dock icon.
+
+Run only after coordinating the app slot:
+
+```sh
+node tools/native-3d-checks.mjs --manifest builds/3d/EXACT-BUILD/manifest.json --output evidence/3d/native-packaged/EXACT-RUN
+```
+
+`--preflight-only` performs artifact checks without launching an app. Its report explicitly says no recovery test ran and must not be used as a native recovery pass. Output must be empty to prevent mixed evidence.
+
+The intended sequence uses four actual packaged Mac processes and one random `--qa-profile` identifier. Unlike default no-profile QA, this named profile follows Main's actual load and TCP instance-lock branches, with a unique `dustlings-qa-<token>.json` in the OS cache. The ordinary save path and lock are untouched.
+
+- Opening: 66 engine seconds of real-time generated viewport input brush actual surfaces, create helpers, buy the brush upgrade, direct the crew, and change music volume and gentle motion through controls. No progress fixture or accelerated simulation is injected.
+- Fresh process: compare every saved game/settings key and array entry at the silent welcome screen, before time resumes. JSON number types are normalized; only numerical round-trip noise within `1e-9 × max(1, absolute values)` is tolerated. Verify deliberate Return resumes audio/play without reviving held input.
+- Concurrent processes: hold a primary app at welcome, launch a second copy with the same profile, verify disabled Start and rejected direct Start, and compare primary, staged and backup save hashes byte for byte. Finish the primary only after those checks.
+
+Timeouts or failures terminate only the runner's own app PIDs. Its isolated profile, extraction, per-process logs/results and top-level `report.json` remain available for inspection. The report binds `pckSha256`, `executableSha256`, `sourceSha256`, build revision/dirty status, exit code and individual checks to that exact artifact. A later source change requires a new build and new execution before calling this evidence current.
+
+Remaining scope: this small opening save does not establish full-crowd or active-chorus return, physical sleep/device interruption, native file-dialog comfort, Windows execution, mobile support, human satisfaction or owner release approval. Human test count remains **0**.

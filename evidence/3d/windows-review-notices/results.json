@@ -1,0 +1,188 @@
+{
+  "kind": "Controlled Windows notice packaging checks on macOS; exact historical exported binaries with a new temporary notice-bearing manifest, not a new release or Windows execution",
+  "historical_build": "builds/3d/0.4.0-dev-2026-09-10T10-09-48-517Z-056dc75f00",
+  "historical_source_sha256": "056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313",
+  "tool_sha256": "671b5129c61a885085b916940139e00311f6d4bc043ccf1cc09d889785aa65bb",
+  "checks": [
+    {
+      "check": "historical-verify-only",
+      "passed": true,
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "check": "historical-rebuild-in-new-temp-folder",
+      "passed": true,
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "check": "Historical format remains exactly three entries",
+      "passed": true
+    },
+    {
+      "check": "Historical archive and companion remain byte-identical when rebuilt elsewhere",
+      "passed": true
+    },
+    {
+      "check": "Generate actual pinned notices for exact historical source/toolchain fixture",
+      "passed": true
+    },
+    {
+      "check": "package-notice-fixture",
+      "passed": true,
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "check": "verify-notice-fixture",
+      "passed": true,
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "check": "idempotent-notice-fixture",
+      "passed": true,
+      "exit_code": 0,
+      "expected_success": true
+    },
+    {
+      "check": "Identical notice package rerun preserves archive bytes and mtime",
+      "passed": true
+    },
+    {
+      "check": "Independent exact seven-entry list and CRC",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted notice bytes: Notices/GODOT_LICENSE.txt",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted notice bytes: Notices/GODOT_COPYRIGHT.txt",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted notice bytes: Notices/THIRD-PARTY-NOTICES.txt",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted notice bytes: Notices/notice-manifest.json",
+      "passed": true
+    },
+    {
+      "check": "Companion notice sources are relative to build root, not Windows",
+      "passed": true
+    },
+    {
+      "check": "wrong-source-revision",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "wrong-source-hash",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "wrong-editor-hash",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "wrong-engine-version",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "reject-missing-notice",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "reject-changed-notice",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "reject-missing-notice-record",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "reject-null-notices",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "reject-engine-revision",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "reject-internal-source-even-with-refreshed-file-hash",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "reject-internal-text-hash",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "reject-internal-template-provenance",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "reject-notices-only-under-Windows",
+      "passed": true,
+      "exit_code": 1,
+      "expected_success": false
+    },
+    {
+      "check": "Rejected fixtures never publish an archive or companion",
+      "passed": true
+    },
+    {
+      "check": "Original frozen manifest/EXE/PCK/ZIP/companion hashes and mtimes unchanged",
+      "passed": true
+    }
+  ],
+  "passed": 30,
+  "failed": 0,
+  "immutable_original": {
+    "manifest.json": {
+      "sha256": "1087423e13a51dfd9e3e7b53974e2cbbc8403560b21d4501b437688ea9de11a1",
+      "mtime_ns": 1789035004206779648
+    },
+    "Windows/Dustlings.exe": {
+      "sha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512",
+      "mtime_ns": 1789035002122408208
+    },
+    "Windows/Dustlings.pck": {
+      "sha256": "3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47",
+      "mtime_ns": 1789035002153380553
+    },
+    "Windows/Dustlings-Windows.zip": {
+      "sha256": "7d7b768f443d0b6004e0617a776a503190d6bf3078eb65de9d9cfdccf75fbd16",
+      "mtime_ns": 1789035271125869456
+    },
+    "windows-review-package.json": {
+      "sha256": "9d0efeddaea9d3c2cdc3b601f8fee343caf64c78341dfb3475e38d844ad9879f",
+      "mtime_ns": 1789035271128877495
+    }
+  }
+}

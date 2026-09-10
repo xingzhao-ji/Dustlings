@@ -1,0 +1,8 @@
+file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:50
+  if (!/^[a-f0-9]{40}$/.test(manifest.source.revision || '') || provenance?.revision !== manifest.source.revision || provenance?.sha256 !== manifest.source.sha256 || !validRecord(toolchain?.editor) || provenance?.engineVersion !== toolchain.editorVersion || provenance?.editorSha256 !== toolchain.editor.sha256 || !['macOS', 'windowsX64'].every(name => validRecord(toolchain?.templates?.[name]))) throw Error('Notice source/toolchain provenance does not match the build');
+                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+
+Error: Notice source/toolchain provenance does not match the build
+    at file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:50:404
+
+Node.js v26.7.0

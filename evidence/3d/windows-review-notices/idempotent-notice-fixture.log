@@ -1,0 +1,67 @@
+{
+  "action": "packaged-or-already-identical",
+  "companion": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-notice-package-check-j7_gyepy/valid-notices/windows-review-package.json",
+  "kind": "dustlings-windows-review-package",
+  "version": 1,
+  "manifest": {
+    "file": "manifest.json",
+    "sha256": "149a6e3927f1fa20c75c3eafb7014a08470959049e9052284f4b52ba5685a1ab",
+    "sourceHash": "056dc75f0078eda1fbf61752b940818671ad348ed554974f9dc519fadaaa2313"
+  },
+  "archive": {
+    "file": "Windows/Dustlings-Windows.zip",
+    "bytes": 39635366,
+    "sha256": "bf39e174cd5a9f30bb900f7a5ef8ce4fab4da11e03c30acd22c6b0d373aab019"
+  },
+  "entries": [
+    {
+      "file": "Dustlings.exe",
+      "source": "Windows/Dustlings.exe",
+      "bytes": 109136384,
+      "sha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512"
+    },
+    {
+      "file": "Dustlings.pck",
+      "source": "Windows/Dustlings.pck",
+      "bytes": 2136660,
+      "sha256": "3bd908a12c67ed1dfae9b5d093fdb31925292c9550f10644125fb738550dfd47"
+    },
+    {
+      "file": "README.txt",
+      "bytes": 1026,
+      "sha256": "9ef958c6acf8df9da162942f061dddce87b07b3fa8a3b4bdeb99da9aa8bb4e49"
+    },
+    {
+      "file": "Notices/GODOT_LICENSE.txt",
+      "source": "Notices/GODOT_LICENSE.txt",
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    {
+      "file": "Notices/GODOT_COPYRIGHT.txt",
+      "source": "Notices/GODOT_COPYRIGHT.txt",
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    {
+      "file": "Notices/THIRD-PARTY-NOTICES.txt",
+      "source": "Notices/THIRD-PARTY-NOTICES.txt",
+      "bytes": 1722,
+      "sha256": "cf8a03ca9d4c8ab0e4b2ac171ad37ff19df97d50c9f5f6e753b29a90609a01d3"
+    },
+    {
+      "file": "Notices/notice-manifest.json",
+      "source": "Notices/notice-manifest.json",
+      "bytes": 2115,
+      "sha256": "89b7bee25c136764d4487e2a5b56345c59cca277f93034f9210453cd64052721"
+    }
+  ],
+  "verification": {
+    "zipCrc": "passed",
+    "extractedEntriesMatch": "passed",
+    "entryCount": 7,
+    "windowsExecution": "not performed",
+    "noticeFiles": 4
+  }
+}
+

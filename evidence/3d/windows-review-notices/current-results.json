@@ -1,0 +1,101 @@
+{
+  "kind": "Actual fresh Windows portable ZIP/notices verification on macOS; no Windows launch, release approval or legal sufficiency claim",
+  "build": "builds/3d/0.4.0-dev-2026-09-10T10-59-12-915Z-ee3a43ae3d",
+  "source_sha256": "ee3a43ae3dcf50364bcdb3914c730f2cc459ebeb18559b39f376e3a3996ef920",
+  "manifest_sha256": "7c54caa2772dc45ddc09f2749ad7692c68b14bf6bed5c242cf4b0caed2141ba0",
+  "archive": {
+    "file": "Windows/Dustlings-Windows.zip",
+    "bytes": 39636125,
+    "sha256": "d7733b1a2f3b09ed67c94abe2e659257f109c8b71aebdf8cf4a7ad858bdbc80b"
+  },
+  "notice_files": {
+    "Notices/GODOT_LICENSE.txt": {
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "Notices/GODOT_COPYRIGHT.txt": {
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "Notices/THIRD-PARTY-NOTICES.txt": {
+      "bytes": 1722,
+      "sha256": "cf8a03ca9d4c8ab0e4b2ac171ad37ff19df97d50c9f5f6e753b29a90609a01d3"
+    },
+    "Notices/notice-manifest.json": {
+      "bytes": 2115,
+      "sha256": "baabc1805d4093c32ccea41662eea7083666fb2682ce588c43c127937567444b"
+    }
+  },
+  "checks": [
+    {
+      "check": "Immutable source manifest.json",
+      "passed": true
+    },
+    {
+      "check": "Immutable source Windows/Dustlings.exe",
+      "passed": true
+    },
+    {
+      "check": "Immutable source Windows/Dustlings.pck",
+      "passed": true
+    },
+    {
+      "check": "Immutable source Notices/GODOT_LICENSE.txt",
+      "passed": true
+    },
+    {
+      "check": "Immutable source Notices/GODOT_COPYRIGHT.txt",
+      "passed": true
+    },
+    {
+      "check": "Immutable source Notices/THIRD-PARTY-NOTICES.txt",
+      "passed": true
+    },
+    {
+      "check": "Immutable source Notices/notice-manifest.json",
+      "passed": true
+    },
+    {
+      "check": "Archive hash and size match companion",
+      "passed": true
+    },
+    {
+      "check": "Companion binds exact original manifest and source",
+      "passed": true
+    },
+    {
+      "check": "Independent exact seven entries and ZIP CRC",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted bytes Dustlings.exe",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted bytes Dustlings.pck",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted bytes README.txt",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted bytes Notices/GODOT_LICENSE.txt",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted bytes Notices/GODOT_COPYRIGHT.txt",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted bytes Notices/THIRD-PARTY-NOTICES.txt",
+      "passed": true
+    },
+    {
+      "check": "Independent extracted bytes Notices/notice-manifest.json",
+      "passed": true
+    }
+  ],
+  "passed": 17,
+  "failed": 0
+}

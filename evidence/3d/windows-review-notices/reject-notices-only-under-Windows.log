@@ -1,0 +1,14 @@
+node:internal/fs/promises:1795
+  const result = await PromisePrototypeThen(
+                 ^
+
+Error: ENOENT: no such file or directory, lstat '/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-notice-package-check-j7_gyepy/wrong-location/Notices'
+    at async Object.lstat (node:internal/fs/promises:1795:18)
+    at async file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:53:21 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'lstat',
+  path: '/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-notice-package-check-j7_gyepy/wrong-location/Notices'
+}
+
+Node.js v26.7.0

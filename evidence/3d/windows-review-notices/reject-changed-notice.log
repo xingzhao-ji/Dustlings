@@ -1,0 +1,8 @@
+file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:62
+    if (bytes.length !== expected.bytes || digest(bytes) !== expected.sha256) throw Error(`Notice hash mismatch: ${source}`);
+                                                                                    ^
+
+Error: Notice hash mismatch: Notices/GODOT_COPYRIGHT.txt
+    at file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:62:85
+
+Node.js v26.7.0

@@ -1,0 +1,8 @@
+file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:49
+  if (bundle?.schema !== 1 || !/^[a-f0-9]{40}$/.test(bundle?.engineHash || '') || !isDeepStrictEqual(Object.keys(bundle?.files || {}).sort(), [...expectedNames].sort())) throw Error('Expected the complete four-file Godot notice bundle');
+                                                                                                                                                                                ^
+
+Error: Expected the complete four-file Godot notice bundle
+    at file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:49:177
+
+Node.js v26.7.0

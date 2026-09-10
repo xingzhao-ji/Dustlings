@@ -1,0 +1,8 @@
+file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:52
+  if (!/^[a-f0-9]{7,40}$/.test(engineSuffix) || !bundle.engineHash.startsWith(engineSuffix)) throw Error('Notice engine revision does not match the official toolchain version');
+                                                                                                   ^
+
+Error: Notice engine revision does not match the official toolchain version
+    at file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:52:100
+
+Node.js v26.7.0

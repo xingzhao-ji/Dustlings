@@ -1,0 +1,37 @@
+{
+  "manifest.json": {
+    "bytes": 22935,
+    "sha256": "7c54caa2772dc45ddc09f2749ad7692c68b14bf6bed5c242cf4b0caed2141ba0",
+    "mtime_ns": 1789037968140545859
+  },
+  "Windows/Dustlings.exe": {
+    "bytes": 109136384,
+    "sha256": "56dd343a5286c08d40d077122a8069b41cec67f54db51724fa59ffc9284f5512",
+    "mtime_ns": 1789037966160670039
+  },
+  "Windows/Dustlings.pck": {
+    "bytes": 2139668,
+    "sha256": "47f6dec84813aa1c8bb873ea5c2636720a404a7a1b54a57cd5409e863fec7d1c",
+    "mtime_ns": 1789037966193148604
+  },
+  "Notices/GODOT_LICENSE.txt": {
+    "bytes": 1149,
+    "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80",
+    "mtime_ns": 1789037966668990036
+  },
+  "Notices/GODOT_COPYRIGHT.txt": {
+    "bytes": 100108,
+    "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d",
+    "mtime_ns": 1789037966669276747
+  },
+  "Notices/THIRD-PARTY-NOTICES.txt": {
+    "bytes": 1722,
+    "sha256": "cf8a03ca9d4c8ab0e4b2ac171ad37ff19df97d50c9f5f6e753b29a90609a01d3",
+    "mtime_ns": 1789037966669510582
+  },
+  "Notices/notice-manifest.json": {
+    "bytes": 2115,
+    "sha256": "baabc1805d4093c32ccea41662eea7083666fb2682ce588c43c127937567444b",
+    "mtime_ns": 1789037966669706667
+  }
+}

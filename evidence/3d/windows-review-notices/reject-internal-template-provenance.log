@@ -1,0 +1,8 @@
+file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:67
+  if (internal.kind !== 'dustlings-godot-notice-bundle' || internal.version !== 1 || !isDeepStrictEqual(internal.source, {revision: manifest.source.revision, sha256: manifest.source.sha256}) || internal.engine?.version !== toolchain.editorVersion || internal.engine?.revision !== bundle.engineHash || internal.engine?.editorSha256 !== toolchain.editor.sha256 || !isDeepStrictEqual(internal.engine?.templates, toolchain.templates) || !internal.upstream || !isDeepStrictEqual(internal.upstream, provenance.upstream)) throw Error('Internal notice manifest provenance does not match the build');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+
+Error: Internal notice manifest provenance does not match the build
+    at file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:67:522
+
+Node.js v26.7.0

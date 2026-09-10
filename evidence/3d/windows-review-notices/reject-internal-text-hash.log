@@ -1,0 +1,8 @@
+file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:68
+  if (!isDeepStrictEqual(Object.keys(internal.files || {}).sort(), names.slice(0, 3).sort()) || names.slice(0, 3).some(name => !isDeepStrictEqual(internal.files[name], bundle.files[`Notices/${name}`]))) throw Error('Internal notice manifest does not bind all three notice texts');
+                                                                                                                                                                                                                 ^
+
+Error: Internal notice manifest does not bind all three notice texts
+    at file:///Users/xingzhaoji/Desktop/Dustlings/tools/package-windows-review.mjs:68:210
+
+Node.js v26.7.0

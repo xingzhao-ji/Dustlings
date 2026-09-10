@@ -1,5 +1,5 @@
 import {spawn} from 'node:child_process';
-import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url));
@@ -9,6 +9,7 @@ const manifest=JSON.parse(await readFile(new URL('../platforms/apple/Dustlings/R
 const content=await readFile(new URL('../platforms/apple/Dustlings/Resources/Courtyard.html',import.meta.url));
 const sha256=createHash('sha256').update(content).digest('hex');
 if(sha256!==manifest.sha256)throw Error('Bundled courtyard differs from its frozen web manifest. Stop and select an explicit review build.');
+await copyFile(new URL('../platforms/shared/app-icon-1024.png',import.meta.url),new URL('../platforms/apple/Dustlings/Assets.xcassets/AppIcon.appiconset/AppIcon.png',import.meta.url));
 await mkdir(new URL('../evidence/platforms/',import.meta.url),{recursive:true});
 const started=new Date().toISOString();
 const args=['-project','platforms/apple/Dustlings.xcodeproj','-scheme','Dustlings','-configuration','Release','-sdk',mode==='device'?'iphoneos':'iphonesimulator','-destination',mode==='device'?'generic/platform=iOS':'generic/platform=iOS Simulator','-derivedDataPath','platforms/apple/DerivedData','CODE_SIGNING_ALLOWED=NO','CODE_SIGNING_REQUIRED=NO','build'];

@@ -15,7 +15,7 @@ Implemented behavior:
 - A native resign-active notification calls the existing Pause control only after onboarding and when no dialog is already open; it also sends the existing interruption checkpoint event. The app never automatically resumes.
 - Entire web view constrained to native safe areas; existing canvas touch interactions and scrolling inside game dialogs are retained.
 - File/blob-only navigation. Existing HTML file input uses WebKit's system picker; blob save downloads use WKDownload and a native share sheet. These native paths compile, but have **not** been exercised.
-- A provisional opaque 1024px icon rasterized from the existing favicon geometry. It is build artwork, not owner-approved App Store artwork.
+- The [shared provisional opaque 1024px icon](../platforms/shared/README.md), rasterized from the existing favicon geometry. `apple-build` copies this common source into the iOS asset catalog. It is build artwork, not owner-approved App Store artwork.
 - A privacy manifest declares no tracking, collection, or app-authored required-reason API use. Store privacy answers and the final binary/dependency audit remain release work. No account, analytics, ads, purchases, remote content or permissions were added.
 
 ## Actual verification, 2026-09-10 UTC

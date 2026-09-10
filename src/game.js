@@ -85,23 +85,33 @@ function chooseTarget(s,c){
 }
 export function moveCreature(c,tx,ty,dt,speed=43){
   c.tx=tx;c.ty=ty;
-  const dx=tx-c.x,dy=ty-c.y,dist=Math.hypot(dx,dy);
-  if(dist<2)return dist;
-  let ux=dx/dist,uy=dy/dist;
-  // Follow a tangent around the circular fountain instead of walking through it.
-  const fx=c.x-500,fy=c.y-370,fd=Math.hypot(fx,fy);
-  const aheadX=c.x+ux*Math.min(dist,45),aheadY=c.y+uy*Math.min(dist,45);
-  const dot=fx*ux+fy*uy;
-  if((Math.hypot(aheadX-500,aheadY-370)<98||fd<98)&&dot<8){
-    const cross=fx*dy-fy*dx;const sign=cross>=0?1:-1;
-    ux=-fy/fd*sign+fx/fd*Math.max(0,(99-fd)/20);uy=fx/fd*sign+fy/fd*Math.max(0,(99-fd)/20);
-    const len=Math.hypot(ux,uy);ux/=len;uy/=len;
+  // Work offsets can lie inside the creature clearance circle even when the
+  // dust itself is reachable. Approach a safe point and retain the distance to
+  // the actual work target, so those patches can be cleaned from their edge.
+  const clearance=96,orbit=103;
+  let fx=c.x-500,fy=c.y-370,fd=Math.hypot(fx,fy);
+  if(fd<clearance){const a=fd?Math.atan2(fy,fx):Math.PI/2;c.x=500+Math.cos(a)*clearance;c.y=370+Math.sin(a)*clearance;fx=c.x-500;fy=c.y-370;fd=clearance;}
+  const workDistance=Math.hypot(tx-c.x,ty-c.y);
+  let gx=Math.max(115,Math.min(885,tx)),gy=Math.max(160,Math.min(655,ty));
+  const goalRadius=Math.hypot(gx-500,gy-370);
+  if(goalRadius<98){const a=goalRadius?Math.atan2(gy-370,gx-500):Math.atan2(fy,fx);gx=500+Math.cos(a)*98;gy=370+Math.sin(a)*98;}
+  let dx=gx-c.x,dy=gy-c.y,dist=Math.hypot(dx,dy);
+  if(dist<2)return workDistance;
+  // Test the whole segment, then take small stable waypoints around the circle.
+  // Looking only a short distance ahead made near-rim work targets oscillate.
+  const nearest=Math.max(0,Math.min(1,-(fx*dx+fy*dy)/(dist*dist)));
+  if(Math.hypot(fx+dx*nearest,fy+dy*nearest)<clearance){
+    const from=Math.atan2(fy,fx),to=Math.atan2(gy-370,gx-500);
+    const turn=Math.atan2(Math.sin(to-from),Math.cos(to-from));
+    const angle=from+Math.sign(turn||1)*Math.min(.28,Math.abs(turn));
+    gx=500+Math.cos(angle)*orbit;gy=370+Math.sin(angle)*orbit;
+    dx=gx-c.x;dy=gy-c.y;dist=Math.hypot(dx,dy);
   }
-  const step=Math.min(dist,speed*dt);let nx=c.x+ux*step,ny=c.y+uy*step;
-  const nd=Math.hypot(nx-500,ny-370);
-  if(nd<91){nx=500+(nx-500)/nd*91;ny=370+(ny-370)/nd*91;}
+  const step=Math.min(dist,speed*dt),ux=dx/dist,uy=dy/dist;
+  let nx=c.x+ux*step,ny=c.y+uy*step;const nd=Math.hypot(nx-500,ny-370);
+  if(nd<clearance){nx=500+(nx-500)/nd*clearance;ny=370+(ny-370)/nd*clearance;}
   c.x=Math.max(115,Math.min(885,nx));c.y=Math.max(160,Math.min(655,ny));c.dir=Math.atan2(uy,ux);
-  return dist;
+  return workDistance;
 }
 export function tick(s,dt){
   dt=Math.min(.1,Math.max(0,dt));s.elapsed+=dt;
@@ -159,12 +169,15 @@ export function restore(data){
   if(spent>s.earned)throw Error('This save contains inconsistent progress.');
   s.motes=Math.max(0,s.earned-spent);s.brushRadius=s.upgrades.brush?64:44;
   s.elapsed=Number.isFinite(data.elapsed)?Math.max(0,data.elapsed):0;
-  s.restoration=Number.isFinite(data.restoration)?Math.max(0,Math.min(1,data.restoration)):0;
-  s.ritual=!!data.ritual&&s.upgrades.bloom&&s.restoration<1;
+  if(data.restoration!==undefined&&(!Number.isFinite(data.restoration)||data.restoration<0||data.restoration>1))throw Error('This save contains damaged fountain progress.');
+  if(data.ritual!==undefined&&typeof data.ritual!=='boolean')throw Error('This save contains damaged chorus data.');
+  s.restoration=data.restoration??0;s.ritual=data.ritual===true;
+  if((s.restoration>0||s.ritual)&&(!s.upgrades.bloom||s.cleaned/s.totalDust<.75))throw Error('This save contains inconsistent fountain progress.');
+  if(s.ritual&&s.restoration>=1)throw Error('This save contains an already finished chorus.');
   s.ritualTime=s.restoration*38;
   s.completed=s.cleaned>=s.totalDust-.0001&&s.restoration>=1;
   for(const k of ['firstHelperAt','firstUpgradeAt','completedAt'])s[k]=Number.isFinite(data[k])?data[k]:null;
-  if(data.assignment&&walkable(data.assignment.x,data.assignment.y,3))s.assignment={x:data.assignment.x,y:data.assignment.y};
+  if(data.assignment&&Number.isFinite(data.assignment.x)&&Number.isFinite(data.assignment.y)&&walkable(data.assignment.x,data.assignment.y,3))s.assignment={x:data.assignment.x,y:data.assignment.y};
   const count=Math.min(50,Math.floor((s.cleaned+.00001)/7));
   for(let i=0;i<count;i++){
     const c=data.creatures?.[i];let x=c?.x,y=c?.y;

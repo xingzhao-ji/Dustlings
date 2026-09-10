@@ -83,5 +83,13 @@
     "closed": true
   },
   "finalizedAt": "2026-09-10T08:22:57.769Z",
-  "changedDeveloperBuildReviewed": false
+  "changedDeveloperBuildReviewed": false,
+  "followup": {
+    "record": "followup/provenance.json",
+    "finalizedAt": "2026-09-10T08:53:18.247098Z",
+    "changedCaptureEvidenceReviewed": true,
+    "changedNativePackageReviewed": false,
+    "listening": false,
+    "humanSessions": 0
+  }
 }

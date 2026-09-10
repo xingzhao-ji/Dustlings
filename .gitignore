@@ -15,3 +15,11 @@ evidence/**/*.wav
 builds/native/
 platforms/desktop/game.html
 evidence/platforms/profiles/
+
+.tools/
+godot/.godot/
+builds/3d/
+evidence/**/profiles/
+
+evidence/**/*.avi
+evidence/**/*.avi.wav

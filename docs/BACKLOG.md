@@ -1,4 +1,24 @@
-# Active quality gaps and acceptance gates
+# Active 3D quality gaps
+
+Current milestone: **real3D courtyard integration, awaiting human validation**. The owner’s3D requirement supersedes the2D rendering approach. Historical0.3 remains a mechanics/reliability reference, not the current deliverable. Human sessions0; player/presentation/owner gates all pending. No additional zones are eligible.
+
+| Priority | Evidence and player impact | Current action / observable acceptance |
+| --- | --- | --- |
+| P0 | Current game must use real geometry, lighting, depth and surface interactions. | Godot4.7.2 integration in godot/: raycastbrush,492dust surfaces,50 volumetriccreatures, three upgrades, fountain. Inspect actualnativeplayback and exportedbuild; no browser substitute. |
+| P1 | First3D captures show washed-out materials and pebble-like dust. | NativeMetalForward+ with correctedlight/material values; shallow dust geometry. Compare actual dirty/busy/close/restored captures, then obtain independent critique. Human aesthetic benefit unknown. |
+| P1 | Historicalcritic found crowdedhelpers merge, dustcompetes, goalguidance disappears. | Three-dimensional paired offsets and distinctbodymaterial; persistentfountain guidance. Evaluate50helper movement and promptclarity in newbuild. |
+| P1 | Surface accuracy and comfort must survive zoom, occlusion, UI and held-input interruption. | Run actualraycasts and normal-time input; verifyroofs/fountain blockgroundbrush, allneededpatchesreachable, releaseoverUI/pause/focusloss stopsstroke. |
+| P1 | Native3D save/pause/settings/recovery are newly implemented. | Verifycopy/load, corruptprimarybackup, closingandreturning, preferences, invalidsave rejection and no stale-windowloss. Historicalbrowserchecks do not apply. |
+| P1 | Sound nowusesnative3Dstems/cues; no currentnativeaudition. | Phase-alignedmotifstems, spatialbrushing/creature/water cues; rate/voicecaps andvolumes. Captureactualaudio, inspectloop/transition/crowdmix. No humanlisteningclaim. |
+| P1 | NativeWindowsbuildandperformance unverified. | ExportGodotMac/Win, runMac, measure60s/50helpers withoutrecording. Windowsremainsexplicitlyunrununtilnameddeviceexecution. |
+| P1 | Subjectivequalitynotvalidated. | IndependentAIcritic reviewsnew3D footage/build; then12–20unfamiliartargetplayers andseparateownerreview ofexactbuild. Recordn/N, segmentdisagreements, frustration/fatigue/appeal/reasons. AIreviewisnotahumangate. |
+| Deferred | iPhone/iPadarelaterports; Figmaunavailable; Xcodeframeworkmismatchblocksfullbuild. | Keepcourtyardarchitecturetouch-ready; noportreleaseclaim ornewzones. Preserveknownlimitations. |
+
+Historical2D issue ledger follows for reference; its check results are not evidence for the3D implementation.
+
+---
+
+# Historical2D quality gaps and acceptance gates
 
 Current milestone: **courtyard, awaiting human validation**. Player experience, presentation quality, and owner acceptance are independent gates. None has passed. Recorded human sessions: **0**. There is no owner acceptance for the current experience. Technical passes do not change these statuses.
 

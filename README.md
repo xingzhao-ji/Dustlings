@@ -1,5 +1,11 @@
 # Dustlings
 
+**Active development has moved to a fully3D Godot courtyard for Steam.** The existing2D browser/Electron builds are historical mechanics references and do not satisfy the current3D requirement. The new engine project is [godot/project.godot](godot/project.godot). Windows is the primaryrelease target; nativeMac development testing is in progress. iPad/iPhone arelaterports.
+
+**Status:3D integration in progress, awaitinghumanvalidation.** No player, presentation orowneracceptancegate haspassed. Humanplaytests:0. See [the resumable checkpoint](docs/CONTINUATION.md) and [currentqualitygaps](docs/BACKLOG.md).
+
+## Historical2D checkpoint
+
 A little dust. A little life. A playable courtyard prototype for a single-player miniature restoration game.
 
 **Play:** open [Dustlings Courtyard.html](builds/Dustlings%20Courtyard.html) in a modern browser. It works offline and requires no installation. The local development server is also available at [localhost:4173](http://localhost:4173) while running.

@@ -1,0 +1,10 @@
+// Small UI illustrations explain capabilities; their appeal still needs player review.
+const leafBody='<path d="M12 14C8 2 20 1 20 6c0 5-4 7-8 8Z" fill="#89ad8c"/><ellipse cx="12" cy="23" rx="10" ry="8" fill="#eee8cc" stroke="#8b9779"/><circle cx="9" cy="22" r="1.2" fill="#32483e"/><circle cx="15" cy="22" r="1.2" fill="#32483e"/><path d="M10 27q2 2 4 0" fill="none" stroke="#637d60"/>';
+export const DISCOVERIES={
+ brush:{label:'A wider, softer sweep',preview:'Small brush becomes a wider brush',art:'<circle class="old-brush" cx="20" cy="24" r="9"/><path class="preview-arrow" d="M41 24h22m-6-5 6 5-6 5"/><circle class="new-brush" cx="88" cy="24" r="17"/><path d="m82 25 5 4 8-10"/>'},
+ teamwork:{label:'Little helpers, working in pairs',preview:'Two helpers clean side by side',art:`<g class="preview-buddy first" transform="translate(5 5)">${leafBody}</g><g class="preview-buddy second" transform="translate(32 5)">${leafBody}</g><path class="preview-arrow" d="M68 24h21m-6-5 6 5-6 5"/><path d="m93 25 5 4 8-10"/>`},
+ bloom:{label:'A chorus to wake the fountain',preview:'The crew gathers in a circle around the fountain',art:'<ellipse class="preview-chorus" cx="61" cy="27" rx="40" ry="16"/><path d="M45 31q16 12 32 0M61 31V15m-13 5q13 10 26 0M61 15q-13-10-18 3m18-3q13-10 18 3"/><circle cx="61" cy="10" r="2"/><path d="M18 11V4l7-2v8m-7 2c-6 2-7-4-1-4m8 3c-6 2-7-4-1-4"/>'}
+};
+export function previewMarkup(id){const p=DISCOVERIES[id];return `<span class="upgrade-preview" role="img" aria-label="${p.preview}"><svg viewBox="0 0 112 48" aria-hidden="true">${p.art}</svg><span>${p.label}</span></span><span class="purchase-state" aria-hidden="true"><svg><use href="#i-check"/></svg>Discovered</span>`;}
+export function markPurchased(button){button.classList.add('just-purchased');setTimeout(()=>button.classList.remove('just-purchased'),4500);}
+export function applyMotionPreference(settings){document.documentElement.dataset.reducedMotion=String(settings.reducedMotion||matchMedia('(prefers-reduced-motion: reduce)').matches);}

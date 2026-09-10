@@ -1,11 +1,11 @@
 {
-  "version": "0.2.0",
-  "sourceRevision": "4384d82d61210269332cb8568ef89c7399425b86",
+  "version": "0.3.0",
+  "sourceRevision": "fd6f3e6de9473a3f32291d8f767c9558747a2453",
   "sourceDirty": false,
-  "builtAt": "2026-09-10T06:17:56.300Z",
+  "builtAt": "2026-09-10T07:35:06.703Z",
   "artifact": "Dustlings Courtyard.html",
-  "sha256": "cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea",
-  "bytes": 148970,
+  "sha256": "87462fc27f21240cd0f3f067332005a33a36711dcc81ac1b89836c6b2173e637",
+  "bytes": 167925,
   "runtimeDependencies": 0,
   "scope": "Courtyard prototype; human acceptance pending"
 }

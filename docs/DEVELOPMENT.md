@@ -1,8 +1,6 @@
 # Current continuation pointer
 
-The source is undergoing UI refinement described in UI-REFINEMENT.md; the last frozen playable/native build remains courtyard0.2 at source `4384d82d61210269332cb8568ef89c7399425b86`; artifact SHA-256 `cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea`. See [CONTINUATION.md](CONTINUATION.md) for the exact resumable task and [BACKLOG.md](BACKLOG.md) for current statuses. The entries below are historical0.1 development observations; they are preserved and do not describe the latest typography, camera, input, or recovery state.
-
-Current milestone remains **awaiting human validation**. No human or owner gate has passed. Current artifact [review page](../evidence/REVIEW.html) includes matching gameplay views and recordings.
+Owner direction now requires fullyreal3D and an immersive close, stable elevatedcamera. ActiveGodot4.7.2 source is in godot/. HistoricalCanvas2D0.3 cannot meet this requirement; preservedmechanics/nativehostchecks are references. Root islead; environment/character/buildspecialists haveboundedownership and the independentcritic ownsitsownverdict. See CONTINUATION.md and BACKLOG.md for exactactions. Human sessions0; noqualitygatepassed.
 
 ---
 

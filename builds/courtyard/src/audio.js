@@ -6,6 +6,7 @@ const HALF_BEAT = BEAT / 2;
 const MOTIF = [[0, 74], [3, 78], [5, 76], [8, 69], [12, 74]]; // D, F♯, E, A, D
 const CHORDS = [[50, 57, 64, 66], [43, 50, 57, 59], [47, 54, 57, 62], [45, 52, 59, 62]];
 const COOLDOWNS = { brush: .16, birth: .65, assign: .18, blocked: .7, upgrade: .6, landmark: 4, complete: 5 };
+const UI_KINDS = new Set(['select', 'open', 'close', 'change', 'confirm']);
 
 export class DustAudio {
   constructor(context = null) {
@@ -27,6 +28,8 @@ export class DustAudio {
     this.lastBrushState = null;
     this.continuous = [];
     this.prepared = false;
+    this.lastUI = -Infinity;
+    this.uiEventsAccepted = 0;
   }
 
   /** Optional welcome-idle preparation. Creates no sources and plays no sound. */
@@ -76,6 +79,11 @@ export class DustAudio {
     this.musicBus = ctx.createGain();
     this.sfxBus = ctx.createGain();
     this.ambienceBus = ctx.createGain();
+    // UI feedback bypasses the paused score's master. It shares the output limiter
+    // and Little sounds control, but has no reverb or continuous sources of its own.
+    this.uiBus = ctx.createGain();
+    this.uiBus.gain.value = this.mix.muted ? 0 : this.mix.sfx * .58;
+    this.uiBus.connect(this.limiter);
     this.musicDuck = ctx.createGain();
     this.musicBus.gain.value = this.mix.music;
     this.sfxBus.gain.value = this.mix.sfx;
@@ -180,6 +188,7 @@ export class DustAudio {
     this._ramp(this.sfxBus.gain, this.mix.sfx, now);
     this._ramp(this.ambienceBus.gain, this.mix.ambience, now);
     this._ramp(this.master.gain, this.mix.muted || this.paused ? 0 : .58, now);
+    this._ramp(this.uiBus.gain, this.mix.muted ? 0 : this.mix.sfx * .58, now, .02);
   }
 
   setProgress(progress) {
@@ -302,6 +311,48 @@ export class DustAudio {
     return true;
   }
 
+  /** Deliberate UI gesture only. A paused cue never resumes the score or simulation. */
+  async ui(kind = 'select') {
+    if (!this.ready || this.destroyed || this.mix.muted || this.mix.sfx === 0 || !UI_KINDS.has(kind) || globalThis.document?.hidden) return false;
+    const now = this.context.currentTime;
+    if (now - this.lastUI < .09) return false;
+    this.lastUI = now;
+    clearTimeout(this.suspendTimer);
+    if (!this.offline && this.context.state !== 'running') {
+      try { await this.context.resume(); } catch { return false; }
+    }
+    // A native interruption can arrive while WebAudio is processing resume().
+    if (this.destroyed || this.mix.muted || this.mix.sfx === 0 || globalThis.document?.hidden) {
+      if (!this.offline && this.paused && !this.destroyed) this._suspendAfter(100);
+      return false;
+    }
+    this._ramp(this.uiBus.gain, this.mix.sfx * .58, this.context.currentTime, .012);
+    this._uiAt(kind, this.context.currentTime + .008);
+    this.uiEventsAccepted++;
+    if (this.paused && !this.offline) this._suspendAfter(450);
+    return true;
+  }
+
+  _uiAt(kind, time) {
+    // Small D-major fragments borrow the courtyard motif's pitches. Their short,
+    // dry envelopes stay subordinate to creature formation and restoration cues.
+    const cues = {
+      select: [[0, 62, .12, .047, 'wood']],
+      change: [[0, 69, .11, .04, 'wood']],
+      open: [[0, 62, .12, .042, 'wood'], [.055, 69, .18, .028, 'pluck']],
+      close: [[0, 69, .1, .034, 'wood'], [.045, 62, .14, .028, 'wood']],
+      confirm: [[0, 74, .16, .041, 'pluck'], [.07, 78, .23, .029, 'pluck']],
+    };
+    for (const [offset, pitch, duration, volume, timbre] of cues[kind] || []) this._tone(pitch, time + offset, duration, volume, this.uiBus, timbre);
+  }
+
+  _suspendAfter(milliseconds) {
+    clearTimeout(this.suspendTimer);
+    this.suspendTimer = setTimeout(() => {
+      if (this.paused && !this.destroyed && this.context.state === 'running') this.context.suspend().catch(() => {});
+    }, milliseconds);
+  }
+
   _eventAt(name, time, intensity = 1) {
     const level = .5 + .5 * intensity;
     if (name === 'brush') this._noiseHit(time, .12, .025 * level, 1900);
@@ -357,10 +408,9 @@ export class DustAudio {
     if (!this.ready || this.destroyed) return;
     this._setBrushingAt(false, 0, this.context.currentTime);
     this._ramp(this.master.gain, 0, this.context.currentTime, .07);
+    this._ramp(this.uiBus.gain, 0, this.context.currentTime, .02);
     clearTimeout(this.suspendTimer);
-    if (!this.offline) this.suspendTimer = setTimeout(() => {
-      if (this.paused && !this.destroyed && this.context.state === 'running') this.context.suspend().catch(() => {});
-    }, 100);
+    if (!this.offline) this._suspendAfter(100);
   }
 
   async resume() {
@@ -382,7 +432,7 @@ export class DustAudio {
   getCaptureStream() { return this.capture?.stream || null; }
 
   getDiagnostics() {
-    return { ready: this.ready, prepared: this.prepared, paused: this.paused, contextState: this.context?.state || 'uninitialized', maxVoices: this.maxVoices, peakVoices: this.peakVoices, continuousSources: this.continuous.length, progress: this.progress, mix: { ...this.mix } };
+    return { ready: this.ready, prepared: this.prepared, paused: this.paused, contextState: this.context?.state || 'uninitialized', maxVoices: this.maxVoices, peakVoices: this.peakVoices, continuousSources: this.continuous.length, uiEventsAccepted: this.uiEventsAccepted, progress: this.progress, mix: { ...this.mix } };
   }
 
   /** Schedule a reproducible 36-second audition on an injected OfflineAudioContext. */
@@ -412,6 +462,7 @@ export class DustAudio {
       for (const source of this.continuous) { try { source.stop(); } catch {} source.disconnect(); }
       this.limiter.disconnect();
       this.master.disconnect();
+      this.uiBus.disconnect();
       this.capture?.stream.getTracks().forEach(track => track.stop());
     }
     if (this.ownsContext && this.context && this.context.state !== 'closed') this.context.close().catch(() => {});

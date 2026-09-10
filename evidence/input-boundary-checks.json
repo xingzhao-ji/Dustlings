@@ -7,8 +7,8 @@
       "hit": {
         "element": "world",
         "world": {
-          "x": 422.24124513618676,
-          "y": 561.120298313878
+          "x": 446.6131386861314,
+          "y": 541.6534874290348
         },
         "inside": false
       },
@@ -22,7 +22,7 @@
           "inside": false,
           "touch": false
         },
-        "elapsed": 0.028400000000000005,
+        "elapsed": 0.02869999999999999,
         "camera": {
           "zoom": 2,
           "centerX": 740,
@@ -31,8 +31,8 @@
         "viewport": {
           "x": 300,
           "y": 12,
-          "width": 498,
-          "height": 281
+          "width": 490,
+          "height": 298
         },
         "mode": "landscape"
       },
@@ -40,14 +40,14 @@
         "brushed": 0,
         "assignments": 0,
         "pointer": {
-          "x": 422.24124513618676,
-          "y": 561.120298313878,
+          "x": 446.6131386861314,
+          "y": 541.6534874290348,
           "touch": false,
           "inside": false,
           "active": false,
           "preview": false
         },
-        "elapsed": 0.3951,
+        "elapsed": 0.39530000000000004,
         "camera": {
           "zoom": 2,
           "centerX": 740,
@@ -56,8 +56,8 @@
         "viewport": {
           "x": 300,
           "y": 12,
-          "width": 498,
-          "height": 281
+          "width": 490,
+          "height": 298
         },
         "mode": "landscape"
       },
@@ -68,8 +68,8 @@
       "hit": {
         "element": "world",
         "world": {
-          "x": 422.24124513618676,
-          "y": 561.120298313878
+          "x": 446.6131386861314,
+          "y": 541.6534874290348
         },
         "inside": false
       },
@@ -84,7 +84,7 @@
           "touch": false,
           "preview": false
         },
-        "elapsed": 0.06289999999403956,
+        "elapsed": 0.059400000023841874,
         "camera": {
           "zoom": 2,
           "centerX": 740,
@@ -93,8 +93,8 @@
         "viewport": {
           "x": 300,
           "y": 12,
-          "width": 498,
-          "height": 281
+          "width": 490,
+          "height": 298
         },
         "mode": "landscape"
       },
@@ -102,14 +102,14 @@
         "brushed": 0,
         "assignments": 0,
         "pointer": {
-          "x": 422.24124513618676,
-          "y": 561.120298313878,
+          "x": 446.6131386861314,
+          "y": 541.6534874290348,
           "touch": false,
           "inside": false,
           "active": false,
           "preview": false
         },
-        "elapsed": 0.4295999999940395,
+        "elapsed": 0.4260000000238418,
         "camera": {
           "zoom": 2,
           "centerX": 740,
@@ -118,8 +118,8 @@
         "viewport": {
           "x": 300,
           "y": 12,
-          "width": 498,
-          "height": 281
+          "width": 490,
+          "height": 298
         },
         "mode": "landscape"
       },
@@ -128,17 +128,17 @@
     {
       "test": "brush_drag_outside_stops",
       "before": {
-        "brushed": 0.2266950000000001,
+        "brushed": 0.24080499999999988,
         "assignments": 0,
         "pointer": {
-          "x": -135.51750972762645,
-          "y": 512.2405966277561,
+          "x": -86.77372262773719,
+          "y": 473.3069748580697,
           "touch": false,
           "inside": false,
           "active": false,
           "preview": false
         },
-        "elapsed": 0.36240000001788136,
+        "elapsed": 0.37700000000000006,
         "camera": {
           "zoom": 1,
           "centerX": 500,
@@ -147,23 +147,23 @@
         "viewport": {
           "x": 300,
           "y": 12,
-          "width": 498,
-          "height": 281
+          "width": 490,
+          "height": 298
         },
         "mode": "landscape"
       },
       "after": {
-        "brushed": 0.2266950000000001,
+        "brushed": 0.24080499999999988,
         "assignments": 0,
         "pointer": {
-          "x": -135.51750972762645,
-          "y": 512.2405966277561,
+          "x": -86.77372262773719,
+          "y": 473.3069748580697,
           "touch": false,
           "inside": false,
           "active": false,
           "preview": false
         },
-        "elapsed": 0.8125000000178816,
+        "elapsed": 0.8270000000000003,
         "camera": {
           "zoom": 1,
           "centerX": 500,
@@ -172,8 +172,8 @@
         "viewport": {
           "x": 300,
           "y": 12,
-          "width": 498,
-          "height": 281
+          "width": 490,
+          "height": 298
         },
         "mode": "landscape"
       },
@@ -192,7 +192,7 @@
           "touch": false,
           "preview": false
         },
-        "elapsed": 0.06299999998807908,
+        "elapsed": 0.059499999982118607,
         "camera": {
           "zoom": 1,
           "centerX": 500,
@@ -201,8 +201,8 @@
         "viewport": {
           "x": 300,
           "y": 12,
-          "width": 498,
-          "height": 281
+          "width": 490,
+          "height": 298
         },
         "mode": "landscape"
       },
@@ -210,14 +210,14 @@
         "brushed": 0,
         "assignments": 0,
         "pointer": {
-          "x": -135.51750972762645,
-          "y": 512.2405966277561,
+          "x": -86.77372262773719,
+          "y": 473.3069748580697,
           "touch": false,
           "inside": false,
           "active": false,
           "preview": false
         },
-        "elapsed": 0.1629999999880791,
+        "elapsed": 0.15949999998211864,
         "camera": {
           "zoom": 1,
           "centerX": 500,
@@ -226,8 +226,8 @@
         "viewport": {
           "x": 300,
           "y": 12,
-          "width": 498,
-          "height": 281
+          "width": 490,
+          "height": 298
         },
         "mode": "landscape"
       },
@@ -236,17 +236,17 @@
     {
       "test": "orientation_while_holding_brush",
       "before": {
-        "brushed": 0.22661000000000006,
+        "brushed": 0.22669499999999987,
         "assignments": 0,
         "pointer": {
-          "x": 270.0000187617796,
-          "y": 504.9999789556692,
+          "x": 269.9999864118813,
+          "y": 504.9999605226787,
           "touch": false,
           "inside": false,
           "active": false,
           "preview": false
         },
-        "elapsed": 0.34579999998211863,
+        "elapsed": 0.3433999999821187,
         "camera": {
           "zoom": 1.7,
           "centerX": 500,
@@ -256,22 +256,22 @@
           "x": 0,
           "y": 88,
           "width": 368,
-          "height": 522
+          "height": 546
         },
         "mode": "portrait"
       },
       "after": {
-        "brushed": 0.22661000000000006,
+        "brushed": 0.22669499999999987,
         "assignments": 0,
         "pointer": {
-          "x": 270.0000187617796,
-          "y": 504.9999789556692,
+          "x": 269.9999864118813,
+          "y": 504.9999605226787,
           "touch": false,
           "inside": false,
           "active": false,
           "preview": false
         },
-        "elapsed": 0.7957999999821188,
+        "elapsed": 0.7933999999821187,
         "camera": {
           "zoom": 1.7,
           "centerX": 500,
@@ -281,7 +281,7 @@
           "x": 0,
           "y": 88,
           "width": 368,
-          "height": 522
+          "height": 546
         },
         "mode": "portrait"
       },
@@ -290,17 +290,17 @@
     {
       "test": "same_mode_resize_while_holding_brush",
       "before": {
-        "brushed": 0.22661000000000012,
+        "brushed": 0.22669499999999987,
         "assignments": 0,
         "pointer": {
-          "x": 270.0000187617796,
-          "y": 504.9999789556692,
+          "x": 269.9999864118813,
+          "y": 504.9999605226787,
           "touch": false,
           "inside": false,
           "active": false,
           "preview": false
         },
-        "elapsed": 0.3133999999880791,
+        "elapsed": 0.3269999999940395,
         "camera": {
           "zoom": 1,
           "centerX": 500,
@@ -309,23 +309,23 @@
         "viewport": {
           "x": 300,
           "y": 12,
-          "width": 554,
-          "height": 341
+          "width": 546,
+          "height": 358
         },
         "mode": "landscape"
       },
       "after": {
-        "brushed": 0.22661000000000012,
+        "brushed": 0.22669499999999987,
         "assignments": 0,
         "pointer": {
-          "x": 270.0000187617796,
-          "y": 504.9999789556692,
+          "x": 269.9999864118813,
+          "y": 504.9999605226787,
           "touch": false,
           "inside": false,
           "active": false,
           "preview": false
         },
-        "elapsed": 0.7632999999880793,
+        "elapsed": 0.7769999999940398,
         "camera": {
           "zoom": 1,
           "centerX": 500,
@@ -334,8 +334,8 @@
         "viewport": {
           "x": 300,
           "y": 12,
-          "width": 554,
-          "height": 341
+          "width": 546,
+          "height": 358
         },
         "mode": "landscape"
       },

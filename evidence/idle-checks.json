@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-09-10T06:00:10.849Z",
+  "recordedAt": "2026-09-10T07:35:03.809Z",
   "browser": "152.0.7977.83",
   "conditions": "Headless Chrome on host MacBook, 1440×900 DPR2. Instrumented rendering and state checks, not measured energy or human responsiveness.",
   "checks": [
@@ -22,7 +22,7 @@
       "pass": true,
       "data": {
         "renders": 0,
-        "elapsed": 0.6606000000000001
+        "elapsed": 0.6620000000178814
       }
     },
     {

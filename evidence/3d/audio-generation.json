@@ -1,0 +1,91 @@
+{
+  "sample_rate": 44100,
+  "duration": 53.333333333333336,
+  "origin": "Original D-F#-E-A-D motif and chord progression from src/audio.js; new deterministic synthesis for Godot. No human audition.",
+  "files": {
+    "music-base": {
+      "peak_dbfs": -17.94394515222742,
+      "seconds": 53.333333333333336,
+      "clipped_samples": 0,
+      "loop_boundary_step": 0.0
+    },
+    "music-warm": {
+      "peak_dbfs": -22.68124081636454,
+      "seconds": 53.333333333333336,
+      "clipped_samples": 0,
+      "loop_boundary_step": 0.0
+    },
+    "music-bloom": {
+      "peak_dbfs": -30.18175136589565,
+      "seconds": 53.333333333333336,
+      "clipped_samples": 0,
+      "loop_boundary_step": 5.719569401902165e-06
+    },
+    "birth": {
+      "peak_dbfs": -19.123288554957128,
+      "seconds": 3.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": null
+    },
+    "assign": {
+      "peak_dbfs": -21.149493258748947,
+      "seconds": 3.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": null
+    },
+    "upgrade": {
+      "peak_dbfs": -18.466532270550474,
+      "seconds": 3.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": null
+    },
+    "chorus": {
+      "peak_dbfs": -21.800135955888994,
+      "seconds": 3.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": null
+    },
+    "restored": {
+      "peak_dbfs": -21.475716664230244,
+      "seconds": 3.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": null
+    },
+    "complete": {
+      "peak_dbfs": -21.31784498486326,
+      "seconds": 3.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": null
+    },
+    "ui": {
+      "peak_dbfs": -31.15859606592769,
+      "seconds": 3.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": null
+    },
+    "blocked": {
+      "peak_dbfs": -25.69865719028296,
+      "seconds": 3.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": null
+    },
+    "brush": {
+      "peak_dbfs": -24.6084210625504,
+      "seconds": 4.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": 0.00010659272408875225
+    },
+    "air": {
+      "peak_dbfs": -30.089729172417794,
+      "seconds": 12.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": 0.002142175038915446
+    },
+    "water": {
+      "peak_dbfs": -25.80376990829153,
+      "seconds": 8.0,
+      "clipped_samples": 0,
+      "loop_boundary_step": 0.012748022276574397
+    }
+  }
+}

@@ -97,5 +97,11 @@
       "path": "19-crowd-normal-size.png",
       "sourceSeconds": 408
     }
-  ]
+  ],
+  "fullRecording": {
+    "path": "full-session.mp4",
+    "source": "video/page@a33bb8a520bcaf942801cdd6e83f221d.webm",
+    "conversion": "H.264, CRF 24, fast preset; unchanged speed and dimensions; silent",
+    "rawSourceStatus": "Retained locally; repository ignores WebM files"
+  }
 }

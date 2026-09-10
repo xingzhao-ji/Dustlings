@@ -103,13 +103,17 @@
     "sha256": "b2e632d36ac36408dc36d094ffaff440e5a697cbcdc8f2303f3522957c09fb74",
     "bytes": 400558
   },
+  "full-session.mp4": {
+    "sha256": "88dc51f8568f570a8c99e2708b5265cc3d7e104b507c877d6e6bd45f95459164",
+    "bytes": 10187902
+  },
   "pair-motion-sequence.png": {
     "sha256": "3222fcc98a56ad3fd1fe51f8167c67f5d214023a01f5964ebf44bd8e6cd530b8",
     "bytes": 664626
   },
   "provenance.json": {
-    "sha256": "7ac5e5c5ba6b527ddb9100db5e1535b311357c80284fa42f817df304a6f2d031",
-    "bytes": 3454
+    "sha256": "286e1e97ba14bd9c4590cd50b5ae57bb1b1f00a70fd21a7239449209b6da5633",
+    "bytes": 3739
   },
   "review-driver.mjs": {
     "sha256": "f573bd576298bbb952f552d3872d0613161ef3237f53b7ebe2069096839c02f8",

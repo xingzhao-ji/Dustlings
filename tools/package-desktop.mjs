@@ -1,20 +1,29 @@
-import {readFile,writeFile,stat} from 'node:fs/promises';
+import {readFile,writeFile,stat,rename,rm} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
-import {extractFile} from '../platforms/desktop/node_modules/@electron/asar/lib/asar.js';
-const manifest=JSON.parse(await readFile('builds/desktop-build-manifest.json','utf8'));
-const hashes={};
-for(const [file,expected]of Object.entries(manifest.wrapperFiles)){const actual=createHash('sha256').update(await readFile(file)).digest('hex');if(actual!==expected)throw Error(`Wrapper changed since packaging: ${file}`);}
-for(const target of manifest.targets){
- const folder=`builds/native/Dustlings-${target}`;
- const mac=target.startsWith('darwin');
- const archive=mac?`${folder}/Dustlings.app/Contents/Resources/app.asar`:`${folder}/resources/app.asar`;
- const embedded=extractFile(archive,'game.html');const hash=createHash('sha256').update(embedded).digest('hex');
- if(hash!==manifest.game.sha256)throw Error('Embedded game hash mismatch '+target);
- const embeddedMain=extractFile(archive,'main.cjs');if(createHash('sha256').update(embeddedMain).digest('hex')!==manifest.wrapperFiles['platforms/desktop/main.cjs'])throw Error('Embedded wrapper mismatch '+target);
- const output=`builds/Dustlings-Courtyard-${manifest.game.version}-${target}-Development.zip`;
- execFileSync('ditto',['-c','-k','--sequesterRsrc','--keepParent',mac?`${folder}/Dustlings.app`:folder,output],{stdio:'inherit'});
- const body=await readFile(output);hashes[target]={archive:output,bytes:(await stat(output)).size,sha256:createHash('sha256').update(body).digest('hex'),embeddedGameSha256:hash,appAsarSha256:createHash('sha256').update(await readFile(archive)).digest('hex'),runtimeExecuted:mac};
+import {verifyBuilds} from './verify-current-review.mjs';
+// Check every target against the standalone build before writing any archive.
+const verified=await verifyBuilds();
+const manifest=verified.desktop;
+if(process.argv.includes('--preflight')){
+ console.log(JSON.stringify({status:'passed',mode:'preflight only; no archives written',game:verified.build,native:verified.native},null,2));
+}else{
+ const hashes={};
+ for(const target of manifest.targets){
+  const folder=`builds/native/Dustlings-${target}`,mac=target.startsWith('darwin');
+  const item=verified.native.find(item=>item.target===target);
+  const output=`builds/Dustlings-Courtyard-${manifest.game.version}-${target}-Development.zip`,temporary=output+'.tmp.zip';
+  try{
+   await rm(temporary,{force:true});
+   execFileSync('ditto',['-c','-k','--sequesterRsrc','--keepParent',mac?`${folder}/Dustlings.app`:folder,temporary],{stdio:'inherit'});
+   // Recheck source bytes after compression to reject a concurrently rebuilt payload.
+   const after=await verifyBuilds();
+   if(after.build.sha256!==verified.build.sha256||after.native.find(item=>item.target===target)?.appAsarSha256!==item.appAsarSha256)throw Error(`Build changed during compression: ${target}`);
+   execFileSync('/usr/bin/unzip',['-tqq',temporary],{stdio:'inherit'});
+   await rename(temporary,output);
+   const body=await readFile(output);hashes[target]={archive:output,bytes:(await stat(output)).size,sha256:createHash('sha256').update(body).digest('hex'),embeddedGameSha256:item.embeddedGameSha256,appAsarSha256:item.appAsarSha256,runtimeExecuted:null,runtimeEvidence:'Packaging does not execute the app; consult a matching build-specific execution report.'};
+  }finally{await rm(temporary,{force:true});}
+ }
+ const result={packagedAt:new Date().toISOString(),build:manifest,artifacts:hashes,status:'Development reference archives only. Packaging establishes neither current product scope nor native execution, signing, store submission or human acceptance.'};
+ await writeFile('builds/desktop-package-manifest.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
 }
-const result={packagedAt:new Date().toISOString(),build:manifest,artifacts:hashes,status:'Development review archives; no distribution signing/notarization, Steam submission or human acceptance.'};
-await writeFile('builds/desktop-package-manifest.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));

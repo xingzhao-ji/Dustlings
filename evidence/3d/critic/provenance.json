@@ -171,5 +171,12 @@
     "provenance": "recap-and-settings/review-provenance.json",
     "humanSessions": 0,
     "nativeAppLaunched": false
+  },
+  "postWaterGuidanceReview": {
+    "recordedAt": "2026-09-10T11:07:46.233329+00:00",
+    "provenance": "post-water-guidance/review-provenance.json",
+    "sourceHash": "d16167dda40fc96fccb6da3d604483a90783007f64c4c545e5fbe99bc7ab08ae",
+    "humanSessions": 0,
+    "nativeAppLaunched": false
   }
 }

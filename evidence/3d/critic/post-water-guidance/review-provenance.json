@@ -1,0 +1,86 @@
+{
+  "recordedAt": "2026-09-10T11:05:53.209510+00:00",
+  "reviewer": "Independent AI critic",
+  "scope": "Final bounded affected-view check of post-water guidance and integrated recap return. Not a repeat full-film art review.",
+  "humanSessions": 0,
+  "nativeAppLaunched": false,
+  "listening": false,
+  "gameSourceInspected": false,
+  "visualMethod": "Matched supplied625s stills at1280x800; full-size after557,575,600,650,666s frames; bottom760x125 crop at five-second intervals550-670; ritual return34-41s at2Hz and40s normal frame. Sample times approximate fps-filter windows. Frame inspection, not continuous audiovisual perception. Additional2Hz bottom-strip samples618-626s checked alternation after coarse5s sampling repeatedly selected the same scripted-input phase.",
+  "captureConditions": "Native Godot MovieMaker30FPS fixed normal engine time, potentially faster than wall-clock rendering; generated native controls. Full film no progress injection; short ritual explicit all-cleaned50-helper fixture. Audio present but un-auditioned.",
+  "sourceHash": "d16167dda40fc96fccb6da3d604483a90783007f64c4c545e5fbe99bc7ab08ae",
+  "files": [
+    {
+      "source": "evidence/3d/immersion-full-courtyard/post-water-625.png",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/before/post-water-625.png",
+      "sha256": "e3fdbf024e371e6eeedd85154c1f7edd1301f6c9eb3f0063277ecfa06f6194e3",
+      "bytes": 651126
+    },
+    {
+      "source": "evidence/3d/immersion-full-courtyard/capture-manifest.json",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/before/capture-manifest.json",
+      "sha256": "5fc08b2d7dd1930adeaa537feb68b5d936efc0016438b1a1307c1a3e58821cb3",
+      "bytes": 11136
+    },
+    {
+      "source": "evidence/3d/immersion-full-courtyard/results.json",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/before/results.json",
+      "sha256": "f450f5add8f15f7cc7077f6736e096d100fd5dd3ce934a57d01c3d02f484322c",
+      "bytes": 1302
+    },
+    {
+      "source": "evidence/3d/courtyard-ui-review/post-water-625.png",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/after/post-water-625.png",
+      "sha256": "0929f2e1aa46c7d297a63d70bf1fbeeba728c85285bd3d07b6591a689e778013",
+      "bytes": 652760
+    },
+    {
+      "source": "evidence/3d/courtyard-ui-review/full.mp4",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/after/full.mp4",
+      "sha256": "24825d3afe981daa27bbab7f1ead8e73e8c87b92308feacba0ba99f83aaf6926",
+      "bytes": 84343648
+    },
+    {
+      "source": "evidence/3d/courtyard-ui-review/capture-manifest.json",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/after/capture-manifest.json",
+      "sha256": "ff5e034de7f8059df67f105efc3e41eb97277bea8ed26655e112beb94a315eed",
+      "bytes": 11131
+    },
+    {
+      "source": "evidence/3d/courtyard-ui-review/results.json",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/after/results.json",
+      "sha256": "d4397aeb85ecff16d7e5240c6e0f61031c3edf6256f5a299000f985d8164b77d",
+      "bytes": 1302
+    },
+    {
+      "source": "evidence/3d/courtyard-ui-restoration/ritual.mp4",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/ritual/ritual.mp4",
+      "sha256": "0e221cd56394267093420f282d9f420f74f3bd7a06ad487c9db7b84ce4786cd3",
+      "bytes": 6040850
+    },
+    {
+      "source": "evidence/3d/courtyard-ui-restoration/recap.png",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/ritual/recap.png",
+      "sha256": "8b4ae4c6a2a5d9476a0e8721830852392cdc41635bb55763eceb4de7a996958c",
+      "bytes": 537703
+    },
+    {
+      "source": "evidence/3d/courtyard-ui-restoration/completion.png",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/ritual/completion.png",
+      "sha256": "c98c51e38da5c7c9a9b444d340894c6ae54f31ec3e6cf387049579469c291164",
+      "bytes": 662508
+    },
+    {
+      "source": "evidence/3d/courtyard-ui-restoration/capture-manifest.json",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/ritual/capture-manifest.json",
+      "sha256": "5a92bcb3ebfee69c57a66f1b534d90c696e54f9f8670eaeb5f33155e6c6c050a",
+      "bytes": 10905
+    },
+    {
+      "source": "evidence/3d/courtyard-ui-restoration/results.json",
+      "reviewCopy": "evidence/3d/critic/post-water-guidance/ritual/results.json",
+      "sha256": "ba6a086eafe7b364594cb5ea985ed7bb8681c0f808ae0ebe8f6429f2c96d4af7",
+      "bytes": 1075
+    }
+  ]
+}

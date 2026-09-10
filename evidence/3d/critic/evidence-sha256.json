@@ -995,9 +995,97 @@
     "sha256": "5aaafc2c42e3623f7be36f6a86e18bbdf595a37c5487916b31b4359bc195a466",
     "bytes": 903356
   },
+  "post-water-guidance/after/capture-manifest.json": {
+    "sha256": "ff5e034de7f8059df67f105efc3e41eb97277bea8ed26655e112beb94a315eed",
+    "bytes": 11131
+  },
+  "post-water-guidance/after/frame-557.png": {
+    "sha256": "4af10377cf41cc9b901aab5d705d246876a856e214079c92ceb07d571f0c121f",
+    "bytes": 667626
+  },
+  "post-water-guidance/after/frame-575.png": {
+    "sha256": "1b6b1a049efc908d46df00d99e04431119b37825b2a2c981a896bfd1b335f466",
+    "bytes": 652063
+  },
+  "post-water-guidance/after/frame-600.png": {
+    "sha256": "03fe5a9affe9d3360bcd35fb827a323801b428c684e97cf47e91db1adbd51a6f",
+    "bytes": 648435
+  },
+  "post-water-guidance/after/frame-650.png": {
+    "sha256": "b174866759d3700020e2a0e2f195ce36b7e6193fdf4225dd8dfa43ea2dc58a50",
+    "bytes": 652863
+  },
+  "post-water-guidance/after/frame-666.png": {
+    "sha256": "ff1d107c02451cb59b84bb5528c38e3570c65c849fb9ab2f4ca8a9d15147378f",
+    "bytes": 659974
+  },
+  "post-water-guidance/after/full.mp4": {
+    "sha256": "24825d3afe981daa27bbab7f1ead8e73e8c87b92308feacba0ba99f83aaf6926",
+    "bytes": 84343648
+  },
+  "post-water-guidance/after/hints-550-670.png": {
+    "sha256": "51d32035be7274bbfa7a10f0025e51bb964078e85adbd7531e71631de992332b",
+    "bytes": 1074178
+  },
+  "post-water-guidance/after/hints-618-626.png": {
+    "sha256": "69afe7cc064630ca7b73c4c38dffa00b44823eeb2effc4c17d3d672e8a1c5942",
+    "bytes": 540200
+  },
+  "post-water-guidance/after/post-water-625.png": {
+    "sha256": "0929f2e1aa46c7d297a63d70bf1fbeeba728c85285bd3d07b6591a689e778013",
+    "bytes": 652760
+  },
+  "post-water-guidance/after/results.json": {
+    "sha256": "d4397aeb85ecff16d7e5240c6e0f61031c3edf6256f5a299000f985d8164b77d",
+    "bytes": 1302
+  },
+  "post-water-guidance/before/capture-manifest.json": {
+    "sha256": "5fc08b2d7dd1930adeaa537feb68b5d936efc0016438b1a1307c1a3e58821cb3",
+    "bytes": 11136
+  },
+  "post-water-guidance/before/post-water-625.png": {
+    "sha256": "e3fdbf024e371e6eeedd85154c1f7edd1301f6c9eb3f0063277ecfa06f6194e3",
+    "bytes": 651126
+  },
+  "post-water-guidance/before/results.json": {
+    "sha256": "f450f5add8f15f7cc7077f6736e096d100fd5dd3ce934a57d01c3d02f484322c",
+    "bytes": 1302
+  },
+  "post-water-guidance/review-provenance.json": {
+    "sha256": "5c8e641d4942c5d58084a2784c9bc736fd8e6b62360eef5909dd28e6f05b25b2",
+    "bytes": 4426
+  },
+  "post-water-guidance/ritual/capture-manifest.json": {
+    "sha256": "5a92bcb3ebfee69c57a66f1b534d90c696e54f9f8670eaeb5f33155e6c6c050a",
+    "bytes": 10905
+  },
+  "post-water-guidance/ritual/completion.png": {
+    "sha256": "c98c51e38da5c7c9a9b444d340894c6ae54f31ec3e6cf387049579469c291164",
+    "bytes": 662508
+  },
+  "post-water-guidance/ritual/frame-40.png": {
+    "sha256": "c78d2e804348e6d4e944584583594824738eb8298d310490a34d1971543888b8",
+    "bytes": 646562
+  },
+  "post-water-guidance/ritual/recap.png": {
+    "sha256": "8b4ae4c6a2a5d9476a0e8721830852392cdc41635bb55763eceb4de7a996958c",
+    "bytes": 537703
+  },
+  "post-water-guidance/ritual/results.json": {
+    "sha256": "ba6a086eafe7b364594cb5ea985ed7bb8681c0f808ae0ebe8f6429f2c96d4af7",
+    "bytes": 1075
+  },
+  "post-water-guidance/ritual/return-34-41.png": {
+    "sha256": "8eafb6ab307c5b85026ee71a6ce07e50e5e9898f1deb2892b1da4937f71d902f",
+    "bytes": 695335
+  },
+  "post-water-guidance/ritual/ritual.mp4": {
+    "sha256": "0e221cd56394267093420f282d9f420f74f3bd7a06ad487c9db7b84ce4786cd3",
+    "bytes": 6040850
+  },
   "provenance.json": {
-    "sha256": "9cfcfc9664abe6c07ca30a024c7e51f10378dc2e971e93f909a10552dad4064a",
-    "bytes": 6879
+    "sha256": "a043400afb611f0b184163992d23615e1ccce6fd62aa23ff620aefbbe98e518a",
+    "bytes": 7174
   },
   "recap-and-settings/recap-after/capture-manifest.json": {
     "sha256": "82aad547f7c2f09806d267ad7b0f1154acb1829246ee86ddcef2d620f0b39b07",

@@ -1,0 +1,87 @@
+{
+  "reviewer": "Independent AI critic",
+  "humanSessions": 0,
+  "reviewType": "Recorded 3D baseline with verified package identity; direct native UI blocked",
+  "captureConditions": "Lead-provided 66-second Godot MovieMaker capture: generated native pointer/UI InputEvents through surface raycasts, no injected progress in opening; 30 FPS normal engine-time, faster than wall clock. Capture conditions not independently audited against source.",
+  "visualMethod": "Full recording chronology sampled at 1 Hz; normal-size provided stills; dense birth and travel samples. Not a claim of continuous audiovisual perception.",
+  "listening": false,
+  "readBeforeReview": [
+    "README.md",
+    "docs/DEVELOPMENT.md"
+  ],
+  "gameSourceInspected": false,
+  "nativeAppLaunched": true,
+  "recordedAt": "2026-09-10T08:14:47.028Z",
+  "files": [
+    {
+      "source": "evidence/3d/opening.mp4",
+      "reviewCopy": "evidence/3d/critic/baseline/opening.mp4",
+      "bytes": 3103573,
+      "sha256": "e1f8b01fb6c695063617a586caeca266fca885f590b22ab106b9f2b69b0a7774"
+    },
+    {
+      "source": "evidence/3d/opening/dirty.png",
+      "reviewCopy": "evidence/3d/critic/baseline/dirty.png",
+      "bytes": 433167,
+      "sha256": "4f56f482a48a95d5f30ec320a815ce1b194c0ba0ad1592092746aa1912ddf611"
+    },
+    {
+      "source": "evidence/3d/opening/first-helper.png",
+      "reviewCopy": "evidence/3d/critic/baseline/first-helper.png",
+      "bytes": 436528,
+      "sha256": "2c56814b9981938aa544bc21f0f91c8fa6454daeda00c6b43a0d88f16d34d853"
+    },
+    {
+      "source": "evidence/3d/opening/discoveries.png",
+      "reviewCopy": "evidence/3d/critic/baseline/discoveries.png",
+      "bytes": 354200,
+      "sha256": "3eb97db7af18d44e1745fdd3b41c2bae27e25f5e9aadd29b7279d7d2191744f5"
+    },
+    {
+      "source": "evidence/3d/opening/purchase.png",
+      "reviewCopy": "evidence/3d/critic/baseline/purchase.png",
+      "bytes": 352224,
+      "sha256": "799119b60253f8630f35ba46c174344c9b29104328a1df69e786abc97e5231ef"
+    },
+    {
+      "source": "evidence/3d/opening/direction.png",
+      "reviewCopy": "evidence/3d/critic/baseline/direction.png",
+      "bytes": 440794,
+      "sha256": "ece74c8bee1d8610d85c063e9181b1d740f0300cf984ef15d0f3aafbb475ddd1"
+    },
+    {
+      "source": "evidence/3d/opening/settings.png",
+      "reviewCopy": "evidence/3d/critic/baseline/settings.png",
+      "bytes": 403450,
+      "sha256": "6ffa4e9733f0a791295d168d471a2c261f7a3d564470c734767dade2b787472b"
+    },
+    {
+      "source": "evidence/3d/opening/results.json",
+      "reviewCopy": "evidence/3d/critic/baseline/results.json",
+      "bytes": 920,
+      "sha256": "c3a763a5356ae99237ee223ecfda55da94fd6a084f7a3785ebe8fc7acd96dbb4"
+    }
+  ],
+  "nativeAttempt": {
+    "manifest": "native-manifest.json",
+    "app": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-3d-export-19Ka9a/Dustlings 3D.app",
+    "arguments": [
+      "--",
+      "--qa"
+    ],
+    "qaPurpose": "Lead-prescribed fresh test save only; no evidence driver or fixture arguments",
+    "executableSha256": "15337426962df5b9b69bc90f9215f5d4f14e81ac10182464035e2c0cdf08b247",
+    "pckSha256": "dd5d2ab545697f9a15e9b780edc6e496c97e15b5fa14f8960481476cb57d4143",
+    "hashesIndependentlyVerified": true,
+    "uiResult": "Two exact-path CUA attempts returned pending Accessibility and Screen Recording permissions after approximately 110 seconds each. Bundle ID retry was ambiguous; no alternate app selected.",
+    "gameplayInputSent": false,
+    "screenshotObtained": false,
+    "pid": 38011,
+    "termination": "SIGTERM to only launched review PID",
+    "exitCode": 143,
+    "processAbsentConfirmed": true,
+    "closed": true
+  },
+  "finalizedAt": "2026-09-10T08:22:57.769Z",
+  "changedDeveloperBuildReviewed": false
+}

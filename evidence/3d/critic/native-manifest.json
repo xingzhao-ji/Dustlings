@@ -1,0 +1,354 @@
+{
+  "schema": 1,
+  "kind": "godot-native-development-integration-candidate",
+  "started": "2026-09-10T08:14:03.063Z",
+  "version": "0.4.0-dev",
+  "bundleVersion": "0.4.0",
+  "source": {
+    "revision": "c05e7b9fb180db17d7f6d2c5379c04452a88c9f3",
+    "dirty": true,
+    "repositoryDirty": true,
+    "status": " M godot/project.godot\n M godot/scripts/main.gd\n M godot/scripts/simulation.gd\n?? godot/export_presets.cfg\n?? godot/scripts/courtyard_environment.gd.uid\n?? godot/scripts/dustling_visual.gd.uid\n?? godot/scripts/soundscape.gd\n?? godot/scripts/soundscape.gd.uid\n?? godot/shaders/courtyard_environment_vegetation.gdshader.uid\n?? godot/shaders/courtyard_environment_water.gdshader.uid\n?? godot/tests/audio_checks.gd\n?? godot/tests/simulation_checks.gd.uid\n",
+    "repositoryStatus": " M godot/project.godot\n M godot/scripts/main.gd\n M godot/scripts/simulation.gd\n?? artifacts/audio/ui-regression/audition-levels.svg\n?? artifacts/audio/ui-regression/courtyard-audition.wav\n?? docs/3D-BUILD.md\n?? evidence/3d/critic/birth-detail-sequence.png\n?? evidence/3d/critic/opening-sequence-01.png\n?? evidence/3d/critic/opening-sequence-02.png\n?? evidence/3d/critic/opening-sequence-03.png\n?? evidence/3d/critic/travel-detail-sequence.png\n?? evidence/3d/critic/zoomed-normal-size.png\n?? evidence/3d/driver-coordinate-failure/opening.log\n?? evidence/3d/driver-coordinate-failure/opening/direction.png\n?? evidence/3d/driver-coordinate-failure/opening/dirty.png\n?? evidence/3d/driver-coordinate-failure/opening/discoveries.png\n?? evidence/3d/driver-coordinate-failure/opening/first-helper.png\n?? evidence/3d/driver-coordinate-failure/opening/purchase.png\n?? evidence/3d/driver-coordinate-failure/opening/results.json\n?? evidence/3d/driver-coordinate-failure/opening/settings.png\n?? evidence/3d/exit-busy-trace.log\n?? evidence/3d/exit-trace.log\n?? evidence/3d/first-integration.log\n?? evidence/3d/first-integration/busy-fixture.png\n?? evidence/3d/first-integration/close-fixture.png\n?? evidence/3d/first-integration/dirty.png\n?? evidence/3d/first-integration/restored-fixture.png\n?? evidence/3d/first-integration/results.json\n?? evidence/3d/first-integration/settings.png\n?? evidence/3d/first-integration/welcome.png\n?? evidence/3d/metal-integration.log\n?? evidence/3d/metal-integration/busy-fixture.png\n?? evidence/3d/metal-integration/close-fixture.png\n?? evidence/3d/metal-integration/dirty.png\n?? evidence/3d/metal-integration/restored-fixture.png\n?? evidence/3d/metal-integration/results.json\n?? evidence/3d/metal-integration/settings.png\n?? evidence/3d/metal-integration/welcome.png\n?? evidence/3d/opening.log\n?? evidence/3d/opening.mp4\n?? evidence/3d/opening/direction.png\n?? evidence/3d/opening/dirty.png\n?? evidence/3d/opening/discoveries.png\n?? evidence/3d/opening/first-helper.png\n?? evidence/3d/opening/purchase.png\n?? evidence/3d/opening/results.json\n?? evidence/3d/opening/settings.png\n?? evidence/3d/refined-integration.log\n?? evidence/3d/refined-integration/busy-fixture.png\n?? evidence/3d/refined-integration/close-fixture.png\n?? evidence/3d/refined-integration/dirty.png\n?? evidence/3d/refined-integration/restored-fixture.png\n?? evidence/3d/refined-integration/results.json\n?? evidence/3d/refined-integration/settings.png\n?? evidence/3d/refined-integration/welcome.png\n?? evidence/3d/simulation-checks.log\n?? godot/export_presets.cfg\n?? godot/scripts/courtyard_environment.gd.uid\n?? godot/scripts/dustling_visual.gd.uid\n?? godot/scripts/soundscape.gd\n?? godot/scripts/soundscape.gd.uid\n?? godot/shaders/courtyard_environment_vegetation.gdshader.uid\n?? godot/shaders/courtyard_environment_water.gdshader.uid\n?? godot/tests/audio_checks.gd\n?? godot/tests/simulation_checks.gd.uid\n?? tools/build-3d.mjs\n",
+    "sha256": "672c9b898d70b923ba6ef9a4ae5ed8daa77014b5a5e4689006ed2a89e3ac411d",
+    "files": {
+      "assets/audio/air.ogg": {
+        "bytes": 208224,
+        "sha256": "30718bb3c0d6e9a0e7dcc0758ece8a72285fe72b14ca5ac7def59419ac2b69b1"
+      },
+      "assets/audio/air.ogg.import": {
+        "bytes": 378,
+        "sha256": "89c2178995479cee9437cadea862ec19c0450635d7747f25731efe06fa9d8200"
+      },
+      "assets/audio/assign.wav": {
+        "bytes": 264644,
+        "sha256": "ca79b53378c5283f75bb3620d6a08bfe83b2ca60199ff9464b152c91706b1187"
+      },
+      "assets/audio/assign.wav.import": {
+        "bytes": 489,
+        "sha256": "d70cf2610c17a7cd94eb414b1f3b27ef7555f741fdf7905e639d8688450e98a8"
+      },
+      "assets/audio/birth.wav": {
+        "bytes": 264644,
+        "sha256": "6d36300d8136cffe26e98282c1eaddd570fa4ce8e6639945926d61372f4f30bb"
+      },
+      "assets/audio/birth.wav.import": {
+        "bytes": 486,
+        "sha256": "edf2f5314e3efcc11cf2b68d2e2586b40ed08d0fc49b0a14fe20c04f3c0ade78"
+      },
+      "assets/audio/blocked.wav": {
+        "bytes": 264644,
+        "sha256": "020ff051d6d36ec02790aeb4a8826661febba6605c9f3bcaaf46aa97b83c81a5"
+      },
+      "assets/audio/blocked.wav.import": {
+        "bytes": 491,
+        "sha256": "7436f8d571a76fe126a5096ad8dc57000778484c63598cac35b8734e924281fc"
+      },
+      "assets/audio/brush.ogg": {
+        "bytes": 89295,
+        "sha256": "4c201bca63fb070561e52c83a26ef2d1eb0c96f56f8e764a0e3e0964c4ef00af"
+      },
+      "assets/audio/brush.ogg.import": {
+        "bytes": 384,
+        "sha256": "da5b2d5dca4ba5327a4528b875fc373a9ac8ccccd1acd4b7fbe7dad1549da37f"
+      },
+      "assets/audio/chorus.wav": {
+        "bytes": 264644,
+        "sha256": "044ede9b5b59eb0e3ae9e7ff107f08b97ed83b3bd625f3a692caf2c49bc028d8"
+      },
+      "assets/audio/chorus.wav.import": {
+        "bytes": 489,
+        "sha256": "c59e3cf7c58874b0239d9fc67a2e3bc9ccd20792e8cafe8aa8339b74abf87dcf"
+      },
+      "assets/audio/complete.wav": {
+        "bytes": 264644,
+        "sha256": "733bd99449bbdfb9bdf4a016e16c89e151bae353e4d30e51112861ef3e444377"
+      },
+      "assets/audio/complete.wav.import": {
+        "bytes": 495,
+        "sha256": "61847a33a06afd60d3f4934d02f78ce02d1d2882f8a012daaed7f016d0b019ec"
+      },
+      "assets/audio/music-base.ogg": {
+        "bytes": 235676,
+        "sha256": "a3fd110400f3e04cee43dd6a0e03e8d9aea918d7950d33e90b4f3f158a59f42c"
+      },
+      "assets/audio/music-base.ogg.import": {
+        "bytes": 399,
+        "sha256": "4da8e3e170581bdbac25672b4fe9eb994c8d9e346a73e800ef8ce3de0312fcc2"
+      },
+      "assets/audio/music-base.wav.import": {
+        "bytes": 501,
+        "sha256": "01f5a746be84712bb982e9e33c77002c1e8aac34441ad0277d5851573638993e"
+      },
+      "assets/audio/music-bloom.ogg": {
+        "bytes": 391779,
+        "sha256": "907c76622285a7eaf0f3abb296e797469899a851ece21c815235570afbbc86a8"
+      },
+      "assets/audio/music-bloom.ogg.import": {
+        "bytes": 401,
+        "sha256": "548b0ef65f05860a3bb06a7f5ded2d2fb4e654f9aa941cc0135961ae0f214f72"
+      },
+      "assets/audio/music-warm.ogg": {
+        "bytes": 283018,
+        "sha256": "0d2174812bc34e0122a969199d5c9c6b1dda9071874d6b1a845ced3a6a097bff"
+      },
+      "assets/audio/music-warm.ogg.import": {
+        "bytes": 399,
+        "sha256": "bea2e64aa80e2dd14c306dce36baad5d3847f4a32773c6f61291ede3ba6a0310"
+      },
+      "assets/audio/restored.wav": {
+        "bytes": 264644,
+        "sha256": "82e560eec7f423d1a5cdbf6d2f53ba4dc2454bfeb0ad905b10cb5a33cebb967c"
+      },
+      "assets/audio/restored.wav.import": {
+        "bytes": 495,
+        "sha256": "580c40ee674170810bbf0a2154bc92013c00389a7ab9c3349ecffdd4de055029"
+      },
+      "assets/audio/ui.wav": {
+        "bytes": 264644,
+        "sha256": "2a7952af4eec42c8c35c351b28a593f9c1d00b6753ec15e508f70b4ec25888b2"
+      },
+      "assets/audio/ui.wav.import": {
+        "bytes": 477,
+        "sha256": "a8e5becce721885f62c0878192daae49b78e75be8088178178569d9948746aba"
+      },
+      "assets/audio/upgrade.wav": {
+        "bytes": 264644,
+        "sha256": "a5afeddf661b8774715a4bd7936a9d4daf082997fbf98dde6bc8741bcbcf9919"
+      },
+      "assets/audio/upgrade.wav.import": {
+        "bytes": 492,
+        "sha256": "293235e14af9ce652f92232b432b2a2e807190ec92d3f2dab4b334232478df37"
+      },
+      "assets/audio/water.ogg": {
+        "bytes": 173773,
+        "sha256": "7a3dac9747c3135ae3238df28418c6f476a905bad2011063bd34f891fd15e7f6"
+      },
+      "assets/audio/water.ogg.import": {
+        "bytes": 384,
+        "sha256": "bdc30428bed9fb82e1a79855c4927963e820b9852bdd18d865a83519ac6d2beb"
+      },
+      "export_presets.cfg": {
+        "bytes": 1740,
+        "sha256": "a1aa02a4c96d5705ebe74a0eb9f15420e2a758f4a9c67d340e3ab9991b8659ee"
+      },
+      "project.godot": {
+        "bytes": 1174,
+        "sha256": "4d9afca3b91207c3e72cc1e5ce8aa1331283222dcf888c2be036969fe3e3de12"
+      },
+      "scenes/courtyard.tscn": {
+        "bytes": 173,
+        "sha256": "40b44bc40cc1dbc411897fbc88bd8c8a5f04c9ecd1e547263fa2cfc2484cdc52"
+      },
+      "scripts/courtyard_environment.gd": {
+        "bytes": 21134,
+        "sha256": "9eb274e439ea6fb913486f4944d3bf55e459d5790e37983cb1fea5be71128bc8"
+      },
+      "scripts/courtyard_environment.gd.uid": {
+        "bytes": 20,
+        "sha256": "4f19792d00fe9e7d9443b8701d85a992337ecc573b4f0d38267954eef47de024"
+      },
+      "scripts/dustling_visual.gd": {
+        "bytes": 9102,
+        "sha256": "7115a48cd6444d3b7b8907cf2fd35992e700fec76c3c46e228f181d258e95109"
+      },
+      "scripts/dustling_visual.gd.uid": {
+        "bytes": 20,
+        "sha256": "6349b99f99f4f2781502bf75c5a05a2b1e45d73e2ab44bd095632d7b6f530074"
+      },
+      "scripts/main.gd": {
+        "bytes": 38178,
+        "sha256": "a5a4d49e7ff7ef523964f1cf99a255a3635af0dee98ac7e93e731daa76669022"
+      },
+      "scripts/main.gd.uid": {
+        "bytes": 20,
+        "sha256": "ff6ddc705c0c7220c6d37ddfb70b6f27e000a7d0effa7beba395a5d76837e8f0"
+      },
+      "scripts/simulation.gd": {
+        "bytes": 11132,
+        "sha256": "a7d3364b6e8b9484a38be5c625f2a81b661504b5934bd39cc0cf7c41ed522ff1"
+      },
+      "scripts/simulation.gd.uid": {
+        "bytes": 20,
+        "sha256": "792f1c954ad5e4fd781e29a312b28bf8c2a0c30e10713eefcf833f40bf0e561d"
+      },
+      "scripts/soundscape.gd": {
+        "bytes": 6962,
+        "sha256": "ec9b49378569f8166a2aaa2de5ecd074b41ffc78c13c65029702dfbc3791c981"
+      },
+      "scripts/soundscape.gd.uid": {
+        "bytes": 19,
+        "sha256": "850698c9cd6ce62fd29ec9c9cf731438b73a2eb704882437b5543d172031007c"
+      },
+      "shaders/courtyard_environment_vegetation.gdshader": {
+        "bytes": 865,
+        "sha256": "7704d26fc46f31e1c35f2429179801feb2603147131f31814ec51ac3f291ba3a"
+      },
+      "shaders/courtyard_environment_vegetation.gdshader.uid": {
+        "bytes": 20,
+        "sha256": "e541ebb37be71f3a2511e8fe6247b3e54b335dfc4bb5d76f3c4dd9a803d92237"
+      },
+      "shaders/courtyard_environment_water.gdshader": {
+        "bytes": 1005,
+        "sha256": "a819e6f53d63c0ccacda969f7c2b1dfaa3c194b2c24041a2343364be556a3b9d"
+      },
+      "shaders/courtyard_environment_water.gdshader.uid": {
+        "bytes": 20,
+        "sha256": "82331e95ebb011a80fad4a1925da6cf58b561ec60774f64eb6b42e1fb16a9774"
+      },
+      "tests/audio_checks.gd": {
+        "bytes": 8367,
+        "sha256": "77e768298d2dfddaf6c6674689a535862c58ede1f5d4c391ab209e2964ebaebc"
+      },
+      "tests/simulation_checks.gd": {
+        "bytes": 3281,
+        "sha256": "ce1bb8ac39c352a7538bbe09c22b83dede958e56a3ff0d25ddb100bb8d4c8741"
+      },
+      "tests/simulation_checks.gd.uid": {
+        "bytes": 20,
+        "sha256": "15522ac52a4db57f6e83bb85b5a98076b9f182ca6b7cf6b08184a8af78f3b21e"
+      }
+    },
+    "changedSinceSnapshot": false
+  },
+  "snapshot": "source/godot",
+  "humanTests": 0,
+  "ownerApproved": false,
+  "releaseReady": false,
+  "macOS": {
+    "execution": "not run by build tool",
+    "notarized": false,
+    "localInspectionApp": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-3d-export-19Ka9a/Dustlings 3D.app",
+    "path": "macOS/Dustlings.zip",
+    "archive": {
+      "bytes": 61951552,
+      "sha256": "edc55d143be7ffbb09efa4b44c455460bf02aa93f701ccf68de29a395113f09b"
+    },
+    "signing": "verified built-in ad-hoc",
+    "architectures": [
+      "x86_64",
+      "arm64"
+    ],
+    "bundleIdentifier": "com.dustlings.courtyard3d.prototype",
+    "bundleVersion": "0.4.0",
+    "pck": {
+      "bytes": 1978660,
+      "sha256": "dd5d2ab545697f9a15e9b780edc6e496c97e15b5fa14f8960481476cb57d4143"
+    },
+    "executable": {
+      "bytes": 170963648,
+      "sha256": "15337426962df5b9b69bc90f9215f5d4f14e81ac10182464035e2c0cdf08b247"
+    },
+    "files": {
+      "Contents/_CodeSignature/CodeResources": {
+        "bytes": 3181,
+        "sha256": "cbbd7d1712962fa96cfd1e0088a4fbc2d214d2b95df3105a2fee26f37c2a127f"
+      },
+      "Contents/Info.plist": {
+        "bytes": 1826,
+        "sha256": "c8be7f50d6ad8921ec6d934bc1613966a38debd3d4c0e21b18c58f8a49e1a51a"
+      },
+      "Contents/MacOS/Dustlings 3D": {
+        "bytes": 170963648,
+        "sha256": "15337426962df5b9b69bc90f9215f5d4f14e81ac10182464035e2c0cdf08b247"
+      },
+      "Contents/PkgInfo": {
+        "bytes": 9,
+        "sha256": "7e50a30efad50208a173203ced60818d693bb61266b75aa10927d1a2adce80cb"
+      },
+      "Contents/Resources/Dustlings 3D.pck": {
+        "bytes": 1978660,
+        "sha256": "dd5d2ab545697f9a15e9b780edc6e496c97e15b5fa14f8960481476cb57d4143"
+      },
+      "Contents/Resources/icon.icns": {
+        "bytes": 67500,
+        "sha256": "779ff524928785811d6d4c61f47a26491160b1092db9b610e85fcdfd9b2d2b2a"
+      },
+      "Contents/Resources/PrivacyInfo.xcprivacy": {
+        "bytes": 229,
+        "sha256": "0535353bb08c25b8ce5ed9ac7e442a5994f402e0f6cbc4bed668cfc63c2ceac3"
+      }
+    }
+  },
+  "windows": {
+    "execution": "unrun",
+    "signing": "unsigned development executable",
+    "path": "Windows/Dustlings.exe",
+    "architecture": "x86_64",
+    "pck": {
+      "bytes": 1978660,
+      "sha256": "dd5d2ab545697f9a15e9b780edc6e496c97e15b5fa14f8960481476cb57d4143"
+    },
+    "executable": {
+      "bytes": 109127680,
+      "sha256": "6c75f269cac01d822a91ea2e046dd4d5e973aedc540e8dad82deef88755bf8f6"
+    },
+    "files": {
+      "Dustlings.exe": {
+        "bytes": 109127680,
+        "sha256": "6c75f269cac01d822a91ea2e046dd4d5e973aedc540e8dad82deef88755bf8f6"
+      },
+      "Dustlings.pck": {
+        "bytes": 1978660,
+        "sha256": "dd5d2ab545697f9a15e9b780edc6e496c97e15b5fa14f8960481476cb57d4143"
+      }
+    }
+  },
+  "checks": {
+    "macosPackSources": {
+      "checked": 7,
+      "failures": []
+    },
+    "windowsPackSources": {
+      "checked": 7,
+      "failures": []
+    },
+    "complete": true
+  },
+  "errors": [],
+  "toolchain": {
+    "editorVersion": "4.7.2.stable.official.ed1daf0bf",
+    "templateVersion": "4.7.2.stable",
+    "buildTool": {
+      "bytes": 12744,
+      "sha256": "f872e88d8a980ef515cf9582f9aa136212eb6b988eba1fc34c7abf2ed2db4513"
+    },
+    "editor": {
+      "bytes": 351312912,
+      "sha256": "c7cccbf8fb143e34e02fd6521e09be2c2b974f0d5db080b19071c9c570718ccf"
+    },
+    "templates": {
+      "macOS": {
+        "bytes": 123597580,
+        "sha256": "88df5e2e6fee99088699be66e6d42e4da4fb0c5619d054297d755a49558a4792"
+      },
+      "windowsX64": {
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      }
+    },
+    "downloadRecord": [
+      {
+        "name": "Godot_v4.7.2-stable_export_templates.tpz",
+        "url": "https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz",
+        "sha256": "f298490b8d44d934be425a5a65a51bf15f422428b229a06a6e11d9ffea248011",
+        "bytes": 1281349702
+      },
+      {
+        "name": "Godot_v4.7.2-stable_macos.universal.zip",
+        "url": "https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_macos.universal.zip",
+        "sha256": "c58a24e31d720be9d62f60cb5627c4e695fb72f21b0cfe1bc9ccaa9a3b3ba63e",
+        "bytes": 170622178
+      }
+    ]
+  },
+  "snapshotOverrides": {
+    "file": "export_presets.cfg",
+    "purpose": "Absolute local template paths and numeric platform metadata; game source unchanged",
+    "sha256": "4f251499693f9ef92171e334e16c73056db03fa891efd1d31205933dfe37713a"
+  },
+  "snapshotImportMetadataChanges": [
+    "tests/audio_checks.gd.uid"
+  ],
+  "finished": "2026-09-10T08:14:17.661Z"
+}

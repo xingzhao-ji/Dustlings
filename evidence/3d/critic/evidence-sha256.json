@@ -1,0 +1,66 @@
+{
+  "birth-detail-sequence.png": {
+    "sha256": "72b9c4f53d0c8673bc14208c154149c3bf964c429954b97e9227cf955f2c24af",
+    "bytes": 688289
+  },
+  "native-manifest.json": {
+    "sha256": "0a2e53dc04b5c49b294a099d4ab5ebae16f31377c39eb6152f848ae25200cb54",
+    "bytes": 16334
+  },
+  "opening-sequence-01.png": {
+    "sha256": "9e66610aef2aa2a7bd14f143c0079553d6279ca8e0746b15c2c4653f4a345b08",
+    "bytes": 731872
+  },
+  "opening-sequence-02.png": {
+    "sha256": "552a50c57a113d887a0d8e36f2ca7d5c0e9463b033c50ceeed19e567f986990c",
+    "bytes": 843281
+  },
+  "opening-sequence-03.png": {
+    "sha256": "5aaafc2c42e3623f7be36f6a86e18bbdf595a37c5487916b31b4359bc195a466",
+    "bytes": 903356
+  },
+  "provenance.json": {
+    "sha256": "cb279480f0e6a52087e20c8affae4e8bad9bde174ac715c96a328fcbb746a9bf",
+    "bytes": 3768
+  },
+  "travel-detail-sequence.png": {
+    "sha256": "dee04d52b6462b802f54d84d8ddd8fd13318585f669830057822a79ade30bf45",
+    "bytes": 859465
+  },
+  "zoomed-normal-size.png": {
+    "sha256": "c9f95b763f4f2b26d48a51613f260f85487b5aca9b2d0731baa371a57e208528",
+    "bytes": 614500
+  },
+  "baseline/direction.png": {
+    "sha256": "ece74c8bee1d8610d85c063e9181b1d740f0300cf984ef15d0f3aafbb475ddd1",
+    "bytes": 440794
+  },
+  "baseline/dirty.png": {
+    "sha256": "4f56f482a48a95d5f30ec320a815ce1b194c0ba0ad1592092746aa1912ddf611",
+    "bytes": 433167
+  },
+  "baseline/discoveries.png": {
+    "sha256": "3eb97db7af18d44e1745fdd3b41c2bae27e25f5e9aadd29b7279d7d2191744f5",
+    "bytes": 354200
+  },
+  "baseline/first-helper.png": {
+    "sha256": "2c56814b9981938aa544bc21f0f91c8fa6454daeda00c6b43a0d88f16d34d853",
+    "bytes": 436528
+  },
+  "baseline/opening.mp4": {
+    "sha256": "e1f8b01fb6c695063617a586caeca266fca885f590b22ab106b9f2b69b0a7774",
+    "bytes": 3103573
+  },
+  "baseline/purchase.png": {
+    "sha256": "799119b60253f8630f35ba46c174344c9b29104328a1df69e786abc97e5231ef",
+    "bytes": 352224
+  },
+  "baseline/results.json": {
+    "sha256": "c3a763a5356ae99237ee223ecfda55da94fd6a084f7a3785ebe8fc7acd96dbb4",
+    "bytes": 920
+  },
+  "baseline/settings.png": {
+    "sha256": "6ffa4e9733f0a791295d168d471a2c261f7a3d564470c734767dade2b787472b",
+    "bytes": 403450
+  }
+}

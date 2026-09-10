@@ -1,3 +1,17 @@
+# Continuation checkpoint — 2026-09-10 18:14 UTC
+
+**Session active; not product completion.** Current milestone: one integrated Bellwether RPG neighborhood, art/animation refinement and awaiting human validation. Human RPG sessions0, owneracceptancepending, audio not auditioned, Windows unrun. Figma/CUA unavailable. Do not request routine continuation permission.
+
+Saved changes: shared visual board/direction; calmer staggered arrival slabs and restrained grain; original lighting candidate; actor41f5f1d with planted locomotion, stable initial feet, Ivo map/attention and actual hand API; root994f51a integrates attention, living idle during dialogue and ground/hand-connected brush. Companion navigation8414187 plus rounded-corner correction now passes28 assertions, but that first full integration run reports concurrent actor source change, so repeat on the frozen art source before closing the gate. Earlier25/28failure at homecorner and diagnosticfailedcaptures retained. Root2d19a6a initializes birthpose and stages the moth exchange after reading, with the same companion and no camera/input lock; prepared-state interruption checks underway.
+
+Native current source01004fc4ec0036508395f1ecd5b6e09e4460c810c9e36927607377ce099a2dc6: evidence/rpg/neighborhood-art-motion/art.mp4 completes59 generatedInputEventcommands in56.725engine seconds, includes normalwalking/reversals/stops/Ivo/full yaw/low-high pitch. This is not human pacing or performance. Critic has media-first access; verdict pending. Earlier media-first arrival review8c701d2 sees less grid competition but material/light/threshold identity still weak. Root actual orbit inspection shows finiteflatground edge/blank backside: environment specialist now owns boundary-only scenicgeometry correction, preserving allplayablecolliders/anchors.
+
+Exact active next actions: poll root native fullroute process9286 (evidence/rpg/neighborhood-art-route, same frozen01004source). Inspect actual moth/alcovereturn/sharedtable/home-return and allroute results, sendmedia-only tocritic. Story specialist owns new reveal interruption fixture and frozenfour-companion traversal; world specialist boundarygeometry. Correct verified defects, recapturematchedart/fullrelevantintervals, thenfreeze/exportnativeMac+Windows, run exactpackagedMacchecker and quietnativeperformance. Prepared tools/rpg-package-check.mjs and reviewhub evidence/rpg/REVIEW.html/docs/RPG-QUALITY-GATES.md exist; noRPGpackagesyet.
+
+Native capture driver now parse-checks frozenQA beforelaunch. An earlier overview froze amid QAedit and ranwithoutdriver; ownedprocess terminated, failedlog/movie preserved. Only redundant root-created AVIs were removed after matching MP4 dimensions/framecounts and recordingbothhashes; recovered1.88GB. All encodedmedia/stills/sourcecopies/logs/saves retained. Historicaluseraudiofilesremainuntouched.
+
+---
+
 # Continuation checkpoint — 2026-09-10 17:53 UTC
 
 **Session active. New owner steering makes art and animation direction the immediate priority within the RPG.** See RPG-ART-DIRECTION.md and docs/art-direction/bellwether-direction.svg. Three timestamped priorities from independent473140e: discovery continuity109–119s, individual resident acting2–16/41–48s, arrival light/material hierarchy2–11s. No additional destinations. Figma unavailable. Future critic reviews must receive media/source/method before developer explanation.

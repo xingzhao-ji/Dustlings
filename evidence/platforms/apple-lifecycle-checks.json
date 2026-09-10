@@ -1,13 +1,14 @@
 {
-  "date": "2026-09-10T06:55:41.269Z",
+  "date": "2026-09-10T07:00:15.166Z",
   "engine": "Playwright WebKit on macOS; simulated390x844touch",
   "checks": [
     "Native interruption script preserves onboarding.",
     "Active game enters its existing pause dialog and writes a save.",
     "Repeated interruption preserves the existing settings dialog.",
     "A controlled completion-dialog fixture remains open without a second modal.",
-    "WebKit browser reload recovers the interrupted save."
+    "WebKit browser reload recovers the interrupted save.",
+    "Moving identical HTML to a different absolute file path retains the save in this WebKit browser context."
   ],
-  "passed": 5,
+  "passed": 6,
   "limitations": "Tests the exact injected JavaScript against frozen HTML. Does not execute UIKit/WKWebView, test native notifications, native import/export, native WebKit persistence, or a physical iPhone."
 }

@@ -1,10 +1,13 @@
 import {webkit} from '@playwright/test';
-import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,mkdtemp,copyFile,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 const source=await readFile(new URL('../platforms/apple/Dustlings/App.swift',import.meta.url),'utf8');
 const script=source.match(/let script = """\n([\s\S]*?)\n        """/)[1];
 const browser=await webkit.launch();
 const results=[];
+let relocatedDirectory;
 try{
   const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
   await page.goto(new URL('../platforms/apple/Dustlings/Resources/Courtyard.html?qa',import.meta.url).href);
@@ -34,7 +37,13 @@ try{
   assert.ok(await page.evaluate(()=>window.__dustlings.state.elapsed)>=2);
   assert.ok(saved);
   results.push('WebKit browser reload recovers the interrupted save.');
+  relocatedDirectory=await mkdtemp(`${tmpdir()}/dustlings-relocated-bundle-`);
+  await copyFile(new URL('../platforms/apple/Dustlings/Resources/Courtyard.html',import.meta.url),`${relocatedDirectory}/Courtyard.html`);
+  await page.goto(pathToFileURL(`${relocatedDirectory}/Courtyard.html`).href+'?qa');
+  await page.waitForFunction(()=>window.__dustlings);
+  assert.ok(await page.evaluate(()=>window.__dustlings.state.elapsed)>=2);
+  results.push('Moving identical HTML to a different absolute file path retains the save in this WebKit browser context.');
   await mkdir(new URL('../evidence/platforms/',import.meta.url),{recursive:true});
   await writeFile(new URL('../evidence/platforms/apple-lifecycle-checks.json',import.meta.url),JSON.stringify({date:new Date().toISOString(),engine:'Playwright WebKit on macOS; simulated390x844touch',checks:results,passed:results.length,limitations:'Tests the exact injected JavaScript against frozen HTML. Does not execute UIKit/WKWebView, test native notifications, native import/export, native WebKit persistence, or a physical iPhone.'},null,2)+'\n');
   console.log(JSON.stringify({passed:results.length,checks:results},null,2));
-}finally{await browser.close();}
+}finally{await browser.close();if(relocatedDirectory)await rm(relocatedDirectory,{recursive:true,force:true});}

@@ -18,10 +18,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 final class CourtyardViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKDownloadDelegate {
     private var webView: WKWebView!
     private var downloads: [ObjectIdentifier: URL] = [:]
+    private var pendingExports: [URL] = []
+    private let exportDirectory = FileManager.default.temporaryDirectory.appendingPathComponent("DustlingsExports", isDirectory: true)
     private let courtyardColor = UIColor(red: 233/255, green: 231/255, blue: 220/255, alpha: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // A new app launch has no active share sheets. Remove only this app's abandoned export staging files.
+        try? FileManager.default.removeItem(at: exportDirectory)
         view.backgroundColor = courtyardColor
         let configuration = WKWebViewConfiguration()
         // Default store persists across normal app launches. Never use the nonpersistent store.
@@ -45,6 +49,7 @@ final class CourtyardViewController: UIViewController, WKNavigationDelegate, WKU
             webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         NotificationCenter.default.addObserver(self, selector: #selector(interruptPlay), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(presentNextExport), name: UIApplication.didBecomeActiveNotification, object: nil)
         guard let url = Bundle.main.url(forResource: "Courtyard", withExtension: "html") else {
             showFailure("The courtyard could not be found in this build.")
             return
@@ -66,6 +71,11 @@ final class CourtyardViewController: UIViewController, WKNavigationDelegate, WKU
         })();
         """
         webView.evaluateJavaScript(script, completionHandler: nil)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presentNextExport()
     }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -90,7 +100,7 @@ final class CourtyardViewController: UIViewController, WKNavigationDelegate, WKU
 
     func download(_ download: WKDownload, decideDestinationUsing response: URLResponse, suggestedFilename: String, completionHandler: @escaping (URL?) -> Void) {
         do {
-            let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
+            let directory = exportDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
             let destination = directory.appendingPathComponent("dustlings-courtyard-save.json")
             downloads[ObjectIdentifier(download)] = destination
@@ -103,10 +113,23 @@ final class CourtyardViewController: UIViewController, WKNavigationDelegate, WKU
 
     func downloadDidFinish(_ download: WKDownload) {
         guard let url = downloads.removeValue(forKey: ObjectIdentifier(download)) else { return }
+        pendingExports.append(url)
+        presentNextExport()
+    }
+
+    @objc private func presentNextExport() {
+        // A download can finish after backgrounding or while a previous export is still being shared.
+        // Keep its file until a share sheet can actually be presented.
+        guard UIApplication.shared.applicationState == .active, presentedViewController == nil, !pendingExports.isEmpty else { return }
+        let url = pendingExports.removeFirst()
         let sheet = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         sheet.popoverPresentationController?.sourceView = webView
         sheet.popoverPresentationController?.sourceRect = CGRect(x: webView.bounds.midX, y: webView.bounds.midY, width: 1, height: 1)
-        sheet.completionWithItemsHandler = { _, _, _, _ in try? FileManager.default.removeItem(at: url.deletingLastPathComponent()) }
+        sheet.completionWithItemsHandler = { [weak self, weak sheet] _, _, _, _ in
+            try? FileManager.default.removeItem(at: url.deletingLastPathComponent())
+            if let sheet { sheet.dismiss(animated: true) { self?.presentNextExport() } }
+            else { self?.presentNextExport() }
+        }
         present(sheet, animated: true)
     }
 
@@ -116,6 +139,9 @@ final class CourtyardViewController: UIViewController, WKNavigationDelegate, WKU
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        // Cancellation is expected when a navigation is superseded; it is not a failed game launch.
+        let cocoaError = error as NSError
+        if cocoaError.domain == NSURLErrorDomain && cocoaError.code == NSURLErrorCancelled { return }
         showFailure("The courtyard could not open. Please close and reopen Dustlings.")
     }
 
@@ -126,7 +152,9 @@ final class CourtyardViewController: UIViewController, WKNavigationDelegate, WKU
 
     private func showFailure(_ message: String) {
         let alert = UIAlertController(title: "Dustlings", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak alert] _ in
+            alert?.dismiss(animated: true) { self?.presentNextExport() }
+        })
         present(alert, animated: true)
     }
 }

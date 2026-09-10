@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SCRIPT ERROR: Invalid assignment of property or key 'waypoints' with value of type 'Array' on a base object of type 'Node3D (rpg_main.gd)'.
+          at: shared_waypoint_probe (/Users/xingzhaoji/Desktop/Dustlings/godot/tests/rpg_companion_checks.gd:132)
+          GDScript backtrace (most recent call first):
+              [0] shared_waypoint_probe (/Users/xingzhaoji/Desktop/Dustlings/godot/tests/rpg_companion_checks.gd:132)
+              [1] run (/Users/xingzhaoji/Desktop/Dustlings/godot/tests/rpg_companion_checks.gd:100)
+              [2] frames (/Users/xingzhaoji/Desktop/Dustlings/godot/tests/rpg_companion_checks.gd:34)
+{"checks":1,"failures":0,"source_changed":false}

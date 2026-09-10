@@ -1,0 +1,36 @@
+{
+  "checks": [
+    {
+      "check": "Explicit four-companion fixture initialized without changing follower code",
+      "details": {},
+      "ok": true
+    }
+  ],
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "failures": [],
+  "kind": "Headless fixed-fps actual CharacterBody3D and generated walking fixture. Four-companion/door progress initialized once; no follower teleport, no native visual/human/performance claim.",
+  "source_at_end": {
+    "rpg_actor.gd": "ddec4eaedfa3eabfa8d0ddc584de9ee40904c566753830bf0c955a018a45fdb9",
+    "rpg_environment.gd": "d505a22c7c88dd2714a99bd79c65dfc1801669110e8014447e8f2cdf85164997",
+    "rpg_main.gd": "2a320e428f8f369a65ef17b37b6ae1ac0b6086925b912dd4420d3e82c7a31ebb",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  },
+  "source_at_start": {
+    "rpg_actor.gd": "ddec4eaedfa3eabfa8d0ddc584de9ee40904c566753830bf0c955a018a45fdb9",
+    "rpg_environment.gd": "d505a22c7c88dd2714a99bd79c65dfc1801669110e8014447e8f2cdf85164997",
+    "rpg_main.gd": "2a320e428f8f369a65ef17b37b6ae1ac0b6086925b912dd4420d3e82c7a31ebb",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  },
+  "source_changed": false,
+  "stages": []
+}

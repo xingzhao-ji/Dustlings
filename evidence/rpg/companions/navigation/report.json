@@ -1,0 +1,183 @@
+{
+  "checks": [
+    {
+      "check": "Explicit four-companion fixture initialized without changing follower code",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Navigation does not rebuild unchanged collision topology",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Unrepaired bridge blocks companion routing",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Closed ivy gate blocks companion routing",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Unsafe destination inside bed is refused",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Out-of-world navigation start is refused",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Opening bridge and ivy gate rebuilds topology once",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Route has continuously clear capsule segments: actual stalled OldLantern position",
+      "details": {
+        "path": "[(1.52, 0.0, 6.0), (0.559999, 0.0, 6.0), (-0.398337, 0.0, 5.541665)]"
+      },
+      "ok": true
+    },
+    {
+      "check": "Actual companion capsule traverses route without position warp: actual stalled OldLantern position",
+      "details": {
+        "gap": 0.0502432473003864,
+        "max_frame_step": 0.0500000454485416,
+        "position": "(-0.352535, 0.000837, 5.562317)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Route has continuously clear capsule segments: home doorway",
+      "details": {
+        "path": "[(-10.0, 0.0, 5.1)]"
+      },
+      "ok": true
+    },
+    {
+      "check": "Actual companion capsule traverses route without position warp: home doorway",
+      "details": {
+        "gap": 0.0547089576721191,
+        "max_frame_step": 0.0500072948634624,
+        "position": "(-10.0, 0.000843, 5.154709)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Route has continuously clear capsule segments: repaired bridge",
+      "details": {
+        "path": "[(0.0, 0.0, -7.0)]"
+      },
+      "ok": true
+    },
+    {
+      "check": "Actual companion capsule traverses route without position warp: repaired bridge",
+      "details": {
+        "gap": 0.0547103881835938,
+        "max_frame_step": 0.0527607575058937,
+        "position": "(0.0, 0.000843, -6.94529)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Route has continuously clear capsule segments: open greenhouse",
+      "details": {
+        "path": "[(12.0, 0.0, -11.7)]"
+      },
+      "ok": true
+    },
+    {
+      "check": "Actual companion capsule traverses route without position warp: open greenhouse",
+      "details": {
+        "gap": 0.0547094345092773,
+        "max_frame_step": 0.0500063337385654,
+        "position": "(12.0, 0.000831, -11.64529)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Fixture reaches every required observation stage",
+      "details": {},
+      "ok": true
+    }
+  ],
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "failures": [],
+  "kind": "Headless fixed-fps actual CharacterBody3D and generated walking fixture. Four-companion/door progress initialized once; no follower teleport, no native visual/human/performance claim.",
+  "source_at_end": {
+    "rpg_actor.gd": "ddec4eaedfa3eabfa8d0ddc584de9ee40904c566753830bf0c955a018a45fdb9",
+    "rpg_environment.gd": "d505a22c7c88dd2714a99bd79c65dfc1801669110e8014447e8f2cdf85164997",
+    "rpg_main.gd": "41ca8bcbca1fd304e39ac92494cfade5131a1039e9b91980e5b8aadaeb8ac2b7",
+    "rpg_navigation.gd": "6e651e471119f3bd117a595a7a5ad63320bd6b7eb234dff5056641a2b3d92056",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  },
+  "source_at_start": {
+    "rpg_actor.gd": "ddec4eaedfa3eabfa8d0ddc584de9ee40904c566753830bf0c955a018a45fdb9",
+    "rpg_environment.gd": "d505a22c7c88dd2714a99bd79c65dfc1801669110e8014447e8f2cdf85164997",
+    "rpg_main.gd": "41ca8bcbca1fd304e39ac92494cfade5131a1039e9b91980e5b8aadaeb8ac2b7",
+    "rpg_navigation.gd": "6e651e471119f3bd117a595a7a5ad63320bd6b7eb234dff5056641a2b3d92056",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  },
+  "source_changed": false,
+  "stages": [
+    {
+      "fixture": "Navigation geometry probe. Existing companion capsules placed at four explicit starts then moved only by move_and_slide along returned route. This is not integrated following/animation.",
+      "initial_build": {
+        "blocked": 2314,
+        "build_ms": 31.089,
+        "cells": 12091,
+        "generation": 1,
+        "obstacles": 79,
+        "signature": "5b0e0d0b82d401aa8a8ea52fc77ed3ced1e8c30a0faffe4168b041a09fae70f0"
+      },
+      "open_build": {
+        "blocked": 2255,
+        "build_ms": 30.446,
+        "cells": 12091,
+        "generation": 2,
+        "obstacles": 77,
+        "signature": "e78813507dc6a5124f1de4070ab8693f899822b43e236f37c5d40e9ce7c9ba6c"
+      },
+      "routes": [
+        {
+          "gap": 0.0502432473003864,
+          "max_frame_step": 0.0500000454485416,
+          "name": "actual stalled OldLantern position",
+          "path": "[(1.52, 0.0, 6.0), (0.559999, 0.0, 6.0), (-0.398337, 0.0, 5.541665)]"
+        },
+        {
+          "gap": 0.0547089576721191,
+          "max_frame_step": 0.0500072948634624,
+          "name": "home doorway",
+          "path": "[(-10.0, 0.0, 5.1)]"
+        },
+        {
+          "gap": 0.0547103881835938,
+          "max_frame_step": 0.0527607575058937,
+          "name": "repaired bridge",
+          "path": "[(0.0, 0.0, -7.0)]"
+        },
+        {
+          "gap": 0.0547094345092773,
+          "max_frame_step": 0.0500063337385654,
+          "name": "open greenhouse",
+          "path": "[(12.0, 0.0, -11.7)]"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+	"audio_driver": "Dummy",
+	"checks": [
+		"Actual bus is silent before Start",
+		"Start gate prevents music and cue creation",
+		"Actual synchronized score produces audio after Start",
+		"Score stem 0 loops",
+		"Score stem 1 loops",
+		"Score stem 2 loops",
+		"All synchronized stems have identical decoded duration",
+		"One synchronized playback owns the three exact-start score stems",
+		"Restoration layers fade gradually at the established rates",
+		"Changing score layers does not restart playback",
+		"Pause freezes brush, restoration and water envelopes",
+		"Actual bus is silent during world pause",
+		"Paused synchronized playback position remains fixed",
+		"Paused world rejects new positional effects",
+		"A deliberate UI cue remains audible in pause",
+		"Live volume change updates an existing UI cue immediately",
+		"A paused purchase keeps its distinct cue through the Grow panel rebuild",
+		"Muting cancels a playing UI tail and produces exact zero bus output",
+		"A real positional completion cue starts",
+		"Positional cue produces actual bus audio at the courtyard",
+		"Live volume change updates an existing 3-second world cue immediately",
+		"Effects mute stops existing world cues and exactly zeros the brush loop",
+		"Zero effects rejects future cues and preserves exact silent output",
+		"A simultaneous 50-helper birth burst creates only one cue",
+		"Repeated world events cannot exceed eight live voices",
+		"Repeated interface input cannot exceed three live UI voices",
+		"Actual positional samples pan toward their world source",
+		"A source beyond the 50-unit distance bound is inaudible",
+		"Focus loss freezes world audio and suppresses interface sounds",
+		"Focus return waits for explicit Return before resuming",
+		"Finished 3-second world/UI cues leave no tracked voices or playback nodes",
+		"Synchronized score crosses an actual loop boundary and wraps to its opening",
+		"Explicit shutdown releases all looping streams before engine exit"
+	],
+	"engine": "4.7.2-stable (official)",
+	"failures": [],
+	"kind": "Automated Godot audio-engine checks; not human listening",
+	"measurements": {
+		"loop_position_after_seek": 0.201519280672073,
+		"samples": {
+			"all_muted": {
+				"frames": 7168,
+				"left_energy": 0.0,
+				"peak": 0.0,
+				"right_energy": 0.0
+			},
+			"before_start": {
+				"frames": 8192,
+				"left_energy": 0.0,
+				"peak": 0.0,
+				"right_energy": 0.0
+			},
+			"distant": {
+				"frames": 8192,
+				"left_energy": 0.0,
+				"peak": 0.0,
+				"right_energy": 0.0
+			},
+			"left": {
+				"frames": 4096,
+				"left_energy": 4.34324329542362,
+				"peak": 0.0842580497264862,
+				"right_energy": 2.50552573209004
+			},
+			"muted": {
+				"frames": 8192,
+				"left_energy": 0.0,
+				"peak": 0.0,
+				"right_energy": 0.0
+			},
+			"paused": {
+				"frames": 8192,
+				"left_energy": 0.0,
+				"peak": 0.0,
+				"right_energy": 0.0
+			},
+			"paused_ui": {
+				"frames": 8192,
+				"left_energy": 0.104530351470934,
+				"peak": 0.00650654733181,
+				"right_energy": 0.104530351470934
+			},
+			"right": {
+				"frames": 8192,
+				"left_energy": 4.18388045527189,
+				"peak": 0.0842580497264862,
+				"right_energy": 7.25261389449905
+			},
+			"started": {
+				"frames": 8192,
+				"left_energy": 1.28301993154234,
+				"peak": 0.025403019040823,
+				"right_energy": 0.957217448232285
+			},
+			"unfocused": {
+				"frames": 8192,
+				"left_energy": 0.0,
+				"peak": 0.0,
+				"right_energy": 0.0
+			},
+			"world_cue": {
+				"frames": 8192,
+				"left_energy": 4.24794387870083,
+				"peak": 0.0571701861917973,
+				"right_energy": 4.24794387870083
+			}
+		},
+		"score_lengths_seconds": [
+			53.3333320617676,
+			53.3333320617676,
+			53.3333320617676
+		]
+	},
+	"recording": {
+		"kind": "Actual Godot audio-bus harness, deliberate technical transitions; not normal gameplay or a human audition",
+		"path": "/tmp/dustlings-3d-audio-checks-harness.wav"
+	}
+}

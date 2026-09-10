@@ -1,0 +1,31 @@
+{
+	"bloom": {
+		"alpha_bounds": "[P: (7, 13), S: (96, 61)]",
+		"image_size": "(110, 84)",
+		"transparent_corners": true
+	},
+	"brush": {
+		"alpha_bounds": "[P: (3, 31), S: (104, 45)]",
+		"image_size": "(110, 84)",
+		"transparent_corners": true
+	},
+	"checks": [
+		{
+			"hidden_clock_frozen": true,
+			"hidden_render_disabled": true
+		},
+		{
+			"configure_after_ready": true,
+			"gentle_clock_frozen": true,
+			"gentle_not_processing": true
+		}
+	],
+	"draw_calls_snapshot": 74.0,
+	"kind": "Actual native isolated 110x84 discovery previews; automated, no human test",
+	"render_primitives_snapshot": 43664.0,
+	"teamwork": {
+		"alpha_bounds": "[P: (3, 20), S: (104, 56)]",
+		"image_size": "(110, 84)",
+		"transparent_corners": true
+	}
+}

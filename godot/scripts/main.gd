@@ -4,12 +4,14 @@ const Sim = preload("res://scripts/simulation.gd")
 const EnvironmentScene = preload("res://scripts/courtyard_environment.gd")
 const CreatureVisual = preload("res://scripts/dustling_visual.gd")
 const Soundscape = preload("res://scripts/soundscape.gd")
+const Store = preload("res://scripts/save_store.gd")
+const DiscoveryPreview = preload("res://scripts/discovery_preview.gd")
 var sim = Sim.new()
 var environment_node: Node3D
 var camera: Camera3D
 var audio: Node3D
-var dust_mesh: MultiMeshInstance3D
-var dust_material: StandardMaterial3D
+var dust_image: Image
+var dust_texture: ImageTexture
 var brush_ring: MeshInstance3D
 var order_ring: MeshInstance3D
 var creature_nodes: Array = []
@@ -46,6 +48,10 @@ var modal_kind = ""
 var upgrade_buttons = {}
 var save_timer = 0.0
 var saved_once = false
+var save_store
+var instance_lock: TCPServer
+var instance_primary = true
+var exiting = false
 var save_problem = ""
 var settings = {"music": 0.6, "sfx": 0.8, "ambience": 0.55, "gentle": false, "tap": false, "quality": true}
 var notice_timer = 0.0
@@ -65,10 +71,12 @@ var qa_profile_frames: Array = []
 
 func _ready():
 	get_tree().auto_accept_quit = false
+	if get_window().has_signal("mouse_exited"): get_window().connect("mouse_exited", _stop_input)
 	qa = "--qa" in OS.get_cmdline_user_args()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--evidence="): qa_output = arg.trim_prefix("--evidence=")
 		if arg.begins_with("--qa-case="): qa_case = arg.trim_prefix("--qa-case=")
+	_acquire_instance()
 	_load_progress()
 	environment_node = EnvironmentScene.new()
 	add_child(environment_node)
@@ -130,35 +138,15 @@ func _place_camera(delta: float):
 	camera.look_at(camera_focus)
 
 func _make_dust():
-	dust_material = StandardMaterial3D.new()
-	dust_material.albedo_color = Color("9d9586")
-	dust_material.metallic_specular = 0.0
-	dust_material.roughness = 1.0
-	dust_material.vertex_color_use_as_albedo = true
-	var sphere = _dust_surface()
-	sphere.surface_set_material(0, dust_material)
-	dust_mesh = MultiMeshInstance3D.new()
-	dust_mesh.multimesh = MultiMesh.new()
-	dust_mesh.multimesh.transform_format = MultiMesh.TRANSFORM_3D
-	dust_mesh.multimesh.use_colors = true
-	dust_mesh.multimesh.mesh = sphere
-	dust_mesh.multimesh.instance_count = sim.dust.size()
-	dust_mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	add_child(dust_mesh)
-
-func _dust_surface() -> ArrayMesh:
-	var surface = SurfaceTool.new()
-	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
-	for i in range(18):
-		var a = i * TAU / 18
-		var b = (i + 1) * TAU / 18
-		var radius_a = 0.39 + sin(i * 4.7) * 0.035
-		var radius_b = 0.39 + sin((i + 1) * 4.7) * 0.035
-		surface.add_vertex(Vector3(0, 0.035, 0))
-		surface.add_vertex(Vector3(cos(a) * radius_a, 0, sin(a) * radius_a))
-		surface.add_vertex(Vector3(cos(b) * radius_b, 0, sin(b) * radius_b))
-	surface.generate_normals()
-	return surface.commit()
+	dust_image = Image.create(29, 18, false, Image.FORMAT_RF)
+	dust_image.fill(Color(0, 0, 0))
+	for d in sim.dust: dust_image.set_pixel(d.cell.x, d.cell.y, Color(d.amount, 0, 0))
+	dust_texture = ImageTexture.create_from_image(dust_image)
+	var material = ShaderMaterial.new()
+	material.shader = preload("res://shaders/courtyard_surface.gdshader")
+	material.set_shader_parameter("dust_field", dust_texture)
+	var ground = environment_node.get_node("Courtyard_ground")
+	ground.material_override = material
 
 func _ring(radius: float, color: Color) -> MeshInstance3D:
 	var mesh = TorusMesh.new()
@@ -188,7 +176,7 @@ func _physics_process(delta):
 	save_timer += delta
 	if save_timer >= 8:
 		save_timer = 0
-		_save_progress()
+		if not _save_progress(): _show_settings()
 
 func _process(delta):
 	_place_camera(delta)
@@ -206,15 +194,9 @@ func _process(delta):
 	if qa and qa_output != "": _qa_driver(delta)
 
 func _sync_world(delta: float):
-	for i in range(sim.dust.size()):
-		var d = sim.dust[i]
-		for k in range(1):
-			var amount = maxf(0, d.amount)
-			var a = d.seed * TAU + k * 2.09
-			var p = Vector3(d.p.x, 0.018, d.p.y)
-			var scale3 = Vector3(0.96 + d.seed * 0.12, 1.0, 0.96 + d.seed * 0.12) * sqrt(amount)
-			dust_mesh.multimesh.set_instance_transform(i, Transform3D(Basis.from_euler(Vector3(0, a, 0)).scaled(scale3), p))
-			dust_mesh.multimesh.set_instance_color(i, Color(0.91 + d.seed * 0.09, 0.91 + d.seed * 0.09, 0.91 + d.seed * 0.09))
+	for d in sim.dust:
+		dust_image.set_pixel(d.cell.x, d.cell.y, Color(d.amount, 0, 0))
+	dust_texture.update(dust_image)
 	while creature_nodes.size() < sim.crew.size():
 		var creature = CreatureVisual.new()
 		add_child(creature)
@@ -244,6 +226,9 @@ func _sync_world(delta: float):
 			spark.node.scale = Vector3.ONE * minf(1.0, spark.life * 2.5)
 
 func _update_cursor():
+	cursor_valid = false
+	var hovered = get_viewport().gui_get_hovered_control()
+	if is_instance_valid(hovered) and hovered.is_visible_in_tree() and hovered.mouse_filter != Control.MOUSE_FILTER_IGNORE: return
 	var screen = keyboard_pointer if keyboard_aim else get_viewport().get_mouse_position()
 	if qa_driving_pointer: screen = qa_pointer
 	var origin = camera.project_ray_origin(screen)
@@ -309,6 +294,7 @@ func _unhandled_input(event):
 					keyboard_pointer = (keyboard_pointer + direction).clamp(Vector2(10, 72), get_viewport().get_visible_rect().size - Vector2(10, 100))
 
 func _input(event):
+	if event is InputEventMouseButton and event.button_index in [MOUSE_BUTTON_MIDDLE, MOUSE_BUTTON_RIGHT] and not event.pressed: dragging_camera = false
 	# Release a held stroke even when its ending lands on UI.
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and not tap_sweep: brushing = false
 	if event is InputEventKey and event.keycode == KEY_SPACE and not event.pressed: brush_keyboard_held = false
@@ -355,7 +341,9 @@ func _handle_events():
 				_burst(where)
 				if event.first: _notice("That dust became a Dustling. It will help you clean.", 7)
 				elif sim.crew.size() == 4: _notice("A little crew. Try Direct, then choose a dusty patch.", 7)
-			"upgrade": _notice("New ability discovered.")
+			"upgrade":
+				var confirmations = {"brush": "A softer sweep · wider, quicker brushing", "teamwork": "Better together · paired, quicker helpers", "bloom": "Fountain chorus · clear 75%, then ring the bell"}
+				_notice(confirmations[event.id], 7)
 			"chorus": _notice("The fountain chorus…", 8)
 			"restored": _notice("Water, at last. Your crew will find the last specks.", 8)
 			"complete": _save_progress(); _show_completion()
@@ -412,7 +400,20 @@ func _button(text: String, action: Callable, width = 100) -> Button:
 	focus.set_border_width_all(2)
 	button.add_theme_stylebox_override("focus", focus)
 	button.pressed.connect(action)
+	button.mouse_entered.connect(func(): _button_motion(button, 1.018))
+	button.mouse_exited.connect(func(): _button_motion(button, 1.0))
+	button.button_down.connect(func(): _button_motion(button, 0.975))
+	button.button_up.connect(func(): _button_motion(button, 1.0))
 	return button
+
+func _button_motion(button: Button, target: float):
+	if gentle_motion or button.disabled: return
+	button.pivot_offset = button.size * 0.5
+	var previous = button.get_meta("response_tween") if button.has_meta("response_tween") else null
+	if previous and previous.is_valid(): previous.kill()
+	var tween = button.create_tween()
+	tween.tween_property(button, "scale", Vector2.ONE * target, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	button.set_meta("response_tween", tween)
 
 func _label(text: String, size = 17) -> Label:
 	var label = Label.new()
@@ -480,7 +481,7 @@ func _build_ui():
 
 func _modal(title: String, kind: String, width = 450) -> VBoxContainer:
 	_stop_input()
-	if is_instance_valid(modal): modal.queue_free()
+	if is_instance_valid(modal): modal.hide(); modal.queue_free()
 	modal_kind = kind
 	paused = true
 	if audio: audio.set_paused(true)
@@ -517,12 +518,15 @@ func _show_welcome():
 	_body(column, "Brush the dust. Meet the little lives inside it.\nBring an old courtyard back to life.")
 	_body(column, "Hold & sweep to brush · D to direct\nScroll to look closer · Right-drag to frame")
 	_body(column, "3D courtyard — work in progress")
-	if not save_problem.is_empty(): _body(column, save_problem)
+	if not instance_primary: _body(column, "Progress is already in use, or its local lock is unavailable. Close the other copy and reopen this one.")
+	elif not save_problem.is_empty(): _body(column, save_problem)
 	var start = _button("Return to the courtyard" if saved_once else "Bring it to life", _start, 390)
 	column.add_child(start)
+	start.disabled = not instance_primary
 	start.grab_focus()
 
 func _start():
+	if not instance_primary: return
 	started = true
 	_close_modal()
 	audio.start_soundscape()
@@ -530,7 +534,7 @@ func _start():
 
 func _close_modal():
 	if modal_kind == "welcome" and not started: return
-	if is_instance_valid(modal): modal.queue_free()
+	if is_instance_valid(modal): modal.hide(); modal.queue_free()
 	modal_kind = ""
 	paused = false
 	_stop_input()
@@ -545,16 +549,27 @@ func _show_grow():
 	var titles = {"brush": "A softer sweep", "teamwork": "Better together", "bloom": "The fountain chorus"}
 	var details = {"brush": "Wider strokes · more dust with each sweep", "teamwork": "Side-by-side helpers · faster cleaning", "bloom": "Gather and sing · awaken the fountain"}
 	for id in ["brush", "teamwork", "bloom"]:
-		var row = VBoxContainer.new()
-		row.add_theme_constant_override("separation", 5)
+		var row = HBoxContainer.new()
+		row.add_theme_constant_override("separation", 12)
 		column.add_child(row)
-		var button = _button(titles[id] + ("  ·  Discovered" if sim.upgrades[id] else "  ·  %d motes" % Sim.COSTS[id]), func(): _buy(id), 430)
+		var preview = DiscoveryPreview.new()
+		preview.configure(id, gentle_motion)
+		row.add_child(preview)
+		var information = VBoxContainer.new()
+		information.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		information.add_theme_constant_override("separation", 5)
+		row.add_child(information)
+		var label = titles[id] + (" · Found" if sim.upgrades[id] else " · %d motes" % Sim.COSTS[id])
+		var button = _button(label, func(): _buy(id), 305)
 		button.disabled = sim.upgrades[id] or sim.motes < Sim.COSTS[id] or (id == "bloom" and not (sim.upgrades.brush and sim.upgrades.teamwork))
-		row.add_child(button)
-		row.add_child(_label(details[id], 15))
+		information.add_child(button)
+		var effect = _label(details[id], 15)
+		effect.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		effect.custom_minimum_size.x = 305
+		information.add_child(effect)
 		upgrade_buttons[id] = button
 	column.add_child(_button("Back to the courtyard", _close_modal, 430))
-	column.get_child(1).get_child(0).grab_focus()
+	column.get_child(column.get_child_count() - 1).grab_focus()
 	audio.ui()
 
 func _buy(id: String):
@@ -621,7 +636,7 @@ func _restore():
 
 func _update_ui():
 	if not counts: return
-	counts.text = "%d helpers   ·   %d motes   ·   %d%% clear" % [sim.crew.size(), sim.motes, floori(sim.ratio() * 100)]
+	counts.text = "%d %s   ·   %d motes   ·   %d%% clear" % [sim.crew.size(), "helper" if sim.crew.size() == 1 else "helpers", sim.motes, floori(sim.ratio() * 100)]
 	brush_button.modulate = Color("c9ddcb") if mode == "brush" else Color.WHITE
 	direct_button.modulate = Color("c9ddcb") if mode == "direct" else Color.WHITE
 	grow_button.text = "Grow  U" if sim.motes < 32 or (sim.upgrades.brush and sim.upgrades.teamwork and sim.upgrades.bloom) else "Grow  •"
@@ -647,57 +662,37 @@ func _apply_settings():
 	if audio: audio.set_mix(settings.music, settings.sfx, settings.ambience)
 
 func _save_path() -> String:
-	return "user://qa-save.json" if qa else "user://courtyard.json"
+	return OS.get_cache_dir().path_join("dustlings-qa-%d.json" % OS.get_process_id()) if qa else "user://courtyard.json"
 
 func _payload() -> Dictionary:
 	return {"game": sim.serialise(), "settings": settings.duplicate()}
 
+func _acquire_instance():
+	if qa: return
+	instance_lock = TCPServer.new()
+	var port = 49166 + abs(OS.get_user_data_dir().hash()) % 6000
+	instance_primary = instance_lock.listen(port, "127.0.0.1") == OK
+
 func _save_progress() -> bool:
 	if not started: return true
-	var target = _save_path()
-	var file = FileAccess.open(target + ".new", FileAccess.WRITE)
-	if not file:
-		save_problem = "Could not save. Keep this window open and save a copy."
-		return false
-	file.store_string(JSON.stringify(_payload()))
-	file.flush()
-	var error = file.get_error()
-	file.close()
-	if error != OK:
-		save_problem = "Save interrupted. Keep this window open and save a copy."
-		return false
-	# Verify written content before rotating the last known valid primary.
-	var candidate = JSON.parse_string(FileAccess.get_file_as_string(target + ".new"))
-	var probe = Sim.new()
-	if not candidate is Dictionary or not probe.restore(candidate.get("game")):
-		save_problem = "Save verification failed. Keep this window open."
-		return false
-	if FileAccess.file_exists(target):
-		var prior = JSON.parse_string(FileAccess.get_file_as_string(target))
-		var check = Sim.new()
-		if prior is Dictionary and check.restore(prior.get("game")):
-			if DirAccess.copy_absolute(target, target + ".backup") != OK:
-				save_problem = "Backup could not be written. Save a copy before closing."
-				return false
-	if DirAccess.rename_absolute(target + ".new", target) != OK:
-		save_problem = "Save could not be replaced. Save a copy before closing."
-		return false
-	saved_once = true
-	save_problem = ""
-	return true
+	if not instance_primary: return false
+	var result = save_store.save_progress(_payload())
+	save_problem = result.message
+	if result.ok: saved_once = true
+	return result.ok
 
 func _load_progress():
-	if qa: return
-	for suffix in ["", ".new", ".backup"]:
-		var file = _save_path() + suffix
-		if not FileAccess.file_exists(file): continue
-		var data = JSON.parse_string(FileAccess.get_file_as_string(file))
-		if data is Dictionary and sim.restore(data.get("game")):
-			_load_settings(data.get("settings", {}))
-			saved_once = true
-			if suffix != "": save_problem = "Recovered your previous safe checkpoint."
-			return
-	if FileAccess.file_exists(_save_path()): save_problem = "The saved file could not be read. Your original file is preserved."
+	save_store = Store.new(_save_path())
+	if qa:
+		# QA never loads ordinary user progress; its isolated path has its own revision.
+		save_store.load_progress()
+		return
+	var result = save_store.load_progress()
+	save_problem = result.message
+	if result.ok:
+		sim.restore(result.payload.game)
+		_load_settings(result.payload.get("settings", {}))
+		saved_once = true
 
 func _load_settings(data: Variant):
 	if not data is Dictionary: return
@@ -715,8 +710,7 @@ func _export_save():
 	dialog.add_filter("*.json", "Dustlings save")
 	add_child(dialog)
 	dialog.file_selected.connect(func(file):
-		var out = FileAccess.open(file, FileAccess.WRITE)
-		if out: out.store_string(JSON.stringify(_payload())); out.close(); _notice("A copy is saved.")
+		if save_store.export_copy(file, _payload()): _notice("A copy is saved.")
 		else: _notice("The copy could not be saved. Try another folder.")
 		dialog.queue_free())
 	dialog.canceled.connect(dialog.queue_free)
@@ -730,7 +724,7 @@ func _import_save():
 	dialog.add_filter("*.json", "Dustlings save")
 	add_child(dialog)
 	dialog.file_selected.connect(func(file):
-		var data = JSON.parse_string(FileAccess.get_file_as_string(file))
+		var data = save_store.read_copy(file)
 		var candidate = Sim.new()
 		if data is Dictionary and candidate.restore(data.get("game")):
 			sim = candidate
@@ -747,10 +741,19 @@ func _import_save():
 	dialog.canceled.connect(dialog.queue_free)
 	dialog.popup_centered_ratio(0.7)
 
+func _quit_safely(code = 0):
+	if exiting: return
+	exiting = true
+	paused = true
+	_stop_input()
+	if audio: await audio.shutdown()
+	if instance_lock: instance_lock.stop()
+	get_tree().quit(code)
+
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		_stop_input()
-		if _save_progress(): get_tree().quit()
+		if _save_progress(): _quit_safely()
 		else: _show_settings()
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
 		_stop_input()
@@ -789,7 +792,7 @@ func _qa_finish():
 	file.store_string(JSON.stringify(qa_report, "  "))
 	file.close()
 	print(JSON.stringify(qa_report))
-	get_tree().quit(1 if qa_report.status == "failed" else 0)
+	_quit_safely(1 if qa_report.status == "failed" else 0)
 
 func _qa_mouse(point: Vector2, pressed: Variant = null):
 	qa_pointer = point
@@ -816,7 +819,7 @@ func _qa_click(text: String) -> bool:
 	return false
 
 func _qa_driver(delta):
-	if qa_capturing: return
+	if qa_capturing or exiting: return
 	qa_time += delta
 	if qa_case == "opening":
 		if qa_stage == 0 and qa_time >= 1:

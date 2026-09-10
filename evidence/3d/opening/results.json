@@ -1,0 +1,32 @@
+{
+  "case": "opening",
+  "cleaned": 37.167537483968,
+  "completed": false,
+  "crew_directed": true,
+  "draw_calls": 68.0,
+  "elapsed": 55.9999999999981,
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "first_helper_at": 10.2500000000001,
+  "first_view": 1,
+  "helpers": 5,
+  "input_kind": "Generated native Godot InputEvents through visible buttons and surface raycast; no progress fixture or accelerated simulation in this opening.",
+  "kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.",
+  "motes": 5,
+  "objects": 282.0,
+  "opening_crew": 5,
+  "opening_motes": 36,
+  "restoration": 0.0,
+  "status": "recorded",
+  "upgrade_bought": true,
+  "viewport": "(1440.0, 900.0)"
+}

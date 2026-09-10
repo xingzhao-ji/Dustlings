@@ -2,7 +2,7 @@
 
 Status: one candidate ready for integration, awaiting final integrated visual review and human validation. No target-player or owner acceptance is recorded. This is courtyard feedback only; it changes no cleaning amount, reachable surface, collision, progression or creature design.
 
-The concrete problem came from the independent development critic: untouched brown paving could look like clean stone, and brushing could read as polishing. The smallest proposed correction adds irregular, very low powder drifts and thin bent fibres on existing paver faces, then lets the same live dust field remove them. Short brushing wisps occur only when actual dust is removed. The benefit is a clearer dirty → clean transformation and a small tactile response. Whether the new marks read as dust remains an aesthetic hypothesis; no preference or enjoyment score is claimed.
+The concrete problem came from the independent AI critic, separate from the development team: untouched brown paving could look like clean stone, and brushing could read as polishing. The smallest proposed correction adds irregular, very low powder drifts and thin bent fibres on existing paver faces, then lets the same live dust field remove them. Short brushing wisps occur only when actual dust is removed. The benefit is a clearer dirty → clean transformation and a small tactile response. Whether the new marks read as dust remains an aesthetic hypothesis; no preference or enjoyment score is claimed.
 
 ## Integration contract
 

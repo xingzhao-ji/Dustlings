@@ -2,7 +2,7 @@
 
 Recorded 2026-09-10. This direction follows the owner’s latest instruction: **a standalone Windows game for Steam first, Mac validation throughout, iOS ports later; the village occupies most of the screen, with a small HUD and information/upgrades on demand.** Sky: Children of the Light is now the primary presentation reference. Earlier named games remain references for particular strengths; they do not override this direction.
 
-Dustlings remains an original single-player restoration game: dust becomes a grounded, expressive workforce in one miniature village. The active milestone is the courtyard. This direction adds no zones, multiplayer, flight, monetization systems or 3D engine rewrite. It supplies bounded presentation hypotheses, not human approval. Human sessions remain zero, and player experience, presentation quality and owner acceptance remain separate open gates.
+Dustlings remains an original single-player restoration game: dust becomes a grounded, expressive workforce in one miniature village. The active milestone is the courtyard. This direction adds no zones, multiplayer, flight, monetization systems or changes to the three-zone scope. The owner subsequently required the active real3D Godot migration. It supplies bounded presentation hypotheses, not human approval. Human sessions remain zero, and player experience, presentation quality and owner acceptance remain separate open gates.
 
 ## What was actually studied
 
@@ -24,7 +24,15 @@ The following choices are our hypotheses for this game, not prescriptions from S
 
 Do not import Sky screenshots, characters, silhouettes, music, logos or other assets into Dustlings. The cited images remain reference links only. Figma is unavailable; actual playable UI and captured gameplay remain the inspectable design fallback.
 
-## Ordered gaps and bounded checks
+## Active real3D comparison — 2026-09-10
+
+The older comparison below is historical2D evidence. Active source is Godot0.4.0-dev. The independent critic has reviewed actual native movies in evidence/3d/surface-and-spacing, closer-camera, compact-framing and current-chorus, preserving hashes and chronology in docs/CRITIQUE-3D-0.4.md.
+
+The intended Sky-derived qualities remain environmental hierarchy, warm focal companions, stable readable space and emotionally continuous transformations. Current native depth/contact shadows establish tangible forms, but no benchmark-level quality is claimed. The1.12 default camera and split header preserve the rear roof while bringing work closer. Crew spacing preserves distinct bodies. The critic still finds weak dust identity and a long visually similar ritual tail; low grounded powder/actual brush wisps and an18-second active chorus are focused candidates awaiting updated review. Completion now remains in the world with an optional recap, avoiding an immediate pause of its celebration audio.
+
+Further material gaps are individual work/expression legibility, water-flow visibility and whether the restrained palette and original motif feel appealing rather than generic. Compare current source-bound captures at normal size and in motion; do not infer those judgments from code or performance. Human listening, representative-player observation and owner acceptance remain absent.
+
+## Historical2D ordered gaps and bounded checks
 
 This comparison uses the **courtyard0.2 native baseline**, game SHA-256 `cb4b9d7bc6174a96bd203a22f9a8a5a766f3fa0eca10475e80c8e4d681f5feea`: [before](../evidence/platforms/desktop-before.png), [first helper](../evidence/platforms/desktop-after-brushing.png), [restored](../evidence/platforms/desktop-restored.png), and [capture conditions](../evidence/platforms/desktop-checks.json). Those images do not depict the newer UI work underway. The earlier read-only audit also inspected the same game at 1280×796 CSS pixels, DPR1. A fresh comparison is required after integration.
 

@@ -1,0 +1,55 @@
+{
+  "checks": [
+    "Prepared courtyard starts the chorus",
+    "Chorus clock waits while newborn crew has not gathered",
+    "Active new chorus reaches half restoration without finishing",
+    "New version1 save records the18-second duration",
+    "Repeated interruption checkpoint restores",
+    "Repeated interruption checkpoint restores",
+    "Repeated interruption checkpoint restores",
+    "Repeated interruption checkpoint restores",
+    "Repeated interruption checkpoint restores",
+    "Repeated interruptions do not accumulate progress or timing drift",
+    "Legacy38-second partial save retains its visible fraction",
+    "Legacy partial save resumes incrementally without jumping to completion",
+    "Legacy38-second partial save retains its visible fraction",
+    "Legacy partial save resumes incrementally without jumping to completion",
+    "Legacy38-second partial save retains its visible fraction",
+    "Legacy partial save resumes incrementally without jumping to completion",
+    "Restarting an inactive partial chorus retains restored progress",
+    "New chorus completes after exactly18 active seconds",
+    "Completed current save remains completed",
+    "Completed legacy save stays complete under the new duration",
+    "Returning to a completed legacy courtyard does not replay completion events",
+    "Invalid duration metadata is rejected",
+    "Invalid duration metadata is rejected",
+    "Invalid duration metadata is rejected",
+    "Invalid duration metadata is rejected",
+    "Rejected duration metadata leaves current progress unchanged"
+  ],
+  "completed_at": 124.799999999999,
+  "duration": 18.0,
+  "failures": [
+    "Current partial save restores the exact progress and clock"
+  ],
+  "first_progress_at": 106.8,
+  "kind": "Deterministic new/legacy/interrupted chorus fixtures; no human timing or enjoyment evidence",
+  "legacy": [
+    {
+      "after_one_tick": 0.255555555555556,
+      "new_duration": 18.0,
+      "saved_fraction": 0.25
+    },
+    {
+      "after_one_tick": 0.505555555555556,
+      "new_duration": 18.0,
+      "saved_fraction": 0.5
+    },
+    {
+      "after_one_tick": 0.905555555555556,
+      "new_duration": 18.0,
+      "saved_fraction": 0.9
+    }
+  ],
+  "source_sha256": "9641be6f7e4e09abca865304ea376433083c252faec5422e3eed573291852f05"
+}

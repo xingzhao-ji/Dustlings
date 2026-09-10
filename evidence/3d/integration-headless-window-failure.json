@@ -1,0 +1,24 @@
+{
+  "brushed": 3.39999999999999,
+  "checks": [
+    "Welcome has no game progression or audio playback",
+    "Releasing a stroke over interface stops cleaning",
+    "Visible fountain blocks brushing through to the ground",
+    "Pause stops held input, progression and the soundscape",
+    "Returning does not resume a stale held stroke",
+    "Direct mode does not invent helpers or clean before a crew exists",
+    "Changing camera zoom cancels the old brush target",
+    "Keyboard dust finding selects an aimable visible target",
+    "Focus loss preserves and pauses the courtyard",
+    "Integrated current state passes verified native save"
+  ],
+  "failures": [
+    "Native pointer event brushes the visible raycast ground surface",
+    "Raycast and visible target agree spatially",
+    "Brushing produces helpers and upgrade currency through real raycast input",
+    "Purchase changes the visible brush capability",
+    "Crew direction uses the visible destination surface"
+  ],
+  "helpers": 0,
+  "kind": "Headless Godot integration: generated local viewport input, actual3D physics raycasts, accelerated test steps. Not human timing, native physical input or presentation evidence."
+}

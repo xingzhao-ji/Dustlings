@@ -1,3 +1,21 @@
+# Active quality gaps — 3D courtyard, 2026-09-10 09:05 UTC
+
+Human sessions0; all human and owner gates pending. Keep one courtyard and50 helpers. Improvements below are hypotheses unless observed checks are identified.
+
+1. **Current integration evidence:** finish native current opening/18-second chorus/optional recap/50-helper profile; inspect motion and sound with humans. Freeze and export current Mac/Windows, verify actual packaged save/relaunch/two-process guard, populate source-bound review hub. Earlier packages are historical to corrections.
+2. **Dust identity and first contribution:** critic saw brown paving/polishing despite improved continuous erasure. Grounded irregular powder and removal-driven wisps are integrated for fresh review; no human explanation/appeal evidence yet. Watch the first helper form and actually contribute without relying on the caption.
+3. **Restoration rhythm:** critic observed similar ring composition from water at~15s to former completion~49s. Active chorus shortened38→18s; old partial save fractions preserved (28 assertions); automatic recap pause removed. Verify uninterrupted celebration/audio and whether the shorter reveal is rewarding, not abrupt.
+4. **Creature and water clarity:**5/50 body spacing corrected; exact work routes pass. Individual cleaning expression and water streams remain small in critic review. Evaluate normal-size current footage before another focused correction. Do not increase population.
+5. **Comfort and accessible controls:** small-window text shrank in actual960 capture; adaptive UI scale now preserves readable controls and raycast opening passes. Hidden gameplay controls behind menus, focus, resizes, keyboard aim, gesture release and busy-scene legibility need current integrated checks. Touch ports are later.
+6. **Audio/aesthetic human review:** actual native PCM checks and CoreAudio exits pass; nobody has yet auditioned current loops, restoration transitions and the crowded scene as a player. Review music identity, fatigue, spatial balance, quiet moments, warmth and coherence. Automated audio samples cannot pass this gate.
+7. **Release and human gates:** run packaged Windows on physical hardware, Mac mouse/trackpad and sustained performance,12–20 unfamiliar target players by segment with actual n/N/reasons, then current-build owner review. Steam readiness/signing/notarization remain separate; no upload or sales claim.
+
+Current technical strengths to preserve: real depth and grounded shadows, stable1.12 framing/overview control, continuous surface reveal, distinct travelling bodies, meaningful visual discoveries, verified staged/backup save recovery and paused input cancellation. See docs/CONTINUATION.md for exact active ownership and action.
+
+---
+
+## Historical backlog and earlier3D ledger
+
 # Active 3D quality gaps
 
 Current milestone: **real3D courtyard integration, awaiting human validation**. The owner’s3D requirement supersedes the2D rendering approach. Historical0.3 remains a mechanics/reliability reference, not the current deliverable. Human sessions0; player/presentation/owner gates all pending. No additional zones are eligible.

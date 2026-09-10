@@ -1,3 +1,9 @@
+# Active development — Godot3D courtyard
+
+Use [CONTINUATION.md](CONTINUATION.md) for the exact current task and [README](../README.md) / [3D-BUILD.md](3D-BUILD.md) for native commands. The review hub is [evidence/3d/REVIEW.html](../evidence/3d/REVIEW.html). Earlier Canvas/Electron commands and “current” labels below belong to historical work; they are not the active3D deliverable.
+
+## Historical development ledger
+
 # Current continuation pointer
 
 Owner direction now requires fullyreal3D and an immersive close, stable elevatedcamera. ActiveGodot4.7.2 source is in godot/. HistoricalCanvas2D0.3 cannot meet this requirement; preservedmechanics/nativehostchecks are references. Root islead; environment/character/buildspecialists haveboundedownership and the independentcritic ownsitsownverdict. See CONTINUATION.md and BACKLOG.md for exactactions. Human sessions0; noqualitygatepassed.

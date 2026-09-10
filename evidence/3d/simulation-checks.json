@@ -1,7 +1,7 @@
 {
   "checks": [
     "Compact courtyard contains a reachable dust field",
-    "All dust / paired offsets / four approach corners reach actual cleaning range",
+    "All actual solo/paired work seats and four approach corners reach cleaning range",
     "40% brush-duty fixture forms first helper within the 30-second hypothesis",
     "Controlled fixture reaches meaningful upgrade under five minutes",
     "Normal simulation step completes all dust and fountain with 50 helpers",
@@ -11,6 +11,7 @@
     "Chorus requires both earlier capabilities",
     "Blocked/no-crew orders and premature restoration are rejected"
   ],
+  "chorus_duration": 18.0,
   "dust_count": 492,
   "engine": {
     "build": "official",
@@ -28,9 +29,11 @@
   "kind": "Deterministic automated3D simulation fixtures; no human pacing or enjoyment evidence.",
   "pacing": {
     "brush_duty": 0.4,
-    "completed_at": 586.500000000014,
+    "completed_at": 561.100000000037,
     "first_helper": 20.2500000000002,
     "first_upgrade": 86.2999999999972
   },
-  "route_count": 5904
+  "route_count": 5904,
+  "route_method": "Actual _work_position for solo and both paired seats, including boundary/fountain projection",
+  "source_sha256": "e45ca206c174eb04843356499f00f3a9989f964d6b7daab4be807878a302b943"
 }

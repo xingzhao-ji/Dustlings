@@ -6,12 +6,14 @@ const CreatureVisual = preload("res://scripts/dustling_visual.gd")
 const Soundscape = preload("res://scripts/soundscape.gd")
 const Store = preload("res://scripts/save_store.gd")
 const DiscoveryPreview = preload("res://scripts/discovery_preview.gd")
+const DustFeedback = preload("res://scripts/dust_feedback.gd")
 var sim = Sim.new()
 var environment_node: Node3D
 var camera: Camera3D
 var audio: Node3D
 var dust_image: Image
 var dust_texture: ImageTexture
+var dust_feedback: Node3D
 var brush_ring: MeshInstance3D
 var order_ring: MeshInstance3D
 var creature_nodes: Array = []
@@ -35,6 +37,7 @@ var keyboard_pointer = Vector2.ZERO
 var keyboard_aim = false
 var brush_keyboard_held = false
 var hud: CanvasLayer
+var ordinary_controls: Array = []
 var top: HBoxContainer
 var counts: Label
 var tip: Label
@@ -58,6 +61,7 @@ var notice_timer = 0.0
 var ui_timer = 0.0
 var frame_times: Array = []
 var qa = false
+var qa_profile = ""
 var qa_time = 0.0
 var qa_stage = 0
 var qa_output = ""
@@ -72,11 +76,17 @@ var qa_profile_previous = 0
 
 func _ready():
 	get_tree().auto_accept_quit = false
+	get_window().size_changed.connect(_fit_screen)
+	_fit_screen()
 	if get_window().has_signal("mouse_exited"): get_window().connect("mouse_exited", _stop_input)
 	qa = "--qa" in OS.get_cmdline_user_args()
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--evidence="): qa_output = arg.trim_prefix("--evidence=")
 		if arg.begins_with("--qa-case="): qa_case = arg.trim_prefix("--qa-case=")
+		if qa and arg.begins_with("--qa-profile="):
+			var token = arg.trim_prefix("--qa-profile=")
+			if token.is_valid_identifier() and token.length() <= 48: qa_profile = token
+			else: push_error("Invalid isolated QA profile token"); get_tree().quit(1); return
 		if qa and arg.begins_with("--qa-zoom="): zoom = clampf(float(arg.trim_prefix("--qa-zoom=")), 0.85, 1.8); desired_zoom = zoom
 	_acquire_instance()
 	_load_progress()
@@ -93,6 +103,9 @@ func _ready():
 	audio = Soundscape.new()
 	add_child(audio)
 	_make_dust()
+	dust_feedback = DustFeedback.new()
+	dust_feedback.configure(dust_texture, sim.dust)
+	add_child(dust_feedback)
 	brush_ring = _ring(0.88, Color("f2dcb0"))
 	order_ring = _ring(0.58, Color("5c9e9b"))
 	add_child(brush_ring)
@@ -102,6 +115,17 @@ func _ready():
 	_show_welcome()
 	_apply_settings()
 	_sync_world(0.0)
+
+func _fit_screen():
+	# Preserve readable controls in a smaller desktop window; the 3D camera keeps
+	# its field of view while the UI uses fewer virtual pixels.
+	# The headless backend reports a64px dummy window, not a player screen.
+	if DisplayServer.get_name() == "headless": return
+	var factor = maxf(1.0, 1280.0 / maxf(1.0, get_window().size.x))
+	if not is_equal_approx(get_window().content_scale_factor, factor):
+		get_window().content_scale_factor = factor
+		_stop_input()
+		if is_instance_valid(modal): call_deferred("_fit_modal")
 
 func _setup_light():
 	var world = WorldEnvironment.new()
@@ -173,7 +197,9 @@ func _physics_process(delta):
 	if tap_remaining > 0:
 		tap_remaining = maxf(0, tap_remaining - delta)
 		brushing = tap_remaining > 0
+	var previous_brushed = sim.stats.brushed
 	sim.tick(delta, (brushing or brush_keyboard_held) and cursor_valid and mode == "brush", Vector2(cursor_world.x, cursor_world.z))
+	dust_feedback.tick(delta, sim.elapsed, sim.stats.brushed - previous_brushed, cursor_world, gentle_motion)
 	_handle_events()
 	save_timer += delta
 	if save_timer >= 8:
@@ -487,11 +513,15 @@ func _build_ui():
 	restore_button.offset_top = 132
 	restore_button.offset_bottom = 182
 	hud.add_child(restore_button)
+	ordinary_controls = [top, dock, tip, save_label, restore_button]
 
 func _modal(title: String, kind: String, width = 450) -> VBoxContainer:
 	_stop_input()
+	brush_ring.visible = false
+	order_ring.visible = false
 	if is_instance_valid(modal): modal.hide(); modal.queue_free()
 	modal_kind = kind
+	for control in ordinary_controls: control.hide()
 	paused = true
 	if audio: audio.set_paused(true)
 	modal = PanelContainer.new()
@@ -545,10 +575,12 @@ func _close_modal():
 	if modal_kind == "welcome" and not started: return
 	if is_instance_valid(modal): modal.hide(); modal.queue_free()
 	modal_kind = ""
+	for control in ordinary_controls: control.show()
 	paused = false
 	_stop_input()
 	if audio: audio.set_paused(false); audio.ui()
 	if brush_button: brush_button.grab_focus()
+	_update_ui()
 	_save_progress()
 
 func _show_grow():
@@ -591,6 +623,7 @@ func _show_settings():
 	if not started: return
 	_save_progress()
 	var column = _modal("A quiet moment", "settings", 480)
+	if not save_problem.is_empty(): _body(column, save_problem)
 	for key in ["music", "sfx", "ambience"]:
 		var row = HBoxContainer.new()
 		row.add_theme_constant_override("separation", 18)
@@ -696,15 +729,17 @@ func _apply_settings():
 	if audio: audio.set_mix(settings.music, settings.sfx, settings.ambience)
 
 func _save_path() -> String:
-	return OS.get_cache_dir().path_join("dustlings-qa-%d.json" % OS.get_process_id()) if qa else "user://courtyard.json"
+	if qa: return OS.get_cache_dir().path_join("dustlings-qa-%s.json" % (qa_profile if not qa_profile.is_empty() else str(OS.get_process_id())))
+	return "user://courtyard.json"
 
 func _payload() -> Dictionary:
 	return {"game": sim.serialise(), "settings": settings.duplicate()}
 
 func _acquire_instance():
-	if qa: return
+	if qa and qa_profile.is_empty(): return
 	instance_lock = TCPServer.new()
-	var port = 49166 + abs(OS.get_user_data_dir().hash()) % 6000
+	var key = _save_path() if qa else OS.get_user_data_dir()
+	var port = 49166 + abs(key.hash()) % 6000
 	instance_primary = instance_lock.listen(port, "127.0.0.1") == OK
 
 func _save_progress() -> bool:
@@ -717,7 +752,7 @@ func _save_progress() -> bool:
 
 func _load_progress():
 	save_store = Store.new(_save_path())
-	if qa:
+	if qa and qa_profile.is_empty():
 		# QA never loads ordinary user progress; its isolated path has its own revision.
 		save_store.load_progress()
 		return
@@ -762,6 +797,7 @@ func _import_save():
 		var candidate = Sim.new()
 		if data is Dictionary and candidate.restore(data.get("game")):
 			sim = candidate
+			dust_feedback.reset()
 			for node in creature_nodes: node.queue_free()
 			creature_nodes.clear()
 			_load_settings(data.get("settings", {}))
@@ -803,6 +839,7 @@ func _qa_capture(name: String):
 
 func _qa_fixture(restored: bool):
 	sim = Sim.new()
+	dust_feedback.reset()
 	for node in creature_nodes: node.queue_free()
 	creature_nodes.clear()
 	sim.elapsed = 200
@@ -815,13 +852,16 @@ func _qa_fixture(restored: bool):
 		c.born = 0
 	if restored:
 		sim.restoration = 1.0
+		sim.ritual_time = Sim.CHORUS_DURATION
 		sim.completed = true
 	sim.events.clear()
 	_sync_world(0.016)
 
 func _qa_finish():
+	if not qa_profile.is_empty() and started and instance_primary: _save_progress()
 	qa_report["status"] = "failed" if qa_case == "opening" and (not sim.upgrades.brush or sim.assignment == Vector2.INF or sim.first_helper_at < 0 or sim.first_helper_at > 30) else "recorded"
 	if qa_case == "ritual" and (not sim.completed or sim.restoration < 1 or not qa_report.get("recap_closed", false) or not qa_report.get("celebration_unpaused", false)): qa_report.status = "failed"
+	if not qa_profile.is_empty(): qa_report.merge({"isolated_save_path": _save_path(), "saved_payload": _payload(), "instance_primary": instance_primary, "save_problem": save_problem})
 	qa_report.merge({"kind": "Native Godot automated inspection; fixtures are explicitly labelled. No human test.", "engine": Engine.get_version_info(), "case": qa_case, "helpers": sim.crew.size(), "first_helper_at": sim.first_helper_at, "elapsed": sim.elapsed, "cleaned": sim.cleaned, "motes": sim.motes, "restoration": sim.restoration, "completed": sim.completed, "viewport": str(get_viewport().get_visible_rect().size), "draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME), "objects": Performance.get_monitor(Performance.RENDER_TOTAL_OBJECTS_IN_FRAME)})
 	var file = FileAccess.open(qa_output.path_join("results.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify(qa_report, "  "))
@@ -853,10 +893,41 @@ func _qa_click(text: String) -> bool:
 			return true
 	return false
 
+func _qa_key(code: Key):
+	for pressed in [true, false]:
+		var key = InputEventKey.new()
+		key.keycode = code
+		key.pressed = pressed
+		get_viewport().push_input(key, true)
+
 func _qa_driver(delta):
 	if qa_capturing or exiting: return
 	qa_time += delta
-	if qa_case == "opening":
+	if qa_case == "resume":
+		if qa_stage == 0 and qa_time >= 1:
+			qa_stage = 1
+			qa_report.loaded_payload = _payload()
+			qa_report.resume_waits_for_player = saved_once and not started and paused and not audio.active
+			qa_report.return_clicked = _qa_click("Return to the courtyard")
+		elif qa_stage == 1 and qa_time >= 2:
+			qa_report.resumed = started and not paused and audio.active and not brushing and not brush_keyboard_held
+			_qa_finish()
+	elif qa_case == "hold":
+		if qa_stage == 0 and qa_time >= 1:
+			qa_stage = 1
+			var ready = FileAccess.open(qa_output.path_join("ready.json"), FileAccess.WRITE)
+			ready.store_string(JSON.stringify({"pid": OS.get_process_id(), "instance_primary": instance_primary, "path": _save_path()}))
+			ready.close()
+		if qa_time > 30 or FileAccess.file_exists(qa_output.path_join("finish")): _qa_finish()
+	elif qa_case == "second":
+		if qa_time >= 1:
+			var start_disabled = false
+			for button in hud.find_children("*", "Button", true, false):
+				if button.is_visible_in_tree() and button.text in ["Bring it to life", "Return to the courtyard"]: start_disabled = button.disabled
+			_start()
+			qa_report.second_launch_blocked = not instance_primary and start_disabled and not started
+			_qa_finish()
+	elif qa_case == "opening":
 		if qa_stage == 0 and qa_time >= 1:
 			qa_stage = 1
 			_qa_click("Bring it to life")
@@ -919,6 +990,13 @@ func _qa_driver(delta):
 			_qa_capture("settings")
 		elif qa_stage == 15 and qa_time >= 64:
 			qa_stage = 16
+			if not qa_profile.is_empty():
+				var sliders = modal.find_children("*", "HSlider", true, false)
+				sliders[0].grab_focus()
+				_qa_key(KEY_HOME)
+				for i in 5: _qa_key(KEY_RIGHT)
+				_qa_click("Gentle motion")
+				qa_report.nondefault_preferences = is_equal_approx(settings.music, 0.25) and settings.gentle
 			_qa_click("Return to the courtyard")
 		elif qa_stage == 16 and qa_time >= 66:
 			qa_report.upgrade_bought = sim.upgrades.brush

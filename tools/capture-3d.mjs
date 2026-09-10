@@ -6,7 +6,10 @@ import crypto from 'node:crypto';
 import {spawn} from 'node:child_process';
 const [scenario='opening',label='current',...extra]=process.argv.slice(2);
 if(!/^[a-z0-9_-]+$/.test(label)||!['opening','overview','ritual','profile'].includes(scenario))throw Error('Invalid capture scenario/label');
+const requestedWindow=process.env.DUSTLINGS_CAPTURE_WINDOW;
+if(requestedWindow&&!/^\d{3,4}x\d{3,4}$/.test(requestedWindow))throw Error('Invalid capture window');
 const output=path.resolve('evidence/3d',label),snapshot=path.resolve('builds/3d/capture-snapshots',label);
+try{await fs.access(path.join(output,'capture-manifest.json'));throw Error('Capture label already exists; choose a new label to preserve evidence.');}catch(error){if(error.code!=='ENOENT')throw error;}
 await fs.mkdir(output,{recursive:true});await fs.mkdir(snapshot,{recursive:true});
 const files={};
 async function freeze(source,destination,prefix=''){
@@ -20,12 +23,12 @@ async function freeze(source,destination,prefix=''){
 }
 await freeze(process.env.DUSTLINGS_CAPTURE_SOURCE || 'godot',snapshot);
 const sourceHash=crypto.createHash('sha256').update(JSON.stringify(Object.fromEntries(Object.entries(files).sort()))).digest('hex');
-const manifest={created:new Date().toISOString(),scenario,label,sourceDirectory:path.resolve(process.env.DUSTLINGS_CAPTURE_SOURCE || 'godot'),runtimeArguments:extra,sourceHash,files,method:scenario==='profile'?'Wall-clock native run; no movie recording.':'Godot MovieMaker30fps fixed engine-time with generated native InputEvents or explicitly labelled fixtures. Rendering may run faster than wall-clock; no human input.',humanTests:0};
+const manifest={created:new Date().toISOString(),scenario,label,sourceDirectory:path.resolve(process.env.DUSTLINGS_CAPTURE_SOURCE || 'godot'),runtimeArguments:extra,nativeArguments:requestedWindow?['--resolution',requestedWindow]:[],sourceHash,files,method:scenario==='profile'?'Wall-clock native run; no movie recording.':'Godot MovieMaker30fps fixed engine-time with generated native InputEvents or explicitly labelled fixtures. Rendering may run faster than wall-clock; no human input.',humanTests:0};
 await fs.writeFile(path.join(output,'capture-manifest.json'),JSON.stringify(manifest,null,2)+'\n');
 async function run(exe,args,log){return await new Promise((resolve,reject)=>{const child=spawn(exe,args,{stdio:['ignore','pipe','pipe']});let result='';child.stdout.on('data',d=>result+=d);child.stderr.on('data',d=>result+=d);child.on('error',reject);child.on('close',async code=>{await fs.writeFile(path.join(output,log),result);if(code!==0||/SCRIPT ERROR:|ERROR:/m.test(result))reject(Error(`${log} failed (${code}); inspect preserved log`));else resolve(result);});});}
 const engine=path.resolve('.tools/Godot.app/Contents/MacOS/Godot');
 await run(engine,['--headless','--path',snapshot,'--import'],'import.log');
-const args=['--path',snapshot];
+const args=['--path',snapshot,...manifest.nativeArguments];
 if(scenario!=='profile')args.push('--write-movie',path.join(output,scenario+'.avi'),'--fixed-fps','30');
 args.push('--','--qa','--qa-case='+scenario,'--evidence='+output,...extra);
 try{

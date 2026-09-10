@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)
+
+Movie Maker mode enabled, recording movie in 1280×800 @ 30 FPS...
+{"case":"opening","cleaned":37.1437341395229,"completed":false,"crew_directed":true,"draw_calls":66.0,"elapsed":55.9999999999981,"engine":{"build":"official","hash":"ed1daf0bf001b61586d9930840f2f1394092c079","hex":263938,"major":4,"minor":7,"patch":2,"status":"stable","string":"4.7.2-stable (official)","timestamp":0},"first_helper_at":10.2500000000001,"first_view":1,"helpers":5,"input_kind":"Generated native Godot InputEvents through visible buttons and surface raycast; no progress fixture or accelerated simulation in this opening.","kind":"Native Godot automated inspection; fixtures are explicitly labelled. No human test.","motes":5,"objects":272.0,"opening_crew":5,"opening_motes":36,"restoration":0.0,"status":"recorded","upgrade_bought":true,"viewport":"(1080.0, 675.0)"}
+--------------------------------------------------------------------------------
+Done recording movie at path: /Users/xingzhaoji/Desktop/Dustlings/evidence/3d/minimum-window-readable/opening.avi
+1999 frames at 30 FPS (movie length: 00:01:06:19), recorded in 00:00:37 (178% of real-time speed).
+CPU render time: 0.20 seconds (average: 0.10 ms/frame)
+GPU render time: 0.00 seconds (average: 0.00 ms/frame)
+Encoding time: 11.16 seconds (average: 5.58 ms/frame)
+--------------------------------------------------------------------------------

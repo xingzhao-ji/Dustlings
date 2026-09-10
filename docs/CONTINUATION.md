@@ -1,6 +1,20 @@
-# Continuation checkpoint — 2026-09-10 08:50 UTC
+# Continuation checkpoint — 2026-09-10 09:08 UTC
 
 Session active. Current milestone: exceptional real 3D courtyard, Godot 4.7.2, version 0.4.0-dev. No additional zones eligible. Human sessions **0**; representative-player, presentation and current-build owner acceptance are all pending. An ended session is not a finished game.
+
+## Latest handoff — read this first
+
+Session remains active. Current integrated opening is evidence/3d/integrated-current/opening.mp4 (66s generated native input, first helper10.25s,5helpers, meaningful brush purchase/direction, no pacing fixture). Current shorter restoration is evidence/3d/courtyard-review-restoration/ritual.mp4:18active seconds plus gathering, completion at28.66s, audio/world unpaused, optional recap opens/closes. Independent critic is reviewing both; no human feedback or listening exists.
+
+Source changes since the08:50 detail below: dust_feedback7580bde integrated (997 grounded powder/fibre instances,32/8 wisp caps; actual removed dust drives feedback); chorus240b2c8 shortened38→18s preserving old partial save fractions (28checks); adaptive UI scale keeps text readable at960; gameplay controls and rings hide in menus; existing original brand icons added to Godot package settings. Current headless integration15/15 passes with clean exit. A first failure incorrectly scaled the headless backend's64px dummy window; it is preserved and the screen adaptation now applies only to native displays.
+
+**Exact next action:** native_icon is auditing camera/keyboard reachability from /tmp/dustlings-camera-audit.gd, with the native slot released to it. It may identify real defects: N picks the first nonzero dust without checking visibility, and Home/Frame do not yet explicitly cancel held input. Root must inspect its actual results and correct confirmed defects before final export. Do not overwrite its test/docs or run another native scene until it releases the slot.
+
+store_requirements owns tools/native-3d-checks.mjs preparation. Main now supports --qa-profile=<identifier> using a dedicated OS-cache save plus actual process lock; cases opening/resume/hold/second are for real packaged-process verification. Opening with a shared QA profile changes music to0.25 and Gentle motion using native generated controls. These new packaged-process paths have not yet been exercised; do not claim a relaunch pass. Native25-check earlier recovery is two Main instances in one engine process.
+
+After camera fixes: freeze clean runtime source, record matching opening/chorus/profile (60wall-clock seconds, quiet machine), export current Mac/Windows, run the packaged-process verifier, populate the exact-source review hub and current gates, then obtain independent follow-up. No source-bound current package exists yet;08:14 ZIP is historical. Current main owns integration; specialist runtime simulation/dust work is released. Source/evidence and this checkpoint are being committed now. Continue useful authorized work; do not expand zones or declare quality gates passed.
+
+##08:50 integration detail (historical status where superseded above)
 
 ## Current integrated work
 

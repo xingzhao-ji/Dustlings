@@ -1,0 +1,58 @@
+{
+  "kind": "Review-only isolated prototypes. Not integrated, approved, or release builds.",
+  "files": [
+    {
+      "name": "Dustlings-Light-Study-baseline.html",
+      "bytes": 119889,
+      "sha256": "94dff2adac80f3806430b98931ac5f78d7ad718f35085b463f31ce8d711c7f04"
+    },
+    {
+      "name": "Dustlings-Light-Study-variant.html",
+      "bytes": 119886,
+      "sha256": "796ec72216ed265f7787146d3f12e038a7bf154058bd350c5936ced64da6f4b5"
+    },
+    {
+      "name": "Dustlings-Light-Study-framed.html",
+      "bytes": 119885,
+      "sha256": "ec409b0a2b29c70bb347e45713d046dce179b794a8500ef584b19886a40e9907"
+    }
+  ],
+  "sources": {
+    "baseline": {
+      "index.html": "1b630f8a502a5520dae5d01d12c2b9a5f696e9c0cf0e3cb4eaeec71ea13ef47d",
+      "style.css": "986a10fc536f062ca386126587de20cecd5c220935f651cdc5d191d608dd4bbb",
+      "src/audio.js": "464e0af3ff2279897a9a68db24b47167467c94977228abc8d4d9f8f097491a76",
+      "src/game.js": "c31dab971d23839fa019b8dd7f3d7c7a7caa5a50dd3ed578c1c327f346829335",
+      "src/keyboard.js": "1f1aa3dc6c9aa0eb1fec68ae3754f7a2abf67b914775965e5113402281566000",
+      "src/main.js": "4fc8771d5b01b57ac343cedbf8173cad68443a20d45fa265478bb19a36b217b7",
+      "src/renderer.js": "e9b8862756956895fb9c3002bc4438f97c54d2dc9dbd1bdafa0449707d1c4a65",
+      "src/settings.js": "55c8ee32f354cb4b2ebeed382937a0aac8441cb49a68ca03e9b202e7e549196d",
+      "src/storage.js": "51357ebe590b0057d8ca145ca0528097c6a6913e3e6a1ba882b8b8d33ff6fd69",
+      "src/ui.js": "62e4471a2aa591b55c42be63e5b75db7b253c33331c396ecb34d03573742df84"
+    },
+    "variant": {
+      "index.html": "1b630f8a502a5520dae5d01d12c2b9a5f696e9c0cf0e3cb4eaeec71ea13ef47d",
+      "style.css": "986a10fc536f062ca386126587de20cecd5c220935f651cdc5d191d608dd4bbb",
+      "src/audio.js": "464e0af3ff2279897a9a68db24b47167467c94977228abc8d4d9f8f097491a76",
+      "src/game.js": "c31dab971d23839fa019b8dd7f3d7c7a7caa5a50dd3ed578c1c327f346829335",
+      "src/keyboard.js": "1f1aa3dc6c9aa0eb1fec68ae3754f7a2abf67b914775965e5113402281566000",
+      "src/main.js": "4fc8771d5b01b57ac343cedbf8173cad68443a20d45fa265478bb19a36b217b7",
+      "src/renderer.js": "bbc8ea202b6dc955ca7cb0dc874c9f57b20780faa547e66f46409597a116b250",
+      "src/settings.js": "55c8ee32f354cb4b2ebeed382937a0aac8441cb49a68ca03e9b202e7e549196d",
+      "src/storage.js": "51357ebe590b0057d8ca145ca0528097c6a6913e3e6a1ba882b8b8d33ff6fd69",
+      "src/ui.js": "62e4471a2aa591b55c42be63e5b75db7b253c33331c396ecb34d03573742df84"
+    },
+    "framed": {
+      "index.html": "1b630f8a502a5520dae5d01d12c2b9a5f696e9c0cf0e3cb4eaeec71ea13ef47d",
+      "style.css": "986a10fc536f062ca386126587de20cecd5c220935f651cdc5d191d608dd4bbb",
+      "src/audio.js": "464e0af3ff2279897a9a68db24b47167467c94977228abc8d4d9f8f097491a76",
+      "src/game.js": "c31dab971d23839fa019b8dd7f3d7c7a7caa5a50dd3ed578c1c327f346829335",
+      "src/keyboard.js": "1f1aa3dc6c9aa0eb1fec68ae3754f7a2abf67b914775965e5113402281566000",
+      "src/main.js": "4fc8771d5b01b57ac343cedbf8173cad68443a20d45fa265478bb19a36b217b7",
+      "src/renderer.js": "43de015d66a4795419a9dd7352a8206070729a986e97c5c970a807c2114cd679",
+      "src/settings.js": "55c8ee32f354cb4b2ebeed382937a0aac8441cb49a68ca03e9b202e7e549196d",
+      "src/storage.js": "51357ebe590b0057d8ca145ca0528097c6a6913e3e6a1ba882b8b8d33ff6fd69",
+      "src/ui.js": "62e4471a2aa591b55c42be63e5b75db7b253c33331c396ecb34d03573742df84"
+    }
+  }
+}

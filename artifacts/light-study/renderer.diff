@@ -1,0 +1,89 @@
+--- src/renderer.js
++++ src/renderer.js
+@@ -144,13 +144,14 @@
+ 
+   drawGround(c) {
+     // Soft ambient ground contact, followed by a shallow carved plinth.
+-    ellipse(c, 505, 496, 438, 68, 'rgba(97,108,79,.09)');
+-    ellipse(c, 505, 488, 418, 52, 'rgba(97,108,79,.06)');
++    ellipse(c, 505, 496, 438, 68, 'rgba(65,88,81,.13)');
++    ellipse(c, 505, 488, 418, 52, 'rgba(65,88,81,.09)');
+     round(c, 76, 81, 848, 433, 45, '#c8b49a');
+     round(c, 76, 65, 848, 432, 45, '#e8ddc5', '#c2b598', 2);
+     round(c, 88, 70, 824, 418, 38, '#f2e8d0', '#fff4db', 2);
+     round(c, 112, 93, 776, 372, 23, '#b9baa0');
+-    round(c, 117, 96, 766, 365, 22, '#d8cfb6');
++    round(c, 117, 96, 766, 365, 22, '#cdc5af');
++    // The shaded cream paving leaves value room for pale Dustlings to read.
+     // Pavers are deliberately oversized: understandable shape at normal screen size.
+     c.save();
+     c.beginPath(); c.roundRect(118, 96, 764, 365, 21); c.clip();
+@@ -158,9 +159,9 @@
+       for (let col = -1; col < 13; col++) {
+         const n = row * 27 + col + 70, x = 112 + col * 66 + (row % 2) * 33, y = 95 + row * 35;
+         const tint = noise(n);
+-        const tile = tint < .12 ? '#ded4bc' : tint < .4 ? '#e9dfc9' : tint < .7 ? '#e7dbc2' : '#ece3ce';
++        const tile = tint < .12 ? '#d0c7ad' : tint < .4 ? '#ded5be' : tint < .7 ? '#d8cdb3' : '#e3dbc6';
+         round(c, x + 1.8, y + 1.5, 62.5, 31.8, 5, tile);
+-        line(c, x + 7, y + 3.2, x + 57, y + 3.2, 'rgba(255,252,234,.45)', 1.2);
++        line(c, x + 7, y + 3.2, x + 57, y + 3.2, 'rgba(255,245,218,.55)', 1.2);
+         if (tint > .65) line(c, x + 10, y + 27, x + 16 + noise(n + 21) * 18, y + 27, 'rgba(166,147,111,.1)');
+         for (let j = 0; j < 2; j++) ellipse(c, x + 8 + noise(n * 2 + j) * 48, y + 8 + noise(n + j + 60) * 18, .7, .5, 'rgba(151,135,101,.13)');
+       }
+@@ -213,10 +214,11 @@
+   house(c, x, foot, width, height, style) {
+     c.save(); c.translate(x, foot);
+     const left = -width / 2, top = -height;
+-    ellipse(c, 10, 4, width * .59, 14, 'rgba(83,98,71,.12)');
++    ellipse(c, 10, 4, width * .59, 14, 'rgba(59,83,76,.22)');
++    // Cooler contact/side values separate cream walls from their warm paving.
+     // Side wall and front wall share a strict shallow perspective.
+-    poly(c, [[left + width, top + 14], [left + width + 24, top], [left + width + 24, -14], [left + width, 4]], '#c5c5a7');
+-    round(c, left, top + 5, width, height, 5, '#f0e5cc');
++    poly(c, [[left + width, top + 14], [left + width + 24, top], [left + width + 24, -14], [left + width, 4]], '#a9b3a0');
++    round(c, left, top + 5, width, height, 5, '#f2e6cd');
+     round(c, left + 4, -5, width - 8, 9, 2, '#d8c9ac');
+     const roof = style === 'sage' ? '#7b9882' : '#c98769';
+     const roofDark = style === 'sage' ? '#617d69' : '#b07459';
+@@ -380,10 +382,10 @@
+   drawFountain(c, state, t) {
+     const p = clamp(state.restoration || 0), x = 500, y = 370 * GROUND_Y;
+     const stone = blend([165, 162, 139], [235, 230, 205], p);
+-    const side = blend([131, 140, 120], [195, 206, 178], p);
++    const side = blend([122, 135, 119], [153, 178, 158], p);
+     const light = blend([184, 181, 153], [255, 245, 219], p);
+     c.save(); c.translate(x, y);
+-    ellipse(c, 7, 27, 90, 45, 'rgba(82,101,78,.13)');
++    ellipse(c, 7, 27, 90, 45, 'rgba(56,83,77,.22)');
+     // Low octagonal basin: unlike a tall monument it does not hide work destinations.
+     const rim = (cy, rx, ry) => Array.from({ length: 8 }, (_, i) => { const a = (i / 8 + 1 / 16) * TAU; return [Math.cos(a) * rx, cy + Math.sin(a) * ry]; });
+     poly(c, rim(14, 83, 51), side, '#a7b397', 1);
+@@ -393,7 +395,7 @@
+     if (p > .22) {
+       const waterAlpha = clamp((p - .22) / .65);
+       c.globalAlpha = waterAlpha;
+-      const water = c.createLinearGradient(0, -35, 0, 43); water.addColorStop(0, '#8ec4b0'); water.addColorStop(.7, '#62a99c'); water.addColorStop(1, '#a9d5bd');
++      const water = c.createLinearGradient(0, -35, 0, 43); water.addColorStop(0, '#9fcfba'); water.addColorStop(.7, '#50978e'); water.addColorStop(1, '#86bfa9');
+       poly(c, rim(3, 66, 37), water);
+       c.save(); c.beginPath(); rim(3, 65, 36).forEach(([px, py], i) => i ? c.lineTo(px, py) : c.moveTo(px, py)); c.closePath(); c.clip();
+       for (let i = 0; i < 5; i++) { const r = 15 + ((t * 8 + i * 13) % 58); c.globalAlpha = waterAlpha * (1 - r / 80) * .6; ellipse(c, 0, 6, r, r * .48, null, '#e4f1cd', 1.2); }
+@@ -451,8 +453,9 @@
+     const opticalSize = clamp(.65 / this.scale, 1, 1.35);
+     const bornScale = (birth < 1 ? .35 + .65 * Math.sin(birth * Math.PI / 2) : 1) * opticalSize;
+     const x = creature.x, y = creature.y * GROUND_Y;
+-    ellipse(c, x + 1.5, y + 1, radius * .95 * bornScale, radius * .34 * bornScale, 'rgba(85,93,72,.21)');
++    ellipse(c, x + 1.5, y + 1, radius * .95 * bornScale, radius * .34 * bornScale, 'rgba(48,70,64,.32)');
+     c.save(); c.translate(x, y); c.scale(bornScale, bornScale);
++    // A cooler, stronger contact shadow keeps the pale body connected to paving.
+     // Feet touch the shadow. Only the body hops, preventing a floating silhouette.
+     ellipse(c, -4.4 - walk * 1.3, -1 + Math.max(0, -walk), 3.2, 1.8, '#b79559');
+     ellipse(c, 4.4 + walk * 1.3, -1 + Math.max(0, walk), 3.2, 1.8, '#c6a66a');
+@@ -464,7 +467,7 @@
+       const a = (i + .2) / 9 * TAU;
+       ellipse(c, Math.cos(a) * radius * .68, Math.sin(a) * radius * .64, radius * .39, radius * .37, i > 0 && i < 4 ? '#bec2ac' : '#d4d8c2');
+     }
+-    const fur = c.createRadialGradient(-3, -4, 1, 0, 0, radius * 1.2); fur.addColorStop(0, '#f1edd6'); fur.addColorStop(.62, '#e0dfc7'); fur.addColorStop(1, '#b9c1aa');
++    const fur = c.createRadialGradient(-3, -4, 1, 0, 0, radius * 1.2); fur.addColorStop(0, '#fff2d7'); fur.addColorStop(.62, '#e6e2cd'); fur.addColorStop(1, '#a9baa8');
+     ellipse(c, 0, 0, radius * .93, radius * .89, fur);
+     // A mint leaf is the crew's shared identity; angle adds individuality.
+     c.save(); c.translate(1.5, -radius * .8); c.rotate(-.22 + walk * .07 + Math.sin(phase) * .15);

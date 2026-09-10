@@ -1,0 +1,12 @@
+--- src/renderer.js
++++ src/renderer.js
+@@ -78,7 +78,8 @@
+       this.recommendedZoom = 1.7;
+     } else {
+       this.viewportMode = 'desktop';
+-      this.insets = { top: 80, bottom: 110, left: 0, right: 0 };
++      // The compact desktop HUD leaves room for a closer complete village view.
++      this.insets = { top: 48, bottom: 86, left: 0, right: 0 };
+       this.recommendedZoom = 1;
+     }
+     this.canvas.dataset.viewportMode = this.viewportMode;

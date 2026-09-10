@@ -1,0 +1,268 @@
+{
+  "date": "2026-09-10T07:20:19.595Z",
+  "kind": "Isolated agent rendering experiment; controlled fixtures, no human aesthetic feedback",
+  "conditions": {
+    "viewport": "1280\u00d7796 CSS px",
+    "dpr": 1,
+    "headless": true,
+    "browser": "152.0.7977.83",
+    "sampleSeconds": 8,
+    "host": "MacBook Pro Mac16,7 / M4 Pro /48GB /macOS26.6.2",
+    "concurrency": "Root UI work and other processes may run concurrently; not controlled",
+    "audio": "Original audio active; no listening claim; Playwright full-UI videos contain no audio"
+  },
+  "hashes": {
+    "index.html": "1b630f8a502a5520dae5d01d12c2b9a5f696e9c0cf0e3cb4eaeec71ea13ef47d",
+    "style.css": "986a10fc536f062ca386126587de20cecd5c220935f651cdc5d191d608dd4bbb",
+    "src/main.js": "4fc8771d5b01b57ac343cedbf8173cad68443a20d45fa265478bb19a36b217b7",
+    "src/game.js": "c31dab971d23839fa019b8dd7f3d7c7a7caa5a50dd3ed578c1c327f346829335",
+    "src/renderer.js": "e9b8862756956895fb9c3002bc4438f97c54d2dc9dbd1bdafa0449707d1c4a65",
+    "variantRenderer": "d0eb270006c50b3b4fd300c4ca097a4a82e70ed3191172d869e8077b184b9ee5"
+  },
+  "runs": [
+    {
+      "variant": "baseline",
+      "scenario": "busy",
+      "errors": [],
+      "geometry": {
+        "scale": 0.774294670846395,
+        "viewport": {
+          "x": 0,
+          "y": 80,
+          "width": 1238,
+          "height": 518
+        },
+        "canvas": {
+          "w": 1238,
+          "h": 708
+        },
+        "dust": 466,
+        "creatures": 50,
+        "stateElapsed": 228.60000000001773
+      },
+      "frames": {
+        "samples": 480,
+        "meanMs": 16.66583333333333,
+        "p95Ms": 16.700000000000728,
+        "p99Ms": 16.800000000000182,
+        "worstMs": 16.800000000000182,
+        "over33ms": 0,
+        "over500ms": 0,
+        "creatures": 50,
+        "dpr": 1,
+        "canvas": {
+          "width": 1238,
+          "height": 708
+        },
+        "audio": {
+          "ready": true,
+          "prepared": true,
+          "paused": false,
+          "contextState": "running",
+          "maxVoices": 48,
+          "peakVoices": 3,
+          "continuousSources": 3,
+          "uiEventsAccepted": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        }
+      },
+      "renderCallCpuMs": {
+        "samples": 480,
+        "mean": 1.0527083334202567,
+        "p95": 1.2000000178813934,
+        "max": 1.300000011920929
+      },
+      "rendererSha256": "e9b8862756956895fb9c3002bc4438f97c54d2dc9dbd1bdafa0449707d1c4a65"
+    },
+    {
+      "variant": "variant",
+      "scenario": "busy",
+      "errors": [],
+      "geometry": {
+        "scale": 0.774294670846395,
+        "viewport": {
+          "x": 0,
+          "y": 80,
+          "width": 1238,
+          "height": 518
+        },
+        "canvas": {
+          "w": 1238,
+          "h": 708
+        },
+        "dust": 466,
+        "creatures": 50,
+        "stateElapsed": 228.60000000001773
+      },
+      "frames": {
+        "samples": 480,
+        "meanMs": 16.66583333333333,
+        "p95Ms": 16.700000000000728,
+        "p99Ms": 16.800000000000182,
+        "worstMs": 16.800000000000182,
+        "over33ms": 0,
+        "over500ms": 0,
+        "creatures": 50,
+        "dpr": 1,
+        "canvas": {
+          "width": 1238,
+          "height": 708
+        },
+        "audio": {
+          "ready": true,
+          "prepared": true,
+          "paused": false,
+          "contextState": "running",
+          "maxVoices": 48,
+          "peakVoices": 3,
+          "continuousSources": 3,
+          "uiEventsAccepted": 0,
+          "progress": 0,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        }
+      },
+      "renderCallCpuMs": {
+        "samples": 480,
+        "mean": 1.0556249996647238,
+        "p95": 1.2000000178813934,
+        "max": 1.399999976158142
+      },
+      "rendererSha256": "d0eb270006c50b3b4fd300c4ca097a4a82e70ed3191172d869e8077b184b9ee5"
+    },
+    {
+      "variant": "baseline",
+      "scenario": "restored",
+      "errors": [],
+      "geometry": {
+        "scale": 0.774294670846395,
+        "viewport": {
+          "x": 0,
+          "y": 80,
+          "width": 1238,
+          "height": 518
+        },
+        "canvas": {
+          "w": 1238,
+          "h": 708
+        },
+        "dust": 466,
+        "creatures": 50,
+        "stateElapsed": 306.1000000000353
+      },
+      "frames": {
+        "samples": 481,
+        "meanMs": 16.66611226611227,
+        "p95Ms": 16.700000000000728,
+        "p99Ms": 16.800000000000182,
+        "worstMs": 16.800000000000182,
+        "over33ms": 0,
+        "over500ms": 0,
+        "creatures": 50,
+        "dpr": 1,
+        "canvas": {
+          "width": 1238,
+          "height": 708
+        },
+        "audio": {
+          "ready": true,
+          "prepared": true,
+          "paused": false,
+          "contextState": "running",
+          "maxVoices": 48,
+          "peakVoices": 3,
+          "continuousSources": 3,
+          "uiEventsAccepted": 0,
+          "progress": 1,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        }
+      },
+      "renderCallCpuMs": {
+        "samples": 481,
+        "mean": 0.6825363823752889,
+        "p95": 0.800000011920929,
+        "max": 0.9000000059604645
+      },
+      "rendererSha256": "e9b8862756956895fb9c3002bc4438f97c54d2dc9dbd1bdafa0449707d1c4a65"
+    },
+    {
+      "variant": "variant",
+      "scenario": "restored",
+      "errors": [],
+      "geometry": {
+        "scale": 0.774294670846395,
+        "viewport": {
+          "x": 0,
+          "y": 80,
+          "width": 1238,
+          "height": 518
+        },
+        "canvas": {
+          "w": 1238,
+          "h": 708
+        },
+        "dust": 466,
+        "creatures": 50,
+        "stateElapsed": 306.1000000000353
+      },
+      "frames": {
+        "samples": 480,
+        "meanMs": 16.666041666666665,
+        "p95Ms": 16.700000000000728,
+        "p99Ms": 16.800000000000182,
+        "worstMs": 16.800000000000182,
+        "over33ms": 0,
+        "over500ms": 0,
+        "creatures": 50,
+        "dpr": 1,
+        "canvas": {
+          "width": 1238,
+          "height": 708
+        },
+        "audio": {
+          "ready": true,
+          "prepared": true,
+          "paused": false,
+          "contextState": "running",
+          "maxVoices": 48,
+          "peakVoices": 3,
+          "continuousSources": 3,
+          "uiEventsAccepted": 0,
+          "progress": 1,
+          "mix": {
+            "music": 0.48,
+            "sfx": 0.65,
+            "ambience": 0.38,
+            "muted": false,
+            "reducedMotion": false
+          }
+        }
+      },
+      "renderCallCpuMs": {
+        "samples": 480,
+        "mean": 0.699791667672495,
+        "p95": 0.800000011920929,
+        "max": 0.9000000059604645
+      },
+      "rendererSha256": "d0eb270006c50b3b4fd300c4ca097a4a82e70ed3191172d869e8077b184b9ee5"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "Automated isolated camera layout checks; physical input and human framing preference untested",
+  "results": [
+    {
+      "width": 1280,
+      "height": 796,
+      "scale": 0.8620689655172413,
+      "viewport": {
+        "x": 0,
+        "y": 48,
+        "width": 1238,
+        "height": 574
+      },
+      "nodes": 466,
+      "unreachable": [],
+      "underHud": [],
+      "documentOverflow": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scale": 0.7429467084639498,
+      "viewport": {
+        "x": 0,
+        "y": 48,
+        "width": 1238,
+        "height": 498
+      },
+      "nodes": 466,
+      "unreachable": [],
+      "underHud": [],
+      "documentOverflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scale": 1.025078369905956,
+      "viewport": {
+        "x": 0,
+        "y": 48,
+        "width": 1398,
+        "height": 678
+      },
+      "nodes": 466,
+      "unreachable": [],
+      "underHud": [],
+      "documentOverflow": false
+    }
+  ]
+}

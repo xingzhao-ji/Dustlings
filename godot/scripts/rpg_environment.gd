@@ -44,6 +44,16 @@ var _alcove_treasure: Node3D
 var _alcove_star: Node3D
 var _alcove_reveal := 0.0
 
+func _create_materials() -> void:
+    super._create_materials()
+    # Preserve the existing three solid batches; material distinction is quiet,
+    # static and localized to the arrival representative location in the shader.
+    for i in 3:
+        var material := ShaderMaterial.new()
+        material.shader = load("res://shaders/rpg_surface.gdshader")
+        material.set_shader_parameter("material_kind", i)
+        _materials[["ground", "stone", "wood"][i]] = material
+
 func _ready() -> void:
     _create_materials()
     _materials["windows"].albedo_color = Color("f1d6a4")
@@ -218,14 +228,27 @@ func _terrain() -> void:
         _solid("VillageEdge", Vector3(side * 18.3, 1, -1), Vector3(0.6, 3, 35))
     _solid("NorthEdge", Vector3(0, 1, -18), Vector3(37, 3, 0.6))
     _solid("SouthEdge", Vector3(0, 1, 16), Vector3(37, 3, 0.6))
-    # Plaza and branching paths use the same laid limestone at human walking scale.
-    for row in 12:
-        for col in 16:
-            var x := -7.1 + col * 0.9
-            var z := -2.55 + row * 0.9
-            if absf(x) > 4.5 and z > 5.7: continue
-            var shade := sin(float(col * 29 + row * 13)) * 0.018
-            _box(Vector3(x, -0.035, z), Vector3(0.868, 0.08, 0.868), Color("d2c9ac").lightened(shade), 0.035, "ground")
+    # Hand-set slabs keep the same plaza footprint without a checkerboard of
+    # equal square joints. Larger staggered clusters carry attention up the lane.
+    var widths: Array[float] = [1.52, 1.13, 1.87, 1.34]
+    for row in 8:
+        var z := -2.984 + (float(row) + 0.5) * 1.346
+        var left := -7.534
+        var col := 0
+        while left < 6.82:
+            var length: float = widths[(col + row) % widths.size()]
+            if col == 0 and row % 2 == 1: length = 0.77
+            length = minf(length, 6.834 - left)
+            var x := left + length * 0.5
+            if not (absf(x) > 4.5 and z > 5.7):
+                var shade := sin(float(row * 17 + col * 11)) * 0.012
+                var center_warmth := 1.0 - smoothstep(1.6, 6.4, absf(x))
+                var color := Color("c2b79a").lerp(Color("d3c6a6"), center_warmth * 0.58).lightened(shade)
+                # Flat broad faces and 16mm joints, down from 32mm; no extra
+                # collision bodies or small stepping edges are introduced.
+                _box(Vector3(x, -0.035, z), Vector3(length - 0.016, 0.08, 1.330), color, 0.017, "ground")
+            left += length
+            col += 1
     _path(Vector3(-10, 0, 7.5), Vector3(-5, 0, 7.5), 2.4)
     _path(Vector3(5, 0, 2), Vector3(10, 0, 2), 2.6)
     _path(Vector3(0, 0, -2.5), Vector3(0, 0, -9), 2.8)
@@ -508,9 +531,26 @@ func _post_lamp(at: Vector3) -> void:
 func _tree(at: Vector3, amount: float, tint: Color) -> void:
     _cylinder(at + Vector3(0, 1.3 * amount, 0), 0.11 * amount, 0.24 * amount, 2.6 * amount, Color("8c8162"), "wood", 10)
     _solid("TreeTrunk", at + Vector3(0, 1.2, 0), Vector3(0.38 * amount, 2.4, 0.38 * amount))
+    var perimeter := absf(at.x) > 16.0 or at.z < -15.0
+    if not perimeter:
+        # Preserve the authored discovery/bench tree silhouettes in this pass.
+        for i in 4:
+            var angle := float(i) * 2.4
+            _sphere(at + Vector3(sin(angle) * 0.58, 2.9 + sin(angle) * 0.25, cos(angle) * 0.58) * amount, Vector3(2.0, 1.45, 1.9) * amount, tint.lightened(float(i % 2) * 0.035))
+        return
+    # Same four canopy volumes and same trunk/collider: asymmetric overlapping
+    # crowns create groups instead of a row of repeated equally lit lollipops.
+    var seed := sin(at.x * 1.37 + at.z * 0.71)
+    var turn := at.x * 0.19 + at.z * 0.11
+    var heights: Array[float] = [3.05, 2.78, 3.28, 2.80]
+    var sizes: Array[Vector3] = [Vector3(2.10,1.40,1.92), Vector3(1.62,1.26,1.62), Vector3(1.75,1.53,1.63), Vector3(1.46,1.08,1.55)]
     for i in 4:
-        var angle := float(i) * 2.4
-        _sphere(at + Vector3(sin(angle) * 0.58, 2.9 + sin(angle) * 0.25, cos(angle) * 0.58) * amount, Vector3(2.0, 1.45, 1.9) * amount, tint.lightened(float(i % 2) * 0.035))
+        var angle := float(i) * 2.1 + turn
+        var reach := 0.30 if i == 0 else 0.68
+        var shape: Vector3 = sizes[i] * Vector3(1.0 + seed * 0.12, 1.0 + seed * 0.13, 1.0 - seed * 0.07)
+        var position := at + Vector3(sin(angle) * reach, heights[i] + seed * 0.20, cos(angle) * reach) * amount
+        var color := tint.lerp(Color("527d65"), 0.34).lightened(float(i % 2) * 0.025 + seed * 0.022)
+        _sphere(position, shape * amount, color)
 
 func _village_details() -> void:
     # Perimeter massing frames the inhabited center, preserving open routes.

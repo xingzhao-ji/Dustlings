@@ -45,17 +45,17 @@ func _ready():
 			{"move":Vector3(0,0,0)},{"move":Vector3(-3.1,0,-1.0)},{"interact":"nell"},{"wait":2.5},{"capture":"nell"},{"button":"Who planted"},{"wait":2.0},{"close":true},
 			{"move":Vector3(0,0,-2.2)},{"brush":9.0},{"interact":"bridge"},{"capture":"bridge-before"},{"button":"Repair together"},{"wait":7.0},{"capture":"bridge-after"},
 			{"move":Vector3(0,0,-7.4)},{"move":Vector3(-5.5,0,-8)},{"interact":"garden"},{"button":"Water gently"},{"wait":2.0},{"close":true},{"wait":3.0},{"capture":"garden"},
-			{"move":Vector3(-3,0,-8)},{"interact":"nell"},{"button":"parcel from Ivo"},{"wait":2.0},{"close":true},
+			{"move":Vector3(2.2,0,-6.5)},{"move":Vector3(-3,0,-6.5)},{"move":Vector3(-3,0,-8)},{"interact":"nell"},{"button":"parcel from Ivo"},{"wait":2.0},{"close":true},
 			{"interact":"nell"},{"button":"humming"},{"wait":3.0},{"capture":"melody"},{"close":true},
 			{"move":Vector3(4,0,-8.0)},{"move":Vector3(12,0,-8.0)},{"interact":"vine_wall"},{"wait":2.0},{"capture":"ivy-before"},{"button":"Hum Nell"},{"wait":5.0},{"capture":"ivy-after"},
 			{"move":Vector3(12,0,-11.7)},{"interact":"greenhouse_memory"},{"wait":3.0},{"capture":"greenhouse"},{"button":"Read the letter"},{"wait":3.0},{"capture":"letter"},{"close":true},{"wait":2.0},{"capture":"moth-exchange"},{"wait":3.0},{"capture":"moth-gift"},{"wait":2.0},
-			{"move":Vector3(12,0,-8.2)},{"move":Vector3(-9,0,-8.2)},{"move":Vector3(-12,0,-10.5)},{"interact":"alcove"},{"button":"little light"},{"wait":3.0},{"capture":"alcove"},{"close":true},
+			{"move":Vector3(12,0,-8.2)},{"move":Vector3(5,0,-6.5)},{"move":Vector3(-9,0,-6.5)},{"move":Vector3(-12,0,-10.5)},{"interact":"alcove"},{"button":"little light"},{"wait":3.0},{"capture":"alcove"},{"close":true},
 			{"move":Vector3(-6.3,0,-8.3)},{"interact":"herbs"},{"button":"Gather a few"},{"wait":1.0},{"close":true},
 			{"move":Vector3(-3,0,-9.6)},{"interact":"table"},{"button":"Prepare the shared"},{"wait":2.0},{"close":true},{"wait":18.0},{"capture":"gathering"},
 			{"move":Vector3(-4.5,0,-9.3)},{"interact":"tavi"},{"button":"teach me"},{"wait":2.0},{"close":true},
 			{"move":Vector3(-1,0,-8.5)},{"interact":"mara"},{"button":"make something"},{"wait":2.0},{"close":true},
 			{"move":Vector3(2.2,0,-7.4)},{"interact":"ivo"},{"button":"favorite route"},{"wait":2.0},{"close":true},
-			{"move":Vector3(-3,0,-8)},{"interact":"nell"},{"button":"letter"},{"wait":2.0},{"close":true},
+			{"move":Vector3(2.2,0,-6.5)},{"move":Vector3(-3,0,-6.5)},{"move":Vector3(-3,0,-8)},{"interact":"nell"},{"button":"letter"},{"wait":2.0},{"close":true},
 			{"move":Vector3(0,0,-7)},{"move":Vector3(0,0,3)},{"move":Vector3(-10,0,7.8)},{"move":Vector3(-10,0,5.1)},{"wait":3.0},{"capture":"home-return"},
 			{"save":true},{"wait":1.0}
 		]
@@ -238,6 +238,10 @@ func _finish(ok: bool):
 	results.position=[game.player.position.x,game.player.position.y,game.player.position.z]
 	results.companions=game.companions.size()
 	results.camera_distance=game.camera_distance
+	results.companion_distances=game.companions.map(func(c):return c.body.position.distance_to(game.player.position))
+	results.companion_routes=game.companions.map(func(c):return {"position":str(c.body.position),"next":str(c.path[0]) if not c.path.is_empty() else "idle","queued":c.path.size()})
+	results.resident_positions={}
+	for id in game.residents: results.resident_positions[id]=str(game.residents[id].body.position)
 	if not profile_frames.is_empty():
 		results.callback_ms=profile_frames
 		var sorted=profile_frames.duplicate()

@@ -42,5 +42,6 @@ try{
  manifest.result=JSON.parse(await fs.readFile(path.join(output,'results.json'),'utf8'));
  if(scenario!=='profile')await run('ffmpeg',['-hide_banner','-loglevel','error','-i',path.join(output,scenario+'.avi'),'-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-movflags','+faststart','-y',path.join(output,scenario+'.mp4')],'encode.log');
  manifest.status='recorded';
-}catch(error){manifest.status='failed';manifest.failure=error.message;process.exitCode=1;}
+}catch(error){manifest.status='failed';manifest.failure=error.message;process.exitCode=1;
+ if(scenario!=='profile'){try{await run('ffmpeg',['-hide_banner','-loglevel','error','-i',path.join(output,scenario+'.avi'),'-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-movflags','+faststart','-y',path.join(output,scenario+'.mp4')],'encode-failed-route.log');manifest.failedRouteMoviePreserved=true;}catch{}}}
 manifest.finished=new Date().toISOString();await fs.writeFile(path.join(output,'capture-manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log(JSON.stringify({output,scenario,sourceHash,status:manifest.status,failure:manifest.failure,result:manifest.result?{ok:manifest.result.ok,steps:manifest.result.checks?.length,elapsed:manifest.result.elapsed_engine_seconds,performance:manifest.result.performance}:undefined},null,2));

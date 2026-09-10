@@ -31,6 +31,8 @@ var brush_point = Vector3.ZERO
 var brush_valid = false
 var brush_ring: MeshInstance3D
 var brush_visual: Node3D
+var brush_handle: MeshInstance3D
+var brush_head: MeshInstance3D
 var nearest = ""
 var elapsed = 0.0
 var joy = 0.0
@@ -153,8 +155,8 @@ func _setup_light():
 	env.sky = sky
 	env.background_mode = Environment.BG_SKY
 	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	env.ambient_light_color = Color("c8d9da")
-	env.ambient_light_energy = 0.48
+	env.ambient_light_color = Color("b2cbd0")
+	env.ambient_light_energy = 0.32
 	env.tonemap_mode = Environment.TONE_MAPPER_FILMIC
 	env.ssao_enabled = true
 	env.ssao_radius = 0.7
@@ -168,8 +170,8 @@ func _setup_light():
 	add_child(we)
 	var sun = DirectionalLight3D.new()
 	sun.rotation_degrees = Vector3(-43,-28,0)
-	sun.light_color = Color("ffe5bd")
-	sun.light_energy = 1.05
+	sun.light_color = Color("ffe9ce")
+	sun.light_energy = 1.12
 	sun.shadow_enabled = true
 	sun.directional_shadow_max_distance = 50
 	sun.light_size = 1.5
@@ -257,9 +259,9 @@ func _make_brush():
 	brush_ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	add_child(brush_ring)
 	brush_visual = Node3D.new()
-	avatar.add_child(brush_visual)
-	_flat_part(Vector3(.32,.63,.40),Vector3(.08,.09,.54),Color("8a6546"),brush_visual)
-	_flat_part(Vector3(.32,.60,.68),Vector3(.22,.12,.18),Color("ded4aa"),brush_visual)
+	add_child(brush_visual)
+	brush_handle=_flat_part(Vector3.ZERO,Vector3(.045,1,.045),Color("8a6546"),brush_visual)
+	brush_head=_flat_part(Vector3.ZERO,Vector3(.28,.10,.20),Color("ded4aa"),brush_visual)
 	brush_visual.visible = false
 
 func _input(event):
@@ -344,7 +346,11 @@ func _process(delta):
 	if not is_instance_valid(player): return
 	_place_camera(delta)
 	if is_instance_valid(modal) and modal_kind == "dialogue":
-		if residents.has(dialogue_id): residents[dialogue_id].visual.animate(delta,0,true,false)
+		elapsed+=delta
+		avatar.animate(delta,0,false,false)
+		for id in residents:
+			residents[id].visual.set_attention(player.position+Vector3(0,1.2,0),1.0 if id==dialogue_id else clampf((3.0-player.position.distance_to(residents[id].body.position))/1.2,0,1))
+			residents[id].visual.animate(delta,0,id==dialogue_id,false)
 		for c in companions:
 			c.age+=delta
 			c.visual.pose(delta,elapsed,0,0,c.age,false,settings.gentle)
@@ -356,7 +362,7 @@ func _process(delta):
 	_tick_formation(delta)
 	avatar.animate(delta,Vector2(player.velocity.x,player.velocity.z).length(),false,joy>0)
 	brush_visual.visible = brush_valid and (brush_held or brush_mouse)
-	brush_visual.rotation.y = sin(elapsed*12)*.25 if brush_visual.visible else 0.0
+	_pose_brush()
 	notice_time = maxf(0,notice_time-delta)
 	notice.visible = notice_time > 0
 	place_label.text = _place_name()
@@ -406,12 +412,18 @@ func _update_brush(delta):
 		var from = camera.project_ray_origin(mouse)
 		var hit = get_world_3d().direct_space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,from+camera.project_ray_normal(mouse)*80,1))
 		if not hit.is_empty(): brush_point=hit.position
-	if brush_held and nearest in ["lantern","bridge"]: brush_point=anchors[nearest]
+	if brush_held and nearest in ["lantern","bridge"]:
+		var offset: Vector3=anchors[nearest]-player.position
+		offset.y=0
+		brush_point=player.position+offset.limit_length(1.4)
+		var side=Vector3(offset.z,0,-offset.x).normalized()
+		brush_point+=side*sin(elapsed*7)*.10
+		brush_point.y=.025
 	var closest = ""
 	for id in patches:
 		if id == "bridge" and not story.has("first_companion"): continue
 		if patch_amount[id]>.001 and brush_point.distance_to(anchors[id])<1.0 and player.position.distance_to(anchors[id])<2.3 and _line_clear(anchors[id]): closest=id; break
-	brush_valid = not closest.is_empty()
+	brush_valid = not closest.is_empty() and player.position.distance_to(brush_point)<=1.65
 	brush_ring.visible = brush_valid and not is_instance_valid(modal)
 	brush_ring.position = brush_point+Vector3(0,.07,0)
 	if not brush_valid or not (brush_held or brush_mouse): return
@@ -432,6 +444,19 @@ func _update_brush(delta):
 		audio.cue("birth" if closest=="lantern" else "complete",anchors[closest])
 		joy = 2
 		_save()
+
+func _pose_brush():
+	if not brush_visual.visible: return
+	var hand: Vector3=avatar.get_hand_position(true)
+	var contact=brush_point+Vector3(0,.045,0)
+	brush_head.position=contact
+	brush_head.rotation.y=avatar.rotation.y
+	var shaft=hand-contact
+	brush_handle.position=(hand+contact)*.5
+	var up=shaft.normalized()
+	var across=Vector3.FORWARD.cross(up).normalized()
+	if across.length()<.01: across=Vector3.RIGHT
+	brush_handle.basis=Basis(across,up,across.cross(up)).scaled(Vector3(.045,shaft.length(),.045))
 
 func _update_residents(delta):
 	for id in residents:
@@ -455,6 +480,7 @@ func _update_residents(delta):
 		body.move_and_slide()
 		if velocity.length()>.1: r.visual.rotation.y=lerp_angle(r.visual.rotation.y,atan2(velocity.x,velocity.z),minf(1,delta*6))
 		elif player.position.distance_to(body.position)<2.5: r.visual.rotation.y=lerp_angle(r.visual.rotation.y,atan2(player.position.x-body.position.x,player.position.z-body.position.z),minf(1,delta*3))
+		r.visual.set_attention(player.position+Vector3(0,1.2,0),clampf((3.0-player.position.distance_to(body.position))/1.2,0,1))
 		r.visual.set_activity("tea" if story.has("shared_table") else {"mara":"mend","ivo":"map","nell":"tend","tavi":"knead"}[id])
 		r.visual.animate(delta,Vector2(body.velocity.x,body.velocity.z).length(),false,joy>0)
 

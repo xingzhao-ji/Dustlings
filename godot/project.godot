@@ -1,8 +1,8 @@
-; Dustlings — real 3D courtyard development milestone.
+; Dustlings — real 3D Bellwether RPG neighborhood milestone.
 config_version=5
 
 [application]
-config/name="Dustlings 3D"
+config/name="Dustlings"
 config/version="0.5.0-rpg-dev"
 config/icon="res://assets/ui/app-icon.svg"
 run/main_scene="res://scenes/neighborhood.tscn"

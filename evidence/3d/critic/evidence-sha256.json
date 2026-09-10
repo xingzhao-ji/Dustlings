@@ -219,6 +219,182 @@
     "sha256": "441d5d92a3941a99001692b1e4167a9daae8314053e6404100cea33eff6d4540",
     "bytes": 1605388
   },
+  "integrated-sensory/birth-detail-10-13.png": {
+    "sha256": "90fc7ebc8307f15c14bea5371ab58db07f9148ca1a5536d4e5e9ab815258086f",
+    "bytes": 746389
+  },
+  "integrated-sensory/brush-detail-4-7.png": {
+    "sha256": "29905d00f47e502ed7b223cef6471674d5f90c7555da7ca9cdd67e4db447b56a",
+    "bytes": 709462
+  },
+  "integrated-sensory/courtyard-review-restoration/capture-manifest.json": {
+    "sha256": "fc27bae6a81d863915ca0433f0f8a10a815fce414e8896ef27f8059e853a4a99",
+    "bytes": 9925
+  },
+  "integrated-sensory/courtyard-review-restoration/chorus.png": {
+    "sha256": "2ade32d2379679be56cfa477cb0b2c3b8f24168509d489e3f9769c7a6d543214",
+    "bytes": 651356
+  },
+  "integrated-sensory/courtyard-review-restoration/completion.png": {
+    "sha256": "f91f49602c8141a8071ed9fea31245cf1fe3e1ee535fc64c95090294fdd9301a",
+    "bytes": 663759
+  },
+  "integrated-sensory/courtyard-review-restoration/recap.png": {
+    "sha256": "efbd2b1768192bee8037d4e5d4a27d7b3290af8c7402ee7bca1fcd9695892364",
+    "bytes": 504263
+  },
+  "integrated-sensory/courtyard-review-restoration/results.json": {
+    "sha256": "1b60132e045a2bcfdfc2eacd14b67db8053fc4c5428999c70c270d548ec44e48",
+    "bytes": 859
+  },
+  "integrated-sensory/courtyard-review-restoration/ritual.mp4": {
+    "sha256": "0cea28b167599c42b8ea41460ab2a4ed481ce536ba5438eeb5cc76371fb7d60c",
+    "bytes": 6136410
+  },
+  "integrated-sensory/integrated-current/capture-manifest.json": {
+    "sha256": "59b0840c14df60158ef0273f33d360471e9e231e3ccf602262c4a52bb1e0fc18",
+    "bytes": 9982
+  },
+  "integrated-sensory/integrated-current/direction.png": {
+    "sha256": "4a753583579bf3c295afa3ee1df77a623e84a7182e55d243b7d1366801d31fd8",
+    "bytes": 679520
+  },
+  "integrated-sensory/integrated-current/dirty.png": {
+    "sha256": "ce24b2fa5281b6f96aa84b97c2516f904ac2be9350ccbddafd815b4e7005e8b7",
+    "bytes": 681217
+  },
+  "integrated-sensory/integrated-current/discoveries.png": {
+    "sha256": "1d15bcd6db779889e0a8389032ba0d67c2aff4a14b27de202ce7ac3a09ac8f22",
+    "bytes": 493617
+  },
+  "integrated-sensory/integrated-current/first-helper.png": {
+    "sha256": "69d32d898ade642d8a9ee3a7f3a686e7e8831ea1fb9b61c37efbbf6203672b52",
+    "bytes": 683227
+  },
+  "integrated-sensory/integrated-current/opening.mp4": {
+    "sha256": "21f8e485f93c740ba10a59f70bce60ea5633a5458250452712f725dc953c86a5",
+    "bytes": 3840329
+  },
+  "integrated-sensory/integrated-current/purchase.png": {
+    "sha256": "c45777a091d9fdc63c5dc09f4e7ea029f672e24a017cf968744255fa12cbc087",
+    "bytes": 491555
+  },
+  "integrated-sensory/integrated-current/results.json": {
+    "sha256": "1609e29d34afb49c8ca3ce3f681febeac3643aaecd737cae71ed91df8c47b5a1",
+    "bytes": 921
+  },
+  "integrated-sensory/integrated-current/settings.png": {
+    "sha256": "52f82c59580caa42bc07a5f5df3d46ff9ef990860e901780d23812fdec7efabc",
+    "bytes": 569448
+  },
+  "integrated-sensory/minimum-window-before/capture-manifest.json": {
+    "sha256": "87ebdb78992a76efc5cb06797217dbc31ebea0821df5aad3ffe31fddf14048a4",
+    "bytes": 9153
+  },
+  "integrated-sensory/minimum-window-before/direction.png": {
+    "sha256": "fd1970a4493f79132c9a3363aded8ae993fbfb7c234fde1beead945d17e996d4",
+    "bytes": 393058
+  },
+  "integrated-sensory/minimum-window-before/dirty.png": {
+    "sha256": "21e5bf3d5ea8210cf4bc6ffb31321bef1d81b4dd1302947eb02e3ccb11afd03a",
+    "bytes": 391961
+  },
+  "integrated-sensory/minimum-window-before/discoveries.png": {
+    "sha256": "bfabbfbf0bc59234c1d2da20de09bd7f2e890fa14f3849871ff4b0631d437c13",
+    "bytes": 314852
+  },
+  "integrated-sensory/minimum-window-before/first-helper.png": {
+    "sha256": "6197cabfc25fcc28cc8a8fca7ede612aebbe75bf48558f02d02e55991cd30dd5",
+    "bytes": 394077
+  },
+  "integrated-sensory/minimum-window-before/purchase.png": {
+    "sha256": "e27f628232202f6c10aed06d934530100a87613f00a4962f1c507589db32937f",
+    "bytes": 314417
+  },
+  "integrated-sensory/minimum-window-before/results.json": {
+    "sha256": "44f3aa6576fc1e17256622ab0002283db054a726fd9dca43a810c0336058be35",
+    "bytes": 921
+  },
+  "integrated-sensory/minimum-window-before/settings.png": {
+    "sha256": "e1d697ff0e00af8147180ba3e8372ac5c2f15580b11170f48ddf8ce2a5d6fd99",
+    "bytes": 354222
+  },
+  "integrated-sensory/minimum-window-readable/capture-manifest.json": {
+    "sha256": "d4fbf966196987ca2195270c43364a72a8e4f44da4c4a6a4cefa3d4e3aa71b39",
+    "bytes": 10024
+  },
+  "integrated-sensory/minimum-window-readable/direction.png": {
+    "sha256": "a7f9fb2836d08fc2548d120db42f9fbe4326936b898d02f7fdc4674f95e3f048",
+    "bytes": 399168
+  },
+  "integrated-sensory/minimum-window-readable/dirty.png": {
+    "sha256": "b04ef1cdeade04361e011c1fb940d69f34002642c5257ecf6eab8fa0d3042f44",
+    "bytes": 397907
+  },
+  "integrated-sensory/minimum-window-readable/discoveries.png": {
+    "sha256": "52b9496695d291546c834759b5a7c098844681dd1aa421fb477ed66955b5a218",
+    "bytes": 266155
+  },
+  "integrated-sensory/minimum-window-readable/first-helper.png": {
+    "sha256": "4c60897a1c10a26fbf6f22b58411d3e12e8a83ae8cafcb41bc3562bc6669bdf1",
+    "bytes": 399624
+  },
+  "integrated-sensory/minimum-window-readable/purchase.png": {
+    "sha256": "50d6472598834dcb2926639c6a7b756af8d8d059fa5d37f4d8042f0008c25b60",
+    "bytes": 265943
+  },
+  "integrated-sensory/minimum-window-readable/results.json": {
+    "sha256": "74c08dd0b37c2ec6cfb9a1e31aa700baa08a89780a9cf31bcc0a2eb8ff719487",
+    "bytes": 921
+  },
+  "integrated-sensory/minimum-window-readable/settings.png": {
+    "sha256": "c3db007b63acf872fd0b8a978b762fec0fd34ff41349e340dcb1532da0cc63dc",
+    "bytes": 281047
+  },
+  "integrated-sensory/opening-11.0.png": {
+    "sha256": "4c905a2a793ca00bd4840acad60293088d94f44b3be59bcb49478e81cdbe5af6",
+    "bytes": 629454
+  },
+  "integrated-sensory/opening-31.0.png": {
+    "sha256": "e56536e04f13c605dc516ec5850e9c8470bbacb1d659be310530594108c47d12",
+    "bytes": 632426
+  },
+  "integrated-sensory/opening-5.5.png": {
+    "sha256": "948021c85c0729fb746d001a975f707f30e498c370f0a85cb317c7d805d0a2ae",
+    "bytes": 633571
+  },
+  "integrated-sensory/opening-sequence-01.png": {
+    "sha256": "5a330ed145174934f8685be8ce2540cdee846b0445ff7d40a31b0c4e2c810d8d",
+    "bytes": 935226
+  },
+  "integrated-sensory/opening-sequence-02.png": {
+    "sha256": "dcfb2abb29bc5ba288aded67a663a1877fbb60c2b68d18ead3c4ccddca4d29b1",
+    "bytes": 1092103
+  },
+  "integrated-sensory/opening-sequence-03.png": {
+    "sha256": "ca697f35a77e71b5c7d667b9e01bfa74dd08d47a879aa95298a7ee003a9a3bde",
+    "bytes": 1140864
+  },
+  "integrated-sensory/provenance.json": {
+    "sha256": "120f1a9d5e94e6eef015822f9f74226d512df4b5d004085e185cfac7df93db23",
+    "bytes": 13162
+  },
+  "integrated-sensory/ritual-sequence-01.png": {
+    "sha256": "3002a7be0f0468c51efd626a0c53addeb0c8465cac2d003ee46f2e3ee9c036dd",
+    "bytes": 1097895
+  },
+  "integrated-sensory/ritual-sequence-02.png": {
+    "sha256": "38436e9475dd0f9a4dbdad7e60e5da8bb5ec373669bb38b287cf011ea215d9de",
+    "bytes": 1180691
+  },
+  "integrated-sensory/ritual-sequence-03.png": {
+    "sha256": "5be822e7d7ed1607724102dd0378b86847cc732e395875476d44fec3154afb3b",
+    "bytes": 141016
+  },
+  "integrated-sensory/work-detail-29-33.png": {
+    "sha256": "3ba1c24852e15530dd9f8e68acea82597771aa080ac5a7f860f2d6946856e6c7",
+    "bytes": 918589
+  },
   "native-manifest.json": {
     "sha256": "0a2e53dc04b5c49b294a099d4ab5ebae16f31377c39eb6152f848ae25200cb54",
     "bytes": 16334
@@ -236,8 +412,8 @@
     "bytes": 903356
   },
   "provenance.json": {
-    "sha256": "10231e1382dd51df144dd3a8994f3e3686e11ab0e90250088ea1337de29e6235",
-    "bytes": 4015
+    "sha256": "cfe24e13753d653882595fba81d9bc44aaeb990d69963b8468fc59e39d1fb14f",
+    "bytes": 4294
   },
   "travel-detail-sequence.png": {
     "sha256": "dee04d52b6462b802f54d84d8ddd8fd13318585f669830057822a79ade30bf45",

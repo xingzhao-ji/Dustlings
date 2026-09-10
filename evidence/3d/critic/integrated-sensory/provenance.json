@@ -1,0 +1,286 @@
+{
+  "reviewer": "Independent AI critic",
+  "humanSessions": 0,
+  "createdAt": "2026-09-10T09:09:12.855788+00:00",
+  "inputs": [
+    {
+      "label": "integrated-current",
+      "sourceHash": "13a3d7309767ebfcb2c7aac65a8623f3ba3fd261decc767b151ab2c5f0a3517a",
+      "files": [
+        {
+          "source": "evidence/3d/integrated-current/capture-manifest.json",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/integrated-current/capture-manifest.json",
+          "bytes": 9982,
+          "sha256": "59b0840c14df60158ef0273f33d360471e9e231e3ccf602262c4a52bb1e0fc18"
+        },
+        {
+          "source": "evidence/3d/integrated-current/direction.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/integrated-current/direction.png",
+          "bytes": 679520,
+          "sha256": "4a753583579bf3c295afa3ee1df77a623e84a7182e55d243b7d1366801d31fd8"
+        },
+        {
+          "source": "evidence/3d/integrated-current/dirty.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/integrated-current/dirty.png",
+          "bytes": 681217,
+          "sha256": "ce24b2fa5281b6f96aa84b97c2516f904ac2be9350ccbddafd815b4e7005e8b7"
+        },
+        {
+          "source": "evidence/3d/integrated-current/discoveries.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/integrated-current/discoveries.png",
+          "bytes": 493617,
+          "sha256": "1d15bcd6db779889e0a8389032ba0d67c2aff4a14b27de202ce7ac3a09ac8f22"
+        },
+        {
+          "source": "evidence/3d/integrated-current/first-helper.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/integrated-current/first-helper.png",
+          "bytes": 683227,
+          "sha256": "69d32d898ade642d8a9ee3a7f3a686e7e8831ea1fb9b61c37efbbf6203672b52"
+        },
+        {
+          "source": "evidence/3d/integrated-current/opening.mp4",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/integrated-current/opening.mp4",
+          "bytes": 3840329,
+          "sha256": "21f8e485f93c740ba10a59f70bce60ea5633a5458250452712f725dc953c86a5",
+          "media": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_type": "video",
+                "width": 1280,
+                "height": 800,
+                "r_frame_rate": "30/1"
+              },
+              {
+                "codec_type": "audio",
+                "r_frame_rate": "0/0"
+              }
+            ],
+            "format": {
+              "duration": "66.633333"
+            }
+          }
+        },
+        {
+          "source": "evidence/3d/integrated-current/purchase.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/integrated-current/purchase.png",
+          "bytes": 491555,
+          "sha256": "c45777a091d9fdc63c5dc09f4e7ea029f672e24a017cf968744255fa12cbc087"
+        },
+        {
+          "source": "evidence/3d/integrated-current/results.json",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/integrated-current/results.json",
+          "bytes": 921,
+          "sha256": "1609e29d34afb49c8ca3ce3f681febeac3643aaecd737cae71ed91df8c47b5a1"
+        },
+        {
+          "source": "evidence/3d/integrated-current/settings.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/integrated-current/settings.png",
+          "bytes": 569448,
+          "sha256": "52f82c59580caa42bc07a5f5df3d46ff9ef990860e901780d23812fdec7efabc"
+        }
+      ]
+    },
+    {
+      "label": "courtyard-review-restoration",
+      "sourceHash": "7982e03a577598fc1d3e76ce2017ce93e43f0d53dac90b70a06f5ead96e8441d",
+      "files": [
+        {
+          "source": "evidence/3d/courtyard-review-restoration/capture-manifest.json",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/courtyard-review-restoration/capture-manifest.json",
+          "bytes": 9925,
+          "sha256": "fc27bae6a81d863915ca0433f0f8a10a815fce414e8896ef27f8059e853a4a99"
+        },
+        {
+          "source": "evidence/3d/courtyard-review-restoration/chorus.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/courtyard-review-restoration/chorus.png",
+          "bytes": 651356,
+          "sha256": "2ade32d2379679be56cfa477cb0b2c3b8f24168509d489e3f9769c7a6d543214"
+        },
+        {
+          "source": "evidence/3d/courtyard-review-restoration/completion.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/courtyard-review-restoration/completion.png",
+          "bytes": 663759,
+          "sha256": "f91f49602c8141a8071ed9fea31245cf1fe3e1ee535fc64c95090294fdd9301a"
+        },
+        {
+          "source": "evidence/3d/courtyard-review-restoration/recap.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/courtyard-review-restoration/recap.png",
+          "bytes": 504263,
+          "sha256": "efbd2b1768192bee8037d4e5d4a27d7b3290af8c7402ee7bca1fcd9695892364"
+        },
+        {
+          "source": "evidence/3d/courtyard-review-restoration/results.json",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/courtyard-review-restoration/results.json",
+          "bytes": 859,
+          "sha256": "1b60132e045a2bcfdfc2eacd14b67db8053fc4c5428999c70c270d548ec44e48"
+        },
+        {
+          "source": "evidence/3d/courtyard-review-restoration/ritual.mp4",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/courtyard-review-restoration/ritual.mp4",
+          "bytes": 6136410,
+          "sha256": "0cea28b167599c42b8ea41460ab2a4ed481ce536ba5438eeb5cc76371fb7d60c",
+          "media": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_type": "video",
+                "width": 1280,
+                "height": 800,
+                "r_frame_rate": "30/1"
+              },
+              {
+                "codec_type": "audio",
+                "r_frame_rate": "0/0"
+              }
+            ],
+            "format": {
+              "duration": "41.300000"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label": "minimum-window-before",
+      "sourceHash": "fe9247db92a007ab99fc239c4b69308c42751f757d174db0087e0739030d0c1f",
+      "files": [
+        {
+          "source": "evidence/3d/minimum-window-before/capture-manifest.json",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-before/capture-manifest.json",
+          "bytes": 9153,
+          "sha256": "87ebdb78992a76efc5cb06797217dbc31ebea0821df5aad3ffe31fddf14048a4"
+        },
+        {
+          "source": "evidence/3d/minimum-window-before/direction.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-before/direction.png",
+          "bytes": 393058,
+          "sha256": "fd1970a4493f79132c9a3363aded8ae993fbfb7c234fde1beead945d17e996d4"
+        },
+        {
+          "source": "evidence/3d/minimum-window-before/dirty.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-before/dirty.png",
+          "bytes": 391961,
+          "sha256": "21e5bf3d5ea8210cf4bc6ffb31321bef1d81b4dd1302947eb02e3ccb11afd03a"
+        },
+        {
+          "source": "evidence/3d/minimum-window-before/discoveries.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-before/discoveries.png",
+          "bytes": 314852,
+          "sha256": "bfabbfbf0bc59234c1d2da20de09bd7f2e890fa14f3849871ff4b0631d437c13"
+        },
+        {
+          "source": "evidence/3d/minimum-window-before/first-helper.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-before/first-helper.png",
+          "bytes": 394077,
+          "sha256": "6197cabfc25fcc28cc8a8fca7ede612aebbe75bf48558f02d02e55991cd30dd5"
+        },
+        {
+          "source": "evidence/3d/minimum-window-before/purchase.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-before/purchase.png",
+          "bytes": 314417,
+          "sha256": "e27f628232202f6c10aed06d934530100a87613f00a4962f1c507589db32937f"
+        },
+        {
+          "source": "evidence/3d/minimum-window-before/results.json",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-before/results.json",
+          "bytes": 921,
+          "sha256": "44f3aa6576fc1e17256622ab0002283db054a726fd9dca43a810c0336058be35"
+        },
+        {
+          "source": "evidence/3d/minimum-window-before/settings.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-before/settings.png",
+          "bytes": 354222,
+          "sha256": "e1d697ff0e00af8147180ba3e8372ac5c2f15580b11170f48ddf8ce2a5d6fd99"
+        }
+      ]
+    },
+    {
+      "label": "minimum-window-readable",
+      "sourceHash": "945b303f728a9cf24436131376ca2cd649959b516bbe5139a11673275690f4f4",
+      "files": [
+        {
+          "source": "evidence/3d/minimum-window-readable/capture-manifest.json",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-readable/capture-manifest.json",
+          "bytes": 10024,
+          "sha256": "d4fbf966196987ca2195270c43364a72a8e4f44da4c4a6a4cefa3d4e3aa71b39"
+        },
+        {
+          "source": "evidence/3d/minimum-window-readable/direction.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-readable/direction.png",
+          "bytes": 399168,
+          "sha256": "a7f9fb2836d08fc2548d120db42f9fbe4326936b898d02f7fdc4674f95e3f048"
+        },
+        {
+          "source": "evidence/3d/minimum-window-readable/dirty.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-readable/dirty.png",
+          "bytes": 397907,
+          "sha256": "b04ef1cdeade04361e011c1fb940d69f34002642c5257ecf6eab8fa0d3042f44"
+        },
+        {
+          "source": "evidence/3d/minimum-window-readable/discoveries.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-readable/discoveries.png",
+          "bytes": 266155,
+          "sha256": "52b9496695d291546c834759b5a7c098844681dd1aa421fb477ed66955b5a218"
+        },
+        {
+          "source": "evidence/3d/minimum-window-readable/first-helper.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-readable/first-helper.png",
+          "bytes": 399624,
+          "sha256": "4c60897a1c10a26fbf6f22b58411d3e12e8a83ae8cafcb41bc3562bc6669bdf1"
+        },
+        {
+          "source": "evidence/3d/minimum-window-readable/purchase.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-readable/purchase.png",
+          "bytes": 265943,
+          "sha256": "50d6472598834dcb2926639c6a7b756af8d8d059fa5d37f4d8042f0008c25b60"
+        },
+        {
+          "source": "evidence/3d/minimum-window-readable/results.json",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-readable/results.json",
+          "bytes": 921,
+          "sha256": "74c08dd0b37c2ec6cfb9a1e31aa700baa08a89780a9cf31bcc0a2eb8ff719487"
+        },
+        {
+          "source": "evidence/3d/minimum-window-readable/settings.png",
+          "reviewCopy": "evidence/3d/critic/integrated-sensory/minimum-window-readable/settings.png",
+          "bytes": 281047,
+          "sha256": "c3db007b63acf872fd0b8a978b762fec0fd34ff41349e340dcb1532da0cc63dc"
+        }
+      ]
+    }
+  ],
+  "manifestDifferences": [
+    {
+      "file": "scripts/main.gd",
+      "opening": "796a9e1f0ce5760d28fc0950d52dd9810c687bdaa6c2c21a8b4eb78e7ee08dd1",
+      "restoration": "c9dfe6d20214e64ed64ccd255e6ab599115e8dbcf99507cc2b07d354cc3ed977"
+    }
+  ],
+  "reviewMethod": "Complete chronology sampled at 1 Hz; normal-size stills and selected video frames; 4 Hz crops at 4\u20137 s and 10\u201313 s; 3 Hz work crop at 29\u201333 s. Not continuous audiovisual perception.",
+  "directInput": false,
+  "listening": false,
+  "gameSourceInspected": false,
+  "nativeAppLaunched": false,
+  "minimumWindowReview": "960\u00d7600 still comparison only; minimum-window movies not reviewed or copied. Older snapshots retain underlying gameplay controls, unlike integrated-current menus.",
+  "captureConditions": "Native Godot MovieMaker fixed engine-time at 30 FPS with generated InputEvents. Opening declares no progress fixture; restoration declares all-cleaned 50-helper fixture. No native wall-clock performance or human-play inference.",
+  "leadProvidedClaimsNotSourceAudited": [
+    "Opening predates restoration only by main ring visibility and QA profile preferences",
+    "Active chorus is 18 seconds after initial gathering",
+    "World and audio continue at completion; images establish exposed courtyard and visible pose changes, not listening"
+  ],
+  "reviewedNormalSizeImages": [
+    "integrated-current/dirty.png",
+    "integrated-current/first-helper.png",
+    "integrated-current/direction.png",
+    "opening-5.5.png",
+    "opening-31.0.png",
+    "courtyard-review-restoration/completion.png",
+    "minimum-window-before/discoveries.png",
+    "minimum-window-readable/discoveries.png",
+    "minimum-window-readable/settings.png"
+  ],
+  "finalizedAt": "2026-09-10T09:14:24.163056+00:00"
+}

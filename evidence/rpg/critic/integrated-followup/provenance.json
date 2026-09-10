@@ -1,0 +1,82 @@
+{
+  "reviewer": "independent AI critic",
+  "developer_briefed": true,
+  "blind_review": false,
+  "human_sessions": 0,
+  "native_input": false,
+  "audio_listened": false,
+  "continuous_audiovisual_perception": false,
+  "inputs": {
+    "evidence/rpg/neighborhood-integrated/route.mp4": {
+      "sha256": "fa9145eb056144e46d48b0b8e1593dc1585f9f7cdca4512c98b6e0c7b3d7081d",
+      "bytes": 41676925
+    },
+    "evidence/rpg/neighborhood-integrated/capture-manifest.json": {
+      "sha256": "af10ab56ad0c884280d284c26e679d67109d27c5d55ed33cfbae36427a32fe90",
+      "bytes": 14413
+    },
+    "evidence/rpg/neighborhood-integrated/results.json": {
+      "sha256": "4d83022ae75b97ab40f9088b957d8c736d64352b235b5b51f60c2a6799c7796e",
+      "bytes": 20506
+    },
+    "evidence/rpg/neighborhood-integrated/arrival.png": {
+      "sha256": "7f75b7370dfe08ca9c0ac06b71476ccb392e3f93d6bed290ac6eb90f47b85810",
+      "bytes": 379013
+    },
+    "evidence/rpg/neighborhood-integrated/first-companion.png": {
+      "sha256": "a07228d923040f786a74952af8ab191d700e69e88d1d48d5702554feadf2fe65",
+      "bytes": 406421
+    },
+    "evidence/rpg/neighborhood-integrated/ivo.png": {
+      "sha256": "e172fadf1d414878cbf6e863bcee4a363bf42c3647d8828e3f3bedcf87434cc0",
+      "bytes": 420626
+    },
+    "evidence/rpg/neighborhood-integrated/mara.png": {
+      "sha256": "9f023262b2b13f12a4176a9d6fb52a6c687659ba60caa78fcd5422c3391e089d",
+      "bytes": 417289
+    },
+    "evidence/rpg/neighborhood-integrated/letter.png": {
+      "sha256": "c2d719e071fce20683920cdd1b48474bfc4c7cc11a67ffb92f103cc771dbc6fb",
+      "bytes": 443208
+    },
+    "evidence/rpg/neighborhood-integrated/greenhouse.png": {
+      "sha256": "aab393df06f5edfd477bbb651ec523d30a2d0640fd54a28aa19e8d24ffb13afc",
+      "bytes": 436591
+    },
+    "evidence/rpg/neighborhood-integrated/home-interior.png": {
+      "sha256": "2cca605b53b4fd8d1d42f7934d9dedfc7e3e7be6cdac6af77b0b44c6d36656d9",
+      "bytes": 464239
+    },
+    "evidence/rpg/neighborhood-ui-final/ui.mp4": {
+      "sha256": "771a532b98904925bac6313c8b958e46cf6ad4f53eb9d1e8f170952f1dff935d",
+      "bytes": 336207
+    },
+    "evidence/rpg/neighborhood-ui-final/capture-manifest.json": {
+      "sha256": "119c432245b64b240685ad658ad8e2cf08251b1634b67402215edbccb1348c54",
+      "bytes": 17306
+    },
+    "evidence/rpg/neighborhood-ui-final/results.json": {
+      "sha256": "737468802c58586bc94696188ff21f7f0c66a673488c6a6875b519b75628fef0",
+      "bytes": 2399
+    },
+    "evidence/rpg/neighborhood-ui-final/settings.png": {
+      "sha256": "4b65e8497597a638b27407a5a29281b0843a0aadd7dfe3a7b5a8f365ce26fbd5",
+      "bytes": 160734
+    },
+    "evidence/rpg/neighborhood-ui-final/journal.png": {
+      "sha256": "6b23fb318154432f60bdaeb421a23604ead850c224b82efb6a8d07c1907faa7c",
+      "bytes": 206824
+    }
+  },
+  "neighborhood-integrated": {
+    "source_hash": "e834ba59ea92629ee4b42883dbe6d6f13326d2859f4189aba3eb4c61fba04633"
+  },
+  "neighborhood-ui-final": {
+    "source_hash": "372223232b2ddd89ff72dfec9265ec74cb6e0f20651232ddc63e8bc806955e0f"
+  },
+  "different_shared_files_between_route_and_later_ui": [
+    "scripts/rpg_main.gd",
+    "scripts/rpg_qa.gd"
+  ],
+  "samples": "Targeted chronological contact sheets:0\u201316s at1fps,5\u201311s at4fps,109\u2013119s at3fps,120\u2013152s at0.5fps. Normal-size event images and dense113.1\u2013118.1s stills inspected. Existingbaseline beforeimages reviewed for comparison. These are frame samples, not continuous audiovisual playback."
+}

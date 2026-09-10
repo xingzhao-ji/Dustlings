@@ -1,4 +1,4 @@
-# Active quality gaps — 3D courtyard, 2026-09-10 11:09 UTC
+# Active quality gaps — 3D courtyard, 2026-09-10 11:12 UTC
 
 Human sessions: **0**. Player, presentation and current-build owner gates remain open. The courtyard is the only eligible zone, with at most50 helpers. A working package and independent AI review do not establish benchmark quality or readiness to sell.
 
@@ -9,7 +9,7 @@ Human sessions: **0**. Player, presentation and current-build owner gates remain
 5. **Owner acceptance — required and separate.** The owner has been asked for current-experience observations; no assessment is recorded. Obtain explicit feedback on quality, completeness, promised value and sale readiness for the current package. Target-player enthusiasm and owner approval cannot replace one another.
 6. **Later release work — gated by evidence and access.** Steam installation/update and distribution approval remain open. Mac is ad-hoc signed and unnotarized. Canal, clocktower garden and iPad/iPhone ports remain deferred until their eligible gates; Figma and CUA physical input are unavailable. Do not add content or speculative polish to fill the missing human evidence.
 
-**Locally verified checkpoint:** runtime a8430be / Main8864aa… is exported in the10:59:12 build, packaged source ee3a43ae…, PCK47f6dec…. Actual full/short films and quiet60-second native profile match it; p9514.387ms, worst19.911ms, zero intervals over33.4. The first overlapping sample is preserved as non-isolated. Both distributions include source-bound engine notices; Mac signature/PCK checks pass, Windows ZIP17 actual checks and30 compatibility/rejection checks pass. The final source-bound review hub is being completed. See CONTINUATION.md for exact artifact paths and next action.
+**Locally verified checkpoint:** runtime a8430be / Main8864aa… is exported in the10:59:12 build, packaged source ee3a43ae…, PCK47f6dec…. Actual full/short films and quiet60-second native profile match it; p9514.387ms, worst19.911ms, zero intervals over33.4. The first overlapping sample is preserved as non-isolated. Both distributions include source-bound engine notices; Mac signature/PCK checks pass, Windows ZIP17 actual checks and30 compatibility/rejection checks pass. The strict source-bound review hub passes77 linked-byte/hash checks and live-runtime parity. The session has ended at the human/device validation blocker. See CONTINUATION.md for exact artifact paths and next action.
 
 Preserve the corrected save feedback, fitting recovery layout, predictable world/HUD focus, reachable brushing targets, distinct moving helpers, meaningful upgrades, stable camera and reliable recovery. All previously reproduced material runtime defects in the current focused backlog have corrections and bounded verification. Subjective quality and untested devices remain unfinished work; this statement is not product completion.
 

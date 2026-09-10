@@ -1,3 +1,47 @@
+# Continuation checkpoint — 2026-09-10 11:12 UTC
+
+**Session ended at a human/device validation blocker. The game is unfinished.** The current 3D courtyard is awaiting representative-player, presentation and owner acceptance. Human sessions: **0**. No further zones are eligible. No work continues after this session.
+
+## Resume here
+
+Inspect new owner/player observations and device results first. The exact next evidence is a fresh-save play session on the current package: use `PLAYTEST.md`'s five-minute required segment, neutral continuation choice and recorded explanations/reasons. Obtain current owner assessment separately. Run the Windows ZIP on named Windows hardware and test actual mouse/trackpad and OS file-picker interaction. Audition the opening, repeated loops, crowd and restoration with the actual sound setup recorded.
+
+If new evidence identifies a problem, implement the smallest focused correction, compare actual gameplay, run relevant checks and preserve a new source-bound checkpoint. Without new observations/device access, do not repeat the completed research or suites, retune subtle art by preference, or expand into the canal/garden. Available tools cannot establish the missing human judgments or Windows physical execution. No further grounded local change is currently selected.
+
+## Current playable artifact
+
+Build: `builds/3d/0.4.0-dev-2026-09-10T10-59-12-915Z-ee3a43ae3d/manifest.json`.
+
+- Runtime checkpoint: **a8430be**, Main SHA `8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8`.
+- Manifest repository revision: **b5034e421843efd22b195a5ec1b7a29d26b65b2e** (packaging-only work after that runtime). Clean source hash: `ee3a43ae3dcf50364bcdb3914c730f2cc459ebeb18559b39f376e3a3996ef920`.
+- Mac: `macOS/Dustlings.zip`,62,081,638 bytes, SHA `fb75c4d221d42194ba1150adfc67dfd2cdff3eeef2019cb9f6611c2bed839110`. Universal2, ad-hoc signature verified, unnotarized.
+- Windows: `Windows/Dustlings-Windows.zip`,39,636,125 bytes, SHA `d7733b1a2f3b09ed67c94abe2e659257f109c8b71aebdf8cf4a7ad858bdbc80b`. Extract the entire ZIP; Windows remains **unrun**.
+- Both PCKs: `47f6dec84813aa1c8bb873ea5c2636720a404a7a1b54a57cd5409e863fec7d1c`.
+
+`evidence/3d/REVIEW.html` is the strict current hub. All **77** linked files/hashes and live-runtime parity passed, including a final root check at11:11 UTC. The prior `960d96b` package/films/180-second profile remain explicit before evidence. Current archives include four source-bound engine/component notice files outside the app/PCK. No upload or store submission occurred.
+
+## Completed corrections and verification
+
+The courtyard includes the integrated real3D dust/work feedback, visible far-side helper approaches, restrained powder, warm windows and lighter moving water. Subsequent UI work corrected hidden save-copy/import results, clipped recovery messages, the roadmap interruption in the optional recap, generic-only post-water guidance, missing Help focus, world/HUD keyboard conflicts, cross-container Tab trapping and a deferred freed-control callback error. Preserve stable framing, original creature identity, progression, audio and optional unpaused completion.
+
+Actual bounded checks: **133/133** Settings cases on their recorded source; **30/30** final native routing/import cases including eight import/free cycles; separate **5/5** Help checks; **16** integrated input/raycast/save checks; **45/45** actual packaged Mac checks across four processes. The new Windows package passes **17/17** exact-build checks plus **30/30** compatibility/rejection cases. Notice helper/archive-copy proof passes **10/10**. Earlier runtime and probe-only failures are preserved, with source scopes in `docs/3D-ACCESSIBILITY-AUDIT.md` and the evidence folders. Generated inputs are not physical or human usability tests.
+
+Current actual films: `evidence/3d/courtyard-ui-review/full.mp4` and `courtyard-ui-restoration/ritual.mp4`; source capture hash `d16167dda40fc96fccb6da3d604483a90783007f64c4c545e5fbe99bc7ab08ae`. The full route reaches first helper22.217s, first upgrade92.467s and completion655.600 simulation seconds, with three upgrades/17orders and no progress injection. Actual625s before/after frames show the contextual cleanup hint. The ending displays100% and stays unpaused; the41.3s short fixture verifies focused Enter return. Movie timing is not performance or human pacing.
+
+The quiet current50-helper working sample is **60.012401 wall seconds**,7,197 callbacks, p95 **14.387ms**, p99 **14.816ms**, worst **19.911ms**, zero over33.4ms. Physical host: MacBook Pro Mac16,7, M4 Pro,48GB, macOS26.6.2,1280×800 native Metal, normal quality/audio. The first sample overlapped a packaging fixture and is retained as non-isolated with its own note; no raw outcomes were discarded. The older180-second three-phase profile keeps its older source/conditions. See `docs/PERFORMANCE.md`.
+
+## Remaining quality gaps
+
+Independent critic `b45fc86` sees useful cleanup context without new obstruction; prior improvements and consistent ending remain visible in sampled frames. Human helper/dust recognition, rear-crowd readability, discrete water onset, approximately110 seconds of cleanup after the ceremony, musical identity, comfort and emotional payoff remain uncertain. No listening or continuous audiovisual perception was claimed by the critic. No further cosmetic iteration was indicated by its latest bounded review.
+
+Observe12–20 unfamiliar target players by segment; retain80% uncoached-upgrade and50% voluntary-continuation internal rules with actual counts/reasons. Owner approval remains separate. The owner was asked for observations on recorded gameplay, but no reply or acceptance is recorded. No invitations were sent. Figma and CUA physical input remain unavailable; native engine UI is the inspectable fallback. Steam distribution approval, Windows hardware, signing/notarization and later iPad/iPhone ports retain their separate gates.
+
+All owned game, browser, test and export processes are closed. All tracked work is committed. Builds are preserved locally in the ignored build directory. Historical untracked `artifacts/audio/ui-regression/audition-levels.svg` and `courtyard-audition.wav` were left untouched and are not proof of current native listening.
+
+---
+
+## Earlier checkpoint (historical status where superseded above)
+
 # Continuation checkpoint — 2026-09-10 10:53 UTC
 
 Session active. The real 3D courtyard remains **awaiting human validation**. Human sessions: **0**. Player, presentation and owner gates are open. Do not expand beyond the courtyard.

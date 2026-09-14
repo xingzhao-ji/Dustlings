@@ -48,7 +48,9 @@ func _init() -> void:
 	check(recovered.ok and recovered.recovered and recovery.revision == 3 and recovered.payload.game.day == 2, "Newer valid staged checkpoint wins after interrupted promotion")
 	check(recovery.save_progress(recovered.payload).ok and recovery.revision == 4, "Recovered staged generation promotes without losing day/settings")
 	# Corrupt primary recovery must preserve corrupt bytes as well as last good data.
-	write(path, {"bad": "primary"})
+	var truncated_file = FileAccess.open(path, FileAccess.WRITE)
+	truncated_file.store_string("{\"game\":")
+	truncated_file.close()
 	var corrupt_primary_bytes = FileAccess.get_file_as_string(path)
 	var backup = Store.new(path)
 	var fallback = backup.load_progress()

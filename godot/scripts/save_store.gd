@@ -23,8 +23,13 @@ func _read(file_path: String) -> Variant:
 	if file.get_length() > MAX_BYTES:
 		file.close()
 		return null
-	var payload = JSON.parse_string(file.get_as_text())
+	var parser = JSON.new()
+	var result = parser.parse(file.get_as_text())
 	file.close()
+	# Damaged generations are an expected recovery case. The instance parser
+	# returns its error without emitting an engine error for each retry.
+	if result != OK: return null
+	var payload = parser.data
 	return payload if _valid(payload) else null
 
 func _latest() -> Dictionary:

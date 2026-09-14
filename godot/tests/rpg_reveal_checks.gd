@@ -8,6 +8,10 @@ var output="res://../evidence/rpg/reveal"
 var hashes={}
 var observations={}
 func _init():
+    if "--rpg-qa" not in OS.get_cmdline_user_args():
+        push_error("Scene tests require --rpg-qa to protect normal player saves.")
+        quit(2)
+        return
     for arg in OS.get_cmdline_user_args():
         if arg.begins_with("--reveal-evidence="):output=arg.trim_prefix("--reveal-evidence=")
     for path in ["rpg_main.gd","rpg_environment.gd","rpg_actor.gd","rpg_story.gd","rpg_save.gd","dustling_visual.gd","rpg_navigation.gd"]:

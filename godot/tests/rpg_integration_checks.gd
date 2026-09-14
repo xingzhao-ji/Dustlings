@@ -10,6 +10,10 @@ var hashes: Dictionary = {}
 var output = "res://../evidence/rpg/integration"
 
 func _init() -> void:
+	if "--rpg-qa" not in OS.get_cmdline_user_args():
+		push_error("Scene tests require --rpg-qa to protect normal player saves.")
+		quit(2)
+		return
 	for path in ["rpg_main.gd", "rpg_environment.gd", "rpg_actor.gd", "rpg_story.gd", "rpg_save.gd"]:
 		hashes[path] = FileAccess.get_sha256("res://scripts/" + path)
 	for arg in OS.get_cmdline_user_args():

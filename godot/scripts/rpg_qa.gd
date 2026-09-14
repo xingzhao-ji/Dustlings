@@ -11,6 +11,12 @@ var done = false
 var profile_frames: Array = []
 var last_tick = 0
 var profile_start = 0
+var profile_active = false
+var profile_waypoint = 0
+var profile_distance = 0.0
+var profile_previous = Vector3.INF
+var visible_panel_frames = 0
+var panel_layout_failures: Array = []
 var _right_held := false
 var _orbit_started := false
 var _orbit_pitch_start := 0.0
@@ -18,7 +24,13 @@ var _art_yaw_start := 0.0
 
 func _ready():
 	if game.qa_case=="overview": commands=[{ "wait":1.0},{"capture":"welcome"},{"button":"Step into"},{"wait":3.0},{"capture":"arrival"},{"wait":1.0}]
-	elif game.qa_case=="profile": commands=[{"wait":1.0},{"button":"Return home" if game._start_saved else "Step into"},{"profile":60.0}]
+	elif game.qa_case=="profile":
+		profile_active="--rpg-profile-active" in OS.get_cmdline_user_args()
+		commands=[{"wait":1.0},{"button":"Return home" if game._start_saved else "Step into"}]
+		if profile_active:
+			if game.player.position.x<-7 and game.player.position.z>1: commands.append({"move":Vector3(-10,0,7.8)})
+			commands.append({"move":Vector3(-4,0,8)})
+		commands.append({"profile":60.0})
 	elif game.qa_case=="ui": commands=[{"wait":1.0},{"capture":"welcome"},{"button":"Step into"},{"key":KEY_ESCAPE},{"wait":1.0},{"capture":"settings"},{"key":KEY_ESCAPE},{"key":KEY_J},{"wait":1.0},{"capture":"journal"},{"key":KEY_ESCAPE}]
 	elif game.qa_case=="art":
 		if game._start_saved:
@@ -54,8 +66,8 @@ func _ready():
 			{"move":Vector3(-3,0,-9.6)},{"interact":"table"},{"button":"Prepare the shared"},{"wait":2.0},{"close":true},{"wait":18.0},{"capture":"gathering"},
 			{"move":Vector3(-4.5,0,-9.3)},{"interact":"tavi"},{"button":"teach me"},{"wait":2.0},{"close":true},
 			{"move":Vector3(-1,0,-8.5)},{"interact":"mara"},{"button":"make something"},{"wait":2.0},{"close":true},
-			{"move":Vector3(-1,0,-6.5)},{"move":Vector3(2.2,0,-6.5)},{"move":Vector3(2.2,0,-7.4)},{"interact":"ivo"},{"button":"favorite route"},{"wait":2.0},{"close":true},
-			{"move":Vector3(2.2,0,-6.5)},{"move":Vector3(-3,0,-6.5)},{"move":Vector3(-3,0,-8)},{"interact":"nell"},{"button":"letter"},{"wait":2.0},{"close":true},
+			{"move":Vector3(-2.1,0,-10.1)},{"interact":"ivo"},{"button":"favorite route"},{"wait":2.0},{"close":true},
+			{"move":Vector3(-3.3,0,-10.7)},{"interact":"nell"},{"button":"letter"},{"wait":2.0},{"close":true},
 			{"move":Vector3(0,0,-7)},{"move":Vector3(0,0,3)},{"move":Vector3(-10,0,7.8)},{"move":Vector3(-10,0,5.1)},{"wait":3.0},{"capture":"home-return"},
 			{"save":true},{"wait":1.0}
 		]
@@ -115,6 +127,7 @@ func _orbit_input(cmd: Dictionary, delta: float) -> bool:
 	event.position = game.get_viewport().get_visible_rect().size * Vector2(.5,.4)
 	event.global_position = event.position
 	event.relative = Vector2(-float(cmd.orbit_yaw)*portion/(.004*sensitivity),pitch_change*portion/(.003*sensitivity)*(-1.0 if game.settings.invert else 1.0))
+	event.screen_relative = event.relative
 	Input.parse_input_event(event)
 	if age >= duration:
 		_right_button(false)
@@ -150,6 +163,12 @@ func _buttons(node: Node) -> Array:
 	return found
 
 func _process(delta):
+	if is_instance_valid(game.modal) and game.modal.modulate.a>.001:
+		var rect:Rect2=game.modal.get_global_rect()
+		var viewport=game.get_viewport().get_visible_rect()
+		visible_panel_frames+=1
+		if not viewport.encloses(rect) or (game.modal_kind=="dialogue" and absf(rect.end.y-(viewport.end.y-24))>2):
+			if panel_layout_failures.size()<20: panel_layout_failures.append({"time":total,"kind":game.modal_kind,"rect":str(rect),"viewport":str(viewport)})
 	if done: return
 	total += delta
 	age += delta
@@ -210,7 +229,19 @@ func _process(delta):
 		var now=Time.get_ticks_usec()
 		if profile_start==0: profile_start=now; last_tick=now
 		else: profile_frames.append(float(now-last_tick)/1000.0); last_tick=now
-		complete=float(now-profile_start)/1000000.0>=cmd.profile
+		var wall_seconds=float(now-profile_start)/1000000.0
+		if profile_active:
+			if profile_previous!=Vector3.INF: profile_distance+=game.player.position.distance_to(profile_previous)
+			profile_previous=game.player.position
+			if wall_seconds<50:
+				var circuit=[Vector3(4,0,8),Vector3(-4,0,8)]
+				var difference:Vector3=circuit[profile_waypoint%circuit.size()]-game.player.position
+				difference.y=0
+				if difference.length()<.2: profile_waypoint+=1
+				var local=Basis(Vector3.UP,-game.yaw)*difference
+				_key(KEY_D,local.x>.11);_key(KEY_A,local.x<-.11);_key(KEY_S,local.z>.11);_key(KEY_W,local.z<-.11)
+			else: _release()
+		complete=wall_seconds>=cmd.profile
 	if complete:
 		results.checks.append({"ok":true,"step":index,"command":str(cmd),"time":total,"position":str(game.player.position),"nearest":game.nearest})
 		if game.qa_case=="art":
@@ -232,6 +263,12 @@ func _finish(ok: bool):
 				results.checks.append({"ok":false,"reason":"Art capture acceptance failed: "+label})
 				ok=false
 	results.ok=ok
+	results.panel_layout={"visible_frames":visible_panel_frames,"failures":panel_layout_failures}
+	results.ok=results.ok and panel_layout_failures.is_empty()
+	if profile_active:
+		results.active_profile={"walk_seconds":50,"settle_seconds":10,"distance_m":profile_distance,"waypoints_reached":profile_waypoint,"companions":game.companions.size(),"loaded_save":game._start_saved}
+		results.ok=results.ok and profile_waypoint>=4 and profile_distance>20
+		results.checks.append({"ok":profile_waypoint>=4 and profile_distance>20,"check":"Active walking workload completes at least four lengths and twenty meters","details":results.active_profile})
 	results.elapsed_engine_seconds=total
 	results.story=game.story.export_state()
 	results.patches=game.patch_amount
@@ -246,10 +283,10 @@ func _finish(ok: bool):
 		results.callback_ms=profile_frames
 		var sorted=profile_frames.duplicate()
 		sorted.sort()
-		results.performance={"wall_seconds":float(Time.get_ticks_usec()-profile_start)/1000000.0,"callbacks":sorted.size(),"p95_ms":sorted[int(sorted.size()*.95)],"p99_ms":sorted[int(sorted.size()*.99)],"worst_ms":sorted[-1],"over_33_4":sorted.filter(func(x):return x>33.4).size(),"limits":"Native callback intervals, not GPU or input latency. Opening scene; no human inputs."}
+		results.performance={"wall_seconds":float(Time.get_ticks_usec()-profile_start)/1000000.0,"callbacks":sorted.size(),"p95_ms":sorted[int(sorted.size()*.95)],"p99_ms":sorted[int(sorted.size()*.99)],"worst_ms":sorted[-1],"over_33_4":sorted.filter(func(x):return x>33.4).size(),"limits":"Native callback intervals, not GPU or input latency. Generated walking lane with direction reversals, then settling." if profile_active else "Native callback intervals, not GPU or input latency. Stationary scene; no human inputs."}
 	var f=FileAccess.open(game.qa_output.path_join("results.json"),FileAccess.WRITE)
 	f.store_string(JSON.stringify(results,"\t"))
 	f.close()
-	print("RPG_QA="+JSON.stringify({"ok":ok,"steps":index,"elapsed":total,"story":results.story}))
+	print("RPG_QA="+JSON.stringify({"ok":results.ok,"steps":index,"elapsed":total,"story":results.story}))
 	await game.audio.shutdown()
-	get_tree().quit(0 if ok else 1)
+	get_tree().quit(0 if results.ok else 1)

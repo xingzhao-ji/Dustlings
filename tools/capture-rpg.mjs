@@ -12,19 +12,28 @@ if(requestedWindow&&!/^\d{3,4}x\d{3,4}$/.test(requestedWindow))throw Error('Inva
 const output=path.resolve('evidence/rpg',label),snapshot=path.resolve('builds/3d/rpg-capture-snapshots',label);
 try{await fs.access(path.join(output,'capture-manifest.json'));throw Error('Capture label already exists; choose a new label to preserve evidence.');}catch(error){if(error.code!=='ENOENT')throw error;}
 await fs.mkdir(output,{recursive:true});await fs.mkdir(snapshot,{recursive:true});
-const files={};
+const files={}, snapshotOverrides=[];
 async function freeze(source,destination,prefix=''){
  for(const item of await fs.readdir(source,{withFileTypes:true})){
   if(['.godot','.DS_Store'].includes(item.name))continue;
   if(item.isSymbolicLink())throw Error('Unexpected source symlink');
   const from=path.join(source,item.name),to=path.join(destination,item.name),rel=prefix+item.name;
   if(item.isDirectory()){await fs.mkdir(to,{recursive:true});await freeze(from,to,rel+'/');}
-  else{const bytes=await fs.readFile(from);await fs.writeFile(to,bytes);files[rel]=crypto.createHash('sha256').update(bytes).digest('hex');}
+  else{
+   let bytes=await fs.readFile(from);
+   if(rel==='project.godot'&&extra.includes('--rpg-capture-hd')){
+    const originalSha256=crypto.createHash('sha256').update(bytes).digest('hex');
+    bytes=Buffer.from(bytes.toString().replace(/window\/size\/viewport_width=\d+/, 'window/size/viewport_width=1920').replace(/window\/size\/viewport_height=\d+/, 'window/size/viewport_height=1080').replace('window/stretch/mode="canvas_items"','window/stretch/mode="viewport"'));
+    snapshotOverrides.push({file:rel,originalSha256,purpose:'Initialize the MovieMaker writer at 1920x1080 before the scene loads; smaller native window, unchanged gameplay/rendering quality.'});
+   }
+   await fs.writeFile(to,bytes);files[rel]=crypto.createHash('sha256').update(bytes).digest('hex');
+  }
  }
 }
 await freeze(process.env.DUSTLINGS_CAPTURE_SOURCE || 'godot',snapshot);
 const sourceHash=crypto.createHash('sha256').update(JSON.stringify(Object.fromEntries(Object.entries(files).sort()))).digest('hex');
 const manifest={created:new Date().toISOString(),scenario,label,sourceDirectory:path.resolve(process.env.DUSTLINGS_CAPTURE_SOURCE || 'godot'),runtimeArguments:extra,nativeArguments:requestedWindow?['--resolution',requestedWindow]:[],sourceHash,files,method:scenario==='profile'?'Wall-clock native run; no movie recording.':'Godot MovieMaker30fps fixed engine-time with generated native InputEvents or explicitly labelled fixtures. Rendering may run faster than wall-clock; no human input.',humanTests:0};
+manifest.snapshotOverrides=snapshotOverrides;
 if(scenario==='art')manifest.artReview={start:'fresh isolated save',segments:'Arrival, earned helper, normal/reversed/stop-start walking, Ivo meeting, stationary full yaw and low/high pitch camera drags.',cameraControl:'Generated RMB press/motion/release; no camera state injection.',timing:'Unedited normal-speed game sequence rendered by MovieMaker; timestamped steps and stills in results.json. Not wall-clock performance or human input.'};
 if(process.env.DUSTLINGS_RPG_SAVE){ const saveBytes=await fs.readFile(process.env.DUSTLINGS_RPG_SAVE); await fs.writeFile(path.join(output,'isolated-save.json'),saveBytes);manifest.resumeSave={path:path.resolve(process.env.DUSTLINGS_RPG_SAVE),sha256:crypto.createHash('sha256').update(saveBytes).digest('hex')};}
 await fs.writeFile(path.join(output,'capture-manifest.json'),JSON.stringify(manifest,null,2)+'\n');
@@ -41,6 +50,11 @@ try{
  await run(engine,args,'native.log');
  manifest.result=JSON.parse(await fs.readFile(path.join(output,'results.json'),'utf8'));
  if(scenario!=='profile')await run('ffmpeg',['-hide_banner','-loglevel','error','-i',path.join(output,scenario+'.avi'),'-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-movflags','+faststart','-y',path.join(output,scenario+'.mp4')],'encode.log');
+ if(scenario!=='profile'&&extra.includes('--rpg-capture-hd')){
+  const probe=JSON.parse(await run('ffprobe',['-v','error','-show_streams','-of','json',path.join(output,scenario+'.mp4')],'movie-format.json'));
+  const video=probe.streams.find(stream=>stream.codec_type==='video');
+  if(video?.width!==1920||video?.height!==1080)throw Error('Movie writer did not produce the required 1920x1080 output');
+ }
  manifest.status='recorded';
 }catch(error){manifest.status='failed';manifest.failure=error.message;process.exitCode=1;
  if(scenario!=='profile'){try{await run('ffmpeg',['-hide_banner','-loglevel','error','-i',path.join(output,scenario+'.avi'),'-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-movflags','+faststart','-y',path.join(output,scenario+'.mp4')],'encode-failed-route.log');manifest.failedRouteMoviePreserved=true;}catch{}}}

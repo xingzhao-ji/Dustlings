@@ -398,7 +398,7 @@ func _pose_activity(dt: float, t: float, speed: float, talking: bool) -> void:
     if kind == "ivo" and _activity == "map":
         _pose_map(dt, t, speed, talking)
         return
-    var working := not _activity.is_empty() and speed < 0.08 and not talking
+    var working := not _activity.is_empty() and speed < 0.08 and (not talking or _activity == "tea")
     _activity_blend = move_toward(_activity_blend, 1.0 if working else 0.0, dt * 4)
     for key in _activity_props:
         var prop: Node3D = _activity_props[key]
@@ -429,6 +429,21 @@ func _pose_activity(dt: float, t: float, speed: float, talking: bool) -> void:
     _left_arm.rotation = _left_arm.rotation.lerp(left, _activity_blend)
     _right_arm.rotation = _right_arm.rotation.lerp(right, _activity_blend)
     _head.rotation = _head.rotation.lerp(glance, _activity_blend)
+    if _activity == "tea": _pose_tea(t)
+
+func _pose_tea(t: float) -> void:
+    # Distinct actor phases produce listening, lifting, a short sip and lowering.
+    # Position the cup from the actual hand so it cannot float off the grip.
+    var phase := fmod(t, 9.0)
+    var sip := smoothstep(4.5, 5.6, phase) * (1.0 - smoothstep(6.3, 7.5, phase))
+    if _gentle: sip = 0.0
+    var target := Vector3(0.10, 0.81, 0.29).lerp(Vector3(0.08, 1.16, 0.28), sip)
+    var resting := _right_arm.quaternion
+    _aim_hand(_right_arm, target, false)
+    _right_arm.quaternion = resting.slerp(_right_arm.quaternion, _activity_blend)
+    var cup: Node3D = _activity_props["tea"]
+    cup.position = _body.to_local(get_hand_position(true)) + Vector3(-0.035, 0.075, 0.015)
+    cup.rotation = Vector3(-0.12 * sip, 0, 0)
 
 func _aim_hand(arm: Node3D, destination: Vector3, left: bool) -> void:
     var bone := Vector3(-0.025 if left else 0.025, -0.41, 0.017)

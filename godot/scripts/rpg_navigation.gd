@@ -38,7 +38,10 @@ func configure(world: Node3D, radius: float = BODY_RADIUS) -> void:
 	for y in grid.region.size.y:
 		for x in grid.region.size.x:
 			var id = Vector2i(x, y)
-			if not _point_clear(grid.get_point_position(id), body_radius + 0.04):
+			# One centimetre of clearance retains physically reachable narrow
+			# passages beside the workshop counter. Continuous capsule checks
+			# still validate every connection at the full body radius.
+			if not _point_clear(grid.get_point_position(id), body_radius + 0.01):
 				grid.set_point_solid(id, true)
 				blocked += 1
 	generation += 1

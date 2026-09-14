@@ -141,6 +141,12 @@ func _ready():
 
 func _fit_screen():
 	if DisplayServer.get_name() == "headless": return
+	if qa and "--rpg-capture-hd" in OS.get_cmdline_user_args():
+		# MovieMaker's native window is capped by the Mac display. Render an
+		# actual 1080p viewport for store media, independently of that window.
+		get_window().content_scale_mode=Window.CONTENT_SCALE_MODE_VIEWPORT
+		get_window().content_scale_size=Vector2i(1920,1080)
+		return
 	get_window().content_scale_size = Vector2i(1280,800) if get_window().size.x >= 1100 else Vector2i(1080,720)
 
 func _setup_light():
@@ -300,8 +306,8 @@ func _input(event):
 			if event.pressed and event.button_index == MOUSE_BUTTON_WHEEL_UP: distance = maxf(4.8,distance-.5)
 			if event.pressed and event.button_index == MOUSE_BUTTON_WHEEL_DOWN: distance = minf(10.5,distance+.5)
 	if event is InputEventMouseMotion and orbiting:
-		yaw -= event.relative.x*.004*settings.sensitivity
-		pitch = clampf(pitch+event.relative.y*.003*settings.sensitivity*(-1 if settings.invert else 1),.23,.94)
+		yaw -= event.screen_relative.x*.004*settings.sensitivity
+		pitch = clampf(pitch+event.screen_relative.y*.003*settings.sensitivity*(-1 if settings.invert else 1),.23,.94)
 
 func _over_ui() -> bool:
 	var control = get_viewport().gui_get_hovered_control()
@@ -390,7 +396,10 @@ func _find_nearest():
 	for id in residents:
 		var p: Vector3 = residents[id].body.position
 		var d = player.position.distance_to(p)
-		if d < best and _line_clear(p): best=d; nearest=id
+		# The table's invisible interaction point must not steal E from a
+		# guest the player has walked directly up to during shared tea.
+		var guest_at_table = nearest=="table" and story.has("shared_table") and d<1.0
+		if (d < best or guest_at_table) and _line_clear(p): best=d; nearest=id
 	var names = {"lantern":"Dusty lantern","bridge":"Brook crossing","wood":"Salvaged wood","garden":"Thirsty seedlings","vine_wall":"Overgrown wall","greenhouse_memory":"Weathered letter","alcove":"Hollow in the stone","home":"Your home","bed":"Rest","parcel":"Ivo’s parcel","herbs":"Garden herbs","table":"The long table","workshop":"Mara’s workshop"}
 	if story.has("first_companion"): names.lantern="Old lantern"
 	if story.has("garden_watered"): names.garden="Nell’s seedlings"
@@ -463,10 +472,14 @@ func _update_residents(delta):
 		var r = residents[id]
 		var body: CharacterBody3D = r.body
 		var target: Vector3 = r.target
-		if r.goal != target or r.get("nav_generation",-1)!=resident_navigation.generation:
+		r.nav_retry=maxf(0,r.get("nav_retry",0.0)-delta)
+		# Physics may move a resident out of initial wall contact after the
+		# first path query. Retry an empty route at most twice per second.
+		if r.goal != target or r.get("nav_generation",-1)!=resident_navigation.generation or (r.route.is_empty() and body.position.distance_to(target)>.1 and r.nav_retry<=0):
 			r.goal=target
 			r.route=resident_navigation.path(body.position,target)
 			r.nav_generation=resident_navigation.generation
+			r.nav_retry=.5
 		if not r.route.is_empty() and not resident_navigation.segment_clear(body.position,r.route[0]):
 			r.route=resident_navigation.path(body.position,target)
 		while r.route.size()>1 and body.position.distance_to(r.route[0])<.25 and resident_navigation.segment_clear(body.position,r.route[1]): r.route.pop_front()
@@ -478,8 +491,11 @@ func _update_residents(delta):
 		body.velocity = Vector3(velocity.x,-1,velocity.z)
 		body.move_and_slide()
 		if velocity.length()>.1: r.visual.rotation.y=lerp_angle(r.visual.rotation.y,atan2(velocity.x,velocity.z),minf(1,delta*6))
-		elif player.position.distance_to(body.position)<2.5: r.visual.rotation.y=lerp_angle(r.visual.rotation.y,atan2(player.position.x-body.position.x,player.position.z-body.position.z),minf(1,delta*3))
-		r.visual.set_attention(player.position+Vector3(0,1.2,0),clampf((3.0-player.position.distance_to(body.position))/1.2,0,1))
+		var social = story.has("shared_table") and body.position.distance_to(r.target)<.3
+		var focus = Vector3(-2.75,1.2,-9.8) if social and player.position.distance_to(body.position)>1.8 else player.position+Vector3(0,1.2,0)
+		if velocity.length()<=.1 and (social or player.position.distance_to(body.position)<2.5):
+			r.visual.rotation.y=lerp_angle(r.visual.rotation.y,atan2(focus.x-body.position.x,focus.z-body.position.z),minf(1,delta*3))
+		r.visual.set_attention(focus,.55 if social else clampf((3.0-player.position.distance_to(body.position))/1.2,0,1))
 		r.visual.set_activity("tea" if story.has("shared_table") else {"mara":"mend","ivo":"map","nell":"tend","tavi":"knead"}[id])
 		r.visual.animate(delta,Vector2(body.velocity.x,body.velocity.z).length(),false,joy>0)
 
@@ -616,6 +632,8 @@ func _apply_story():
 	if flags.get("shared_table",false):
 		residents.tavi.target=Vector3(-4.5,0,-10)
 		residents.mara.target=Vector3(-1,0,-9.8)
+		residents.nell.target=Vector3(-3.9,0,-10.8)
+		residents.ivo.target=Vector3(-2.1,0,-10.8)
 	if flags.get("first_companion",false): patch_amount.lantern=0.0; patches.lantern.visible=false
 	if flags.get("bridge_cleared",false): patch_amount.bridge=0.0; patches.bridge.visible=false
 

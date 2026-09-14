@@ -9,6 +9,10 @@ var output = "res://../evidence/rpg/companions"
 var source_hashes: Dictionary = {}
 
 func _init():
+	if "--rpg-qa" not in OS.get_cmdline_user_args():
+		push_error("Scene tests require --rpg-qa to protect normal player saves.")
+		quit(2)
+		return
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--companion-evidence="): output=arg.trim_prefix("--companion-evidence=")
 	for path in ["rpg_main.gd","rpg_environment.gd","rpg_actor.gd","rpg_story.gd","rpg_navigation.gd"]:

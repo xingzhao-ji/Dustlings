@@ -62,6 +62,7 @@ class RouteProbe extends "res://scripts/rpg_qa.gd":
         var ending={}
         for file in source:ending[file]=FileAccess.get_sha256("res://scripts/"+file)
         var additional={"earned_route_completed":ok,"first_companion_received_moth":gift_contact_seen and gift_min_distance<.08,"mara_arrived_shared_table":game.story.has("shared_table") and game.residents.mara.body.position.distance_to(game.residents.mara.target)<.25,"source_unchanged":source==ending,"first_companion_no_position_warp":max_first_step<.12,"all_four_finish_near_player_without_backlog":game.companions.size()==4 and game.companions.all(func(c):return c.body.position.distance_to(game.player.position)<3 and c.path.is_empty())}
+        additional.all_residents_arrived_for_tea=game.story.has("shared_table") and game.residents.values().all(func(r):return r.body.position.distance_to(r.target)<.3)
         var file=FileAccess.open(game.qa_output.path_join("route-observations.json"),FileAccess.WRITE)
         file.store_string(JSON.stringify({"method":"Headless fixed60Hz authored InputEvents from the native route; screenshot commands replaced by observations only. No state/position/collision injection. Not human testing or native performance.","source":source,"ending_source":ending,"checks":additional,"max_first_frame_step":max_first_step,"gift_min_distance":gift_min_distance,"gift_first_id":gift_first_id,"observations":observations},"  "));file.close()
         results.ok=ok and additional.values().all(func(value):return value)
@@ -72,7 +73,12 @@ class RouteProbe extends "res://scripts/rpg_qa.gd":
         file=FileAccess.open(game.qa_output.path_join("results.json"),FileAccess.WRITE);file.store_string(JSON.stringify(results,"  "));file.close()
         print(JSON.stringify({"ok":results.ok,"steps":index,"checks":additional,"seconds":total}))
         finished.emit(results.ok)
-func _init():call_deferred("run")
+func _init():
+    if "--rpg-qa" not in OS.get_cmdline_user_args():
+        push_error("Scene tests require --rpg-qa to protect normal player saves.")
+        quit(2)
+        return
+    call_deferred("run")
 func run():
     root.size=Vector2i(1280,800);root.content_scale_size=Vector2i(1280,800)
     var game=load("res://scenes/neighborhood.tscn").instantiate();root.add_child(game)

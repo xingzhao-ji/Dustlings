@@ -104,6 +104,31 @@ func run():
     ivo.set_gentle_motion(true);ivo.animate(.016,0,true)
     check(ivo._activity_props.map.visible,"Gentle motion preserves Ivo's held object")
     ivo.queue_free();await process_frame
+    var tea_heights=[]
+    for kind in ["mara","ivo","nell","tavi"]:
+        var guest=actor(kind);guest.set_activity("tea")
+        guest.position=Vector3(4,0,-3);guest.rotation.y=1.1
+        var min_height=INF;var max_height=-INF;var max_cup_gap=0.0;var full_visible=true
+        for frame in 600:
+            guest.animate(1.0/60.0,0,frame>=120 and frame<480)
+            var cup:Node3D=guest._activity_props.tea
+            if frame>30:
+                max_cup_gap=maxf(max_cup_gap,cup.global_position.distance_to(guest.get_hand_position()))
+                min_height=minf(min_height,cup.position.y);max_height=maxf(max_height,cup.position.y)
+                full_visible=full_visible and cup.visible and cup.scale==Vector3.ONE
+            if frame==180:tea_heights.append(cup.position.y)
+        check(max_cup_gap<.10 and full_visible,"Tea stays in the actual hand throughout a full sip and conversation: "+kind,{"max_cup_hand_gap_m":max_cup_gap})
+        check(max_height-min_height>.20 and min_height>.65 and max_height<1.45,"Tea lift and return stays within the actor's reach: "+kind,{"lowest_m":min_height,"highest_m":max_height})
+        guest.set_gentle_motion(true)
+        var gentle_height=0.0;var gentle_drift=0.0
+        for frame in 600:
+            guest.animate(1.0/60.0,0,true)
+            if frame==0:gentle_height=guest._activity_props.tea.position.y
+            gentle_drift=maxf(gentle_drift,absf(guest._activity_props.tea.position.y-gentle_height))
+        check(gentle_drift<.001 and guest._activity_props.tea.visible,"Gentle motion holds a stable visible cup: "+kind,{"drift_m":gentle_drift})
+        guest.queue_free()
+    check(tea_heights.max()-tea_heights.min()>.10,"Guests have staggered tea gestures",{"heights_at_three_seconds":tea_heights})
+    await process_frame
     var report={"kind":"Headless pose/transform checks with explicit actor translation, not native motion or aesthetic/human approval","source_sha256":FileAccess.get_sha256("res://scripts/rpg_actor.gd"),"checks":checks,"failures":failures,"measurements":measures}
     DirAccess.make_dir_recursive_absolute(output)
     var file=FileAccess.open(output.path_join("pose-checks.json"),FileAccess.WRITE);file.store_string(JSON.stringify(report,"  "));file.close()

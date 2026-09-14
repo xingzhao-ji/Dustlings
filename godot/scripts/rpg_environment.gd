@@ -499,6 +499,11 @@ func _garden() -> void:
     for i in 5:
         _dynamic_round(_gathering_props, Vector3(-3.7 + i * 0.37, 0.87, -12.0), Vector3(0.17, 0.19, 0.17), Color("e6d8bb"))
     _dynamic_round(_gathering_props, Vector3(-3, 0.91, -12.30), Vector3(0.40, 0.37, 0.35), Color("a4b29b"))
+    # The shared bread and a small guest's saucer make Tavi's invitation tangible.
+    _dynamic_round(_gathering_props, Vector3(-3.72, 0.82, -12.32), Vector3(0.48, 0.035, 0.28), Color("b0baa0"))
+    for i in 3:
+        _dynamic_round(_gathering_props, Vector3(-3.88 + i * 0.15, 0.89, -12.32), Vector3(0.18, 0.12, 0.21), Color("b88d58"))
+    _dynamic_round(_gathering_props, Vector3(-2.45, 0.055, -10.8), Vector3(0.26, 0.045, 0.26), Color("ded1aa"))
     # Accessible herbs beside, not inside, the solid raised beds.
     for i in 5:
         _plant(Vector3(-6.65 + i * 0.13, 0, -9.65), 0.25)

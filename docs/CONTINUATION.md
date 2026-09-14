@@ -1,3 +1,17 @@
+# Active quality pass — 2026-09-14
+
+The owner's latest request resumes work. The old stop below is historical. The Bellwether neighborhood remains the integrating milestone, with human sessions 0 and full campaign unfinished.
+
+Implemented in the current working tree: all four residents gather for shared tea, visible bread, hand-attached staggered sipping and gentle-motion support; reachable shared-table conversations; recovery from initially empty resident paths beside the workshop counter; continuous full-radius collision checks with a less conservative navigation grid; camera input uses unscaled screen-relative movement at every window size; a coherent cream-companion SVG icon. Scene-test entry points refuse a missing QA flag and a sequential test runner creates isolated fresh saves.
+
+The first isolated complete seven-suite pass succeeded before the final camera fix. The full earned route passes 159 steps in 193.925 engine seconds; minimum-size UI and 59-step camera/acting movie pass, including the corrected full yaw/pitch return and 167 stable visible panel frames. Native test/motion evidence is generated, not human input. The prior camera failure, path failures and one unisolated test invocation are preserved and explained in `docs/IMPROVEMENTS-2026-09-14.md`.
+
+The final native 1920×1080 MovieMaker route (`neighborhood-store-media-final-20260914`) passes all 159 steps. The seven-suite release source check and four missing-QA guards now pass. Current native processes: sequential 60-second opening and active four-companion profiles. Opening passed; the active sample is running. Do not start another Godot process until it closes. The HD writer is now initialized before scene load, with explicit source overrides and ffprobe dimension validation. The initial HD still-only attempt produced a smaller movie; those attempts are not final store assets.
+
+Next: finish the store kit on that final route; run quiet opening and active four-companion native profiles; verify the missing-QA guard and final relevant source checks; commit clean runtime; export new Mac/Windows artifacts, run the exact packaged Mac fresh/resume/recovery checker, package Windows and stage offline Steam depots. Refresh the review hub and release checklist, then continue Tiny Trouble. Its files have only been read so far. No external upload, payment or messages have occurred.
+
+---
+
 # Stopped checkpoint — 2026-09-10 18:27 UTC
 
 **Development stopped at the owner's explicit request: “stop and finish.” No development continues after this handoff. This is an ended session, not a finished game.** Milestone remains one Bellwether RPG neighborhood, awaiting human validation and owner acceptance. Human RPG sessions0; current audio audition, physical Windows testing and exact packaged Mac process checks are absent. Figma/CUA unavailable.

@@ -1,3 +1,17 @@
+# Current RPG packages — 2026-09-14
+
+Build `builds/3d/0.5.1-rpg-dev-2026-09-14T02-20-51-771Z-8196bad7d8/manifest.json` is an unchanged clean runtime export from 5e07248. Actual Mac fresh/resume/corrupt-primary-plus-backup processes pass **95/95** with clean logs: [report](../evidence/rpg/package-save-fixed-20260914/report.json). The earlier78/79 failure revealed repeated errors from static JSON parsing; instance parsing now handles expected damaged generations while preserving original bytes. RPG44 and legacy16 save checks pass. Both platform PCKs contain 22 verified scripts/shaders with required notices; Windows ZIP CRC/extracted bytes pass. Windows has not run on Windows hardware.
+
+Mac ZIP SHA256 `3f877e707e00fefcef7b86ca81f41e2b6e45505793d4a3b3b595dd9a9cfd471b`. Universal2, ad-hoc signed, unnotarized. `Play Dustlings.command` verifies this exact archive and extracts to local Application Support, avoiding Desktop FileProvider metadata. `builds/3d/current-rpg.json` selects it explicitly; no latest-by-date guess.
+
+The offline Steam staging directory is `/Users/xingzhaoji/Library/Application Support/Dustlings/SteamStaging/0.5.1-20260914`. Its 17 file hashes, Mac signature and Windows runtime match the package. VDF templates keep Preview1 and SetLive empty. Supply real application/depot IDs only when the account exists; the tool performs no upload. Stage outside Desktop because the native FileProvider attaches metadata to app directories there. [SteamPipe](https://partner.steamgames.com/doc/sdk/uploading).
+
+[Final store kit](../evidence/rpg/store-kit-release-20260914/README.md): seven genuine 1920×1080 gameplay stills, four title-only capsule drafts, icon and 22.6-second original-audio gameplay preview. The movie capture predates the save-parser-only correction and final profiling-driver edits; capture manifests preserve the exact source. [Store copy and scope](STORE-COPY-2026-09-14.md).
+
+Open gates: human presentation/audio review and playtests, owner acceptance, Windows execution, signing/notarization, account IDs and store/build review. The commercial scope is a neighborhood preview; full campaign and profitability remain unproven. The original runner specification below is historical where it says execution is pending.
+
+---
+
 # RPG package smoke and recovery verification
 
 Status: runner prepared; **current RPG package execution is pending**. No current package, physical input, human acceptance or Windows runtime result is implied by preparation.

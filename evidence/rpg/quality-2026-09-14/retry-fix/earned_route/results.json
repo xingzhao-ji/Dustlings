@@ -1,0 +1,1237 @@
+{
+  "checks": [
+    {
+      "command": "{ \"wait\": 1.0 }",
+      "nearest": "",
+      "ok": true,
+      "position": "(0.0, 0.0, 9.0)",
+      "step": 0,
+      "time": 1.0
+    },
+    {
+      "command": "{ \"button\": \"Step into\" }",
+      "nearest": "",
+      "ok": true,
+      "position": "(0.0, 0.0, 9.0)",
+      "step": 1,
+      "time": 1.01666666666667
+    },
+    {
+      "command": "{ \"wait\": 1.0 }",
+      "nearest": "",
+      "ok": true,
+      "position": "(0.0, 0.0, 9.0)",
+      "step": 2,
+      "time": 2.01666666666666
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "",
+      "ok": true,
+      "position": "(0.0, 0.0, 9.0)",
+      "step": 3,
+      "time": 2.05
+    },
+    {
+      "command": "{ \"move\": (0.5, 0.0, 7.4) }",
+      "nearest": "lantern",
+      "ok": true,
+      "position": "(0.398337, 0.000843, 7.51834)",
+      "step": 4,
+      "time": 2.7
+    },
+    {
+      "command": "{ \"brush\": 5.0 }",
+      "nearest": "lantern",
+      "ok": true,
+      "position": "(0.398337, 0.000843, 7.51834)",
+      "step": 5,
+      "time": 7.81666666666664
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "lantern",
+      "ok": true,
+      "position": "(0.398337, 0.000843, 7.51834)",
+      "step": 6,
+      "time": 9.8333333333334
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "lantern",
+      "ok": true,
+      "position": "(0.398337, 0.000843, 7.51834)",
+      "step": 7,
+      "time": 9.86666666666674
+    },
+    {
+      "command": "{ \"move\": (-2.0, 0.0, 4.4) }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 8,
+      "time": 11.4000000000001
+    },
+    {
+      "command": "{ \"interact\": \"ivo\" }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 9,
+      "time": 11.4333333333335
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 10,
+      "time": 13.4500000000002
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 11,
+      "time": 13.4833333333336
+    },
+    {
+      "command": "{ \"button\": \"Why so many\" }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 12,
+      "time": 13.5000000000003
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 13,
+      "time": 15.516666666667
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 14,
+      "time": 15.5333333333337
+    },
+    {
+      "command": "{ \"interact\": \"ivo\" }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 15,
+      "time": 15.566666666667
+    },
+    {
+      "command": "{ \"button\": \"carry Nell\" }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 16,
+      "time": 15.5833333333337
+    },
+    {
+      "command": "{ \"wait\": 1.5 }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 17,
+      "time": 17.1000000000003
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-1.899761, 0.000843, 4.526921)",
+      "step": 18,
+      "time": 17.116666666667
+    },
+    {
+      "command": "{ \"move\": (-5.7, 0.0, 3.0) }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-5.605926, 0.000835, 3.117421)",
+      "step": 19,
+      "time": 18.7833333333335
+    },
+    {
+      "command": "{ \"interact\": \"tavi\" }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-5.605926, 0.000835, 3.117421)",
+      "step": 20,
+      "time": 18.8166666666669
+    },
+    {
+      "command": "{ \"wait\": 2.5 }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-5.605926, 0.000835, 3.117421)",
+      "step": 21,
+      "time": 21.3333333333334
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-5.605926, 0.000835, 3.117421)",
+      "step": 22,
+      "time": 21.3666666666667
+    },
+    {
+      "command": "{ \"button\": \"extra cup\" }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-5.605926, 0.000835, 3.117421)",
+      "step": 23,
+      "time": 21.3833333333334
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-5.605926, 0.000835, 3.117421)",
+      "step": 24,
+      "time": 23.4
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-5.605926, 0.000835, 3.117421)",
+      "step": 25,
+      "time": 23.4166666666666
+    },
+    {
+      "command": "{ \"move\": (-10.0, 0.0, 7.8) }",
+      "nearest": "home",
+      "ok": true,
+      "position": "(-9.832136, 0.000816, 7.76649)",
+      "step": 26,
+      "time": 26.8499999999998
+    },
+    {
+      "command": "{ \"interact\": \"home\" }",
+      "nearest": "home",
+      "ok": true,
+      "position": "(-9.832136, 0.000816, 7.76649)",
+      "step": 27,
+      "time": 26.8833333333331
+    },
+    {
+      "command": "{ \"button\": \"Sage\" }",
+      "nearest": "home",
+      "ok": true,
+      "position": "(-9.832136, 0.000816, 7.76649)",
+      "step": 28,
+      "time": 26.8999999999998
+    },
+    {
+      "command": "{ \"wait\": 1.5 }",
+      "nearest": "home",
+      "ok": true,
+      "position": "(-9.832136, 0.000816, 7.76649)",
+      "step": 29,
+      "time": 28.4166666666663
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "home",
+      "ok": true,
+      "position": "(-9.832136, 0.000816, 7.76649)",
+      "step": 30,
+      "time": 28.433333333333
+    },
+    {
+      "command": "{ \"move\": (-10.0, 0.0, 5.1) }",
+      "nearest": "home",
+      "ok": true,
+      "position": "(-9.893417, 0.00083, 5.235208)",
+      "step": 31,
+      "time": 29.4333333333329
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "home",
+      "ok": true,
+      "position": "(-9.893417, 0.00083, 5.235208)",
+      "step": 32,
+      "time": 29.4666666666663
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "home",
+      "ok": true,
+      "position": "(-9.893417, 0.00083, 5.235208)",
+      "step": 33,
+      "time": 31.4833333333328
+    },
+    {
+      "command": "{ \"move\": (-10.0, 0.0, 7.8) }",
+      "nearest": "home",
+      "ok": true,
+      "position": "(-9.893417, 0.000745, 7.661878)",
+      "step": 34,
+      "time": 32.4333333333328
+    },
+    {
+      "command": "{ \"move\": (0.0, 0.0, 4.4) }",
+      "nearest": "lantern",
+      "ok": true,
+      "position": "(-0.118071, 0.000842, 4.51854)",
+      "step": 35,
+      "time": 37.0833333333325
+    },
+    {
+      "command": "{ \"move\": (8.6, 0.0, 2.8) }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 36,
+      "time": 40.6666666666656
+    },
+    {
+      "command": "{ \"interact\": \"mara\" }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 37,
+      "time": 40.699999999999
+    },
+    {
+      "command": "{ \"wait\": 2.5 }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 38,
+      "time": 43.2166666666655
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 39,
+      "time": 43.2499999999988
+    },
+    {
+      "command": "{ \"button\": \"unfinished bridge\" }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 40,
+      "time": 43.2666666666655
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 41,
+      "time": 45.283333333332
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 42,
+      "time": 45.2999999999987
+    },
+    {
+      "command": "{ \"interact\": \"mara\" }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 43,
+      "time": 45.333333333332
+    },
+    {
+      "command": "{ \"button\": \"Show her\" }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 44,
+      "time": 45.3499999999987
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 45,
+      "time": 47.3666666666653
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(8.482586, 0.000842, 2.894554)",
+      "step": 46,
+      "time": 47.3833333333319
+    },
+    {
+      "command": "{ \"move\": (6.4, 0.0, 4.0) }",
+      "nearest": "wood",
+      "ok": true,
+      "position": "(6.518101, 0.000834, 3.905717)",
+      "step": 47,
+      "time": 48.3166666666652
+    },
+    {
+      "command": "{ \"interact\": \"wood\" }",
+      "nearest": "wood",
+      "ok": true,
+      "position": "(6.518101, 0.000834, 3.905717)",
+      "step": 48,
+      "time": 48.3499999999985
+    },
+    {
+      "command": "{ \"button\": \"Gather boards\" }",
+      "nearest": "wood",
+      "ok": true,
+      "position": "(6.518101, 0.000834, 3.905717)",
+      "step": 49,
+      "time": 48.3666666666652
+    },
+    {
+      "command": "{ \"wait\": 1.5 }",
+      "nearest": "wood",
+      "ok": true,
+      "position": "(6.518101, 0.000834, 3.905717)",
+      "step": 50,
+      "time": 49.8833333333318
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "wood",
+      "ok": true,
+      "position": "(6.518101, 0.000834, 3.905717)",
+      "step": 51,
+      "time": 49.8999999999984
+    },
+    {
+      "command": "{ \"move\": (0.0, 0.0, 0.0) }",
+      "nearest": "",
+      "ok": true,
+      "position": "(0.138705, 0.000778, 0.091827)",
+      "step": 52,
+      "time": 53.0166666666649
+    },
+    {
+      "command": "{ \"move\": (-3.1, 0.0, -1.0) }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.96515, 0.000843, -0.888694)",
+      "step": 53,
+      "time": 54.3833333333315
+    },
+    {
+      "command": "{ \"interact\": \"nell\" }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.96515, 0.000843, -0.888694)",
+      "step": 54,
+      "time": 54.4166666666649
+    },
+    {
+      "command": "{ \"wait\": 2.5 }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.96515, 0.000843, -0.888694)",
+      "step": 55,
+      "time": 56.9333333333314
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.96515, 0.000843, -0.888694)",
+      "step": 56,
+      "time": 56.9666666666647
+    },
+    {
+      "command": "{ \"button\": \"Who planted\" }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.96515, 0.000843, -0.888694)",
+      "step": 57,
+      "time": 56.9833333333314
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.96515, 0.000843, -0.888694)",
+      "step": 58,
+      "time": 58.9999999999979
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.96515, 0.000843, -0.888694)",
+      "step": 59,
+      "time": 59.0166666666646
+    },
+    {
+      "command": "{ \"move\": (0.0, 0.0, -2.2) }",
+      "nearest": "bridge",
+      "ok": true,
+      "position": "(-0.123474, 0.000806, -2.083704)",
+      "step": 60,
+      "time": 60.3166666666645
+    },
+    {
+      "command": "{ \"brush\": 9.0 }",
+      "nearest": "bridge",
+      "ok": true,
+      "position": "(-0.123474, 0.000806, -2.083704)",
+      "step": 61,
+      "time": 69.416666666664
+    },
+    {
+      "command": "{ \"interact\": \"bridge\" }",
+      "nearest": "bridge",
+      "ok": true,
+      "position": "(-0.123474, 0.000806, -2.083704)",
+      "step": 62,
+      "time": 69.4499999999973
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "bridge",
+      "ok": true,
+      "position": "(-0.123474, 0.000806, -2.083704)",
+      "step": 63,
+      "time": 69.4833333333307
+    },
+    {
+      "command": "{ \"button\": \"Repair together\" }",
+      "nearest": "bridge",
+      "ok": true,
+      "position": "(-0.123474, 0.000806, -2.083704)",
+      "step": 64,
+      "time": 69.4999999999973
+    },
+    {
+      "command": "{ \"wait\": 7.0 }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-0.123474, -0.000696, -2.083704)",
+      "step": 65,
+      "time": 76.5166666666636
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-0.123474, -0.000696, -2.083704)",
+      "step": 66,
+      "time": 76.5499999999969
+    },
+    {
+      "command": "{ \"move\": (0.0, 0.0, -7.4) }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(0.119472, 0.000843, -7.282343)",
+      "step": 67,
+      "time": 78.7333333333302
+    },
+    {
+      "command": "{ \"move\": (0.0, 0.0, -6.5) }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(0.119472, 0.000843, -6.632341)",
+      "step": 68,
+      "time": 78.9999999999968
+    },
+    {
+      "command": "{ \"move\": (-5.5, 0.0, -6.5) }",
+      "nearest": "garden",
+      "ok": true,
+      "position": "(-5.371174, 0.000834, -6.6017)",
+      "step": 69,
+      "time": 81.13333333333
+    },
+    {
+      "command": "{ \"move\": (-5.5, 0.0, -8.0) }",
+      "nearest": "garden",
+      "ok": true,
+      "position": "(-5.401815, 0.000843, -7.889009)",
+      "step": 70,
+      "time": 81.6499999999967
+    },
+    {
+      "command": "{ \"interact\": \"garden\" }",
+      "nearest": "garden",
+      "ok": true,
+      "position": "(-5.401815, 0.000843, -7.889009)",
+      "step": 71,
+      "time": 81.68333333333
+    },
+    {
+      "command": "{ \"button\": \"Water gently\" }",
+      "nearest": "garden",
+      "ok": true,
+      "position": "(-5.401815, 0.000843, -7.889009)",
+      "step": 72,
+      "time": 81.6999999999966
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "garden",
+      "ok": true,
+      "position": "(-5.401815, 0.000843, -7.889009)",
+      "step": 73,
+      "time": 83.7166666666632
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "garden",
+      "ok": true,
+      "position": "(-5.401815, 0.000843, -7.889009)",
+      "step": 74,
+      "time": 83.7333333333299
+    },
+    {
+      "command": "{ \"wait\": 3.0 }",
+      "nearest": "garden",
+      "ok": true,
+      "position": "(-5.401815, 0.000843, -7.889009)",
+      "step": 75,
+      "time": 86.7499999999964
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "garden",
+      "ok": true,
+      "position": "(-5.401815, 0.000843, -7.889009)",
+      "step": 76,
+      "time": 86.7833333333297
+    },
+    {
+      "command": "{ \"move\": (2.2, 0.0, -6.5) }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(2.081786, 0.000843, -6.60208)",
+      "step": 77,
+      "time": 89.8833333333295
+    },
+    {
+      "command": "{ \"move\": (-3.0, 0.0, -6.5) }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.858214, 0.000843, -6.60208)",
+      "step": 78,
+      "time": 91.7999999999961
+    },
+    {
+      "command": "{ \"move\": (-3.0, 0.0, -8.0) }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.888855, 0.000843, -7.889392)",
+      "step": 79,
+      "time": 92.3166666666627
+    },
+    {
+      "command": "{ \"interact\": \"nell\" }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.888855, 0.000843, -7.889392)",
+      "step": 80,
+      "time": 92.349999999996
+    },
+    {
+      "command": "{ \"button\": \"parcel from Ivo\" }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.888855, 0.000843, -7.889392)",
+      "step": 81,
+      "time": 92.3666666666627
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.888855, 0.000843, -7.889392)",
+      "step": 82,
+      "time": 94.3833333333293
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.888855, 0.000843, -7.889392)",
+      "step": 83,
+      "time": 94.3999999999959
+    },
+    {
+      "command": "{ \"interact\": \"nell\" }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.888855, 0.000843, -7.889392)",
+      "step": 84,
+      "time": 94.4333333333293
+    },
+    {
+      "command": "{ \"button\": \"humming\" }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.888855, 0.000843, -7.889392)",
+      "step": 85,
+      "time": 94.4499999999959
+    },
+    {
+      "command": "{ \"wait\": 3.0 }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.888855, 0.000843, -7.889392)",
+      "step": 86,
+      "time": 97.4666666666624
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.888855, 0.000843, -7.889392)",
+      "step": 87,
+      "time": 97.4999999999958
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-2.888855, 0.000843, -7.889392)",
+      "step": 88,
+      "time": 97.5166666666624
+    },
+    {
+      "command": "{ \"move\": (4.0, 0.0, -8.0) }",
+      "nearest": "",
+      "ok": true,
+      "position": "(3.871153, -0.015047, -7.889392)",
+      "step": 89,
+      "time": 100.133333333329
+    },
+    {
+      "command": "{ \"move\": (12.0, 0.0, -8.0) }",
+      "nearest": "vine_wall",
+      "ok": true,
+      "position": "(11.88783, 0.000843, -7.889392)",
+      "step": 90,
+      "time": 103.233333333329
+    },
+    {
+      "command": "{ \"interact\": \"vine_wall\" }",
+      "nearest": "vine_wall",
+      "ok": true,
+      "position": "(11.88783, 0.000843, -7.889392)",
+      "step": 91,
+      "time": 103.266666666662
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "vine_wall",
+      "ok": true,
+      "position": "(11.88783, 0.000843, -7.889392)",
+      "step": 92,
+      "time": 105.283333333329
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "vine_wall",
+      "ok": true,
+      "position": "(11.88783, 0.000843, -7.889392)",
+      "step": 93,
+      "time": 105.316666666662
+    },
+    {
+      "command": "{ \"button\": \"Hum Nell\" }",
+      "nearest": "vine_wall",
+      "ok": true,
+      "position": "(11.88783, 0.000843, -7.889392)",
+      "step": 94,
+      "time": 105.333333333329
+    },
+    {
+      "command": "{ \"wait\": 5.0 }",
+      "nearest": "vine_wall",
+      "ok": true,
+      "position": "(11.88783, 0.000843, -7.889392)",
+      "step": 95,
+      "time": 110.349999999995
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "vine_wall",
+      "ok": true,
+      "position": "(11.88783, 0.000843, -7.889392)",
+      "step": 96,
+      "time": 110.383333333328
+    },
+    {
+      "command": "{ \"move\": (12.0, 0.0, -11.7) }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 97,
+      "time": 111.816666666662
+    },
+    {
+      "command": "{ \"interact\": \"greenhouse_memory\" }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 98,
+      "time": 111.849999999995
+    },
+    {
+      "command": "{ \"wait\": 3.0 }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 99,
+      "time": 114.866666666661
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 100,
+      "time": 114.899999999995
+    },
+    {
+      "command": "{ \"button\": \"Read the letter\" }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 101,
+      "time": 114.916666666661
+    },
+    {
+      "command": "{ \"wait\": 3.0 }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 102,
+      "time": 117.933333333328
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 103,
+      "time": 117.966666666661
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 104,
+      "time": 117.983333333328
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 105,
+      "time": 119.999999999994
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 106,
+      "time": 120.033333333328
+    },
+    {
+      "command": "{ \"wait\": 3.0 }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 107,
+      "time": 123.049999999994
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 108,
+      "time": 123.083333333328
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "greenhouse_memory",
+      "ok": true,
+      "position": "(11.88783, 0.00071, -11.57272)",
+      "step": 109,
+      "time": 125.099999999994
+    },
+    {
+      "command": "{ \"move\": (12.0, 0.0, -8.2) }",
+      "nearest": "vine_wall",
+      "ok": true,
+      "position": "(11.88783, 0.000842, -8.322719)",
+      "step": 110,
+      "time": 126.366666666661
+    },
+    {
+      "command": "{ \"move\": (5.0, 0.0, -6.5) }",
+      "nearest": "",
+      "ok": true,
+      "position": "(5.101939, 0.000742, -6.606814)",
+      "step": 111,
+      "time": 129.266666666662
+    },
+    {
+      "command": "{ \"move\": (-9.0, 0.0, -6.5) }",
+      "nearest": "",
+      "ok": true,
+      "position": "(-8.894733, 0.000843, -6.606814)",
+      "step": 112,
+      "time": 134.666666666666
+    },
+    {
+      "command": "{ \"move\": (-12.0, 0.0, -10.5) }",
+      "nearest": "alcove",
+      "ok": true,
+      "position": "(-11.89754, 0.000843, -10.38964)",
+      "step": 113,
+      "time": 136.616666666668
+    },
+    {
+      "command": "{ \"interact\": \"alcove\" }",
+      "nearest": "alcove",
+      "ok": true,
+      "position": "(-11.89754, 0.000843, -10.38964)",
+      "step": 114,
+      "time": 136.650000000001
+    },
+    {
+      "command": "{ \"button\": \"little light\" }",
+      "nearest": "alcove",
+      "ok": true,
+      "position": "(-11.89754, 0.000843, -10.38964)",
+      "step": 115,
+      "time": 136.666666666668
+    },
+    {
+      "command": "{ \"wait\": 3.0 }",
+      "nearest": "alcove",
+      "ok": true,
+      "position": "(-11.89754, 0.000843, -10.38964)",
+      "step": 116,
+      "time": 139.683333333337
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "alcove",
+      "ok": true,
+      "position": "(-11.89754, 0.000843, -10.38964)",
+      "step": 117,
+      "time": 139.71666666667
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "alcove",
+      "ok": true,
+      "position": "(-11.89754, 0.000843, -10.38964)",
+      "step": 118,
+      "time": 139.733333333337
+    },
+    {
+      "command": "{ \"move\": (-6.3, 0.0, -8.3) }",
+      "nearest": "herbs",
+      "ok": true,
+      "position": "(-6.439199, 0.000415, -8.397966)",
+      "step": 119,
+      "time": 142.166666666672
+    },
+    {
+      "command": "{ \"interact\": \"herbs\" }",
+      "nearest": "herbs",
+      "ok": true,
+      "position": "(-6.439199, 0.000415, -8.397966)",
+      "step": 120,
+      "time": 142.200000000005
+    },
+    {
+      "command": "{ \"button\": \"Gather a few\" }",
+      "nearest": "herbs",
+      "ok": true,
+      "position": "(-6.439199, 0.000415, -8.397966)",
+      "step": 121,
+      "time": 142.216666666672
+    },
+    {
+      "command": "{ \"wait\": 1.0 }",
+      "nearest": "herbs",
+      "ok": true,
+      "position": "(-6.439199, 0.000415, -8.397966)",
+      "step": 122,
+      "time": 143.216666666673
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "herbs",
+      "ok": true,
+      "position": "(-6.439199, 0.000415, -8.397966)",
+      "step": 123,
+      "time": 143.233333333339
+    },
+    {
+      "command": "{ \"move\": (-3.0, 0.0, -9.6) }",
+      "nearest": "table",
+      "ok": true,
+      "position": "(-3.126111, 0.000843, -9.501038)",
+      "step": 124,
+      "time": 144.700000000007
+    },
+    {
+      "command": "{ \"interact\": \"table\" }",
+      "nearest": "table",
+      "ok": true,
+      "position": "(-3.126111, 0.000843, -9.501038)",
+      "step": 125,
+      "time": 144.733333333341
+    },
+    {
+      "command": "{ \"button\": \"Prepare the shared\" }",
+      "nearest": "table",
+      "ok": true,
+      "position": "(-3.126111, 0.000843, -9.501038)",
+      "step": 126,
+      "time": 144.750000000007
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-3.126111, 0.000843, -9.501038)",
+      "step": 127,
+      "time": 146.766666666676
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "nell",
+      "ok": true,
+      "position": "(-3.126111, 0.000843, -9.501038)",
+      "step": 128,
+      "time": 146.783333333342
+    },
+    {
+      "command": "{ \"wait\": 18.0 }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-3.126111, 0.000843, -9.501038)",
+      "step": 129,
+      "time": 164.783333333357
+    },
+    {
+      "command": "{ \"wait\": 0.016667 }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-3.126111, 0.000843, -9.501038)",
+      "step": 130,
+      "time": 164.81666666669
+    },
+    {
+      "command": "{ \"move\": (-4.5, 0.0, -9.3) }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-4.388039, 0.000843, -9.409116)",
+      "step": 131,
+      "time": 165.333333333357
+    },
+    {
+      "command": "{ \"interact\": \"tavi\" }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-4.388039, 0.000843, -9.409116)",
+      "step": 132,
+      "time": 165.36666666669
+    },
+    {
+      "command": "{ \"button\": \"teach me\" }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-4.388039, 0.000843, -9.409116)",
+      "step": 133,
+      "time": 165.383333333357
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-4.388039, 0.000843, -9.409116)",
+      "step": 134,
+      "time": 167.400000000025
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "tavi",
+      "ok": true,
+      "position": "(-4.388039, 0.000843, -9.409116)",
+      "step": 135,
+      "time": 167.416666666692
+    },
+    {
+      "command": "{ \"move\": (-1.0, 0.0, -8.5) }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(-1.121361, 0.000842, -8.612456)",
+      "step": 136,
+      "time": 168.816666666693
+    },
+    {
+      "command": "{ \"interact\": \"mara\" }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(-1.121361, 0.000842, -8.612456)",
+      "step": 137,
+      "time": 168.850000000027
+    },
+    {
+      "command": "{ \"button\": \"make something\" }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(-1.121361, 0.000842, -8.612456)",
+      "step": 138,
+      "time": 168.866666666693
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(-1.121361, 0.000842, -8.612456)",
+      "step": 139,
+      "time": 170.883333333361
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "mara",
+      "ok": true,
+      "position": "(-1.121361, 0.000842, -8.612456)",
+      "step": 140,
+      "time": 170.900000000028
+    },
+    {
+      "command": "{ \"move\": (-2.1, 0.0, -10.1) }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-2.009959, 0.000843, -9.977701)",
+      "step": 141,
+      "time": 171.583333333362
+    },
+    {
+      "command": "{ \"interact\": \"ivo\" }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-2.009959, 0.000843, -9.977701)",
+      "step": 142,
+      "time": 171.616666666695
+    },
+    {
+      "command": "{ \"button\": \"favorite route\" }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-2.009959, 0.000843, -9.977701)",
+      "step": 143,
+      "time": 171.633333333362
+    },
+    {
+      "command": "{ \"wait\": 2.0 }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-2.009959, 0.000843, -9.977701)",
+      "step": 144,
+      "time": 173.65000000003
+    },
+    {
+      "command": "{ \"close\": true }",
+      "nearest": "ivo",
+      "ok": true,
+      "position": "(-2.009959, 0.000843, -9.977701)",
+      "step": 145,
+      "time": 173.666666666697
+    },
+    {
+      "command": "{ \"move\": (-3.3, 0.0, -10.7) }",
+      "nearest": "table",
+      "ok": true,
+      "position": "(-3.188632, 0.000843, -10.59348)",
+      "step": 146,
+      "time": 174.233333333364
+    },
+    {
+      "command": "{ \"interact\": \"nell\" }",
+      "nearest": "table",
+      "ok": false,
+      "position": "(-3.188632, 0.000843, -10.59348)",
+      "reason": "30-second route timeout",
+      "step": 147
+    }
+  ],
+  "companion_distances": [
+    0.905210137367249,
+    0.720102369785309,
+    1.07120680809021,
+    1.28885817527771
+  ],
+  "elapsed_engine_seconds": 204.250000000055,
+  "humanTests": 0,
+  "method": "Headless earned InputEvent route with explicit garden/Ivo walking detours; captures replaced by observations. No position/progress injection.",
+  "ok": false,
+  "story": {
+    "day": 1,
+    "flags": {
+      "alcove_found": true,
+      "bridge_cleared": true,
+      "bridge_plan": true,
+      "bridge_repaired": true,
+      "first_companion": true,
+      "garden_watered": true,
+      "glow_unlocked": true,
+      "greenhouse_open": true,
+      "herbs_gathered": true,
+      "ivo_concern": true,
+      "map_delivered": true,
+      "map_shared": true,
+      "mara_concern": true,
+      "melody_learned": true,
+      "memory_found": true,
+      "met_ivo": true,
+      "met_mara": true,
+      "met_nell": true,
+      "met_tavi": true,
+      "nell_concern": true,
+      "parcel_collected": true,
+      "recipe_shared": true,
+      "shared_table": true,
+      "tavi_concern": true,
+      "wood_collected": true,
+      "workshop_invited": true
+    },
+    "home": "sage",
+    "schema": 1,
+    "trust": {
+      "ivo": 4,
+      "mara": 4,
+      "nell": 4,
+      "tavi": 4
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "case": "reveal",
+      "exit": 2,
+      "passed": true
+    },
+    {
+      "case": "integration",
+      "exit": 2,
+      "passed": true
+    },
+    {
+      "case": "companion",
+      "exit": 2,
+      "passed": true
+    },
+    {
+      "case": "earned_route",
+      "exit": 2,
+      "passed": true
+    }
+  ],
+  "ordinarySavesBefore": {},
+  "ordinarySavesAfter": {},
+  "ok": true
+}

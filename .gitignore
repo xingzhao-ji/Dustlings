@@ -19,6 +19,10 @@ evidence/platforms/profiles/
 .tools/
 godot/.godot/
 builds/3d/
+builds/steam*/
+# Long lossless-derived route reviews stay local; manifests and the short
+# release preview remain versioned. One full-HD route exceeds GitHub's limit.
+evidence/rpg/neighborhood-*-20260914/*.mp4
 evidence/**/profiles/
 
 evidence/**/*.avi

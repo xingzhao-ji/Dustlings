@@ -1,0 +1,1560 @@
+{
+  "created": "2026-09-14T01:56:19.898Z",
+  "scenario": "art",
+  "label": "neighborhood-art-min-fixed-20260914",
+  "sourceDirectory": "/Users/xingzhaoji/Desktop/mine/Dustlings/godot",
+  "runtimeArguments": [],
+  "nativeArguments": [
+    "--resolution",
+    "960x640"
+  ],
+  "sourceHash": "77a30108dfe4fcb228ed317ba5325b3663b3d8fd6252673193126a10173e8e6e",
+  "files": {
+    "assets/audio/air.ogg": "30718bb3c0d6e9a0e7dcc0758ece8a72285fe72b14ca5ac7def59419ac2b69b1",
+    "assets/audio/air.ogg.import": "89c2178995479cee9437cadea862ec19c0450635d7747f25731efe06fa9d8200",
+    "assets/audio/assign.wav": "ca79b53378c5283f75bb3620d6a08bfe83b2ca60199ff9464b152c91706b1187",
+    "assets/audio/assign.wav.import": "d70cf2610c17a7cd94eb414b1f3b27ef7555f741fdf7905e639d8688450e98a8",
+    "assets/audio/birth.wav": "6d36300d8136cffe26e98282c1eaddd570fa4ce8e6639945926d61372f4f30bb",
+    "assets/audio/birth.wav.import": "edf2f5314e3efcc11cf2b68d2e2586b40ed08d0fc49b0a14fe20c04f3c0ade78",
+    "assets/audio/blocked.wav": "020ff051d6d36ec02790aeb4a8826661febba6605c9f3bcaaf46aa97b83c81a5",
+    "assets/audio/blocked.wav.import": "7436f8d571a76fe126a5096ad8dc57000778484c63598cac35b8734e924281fc",
+    "assets/audio/brush.ogg": "4c201bca63fb070561e52c83a26ef2d1eb0c96f56f8e764a0e3e0964c4ef00af",
+    "assets/audio/brush.ogg.import": "da5b2d5dca4ba5327a4528b875fc373a9ac8ccccd1acd4b7fbe7dad1549da37f",
+    "assets/audio/chorus.wav": "044ede9b5b59eb0e3ae9e7ff107f08b97ed83b3bd625f3a692caf2c49bc028d8",
+    "assets/audio/chorus.wav.import": "c59e3cf7c58874b0239d9fc67a2e3bc9ccd20792e8cafe8aa8339b74abf87dcf",
+    "assets/audio/complete.wav": "733bd99449bbdfb9bdf4a016e16c89e151bae353e4d30e51112861ef3e444377",
+    "assets/audio/complete.wav.import": "61847a33a06afd60d3f4934d02f78ce02d1d2882f8a012daaed7f016d0b019ec",
+    "assets/audio/music-base.ogg": "a3fd110400f3e04cee43dd6a0e03e8d9aea918d7950d33e90b4f3f158a59f42c",
+    "assets/audio/music-base.ogg.import": "4da8e3e170581bdbac25672b4fe9eb994c8d9e346a73e800ef8ce3de0312fcc2",
+    "assets/audio/music-base.wav.import": "01f5a746be84712bb982e9e33c77002c1e8aac34441ad0277d5851573638993e",
+    "assets/audio/music-bloom.ogg": "907c76622285a7eaf0f3abb296e797469899a851ece21c815235570afbbc86a8",
+    "assets/audio/music-bloom.ogg.import": "548b0ef65f05860a3bb06a7f5ded2d2fb4e654f9aa941cc0135961ae0f214f72",
+    "assets/audio/music-warm.ogg": "0d2174812bc34e0122a969199d5c9c6b1dda9071874d6b1a845ced3a6a097bff",
+    "assets/audio/music-warm.ogg.import": "bea2e64aa80e2dd14c306dce36baad5d3847f4a32773c6f61291ede3ba6a0310",
+    "assets/audio/restored.wav": "82e560eec7f423d1a5cdbf6d2f53ba4dc2454bfeb0ad905b10cb5a33cebb967c",
+    "assets/audio/restored.wav.import": "580c40ee674170810bbf0a2154bc92013c00389a7ab9c3349ecffdd4de055029",
+    "assets/audio/rpg-melody-answer.wav": "6fd8648e3a1601564b1d36ca1e1cc5f4735d7aa8177ca3d8c87d2df617c42031",
+    "assets/audio/rpg-melody-answer.wav.import": "9c142f5b79503a12dd474e0c983d8ac30f56eb42564ff2f3d8bad7b8486c825e",
+    "assets/audio/rpg-melody-taught.wav": "315795c50accd045ce0ad59c174e40b1ab491e0a4980eab4df060377709381e0",
+    "assets/audio/rpg-melody-taught.wav.import": "62aef301cbd25fe6f250b49a29bb7b3c33c6508ac3f300de138dabd43f58ae15",
+    "assets/audio/rpg-step-grass-1.wav": "b567e649684db827efe745b0b4844f9c908984ed30c9e85cbe857ec69a4de26c",
+    "assets/audio/rpg-step-grass-1.wav.import": "4a4235bd5424078edf062f259b424f261754905490bb4df79ff8b004d412994b",
+    "assets/audio/rpg-step-grass-2.wav": "477dedabcf81427ac1cea0f0ae94d0b8b80d2ad694e11e33a6332251a3ddf8b4",
+    "assets/audio/rpg-step-grass-2.wav.import": "3ed57f5c8847d3c0d42124d1481f0fe21afbc79bc6abdc3840faff4eb7425a00",
+    "assets/audio/rpg-step-grass-3.wav": "15fc99fbe8aadf473e35723f8b6e1e3b08687ab1a36ac57df0a742d93308f0fc",
+    "assets/audio/rpg-step-grass-3.wav.import": "5b1d11360aed3646d6754320d4b1a509321498ee601a528893cca13de88247f6",
+    "assets/audio/rpg-step-stone-1.wav": "ec81acd82225b0e1bf6747b629791eac4b01b663ed02f843b1f0c91c1bac4a24",
+    "assets/audio/rpg-step-stone-1.wav.import": "85babc67536f59cfdc1ab82019509d84d71094c15d16dfc85a6dc235d0601b24",
+    "assets/audio/rpg-step-stone-2.wav": "e3b5ccd42b91dc55cc50673becec0dcdd75e1db6abe874e8a584d82127dc98fa",
+    "assets/audio/rpg-step-stone-2.wav.import": "2579953f1781f2845a8a3486926e95ee1e91f75b3fe830afc6b21303bec1cf99",
+    "assets/audio/rpg-step-stone-3.wav": "60787ffb3a6f41a08c09bbaab1bb5553db27fd411e29c5bdd5d8502393bc54f4",
+    "assets/audio/rpg-step-stone-3.wav.import": "646f079ce7db16ec0161c5011aab988d70a16e471a08b95fef753bf00ab653e8",
+    "assets/audio/rpg-step-wood-1.wav": "d6e8010ba83c2469b874de3bfaa88b2186a33001f10ce0c10175ad594c1c0986",
+    "assets/audio/rpg-step-wood-1.wav.import": "442bef35d9355f1193153423deea8036de42b8364df94e5be6fa866a82be6d9c",
+    "assets/audio/rpg-step-wood-2.wav": "f0aed809a480b0e80dbb8f2c2f86c03cbfccc4e5c87227132d3b811d6c2fe3e3",
+    "assets/audio/rpg-step-wood-2.wav.import": "a825ca0cbb8c0887628b4bcb63211d3025ad7cdb2a24c555b5b6feafe8eb9980",
+    "assets/audio/rpg-step-wood-3.wav": "9c34e13867469f8aa6b84475ce162c76a3995ace7f9043c6ee046cc2a773a4d0",
+    "assets/audio/rpg-step-wood-3.wav.import": "85943240b1ab726465e163751541d33840340729d624dafa70b741f7460a5e21",
+    "assets/audio/ui.wav": "2a7952af4eec42c8c35c351b28a593f9c1d00b6753ec15e508f70b4ec25888b2",
+    "assets/audio/ui.wav.import": "a8e5becce721885f62c0878192daae49b78e75be8088178178569d9948746aba",
+    "assets/audio/upgrade.wav": "a5afeddf661b8774715a4bd7936a9d4daf082997fbf98dde6bc8741bcbcf9919",
+    "assets/audio/upgrade.wav.import": "293235e14af9ce652f92232b432b2a2e807190ec92d3f2dab4b334232478df37",
+    "assets/audio/water.ogg": "7a3dac9747c3135ae3238df28418c6f476a905bad2011063bd34f891fd15e7f6",
+    "assets/audio/water.ogg.import": "bdc30428bed9fb82e1a79855c4927963e820b9852bdd18d865a83519ac6d2beb",
+    "assets/ui/app-icon.icns": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2",
+    "assets/ui/app-icon.ico": "617ec63012018f494c73c1c45d4a8c21c737bef5611e0da6f030a67577d8a211",
+    "assets/ui/app-icon.svg": "31cc115ff9dc84233c532b64cb70eae52c7d2d9170d4f06cf77a793372cc7684",
+    "assets/ui/app-icon.svg.import": "9eeb9bd452978d6d9ced8f3964a55237bf7607856643dc5d35302d19fddf6770",
+    "assets/ui/slider-pearl-focus.svg": "b0cae053ea95496c50ad86efad1d66c57174f50b40e972db1844e4ba4ae9ee96",
+    "assets/ui/slider-pearl-focus.svg.import": "1b7ffb75f01e9c2cad29b6a513dd6aff8d53d1743be5550623d7eb3d0a1468e3",
+    "assets/ui/slider-pearl.svg": "97df9313432e747aef8f7807becaaa4b914ed15827255ab28296b42f80da91a3",
+    "assets/ui/slider-pearl.svg.import": "50080c66a2caed86d7ab3058f1f3e0edf8ec5553def20c7c02aba74dc8ed3b55",
+    "assets/ui/toggle-off.svg": "b98ea360cba3d16fc307e79ec31758b95f30e6d5e88a080e82721a41c663fa21",
+    "assets/ui/toggle-off.svg.import": "664866855cd121e3cc56a1f056c01d903fd0e067e9d99aa1ad45c9d3959a86f7",
+    "assets/ui/toggle-on.svg": "d16699482e09d785944f902a6cb94027e1c24e633709aba2f1415d2cfb586cae",
+    "assets/ui/toggle-on.svg.import": "92c2da3182d547dc711698b48d74d5f673ba24127803cb102bdd4e724f7ca681",
+    "export_presets.cfg": "e24d445cdecfaca056b202db9fc8b9eacfe964ea1cc68c155c5e952814fcee4f",
+    "project.godot": "2d8bf2aa5d83fe2e50815d86d66a33a4a90d16d65271b0108ffb90f17b9ac842",
+    "scenes/courtyard.tscn": "40b44bc40cc1dbc411897fbc88bd8c8a5f04c9ecd1e547263fa2cfc2484cdc52",
+    "scenes/neighborhood.tscn": "520efa0332d134272b3341ee7289de258086d403ab4d57fb5ca64a9562e04091",
+    "scripts/courtyard_environment.gd": "8d52b210fca5dae8990b68d22bd93f176ae0df12a9dc301956f8a77ee2773d2a",
+    "scripts/courtyard_environment.gd.uid": "4f19792d00fe9e7d9443b8701d85a992337ecc573b4f0d38267954eef47de024",
+    "scripts/discovery_preview.gd": "f545d8e9ef11e76c2d2c7f4584056ecf2bcf3a354ecc8bb0fc408b118dc48af8",
+    "scripts/discovery_preview.gd.uid": "71552544f674cbfcd0ff7847dd9cda8ef068c6aad960dcc073750d3b10dabee2",
+    "scripts/dust_feedback.gd": "e78aeb0979e1223b4bc237d08a06236c6a4451d48d28b28121208d9fd3f59fa8",
+    "scripts/dust_feedback.gd.uid": "4bd304359f784424928a9aaffaa847e6375c29b75ff57ea2644eb651a923be63",
+    "scripts/dustling_visual.gd": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc",
+    "scripts/dustling_visual.gd.uid": "6349b99f99f4f2781502bf75c5a05a2b1e45d73e2ab44bd095632d7b6f530074",
+    "scripts/main.gd": "8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8",
+    "scripts/main.gd.uid": "ff6ddc705c0c7220c6d37ddfb70b6f27e000a7d0effa7beba395a5d76837e8f0",
+    "scripts/rpg_actor.gd": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea",
+    "scripts/rpg_actor.gd.uid": "8a10fc1dd04fb1d3d9d7d240050b2b547c85a4ff0367cec737e981977b26fa9a",
+    "scripts/rpg_audio.gd": "e82d0a7ab45de1a058cb868a447908edcd91c0ade08f1fdeb0d3810256e32574",
+    "scripts/rpg_audio.gd.uid": "687ac06862ab71a74ee80743ff258c937b0bcc8447bd06a5d7ebf0e858d6f182",
+    "scripts/rpg_environment.gd": "04e40a6628d3bd9549c64c8fabd7e80d9e9ff00b980313215d70bee32a9bf253",
+    "scripts/rpg_environment.gd.uid": "44bbb9362ce3dce12e32f501f3516ddbcf7e3e9a048e9a3bbdca70493d1d9fa7",
+    "scripts/rpg_main.gd": "c89061ddb33648ac16dfbbb3a12c22c42c3030e8e39cef9906f71eb6f2412e33",
+    "scripts/rpg_main.gd.uid": "8a40bd0c59cd37ea65f7316b666899241e670203e8f1ed7e9566cd3a5948c1b4",
+    "scripts/rpg_navigation.gd": "153e83fb22c11b2bddbdfe1eef9e13b2cccf5f6e3dda901a9fcfdb3b6a034d91",
+    "scripts/rpg_navigation.gd.uid": "f778839b5ca5f17f5e942e7269a0fd54d26ecfc553942b57b531d5caa0e829a6",
+    "scripts/rpg_qa.gd": "dfb3e3054ac92f34a7d39a5a8faced506851d40d6ebd3f06b1039246871c496a",
+    "scripts/rpg_qa.gd.uid": "dd6e21028c947db12716907ced4c74070e5ecac1f7ec070f199f887c73a25a04",
+    "scripts/rpg_save.gd": "baea44034774e4cb72be30ee0a2c408a2aad713655f956134af492d51cb70f95",
+    "scripts/rpg_save.gd.uid": "bc2f9f890dbd1f7009d65a373fde72714c17d12f0800de7d029810bcee71d1c9",
+    "scripts/rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe",
+    "scripts/rpg_story.gd.uid": "e0b07d97bd32239a2fe743e57ca4ffe8320680205805ece2ee6546c79f3d896d",
+    "scripts/save_store.gd": "683aed2d3619384421668e48f0353252f164992341a86908a46d735c2545356a",
+    "scripts/save_store.gd.uid": "b24d48ad9eb3666ad51bd2ad88a0296b40729c17f54876c536a3517c5a9d23f9",
+    "scripts/simulation.gd": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b",
+    "scripts/simulation.gd.uid": "792f1c954ad5e4fd781e29a312b28bf8c2a0c30e10713eefcf833f40bf0e561d",
+    "scripts/soundscape.gd": "cd0f5959cf63e5dbd25b1add40b801cccd878906ee0aac8a8faad002dd566b5b",
+    "scripts/soundscape.gd.uid": "850698c9cd6ce62fd29ec9c9cf731438b73a2eb704882437b5543d172031007c",
+    "shaders/courtyard_environment_vegetation.gdshader": "7704d26fc46f31e1c35f2429179801feb2603147131f31814ec51ac3f291ba3a",
+    "shaders/courtyard_environment_vegetation.gdshader.uid": "e541ebb37be71f3a2511e8fe6247b3e54b335dfc4bb5d76f3c4dd9a803d92237",
+    "shaders/courtyard_environment_water.gdshader": "a819e6f53d63c0ccacda969f7c2b1dfaa3c194b2c24041a2343364be556a3b9d",
+    "shaders/courtyard_environment_water.gdshader.uid": "82331e95ebb011a80fad4a1925da6cf58b561ec60774f64eb6b42e1fb16a9774",
+    "shaders/courtyard_stream_flow.gdshader": "486bb08c715cfe189465a008d0c6ef906fa978dbffe414a911e5a34bd7c812eb",
+    "shaders/courtyard_stream_flow.gdshader.uid": "91a76aaa1790226caec4d39f3d1cb88b01d4e4b72f16f1a2c6186b3486f4aa8d",
+    "shaders/courtyard_surface.gdshader": "d2492f80369252073d6ace8fb25ae2e573ba938d6fd079bf22613595aa9460a7",
+    "shaders/courtyard_surface.gdshader.uid": "dfa1e43ef5b7c287d1f31c8e9037895ebede6832bee94c37f1032740a429eb94",
+    "shaders/dust_drift.gdshader": "cbdcaeb680b9ee9122da780a8b58333f1857ebe3cdd8bb774514d78040586c8f",
+    "shaders/dust_drift.gdshader.uid": "6b45b4d48bf5ac61649e21b1377ee2a246f9363b9e89b77889e6bd85521b5fc2",
+    "shaders/rpg_surface.gdshader": "beae1093e2644c4d3efda027b106a7a278dbcdbbee0427d426904ecedfd39f47",
+    "shaders/rpg_surface.gdshader.uid": "fdde011c94712cf4820171e2067a0721acc104692bd09e29dc7a734cc5ddfa34",
+    "tests/audio_checks.gd": "b260a81897f00060c7f1b807c89a9fb4c2fe87a84e520817ab90100987a0a000",
+    "tests/audio_checks.gd.uid": "6017e810046af1c7b393545cba27e48b87786b7addc573067323f3ff857e7515",
+    "tests/camera_checks.gd": "29642a928a79ff49753674e54c4b261477789c884c45e994c846b26eb71318c5",
+    "tests/camera_checks.gd.uid": "5a466ee98d90faff10453a7071eb614e696c133cc107bd4b8553be4c19a51626",
+    "tests/chorus_checks.gd": "3f71f2abbb7b9a521f7ca93b82009c6eb3a7bd6456e9b55c0e0f08aa7fac514b",
+    "tests/chorus_checks.gd.uid": "be23ad9b24492140a039365b2afda1c316f0bd072320fce6b013facdc1d6d8d3",
+    "tests/crowd_checks.gd": "120448e5fa85e46c74cfcd7d968dd2a151d0b66b8e0bb741d42f15478ac69bc8",
+    "tests/crowd_checks.gd.uid": "1c1b165df258fcad483db983478c0a324a0445d92c9b6b6f897cc149115919a7",
+    "tests/integration_checks.gd": "61c5296d6c33fd65e1cc29da1b3e382bfc0ad0fd663fd2cb5ee05ccbcf8365f7",
+    "tests/integration_checks.gd.uid": "18a6ec34d05b3699d077e0698cc6ce916ef1c4bac2c58f89cf7206f11aeb0727",
+    "tests/native_recovery_checks.gd": "2f2f32534a30e7d556cc6c3a21649bb45eeb06ca0b8b88fb3153087c29e1911d",
+    "tests/native_recovery_checks.gd.uid": "c1da25540009ba909e4319f04c40169faebcd0779cfaba314dd775578fb43bc1",
+    "tests/rpg_actor_checks.gd": "fc8bd05dea16d4a3bdf96a3a6dddf71d7a37428ce7f8ce5ff2af6c6973f82de9",
+    "tests/rpg_companion_checks.gd": "3644e162d0a6878d22334239a1e4f75330d2f78308ee20b3a45a1c54956bb59f",
+    "tests/rpg_companion_checks.gd.uid": "98bacb890fe6e5c73cdab7d32ac32689cf021b63c08dde033562bc71a93c6743",
+    "tests/rpg_earned_route_checks.gd": "e14410eaf33ed9897c9b4036c002c45ef28f20f41bcc396f83e712ec25b27ffb",
+    "tests/rpg_integration_checks.gd": "50ccb4902b49112feffdc2a4384cd34b4c52aae7cabf65dc6ec8bc0a5a757444",
+    "tests/rpg_integration_checks.gd.uid": "e6017d88318202e18530509466e44426decf33068252e179f2a5afc6310be89c",
+    "tests/rpg_reveal_checks.gd": "915ec4af63c58f5222e9e1a1915764fc141d6be9b1e1f2036808f4d40cd7396c",
+    "tests/rpg_save_checks.gd": "49d4ae1227a256d79932d6583edadb3df81803bd569f872eecbcacbfd6335e71",
+    "tests/rpg_save_checks.gd.uid": "3a6bd1882731e4f7f6a24b835b9d5413311bce1dddf2120831ccf633f7267d5c",
+    "tests/rpg_story_checks.gd": "98a57d1a5fd31676aff3ed5f71cfd0c7d9cfe8dacce532f92d82e44324b804a3",
+    "tests/rpg_story_checks.gd.uid": "15e036e9b94e38bdd2b35bb6ffe50344ff45b1ccccb78339cbb045f30c30f8db",
+    "tests/save_checks.gd": "77f187b86fbe8a6111fffdf291416b37e3b1822611f7bf4a9ea94a2136aec49f",
+    "tests/save_checks.gd.uid": "b940f3a5fd984a772ca4af99604c54a2ac6666c8337ef646e496cd8fdce67df9",
+    "tests/simulation_checks.gd": "84d9c4ab0fa3592c884b50afba243a3b37e97529b6f93c16137b220998eb5ebe",
+    "tests/simulation_checks.gd.uid": "15522ac52a4db57f6e83bb85b5a98076b9f182ca6b7cf6b08184a8af78f3b21e",
+    "tests/work_feedback_checks.gd": "19a975cb43e926c28b060d80ed7a8624e6cf050c6fb4038ef008cafd0459304d",
+    "tests/work_feedback_checks.gd.uid": "a44391e57053e60704d7ceeb56adc84cffe6d3a40b78bc46b163fbe764de7559"
+  },
+  "method": "Godot MovieMaker30fps fixed engine-time with generated native InputEvents or explicitly labelled fixtures. Rendering may run faster than wall-clock; no human input.",
+  "humanTests": 0,
+  "snapshotOverrides": [],
+  "artReview": {
+    "start": "fresh isolated save",
+    "segments": "Arrival, earned helper, normal/reversed/stop-start walking, Ivo meeting, stationary full yaw and low/high pitch camera drags.",
+    "cameraControl": "Generated RMB press/motion/release; no camera state injection.",
+    "timing": "Unedited normal-speed game sequence rendered by MovieMaker; timestamped steps and stills in results.json. Not wall-clock performance or human input."
+  },
+  "result": {
+    "art_review": {
+      "controls": "Generated physical WASD/Space/E/Enter and right-button mouse drags. No teleport, camera property assignment or reward injection.",
+      "orbits": [
+        {
+          "actual_pitch": 0.48,
+          "actual_yaw": 1.57079635620117,
+          "requested_pitch": 0.48,
+          "requested_yaw": 1.5707963267949,
+          "right_released": true,
+          "time": 28.7916666666673
+        },
+        {
+          "actual_pitch": 0.48,
+          "actual_yaw": 3.14159271240234,
+          "requested_pitch": 0.48,
+          "requested_yaw": 1.5707963267949,
+          "right_released": true,
+          "time": 31.8583333333341
+        },
+        {
+          "actual_pitch": 0.48,
+          "actual_yaw": 4.71238906860351,
+          "requested_pitch": 0.48,
+          "requested_yaw": 1.5707963267949,
+          "right_released": true,
+          "time": 34.9250000000006
+        },
+        {
+          "actual_pitch": 0.48,
+          "actual_yaw": 6.28318542480471,
+          "requested_pitch": 0.48,
+          "requested_yaw": 1.5707963267949,
+          "right_released": true,
+          "time": 37.9916666666671
+        },
+        {
+          "actual_pitch": 0.235555559635163,
+          "actual_yaw": 6.28318542480471,
+          "requested_pitch": 0.23,
+          "requested_yaw": 0,
+          "right_released": true,
+          "time": 39.5583333333337
+        },
+        {
+          "actual_pitch": 0.230000004172326,
+          "actual_yaw": 7.85398178100591,
+          "requested_pitch": 0.230000004172326,
+          "requested_yaw": 1.5707963267949,
+          "right_released": true,
+          "time": 42.5916666666668
+        },
+        {
+          "actual_pitch": 0.928166666150095,
+          "actual_yaw": 7.85398178100591,
+          "requested_pitch": 0.94,
+          "requested_yaw": 0,
+          "right_released": true,
+          "time": 44.6583333333334
+        },
+        {
+          "actual_pitch": 0.939999999403955,
+          "actual_yaw": 9.4247781372071,
+          "requested_pitch": 0.939999999403955,
+          "requested_yaw": 1.5707963267949,
+          "right_released": true,
+          "time": 47.6916666666665
+        },
+        {
+          "actual_pitch": 0.49022220647335,
+          "actual_yaw": 9.4247781372071,
+          "requested_pitch": 0.48,
+          "requested_yaw": 0,
+          "right_released": true,
+          "time": 49.2249999999998
+        },
+        {
+          "actual_pitch": 0.479999984622001,
+          "actual_yaw": 12.5663708496095,
+          "requested_pitch": 0.479999984622001,
+          "requested_yaw": 3.14159265358979,
+          "right_released": true,
+          "time": 55.2583333333328
+        }
+      ],
+      "segments": [
+        {
+          "label": "arrival",
+          "pitch": 0.48,
+          "position": [
+            0,
+            0,
+            9
+          ],
+          "time": 2.15833333333334,
+          "yaw": 0
+        },
+        {
+          "label": "normal-walk-and-rapid-reversal",
+          "pitch": 0.48,
+          "position": [
+            0.428978115320206,
+            0.000842533598188311,
+            7.53103113174438
+          ],
+          "time": 9.55833333333331,
+          "yaw": 0
+        },
+        {
+          "label": "stop-start",
+          "pitch": 0.48,
+          "position": [
+            2.16231155395508,
+            0.000842422712594271,
+            7.53103113174438
+          ],
+          "time": 11.8916666666666,
+          "yaw": 0
+        },
+        {
+          "label": "ivo-meeting",
+          "pitch": 0.48,
+          "position": [
+            -1.89976108074188,
+            0.000830496603157371,
+            4.50896835327148
+          ],
+          "time": 16.325,
+          "yaw": 0
+        },
+        {
+          "label": "stationary-full-yaw-normal-pitch",
+          "pitch": 0.48,
+          "position": [
+            -0.0612827911973,
+            0.000842543900944293,
+            6.69411134719849
+          ],
+          "time": 25.7583333333338,
+          "yaw": 0
+        },
+        {
+          "label": "low-pitch",
+          "pitch": 0.48,
+          "position": [
+            -0.0612827911973,
+            0.000842543900944293,
+            6.69411134719849
+          ],
+          "time": 38.0583333333337,
+          "yaw": 6.28318542480471
+        },
+        {
+          "label": "high-pitch",
+          "pitch": 0.230000004172326,
+          "position": [
+            -0.0612827911973,
+            0.000842543900944293,
+            6.69411134719849
+          ],
+          "time": 42.6583333333335,
+          "yaw": 7.85398178100591
+        }
+      ],
+      "source": "Fresh game; helper earned by brushing.",
+      "validation": {
+        "controls_released": true,
+        "earned_companion": true,
+        "full_camera_input": true,
+        "met_ivo": true,
+        "pitch_returned": true
+      }
+    },
+    "camera_distance": 7.6,
+    "checks": [
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 1.0 }",
+        "held_keys": {},
+        "nearest": "",
+        "ok": true,
+        "position": "(0.0, 0.0, 9.0)",
+        "step": 0,
+        "time": 1.025
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"capture\": \"welcome\" }",
+        "held_keys": {},
+        "nearest": "",
+        "ok": true,
+        "position": "(0.0, 0.0, 9.0)",
+        "step": 1,
+        "time": 1.05833333333333
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"button\": \"Step into\" }",
+        "held_keys": {},
+        "nearest": "",
+        "ok": true,
+        "position": "(0.0, 0.0, 9.0)",
+        "step": 2,
+        "time": 1.09166666666667
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 1.0 }",
+        "held_keys": {},
+        "nearest": "",
+        "ok": true,
+        "position": "(0.0, 0.0, 9.0)",
+        "step": 3,
+        "time": 2.125
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"mark\": \"arrival\" }",
+        "held_keys": {},
+        "nearest": "",
+        "ok": true,
+        "position": "(0.0, 0.0, 9.0)",
+        "step": 4,
+        "time": 2.15833333333334
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"capture\": \"art-arrival\" }",
+        "held_keys": {},
+        "nearest": "",
+        "ok": true,
+        "position": "(0.0, 0.0, 9.0)",
+        "step": 5,
+        "time": 2.19166666666667
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"move\": (0.5, 0.0, 7.4) }",
+        "held_keys": {
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(0.428978, 0.000843, 7.531031)",
+        "step": 6,
+        "time": 2.85833333333333
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"brush\": 5.0 }",
+        "held_keys": {
+          "32": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(0.428978, 0.000843, 7.531031)",
+        "step": 7,
+        "time": 7.99166666666665
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 1.5 }",
+        "held_keys": {
+          "32": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(0.428978, 0.000843, 7.531031)",
+        "step": 8,
+        "time": 9.49166666666664
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"capture\": \"art-first-companion\" }",
+        "held_keys": {
+          "32": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(0.428978, 0.000843, 7.531031)",
+        "step": 9,
+        "time": 9.52499999999998
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"mark\": \"normal-walk-and-rapid-reversal\" }",
+        "held_keys": {
+          "32": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(0.428978, 0.000843, 7.531031)",
+        "step": 10,
+        "time": 9.55833333333331
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"walk_for\": 68, \"seconds\": 0.7 }",
+        "held_keys": {
+          "32": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "",
+        "ok": true,
+        "position": "(2.162312, 0.000843, 7.531031)",
+        "step": 11,
+        "time": 10.2583333333333
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"walk_for\": 65, \"seconds\": 0.35 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(1.295645, 0.00083, 7.531031)",
+        "step": 12,
+        "time": 10.625
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"walk_for\": 68, \"seconds\": 0.35 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "",
+        "ok": true,
+        "position": "(2.162312, 0.000842, 7.531031)",
+        "step": 13,
+        "time": 10.9916666666666
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 0.8 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "",
+        "ok": true,
+        "position": "(2.162312, 0.000842, 7.531031)",
+        "step": 14,
+        "time": 11.825
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"capture\": \"art-reversal-stop\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "",
+        "ok": true,
+        "position": "(2.162312, 0.000842, 7.531031)",
+        "step": 15,
+        "time": 11.8583333333333
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"mark\": \"stop-start\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "",
+        "ok": true,
+        "position": "(2.162312, 0.000842, 7.531031)",
+        "step": 16,
+        "time": 11.8916666666666
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"walk_for\": 65, \"seconds\": 0.35 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(1.295644, 0.000843, 7.531031)",
+        "step": 17,
+        "time": 12.2583333333333
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 0.35 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(1.295644, 0.000843, 7.531031)",
+        "step": 18,
+        "time": 12.625
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"walk_for\": 65, \"seconds\": 0.35 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(0.428977, 0.000843, 7.531031)",
+        "step": 19,
+        "time": 12.9916666666666
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 0.65 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(0.428977, 0.000843, 7.531031)",
+        "step": 20,
+        "time": 13.6583333333333
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"capture\": \"art-stop-start\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(0.428977, 0.000843, 7.531031)",
+        "step": 21,
+        "time": 13.6916666666666
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"move\": (-2.0, 0.0, 4.4) }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 22,
+        "time": 15.2583333333333
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 1.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 23,
+        "time": 16.2916666666666
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"mark\": \"ivo-meeting\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 24,
+        "time": 16.325
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"interact\": \"ivo\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 25,
+        "time": 16.3916666666666
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 2.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 26,
+        "time": 18.3916666666667
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"capture\": \"art-ivo-notice\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 27,
+        "time": 18.4250000000001
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"button\": \"Why so many\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 28,
+        "time": 18.4583333333334
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 2.5 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 29,
+        "time": 20.9583333333335
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"capture\": \"art-ivo-gesture\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 30,
+        "time": 20.9916666666669
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"close\": true }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 31,
+        "time": 21.0250000000002
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 2.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 32,
+        "time": 23.0250000000003
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"capture\": \"art-ivo-return\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "87": false
+        },
+        "nearest": "ivo",
+        "ok": true,
+        "position": "(-1.899761, 0.00083, 4.508968)",
+        "step": 33,
+        "time": 23.0583333333336
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"move\": (0.0, 0.0, 6.8) }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 34,
+        "time": 24.2250000000004
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"wait\": 1.5 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 35,
+        "time": 25.7250000000004
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 0
+        },
+        "command": "{ \"mark\": \"stationary-full-yaw-normal-pitch\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 36,
+        "time": 25.7583333333338
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 1.57079635620117
+        },
+        "command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 37,
+        "time": 28.7916666666673
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 1.57079635620118
+        },
+        "command": "{ \"capture\": \"art-orbit-quarter\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 38,
+        "time": 28.8250000000006
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 3.14159271240234
+        },
+        "command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 39,
+        "time": 31.8583333333341
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 3.14159271240234
+        },
+        "command": "{ \"capture\": \"art-orbit-back\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 40,
+        "time": 31.8916666666674
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 4.71238906860351
+        },
+        "command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 41,
+        "time": 34.9250000000006
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 4.71238906860351
+        },
+        "command": "{ \"capture\": \"art-orbit-three-quarter\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 42,
+        "time": 34.9583333333339
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 6.28318542480471
+        },
+        "command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 43,
+        "time": 37.9916666666671
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 6.28318542480471
+        },
+        "command": "{ \"capture\": \"art-orbit-front\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 44,
+        "time": 38.0250000000004
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.48,
+          "right_held": false,
+          "yaw": 6.28318542480471
+        },
+        "command": "{ \"mark\": \"low-pitch\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 45,
+        "time": 38.0583333333337
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.235555559635163,
+          "right_held": false,
+          "yaw": 6.28318542480471
+        },
+        "command": "{ \"orbit_yaw\": 0.0, \"pitch_target\": 0.23, \"seconds\": 1.5 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 46,
+        "time": 39.5583333333337
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.230000004172326,
+          "right_held": false,
+          "yaw": 7.85398178100591
+        },
+        "command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 47,
+        "time": 42.5916666666668
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.230000004172326,
+          "right_held": false,
+          "yaw": 7.85398178100591
+        },
+        "command": "{ \"capture\": \"art-orbit-low\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 48,
+        "time": 42.6250000000001
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.230000004172326,
+          "right_held": false,
+          "yaw": 7.85398178100591
+        },
+        "command": "{ \"mark\": \"high-pitch\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 49,
+        "time": 42.6583333333335
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.928166666150095,
+          "right_held": false,
+          "yaw": 7.85398178100591
+        },
+        "command": "{ \"orbit_yaw\": 0.0, \"pitch_target\": 0.94, \"seconds\": 2.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 50,
+        "time": 44.6583333333334
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.939999999403955,
+          "right_held": false,
+          "yaw": 9.4247781372071
+        },
+        "command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 51,
+        "time": 47.6916666666665
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.939999999403955,
+          "right_held": false,
+          "yaw": 9.4247781372071
+        },
+        "command": "{ \"capture\": \"art-orbit-high\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 52,
+        "time": 47.7249999999999
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.49022220647335,
+          "right_held": false,
+          "yaw": 9.4247781372071
+        },
+        "command": "{ \"orbit_yaw\": 0.0, \"pitch_target\": 0.48, \"seconds\": 1.5 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 53,
+        "time": 49.2249999999998
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.479999984622001,
+          "right_held": false,
+          "yaw": 12.5663708496095
+        },
+        "command": "{ \"orbit_yaw\": 3.14159265358979, \"seconds\": 6.0 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 54,
+        "time": 55.2583333333328
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.479999984622001,
+          "right_held": false,
+          "yaw": 12.5663708496095
+        },
+        "command": "{ \"wait\": 0.8 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 55,
+        "time": 56.0916666666661
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.479999984622001,
+          "right_held": false,
+          "yaw": 12.5663708496095
+        },
+        "command": "{ \"capture\": \"art-returned-view\" }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 56,
+        "time": 56.1249999999994
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.479999984622001,
+          "right_held": false,
+          "yaw": 12.5663708496095
+        },
+        "command": "{ \"save\": true }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 57,
+        "time": 56.1583333333327
+      },
+      {
+        "camera": {
+          "distance": 7.6,
+          "pitch": 0.479999984622001,
+          "right_held": false,
+          "yaw": 12.5663708496095
+        },
+        "command": "{ \"wait\": 0.5 }",
+        "held_keys": {
+          "32": false,
+          "65": false,
+          "68": false,
+          "83": false,
+          "87": false
+        },
+        "nearest": "lantern",
+        "ok": true,
+        "position": "(-0.061283, 0.000843, 6.694111)",
+        "step": 58,
+        "time": 56.691666666666
+      }
+    ],
+    "companion_distances": [
+      1.06891584396362
+    ],
+    "companion_routes": [
+      {
+        "next": "idle",
+        "position": "(-0.259251, 0.000843, 5.643688)",
+        "queued": 0
+      }
+    ],
+    "companions": 1,
+    "elapsed_engine_seconds": 56.7249999999993,
+    "humanTests": 0,
+    "method": "Generated native InputEvents; authored route knows destinations. No player or story progression injection.",
+    "ok": true,
+    "panel_layout": {
+      "failures": [],
+      "visible_frames": 167
+    },
+    "patches": {
+      "bridge": 1,
+      "lantern": 0
+    },
+    "position": [
+      -0.0612827911973,
+      0.000842543900944293,
+      6.69411134719849
+    ],
+    "resident_positions": {
+      "ivo": "(-2.0, 0.0, 3.0)",
+      "mara": "(8.0, 0.000137, 2.130913)",
+      "nell": "(-4.0, 0.0, -2.0)",
+      "tavi": "(-6.3, 0.0, 2.0)"
+    },
+    "story": {
+      "day": 1,
+      "flags": {
+        "first_companion": true,
+        "ivo_concern": true,
+        "met_ivo": true
+      },
+      "home": "clay",
+      "schema": 1,
+      "trust": {
+        "ivo": 2,
+        "mara": 0,
+        "nell": 0,
+        "tavi": 0
+      }
+    }
+  },
+  "status": "recorded",
+  "finished": "2026-09-14T01:57:12.218Z"
+}

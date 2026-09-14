@@ -65,12 +65,30 @@
       "ok": true
     },
     {
+      "check": "Interrupted stride returns to a compact social stance within one second at 0.85m/s",
+      "details": {},
+      "ok": true
+    },
+    {
       "check": "Interrupted stride settles both boots at 0.85m/s",
       "details": {},
       "ok": true
     },
     {
+      "check": "Foot contact events occur at the actual walking floor",
+      "details": {
+        "count": 11,
+        "speed": 0.85
+      },
+      "ok": true
+    },
+    {
       "check": "Stopped boots remain still at 0.85m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Quiet standing does not repeat footstep events at 0.85m/s",
       "details": {},
       "ok": true
     },
@@ -101,12 +119,30 @@
       "ok": true
     },
     {
+      "check": "Interrupted stride returns to a compact social stance within one second at 1.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
       "check": "Interrupted stride settles both boots at 1.6m/s",
       "details": {},
       "ok": true
     },
     {
+      "check": "Foot contact events occur at the actual walking floor",
+      "details": {
+        "count": 19,
+        "speed": 1.6
+      },
+      "ok": true
+    },
+    {
       "check": "Stopped boots remain still at 1.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Quiet standing does not repeat footstep events at 1.6m/s",
       "details": {},
       "ok": true
     },
@@ -137,12 +173,30 @@
       "ok": true
     },
     {
+      "check": "Interrupted stride returns to a compact social stance within one second at 2.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
       "check": "Interrupted stride settles both boots at 2.6m/s",
       "details": {},
       "ok": true
     },
     {
+      "check": "Foot contact events occur at the actual walking floor",
+      "details": {
+        "count": 30,
+        "speed": 2.6
+      },
+      "ok": true
+    },
+    {
       "check": "Stopped boots remain still at 2.6m/s",
+      "details": {},
+      "ok": true
+    },
+    {
+      "check": "Quiet standing does not repeat footstep events at 2.6m/s",
       "details": {},
       "ok": true
     },
@@ -216,5 +270,5 @@
       "speed": 2.6
     }
   ],
-  "source_sha256": "0c7fccb5c4c7fc8ece4010ff1b34602182e00ac7a39c867a294e6f3a33be8854"
+  "source_sha256": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea"
 }

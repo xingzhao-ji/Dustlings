@@ -1,0 +1,2520 @@
+{
+  "checks": {
+    "all_four_finish_near_player_without_backlog": true,
+    "all_residents_arrived_for_tea": true,
+    "earned_route_completed": true,
+    "first_companion_no_position_warp": true,
+    "first_companion_received_moth": true,
+    "mara_arrived_shared_table": true,
+    "source_unchanged": true
+  },
+  "ending_source": {
+    "rpg_actor.gd": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea",
+    "rpg_environment.gd": "04e40a6628d3bd9549c64c8fabd7e80d9e9ff00b980313215d70bee32a9bf253",
+    "rpg_main.gd": "70d4b389db0762c77a933e6a09a62b09216dd1cadbf5716492ae0cae37e07c82",
+    "rpg_navigation.gd": "153e83fb22c11b2bddbdfe1eef9e13b2cccf5f6e3dda901a9fcfdb3b6a034d91",
+    "rpg_qa.gd": "a3d4581c314932adafecf4f580b07f1373e3b9b7bd76b79835d724c383e256e2",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  },
+  "gift_first_id": 118564589105,
+  "gift_min_distance": 0.0000000298023223876953,
+  "max_first_frame_step": 0.067626416683197,
+  "method": "Headless fixed60Hz authored InputEvents from the native route; screenshot commands replaced by observations only. No state/position/collision injection. Not human testing or native performance.",
+  "observations": [
+    {
+      "companions": [],
+      "label": "arrival",
+      "moth_phase": 0,
+      "player": "(0.0, 0.0, 9.0)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.0, 0.0, 3.0)",
+          "route": "[(-2.0, 0.0, 3.0)]",
+          "target": "(-2.0, 0.0, 3.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.0, 0.0, -2.0)",
+          "route": "[(-4.0, 0.0, -2.0)]",
+          "target": "(-4.0, 0.0, -2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 2.01666666666666
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(0.234821, 0.000843, 8.606118)",
+          "nav_path": "[(0.234821, 0.0, 8.606118)]",
+          "path": "[]",
+          "player_distance": 0.872914433479309,
+          "position": "(0.443879, 0.000837, 8.390065)",
+          "queue": 0,
+          "velocity": "(-0.432534, 0.0, 0.447004)"
+        }
+      ],
+      "label": "first-companion",
+      "moth_phase": 0,
+      "player": "(0.398337, 0.000843, 7.51834)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.0, 0.0, 3.0)",
+          "route": "[(-2.0, 0.0, 3.0)]",
+          "target": "(-2.0, 0.0, 3.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.0, 0.0, -2.0)",
+          "route": "[(-4.0, 0.0, -2.0)]",
+          "target": "(-4.0, 0.0, -2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 9.8333333333334
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-1.899761, 0.000843, 4.916921)",
+          "nav_path": "[(-1.899761, 0.0, 4.916921)]",
+          "path": "[(-1.899761, 0.000843, 4.916921), (-1.899761, 0.000843, 4.526921)]",
+          "player_distance": 0.887842535972595,
+          "position": "(-1.664314, -0.015731, 5.382815)",
+          "queue": 2,
+          "velocity": "(-1.353119, 0.0, -2.677512)"
+        }
+      ],
+      "label": "ivo",
+      "moth_phase": 0,
+      "player": "(-1.899761, 0.000843, 4.526921)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.0, 0.0, 3.0)",
+          "route": "[(-2.0, 0.0, 3.0)]",
+          "target": "(-2.0, 0.0, 3.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.0, 0.0, -2.0)",
+          "route": "[(-4.0, 0.0, -2.0)]",
+          "target": "(-4.0, 0.0, -2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 13.4500000000002
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-5.25926, 0.000731, 3.117421)",
+          "nav_path": "[(-5.25926, 0.0, 3.117421)]",
+          "path": "[(-5.25926, 0.000731, 3.117421)]",
+          "player_distance": 0.946305453777313,
+          "position": "(-4.659646, 0.00065, 3.124422)",
+          "queue": 1,
+          "velocity": "(-1.24058, 0.0, -0.014484)"
+        }
+      ],
+      "label": "tavi",
+      "moth_phase": 0,
+      "player": "(-5.605926, 0.000835, 3.117421)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.0, 0.0, 3.0)",
+          "route": "[(-2.0, 0.0, 3.0)]",
+          "target": "(-2.0, 0.0, 3.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.0, 0.0, -2.0)",
+          "route": "[(-4.0, 0.0, -2.0)]",
+          "target": "(-4.0, 0.0, -2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 21.3333333333334
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-9.893417, 0.000843, 5.841875)",
+          "nav_path": "[(-9.893417, 0.0, 5.841875)]",
+          "path": "[(-9.893417, 0.000843, 5.841875), (-9.893417, 0.000843, 5.451875)]",
+          "player_distance": 0.880760967731476,
+          "position": "(-9.884989, 0.000843, 6.115929)",
+          "queue": 2,
+          "velocity": "(-0.092225, 0.0, -2.998582)"
+        }
+      ],
+      "label": "home-interior",
+      "moth_phase": 0,
+      "player": "(-9.893417, 0.00083, 5.235208)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.0, 0.0, 3.0)",
+          "route": "[(-2.0, 0.0, 3.0)]",
+          "target": "(-2.0, 0.0, 3.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.0, 0.0, -2.0)",
+          "route": "[(-4.0, 0.0, -2.0)]",
+          "target": "(-4.0, 0.0, -2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 29.4333333333329
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(8.005921, 0.000843, 2.894554)",
+          "nav_path": "[(8.005921, 0.0, 2.894554)]",
+          "path": "[(8.005921, 0.000843, 2.894554), (8.395919, 0.000843, 2.894554)]",
+          "player_distance": 0.89366626739502,
+          "position": "(7.58892, 0.000842, 2.894555)",
+          "queue": 2,
+          "velocity": "(3.0, 0.0, -0.000005)"
+        }
+      ],
+      "label": "mara",
+      "moth_phase": 0,
+      "player": "(8.482586, 0.000842, 2.894554)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.0, 0.0, 3.0)",
+          "route": "[(-2.0, 0.0, 3.0)]",
+          "target": "(-2.0, 0.0, 3.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.0, 0.0, -2.0)",
+          "route": "[(-4.0, 0.0, -2.0)]",
+          "target": "(-4.0, 0.0, -2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 43.2166666666655
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-2.358483, 0.000816, -0.888694)",
+          "nav_path": "[(-2.358483, 0.0, -0.888694)]",
+          "path": "[(-2.358483, 0.000816, -0.888694), (-2.748483, 0.00084, -0.888694)]",
+          "player_distance": 0.881443679332733,
+          "position": "(-2.083746, 0.000836, -0.880376)",
+          "queue": 2,
+          "velocity": "(-2.998626, 0.0, -0.090786)"
+        }
+      ],
+      "label": "nell",
+      "moth_phase": 0,
+      "player": "(-2.96515, 0.000843, -0.888694)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.0, 0.0, 3.0)",
+          "route": "[(-2.0, 0.0, 3.0)]",
+          "target": "(-2.0, 0.0, 3.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.0, 0.0, -2.0)",
+          "route": "[(-4.0, 0.0, -2.0)]",
+          "target": "(-4.0, 0.0, -2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 56.9333333333314
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(0.439401, 0.000806, -1.138626)",
+          "nav_path": "[(0.439401, 0.0, -1.138626)]",
+          "path": "[]",
+          "player_distance": 0.552316069602966,
+          "position": "(0.228897, 0.000823, -1.658395)",
+          "queue": 0,
+          "velocity": "(0.435526, 0.0, 1.075383)"
+        }
+      ],
+      "label": "bridge-before",
+      "moth_phase": 0,
+      "player": "(-0.123474, 0.000806, -2.083704)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.0, 0.0, 3.0)",
+          "route": "[(-2.0, 0.0, 3.0)]",
+          "target": "(-2.0, 0.0, 3.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.0, 0.0, -2.0)",
+          "route": "[(-4.0, 0.0, -2.0)]",
+          "target": "(-4.0, 0.0, -2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 69.4499999999973
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-0.891457, 0.000806, -1.296175)",
+          "nav_path": "[(-0.891457, 0.0, -1.296175)]",
+          "path": "[]",
+          "player_distance": 1.05511605739594,
+          "position": "(-0.749134, 0.000835, -1.234106)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-0.415563, 0.000806, -3.144216)",
+          "nav_path": "[(-0.415563, 0.0, -3.144216)]",
+          "path": "[]",
+          "player_distance": 1.05878102779388,
+          "position": "(-0.545688, 0.000843, -3.054658)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(0.93943, 0.000806, -1.800444)",
+          "nav_path": "[(0.93943, 0.0, -1.800444)]",
+          "path": "[]",
+          "player_distance": 1.06932008266449,
+          "position": "(0.938139, -0.000088, -1.955552)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      ],
+      "label": "bridge-after",
+      "moth_phase": 0,
+      "player": "(-0.123474, -0.000696, -2.083704)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-0.533504, 0.000843, -2.662484)",
+          "route": "[(1.0, 0.0, -7.3)]",
+          "target": "(1.0, 0.0, -7.3)",
+          "target_distance": 4.88448476791382,
+          "velocity": "(0.266861, 0.0, -0.807022)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-1.059886, 0.000837, -6.111094)",
+          "route": "[(-1.040001, 0.0, -8.08), (-4.0, 0.0, -8.0)]",
+          "target": "(-4.0, 0.0, -8.0)",
+          "target_distance": 3.4946014881134,
+          "velocity": "(0.008584, 0.0, -0.849957)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 76.5166666666636
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-5.401815, 0.00083, -7.759009)",
+          "nav_path": "[(-5.401815, 0.0, -7.759009)]",
+          "path": "[(-5.401815, 0.00083, -7.759009)]",
+          "player_distance": 1.40191888809204,
+          "position": "(-4.001352, 0.000842, -7.952881)",
+          "queue": 1,
+          "velocity": "(-2.89751, 0.0, 0.401114)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-5.401815, 0.00083, -7.759009)",
+          "nav_path": "[(-5.401815, 0.0, -7.759009)]",
+          "path": "[(-5.401815, 0.00083, -7.759009)]",
+          "player_distance": 0.681519389152527,
+          "position": "(-5.151303, 0.000842, -7.255201)",
+          "queue": 1,
+          "velocity": "(-0.518301, 0.0, -1.04236)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-5.401815, 0.000818, -7.36901)",
+          "nav_path": "[(-5.401815, 0.0, -7.36901)]",
+          "path": "[(-5.401815, 0.000818, -7.36901), (-5.401815, 0.00083, -7.759009)]",
+          "player_distance": 0.7383673787117,
+          "position": "(-5.019233, 0.000809, -8.520529)",
+          "queue": 2,
+          "velocity": "(-0.945885, 0.0, 2.846982)"
+        }
+      ],
+      "label": "garden",
+      "moth_phase": 0,
+      "player": "(-5.401815, 0.000843, -7.889009)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(0.968646, 0.000831, -7.210646)",
+          "route": "[(1.0, 0.0, -7.3)]",
+          "target": "(1.0, 0.0, -7.3)",
+          "target_distance": 0.0946990922093391,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.906772, 0.000843, -7.994935)",
+          "route": "[(-4.0, 0.0, -8.0)]",
+          "target": "(-4.0, 0.0, -8.0)",
+          "target_distance": 0.0933691635727882,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 86.7499999999964
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-2.888855, 0.000843, -7.716058)",
+          "nav_path": "[(-2.888855, 0.0, -7.716058)]",
+          "path": "[(-2.888855, 0.000843, -7.716058)]",
+          "player_distance": 0.608169376850128,
+          "position": "(-2.726792, 0.000836, -7.303213)",
+          "queue": 1,
+          "velocity": "(-0.087174, 0.0, -1.772465)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-2.888855, 0.000842, -7.326056)",
+          "nav_path": "[(-2.888855, 0.0, -7.326056)]",
+          "path": "[(-2.888855, 0.000842, -7.326056), (-2.888855, 0.000843, -7.716058)]",
+          "player_distance": 0.846844494342804,
+          "position": "(-2.943074, 0.000842, -7.044285)",
+          "queue": 2,
+          "velocity": "(-0.600155, 0.0, -2.829989)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-2.888855, 0.000842, -7.326056)",
+          "nav_path": "[(-2.888855, 0.0, -7.326056)]",
+          "path": "[(-2.888855, 0.000842, -7.326056), (-2.888855, 0.000843, -7.716058)]",
+          "player_distance": 0.964414477348328,
+          "position": "(-2.674101, 0.000842, -6.949192)",
+          "queue": 2,
+          "velocity": "(-0.778394, 0.0, -1.996936)"
+        }
+      ],
+      "label": "melody",
+      "moth_phase": 0,
+      "player": "(-2.888855, 0.000843, -7.889392)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(0.968646, 0.000831, -7.210646)",
+          "route": "[(1.0, 0.0, -7.3)]",
+          "target": "(1.0, 0.0, -7.3)",
+          "target_distance": 0.0946990922093391,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.906772, 0.000843, -7.994935)",
+          "route": "[(-4.0, 0.0, -8.0)]",
+          "target": "(-4.0, 0.0, -8.0)",
+          "target_distance": 0.0933691635727882,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 97.4666666666624
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(11.49783, 0.000836, -7.889392)",
+          "nav_path": "[(11.49783, 0.0, -7.889392)]",
+          "path": "[(11.49783, 0.000836, -7.889392), (11.88783, 0.000843, -7.889392)]",
+          "player_distance": 0.843563497066498,
+          "position": "(11.05921, 0.000842, -7.731315)",
+          "queue": 2,
+          "velocity": "(3.24466, 0.0, -0.160378)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(11.49783, 0.000836, -7.889392)",
+          "nav_path": "[(11.49783, 0.0, -7.889392)]",
+          "path": "[(11.49783, 0.000836, -7.889392), (11.88783, 0.000843, -7.889392)]",
+          "player_distance": 0.881122648715973,
+          "position": "(11.02062, 0.000842, -8.045378)",
+          "queue": 2,
+          "velocity": "(3.113527, 0.0, 0.06236)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(11.10783, 0.000836, -7.889392)",
+          "nav_path": "[(11.10783, 0.0, -7.889392)]",
+          "path": "[(11.10783, 0.000836, -7.889392), (11.49783, 0.000836, -7.889392), (11.88783, 0.000843, -7.889392)]",
+          "player_distance": 1.20208168029785,
+          "position": "(10.68578, 0.000842, -7.880425)",
+          "queue": 3,
+          "velocity": "(2.613013, 0.0, -0.000426)"
+        }
+      ],
+      "label": "ivy-before",
+      "moth_phase": 0,
+      "player": "(11.88783, 0.000843, -7.889392)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(0.968646, 0.000831, -7.210646)",
+          "route": "[(1.0, 0.0, -7.3)]",
+          "target": "(1.0, 0.0, -7.3)",
+          "target_distance": 0.0946990922093391,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.906772, 0.000843, -7.994935)",
+          "route": "[(-4.0, 0.0, -8.0)]",
+          "target": "(-4.0, 0.0, -8.0)",
+          "target_distance": 0.0933691635727882,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 105.283333333329
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(10.84407, 0.000843, -7.54217)",
+          "nav_path": "[(10.84407, 0.0, -7.54217)]",
+          "path": "[]",
+          "player_distance": 0.957569539546967,
+          "position": "(11.00067, 0.000843, -7.528988)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(12.17917, 0.000843, -8.950109)",
+          "nav_path": "[(12.17917, 0.0, -8.950109)]",
+          "path": "[]",
+          "player_distance": 1.01912450790405,
+          "position": "(12.03246, 0.000843, -8.898201)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(12.55079, 0.000843, -7.011621)",
+          "nav_path": "[(12.55079, 0.0, -7.011621)]",
+          "path": "[]",
+          "player_distance": 0.943363666534424,
+          "position": "(12.5704, 0.000843, -7.238212)",
+          "queue": 0,
+          "velocity": "(-0.040565, 0.0, 0.468809)"
+        }
+      ],
+      "label": "ivy-after",
+      "moth_phase": 0,
+      "player": "(11.88783, 0.000843, -7.889392)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(0.968646, 0.000831, -7.210646)",
+          "route": "[(1.0, 0.0, -7.3)]",
+          "target": "(1.0, 0.0, -7.3)",
+          "target_distance": 0.0946990922093391,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.906772, 0.000843, -7.994935)",
+          "route": "[(-4.0, 0.0, -8.0)]",
+          "target": "(-4.0, 0.0, -8.0)",
+          "target_distance": 0.0933691635727882,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 110.349999999995
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(11.88783, 0.000843, -11.00939)",
+          "nav_path": "[(11.88783, 0.0, -11.00939)]",
+          "path": "[(11.88783, 0.000843, -11.00939), (11.88783, 0.000806, -11.39939)]",
+          "player_distance": 0.857851564884186,
+          "position": "(11.7347, 0.000841, -10.72865)",
+          "queue": 2,
+          "velocity": "(0.439207, 0.0, -2.951696)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(11.88783, 0.000806, -11.39939)",
+          "nav_path": "[(11.88783, 0.0, -11.39939)]",
+          "path": "[(11.88783, 0.000806, -11.39939)]",
+          "player_distance": 0.831121504306793,
+          "position": "(12.04038, 0.000843, -10.75572)",
+          "queue": 1,
+          "velocity": "(0.544224, 0.0, -1.635054)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(11.88783, 0.000843, -11.00939)",
+          "nav_path": "[(11.88783, 0.0, -11.00939)]",
+          "path": "[(11.88783, 0.000843, -11.00939), (11.88783, 0.000806, -11.39939)]",
+          "player_distance": 1.18328893184662,
+          "position": "(11.90368, 0.000843, -10.38954)",
+          "queue": 2,
+          "velocity": "(-0.035519, 0.0, -2.588392)"
+        }
+      ],
+      "label": "greenhouse",
+      "moth_phase": 0,
+      "player": "(11.88783, 0.00071, -11.57272)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(0.968646, 0.000831, -7.210646)",
+          "route": "[(1.0, 0.0, -7.3)]",
+          "target": "(1.0, 0.0, -7.3)",
+          "target_distance": 0.0946990922093391,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.906772, 0.000843, -7.994935)",
+          "route": "[(-4.0, 0.0, -8.0)]",
+          "target": "(-4.0, 0.0, -8.0)",
+          "target_distance": 0.0933691635727882,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 114.866666666661
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(11.88783, 0.000843, -11.00939)",
+          "nav_path": "[(11.88783, 0.0, -11.00939)]",
+          "path": "[(11.88783, 0.000843, -11.00939), (11.88783, 0.000806, -11.39939)]",
+          "player_distance": 0.857851564884186,
+          "position": "(11.7347, 0.000841, -10.72865)",
+          "queue": 2,
+          "velocity": "(0.439207, 0.0, -2.951696)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(11.88783, 0.000806, -11.39939)",
+          "nav_path": "[(11.88783, 0.0, -11.39939)]",
+          "path": "[(11.88783, 0.000806, -11.39939)]",
+          "player_distance": 0.831121504306793,
+          "position": "(12.04038, 0.000843, -10.75572)",
+          "queue": 1,
+          "velocity": "(0.544224, 0.0, -1.635054)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(11.88783, 0.000843, -11.00939)",
+          "nav_path": "[(11.88783, 0.0, -11.00939)]",
+          "path": "[(11.88783, 0.000843, -11.00939), (11.88783, 0.000806, -11.39939)]",
+          "player_distance": 1.18328893184662,
+          "position": "(11.90368, 0.000843, -10.38954)",
+          "queue": 2,
+          "velocity": "(-0.035519, 0.0, -2.588392)"
+        },
+        {
+          "contacts": [],
+          "nav_goal": "(inf, inf, inf)",
+          "nav_path": "[]",
+          "path": "[]",
+          "player_distance": 0.899999976158142,
+          "position": "(12.7877, 0.00071, -11.55759)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      ],
+      "label": "letter",
+      "moth_phase": 0,
+      "player": "(11.88783, 0.00071, -11.57272)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(0.968646, 0.000831, -7.210646)",
+          "route": "[(1.0, 0.0, -7.3)]",
+          "target": "(1.0, 0.0, -7.3)",
+          "target_distance": 0.0946990922093391,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.906772, 0.000843, -7.994935)",
+          "route": "[(-4.0, 0.0, -8.0)]",
+          "target": "(-4.0, 0.0, -8.0)",
+          "target_distance": 0.0933691635727882,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 117.933333333328
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(12.6299, 0.000842, -12.25373)",
+          "nav_path": "[(12.6299, 0.0, -12.25373)]",
+          "path": "[]",
+          "player_distance": 1.00719523429871,
+          "position": "(12.6299, 0.000842, -12.25373)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(12.76534, 0.00071, -10.90942)",
+          "nav_path": "[(12.76534, 0.0, -10.90942)]",
+          "path": "[]",
+          "player_distance": 0.987748563289642,
+          "position": "(12.73447, 0.000843, -11.06395)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(10.85744, 0.00071, -11.18762)",
+          "nav_path": "[(10.85744, 0.0, -11.18762)]",
+          "path": "[]",
+          "player_distance": 1.02074933052063,
+          "position": "(10.98572, 0.000354, -11.09509)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(11.94449, 0.00071, -12.67126)",
+          "nav_path": "[(11.94449, 0.0, -12.67126)]",
+          "path": "[]",
+          "player_distance": 0.966726541519165,
+          "position": "(11.86053, 0.000813, -12.53906)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      ],
+      "label": "moth-exchange",
+      "moth_phase": 2,
+      "player": "(11.88783, 0.00071, -11.57272)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(0.968646, 0.000831, -7.210646)",
+          "route": "[(1.0, 0.0, -7.3)]",
+          "target": "(1.0, 0.0, -7.3)",
+          "target_distance": 0.0946990922093391,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.906772, 0.000843, -7.994935)",
+          "route": "[(-4.0, 0.0, -8.0)]",
+          "target": "(-4.0, 0.0, -8.0)",
+          "target_distance": 0.0933691635727882,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 119.999999999994
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(12.6299, 0.000842, -12.25373)",
+          "nav_path": "[(12.6299, 0.0, -12.25373)]",
+          "path": "[]",
+          "player_distance": 1.00719523429871,
+          "position": "(12.6299, 0.000842, -12.25373)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(12.2271, 0.00071, -10.52635)",
+          "nav_path": "[(12.2271, 0.0, -10.52635)]",
+          "path": "[]",
+          "player_distance": 1.06657612323761,
+          "position": "(12.35823, 0.000843, -10.61548)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(10.82266, 0.00071, -11.84735)",
+          "nav_path": "[(10.82266, 0.0, -11.84735)]",
+          "path": "[]",
+          "player_distance": 1.06843054294586,
+          "position": "(10.8255, 0.000792, -11.68672)",
+          "queue": 0,
+          "velocity": "(-0.005865, 0.0, -0.332335)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(12.56359, 0.00071, -12.44067)",
+          "nav_path": "[(12.56359, 0.0, -12.44067)]",
+          "path": "[]",
+          "player_distance": 1.14318215847015,
+          "position": "(12.42771, 0.000839, -12.58038)",
+          "queue": 0,
+          "velocity": "(0.071069, 0.0, -0.04752)"
+        }
+      ],
+      "label": "moth-gift",
+      "moth_phase": 2,
+      "player": "(11.88783, 0.00071, -11.57272)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(0.968646, 0.000831, -7.210646)",
+          "route": "[(1.0, 0.0, -7.3)]",
+          "target": "(1.0, 0.0, -7.3)",
+          "target_distance": 0.0946990922093391,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.906772, 0.000843, -7.994935)",
+          "route": "[(-4.0, 0.0, -8.0)]",
+          "target": "(-4.0, 0.0, -8.0)",
+          "target_distance": 0.0933691635727882,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 123.049999999994
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-11.89754, 0.00083, -9.78297)",
+          "nav_path": "[(-11.89754, 0.0, -9.78297)]",
+          "path": "[(-11.89754, 0.00083, -9.78297), (-11.89754, 0.000843, -10.17297)]",
+          "player_distance": 0.976071000099182,
+          "position": "(-11.86949, 0.000843, -9.413967)",
+          "queue": 2,
+          "velocity": "(-1.27696, 0.0, -2.440913)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-11.89754, 0.000843, -10.17297)",
+          "nav_path": "[(-11.89754, 0.0, -10.17297)]",
+          "path": "[(-11.89754, 0.000843, -10.17297)]",
+          "player_distance": 0.618359506130219,
+          "position": "(-11.76475, 0.000843, -9.785701)",
+          "queue": 1,
+          "velocity": "(-0.697027, 0.0, -1.958387)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-11.89754, 0.00083, -9.78297)",
+          "nav_path": "[(-11.89754, 0.0, -9.78297)]",
+          "path": "[(-11.89754, 0.00083, -9.78297), (-11.89754, 0.000843, -10.17297)]",
+          "player_distance": 0.855493187904358,
+          "position": "(-11.60668, 0.000843, -9.585102)",
+          "queue": 2,
+          "velocity": "(-1.48942, 0.0, -1.886163)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-11.89754, 0.00083, -9.78297)",
+          "nav_path": "[(-11.89754, 0.0, -9.78297)]",
+          "path": "[(-11.89754, 0.00083, -9.78297), (-11.89754, 0.000843, -10.17297)]",
+          "player_distance": 1.2218199968338,
+          "position": "(-11.52367, 0.000843, -9.22642)",
+          "queue": 2,
+          "velocity": "(-1.432462, 0.0, -2.112547)"
+        }
+      ],
+      "label": "alcove",
+      "moth_phase": 0,
+      "player": "(-11.89754, 0.000843, -10.38964)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(0.968646, 0.000831, -7.210646)",
+          "route": "[(1.0, 0.0, -7.3)]",
+          "target": "(1.0, 0.0, -7.3)",
+          "target_distance": 0.0946990922093391,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(8.0, 0.0, 2.0)",
+          "target_distance": 0.130913093686104,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.906772, 0.000843, -7.994935)",
+          "route": "[(-4.0, 0.0, -8.0)]",
+          "target": "(-4.0, 0.0, -8.0)",
+          "target_distance": 0.0933691635727882,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-6.3, 0.0, 2.0)",
+          "route": "[(-6.3, 0.0, 2.0)]",
+          "target": "(-6.3, 0.0, 2.0)",
+          "target_distance": 0.0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 139.683333333337
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-2.701074, 0.000843, -8.486472)",
+          "nav_path": "[(-2.701074, 0.0, -8.486472)]",
+          "path": "[]",
+          "player_distance": 0.969696223735809,
+          "position": "(-2.859018, -0.015731, -8.568998)",
+          "queue": 0,
+          "velocity": "(-0.139025, 0.0, 0.032285)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-4.195668, 0.000843, -9.758036)",
+          "nav_path": "[(-4.195668, 0.0, -9.758036)]",
+          "path": "[]",
+          "player_distance": 1.06932401657104,
+          "position": "(-4.193819, 0.000843, -9.559816)",
+          "queue": 0,
+          "velocity": "(-0.003827, 0.0, -0.410109)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-2.404917, 0.000843, -10.33163)",
+          "nav_path": "[(-2.404917, 0.0, -10.33163)]",
+          "path": "[]",
+          "player_distance": 1.072829246521,
+          "position": "(-2.544323, 0.000843, -10.40242)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-2.846965, 0.000843, -8.437046)",
+          "nav_path": "[(-2.846965, 0.0, -8.437046)]",
+          "path": "[]",
+          "player_distance": 1.20547866821289,
+          "position": "(-2.513047, 0.000843, -8.463092)",
+          "queue": 0,
+          "velocity": "(-0.232833, 0.0, 0.188432)"
+        }
+      ],
+      "label": "gathering",
+      "moth_phase": 0,
+      "player": "(-3.126111, 0.000843, -9.501038)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.038232, 0.000843, -10.72776)",
+          "route": "[(-2.1, 0.0, -10.8)]",
+          "target": "(-2.1, 0.0, -10.8)",
+          "target_distance": 0.0950492396950722,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-0.970046, 0.000843, -9.711159)",
+          "route": "[(-1.0, 0.0, -9.8)]",
+          "target": "(-1.0, 0.0, -9.8)",
+          "target_distance": 0.0937589183449745,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.900242, 0.000843, -10.70055)",
+          "route": "[(-3.9, 0.0, -10.8)]",
+          "target": "(-3.9, 0.0, -10.8)",
+          "target_distance": 0.0994539856910706,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.078625, 0.000843, -10.02237)",
+          "route": "[(-4.5, 0.0, -10.0)]",
+          "target": "(-4.5, 0.0, -10.0)",
+          "target_distance": 0.421968877315521,
+          "velocity": "(-0.848805, 0.0, 0.045056)"
+        }
+      },
+      "time": 164.783333333357
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-8.802092, 0.000843, 5.3425)",
+          "nav_path": "[(-8.802092, 0.0, 5.3425)]",
+          "path": "[]",
+          "player_distance": 0.939655065536499,
+          "position": "(-8.968814, 0.000843, 5.382602)",
+          "queue": 0,
+          "velocity": "(0.015267, 0.0, 0.136136)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-10.54796, 0.000843, 6.121965)",
+          "nav_path": "[(-10.54796, 0.0, 6.121965)]",
+          "path": "[]",
+          "player_distance": 1.03483211994171,
+          "position": "(-10.39355, -0.00027, 6.143203)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-10.2618, 0.000843, 4.197659)",
+          "nav_path": "[(-10.2618, 0.0, 4.197659)]",
+          "path": "[]",
+          "player_distance": 1.02011144161224,
+          "position": "(-10.41642, 0.000843, 4.357472)",
+          "queue": 0,
+          "velocity": "(0.319908, 0.0, -0.330647)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-8.801416, 0.000843, 5.335361)",
+          "nav_path": "[(-8.801416, 0.0, 5.335361)]",
+          "path": "[]",
+          "player_distance": 1.24976682662964,
+          "position": "(-8.648822, 0.000843, 5.16967)",
+          "queue": 0,
+          "velocity": "(0.009196, 0.0, 0.124397)"
+        }
+      ],
+      "label": "home-return",
+      "moth_phase": 0,
+      "player": "(-9.896861, 0.000843, 5.23536)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.038232, 0.000843, -10.72776)",
+          "route": "[(-2.1, 0.0, -10.8)]",
+          "target": "(-2.1, 0.0, -10.8)",
+          "target_distance": 0.0950492396950722,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-0.970046, 0.000843, -9.711159)",
+          "route": "[(-1.0, 0.0, -9.8)]",
+          "target": "(-1.0, 0.0, -9.8)",
+          "target_distance": 0.0937589183449745,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.900242, 0.000843, -10.70055)",
+          "route": "[(-3.9, 0.0, -10.8)]",
+          "target": "(-3.9, 0.0, -10.8)",
+          "target_distance": 0.0994539856910706,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.40207, 0.000843, -10.0052)",
+          "route": "[(-4.5, 0.0, -10.0)]",
+          "target": "(-4.5, 0.0, -10.0)",
+          "target_distance": 0.0980719402432442,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 190.583333333377
+    },
+    {
+      "companions": [
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-8.84628, 0.000843, 5.561366)",
+          "nav_path": "[(-8.84628, 0.0, 5.561366)]",
+          "path": "[]",
+          "player_distance": 0.953257262706757,
+          "position": "(-9.010445, 0.000843, 5.586024)",
+          "queue": 0,
+          "velocity": "(-0.008905, 0.0, 0.134159)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-10.71358, 0.000843, 5.97222)",
+          "nav_path": "[(-10.71358, 0.0, 5.97222)]",
+          "path": "[]",
+          "player_distance": 1.05742585659027,
+          "position": "(-10.57646, 0.000843, 6.045481)",
+          "queue": 0,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-10.04473, 0.000843, 4.145344)",
+          "nav_path": "[(-10.04473, 0.0, 4.145344)]",
+          "path": "[]",
+          "player_distance": 1.04835391044617,
+          "position": "(-10.24152, 0.000843, 4.245281)",
+          "queue": 0,
+          "velocity": "(0.407154, 0.0, -0.206766)"
+        },
+        {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            },
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_goal": "(-8.844177, 0.000843, 5.55451)",
+          "nav_path": "[(-8.844177, 0.0, 5.55451)]",
+          "path": "[]",
+          "player_distance": 1.23770678043365,
+          "position": "(-8.670891, 0.000843, 5.405404)",
+          "queue": 0,
+          "velocity": "(-0.015204, 0.0, 0.123922)"
+        }
+      ],
+      "label": "finish",
+      "moth_phase": 0,
+      "player": "(-9.896861, 0.000843, 5.23536)",
+      "residents": {
+        "ivo": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-2.038232, 0.000843, -10.72776)",
+          "route": "[(-2.1, 0.0, -10.8)]",
+          "target": "(-2.1, 0.0, -10.8)",
+          "target_distance": 0.0950492396950722,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "mara": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-0.970046, 0.000843, -9.711159)",
+          "route": "[(-1.0, 0.0, -9.8)]",
+          "target": "(-1.0, 0.0, -9.8)",
+          "target_distance": 0.0937589183449745,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "nell": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-3.900242, 0.000843, -10.70055)",
+          "route": "[(-3.9, 0.0, -10.8)]",
+          "target": "(-3.9, 0.0, -10.8)",
+          "target_distance": 0.0994539856910706,
+          "velocity": "(0.0, 0.0, 0.0)"
+        },
+        "tavi": {
+          "contacts": [
+            {
+              "name": "WalkingGround",
+              "normal": "(0.0, 1.0, 0.0)"
+            }
+          ],
+          "nav_path": "[]",
+          "position": "(-4.40207, 0.000843, -10.0052)",
+          "route": "[(-4.5, 0.0, -10.0)]",
+          "target": "(-4.5, 0.0, -10.0)",
+          "target_distance": 0.0980719402432442,
+          "velocity": "(0.0, 0.0, 0.0)"
+        }
+      },
+      "time": 191.650000000045
+    }
+  ],
+  "source": {
+    "rpg_actor.gd": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea",
+    "rpg_environment.gd": "04e40a6628d3bd9549c64c8fabd7e80d9e9ff00b980313215d70bee32a9bf253",
+    "rpg_main.gd": "70d4b389db0762c77a933e6a09a62b09216dd1cadbf5716492ae0cae37e07c82",
+    "rpg_navigation.gd": "153e83fb22c11b2bddbdfe1eef9e13b2cccf5f6e3dda901a9fcfdb3b6a034d91",
+    "rpg_qa.gd": "a3d4581c314932adafecf4f580b07f1373e3b9b7bd76b79835d724c383e256e2",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  }
+}

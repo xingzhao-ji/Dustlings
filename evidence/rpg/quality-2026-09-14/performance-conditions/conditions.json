@@ -1,0 +1,11 @@
+{
+  "hardware": "Mac16,7",
+  "chip": "Apple M4 Pro",
+  "memory_bytes": 51539607552,
+  "os": "26.6.2",
+  "window": "1280x800 requested",
+  "source": "Current frozen 0.5.1 RPG source; capture manifest per run",
+  "isolation": "One native Godot process; no assistant compilation, encoding, model inference or other game during samples. Local site/Study/Ollama services remained idle. Window focus not instrumented.",
+  "duration_each_seconds": 60,
+  "claim_limits": "Callback intervals, not input latency, physical hardware control comfort, Windows evidence or prolonged thermal stability."
+}

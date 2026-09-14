@@ -1,0 +1,81 @@
+{
+  "kind": "offline-steampipe-staging",
+  "build": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-20-51-771Z-8196bad7d8/manifest.json",
+  "buildManifestSha256": "7fa4433542c785bc1a252f511fcf641a1abd5b436fcd9b9eb1645b6e82a7752c",
+  "source": "8196bad7d8968a557ad8efc87b6d56d14b77e8fa05af650b92b537083b5b6406",
+  "version": "0.5.1-rpg-dev",
+  "idsConfigured": false,
+  "preview": true,
+  "uploaded": false,
+  "releaseReady": false,
+  "files": {
+    "macos/Dustlings.app/Contents/_CodeSignature/CodeResources": {
+      "bytes": 3175,
+      "sha256": "f84ed62c35d7b9ccf85dfa997743e77319c3f8d91434615049fcad5f2fab11eb"
+    },
+    "macos/Dustlings.app/Contents/Info.plist": {
+      "bytes": 1804,
+      "sha256": "f1cf6a7fd4b1115879df9c3e386bba47c55427aadd2366d96bf7188e9e94c8b5"
+    },
+    "macos/Dustlings.app/Contents/MacOS/Dustlings": {
+      "bytes": 170963648,
+      "sha256": "cfcf9778642016b31b1986b2750d313a5c868d3872ca6263b3d308d40d215124"
+    },
+    "macos/Dustlings.app/Contents/PkgInfo": {
+      "bytes": 9,
+      "sha256": "7e50a30efad50208a173203ced60818d693bb61266b75aa10927d1a2adce80cb"
+    },
+    "macos/Dustlings.app/Contents/Resources/Dustlings.pck": {
+      "bytes": 2482984,
+      "sha256": "98a4871a5f0a6834442c6156e97109856d14d0f467829e2a948a2c6db820efa5"
+    },
+    "macos/Dustlings.app/Contents/Resources/icon.icns": {
+      "bytes": 83377,
+      "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+    },
+    "macos/Dustlings.app/Contents/Resources/PrivacyInfo.xcprivacy": {
+      "bytes": 229,
+      "sha256": "0535353bb08c25b8ce5ed9ac7e442a5994f402e0f6cbc4bed668cfc63c2ceac3"
+    },
+    "macos/Notices/GODOT_COPYRIGHT.txt": {
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "macos/Notices/GODOT_LICENSE.txt": {
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "macos/Notices/notice-manifest.json": {
+      "bytes": 2115,
+      "sha256": "536721ac6b6e11602ca49ef928583fa274134a10cddaf03250e6e911b5d271b3"
+    },
+    "macos/Notices/THIRD-PARTY-NOTICES.txt": {
+      "bytes": 1722,
+      "sha256": "cf8a03ca9d4c8ab0e4b2ac171ad37ff19df97d50c9f5f6e753b29a90609a01d3"
+    },
+    "windows/Dustlings.exe": {
+      "bytes": 109136384,
+      "sha256": "72ef1353d2ab676ec0c138bc2b4aa1925f8a6335156857e81eb44607e3ccbc92"
+    },
+    "windows/Dustlings.pck": {
+      "bytes": 2482984,
+      "sha256": "98a4871a5f0a6834442c6156e97109856d14d0f467829e2a948a2c6db820efa5"
+    },
+    "windows/Notices/GODOT_COPYRIGHT.txt": {
+      "bytes": 100108,
+      "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+    },
+    "windows/Notices/GODOT_LICENSE.txt": {
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    "windows/Notices/notice-manifest.json": {
+      "bytes": 2115,
+      "sha256": "536721ac6b6e11602ca49ef928583fa274134a10cddaf03250e6e911b5d271b3"
+    },
+    "windows/Notices/THIRD-PARTY-NOTICES.txt": {
+      "bytes": 1722,
+      "sha256": "cf8a03ca9d4c8ab0e4b2ac171ad37ff19df97d50c9f5f6e753b29a90609a01d3"
+    }
+  }
+}

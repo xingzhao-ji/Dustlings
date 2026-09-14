@@ -1,0 +1,441 @@
+{
+  "checks": [
+    {
+      "check": "Integration uses isolated QA save namespace",
+      "ok": true
+    },
+    {
+      "check": "Actual opening presents a deliberate start",
+      "ok": true
+    },
+    {
+      "check": "Player capsule settles into grounded contact",
+      "ok": true
+    },
+    {
+      "check": "Generated physical walking reaches first brushing target",
+      "ok": true
+    },
+    {
+      "check": "Dialogue prevents incidental walking and brushing",
+      "ok": true
+    },
+    {
+      "check": "Dialogue retains the engine soundscape",
+      "ok": true
+    },
+    {
+      "check": "Dialogue retains living environmental animation",
+      "details": {
+        "after": 1.33333333333333,
+        "before": 0.833333333333334
+      },
+      "ok": true
+    },
+    {
+      "check": "Dialogue Control bounds fit configured 1280x800 canvas",
+      "details": {
+        "rect": "[P: (245.0, 659.0), S: (790.0, 117.0)]"
+      },
+      "ok": true
+    },
+    {
+      "check": "Explicit pause stops ambience streams and decorative world time",
+      "ok": true
+    },
+    {
+      "check": "Unrepaired crossing is a reachable, inspectable objective",
+      "ok": true
+    },
+    {
+      "check": "Early bridge brushing preserves its future task until a companion exists",
+      "ok": true
+    },
+    {
+      "check": "Actual unrepaired crossing collider blocks walking into locked north",
+      "details": {
+        "position": "(0.061283, -0.001274, -3.818113)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Actual held brush transforms dust into the first 3D companion",
+      "ok": true
+    },
+    {
+      "check": "Physical opening progress passes strict RPG save validation",
+      "ok": true
+    },
+    {
+      "check": "Saved physical opening preserves companion reward",
+      "ok": true
+    },
+    {
+      "check": "Ivo is physically reachable for introductory conversation",
+      "ok": true
+    },
+    {
+      "check": "Player capsule cannot walk through an idle resident",
+      "details": {
+        "minimum_ground_distance": 0.570191740989685,
+        "player": "(-1.930402, 0.000843, 3.565928)",
+        "player_mask": 5,
+        "resident": "(-2.0, 0.0, 3.0)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Tavi is physically reachable before restoration",
+      "ok": true
+    },
+    {
+      "check": "Home door can be inspected from the street",
+      "ok": true
+    },
+    {
+      "check": "Player enters real home and reaches optional rest",
+      "ok": true
+    },
+    {
+      "check": "Actual home back wall prevents walking through architecture",
+      "details": {
+        "position": "(-9.943975, -0.000474, 1.921759)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Mara is physically reachable beside workshop",
+      "ok": true
+    },
+    {
+      "check": "Workshop entrance is reachable and visible",
+      "ok": true
+    },
+    {
+      "check": "Salvaged bridge wood is physically reachable",
+      "ok": true
+    },
+    {
+      "check": "Courier parcel is physically reachable",
+      "ok": true
+    },
+    {
+      "check": "Nell can be introduced before the crossing opens",
+      "ok": true
+    },
+    {
+      "check": "Journal has scrolling and fits configured compact canvas",
+      "details": {
+        "rect": "[P: (195.0, 235.5), S: (690.0, 249.0)]"
+      },
+      "ok": true
+    },
+    {
+      "check": "Settings Control bounds fit configured compact canvas",
+      "details": {
+        "rect": "[P: (220.0, 79.0), S: (640.0, 562.0)]"
+      },
+      "ok": true
+    },
+    {
+      "check": "Relationship/home choice combine with physical progress in saved envelope",
+      "ok": true
+    },
+    {
+      "check": "New scene instance reloads all authored flags/home without loss",
+      "ok": true
+    },
+    {
+      "check": "Reload restores the grounded safe player position",
+      "ok": true
+    },
+    {
+      "check": "Isolated fixture writes a format-valid in-bounds wall position",
+      "ok": true
+    },
+    {
+      "check": "Live load recovers a format-valid wall overlap to reachable ground",
+      "details": {
+        "overlap_colliders": [],
+        "position": "(0.0, 0.0, 9.0)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Spatial recovery preserves authored progress/home",
+      "ok": true
+    },
+    {
+      "check": "Import immediately applies its displayed sound settings to actual soundscape",
+      "details": {
+        "audio_levels": [
+          0.0,
+          0.2,
+          0.3
+        ],
+        "settings": {
+          "ambience": 0.3,
+          "gentle": false,
+          "invert": false,
+          "music": 0.0,
+          "quality": true,
+          "sensitivity": 1.0,
+          "sfx": 0.2
+        }
+      },
+      "ok": true
+    },
+    {
+      "check": "Import of later checkpoint applies physical progress and resident destination",
+      "ok": true
+    },
+    {
+      "check": "ivo reaches actual restored-neighborhood destination within 72 fixture seconds",
+      "details": {
+        "gap": 0.0938176661729813,
+        "position": "(-1.001523, 0.000843, -8.106194)",
+        "route": "[(-1.0, 0.0, -8.2)]",
+        "target": "(-1.0, 0.0, -8.2)"
+      },
+      "ok": true
+    },
+    {
+      "check": "nell reaches actual restored-neighborhood destination within 72 fixture seconds",
+      "details": {
+        "gap": 0.0974929481744766,
+        "position": "(-4.402758, 0.000843, -8.393007)",
+        "route": "[(-4.5, 0.0, -8.4)]",
+        "target": "(-4.5, 0.0, -8.4)"
+      },
+      "ok": true
+    },
+    {
+      "check": "Resident physical routes preserve separate capsule bodies",
+      "details": {
+        "minimum_ground_distance": 0.581121563911438
+      },
+      "ok": true
+    },
+    {
+      "check": "Earlier copy removes unearned companion workforce",
+      "ok": true
+    },
+    {
+      "check": "Earlier copy restores visible dust for unfinished tasks",
+      "details": {
+        "patch_amount": {
+          "bridge": 1.0,
+          "lantern": 1.0
+        },
+        "visible": [
+          true,
+          true
+        ]
+      },
+      "ok": true
+    },
+    {
+      "check": "Earlier copy restores resident destinations before locked crossing",
+      "ok": true
+    },
+    {
+      "check": "Earlier copy restores residents to the reachable side of a newly locked crossing",
+      "details": {
+        "positions": {
+          "ivo": "(-2.0, 0.0, 3.0)",
+          "mara": "(8.0, 0.000137, 2.130913)",
+          "nell": "(-4.0, 0.0, -2.0)",
+          "tavi": "(-6.3, 0.0, 2.0)"
+        }
+      },
+      "ok": true
+    }
+  ],
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "failures": [
+    {
+      "check": "mara reaches actual restored-neighborhood destination within 72 fixture seconds",
+      "details": {
+        "gap": 14.944787979126,
+        "position": "(8.0, 0.000137, 2.130913)",
+        "route": "[]",
+        "target": "(-1.0, 0.0, -9.8)"
+      },
+      "ok": false
+    },
+    {
+      "check": "tavi reaches actual restored-neighborhood destination within 72 fixture seconds",
+      "details": {
+        "gap": 4.23938512802124,
+        "position": "(-1.056184, 0.000843, -7.527649)",
+        "route": "[(-1.040001, 0.0, -9.68), (-4.5, 0.0, -10.0)]",
+        "target": "(-4.5, 0.0, -10.0)"
+      },
+      "ok": false
+    }
+  ],
+  "kind": "Headless actual-scene InputEvent/physics fixtures; fixed fps; no native presentation, listening, human usability, or performance claim",
+  "observations": [
+    {
+      "nearest": "lantern",
+      "position": "(0.428978, 0.000843, 7.531031)",
+      "reached": true,
+      "route": "opening lantern"
+    },
+    {
+      "nearest": "bridge",
+      "position": "(0.061283, 0.000733, -2.066673)",
+      "reached": true,
+      "route": "unrepaired bridge approach"
+    },
+    {
+      "nearest": "",
+      "position": "(0.061283, 0.000814, -0.134779)",
+      "reached": true,
+      "route": "back from bridge"
+    },
+    {
+      "nearest": "lantern",
+      "position": "(0.428978, 0.000843, 7.296257)",
+      "reached": true,
+      "route": "return to lantern"
+    },
+    {
+      "nearest": "ivo",
+      "position": "(-1.930402, 0.000843, 4.503551)",
+      "reached": true,
+      "route": "Ivo approach"
+    },
+    {
+      "nearest": "tavi",
+      "position": "(-5.565402, 0.000838, 3.060634)",
+      "reached": true,
+      "route": "Tavi approach"
+    },
+    {
+      "nearest": "",
+      "position": "(-5.933097, 0.000843, 7.674996)",
+      "reached": true,
+      "route": "home street"
+    },
+    {
+      "nearest": "home",
+      "position": "(-9.882693, 0.000779, 7.767089)",
+      "reached": true,
+      "route": "home door"
+    },
+    {
+      "nearest": "bed",
+      "position": "(-9.943975, 0.000843, 4.629138)",
+      "reached": true,
+      "route": "home interior"
+    },
+    {
+      "nearest": "home",
+      "position": "(-9.943975, 0.000824, 7.685105)",
+      "reached": true,
+      "route": "leave home"
+    },
+    {
+      "nearest": "",
+      "position": "(-6.119269, 0.000841, 7.766066)",
+      "reached": true,
+      "route": "home street exit"
+    },
+    {
+      "nearest": "lantern",
+      "position": "(-0.123346, 0.000843, 4.456812)",
+      "reached": true,
+      "route": "return plaza"
+    },
+    {
+      "nearest": "mara",
+      "position": "(8.490001, 0.000843, 2.863466)",
+      "reached": true,
+      "route": "Mara approach"
+    },
+    {
+      "nearest": "wood",
+      "position": "(6.507564, 0.000824, 3.93591)",
+      "reached": true,
+      "route": "wood approach"
+    },
+    {
+      "nearest": "parcel",
+      "position": "(6.507564, 0.000842, 2.895909)",
+      "reached": true,
+      "route": "parcel approach"
+    },
+    {
+      "nearest": "",
+      "position": "(0.098536, -0.000208, 0.049836)",
+      "reached": true,
+      "route": "Nell street"
+    },
+    {
+      "nearest": "nell",
+      "position": "(-3.005318, 0.000837, -0.930685)",
+      "reached": true,
+      "route": "Nell approach"
+    },
+    {
+      "fixture": "Imported repaired crossing/shared table, 72 fixed-fps simulated seconds; no pacing/performance/player claim",
+      "travel": {
+        "ivo": {
+          "gap": 0.0938176661729813,
+          "position": "(-1.001523, 0.000843, -8.106194)",
+          "route": "[(-1.0, 0.0, -8.2)]",
+          "target": "(-1.0, 0.0, -8.2)"
+        },
+        "mara": {
+          "gap": 14.944787979126,
+          "position": "(8.0, 0.000137, 2.130913)",
+          "route": "[]",
+          "target": "(-1.0, 0.0, -9.8)"
+        },
+        "nell": {
+          "gap": 0.0974929481744766,
+          "position": "(-4.402758, 0.000843, -8.393007)",
+          "route": "[(-4.5, 0.0, -8.4)]",
+          "target": "(-4.5, 0.0, -8.4)"
+        },
+        "tavi": {
+          "gap": 4.23938512802124,
+          "position": "(-1.056184, 0.000843, -7.527649)",
+          "route": "[(-1.040001, 0.0, -9.68), (-4.5, 0.0, -10.0)]",
+          "target": "(-4.5, 0.0, -10.0)"
+        }
+      }
+    }
+  ],
+  "qa_save": "/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/quality-2026-09-14/isolated/integration/isolated-save.json",
+  "source_at_end": {
+    "rpg_actor.gd": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea",
+    "rpg_environment.gd": "04e40a6628d3bd9549c64c8fabd7e80d9e9ff00b980313215d70bee32a9bf253",
+    "rpg_main.gd": "30afb1a2854660e80255ea7ccdab4aae99b6d102472a784b34dd9fd1eb1aba73",
+    "rpg_save.gd": "baea44034774e4cb72be30ee0a2c408a2aad713655f956134af492d51cb70f95",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  },
+  "source_at_start": {
+    "rpg_actor.gd": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea",
+    "rpg_environment.gd": "04e40a6628d3bd9549c64c8fabd7e80d9e9ff00b980313215d70bee32a9bf253",
+    "rpg_main.gd": "30afb1a2854660e80255ea7ccdab4aae99b6d102472a784b34dd9fd1eb1aba73",
+    "rpg_save.gd": "baea44034774e4cb72be30ee0a2c408a2aad713655f956134af492d51cb70f95",
+    "rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+  },
+  "source_changed_during_run": false,
+  "unverified": [
+    "Actual packaged processes and OS save picker",
+    "Human attachment, surprise, comfort and native visual clipping"
+  ]
+}

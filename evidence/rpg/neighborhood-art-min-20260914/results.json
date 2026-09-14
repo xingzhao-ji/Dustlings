@@ -1,0 +1,1403 @@
+{
+	"art_review": {
+		"controls": "Generated physical WASD/Space/E/Enter and right-button mouse drags. No teleport, camera property assignment or reward injection.",
+		"orbits": [
+			{
+				"actual_pitch": 0.48,
+				"actual_yaw": 1.76714590072632,
+				"requested_pitch": 0.48,
+				"requested_yaw": 1.5707963267949,
+				"right_released": true,
+				"time": 28.7916666666673
+			},
+			{
+				"actual_pitch": 0.48,
+				"actual_yaw": 3.53429180145265,
+				"requested_pitch": 0.48,
+				"requested_yaw": 1.5707963267949,
+				"right_released": true,
+				"time": 31.8583333333341
+			},
+			{
+				"actual_pitch": 0.48,
+				"actual_yaw": 5.30143770217894,
+				"requested_pitch": 0.48,
+				"requested_yaw": 1.5707963267949,
+				"right_released": true,
+				"time": 34.9250000000006
+			},
+			{
+				"actual_pitch": 0.48,
+				"actual_yaw": 7.06858360290523,
+				"requested_pitch": 0.48,
+				"requested_yaw": 1.5707963267949,
+				"right_released": true,
+				"time": 37.9916666666671
+			},
+			{
+				"actual_pitch": 0.23,
+				"actual_yaw": 7.06858360290523,
+				"requested_pitch": 0.23,
+				"requested_yaw": 0.0,
+				"right_released": true,
+				"time": 39.5583333333337
+			},
+			{
+				"actual_pitch": 0.23,
+				"actual_yaw": 8.83572950363155,
+				"requested_pitch": 0.23,
+				"requested_yaw": 1.5707963267949,
+				"right_released": true,
+				"time": 42.5916666666668
+			},
+			{
+				"actual_pitch": 0.94,
+				"actual_yaw": 8.83572950363155,
+				"requested_pitch": 0.94,
+				"requested_yaw": 0.0,
+				"right_released": true,
+				"time": 44.6583333333334
+			},
+			{
+				"actual_pitch": 0.94,
+				"actual_yaw": 10.6028754043579,
+				"requested_pitch": 0.94,
+				"requested_yaw": 1.5707963267949,
+				"right_released": true,
+				"time": 47.6916666666665
+			},
+			{
+				"actual_pitch": 0.433999979019164,
+				"actual_yaw": 10.6028754043579,
+				"requested_pitch": 0.48,
+				"requested_yaw": 0.0,
+				"right_released": true,
+				"time": 49.2249999999998
+			},
+			{
+				"actual_pitch": 0.422499978542327,
+				"actual_yaw": 14.1371672058107,
+				"requested_pitch": 0.422499978542327,
+				"requested_yaw": 3.14159265358979,
+				"right_released": true,
+				"time": 55.2583333333328
+			}
+		],
+		"segments": [
+			{
+				"label": "arrival",
+				"pitch": 0.48,
+				"position": [
+					0.0,
+					0.0,
+					9.0
+				],
+				"time": 2.15833333333334,
+				"yaw": 0.0
+			},
+			{
+				"label": "normal-walk-and-rapid-reversal",
+				"pitch": 0.48,
+				"position": [
+					0.428978115320206,
+					0.000842533598188311,
+					7.53103113174438
+				],
+				"time": 9.55833333333331,
+				"yaw": 0.0
+			},
+			{
+				"label": "stop-start",
+				"pitch": 0.48,
+				"position": [
+					2.16231155395508,
+					0.000842422712594271,
+					7.53103113174438
+				],
+				"time": 11.8916666666666,
+				"yaw": 0.0
+			},
+			{
+				"label": "ivo-meeting",
+				"pitch": 0.48,
+				"position": [
+					-1.89976108074188,
+					0.000830496603157371,
+					4.50896835327148
+				],
+				"time": 16.325,
+				"yaw": 0.0
+			},
+			{
+				"label": "stationary-full-yaw-normal-pitch",
+				"pitch": 0.48,
+				"position": [
+					-0.0612827911973,
+					0.000842543900944293,
+					6.69411134719849
+				],
+				"time": 25.7583333333338,
+				"yaw": 0.0
+			},
+			{
+				"label": "low-pitch",
+				"pitch": 0.48,
+				"position": [
+					-0.0612827911973,
+					0.000842543900944293,
+					6.69411134719849
+				],
+				"time": 38.0583333333337,
+				"yaw": 7.06858360290523
+			},
+			{
+				"label": "high-pitch",
+				"pitch": 0.23,
+				"position": [
+					-0.0612827911973,
+					0.000842543900944293,
+					6.69411134719849
+				],
+				"time": 42.6583333333335,
+				"yaw": 8.83572950363155
+			}
+		],
+		"source": "Fresh game; helper earned by brushing.",
+		"validation": {
+			"controls_released": true,
+			"earned_companion": true,
+			"full_camera_input": false,
+			"met_ivo": true,
+			"pitch_returned": false
+		}
+	},
+	"camera_distance": 7.6,
+	"checks": [
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 1.0 }",
+			"held_keys": {},
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 0,
+			"time": 1.025
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"capture\": \"welcome\" }",
+			"held_keys": {},
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 1,
+			"time": 1.05833333333333
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"button\": \"Step into\" }",
+			"held_keys": {},
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 2,
+			"time": 1.09166666666667
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 1.0 }",
+			"held_keys": {},
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 3,
+			"time": 2.125
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"mark\": \"arrival\" }",
+			"held_keys": {},
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 4,
+			"time": 2.15833333333334
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"capture\": \"art-arrival\" }",
+			"held_keys": {},
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 5,
+			"time": 2.19166666666667
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"move\": (0.5, 0.0, 7.4) }",
+			"held_keys": {
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428978, 0.000843, 7.531031)",
+			"step": 6,
+			"time": 2.85833333333333
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"brush\": 5.0 }",
+			"held_keys": {
+				"32": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428978, 0.000843, 7.531031)",
+			"step": 7,
+			"time": 7.99166666666665
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 1.5 }",
+			"held_keys": {
+				"32": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428978, 0.000843, 7.531031)",
+			"step": 8,
+			"time": 9.49166666666664
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"capture\": \"art-first-companion\" }",
+			"held_keys": {
+				"32": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428978, 0.000843, 7.531031)",
+			"step": 9,
+			"time": 9.52499999999998
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"mark\": \"normal-walk-and-rapid-reversal\" }",
+			"held_keys": {
+				"32": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428978, 0.000843, 7.531031)",
+			"step": 10,
+			"time": 9.55833333333331
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"walk_for\": 68, \"seconds\": 0.7 }",
+			"held_keys": {
+				"32": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "",
+			"ok": true,
+			"position": "(2.162312, 0.000843, 7.531031)",
+			"step": 11,
+			"time": 10.2583333333333
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"walk_for\": 65, \"seconds\": 0.35 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(1.295645, 0.00083, 7.531031)",
+			"step": 12,
+			"time": 10.625
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"walk_for\": 68, \"seconds\": 0.35 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "",
+			"ok": true,
+			"position": "(2.162312, 0.000842, 7.531031)",
+			"step": 13,
+			"time": 10.9916666666666
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 0.8 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "",
+			"ok": true,
+			"position": "(2.162312, 0.000842, 7.531031)",
+			"step": 14,
+			"time": 11.825
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"capture\": \"art-reversal-stop\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "",
+			"ok": true,
+			"position": "(2.162312, 0.000842, 7.531031)",
+			"step": 15,
+			"time": 11.8583333333333
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"mark\": \"stop-start\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "",
+			"ok": true,
+			"position": "(2.162312, 0.000842, 7.531031)",
+			"step": 16,
+			"time": 11.8916666666666
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"walk_for\": 65, \"seconds\": 0.35 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(1.295644, 0.000843, 7.531031)",
+			"step": 17,
+			"time": 12.2583333333333
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 0.35 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(1.295644, 0.000843, 7.531031)",
+			"step": 18,
+			"time": 12.625
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"walk_for\": 65, \"seconds\": 0.35 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428977, 0.000843, 7.531031)",
+			"step": 19,
+			"time": 12.9916666666666
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 0.65 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428977, 0.000843, 7.531031)",
+			"step": 20,
+			"time": 13.6583333333333
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"capture\": \"art-stop-start\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(0.428977, 0.000843, 7.531031)",
+			"step": 21,
+			"time": 13.6916666666666
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"move\": (-2.0, 0.0, 4.4) }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 22,
+			"time": 15.2583333333333
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 1.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 23,
+			"time": 16.2916666666666
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"mark\": \"ivo-meeting\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 24,
+			"time": 16.325
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"interact\": \"ivo\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 25,
+			"time": 16.3916666666666
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 2.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 26,
+			"time": 18.3916666666667
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"capture\": \"art-ivo-notice\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 27,
+			"time": 18.4250000000001
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"button\": \"Why so many\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 28,
+			"time": 18.4583333333334
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 2.5 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 29,
+			"time": 20.9583333333335
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"capture\": \"art-ivo-gesture\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 30,
+			"time": 20.9916666666669
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"close\": true }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 31,
+			"time": 21.0250000000002
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 2.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 32,
+			"time": 23.0250000000003
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"capture\": \"art-ivo-return\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"87": false
+			},
+			"nearest": "ivo",
+			"ok": true,
+			"position": "(-1.899761, 0.00083, 4.508968)",
+			"step": 33,
+			"time": 23.0583333333336
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"move\": (0.0, 0.0, 6.8) }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 34,
+			"time": 24.2250000000004
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"wait\": 1.5 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 35,
+			"time": 25.7250000000004
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 0.0
+			},
+			"command": "{ \"mark\": \"stationary-full-yaw-normal-pitch\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 36,
+			"time": 25.7583333333338
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 1.76714590072632
+			},
+			"command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 37,
+			"time": 28.7916666666673
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 1.76714590072632
+			},
+			"command": "{ \"capture\": \"art-orbit-quarter\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 38,
+			"time": 28.8250000000006
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 3.53429180145265
+			},
+			"command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 39,
+			"time": 31.8583333333341
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 3.53429180145265
+			},
+			"command": "{ \"capture\": \"art-orbit-back\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 40,
+			"time": 31.8916666666674
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 5.30143770217894
+			},
+			"command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 41,
+			"time": 34.9250000000006
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 5.30143770217895
+			},
+			"command": "{ \"capture\": \"art-orbit-three-quarter\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 42,
+			"time": 34.9583333333339
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 7.06858360290523
+			},
+			"command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 43,
+			"time": 37.9916666666671
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 7.06858360290523
+			},
+			"command": "{ \"capture\": \"art-orbit-front\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 44,
+			"time": 38.0250000000004
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.48,
+				"right_held": false,
+				"yaw": 7.06858360290523
+			},
+			"command": "{ \"mark\": \"low-pitch\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 45,
+			"time": 38.0583333333337
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.23,
+				"right_held": false,
+				"yaw": 7.06858360290523
+			},
+			"command": "{ \"orbit_yaw\": 0.0, \"pitch_target\": 0.23, \"seconds\": 1.5 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 46,
+			"time": 39.5583333333337
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.23,
+				"right_held": false,
+				"yaw": 8.83572950363155
+			},
+			"command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 47,
+			"time": 42.5916666666668
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.23,
+				"right_held": false,
+				"yaw": 8.83572950363155
+			},
+			"command": "{ \"capture\": \"art-orbit-low\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 48,
+			"time": 42.6250000000001
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.23,
+				"right_held": false,
+				"yaw": 8.83572950363155
+			},
+			"command": "{ \"mark\": \"high-pitch\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 49,
+			"time": 42.6583333333335
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.94,
+				"right_held": false,
+				"yaw": 8.83572950363155
+			},
+			"command": "{ \"orbit_yaw\": 0.0, \"pitch_target\": 0.94, \"seconds\": 2.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 50,
+			"time": 44.6583333333334
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.94,
+				"right_held": false,
+				"yaw": 10.6028754043579
+			},
+			"command": "{ \"orbit_yaw\": 1.5707963267949, \"seconds\": 3.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 51,
+			"time": 47.6916666666665
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.94,
+				"right_held": false,
+				"yaw": 10.6028754043579
+			},
+			"command": "{ \"capture\": \"art-orbit-high\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 52,
+			"time": 47.7249999999999
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.433999979019164,
+				"right_held": false,
+				"yaw": 10.6028754043579
+			},
+			"command": "{ \"orbit_yaw\": 0.0, \"pitch_target\": 0.48, \"seconds\": 1.5 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 53,
+			"time": 49.2249999999998
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.422499978542327,
+				"right_held": false,
+				"yaw": 14.1371672058107
+			},
+			"command": "{ \"orbit_yaw\": 3.14159265358979, \"seconds\": 6.0 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 54,
+			"time": 55.2583333333328
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.422499978542327,
+				"right_held": false,
+				"yaw": 14.1371672058107
+			},
+			"command": "{ \"wait\": 0.8 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 55,
+			"time": 56.0916666666661
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.422499978542327,
+				"right_held": false,
+				"yaw": 14.1371672058107
+			},
+			"command": "{ \"capture\": \"art-returned-view\" }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 56,
+			"time": 56.1249999999994
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.422499978542327,
+				"right_held": false,
+				"yaw": 14.1371672058107
+			},
+			"command": "{ \"save\": true }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 57,
+			"time": 56.1583333333327
+		},
+		{
+			"camera": {
+				"distance": 7.6,
+				"pitch": 0.422499978542327,
+				"right_held": false,
+				"yaw": 14.1371672058107
+			},
+			"command": "{ \"wait\": 0.5 }",
+			"held_keys": {
+				"32": false,
+				"65": false,
+				"68": false,
+				"83": false,
+				"87": false
+			},
+			"nearest": "lantern",
+			"ok": true,
+			"position": "(-0.061283, 0.000843, 6.694111)",
+			"step": 58,
+			"time": 56.691666666666
+		},
+		{
+			"ok": false,
+			"reason": "Art capture acceptance failed: full_camera_input"
+		},
+		{
+			"ok": false,
+			"reason": "Art capture acceptance failed: pitch_returned"
+		}
+	],
+	"companion_distances": [
+		1.06891584396362
+	],
+	"companion_routes": [
+		{
+			"next": "idle",
+			"position": "(-0.259251, 0.000843, 5.643688)",
+			"queued": 0
+		}
+	],
+	"companions": 1,
+	"elapsed_engine_seconds": 56.7249999999993,
+	"humanTests": 0,
+	"method": "Generated native InputEvents; authored route knows destinations. No player or story progression injection.",
+	"ok": false,
+	"panel_layout": {
+		"failures": [],
+		"visible_frames": 167
+	},
+	"patches": {
+		"bridge": 1.0,
+		"lantern": 0.0
+	},
+	"position": [
+		-0.0612827911973,
+		0.000842543900944293,
+		6.69411134719849
+	],
+	"resident_positions": {
+		"ivo": "(-2.0, 0.0, 3.0)",
+		"mara": "(8.0, 0.000137, 2.130913)",
+		"nell": "(-4.0, 0.0, -2.0)",
+		"tavi": "(-6.3, 0.0, 2.0)"
+	},
+	"story": {
+		"day": 1,
+		"flags": {
+			"first_companion": true,
+			"ivo_concern": true,
+			"met_ivo": true
+		},
+		"home": "clay",
+		"schema": 1,
+		"trust": {
+			"ivo": 2,
+			"mara": 0,
+			"nell": 0,
+			"tavi": 0
+		}
+	}
+}

@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+WARNING: Fresh isolated QA save
+     at: push_warning (core/variant/variant_utility.cpp:1033)
+     GDScript backtrace (most recent call first):
+         [0] check (res://tests/rpg_reveal_checks.gd:19)
+         [1] run (res://tests/rpg_reveal_checks.gd:34)
+         [2] create_game (res://tests/rpg_reveal_checks.gd:26)
+         [3] frames (res://tests/rpg_reveal_checks.gd:22)
+{"checks":24,"failures":1,"observations":{"approach_frames":53,"approach_max_frame_step":0.0575926639139652,"contact_hold_drift":0.0,"first_id":101149840490,"fixture":"Story prerequisites prepared once; player at (12,0,-11.5), three companions at x11.3/11.8/12.3,z-11.1, age3. Production dialogue, movement, animation, pause and filesystem saving then used unchanged.","moth_minimum_head_distance":0.0}}

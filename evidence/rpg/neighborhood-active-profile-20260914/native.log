@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)
+
+RPG_QA={"elapsed":64.2459693333305,"ok":true,"steps":5,"story":{"day":1,"flags":{"alcove_found":true,"bridge_cleared":true,"bridge_plan":true,"bridge_repaired":true,"first_companion":true,"garden_invited":true,"garden_watered":true,"glow_unlocked":true,"greenhouse_open":true,"herbs_gathered":true,"ivo_concern":true,"map_delivered":true,"map_shared":true,"mara_concern":true,"melody_learned":true,"memory_found":true,"met_ivo":true,"met_mara":true,"met_nell":true,"met_tavi":true,"nell_concern":true,"parcel_collected":true,"recipe_shared":true,"shared_table":true,"tavi_concern":true,"wood_collected":true,"workshop_invited":true},"home":"sage","schema":1,"trust":{"ivo":4,"mara":4,"nell":4,"tavi":4}}}

@@ -1,0 +1,91 @@
+{
+	"camera_distance": 7.6,
+	"checks": [
+		{
+			"command": "{ \"wait\": 1.0 }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 0,
+			"time": 1.00069766666667
+		},
+		{
+			"command": "{ \"capture\": \"welcome\" }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 1,
+			"time": 1.009031
+		},
+		{
+			"command": "{ \"button\": \"Step into\" }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 2,
+			"time": 1.08333333333333
+		},
+		{
+			"command": "{ \"wait\": 3.0 }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 3,
+			"time": 4.08390833333333
+		},
+		{
+			"command": "{ \"capture\": \"arrival\" }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 4,
+			"time": 4.09224166666666
+		},
+		{
+			"command": "{ \"wait\": 1.0 }",
+			"nearest": "",
+			"ok": true,
+			"position": "(0.0, 0.0, 9.0)",
+			"step": 5,
+			"time": 5.09440100000004
+		}
+	],
+	"companion_distances": [],
+	"companion_routes": [],
+	"companions": 0,
+	"elapsed_engine_seconds": 5.10273433333337,
+	"humanTests": 0,
+	"method": "Generated native InputEvents; authored route knows destinations. No player or story progression injection.",
+	"ok": true,
+	"panel_layout": {
+		"failures": [],
+		"visible_frames": 100
+	},
+	"patches": {
+		"bridge": 1.0,
+		"lantern": 1.0
+	},
+	"position": [
+		0.0,
+		0.0,
+		9.0
+	],
+	"resident_positions": {
+		"ivo": "(-2.0, 0.0, 3.0)",
+		"mara": "(8.0, 0.000137, 2.130913)",
+		"nell": "(-4.0, 0.0, -2.0)",
+		"tavi": "(-6.3, 0.0, 2.0)"
+	},
+	"story": {
+		"day": 1,
+		"flags": {},
+		"home": "clay",
+		"schema": 1,
+		"trust": {
+			"ivo": 0,
+			"mara": 0,
+			"nell": 0,
+			"tavi": 0
+		}
+	}
+}

@@ -1,3 +1,18 @@
+# RPG neighborhood samples — 2026-09-14
+
+Both native1280×800 samples used this MacBook Pro Mac16,7, M4 Pro,48GB, macOS26.6.2, normal graphics/audio and one Godot process. No concurrent assistant compilation, tests, encoding or model generation ran during these intervals; local services were idle. Focus was not instrumented. These are callback intervals, not GPU time, physical input latency, Windows performance or long thermal endurance.
+
+| Workload | Wall seconds | Samples | p95 ms | p99 ms | Worst ms | >33.4 ms |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Opening |60.016579 |7201 |9.282 |10.087 |14.980 |0 |
+| Four companions, active lane traversal |60.017689 |7197 |12.374 |12.898 |18.405 |0 |
+
+[Opening results](../evidence/rpg/neighborhood-opening-profile-20260914/results.json), [active results](../evidence/rpg/neighborhood-active-lane-profile-20260914/results.json), [host conditions](../evidence/rpg/quality-2026-09-14/performance-conditions/conditions.json). Active workload required at least four lengths and20m of measured movement, with50s walking followed by10s settling. The earlier circuit collided with an existing bench and failed its workload gate; retained partial figures are not a passing baseline. No production collision was removed to make the fixture pass.
+
+Opening capture source77a30108…; active sourcede54e231…; complete hashes and source maps are in each capture manifest. Final export8196bad7… adds the truncated-save parsing correction. These measured source scopes are preserved instead of relabelling timing as a new exact-export run. The old courtyard50-helper measurements below describe a different preserved game mode.
+
+---
+
 # Current native UI integration — 2026-09-10 11:04 UTC
 
 Runtime `a8430be`, capture source `d16167dda40fc96fccb6da3d604483a90783007f64c4c545e5fbe99bc7ab08ae`, packaged source `ee3a43ae3dcf50364bcdb3914c730f2cc459ebeb18559b39f376e3a3996ef920`.

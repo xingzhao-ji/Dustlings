@@ -1,0 +1,17 @@
+{
+  "cause": "Reveal test invoked without --rpg-qa; it created ordinary-profile state.",
+  "comparison": "Fresh isolated replay produces exactly equal JSON and revision 6, consistent with initial revision zero. Test-created files moved out of ordinary profile and retained here. Historical courtyard data left untouched.",
+  "guard": "All four scene-test entry points now reject missing --rpg-qa before instantiation.",
+  "files": [
+    {
+      "file": "/Users/xingzhaoji/Library/Application Support/Dustlings3D/neighborhood-v1.json",
+      "sha256": "31f3c85ec2529fd0d56d5e449c72372568e866d3698fd1f4f7ffb8a8020b39db",
+      "preserved_as": "evidence/rpg/quality-2026-09-14/accidental-unisolated-save/neighborhood-v1.json"
+    },
+    {
+      "file": "/Users/xingzhaoji/Library/Application Support/Dustlings3D/neighborhood-v1.json.backup",
+      "sha256": "89dd4cccdbdd382c8891c4201d464d70441f02cfbf4819cbde828fa03c1ae82d",
+      "preserved_as": "evidence/rpg/quality-2026-09-14/accidental-unisolated-save/neighborhood-v1.json.backup"
+    }
+  ]
+}

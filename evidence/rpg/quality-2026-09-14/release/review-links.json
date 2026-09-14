@@ -1,0 +1,115 @@
+{
+  "ok": true,
+  "files": [
+    {
+      "link": "../../builds/3d/0.5.1-rpg-dev-2026-09-14T02-20-51-771Z-8196bad7d8/macOS/Dustlings.zip",
+      "bytes": 62275199,
+      "sha256": "3f877e707e00fefcef7b86ca81f41e2b6e45505793d4a3b3b595dd9a9cfd471b"
+    },
+    {
+      "link": "../../builds/3d/0.5.1-rpg-dev-2026-09-14T02-20-51-771Z-8196bad7d8/Windows/Dustlings-Windows.zip",
+      "bytes": 39829709,
+      "sha256": "86fdf2a386a1f5173909e4f97b8ee457b0bc78da4d4ffa91c1ef7592ebae9b10"
+    },
+    {
+      "link": "../../Play%20Dustlings.command",
+      "bytes": 115,
+      "sha256": "89a53d9d75d5d6c7d4756a6250b1a943354b55de71494f77bc13f91e954488d2"
+    },
+    {
+      "link": "store-kit-release-20260914/gameplay-preview.mp4",
+      "bytes": 6225183,
+      "sha256": "616f1d7eb3faf2d9ab9b57a40aef1834de452a1669ee2d7160310c3c9be01ff3"
+    },
+    {
+      "link": "store-kit-release-20260914/media-manifest.json",
+      "bytes": 61531,
+      "sha256": "35620ec23228508e4f0ab6ce7199c0e9bc007215e81e81881fe27e83637a20bf"
+    },
+    {
+      "link": "package-save-fixed-20260914/report.json",
+      "bytes": 101221,
+      "sha256": "4768007c610e472a2d2bfaccf964d251ddeb9dc564beb771b269ac3a7d9fe729"
+    },
+    {
+      "link": "quality-2026-09-14/release-checks/report.json",
+      "bytes": 7349,
+      "sha256": "816ef6f5d37624a82029103093ba6b29fad8be0ff9c166f12c0505001ca9e643"
+    },
+    {
+      "link": "quality-2026-09-14/truncated-save-fix/report.json",
+      "bytes": 6713,
+      "sha256": "d8670f2a12b5647953d4e44c556c25b6f6095df8be238ffb8a7aed9f86145915"
+    },
+    {
+      "link": "neighborhood-store-media-final-20260914/capture-manifest.json",
+      "bytes": 53256,
+      "sha256": "86ec0cb87bd8c097ebf2095dac2ef3a88c35ed8597f457850edc24ed3464d01e"
+    },
+    {
+      "link": "../../docs/PERFORMANCE.md",
+      "bytes": 10107,
+      "sha256": "c2797bd6179474530380d342ccc2de7db3d95f858fb6ca6e90dbc04751139cee"
+    },
+    {
+      "link": "../../builds/3d/0.5.1-rpg-dev-2026-09-14T02-20-51-771Z-8196bad7d8/manifest.json",
+      "bytes": 57122,
+      "sha256": "7fa4433542c785bc1a252f511fcf641a1abd5b436fcd9b9eb1645b6e82a7752c"
+    },
+    {
+      "link": "store-kit-release-20260914/first-companion.png",
+      "bytes": 815567,
+      "sha256": "61fd0239498c05f621a1c413d4cbedba41204ef99d1d700ad5ad3d068a4c8163"
+    },
+    {
+      "link": "store-kit-release-20260914/ivo.png",
+      "bytes": 1042620,
+      "sha256": "be8885753ea39a91f1c18285d1e6475dd15d1c8b9817ca1f20d8412afe2311ea"
+    },
+    {
+      "link": "store-kit-release-20260914/home-interior.png",
+      "bytes": 982303,
+      "sha256": "e9d34d7c2e7b8d90286620b8d5a8ee5be1233ef8816415f296db511d3355ff48"
+    },
+    {
+      "link": "store-kit-release-20260914/bridge-after.png",
+      "bytes": 991443,
+      "sha256": "1203eff4461af849a40566d2a3e021c973153e004d89c6a6fcacda248ddb6f4f"
+    },
+    {
+      "link": "store-kit-release-20260914/garden.png",
+      "bytes": 701256,
+      "sha256": "f1d90a4fedea3bc0d961a4cd0a449b3261073030f4637f2ab6ca6fc06bf0afa8"
+    },
+    {
+      "link": "store-kit-release-20260914/ivy-after.png",
+      "bytes": 806205,
+      "sha256": "66a526244e371533614efc34089b096a6758b8ed78788cebdbe3ef57481279ab"
+    },
+    {
+      "link": "store-kit-release-20260914/gathering.png",
+      "bytes": 725142,
+      "sha256": "3c58617da85850f7dc02f0ecc5394b393ec0673a1fc7476a37ddade34c35209a"
+    },
+    {
+      "link": "../../docs/STORE-COPY-2026-09-14.md",
+      "bytes": 4794,
+      "sha256": "a8d5ad5b65b6276477fe802eb831f8a01d112b1b4d81e1100d39f083a70ebcc9"
+    },
+    {
+      "link": "../../docs/RPG-PACKAGING.md",
+      "bytes": 7399,
+      "sha256": "8db6f9e3206ccc7aa2f4b2eafa77322c37bd7b7dcdcc6fdaabca1e6ca59a02ae"
+    },
+    {
+      "link": "../../docs/RPG-PLAYTEST.md",
+      "bytes": 3215,
+      "sha256": "34148fa4842e562319f8becde9f18fb4304ec67c4ec12c3b9d3a7ca266d6778d"
+    },
+    {
+      "link": "../../docs/IMPROVEMENTS-2026-09-14.md",
+      "bytes": 8711,
+      "sha256": "a718d46c100c76c67db38cb4ef5d17d730e3f8cc5bbb45d66adc2f9b43c618a5"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "method": "Root-created raw AVI removed after confirming identical encoded video dimensions and frame count. Original actual gameplay MP4 and all failures/logs/stills remain.",
+  "avi": {
+    "bytes": 531048636,
+    "sha256": "0b61921c4e31b5ee78898533bd09f237ceb878a44706561c514e52d014d23015",
+    "video": {
+      "width": 1280,
+      "height": 800,
+      "nb_frames": "5836"
+    }
+  },
+  "mp4": {
+    "bytes": 57615358,
+    "sha256": "9cb3476fd7b3bb82f9a0424da76674b13cf06bf12faa9ec26fb76417d8b11e58",
+    "video": {
+      "width": 1280,
+      "height": 800,
+      "nb_frames": "5836"
+    }
+  }
+}

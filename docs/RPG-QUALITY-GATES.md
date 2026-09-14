@@ -1,3 +1,22 @@
+# Current gate status — 2026-09-14
+
+**Technical preview package verified; human and commercial acceptance pending.** [Review hub](../evidence/rpg/REVIEW.html).
+
+| Gate | Current evidence |
+| --- | --- |
+| Source behavior | Seven sequential isolated suites passed;272 assertions plus earned-route continuity checks. Final truncated-save parser rerun44 RPG /16 legacy checks passed. |
+| Actual Mac package |95/95 fresh/resume/damaged-save recovery checks; exact archives, native process logs, screenshots, settings and story comparisons. |
+| Complete neighborhood |159-step generated-input route; all four residents gather. Actual moth exchange, kept light, gift and home-return views inspected. Human pacing/enjoyment unmeasured. |
+| Minimum UI/camera |960×640 settings/journal bounds and59-step acting/orbit pass;93/167 monitored visible panel frames stable. Native route1557 stable panel frames. |
+| Native callback cadence |60s opening and60s active four-companion runs pass on their recorded sources. [Conditions and limits](PERFORMANCE.md). |
+| Distribution preparation | Mac/Windows exports, exact source-pack/notices/Windows ZIP checks, offline Steam staging and store-media drafts prepared. Windows remains unrun; Mac unnotarized. |
+| Human / presentation / sound / owner |0 RPG participants; all pending. Sparse reverse-view scenery and broader visual appeal remain review questions. |
+| Commercial | No paid launch, validated demand or revenue. Full campaign unfinished. |
+
+The older source-bound records below remain historical; their pending package/capture items are superseded by the above, their human gates remain open.
+
+---
+
 # Bellwether RPG opening — quality gates
 
 **Milestone: in development; awaiting human validation and owner acceptance.** This is the new third-person 3D RPG opening, superseding the cleanup-only scope. It is not the old courtyard product. Review snapshot prepared on 10 September 2026; development stopped on the owner’s instruction at18:27UTC. [Local review hub](../evidence/rpg/REVIEW.html).

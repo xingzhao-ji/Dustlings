@@ -1,0 +1,129 @@
+{
+	"camera_distance": 7.6,
+	"checks": [
+		{
+			"command": "{ \"wait\": 1.0 }",
+			"nearest": "",
+			"ok": true,
+			"position": "(-9.890633, 0.000843, 5.192171)",
+			"step": 0,
+			"time": 1.000584
+		},
+		{
+			"command": "{ \"button\": \"Return home\" }",
+			"nearest": "",
+			"ok": true,
+			"position": "(-9.890633, 0.000843, 5.192171)",
+			"step": 1,
+			"time": 1.00891733333333
+		},
+		{
+			"command": "{ \"wait\": 2.0 }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.890633, 0.000843, 5.192171)",
+			"step": 2,
+			"time": 3.01654733333333
+		},
+		{
+			"command": "{ \"capture\": \"resumed\" }",
+			"nearest": "home",
+			"ok": true,
+			"position": "(-9.890633, 0.000843, 5.192171)",
+			"step": 3,
+			"time": 3.02488066666666
+		}
+	],
+	"companion_distances": [
+		0.83404552936554,
+		0.672831296920776,
+		0.564247369766235,
+		0.449479818344116
+	],
+	"companion_routes": [
+		{
+			"next": "idle",
+			"position": "(-9.082854, 0.000843, 5.399839)",
+			"queued": 0
+		},
+		{
+			"next": "idle",
+			"position": "(-10.34062, 0.000842, 5.692381)",
+			"queued": 0
+		},
+		{
+			"next": "(-9.890633, 0.000843, 5.192171)",
+			"position": "(-9.591296, 0.000843, 5.670473)",
+			"queued": 1
+		},
+		{
+			"next": "idle",
+			"position": "(-9.486743, 0.000843, 5.389415)",
+			"queued": 0
+		}
+	],
+	"companions": 4,
+	"elapsed_engine_seconds": 3.16148833333333,
+	"humanTests": 0,
+	"method": "Generated native InputEvents; authored route knows destinations. No player or story progression injection.",
+	"ok": true,
+	"panel_layout": {
+		"failures": [],
+		"visible_frames": 98
+	},
+	"patches": {
+		"bridge": 0.0,
+		"lantern": 0.0
+	},
+	"position": [
+		-9.89063262939453,
+		0.000842543784528971,
+		5.19217109680176
+	],
+	"resident_positions": {
+		"ivo": "(-1.748879, 0.00081, 1.18984)",
+		"mara": "(6.611881, 0.000824, 2.154952)",
+		"nell": "(-2.392335, 0.000826, -2.869009)",
+		"tavi": "(-5.048841, 0.000842, 0.667955)"
+	},
+	"story": {
+		"day": 1,
+		"flags": {
+			"alcove_found": true,
+			"bridge_cleared": true,
+			"bridge_plan": true,
+			"bridge_repaired": true,
+			"first_companion": true,
+			"garden_invited": true,
+			"garden_watered": true,
+			"glow_unlocked": true,
+			"greenhouse_open": true,
+			"herbs_gathered": true,
+			"ivo_concern": true,
+			"map_delivered": true,
+			"map_shared": true,
+			"mara_concern": true,
+			"melody_learned": true,
+			"memory_found": true,
+			"met_ivo": true,
+			"met_mara": true,
+			"met_nell": true,
+			"met_tavi": true,
+			"nell_concern": true,
+			"parcel_collected": true,
+			"recipe_shared": true,
+			"shared_table": true,
+			"tavi_concern": true,
+			"wood_collected": true,
+			"workshop_invited": true
+		},
+		"home": "sage",
+		"schema": 1,
+		"trust": {
+			"ivo": 4,
+			"mara": 4,
+			"nell": 4,
+			"tavi": 4
+		}
+	}
+}

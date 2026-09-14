@@ -1,0 +1,117 @@
+{
+  "method": "Sequential headless fixed-60-Hz checks with isolated saves. No native performance or human validation.",
+  "source": {
+    "scripts/courtyard_environment.gd": "8d52b210fca5dae8990b68d22bd93f176ae0df12a9dc301956f8a77ee2773d2a",
+    "scripts/discovery_preview.gd": "f545d8e9ef11e76c2d2c7f4584056ecf2bcf3a354ecc8bb0fc408b118dc48af8",
+    "scripts/dust_feedback.gd": "e78aeb0979e1223b4bc237d08a06236c6a4451d48d28b28121208d9fd3f59fa8",
+    "scripts/dustling_visual.gd": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc",
+    "scripts/main.gd": "8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8",
+    "scripts/rpg_actor.gd": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea",
+    "scripts/rpg_audio.gd": "e82d0a7ab45de1a058cb868a447908edcd91c0ade08f1fdeb0d3810256e32574",
+    "scripts/rpg_environment.gd": "04e40a6628d3bd9549c64c8fabd7e80d9e9ff00b980313215d70bee32a9bf253",
+    "scripts/rpg_main.gd": "70d4b389db0762c77a933e6a09a62b09216dd1cadbf5716492ae0cae37e07c82",
+    "scripts/rpg_navigation.gd": "153e83fb22c11b2bddbdfe1eef9e13b2cccf5f6e3dda901a9fcfdb3b6a034d91",
+    "scripts/rpg_qa.gd": "a3d4581c314932adafecf4f580b07f1373e3b9b7bd76b79835d724c383e256e2",
+    "scripts/rpg_save.gd": "baea44034774e4cb72be30ee0a2c408a2aad713655f956134af492d51cb70f95",
+    "scripts/rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe",
+    "scripts/save_store.gd": "683aed2d3619384421668e48f0353252f164992341a86908a46d735c2545356a",
+    "scripts/simulation.gd": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b",
+    "scripts/soundscape.gd": "cd0f5959cf63e5dbd25b1add40b801cccd878906ee0aac8a8faad002dd566b5b",
+    "tests/audio_checks.gd": "b260a81897f00060c7f1b807c89a9fb4c2fe87a84e520817ab90100987a0a000",
+    "tests/camera_checks.gd": "29642a928a79ff49753674e54c4b261477789c884c45e994c846b26eb71318c5",
+    "tests/chorus_checks.gd": "3f71f2abbb7b9a521f7ca93b82009c6eb3a7bd6456e9b55c0e0f08aa7fac514b",
+    "tests/crowd_checks.gd": "120448e5fa85e46c74cfcd7d968dd2a151d0b66b8e0bb741d42f15478ac69bc8",
+    "tests/integration_checks.gd": "61c5296d6c33fd65e1cc29da1b3e382bfc0ad0fd663fd2cb5ee05ccbcf8365f7",
+    "tests/native_recovery_checks.gd": "2f2f32534a30e7d556cc6c3a21649bb45eeb06ca0b8b88fb3153087c29e1911d",
+    "tests/rpg_actor_checks.gd": "fc8bd05dea16d4a3bdf96a3a6dddf71d7a37428ce7f8ce5ff2af6c6973f82de9",
+    "tests/rpg_companion_checks.gd": "3644e162d0a6878d22334239a1e4f75330d2f78308ee20b3a45a1c54956bb59f",
+    "tests/rpg_earned_route_checks.gd": "e14410eaf33ed9897c9b4036c002c45ef28f20f41bcc396f83e712ec25b27ffb",
+    "tests/rpg_integration_checks.gd": "50ccb4902b49112feffdc2a4384cd34b4c52aae7cabf65dc6ec8bc0a5a757444",
+    "tests/rpg_reveal_checks.gd": "915ec4af63c58f5222e9e1a1915764fc141d6be9b1e1f2036808f4d40cd7396c",
+    "tests/rpg_save_checks.gd": "49d4ae1227a256d79932d6583edadb3df81803bd569f872eecbcacbfd6335e71",
+    "tests/rpg_story_checks.gd": "98a57d1a5fd31676aff3ed5f71cfd0c7d9cfe8dacce532f92d82e44324b804a3",
+    "tests/save_checks.gd": "77f187b86fbe8a6111fffdf291416b37e3b1822611f7bf4a9ea94a2136aec49f",
+    "tests/simulation_checks.gd": "84d9c4ab0fa3592c884b50afba243a3b37e97529b6f93c16137b220998eb5ebe",
+    "tests/work_feedback_checks.gd": "19a975cb43e926c28b060d80ed7a8624e6cf050c6fb4038ef008cafd0459304d"
+  },
+  "tests": [
+    {
+      "name": "actor",
+      "ok": true,
+      "exit": 0,
+      "log": "actor/run.log"
+    },
+    {
+      "name": "story",
+      "ok": true,
+      "exit": 0,
+      "log": "story/run.log"
+    },
+    {
+      "name": "save",
+      "ok": true,
+      "exit": 0,
+      "log": "save/run.log"
+    },
+    {
+      "name": "reveal",
+      "ok": true,
+      "exit": 0,
+      "log": "reveal/run.log"
+    },
+    {
+      "name": "integration",
+      "ok": true,
+      "exit": 0,
+      "log": "integration/run.log"
+    },
+    {
+      "name": "companion",
+      "ok": true,
+      "exit": 0,
+      "log": "companion/run.log"
+    },
+    {
+      "name": "earned_route",
+      "ok": true,
+      "exit": 0,
+      "log": "earned_route/run.log"
+    }
+  ],
+  "ok": true,
+  "endingSource": {
+    "scripts/courtyard_environment.gd": "8d52b210fca5dae8990b68d22bd93f176ae0df12a9dc301956f8a77ee2773d2a",
+    "scripts/discovery_preview.gd": "f545d8e9ef11e76c2d2c7f4584056ecf2bcf3a354ecc8bb0fc408b118dc48af8",
+    "scripts/dust_feedback.gd": "e78aeb0979e1223b4bc237d08a06236c6a4451d48d28b28121208d9fd3f59fa8",
+    "scripts/dustling_visual.gd": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc",
+    "scripts/main.gd": "8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8",
+    "scripts/rpg_actor.gd": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea",
+    "scripts/rpg_audio.gd": "e82d0a7ab45de1a058cb868a447908edcd91c0ade08f1fdeb0d3810256e32574",
+    "scripts/rpg_environment.gd": "04e40a6628d3bd9549c64c8fabd7e80d9e9ff00b980313215d70bee32a9bf253",
+    "scripts/rpg_main.gd": "70d4b389db0762c77a933e6a09a62b09216dd1cadbf5716492ae0cae37e07c82",
+    "scripts/rpg_navigation.gd": "153e83fb22c11b2bddbdfe1eef9e13b2cccf5f6e3dda901a9fcfdb3b6a034d91",
+    "scripts/rpg_qa.gd": "a3d4581c314932adafecf4f580b07f1373e3b9b7bd76b79835d724c383e256e2",
+    "scripts/rpg_save.gd": "baea44034774e4cb72be30ee0a2c408a2aad713655f956134af492d51cb70f95",
+    "scripts/rpg_story.gd": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe",
+    "scripts/save_store.gd": "683aed2d3619384421668e48f0353252f164992341a86908a46d735c2545356a",
+    "scripts/simulation.gd": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b",
+    "scripts/soundscape.gd": "cd0f5959cf63e5dbd25b1add40b801cccd878906ee0aac8a8faad002dd566b5b",
+    "tests/audio_checks.gd": "b260a81897f00060c7f1b807c89a9fb4c2fe87a84e520817ab90100987a0a000",
+    "tests/camera_checks.gd": "29642a928a79ff49753674e54c4b261477789c884c45e994c846b26eb71318c5",
+    "tests/chorus_checks.gd": "3f71f2abbb7b9a521f7ca93b82009c6eb3a7bd6456e9b55c0e0f08aa7fac514b",
+    "tests/crowd_checks.gd": "120448e5fa85e46c74cfcd7d968dd2a151d0b66b8e0bb741d42f15478ac69bc8",
+    "tests/integration_checks.gd": "61c5296d6c33fd65e1cc29da1b3e382bfc0ad0fd663fd2cb5ee05ccbcf8365f7",
+    "tests/native_recovery_checks.gd": "2f2f32534a30e7d556cc6c3a21649bb45eeb06ca0b8b88fb3153087c29e1911d",
+    "tests/rpg_actor_checks.gd": "fc8bd05dea16d4a3bdf96a3a6dddf71d7a37428ce7f8ce5ff2af6c6973f82de9",
+    "tests/rpg_companion_checks.gd": "3644e162d0a6878d22334239a1e4f75330d2f78308ee20b3a45a1c54956bb59f",
+    "tests/rpg_earned_route_checks.gd": "e14410eaf33ed9897c9b4036c002c45ef28f20f41bcc396f83e712ec25b27ffb",
+    "tests/rpg_integration_checks.gd": "50ccb4902b49112feffdc2a4384cd34b4c52aae7cabf65dc6ec8bc0a5a757444",
+    "tests/rpg_reveal_checks.gd": "915ec4af63c58f5222e9e1a1915764fc141d6be9b1e1f2036808f4d40cd7396c",
+    "tests/rpg_save_checks.gd": "49d4ae1227a256d79932d6583edadb3df81803bd569f872eecbcacbfd6335e71",
+    "tests/rpg_story_checks.gd": "98a57d1a5fd31676aff3ed5f71cfd0c7d9cfe8dacce532f92d82e44324b804a3",
+    "tests/save_checks.gd": "77f187b86fbe8a6111fffdf291416b37e3b1822611f7bf4a9ea94a2136aec49f",
+    "tests/simulation_checks.gd": "84d9c4ab0fa3592c884b50afba243a3b37e97529b6f93c16137b220998eb5ebe",
+    "tests/work_feedback_checks.gd": "19a975cb43e926c28b060d80ed7a8624e6cf050c6fb4038ef008cafd0459304d"
+  },
+  "sourceUnchanged": true
+}

@@ -1,0 +1,1827 @@
+{
+  "schema": 1,
+  "kind": "rpg-packaged-mac-smoke-resume-recovery",
+  "started": "2026-09-14T02:18:22.747Z",
+  "build": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/manifest.json",
+  "output": "/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/package-release-20260914",
+  "method": "Exact Mac archive extraction and executable; separate real-time native OS processes using shipped rpg_qa InputEvents. Fresh opening, copied save resume, and a controlled corrupt-primary/valid-backup recovery fixture. No MovieMaker or editor gameplay.",
+  "conditions": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.6.0",
+    "memoryBytes": 51539607552,
+    "model": "Mac16,7",
+    "macOSVersion": "26.6.2"
+  },
+  "humanTests": 0,
+  "ownerApproved": false,
+  "releaseReady": false,
+  "windowsExecution": "unrun",
+  "limitations": [
+    "Generated inputs do not establish physical control comfort, human enjoyment or audio audition.",
+    "QA mode bypasses the ordinary single-instance lock; this runner does not test that lock.",
+    "Resume and corrupt-primary recovery use explicitly copied isolated saves, not ordinary player data.",
+    "Short process checks are not sustained performance measurements."
+  ],
+  "checks": [
+    {
+      "name": "macHost",
+      "passed": true
+    },
+    {
+      "name": "completeUnchangedBuild",
+      "passed": true
+    },
+    {
+      "name": "cleanRuntimeSnapshot",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "sourceInventoryHash",
+      "passed": true
+    },
+    {
+      "name": "rpgSourcesPresent",
+      "passed": true
+    },
+    {
+      "name": "snapshot:project.godot",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/project.godot",
+        "expected": {
+          "bytes": 1231,
+          "sha256": "2d8bf2aa5d83fe2e50815d86d66a33a4a90d16d65271b0108ffb90f17b9ac842"
+        },
+        "actual": {
+          "bytes": 1231,
+          "sha256": "2d8bf2aa5d83fe2e50815d86d66a33a4a90d16d65271b0108ffb90f17b9ac842"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scenes/courtyard.tscn",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scenes/courtyard.tscn",
+        "expected": {
+          "bytes": 173,
+          "sha256": "40b44bc40cc1dbc411897fbc88bd8c8a5f04c9ecd1e547263fa2cfc2484cdc52"
+        },
+        "actual": {
+          "bytes": 173,
+          "sha256": "40b44bc40cc1dbc411897fbc88bd8c8a5f04c9ecd1e547263fa2cfc2484cdc52"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scenes/neighborhood.tscn",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scenes/neighborhood.tscn",
+        "expected": {
+          "bytes": 180,
+          "sha256": "520efa0332d134272b3341ee7289de258086d403ab4d57fb5ca64a9562e04091"
+        },
+        "actual": {
+          "bytes": 180,
+          "sha256": "520efa0332d134272b3341ee7289de258086d403ab4d57fb5ca64a9562e04091"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/courtyard_environment.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/courtyard_environment.gd",
+        "expected": {
+          "bytes": 22509,
+          "sha256": "8d52b210fca5dae8990b68d22bd93f176ae0df12a9dc301956f8a77ee2773d2a"
+        },
+        "actual": {
+          "bytes": 22509,
+          "sha256": "8d52b210fca5dae8990b68d22bd93f176ae0df12a9dc301956f8a77ee2773d2a"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/discovery_preview.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/discovery_preview.gd",
+        "expected": {
+          "bytes": 9349,
+          "sha256": "f545d8e9ef11e76c2d2c7f4584056ecf2bcf3a354ecc8bb0fc408b118dc48af8"
+        },
+        "actual": {
+          "bytes": 9349,
+          "sha256": "f545d8e9ef11e76c2d2c7f4584056ecf2bcf3a354ecc8bb0fc408b118dc48af8"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/dust_feedback.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/dust_feedback.gd",
+        "expected": {
+          "bytes": 11998,
+          "sha256": "e78aeb0979e1223b4bc237d08a06236c6a4451d48d28b28121208d9fd3f59fa8"
+        },
+        "actual": {
+          "bytes": 11998,
+          "sha256": "e78aeb0979e1223b4bc237d08a06236c6a4451d48d28b28121208d9fd3f59fa8"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/dustling_visual.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/dustling_visual.gd",
+        "expected": {
+          "bytes": 12495,
+          "sha256": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc"
+        },
+        "actual": {
+          "bytes": 12495,
+          "sha256": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/main.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/main.gd",
+        "expected": {
+          "bytes": 58908,
+          "sha256": "8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8"
+        },
+        "actual": {
+          "bytes": 58908,
+          "sha256": "8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/rpg_actor.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/rpg_actor.gd",
+        "expected": {
+          "bytes": 26137,
+          "sha256": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea"
+        },
+        "actual": {
+          "bytes": 26137,
+          "sha256": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/rpg_audio.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/rpg_audio.gd",
+        "expected": {
+          "bytes": 3504,
+          "sha256": "e82d0a7ab45de1a058cb868a447908edcd91c0ade08f1fdeb0d3810256e32574"
+        },
+        "actual": {
+          "bytes": 3504,
+          "sha256": "e82d0a7ab45de1a058cb868a447908edcd91c0ade08f1fdeb0d3810256e32574"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/rpg_environment.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/rpg_environment.gd",
+        "expected": {
+          "bytes": 40849,
+          "sha256": "04e40a6628d3bd9549c64c8fabd7e80d9e9ff00b980313215d70bee32a9bf253"
+        },
+        "actual": {
+          "bytes": 40849,
+          "sha256": "04e40a6628d3bd9549c64c8fabd7e80d9e9ff00b980313215d70bee32a9bf253"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/rpg_main.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/rpg_main.gd",
+        "expected": {
+          "bytes": 45830,
+          "sha256": "c89061ddb33648ac16dfbbb3a12c22c42c3030e8e39cef9906f71eb6f2412e33"
+        },
+        "actual": {
+          "bytes": 45830,
+          "sha256": "c89061ddb33648ac16dfbbb3a12c22c42c3030e8e39cef9906f71eb6f2412e33"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/rpg_navigation.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/rpg_navigation.gd",
+        "expected": {
+          "bytes": 6606,
+          "sha256": "153e83fb22c11b2bddbdfe1eef9e13b2cccf5f6e3dda901a9fcfdb3b6a034d91"
+        },
+        "actual": {
+          "bytes": 6606,
+          "sha256": "153e83fb22c11b2bddbdfe1eef9e13b2cccf5f6e3dda901a9fcfdb3b6a034d91"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/rpg_qa.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/rpg_qa.gd",
+        "expected": {
+          "bytes": 16375,
+          "sha256": "418fab87e83b8d0d692f9baeab500d849e298f92e523ce9de0a81e3270dea16c"
+        },
+        "actual": {
+          "bytes": 16375,
+          "sha256": "418fab87e83b8d0d692f9baeab500d849e298f92e523ce9de0a81e3270dea16c"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/rpg_save.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/rpg_save.gd",
+        "expected": {
+          "bytes": 4279,
+          "sha256": "baea44034774e4cb72be30ee0a2c408a2aad713655f956134af492d51cb70f95"
+        },
+        "actual": {
+          "bytes": 4279,
+          "sha256": "baea44034774e4cb72be30ee0a2c408a2aad713655f956134af492d51cb70f95"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/rpg_story.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/rpg_story.gd",
+        "expected": {
+          "bytes": 25301,
+          "sha256": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+        },
+        "actual": {
+          "bytes": 25301,
+          "sha256": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/save_store.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/save_store.gd",
+        "expected": {
+          "bytes": 4180,
+          "sha256": "683aed2d3619384421668e48f0353252f164992341a86908a46d735c2545356a"
+        },
+        "actual": {
+          "bytes": 4180,
+          "sha256": "683aed2d3619384421668e48f0353252f164992341a86908a46d735c2545356a"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/simulation.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/simulation.gd",
+        "expected": {
+          "bytes": 15788,
+          "sha256": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b"
+        },
+        "actual": {
+          "bytes": 15788,
+          "sha256": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b"
+        }
+      }
+    },
+    {
+      "name": "snapshot:scripts/soundscape.gd",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/scripts/soundscape.gd",
+        "expected": {
+          "bytes": 7682,
+          "sha256": "cd0f5959cf63e5dbd25b1add40b801cccd878906ee0aac8a8faad002dd566b5b"
+        },
+        "actual": {
+          "bytes": 7682,
+          "sha256": "cd0f5959cf63e5dbd25b1add40b801cccd878906ee0aac8a8faad002dd566b5b"
+        }
+      }
+    },
+    {
+      "name": "snapshot:shaders/courtyard_environment_vegetation.gdshader",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/shaders/courtyard_environment_vegetation.gdshader",
+        "expected": {
+          "bytes": 865,
+          "sha256": "7704d26fc46f31e1c35f2429179801feb2603147131f31814ec51ac3f291ba3a"
+        },
+        "actual": {
+          "bytes": 865,
+          "sha256": "7704d26fc46f31e1c35f2429179801feb2603147131f31814ec51ac3f291ba3a"
+        }
+      }
+    },
+    {
+      "name": "snapshot:shaders/courtyard_environment_water.gdshader",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/shaders/courtyard_environment_water.gdshader",
+        "expected": {
+          "bytes": 1005,
+          "sha256": "a819e6f53d63c0ccacda969f7c2b1dfaa3c194b2c24041a2343364be556a3b9d"
+        },
+        "actual": {
+          "bytes": 1005,
+          "sha256": "a819e6f53d63c0ccacda969f7c2b1dfaa3c194b2c24041a2343364be556a3b9d"
+        }
+      }
+    },
+    {
+      "name": "snapshot:shaders/courtyard_stream_flow.gdshader",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/shaders/courtyard_stream_flow.gdshader",
+        "expected": {
+          "bytes": 1200,
+          "sha256": "486bb08c715cfe189465a008d0c6ef906fa978dbffe414a911e5a34bd7c812eb"
+        },
+        "actual": {
+          "bytes": 1200,
+          "sha256": "486bb08c715cfe189465a008d0c6ef906fa978dbffe414a911e5a34bd7c812eb"
+        }
+      }
+    },
+    {
+      "name": "snapshot:shaders/courtyard_surface.gdshader",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/shaders/courtyard_surface.gdshader",
+        "expected": {
+          "bytes": 1191,
+          "sha256": "d2492f80369252073d6ace8fb25ae2e573ba938d6fd079bf22613595aa9460a7"
+        },
+        "actual": {
+          "bytes": 1191,
+          "sha256": "d2492f80369252073d6ace8fb25ae2e573ba938d6fd079bf22613595aa9460a7"
+        }
+      }
+    },
+    {
+      "name": "snapshot:shaders/dust_drift.gdshader",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/shaders/dust_drift.gdshader",
+        "expected": {
+          "bytes": 1137,
+          "sha256": "cbdcaeb680b9ee9122da780a8b58333f1857ebe3cdd8bb774514d78040586c8f"
+        },
+        "actual": {
+          "bytes": 1137,
+          "sha256": "cbdcaeb680b9ee9122da780a8b58333f1857ebe3cdd8bb774514d78040586c8f"
+        }
+      }
+    },
+    {
+      "name": "snapshot:shaders/rpg_surface.gdshader",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/source/godot/shaders/rpg_surface.gdshader",
+        "expected": {
+          "bytes": 3142,
+          "sha256": "beae1093e2644c4d3efda027b106a7a278dbcdbbee0427d426904ecedfd39f47"
+        },
+        "actual": {
+          "bytes": 3142,
+          "sha256": "beae1093e2644c4d3efda027b106a7a278dbcdbbee0427d426904ecedfd39f47"
+        }
+      }
+    },
+    {
+      "name": "rpgEntrypoint",
+      "passed": true
+    },
+    {
+      "name": "macosPackedSourceProof",
+      "passed": true,
+      "detail": {
+        "checked": 22,
+        "failures": []
+      }
+    },
+    {
+      "name": "windowsPackedSourceProof",
+      "passed": true,
+      "detail": {
+        "checked": 22,
+        "failures": []
+      }
+    },
+    {
+      "name": "macArchive",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/macOS/Dustlings.zip",
+        "expected": {
+          "bytes": 62275119,
+          "sha256": "4a2bd9939fe411ec1d5f900a3e3eac5f6fb603a2aa25fba228400167e7f8cbe3"
+        },
+        "actual": {
+          "bytes": 62275119,
+          "sha256": "4a2bd9939fe411ec1d5f900a3e3eac5f6fb603a2aa25fba228400167e7f8cbe3"
+        }
+      }
+    },
+    {
+      "name": "singleMacApp",
+      "passed": true,
+      "detail": [
+        "Dustlings.app"
+      ]
+    },
+    {
+      "name": "bundle:Contents/_CodeSignature/CodeResources",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/_CodeSignature/CodeResources",
+        "expected": {
+          "bytes": 3175,
+          "sha256": "594db994e4bc58581add81268b603d5c9516771e9e890d28e85133236cd44981"
+        },
+        "actual": {
+          "bytes": 3175,
+          "sha256": "594db994e4bc58581add81268b603d5c9516771e9e890d28e85133236cd44981"
+        }
+      }
+    },
+    {
+      "name": "bundle:Contents/Info.plist",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/Info.plist",
+        "expected": {
+          "bytes": 1804,
+          "sha256": "f1cf6a7fd4b1115879df9c3e386bba47c55427aadd2366d96bf7188e9e94c8b5"
+        },
+        "actual": {
+          "bytes": 1804,
+          "sha256": "f1cf6a7fd4b1115879df9c3e386bba47c55427aadd2366d96bf7188e9e94c8b5"
+        }
+      }
+    },
+    {
+      "name": "bundle:Contents/MacOS/Dustlings",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/MacOS/Dustlings",
+        "expected": {
+          "bytes": 170963648,
+          "sha256": "17dcc9a56af32b09818b2d441be6774190466bc81832ef2f94d9fec1e23febe2"
+        },
+        "actual": {
+          "bytes": 170963648,
+          "sha256": "17dcc9a56af32b09818b2d441be6774190466bc81832ef2f94d9fec1e23febe2"
+        }
+      }
+    },
+    {
+      "name": "bundle:Contents/PkgInfo",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/PkgInfo",
+        "expected": {
+          "bytes": 9,
+          "sha256": "7e50a30efad50208a173203ced60818d693bb61266b75aa10927d1a2adce80cb"
+        },
+        "actual": {
+          "bytes": 9,
+          "sha256": "7e50a30efad50208a173203ced60818d693bb61266b75aa10927d1a2adce80cb"
+        }
+      }
+    },
+    {
+      "name": "bundle:Contents/Resources/Dustlings.pck",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/Resources/Dustlings.pck",
+        "expected": {
+          "bytes": 2482776,
+          "sha256": "cbd359b8970e617ced1d12e0a286847a20771ec936a97d83ecf9660095626ab7"
+        },
+        "actual": {
+          "bytes": 2482776,
+          "sha256": "cbd359b8970e617ced1d12e0a286847a20771ec936a97d83ecf9660095626ab7"
+        }
+      }
+    },
+    {
+      "name": "bundle:Contents/Resources/icon.icns",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/Resources/icon.icns",
+        "expected": {
+          "bytes": 83377,
+          "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+        },
+        "actual": {
+          "bytes": 83377,
+          "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+        }
+      }
+    },
+    {
+      "name": "bundle:Contents/Resources/PrivacyInfo.xcprivacy",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/Resources/PrivacyInfo.xcprivacy",
+        "expected": {
+          "bytes": 229,
+          "sha256": "0535353bb08c25b8ce5ed9ac7e442a5994f402e0f6cbc4bed668cfc63c2ceac3"
+        },
+        "actual": {
+          "bytes": 229,
+          "sha256": "0535353bb08c25b8ce5ed9ac7e442a5994f402e0f6cbc4bed668cfc63c2ceac3"
+        }
+      }
+    },
+    {
+      "name": "safeExecutable",
+      "passed": true
+    },
+    {
+      "name": "bundleIdentity",
+      "passed": true
+    },
+    {
+      "name": "macExecutable",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/MacOS/Dustlings",
+        "expected": {
+          "bytes": 170963648,
+          "sha256": "17dcc9a56af32b09818b2d441be6774190466bc81832ef2f94d9fec1e23febe2"
+        },
+        "actual": {
+          "bytes": 170963648,
+          "sha256": "17dcc9a56af32b09818b2d441be6774190466bc81832ef2f94d9fec1e23febe2"
+        }
+      }
+    },
+    {
+      "name": "singleMacPck",
+      "passed": true,
+      "detail": [
+        "Contents/Resources/Dustlings.pck"
+      ]
+    },
+    {
+      "name": "macPck",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/Resources/Dustlings.pck",
+        "expected": {
+          "bytes": 2482776,
+          "sha256": "cbd359b8970e617ced1d12e0a286847a20771ec936a97d83ecf9660095626ab7"
+        },
+        "actual": {
+          "bytes": 2482776,
+          "sha256": "cbd359b8970e617ced1d12e0a286847a20771ec936a97d83ecf9660095626ab7"
+        }
+      }
+    },
+    {
+      "name": "signatureVerified",
+      "passed": true,
+      "detail": {
+        "output": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app: valid on disk\n/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app: satisfies its Designated Requirement\n",
+        "limit": "Development ad-hoc signature; unnotarized."
+      }
+    },
+    {
+      "name": "completeNoticeBundle",
+      "passed": true
+    },
+    {
+      "name": "notice:Notices/GODOT_LICENSE.txt",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Notices/GODOT_LICENSE.txt",
+        "expected": {
+          "bytes": 1149,
+          "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+        },
+        "actual": {
+          "bytes": 1149,
+          "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+        }
+      }
+    },
+    {
+      "name": "notice:Notices/GODOT_COPYRIGHT.txt",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Notices/GODOT_COPYRIGHT.txt",
+        "expected": {
+          "bytes": 100108,
+          "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+        },
+        "actual": {
+          "bytes": 100108,
+          "sha256": "cb1980c88089573bcacd7221d777c689bb8bbd778799f24c27fca0fe5f774d6d"
+        }
+      }
+    },
+    {
+      "name": "notice:Notices/THIRD-PARTY-NOTICES.txt",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Notices/THIRD-PARTY-NOTICES.txt",
+        "expected": {
+          "bytes": 1722,
+          "sha256": "cf8a03ca9d4c8ab0e4b2ac171ad37ff19df97d50c9f5f6e753b29a90609a01d3"
+        },
+        "actual": {
+          "bytes": 1722,
+          "sha256": "cf8a03ca9d4c8ab0e4b2ac171ad37ff19df97d50c9f5f6e753b29a90609a01d3"
+        }
+      }
+    },
+    {
+      "name": "notice:Notices/notice-manifest.json",
+      "passed": true,
+      "detail": {
+        "file": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Notices/notice-manifest.json",
+        "expected": {
+          "bytes": 2115,
+          "sha256": "12a46d08863927671688c898e4e32ede14f7829488588cd16851ea40a08b13f7"
+        },
+        "actual": {
+          "bytes": 2115,
+          "sha256": "12a46d08863927671688c898e4e32ede14f7829488588cd16851ea40a08b13f7"
+        }
+      }
+    },
+    {
+      "name": "windows:Dustlings.exe",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/Windows/Dustlings.exe",
+        "expected": {
+          "bytes": 109136384,
+          "sha256": "72ef1353d2ab676ec0c138bc2b4aa1925f8a6335156857e81eb44607e3ccbc92"
+        },
+        "actual": {
+          "bytes": 109136384,
+          "sha256": "72ef1353d2ab676ec0c138bc2b4aa1925f8a6335156857e81eb44607e3ccbc92"
+        }
+      }
+    },
+    {
+      "name": "windows:Dustlings.pck",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/builds/3d/0.5.1-rpg-dev-2026-09-14T02-08-04-569Z-fbd4e6d10d/Windows/Dustlings.pck",
+        "expected": {
+          "bytes": 2482776,
+          "sha256": "cbd359b8970e617ced1d12e0a286847a20771ec936a97d83ecf9660095626ab7"
+        },
+        "actual": {
+          "bytes": 2482776,
+          "sha256": "cbd359b8970e617ced1d12e0a286847a20771ec936a97d83ecf9660095626ab7"
+        }
+      }
+    },
+    {
+      "name": "windowsPckIdentity",
+      "passed": true
+    },
+    {
+      "name": "windowsExeIdentity",
+      "passed": true
+    },
+    {
+      "name": "freshProcess",
+      "passed": true,
+      "detail": {
+        "label": "fresh",
+        "qaCase": "overview",
+        "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/MacOS/Dustlings",
+        "args": [
+          "--resolution",
+          "1280x800",
+          "--",
+          "--rpg-qa",
+          "--rpg-case=overview",
+          "--evidence=/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/package-release-20260914/fresh"
+        ],
+        "started": "2026-09-14T02:18:23.530Z",
+        "pid": 57429,
+        "finished": "2026-09-14T02:18:46.264Z",
+        "exitCode": 0,
+        "signal": null,
+        "diagnostics": [],
+        "graphics": "Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)",
+        "result": {
+          "bytes": 1714,
+          "sha256": "7849c81eeb7545fc78466ca0a34bac6949a6b403df0711684cb1c7c16602b5da"
+        }
+      }
+    },
+    {
+      "name": "freshDiagnostics",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "freshGeneratedRoute",
+      "passed": true,
+      "detail": [
+        {
+          "command": "{ \"wait\": 1.0 }",
+          "nearest": "",
+          "ok": true,
+          "position": "(0.0, 0.0, 9.0)",
+          "step": 0,
+          "time": 1.002891
+        },
+        {
+          "command": "{ \"capture\": \"welcome\" }",
+          "nearest": "",
+          "ok": true,
+          "position": "(0.0, 0.0, 9.0)",
+          "step": 1,
+          "time": 1.01122433333333
+        },
+        {
+          "command": "{ \"button\": \"Step into\" }",
+          "nearest": "",
+          "ok": true,
+          "position": "(0.0, 0.0, 9.0)",
+          "step": 2,
+          "time": 1.08333333333333
+        },
+        {
+          "command": "{ \"wait\": 3.0 }",
+          "nearest": "",
+          "ok": true,
+          "position": "(0.0, 0.0, 9.0)",
+          "step": 3,
+          "time": 4.08783166666666
+        },
+        {
+          "command": "{ \"capture\": \"arrival\" }",
+          "nearest": "",
+          "ok": true,
+          "position": "(0.0, 0.0, 9.0)",
+          "step": 4,
+          "time": 4.09616499999999
+        },
+        {
+          "command": "{ \"wait\": 1.0 }",
+          "nearest": "",
+          "ok": true,
+          "position": "(0.0, 0.0, 9.0)",
+          "step": 5,
+          "time": 5.09857400000003
+        }
+      ]
+    },
+    {
+      "name": "freshNoHumanClaim",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "welcomePNG",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/package-release-20260914/fresh/welcome.png",
+        "width": 1280,
+        "height": 800,
+        "bytes": 324277,
+        "sha256": "d2bb5f0e95d9594184d845e9724d0504db98134de60f0c120c5da3cfae476920"
+      }
+    },
+    {
+      "name": "arrivalPNG",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/package-release-20260914/fresh/arrival.png",
+        "width": 1280,
+        "height": 800,
+        "bytes": 394199,
+        "sha256": "9a971ed675302d467946cf75d71cc1bb20b65f31ba536618c4989ac1339ef732"
+      }
+    },
+    {
+      "name": "freshEmptyStory",
+      "passed": true
+    },
+    {
+      "name": "freshDustIntact",
+      "passed": true
+    },
+    {
+      "name": "resumeProcess",
+      "passed": true,
+      "detail": {
+        "label": "resume",
+        "qaCase": "resume",
+        "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/MacOS/Dustlings",
+        "args": [
+          "--resolution",
+          "1280x800",
+          "--",
+          "--rpg-qa",
+          "--rpg-case=resume",
+          "--evidence=/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/package-release-20260914/resume"
+        ],
+        "started": "2026-09-14T02:18:46.267Z",
+        "pid": 57470,
+        "finished": "2026-09-14T02:18:51.853Z",
+        "exitCode": 0,
+        "signal": null,
+        "diagnostics": [],
+        "graphics": "Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)",
+        "result": {
+          "bytes": 2735,
+          "sha256": "b090332522874c05d14ae01e2bcfecb83242febaeb8724460f16838327fc2b60"
+        }
+      }
+    },
+    {
+      "name": "resumeDiagnostics",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "resumeGeneratedRoute",
+      "passed": true,
+      "detail": [
+        {
+          "command": "{ \"wait\": 1.0 }",
+          "nearest": "",
+          "ok": true,
+          "position": "(-9.890633, 0.000843, 5.192171)",
+          "step": 0,
+          "time": 1.00116466666667
+        },
+        {
+          "command": "{ \"button\": \"Return home\" }",
+          "nearest": "",
+          "ok": true,
+          "position": "(-9.890633, 0.000843, 5.192171)",
+          "step": 1,
+          "time": 1.009498
+        },
+        {
+          "command": "{ \"wait\": 2.0 }",
+          "nearest": "home",
+          "ok": true,
+          "position": "(-9.890633, 0.000843, 5.192171)",
+          "step": 2,
+          "time": 3.01548199999999
+        },
+        {
+          "command": "{ \"capture\": \"resumed\" }",
+          "nearest": "home",
+          "ok": true,
+          "position": "(-9.890633, 0.000843, 5.192171)",
+          "step": 3,
+          "time": 3.02381533333333
+        }
+      ]
+    },
+    {
+      "name": "resumeNoHumanClaim",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "resumedPNG",
+      "passed": true,
+      "detail": {
+        "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/package-release-20260914/resume/resumed.png",
+        "width": 1280,
+        "height": 800,
+        "bytes": 557647,
+        "sha256": "cbdbb133c25a9398bf309c533a2dd1a8c98292a557a37a16022fff4b71d4cab5"
+      }
+    },
+    {
+      "name": "resume:game",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "day": 1,
+          "flags": {
+            "alcove_found": true,
+            "bridge_cleared": true,
+            "bridge_plan": true,
+            "bridge_repaired": true,
+            "first_companion": true,
+            "garden_invited": true,
+            "garden_watered": true,
+            "glow_unlocked": true,
+            "greenhouse_open": true,
+            "herbs_gathered": true,
+            "ivo_concern": true,
+            "map_delivered": true,
+            "map_shared": true,
+            "mara_concern": true,
+            "melody_learned": true,
+            "memory_found": true,
+            "met_ivo": true,
+            "met_mara": true,
+            "met_nell": true,
+            "met_tavi": true,
+            "nell_concern": true,
+            "parcel_collected": true,
+            "recipe_shared": true,
+            "shared_table": true,
+            "tavi_concern": true,
+            "wood_collected": true,
+            "workshop_invited": true
+          },
+          "home": "sage",
+          "schema": 1,
+          "trust": {
+            "ivo": 4,
+            "mara": 4,
+            "nell": 4,
+            "tavi": 4
+          }
+        },
+        "actual": {
+          "day": 1,
+          "flags": {
+            "alcove_found": true,
+            "bridge_cleared": true,
+            "bridge_plan": true,
+            "bridge_repaired": true,
+            "first_companion": true,
+            "garden_invited": true,
+            "garden_watered": true,
+            "glow_unlocked": true,
+            "greenhouse_open": true,
+            "herbs_gathered": true,
+            "ivo_concern": true,
+            "map_delivered": true,
+            "map_shared": true,
+            "mara_concern": true,
+            "melody_learned": true,
+            "memory_found": true,
+            "met_ivo": true,
+            "met_mara": true,
+            "met_nell": true,
+            "met_tavi": true,
+            "nell_concern": true,
+            "parcel_collected": true,
+            "recipe_shared": true,
+            "shared_table": true,
+            "tavi_concern": true,
+            "wood_collected": true,
+            "workshop_invited": true
+          },
+          "home": "sage",
+          "schema": 1,
+          "trust": {
+            "ivo": 4,
+            "mara": 4,
+            "nell": 4,
+            "tavi": 4
+          }
+        }
+      }
+    },
+    {
+      "name": "resume:settings",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "ambience": 0.55,
+          "gentle": false,
+          "invert": false,
+          "music": 0.6,
+          "quality": true,
+          "sensitivity": 1,
+          "sfx": 0.75
+        },
+        "actual": {
+          "ambience": 0.55,
+          "gentle": false,
+          "invert": false,
+          "music": 0.6,
+          "quality": true,
+          "sensitivity": 1,
+          "sfx": 0.75
+        }
+      }
+    },
+    {
+      "name": "resume:patches",
+      "passed": true,
+      "detail": {
+        "expected": {
+          "bridge": 0,
+          "lantern": 0
+        },
+        "actual": {
+          "bridge": 0,
+          "lantern": 0
+        }
+      }
+    },
+    {
+      "name": "resume:sceneStory",
+      "passed": true
+    },
+    {
+      "name": "resume:scenePatches",
+      "passed": true
+    },
+    {
+      "name": "resume:diskPosition",
+      "passed": true,
+      "detail": {
+        "expected": [
+          -9.89063262939453,
+          0.000842543784528971,
+          5.19217109680176
+        ],
+        "actual": [
+          -9.89063262939453,
+          0.000842543784528971,
+          5.19217109680176
+        ],
+        "difference": 0,
+        "maxDistance": 0.035,
+        "reason": "Allows small grounded physics settling; no movement inputs in resume route."
+      }
+    },
+    {
+      "name": "resume:scenePosition",
+      "passed": true,
+      "detail": {
+        "expected": [
+          -9.89063262939453,
+          0.000842543784528971,
+          5.19217109680176
+        ],
+        "actual": [
+          -9.89063262939453,
+          0.000842543784528971,
+          5.19217109680176
+        ],
+        "difference": 0,
+        "maxDistance": 0.035,
+        "reason": "Allows small grounded physics settling; no movement inputs in resume route."
+      }
+    },
+    {
+      "name": "recoveryProcess",
+      "passed": true,
+      "detail": {
+        "label": "recovery",
+        "qaCase": "resume",
+        "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/MacOS/Dustlings",
+        "args": [
+          "--resolution",
+          "1280x800",
+          "--",
+          "--rpg-qa",
+          "--rpg-case=resume",
+          "--evidence=/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/package-release-20260914/recovery"
+        ],
+        "started": "2026-09-14T02:18:51.855Z",
+        "pid": 57509,
+        "finished": "2026-09-14T02:18:55.965Z",
+        "exitCode": 0,
+        "signal": null,
+        "diagnostics": [
+          "ERROR: Parse JSON failed. Error at line 0: Expected '}'",
+          "ERROR: Parse JSON failed. Error at line 0: Expected '}'",
+          "ERROR: Parse JSON failed. Error at line 0: Expected '}'",
+          "ERROR: Parse JSON failed. Error at line 0: Expected '}'"
+        ],
+        "graphics": "Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)"
+      }
+    },
+    {
+      "name": "recoveryDiagnostics",
+      "passed": false,
+      "detail": [
+        "ERROR: Parse JSON failed. Error at line 0: Expected '}'",
+        "ERROR: Parse JSON failed. Error at line 0: Expected '}'",
+        "ERROR: Parse JSON failed. Error at line 0: Expected '}'",
+        "ERROR: Parse JSON failed. Error at line 0: Expected '}'"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "label": "fresh",
+      "qaCase": "overview",
+      "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/MacOS/Dustlings",
+      "args": [
+        "--resolution",
+        "1280x800",
+        "--",
+        "--rpg-qa",
+        "--rpg-case=overview",
+        "--evidence=/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/package-release-20260914/fresh"
+      ],
+      "started": "2026-09-14T02:18:23.530Z",
+      "pid": 57429,
+      "finished": "2026-09-14T02:18:46.264Z",
+      "exitCode": 0,
+      "signal": null,
+      "diagnostics": [],
+      "graphics": "Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)",
+      "result": {
+        "bytes": 1714,
+        "sha256": "7849c81eeb7545fc78466ca0a34bac6949a6b403df0711684cb1c7c16602b5da"
+      }
+    },
+    {
+      "label": "resume",
+      "qaCase": "resume",
+      "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/MacOS/Dustlings",
+      "args": [
+        "--resolution",
+        "1280x800",
+        "--",
+        "--rpg-qa",
+        "--rpg-case=resume",
+        "--evidence=/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/package-release-20260914/resume"
+      ],
+      "started": "2026-09-14T02:18:46.267Z",
+      "pid": 57470,
+      "finished": "2026-09-14T02:18:51.853Z",
+      "exitCode": 0,
+      "signal": null,
+      "diagnostics": [],
+      "graphics": "Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)",
+      "result": {
+        "bytes": 2735,
+        "sha256": "b090332522874c05d14ae01e2bcfecb83242febaeb8724460f16838327fc2b60"
+      }
+    },
+    {
+      "label": "recovery",
+      "qaCase": "resume",
+      "executable": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/MacOS/Dustlings",
+      "args": [
+        "--resolution",
+        "1280x800",
+        "--",
+        "--rpg-qa",
+        "--rpg-case=resume",
+        "--evidence=/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/package-release-20260914/recovery"
+      ],
+      "started": "2026-09-14T02:18:51.855Z",
+      "pid": 57509,
+      "finished": "2026-09-14T02:18:55.965Z",
+      "exitCode": 0,
+      "signal": null,
+      "diagnostics": [
+        "ERROR: Parse JSON failed. Error at line 0: Expected '}'",
+        "ERROR: Parse JSON failed. Error at line 0: Expected '}'",
+        "ERROR: Parse JSON failed. Error at line 0: Expected '}'",
+        "ERROR: Parse JSON failed. Error at line 0: Expected '}'"
+      ],
+      "graphics": "Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M4 Pro (Apple9)"
+    }
+  ],
+  "failures": [
+    "Error: recoveryDiagnostics: [\"ERROR: Parse JSON failed. Error at line 0: Expected '}'\",\"ERROR: Parse JSON failed. Error at line 0: Expected '}'\",\"ERROR: Parse JSON failed. Error at line 0: Expected '}'\",\"ERROR: Parse JSON failed. Error at line 0: Expected '}'\"]\n    at check (file:///Users/xingzhaoji/Desktop/mine/Dustlings/tools/rpg-package-check.mjs:48:22)\n    at launch (file:///Users/xingzhaoji/Desktop/mine/Dustlings/tools/rpg-package-check.mjs:104:3)\n    at async file:///Users/xingzhaoji/Desktop/mine/Dustlings/tools/rpg-package-check.mjs:189:20"
+  ],
+  "ok": false,
+  "manifest": {
+    "sha256": "001caba1ce603f2ebc0f76f4a497ac1df247e73eb049aaa4ef160979a647a1c6",
+    "bytes": 55644,
+    "source": {
+      "revision": "02d7aebc449146254ed9f8fc040603d5a2b980ec",
+      "dirty": false,
+      "repositoryDirty": true,
+      "status": "",
+      "repositoryStatus": " M evidence/rpg/actor/pose-checks.json\n M evidence/rpg/save-checks.json\n M evidence/rpg/story-checks.json\n?? artifacts/audio/ui-regression/audition-levels.svg\n?? artifacts/audio/ui-regression/courtyard-audition.wav\n?? evidence/rpg/media-1080p-probe-20260914/arrival.png\n?? evidence/rpg/media-1080p-probe-20260914/capture-manifest.json\n?? evidence/rpg/media-1080p-probe-20260914/driver-parse.log\n?? evidence/rpg/media-1080p-probe-20260914/encode.log\n?? evidence/rpg/media-1080p-probe-20260914/import.log\n?? evidence/rpg/media-1080p-probe-20260914/isolated-save.json\n?? evidence/rpg/media-1080p-probe-20260914/native.log\n?? evidence/rpg/media-1080p-probe-20260914/overview.mp4\n?? evidence/rpg/media-1080p-probe-20260914/raw-movie-retention.json\n?? evidence/rpg/media-1080p-probe-20260914/results.json\n?? evidence/rpg/media-1080p-probe-20260914/welcome.png\n?? evidence/rpg/media-writer-1080p-probe-20260914/arrival.png\n?? evidence/rpg/media-writer-1080p-probe-20260914/capture-manifest.json\n?? evidence/rpg/media-writer-1080p-probe-20260914/driver-parse.log\n?? evidence/rpg/media-writer-1080p-probe-20260914/encode.log\n?? evidence/rpg/media-writer-1080p-probe-20260914/import.log\n?? evidence/rpg/media-writer-1080p-probe-20260914/isolated-save.json\n?? evidence/rpg/media-writer-1080p-probe-20260914/movie-format.json\n?? evidence/rpg/media-writer-1080p-probe-20260914/native.log\n?? evidence/rpg/media-writer-1080p-probe-20260914/overview.mp4\n?? evidence/rpg/media-writer-1080p-probe-20260914/raw-movie-retention.json\n?? evidence/rpg/media-writer-1080p-probe-20260914/results.json\n?? evidence/rpg/media-writer-1080p-probe-20260914/welcome.png\n?? evidence/rpg/neighborhood-active-lane-profile-20260914/capture-manifest.json\n?? evidence/rpg/neighborhood-active-lane-profile-20260914/driver-parse.log\n?? evidence/rpg/neighborhood-active-lane-profile-20260914/import.log\n?? evidence/rpg/neighborhood-active-lane-profile-20260914/isolated-save.json\n?? evidence/rpg/neighborhood-active-lane-profile-20260914/isolated-save.json.backup\n?? evidence/rpg/neighborhood-active-lane-profile-20260914/native.log\n?? evidence/rpg/neighborhood-active-lane-profile-20260914/results.json\n?? evidence/rpg/neighborhood-active-profile-20260914/capture-manifest.json\n?? evidence/rpg/neighborhood-active-profile-20260914/driver-parse.log\n?? evidence/rpg/neighborhood-active-profile-20260914/import.log\n?? evidence/rpg/neighborhood-active-profile-20260914/isolated-save.json\n?? evidence/rpg/neighborhood-active-profile-20260914/isolated-save.json.backup\n?? evidence/rpg/neighborhood-active-profile-20260914/native.log\n?? evidence/rpg/neighborhood-active-profile-20260914/results.json\n?? evidence/rpg/neighborhood-art-min-20260914/art-arrival.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-first-companion.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-ivo-gesture.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-ivo-notice.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-ivo-return.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-orbit-back.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-orbit-front.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-orbit-high.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-orbit-low.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-orbit-quarter.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-orbit-three-quarter.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-returned-view.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-reversal-stop.png\n?? evidence/rpg/neighborhood-art-min-20260914/art-stop-start.png\n?? evidence/rpg/neighborhood-art-min-20260914/art.mp4\n?? evidence/rpg/neighborhood-art-min-20260914/capture-manifest.json\n?? evidence/rpg/neighborhood-art-min-20260914/driver-parse.log\n?? evidence/rpg/neighborhood-art-min-20260914/encode-failed-route.log\n?? evidence/rpg/neighborhood-art-min-20260914/import.log\n?? evidence/rpg/neighborhood-art-min-20260914/isolated-save.json\n?? evidence/rpg/neighborhood-art-min-20260914/isolated-save.json.backup\n?? evidence/rpg/neighborhood-art-min-20260914/native.log\n?? evidence/rpg/neighborhood-art-min-20260914/raw-movie-retention.json\n?? evidence/rpg/neighborhood-art-min-20260914/results.json\n?? evidence/rpg/neighborhood-art-min-20260914/welcome.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-arrival.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-first-companion.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-ivo-gesture.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-ivo-notice.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-ivo-return.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-orbit-back.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-orbit-front.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-orbit-high.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-orbit-low.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-orbit-quarter.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-orbit-three-quarter.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-returned-view.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-reversal-stop.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art-stop-start.png\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/art.mp4\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/capture-manifest.json\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/driver-parse.log\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/encode.log\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/import.log\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/isolated-save.json\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/isolated-save.json.backup\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/native.log\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/raw-movie-retention.json\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/results.json\n?? evidence/rpg/neighborhood-art-min-fixed-20260914/welcome.png\n?? evidence/rpg/neighborhood-opening-profile-20260914/capture-manifest.json\n?? evidence/rpg/neighborhood-opening-profile-20260914/driver-parse.log\n?? evidence/rpg/neighborhood-opening-profile-20260914/import.log\n?? evidence/rpg/neighborhood-opening-profile-20260914/isolated-save.json\n?? evidence/rpg/neighborhood-opening-profile-20260914/isolated-save.json.backup\n?? evidence/rpg/neighborhood-opening-profile-20260914/native.log\n?? evidence/rpg/neighborhood-opening-profile-20260914/results.json\n?? evidence/rpg/neighborhood-release-hd-20260914/alcove.png\n?? evidence/rpg/neighborhood-release-hd-20260914/arrival.png\n?? evidence/rpg/neighborhood-release-hd-20260914/bridge-after.png\n?? evidence/rpg/neighborhood-release-hd-20260914/bridge-before.png\n?? evidence/rpg/neighborhood-release-hd-20260914/capture-manifest.json\n?? evidence/rpg/neighborhood-release-hd-20260914/driver-parse.log\n?? evidence/rpg/neighborhood-release-hd-20260914/encode.log\n?? evidence/rpg/neighborhood-release-hd-20260914/first-companion.png\n?? evidence/rpg/neighborhood-release-hd-20260914/garden.png\n?? evidence/rpg/neighborhood-release-hd-20260914/gathering.png\n?? evidence/rpg/neighborhood-release-hd-20260914/greenhouse.png\n?? evidence/rpg/neighborhood-release-hd-20260914/home-interior.png\n?? evidence/rpg/neighborhood-release-hd-20260914/home-return.png\n?? evidence/rpg/neighborhood-release-hd-20260914/import.log\n?? evidence/rpg/neighborhood-release-hd-20260914/isolated-save.json\n?? evidence/rpg/neighborhood-release-hd-20260914/isolated-save.json.backup\n?? evidence/rpg/neighborhood-release-hd-20260914/ivo.png\n?? evidence/rpg/neighborhood-release-hd-20260914/ivy-after.png\n?? evidence/rpg/neighborhood-release-hd-20260914/ivy-before.png\n?? evidence/rpg/neighborhood-release-hd-20260914/letter.png\n?? evidence/rpg/neighborhood-release-hd-20260914/mara.png\n?? evidence/rpg/neighborhood-release-hd-20260914/melody.png\n?? evidence/rpg/neighborhood-release-hd-20260914/moth-exchange.png\n?? evidence/rpg/neighborhood-release-hd-20260914/moth-gift.png\n?? evidence/rpg/neighborhood-release-hd-20260914/native.log\n?? evidence/rpg/neighborhood-release-hd-20260914/nell.png\n?? evidence/rpg/neighborhood-release-hd-20260914/raw-movie-retention.json\n?? evidence/rpg/neighborhood-release-hd-20260914/results.json\n?? evidence/rpg/neighborhood-release-hd-20260914/route.mp4\n?? evidence/rpg/neighborhood-release-hd-20260914/tavi.png\n?? evidence/rpg/neighborhood-store-media-20260914/alcove.png\n?? evidence/rpg/neighborhood-store-media-20260914/arrival.png\n?? evidence/rpg/neighborhood-store-media-20260914/bridge-after.png\n?? evidence/rpg/neighborhood-store-media-20260914/bridge-before.png\n?? evidence/rpg/neighborhood-store-media-20260914/capture-manifest.json\n?? evidence/rpg/neighborhood-store-media-20260914/driver-parse.log\n?? evidence/rpg/neighborhood-store-media-20260914/encode.log\n?? evidence/rpg/neighborhood-store-media-20260914/first-companion.png\n?? evidence/rpg/neighborhood-store-media-20260914/garden.png\n?? evidence/rpg/neighborhood-store-media-20260914/gathering.png\n?? evidence/rpg/neighborhood-store-media-20260914/greenhouse.png\n?? evidence/rpg/neighborhood-store-media-20260914/home-interior.png\n?? evidence/rpg/neighborhood-store-media-20260914/home-return.png\n?? evidence/rpg/neighborhood-store-media-20260914/import.log\n?? evidence/rpg/neighborhood-store-media-20260914/isolated-save.json\n?? evidence/rpg/neighborhood-store-media-20260914/isolated-save.json.backup\n?? evidence/rpg/neighborhood-store-media-20260914/ivo.png\n?? evidence/rpg/neighborhood-store-media-20260914/ivy-after.png\n?? evidence/rpg/neighborhood-store-media-20260914/ivy-before.png\n?? evidence/rpg/neighborhood-store-media-20260914/letter.png\n?? evidence/rpg/neighborhood-store-media-20260914/mara.png\n?? evidence/rpg/neighborhood-store-media-20260914/melody.png\n?? evidence/rpg/neighborhood-store-media-20260914/moth-exchange.png\n?? evidence/rpg/neighborhood-store-media-20260914/moth-gift.png\n?? evidence/rpg/neighborhood-store-media-20260914/native.log\n?? evidence/rpg/neighborhood-store-media-20260914/nell.png\n?? evidence/rpg/neighborhood-store-media-20260914/raw-movie-retention.json\n?? evidence/rpg/neighborhood-store-media-20260914/results.json\n?? evidence/rpg/neighborhood-store-media-20260914/route.mp4\n?? evidence/rpg/neighborhood-store-media-20260914/tavi.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/alcove.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/arrival.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/bridge-after.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/bridge-before.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/capture-manifest.json\n?? evidence/rpg/neighborhood-store-media-final-20260914/driver-parse.log\n?? evidence/rpg/neighborhood-store-media-final-20260914/encode.log\n?? evidence/rpg/neighborhood-store-media-final-20260914/first-companion.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/garden.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/gathering.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/greenhouse.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/home-interior.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/home-return.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/import.log\n?? evidence/rpg/neighborhood-store-media-final-20260914/isolated-save.json\n?? evidence/rpg/neighborhood-store-media-final-20260914/isolated-save.json.backup\n?? evidence/rpg/neighborhood-store-media-final-20260914/ivo.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/ivy-after.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/ivy-before.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/letter.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/mara.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/melody.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/moth-exchange.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/moth-gift.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/movie-format.json\n?? evidence/rpg/neighborhood-store-media-final-20260914/native.log\n?? evidence/rpg/neighborhood-store-media-final-20260914/nell.png\n?? evidence/rpg/neighborhood-store-media-final-20260914/raw-movie-retention.json\n?? evidence/rpg/neighborhood-store-media-final-20260914/results.json\n?? evidence/rpg/neighborhood-store-media-final-20260914/route.mp4\n?? evidence/rpg/neighborhood-store-media-final-20260914/tavi.png\n?? evidence/rpg/neighborhood-tea-20260914/alcove.png\n?? evidence/rpg/neighborhood-tea-20260914/arrival.png\n?? evidence/rpg/neighborhood-tea-20260914/bridge-after.png\n?? evidence/rpg/neighborhood-tea-20260914/bridge-before.png\n?? evidence/rpg/neighborhood-tea-20260914/capture-manifest.json\n?? evidence/rpg/neighborhood-tea-20260914/driver-parse.log\n?? evidence/rpg/neighborhood-tea-20260914/encode.log\n?? evidence/rpg/neighborhood-tea-20260914/first-companion.png\n?? evidence/rpg/neighborhood-tea-20260914/garden.png\n?? evidence/rpg/neighborhood-tea-20260914/gathering.png\n?? evidence/rpg/neighborhood-tea-20260914/greenhouse.png\n?? evidence/rpg/neighborhood-tea-20260914/home-interior.png\n?? evidence/rpg/neighborhood-tea-20260914/home-return.png\n?? evidence/rpg/neighborhood-tea-20260914/import.log\n?? evidence/rpg/neighborhood-tea-20260914/isolated-save.json\n?? evidence/rpg/neighborhood-tea-20260914/isolated-save.json.backup\n?? evidence/rpg/neighborhood-tea-20260914/ivo.png\n?? evidence/rpg/neighborhood-tea-20260914/ivy-after.png\n?? evidence/rpg/neighborhood-tea-20260914/ivy-before.png\n?? evidence/rpg/neighborhood-tea-20260914/letter.png\n?? evidence/rpg/neighborhood-tea-20260914/mara.png\n?? evidence/rpg/neighborhood-tea-20260914/melody.png\n?? evidence/rpg/neighborhood-tea-20260914/moth-exchange.png\n?? evidence/rpg/neighborhood-tea-20260914/moth-gift.png\n?? evidence/rpg/neighborhood-tea-20260914/native.log\n?? evidence/rpg/neighborhood-tea-20260914/nell.png\n?? evidence/rpg/neighborhood-tea-20260914/raw-movie-retention.json\n?? evidence/rpg/neighborhood-tea-20260914/results.json\n?? evidence/rpg/neighborhood-tea-20260914/route.mp4\n?? evidence/rpg/neighborhood-tea-20260914/tavi.png\n?? evidence/rpg/neighborhood-ui-min-20260914/capture-manifest.json\n?? evidence/rpg/neighborhood-ui-min-20260914/driver-parse.log\n?? evidence/rpg/neighborhood-ui-min-20260914/encode.log\n?? evidence/rpg/neighborhood-ui-min-20260914/import.log\n?? evidence/rpg/neighborhood-ui-min-20260914/isolated-save.json\n?? evidence/rpg/neighborhood-ui-min-20260914/isolated-save.json.backup\n?? evidence/rpg/neighborhood-ui-min-20260914/journal.png\n?? evidence/rpg/neighborhood-ui-min-20260914/native.log\n?? evidence/rpg/neighborhood-ui-min-20260914/raw-movie-retention.json\n?? evidence/rpg/neighborhood-ui-min-20260914/results.json\n?? evidence/rpg/neighborhood-ui-min-20260914/settings.png\n?? evidence/rpg/neighborhood-ui-min-20260914/ui.mp4\n?? evidence/rpg/neighborhood-ui-min-20260914/welcome.png\n?? evidence/rpg/package-validation-2026-09-14/report.json\n?? evidence/rpg/quality-2026-09-14/accidental-unisolated-save/NOTE.json\n?? evidence/rpg/quality-2026-09-14/accidental-unisolated-save/neighborhood-v1.json\n?? evidence/rpg/quality-2026-09-14/accidental-unisolated-save/neighborhood-v1.json.backup\n?? evidence/rpg/quality-2026-09-14/accidental-unisolated-save/original-neighborhood-v1.json\n?? evidence/rpg/quality-2026-09-14/accidental-unisolated-save/original-neighborhood-v1.json.backup\n?? evidence/rpg/quality-2026-09-14/actor.log\n?? evidence/rpg/quality-2026-09-14/actor/pose-checks.json\n?? evidence/rpg/quality-2026-09-14/final-checks/actor/pose-checks.json\n?? evidence/rpg/quality-2026-09-14/final-checks/actor/run.log\n?? evidence/rpg/quality-2026-09-14/final-checks/companion/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/final-checks/companion/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/final-checks/companion/report.json\n?? evidence/rpg/quality-2026-09-14/final-checks/companion/run.log\n?? evidence/rpg/quality-2026-09-14/final-checks/earned_route/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/final-checks/earned_route/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/final-checks/earned_route/results.json\n?? evidence/rpg/quality-2026-09-14/final-checks/earned_route/route-observations.json\n?? evidence/rpg/quality-2026-09-14/final-checks/earned_route/run.log\n?? evidence/rpg/quality-2026-09-14/final-checks/integration/earlier-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/final-checks/integration/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/final-checks/integration/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/final-checks/integration/later-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/final-checks/integration/quiet-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/final-checks/integration/report.json\n?? evidence/rpg/quality-2026-09-14/final-checks/integration/run.log\n?? evidence/rpg/quality-2026-09-14/final-checks/report.json\n?? evidence/rpg/quality-2026-09-14/final-checks/reveal/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/final-checks/reveal/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/final-checks/reveal/report.json\n?? evidence/rpg/quality-2026-09-14/final-checks/reveal/run.log\n?? evidence/rpg/quality-2026-09-14/final-checks/save/run.log\n?? evidence/rpg/quality-2026-09-14/final-checks/story/run.log\n?? evidence/rpg/quality-2026-09-14/guard-checks/companion.log\n?? evidence/rpg/quality-2026-09-14/guard-checks/earned_route.log\n?? evidence/rpg/quality-2026-09-14/guard-checks/integration.log\n?? evidence/rpg/quality-2026-09-14/guard-checks/report.json\n?? evidence/rpg/quality-2026-09-14/guard-checks/reveal.log\n?? evidence/rpg/quality-2026-09-14/isolated/integration/earlier-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/isolated/integration/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/isolated/integration/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/isolated/integration/later-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/isolated/integration/quiet-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/isolated/integration/report.json\n?? evidence/rpg/quality-2026-09-14/isolated/integration/run.log\n?? evidence/rpg/quality-2026-09-14/isolated/reveal/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/isolated/reveal/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/isolated/reveal/report.json\n?? evidence/rpg/quality-2026-09-14/isolated/reveal/run.log\n?? evidence/rpg/quality-2026-09-14/navigation-fix/integration/earlier-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/navigation-fix/integration/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/navigation-fix/integration/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/navigation-fix/integration/later-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/navigation-fix/integration/quiet-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/navigation-fix/integration/report.json\n?? evidence/rpg/quality-2026-09-14/navigation-fix/integration/run.log\n?? evidence/rpg/quality-2026-09-14/performance-conditions/conditions.json\n?? evidence/rpg/quality-2026-09-14/performance-conditions/processes-before.txt\n?? evidence/rpg/quality-2026-09-14/release-checks/actor/pose-checks.json\n?? evidence/rpg/quality-2026-09-14/release-checks/actor/run.log\n?? evidence/rpg/quality-2026-09-14/release-checks/companion/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/release-checks/companion/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/release-checks/companion/report.json\n?? evidence/rpg/quality-2026-09-14/release-checks/companion/run.log\n?? evidence/rpg/quality-2026-09-14/release-checks/earned_route/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/release-checks/earned_route/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/release-checks/earned_route/results.json\n?? evidence/rpg/quality-2026-09-14/release-checks/earned_route/route-observations.json\n?? evidence/rpg/quality-2026-09-14/release-checks/earned_route/run.log\n?? evidence/rpg/quality-2026-09-14/release-checks/integration/earlier-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/release-checks/integration/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/release-checks/integration/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/release-checks/integration/later-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/release-checks/integration/quiet-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/release-checks/integration/report.json\n?? evidence/rpg/quality-2026-09-14/release-checks/integration/run.log\n?? evidence/rpg/quality-2026-09-14/release-checks/report.json\n?? evidence/rpg/quality-2026-09-14/release-checks/reveal/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/release-checks/reveal/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/release-checks/reveal/report.json\n?? evidence/rpg/quality-2026-09-14/release-checks/reveal/run.log\n?? evidence/rpg/quality-2026-09-14/release-checks/save/run.log\n?? evidence/rpg/quality-2026-09-14/release-checks/story/run.log\n?? evidence/rpg/quality-2026-09-14/retry-fix/companion/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/retry-fix/companion/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/retry-fix/companion/report.json\n?? evidence/rpg/quality-2026-09-14/retry-fix/companion/run.log\n?? evidence/rpg/quality-2026-09-14/retry-fix/earned_route/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/retry-fix/earned_route/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/retry-fix/earned_route/results.json\n?? evidence/rpg/quality-2026-09-14/retry-fix/earned_route/route-observations.json\n?? evidence/rpg/quality-2026-09-14/retry-fix/earned_route/run.log\n?? evidence/rpg/quality-2026-09-14/retry-fix/integration/earlier-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/retry-fix/integration/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/retry-fix/integration/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/retry-fix/integration/later-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/retry-fix/integration/quiet-copy.dustlings\n?? evidence/rpg/quality-2026-09-14/retry-fix/integration/report.json\n?? evidence/rpg/quality-2026-09-14/retry-fix/integration/run.log\n?? evidence/rpg/quality-2026-09-14/retry-fix/report.json\n?? evidence/rpg/quality-2026-09-14/reveal.log\n?? evidence/rpg/quality-2026-09-14/reveal/report.json\n?? evidence/rpg/quality-2026-09-14/save.log\n?? evidence/rpg/quality-2026-09-14/story.log\n?? evidence/rpg/quality-2026-09-14/tea-interactions/earned_route/isolated-save.json\n?? evidence/rpg/quality-2026-09-14/tea-interactions/earned_route/isolated-save.json.backup\n?? evidence/rpg/quality-2026-09-14/tea-interactions/earned_route/results.json\n?? evidence/rpg/quality-2026-09-14/tea-interactions/earned_route/route-observations.json\n?? evidence/rpg/quality-2026-09-14/tea-interactions/earned_route/run.log\n?? evidence/rpg/quality-2026-09-14/tea-interactions/report.json\n?? evidence/rpg/review-2026-09-14/arrival.png\n?? evidence/rpg/review-2026-09-14/discovery.png\n?? evidence/rpg/review-2026-09-14/ending.png\n?? evidence/rpg/review-2026-09-14/gathering.png\n?? evidence/rpg/store-kit-20260914/app-icon-256.png\n?? evidence/rpg/store-kit-20260914/app-icon.svg\n?? evidence/rpg/store-kit-20260914/bridge-after.png\n?? evidence/rpg/store-kit-20260914/capsule-header.png\n?? evidence/rpg/store-kit-20260914/capsule-main.png\n?? evidence/rpg/store-kit-20260914/capsule-small.png\n?? evidence/rpg/store-kit-20260914/capsule-vertical.png\n?? evidence/rpg/store-kit-20260914/first-companion.png\n?? evidence/rpg/store-kit-20260914/garden.png\n?? evidence/rpg/store-kit-20260914/gathering.png\n?? evidence/rpg/store-kit-20260914/home-interior.png\n?? evidence/rpg/store-kit-20260914/ivo.png\n?? evidence/rpg/store-kit-20260914/ivy-after.png\n?? evidence/rpg/store-kit-final-20260914/app-icon-256.png\n?? evidence/rpg/store-kit-final-20260914/app-icon.svg\n?? evidence/rpg/store-kit-final-20260914/bridge-after.png\n?? evidence/rpg/store-kit-final-20260914/capsule-header.png\n?? evidence/rpg/store-kit-final-20260914/capsule-main.png\n?? evidence/rpg/store-kit-final-20260914/capsule-small.png\n?? evidence/rpg/store-kit-final-20260914/capsule-vertical.png\n?? evidence/rpg/store-kit-final-20260914/first-companion.png\n?? evidence/rpg/store-kit-final-20260914/gameplay-preview.mp4\n?? evidence/rpg/store-kit-final-20260914/garden.png\n?? evidence/rpg/store-kit-final-20260914/gathering.png\n?? evidence/rpg/store-kit-final-20260914/home-interior.png\n?? evidence/rpg/store-kit-final-20260914/ivo.png\n?? evidence/rpg/store-kit-final-20260914/ivy-after.png\n?? evidence/rpg/store-kit-release-20260914/README.md\n?? evidence/rpg/store-kit-release-20260914/app-icon-256.png\n?? evidence/rpg/store-kit-release-20260914/app-icon.svg\n?? evidence/rpg/store-kit-release-20260914/bridge-after.png\n?? evidence/rpg/store-kit-release-20260914/capsule-header.png\n?? evidence/rpg/store-kit-release-20260914/capsule-main.png\n?? evidence/rpg/store-kit-release-20260914/capsule-small.png\n?? evidence/rpg/store-kit-release-20260914/capsule-vertical.png\n?? evidence/rpg/store-kit-release-20260914/first-companion.png\n?? evidence/rpg/store-kit-release-20260914/gameplay-preview.mp4\n?? evidence/rpg/store-kit-release-20260914/garden.png\n?? evidence/rpg/store-kit-release-20260914/gathering.png\n?? evidence/rpg/store-kit-release-20260914/home-interior.png\n?? evidence/rpg/store-kit-release-20260914/ivo.png\n?? evidence/rpg/store-kit-release-20260914/ivy-after.png\n?? evidence/rpg/store-kit-release-20260914/media-manifest.json\n",
+      "sha256": "fbd4e6d10d92430a602436a0360f292d310e2ab42849e7df39f9117f3f849d6e",
+      "files": {
+        "assets/audio/air.ogg": {
+          "bytes": 208224,
+          "sha256": "30718bb3c0d6e9a0e7dcc0758ece8a72285fe72b14ca5ac7def59419ac2b69b1"
+        },
+        "assets/audio/air.ogg.import": {
+          "bytes": 378,
+          "sha256": "89c2178995479cee9437cadea862ec19c0450635d7747f25731efe06fa9d8200"
+        },
+        "assets/audio/assign.wav": {
+          "bytes": 264644,
+          "sha256": "ca79b53378c5283f75bb3620d6a08bfe83b2ca60199ff9464b152c91706b1187"
+        },
+        "assets/audio/assign.wav.import": {
+          "bytes": 489,
+          "sha256": "d70cf2610c17a7cd94eb414b1f3b27ef7555f741fdf7905e639d8688450e98a8"
+        },
+        "assets/audio/birth.wav": {
+          "bytes": 264644,
+          "sha256": "6d36300d8136cffe26e98282c1eaddd570fa4ce8e6639945926d61372f4f30bb"
+        },
+        "assets/audio/birth.wav.import": {
+          "bytes": 486,
+          "sha256": "edf2f5314e3efcc11cf2b68d2e2586b40ed08d0fc49b0a14fe20c04f3c0ade78"
+        },
+        "assets/audio/blocked.wav": {
+          "bytes": 264644,
+          "sha256": "020ff051d6d36ec02790aeb4a8826661febba6605c9f3bcaaf46aa97b83c81a5"
+        },
+        "assets/audio/blocked.wav.import": {
+          "bytes": 491,
+          "sha256": "7436f8d571a76fe126a5096ad8dc57000778484c63598cac35b8734e924281fc"
+        },
+        "assets/audio/brush.ogg": {
+          "bytes": 89295,
+          "sha256": "4c201bca63fb070561e52c83a26ef2d1eb0c96f56f8e764a0e3e0964c4ef00af"
+        },
+        "assets/audio/brush.ogg.import": {
+          "bytes": 384,
+          "sha256": "da5b2d5dca4ba5327a4528b875fc373a9ac8ccccd1acd4b7fbe7dad1549da37f"
+        },
+        "assets/audio/chorus.wav": {
+          "bytes": 264644,
+          "sha256": "044ede9b5b59eb0e3ae9e7ff107f08b97ed83b3bd625f3a692caf2c49bc028d8"
+        },
+        "assets/audio/chorus.wav.import": {
+          "bytes": 489,
+          "sha256": "c59e3cf7c58874b0239d9fc67a2e3bc9ccd20792e8cafe8aa8339b74abf87dcf"
+        },
+        "assets/audio/complete.wav": {
+          "bytes": 264644,
+          "sha256": "733bd99449bbdfb9bdf4a016e16c89e151bae353e4d30e51112861ef3e444377"
+        },
+        "assets/audio/complete.wav.import": {
+          "bytes": 495,
+          "sha256": "61847a33a06afd60d3f4934d02f78ce02d1d2882f8a012daaed7f016d0b019ec"
+        },
+        "assets/audio/music-base.ogg": {
+          "bytes": 235676,
+          "sha256": "a3fd110400f3e04cee43dd6a0e03e8d9aea918d7950d33e90b4f3f158a59f42c"
+        },
+        "assets/audio/music-base.ogg.import": {
+          "bytes": 399,
+          "sha256": "4da8e3e170581bdbac25672b4fe9eb994c8d9e346a73e800ef8ce3de0312fcc2"
+        },
+        "assets/audio/music-base.wav.import": {
+          "bytes": 501,
+          "sha256": "01f5a746be84712bb982e9e33c77002c1e8aac34441ad0277d5851573638993e"
+        },
+        "assets/audio/music-bloom.ogg": {
+          "bytes": 391779,
+          "sha256": "907c76622285a7eaf0f3abb296e797469899a851ece21c815235570afbbc86a8"
+        },
+        "assets/audio/music-bloom.ogg.import": {
+          "bytes": 401,
+          "sha256": "548b0ef65f05860a3bb06a7f5ded2d2fb4e654f9aa941cc0135961ae0f214f72"
+        },
+        "assets/audio/music-warm.ogg": {
+          "bytes": 283018,
+          "sha256": "0d2174812bc34e0122a969199d5c9c6b1dda9071874d6b1a845ced3a6a097bff"
+        },
+        "assets/audio/music-warm.ogg.import": {
+          "bytes": 399,
+          "sha256": "bea2e64aa80e2dd14c306dce36baad5d3847f4a32773c6f61291ede3ba6a0310"
+        },
+        "assets/audio/restored.wav": {
+          "bytes": 264644,
+          "sha256": "82e560eec7f423d1a5cdbf6d2f53ba4dc2454bfeb0ad905b10cb5a33cebb967c"
+        },
+        "assets/audio/restored.wav.import": {
+          "bytes": 495,
+          "sha256": "580c40ee674170810bbf0a2154bc92013c00389a7ab9c3349ecffdd4de055029"
+        },
+        "assets/audio/rpg-melody-answer.wav": {
+          "bytes": 286694,
+          "sha256": "6fd8648e3a1601564b1d36ca1e1cc5f4735d7aa8177ca3d8c87d2df617c42031"
+        },
+        "assets/audio/rpg-melody-answer.wav.import": {
+          "bytes": 522,
+          "sha256": "9c142f5b79503a12dd474e0c983d8ac30f56eb42564ff2f3d8bad7b8486c825e"
+        },
+        "assets/audio/rpg-melody-taught.wav": {
+          "bytes": 174680,
+          "sha256": "315795c50accd045ce0ad59c174e40b1ab491e0a4980eab4df060377709381e0"
+        },
+        "assets/audio/rpg-melody-taught.wav.import": {
+          "bytes": 522,
+          "sha256": "62aef301cbd25fe6f250b49a29bb7b3c33c6508ac3f300de138dabd43f58ae15"
+        },
+        "assets/audio/rpg-step-grass-1.wav": {
+          "bytes": 23858,
+          "sha256": "b567e649684db827efe745b0b4844f9c908984ed30c9e85cbe857ec69a4de26c"
+        },
+        "assets/audio/rpg-step-grass-1.wav.import": {
+          "bytes": 519,
+          "sha256": "4a4235bd5424078edf062f259b424f261754905490bb4df79ff8b004d412994b"
+        },
+        "assets/audio/rpg-step-grass-2.wav": {
+          "bytes": 23858,
+          "sha256": "477dedabcf81427ac1cea0f0ae94d0b8b80d2ad694e11e33a6332251a3ddf8b4"
+        },
+        "assets/audio/rpg-step-grass-2.wav.import": {
+          "bytes": 519,
+          "sha256": "3ed57f5c8847d3c0d42124d1481f0fe21afbc79bc6abdc3840faff4eb7425a00"
+        },
+        "assets/audio/rpg-step-grass-3.wav": {
+          "bytes": 23858,
+          "sha256": "15fc99fbe8aadf473e35723f8b6e1e3b08687ab1a36ac57df0a742d93308f0fc"
+        },
+        "assets/audio/rpg-step-grass-3.wav.import": {
+          "bytes": 519,
+          "sha256": "5b1d11360aed3646d6754320d4b1a509321498ee601a528893cca13de88247f6"
+        },
+        "assets/audio/rpg-step-stone-1.wav": {
+          "bytes": 16802,
+          "sha256": "ec81acd82225b0e1bf6747b629791eac4b01b663ed02f843b1f0c91c1bac4a24"
+        },
+        "assets/audio/rpg-step-stone-1.wav.import": {
+          "bytes": 519,
+          "sha256": "85babc67536f59cfdc1ab82019509d84d71094c15d16dfc85a6dc235d0601b24"
+        },
+        "assets/audio/rpg-step-stone-2.wav": {
+          "bytes": 16802,
+          "sha256": "e3b5ccd42b91dc55cc50673becec0dcdd75e1db6abe874e8a584d82127dc98fa"
+        },
+        "assets/audio/rpg-step-stone-2.wav.import": {
+          "bytes": 519,
+          "sha256": "2579953f1781f2845a8a3486926e95ee1e91f75b3fe830afc6b21303bec1cf99"
+        },
+        "assets/audio/rpg-step-stone-3.wav": {
+          "bytes": 16802,
+          "sha256": "60787ffb3a6f41a08c09bbaab1bb5553db27fd411e29c5bdd5d8502393bc54f4"
+        },
+        "assets/audio/rpg-step-stone-3.wav.import": {
+          "bytes": 519,
+          "sha256": "646f079ce7db16ec0161c5011aab988d70a16e471a08b95fef753bf00ab653e8"
+        },
+        "assets/audio/rpg-step-wood-1.wav": {
+          "bytes": 22094,
+          "sha256": "d6e8010ba83c2469b874de3bfaa88b2186a33001f10ce0c10175ad594c1c0986"
+        },
+        "assets/audio/rpg-step-wood-1.wav.import": {
+          "bytes": 516,
+          "sha256": "442bef35d9355f1193153423deea8036de42b8364df94e5be6fa866a82be6d9c"
+        },
+        "assets/audio/rpg-step-wood-2.wav": {
+          "bytes": 22094,
+          "sha256": "f0aed809a480b0e80dbb8f2c2f86c03cbfccc4e5c87227132d3b811d6c2fe3e3"
+        },
+        "assets/audio/rpg-step-wood-2.wav.import": {
+          "bytes": 516,
+          "sha256": "a825ca0cbb8c0887628b4bcb63211d3025ad7cdb2a24c555b5b6feafe8eb9980"
+        },
+        "assets/audio/rpg-step-wood-3.wav": {
+          "bytes": 22094,
+          "sha256": "9c34e13867469f8aa6b84475ce162c76a3995ace7f9043c6ee046cc2a773a4d0"
+        },
+        "assets/audio/rpg-step-wood-3.wav.import": {
+          "bytes": 516,
+          "sha256": "85943240b1ab726465e163751541d33840340729d624dafa70b741f7460a5e21"
+        },
+        "assets/audio/ui.wav": {
+          "bytes": 264644,
+          "sha256": "2a7952af4eec42c8c35c351b28a593f9c1d00b6753ec15e508f70b4ec25888b2"
+        },
+        "assets/audio/ui.wav.import": {
+          "bytes": 477,
+          "sha256": "a8e5becce721885f62c0878192daae49b78e75be8088178178569d9948746aba"
+        },
+        "assets/audio/upgrade.wav": {
+          "bytes": 264644,
+          "sha256": "a5afeddf661b8774715a4bd7936a9d4daf082997fbf98dde6bc8741bcbcf9919"
+        },
+        "assets/audio/upgrade.wav.import": {
+          "bytes": 492,
+          "sha256": "293235e14af9ce652f92232b432b2a2e807190ec92d3f2dab4b334232478df37"
+        },
+        "assets/audio/water.ogg": {
+          "bytes": 173773,
+          "sha256": "7a3dac9747c3135ae3238df28418c6f476a905bad2011063bd34f891fd15e7f6"
+        },
+        "assets/audio/water.ogg.import": {
+          "bytes": 384,
+          "sha256": "bdc30428bed9fb82e1a79855c4927963e820b9852bdd18d865a83519ac6d2beb"
+        },
+        "assets/ui/app-icon.icns": {
+          "bytes": 83377,
+          "sha256": "85a7d1f6626c74f0772029f3c338f214269bea96d614d97ceba27c8036265dd2"
+        },
+        "assets/ui/app-icon.ico": {
+          "bytes": 10104,
+          "sha256": "617ec63012018f494c73c1c45d4a8c21c737bef5611e0da6f030a67577d8a211"
+        },
+        "assets/ui/app-icon.svg": {
+          "bytes": 1843,
+          "sha256": "31cc115ff9dc84233c532b64cb70eae52c7d2d9170d4f06cf77a793372cc7684"
+        },
+        "assets/ui/app-icon.svg.import": {
+          "bytes": 1035,
+          "sha256": "9eeb9bd452978d6d9ced8f3964a55237bf7607856643dc5d35302d19fddf6770"
+        },
+        "assets/ui/slider-pearl-focus.svg": {
+          "bytes": 333,
+          "sha256": "b0cae053ea95496c50ad86efad1d66c57174f50b40e972db1844e4ba4ae9ee96"
+        },
+        "assets/ui/slider-pearl-focus.svg.import": {
+          "bytes": 1065,
+          "sha256": "1b7ffb75f01e9c2cad29b6a513dd6aff8d53d1743be5550623d7eb3d0a1468e3"
+        },
+        "assets/ui/slider-pearl.svg": {
+          "bytes": 338,
+          "sha256": "97df9313432e747aef8f7807becaaa4b914ed15827255ab28296b42f80da91a3"
+        },
+        "assets/ui/slider-pearl.svg.import": {
+          "bytes": 1047,
+          "sha256": "50080c66a2caed86d7ab3058f1f3e0edf8ec5553def20c7c02aba74dc8ed3b55"
+        },
+        "assets/ui/toggle-off.svg": {
+          "bytes": 341,
+          "sha256": "b98ea360cba3d16fc307e79ec31758b95f30e6d5e88a080e82721a41c663fa21"
+        },
+        "assets/ui/toggle-off.svg.import": {
+          "bytes": 1040,
+          "sha256": "664866855cd121e3cc56a1f056c01d903fd0e067e9d99aa1ad45c9d3959a86f7"
+        },
+        "assets/ui/toggle-on.svg": {
+          "bytes": 354,
+          "sha256": "d16699482e09d785944f902a6cb94027e1c24e633709aba2f1415d2cfb586cae"
+        },
+        "assets/ui/toggle-on.svg.import": {
+          "bytes": 1037,
+          "sha256": "92c2da3182d547dc711698b48d74d5f673ba24127803cb102bdd4e724f7ca681"
+        },
+        "export_presets.cfg": {
+          "bytes": 1822,
+          "sha256": "e24d445cdecfaca056b202db9fc8b9eacfe964ea1cc68c155c5e952814fcee4f"
+        },
+        "project.godot": {
+          "bytes": 1231,
+          "sha256": "2d8bf2aa5d83fe2e50815d86d66a33a4a90d16d65271b0108ffb90f17b9ac842"
+        },
+        "scenes/courtyard.tscn": {
+          "bytes": 173,
+          "sha256": "40b44bc40cc1dbc411897fbc88bd8c8a5f04c9ecd1e547263fa2cfc2484cdc52"
+        },
+        "scenes/neighborhood.tscn": {
+          "bytes": 180,
+          "sha256": "520efa0332d134272b3341ee7289de258086d403ab4d57fb5ca64a9562e04091"
+        },
+        "scripts/courtyard_environment.gd": {
+          "bytes": 22509,
+          "sha256": "8d52b210fca5dae8990b68d22bd93f176ae0df12a9dc301956f8a77ee2773d2a"
+        },
+        "scripts/courtyard_environment.gd.uid": {
+          "bytes": 20,
+          "sha256": "4f19792d00fe9e7d9443b8701d85a992337ecc573b4f0d38267954eef47de024"
+        },
+        "scripts/discovery_preview.gd": {
+          "bytes": 9349,
+          "sha256": "f545d8e9ef11e76c2d2c7f4584056ecf2bcf3a354ecc8bb0fc408b118dc48af8"
+        },
+        "scripts/discovery_preview.gd.uid": {
+          "bytes": 20,
+          "sha256": "71552544f674cbfcd0ff7847dd9cda8ef068c6aad960dcc073750d3b10dabee2"
+        },
+        "scripts/dust_feedback.gd": {
+          "bytes": 11998,
+          "sha256": "e78aeb0979e1223b4bc237d08a06236c6a4451d48d28b28121208d9fd3f59fa8"
+        },
+        "scripts/dust_feedback.gd.uid": {
+          "bytes": 20,
+          "sha256": "4bd304359f784424928a9aaffaa847e6375c29b75ff57ea2644eb651a923be63"
+        },
+        "scripts/dustling_visual.gd": {
+          "bytes": 12495,
+          "sha256": "0cc56c3e756c0008527c0a0ae0c20c4f44a826fd79e590bbb64b29bc0b37b5cc"
+        },
+        "scripts/dustling_visual.gd.uid": {
+          "bytes": 20,
+          "sha256": "6349b99f99f4f2781502bf75c5a05a2b1e45d73e2ab44bd095632d7b6f530074"
+        },
+        "scripts/main.gd": {
+          "bytes": 58908,
+          "sha256": "8864aa553dd03c19cc65f533a7dcf4c6bf8e9b59e5e7e022a38618ed94676cd8"
+        },
+        "scripts/main.gd.uid": {
+          "bytes": 20,
+          "sha256": "ff6ddc705c0c7220c6d37ddfb70b6f27e000a7d0effa7beba395a5d76837e8f0"
+        },
+        "scripts/rpg_actor.gd": {
+          "bytes": 26137,
+          "sha256": "e12fdf924ecd07d8c04aef4e23ee307c5f370dc9e9a41f9a70f9665e3bdca9ea"
+        },
+        "scripts/rpg_actor.gd.uid": {
+          "bytes": 20,
+          "sha256": "8a10fc1dd04fb1d3d9d7d240050b2b547c85a4ff0367cec737e981977b26fa9a"
+        },
+        "scripts/rpg_audio.gd": {
+          "bytes": 3504,
+          "sha256": "e82d0a7ab45de1a058cb868a447908edcd91c0ade08f1fdeb0d3810256e32574"
+        },
+        "scripts/rpg_audio.gd.uid": {
+          "bytes": 20,
+          "sha256": "687ac06862ab71a74ee80743ff258c937b0bcc8447bd06a5d7ebf0e858d6f182"
+        },
+        "scripts/rpg_environment.gd": {
+          "bytes": 40849,
+          "sha256": "04e40a6628d3bd9549c64c8fabd7e80d9e9ff00b980313215d70bee32a9bf253"
+        },
+        "scripts/rpg_environment.gd.uid": {
+          "bytes": 20,
+          "sha256": "44bbb9362ce3dce12e32f501f3516ddbcf7e3e9a048e9a3bbdca70493d1d9fa7"
+        },
+        "scripts/rpg_main.gd": {
+          "bytes": 45830,
+          "sha256": "c89061ddb33648ac16dfbbb3a12c22c42c3030e8e39cef9906f71eb6f2412e33"
+        },
+        "scripts/rpg_main.gd.uid": {
+          "bytes": 20,
+          "sha256": "8a40bd0c59cd37ea65f7316b666899241e670203e8f1ed7e9566cd3a5948c1b4"
+        },
+        "scripts/rpg_navigation.gd": {
+          "bytes": 6606,
+          "sha256": "153e83fb22c11b2bddbdfe1eef9e13b2cccf5f6e3dda901a9fcfdb3b6a034d91"
+        },
+        "scripts/rpg_navigation.gd.uid": {
+          "bytes": 19,
+          "sha256": "f778839b5ca5f17f5e942e7269a0fd54d26ecfc553942b57b531d5caa0e829a6"
+        },
+        "scripts/rpg_qa.gd": {
+          "bytes": 16375,
+          "sha256": "418fab87e83b8d0d692f9baeab500d849e298f92e523ce9de0a81e3270dea16c"
+        },
+        "scripts/rpg_qa.gd.uid": {
+          "bytes": 20,
+          "sha256": "dd6e21028c947db12716907ced4c74070e5ecac1f7ec070f199f887c73a25a04"
+        },
+        "scripts/rpg_save.gd": {
+          "bytes": 4279,
+          "sha256": "baea44034774e4cb72be30ee0a2c408a2aad713655f956134af492d51cb70f95"
+        },
+        "scripts/rpg_save.gd.uid": {
+          "bytes": 20,
+          "sha256": "bc2f9f890dbd1f7009d65a373fde72714c17d12f0800de7d029810bcee71d1c9"
+        },
+        "scripts/rpg_story.gd": {
+          "bytes": 25301,
+          "sha256": "b0425271a14f59312221c4d4cfc314fac07cf7e77ff5e1f656bf043f02250dbe"
+        },
+        "scripts/rpg_story.gd.uid": {
+          "bytes": 20,
+          "sha256": "e0b07d97bd32239a2fe743e57ca4ffe8320680205805ece2ee6546c79f3d896d"
+        },
+        "scripts/save_store.gd": {
+          "bytes": 4180,
+          "sha256": "683aed2d3619384421668e48f0353252f164992341a86908a46d735c2545356a"
+        },
+        "scripts/save_store.gd.uid": {
+          "bytes": 20,
+          "sha256": "b24d48ad9eb3666ad51bd2ad88a0296b40729c17f54876c536a3517c5a9d23f9"
+        },
+        "scripts/simulation.gd": {
+          "bytes": 15788,
+          "sha256": "35c5067fd97f6715068068a007a4b2005672f34ab7151974881fa77677b3d11b"
+        },
+        "scripts/simulation.gd.uid": {
+          "bytes": 20,
+          "sha256": "792f1c954ad5e4fd781e29a312b28bf8c2a0c30e10713eefcf833f40bf0e561d"
+        },
+        "scripts/soundscape.gd": {
+          "bytes": 7682,
+          "sha256": "cd0f5959cf63e5dbd25b1add40b801cccd878906ee0aac8a8faad002dd566b5b"
+        },
+        "scripts/soundscape.gd.uid": {
+          "bytes": 19,
+          "sha256": "850698c9cd6ce62fd29ec9c9cf731438b73a2eb704882437b5543d172031007c"
+        },
+        "shaders/courtyard_environment_vegetation.gdshader": {
+          "bytes": 865,
+          "sha256": "7704d26fc46f31e1c35f2429179801feb2603147131f31814ec51ac3f291ba3a"
+        },
+        "shaders/courtyard_environment_vegetation.gdshader.uid": {
+          "bytes": 20,
+          "sha256": "e541ebb37be71f3a2511e8fe6247b3e54b335dfc4bb5d76f3c4dd9a803d92237"
+        },
+        "shaders/courtyard_environment_water.gdshader": {
+          "bytes": 1005,
+          "sha256": "a819e6f53d63c0ccacda969f7c2b1dfaa3c194b2c24041a2343364be556a3b9d"
+        },
+        "shaders/courtyard_environment_water.gdshader.uid": {
+          "bytes": 20,
+          "sha256": "82331e95ebb011a80fad4a1925da6cf58b561ec60774f64eb6b42e1fb16a9774"
+        },
+        "shaders/courtyard_stream_flow.gdshader": {
+          "bytes": 1200,
+          "sha256": "486bb08c715cfe189465a008d0c6ef906fa978dbffe414a911e5a34bd7c812eb"
+        },
+        "shaders/courtyard_stream_flow.gdshader.uid": {
+          "bytes": 19,
+          "sha256": "91a76aaa1790226caec4d39f3d1cb88b01d4e4b72f16f1a2c6186b3486f4aa8d"
+        },
+        "shaders/courtyard_surface.gdshader": {
+          "bytes": 1191,
+          "sha256": "d2492f80369252073d6ace8fb25ae2e573ba938d6fd079bf22613595aa9460a7"
+        },
+        "shaders/courtyard_surface.gdshader.uid": {
+          "bytes": 20,
+          "sha256": "dfa1e43ef5b7c287d1f31c8e9037895ebede6832bee94c37f1032740a429eb94"
+        },
+        "shaders/dust_drift.gdshader": {
+          "bytes": 1137,
+          "sha256": "cbdcaeb680b9ee9122da780a8b58333f1857ebe3cdd8bb774514d78040586c8f"
+        },
+        "shaders/dust_drift.gdshader.uid": {
+          "bytes": 20,
+          "sha256": "6b45b4d48bf5ac61649e21b1377ee2a246f9363b9e89b77889e6bd85521b5fc2"
+        },
+        "shaders/rpg_surface.gdshader": {
+          "bytes": 3142,
+          "sha256": "beae1093e2644c4d3efda027b106a7a278dbcdbbee0427d426904ecedfd39f47"
+        },
+        "shaders/rpg_surface.gdshader.uid": {
+          "bytes": 20,
+          "sha256": "fdde011c94712cf4820171e2067a0721acc104692bd09e29dc7a734cc5ddfa34"
+        },
+        "tests/audio_checks.gd": {
+          "bytes": 9732,
+          "sha256": "b260a81897f00060c7f1b807c89a9fb4c2fe87a84e520817ab90100987a0a000"
+        },
+        "tests/audio_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "6017e810046af1c7b393545cba27e48b87786b7addc573067323f3ff857e7515"
+        },
+        "tests/camera_checks.gd": {
+          "bytes": 14752,
+          "sha256": "29642a928a79ff49753674e54c4b261477789c884c45e994c846b26eb71318c5"
+        },
+        "tests/camera_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "5a466ee98d90faff10453a7071eb614e696c133cc107bd4b8553be4c19a51626"
+        },
+        "tests/chorus_checks.gd": {
+          "bytes": 5013,
+          "sha256": "3f71f2abbb7b9a521f7ca93b82009c6eb3a7bd6456e9b55c0e0f08aa7fac514b"
+        },
+        "tests/chorus_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "be23ad9b24492140a039365b2afda1c316f0bd072320fce6b013facdc1d6d8d3"
+        },
+        "tests/crowd_checks.gd": {
+          "bytes": 4331,
+          "sha256": "120448e5fa85e46c74cfcd7d968dd2a151d0b66b8e0bb741d42f15478ac69bc8"
+        },
+        "tests/crowd_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "1c1b165df258fcad483db983478c0a324a0445d92c9b6b6f897cc149115919a7"
+        },
+        "tests/integration_checks.gd": {
+          "bytes": 4105,
+          "sha256": "61c5296d6c33fd65e1cc29da1b3e382bfc0ad0fd663fd2cb5ee05ccbcf8365f7"
+        },
+        "tests/integration_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "18a6ec34d05b3699d077e0698cc6ce916ef1c4bac2c58f89cf7206f11aeb0727"
+        },
+        "tests/native_recovery_checks.gd": {
+          "bytes": 11242,
+          "sha256": "2f2f32534a30e7d556cc6c3a21649bb45eeb06ca0b8b88fb3153087c29e1911d"
+        },
+        "tests/native_recovery_checks.gd.uid": {
+          "bytes": 19,
+          "sha256": "c1da25540009ba909e4319f04c40169faebcd0779cfaba314dd775578fb43bc1"
+        },
+        "tests/rpg_actor_checks.gd": {
+          "bytes": 9369,
+          "sha256": "fc8bd05dea16d4a3bdf96a3a6dddf71d7a37428ce7f8ce5ff2af6c6973f82de9"
+        },
+        "tests/rpg_companion_checks.gd": {
+          "bytes": 11566,
+          "sha256": "3644e162d0a6878d22334239a1e4f75330d2f78308ee20b3a45a1c54956bb59f"
+        },
+        "tests/rpg_companion_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "98bacb890fe6e5c73cdab7d32ac32689cf021b63c08dde033562bc71a93c6743"
+        },
+        "tests/rpg_earned_route_checks.gd": {
+          "bytes": 6759,
+          "sha256": "e14410eaf33ed9897c9b4036c002c45ef28f20f41bcc396f83e712ec25b27ffb"
+        },
+        "tests/rpg_integration_checks.gd": {
+          "bytes": 17052,
+          "sha256": "50ccb4902b49112feffdc2a4384cd34b4c52aae7cabf65dc6ec8bc0a5a757444"
+        },
+        "tests/rpg_integration_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "e6017d88318202e18530509466e44426decf33068252e179f2a5afc6310be89c"
+        },
+        "tests/rpg_reveal_checks.gd": {
+          "bytes": 9189,
+          "sha256": "915ec4af63c58f5222e9e1a1915764fc141d6be9b1e1f2036808f4d40cd7396c"
+        },
+        "tests/rpg_save_checks.gd": {
+          "bytes": 8813,
+          "sha256": "49d4ae1227a256d79932d6583edadb3df81803bd569f872eecbcacbfd6335e71"
+        },
+        "tests/rpg_save_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "3a6bd1882731e4f7f6a24b835b9d5413311bce1dddf2120831ccf633f7267d5c"
+        },
+        "tests/rpg_story_checks.gd": {
+          "bytes": 7908,
+          "sha256": "98a57d1a5fd31676aff3ed5f71cfd0c7d9cfe8dacce532f92d82e44324b804a3"
+        },
+        "tests/rpg_story_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "15e036e9b94e38bdd2b35bb6ffe50344ff45b1ccccb78339cbb045f30c30f8db"
+        },
+        "tests/save_checks.gd": {
+          "bytes": 4124,
+          "sha256": "77f187b86fbe8a6111fffdf291416b37e3b1822611f7bf4a9ea94a2136aec49f"
+        },
+        "tests/save_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "b940f3a5fd984a772ca4af99604c54a2ac6666c8337ef646e496cd8fdce67df9"
+        },
+        "tests/simulation_checks.gd": {
+          "bytes": 3632,
+          "sha256": "84d9c4ab0fa3592c884b50afba243a3b37e97529b6f93c16137b220998eb5ebe"
+        },
+        "tests/simulation_checks.gd.uid": {
+          "bytes": 20,
+          "sha256": "15522ac52a4db57f6e83bb85b5a98076b9f182ca6b7cf6b08184a8af78f3b21e"
+        },
+        "tests/work_feedback_checks.gd": {
+          "bytes": 3672,
+          "sha256": "19a975cb43e926c28b060d80ed7a8624e6cf050c6fb4038ef008cafd0459304d"
+        },
+        "tests/work_feedback_checks.gd.uid": {
+          "bytes": 19,
+          "sha256": "a44391e57053e60704d7ceeb56adc84cffe6d3a40b78bc46b163fbe764de7559"
+        }
+      },
+      "changedSinceSnapshot": false
+    },
+    "version": "0.5.1-rpg-dev"
+  },
+  "macArchive": {
+    "bytes": 62275119,
+    "sha256": "4a2bd9939fe411ec1d5f900a3e3eac5f6fb603a2aa25fba228400167e7f8cbe3"
+  },
+  "extraction": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3",
+  "executable": {
+    "path": "/var/folders/qz/n37ngw_n02l8fx3wjvb805_00000gq/T/dustlings-rpg-package-4aatK3/Dustlings.app/Contents/MacOS/Dustlings",
+    "bytes": 170963648,
+    "sha256": "17dcc9a56af32b09818b2d441be6774190466bc81832ef2f94d9fec1e23febe2"
+  },
+  "pck": {
+    "bytes": 2482776,
+    "sha256": "cbd359b8970e617ced1d12e0a286847a20771ec936a97d83ecf9660095626ab7"
+  },
+  "windowsArchive": "No companion ZIP present; EXE/PCK files verified without Windows execution.",
+  "resumeInput": {
+    "file": "/Users/xingzhaoji/Desktop/mine/Dustlings/evidence/rpg/neighborhood-store-media-final-20260914/isolated-save.json",
+    "bytes": 886,
+    "sha256": "2bef6b81d4b52ffdb8eb102bdb63209a62eb0c7f8c7e2a1e62036d44bddd4a5f",
+    "kind": "Explicit copied save fixture",
+    "capture": {
+      "sourceHash": "38a1d8916c250afa664a1c08c7028a577835fd78ad0a76ef7d2bfd3cbb2ebf07",
+      "status": "recorded",
+      "scenario": "route",
+      "runtimeMatchesBuild": false
+    }
+  },
+  "finished": "2026-09-14T02:18:55.965Z"
+}

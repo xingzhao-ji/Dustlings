@@ -1,26 +1,15 @@
 # Dustlings
 
-A standalone, real 3D cozy RPG in Godot. Explore Bellwether on foot, meet its four residents, make a small home, and restore forgotten places with living dust companions.
+A local 3D cozy RPG: explore Bellwether, meet four residents, make a small home, and restore forgotten places with dust companions. The current release candidate contains one neighborhood. The full campaign remains unfinished.
 
-**Current milestone: one integrated RPG neighborhood, in development and awaiting human validation.** The owner’s RPG direction supersedes the earlier cleanup-only courtyard. Current human RPG playtests: **0**. Owner acceptance, presentation approval and readiness to sell are pending. The full campaign is unfinished.
+**Play on this Mac:** double-click `Play Dustlings.command`. It verifies the selected archive and prepares the app in local Application Support. No AWS credentials, LLM subscription or network service is required.
 
-## Play the current source
+[Open the review hub](evidence/rpg/REVIEW.html) for Mac/Windows downloads, actual gameplay, screenshots, checks and remaining release gates. Version **0.5.1-rpg-dev** has 95 passing checks on the actual Mac package, including fresh start, resume and damaged-save recovery. Windows exports and archive checks pass; Windows execution is still unverified. Mac is ad-hoc signed and unnotarized.
 
-```sh
-.tools/Godot.app/Contents/MacOS/Godot --path godot
-```
+WASD/arrows walk; right-drag turns the camera; scroll zooms. Comma/period orbit; Q returns forward. E talks or inspects. Hold Space near dust to brush. J opens the journal; Escape leaves dialogue or opens settings. Separate sound levels, gentle motion, camera sensitivity, graphics quality and verified save copies are available. RPG progress uses its own namespace and preserves the historical courtyard profile.
 
-WASD or arrows walk; right-drag turns the camera; scroll adjusts distance. Comma/period orbit using the keyboard; Q returns to the forward view. E talks or inspects. Hold Space near visible dust to brush; mouse brushing also follows visible nearby surfaces. J opens your journal. Escape leaves a conversation or opens pause/settings. Settings include separate sound levels, gentle motion, camera sensitivity, graphics quality and verified save copies.
+The improved gathering brings all four neighbors to tea, with reachable conversations, bread and hand-attached sipping. Residents recover blocked initial routes; camera movement stays consistent across window sizes. [Changes and evidence](docs/IMPROVEMENTS-2026-09-14.md).
 
-The RPG uses its own save namespace and preserves the old courtyard save. Windows/macOS RPG development archives and current gameplay are linked in the [review hub](evidence/rpg/REVIEW.html). Export/source/archive checks passed; exact packaged runtime checks remain pending. The old courtyard packages are historical and are not the current RPG. Development is stopped at the owner’s request; see the continuation checkpoint.
+[Release preparation](docs/RPG-PACKAGING.md) includes versioned exports, offline Steam depot templates, seven 1920×1080 gameplay screenshots, four correctly sized capsule drafts, an original icon and a 22.6-second gameplay preview. Human playtests:0. Presentation, sound comfort, owner acceptance, Windows hardware and demand remain open; these are review materials, not evidence of commercial success.
 
-## Review and continue
-
-- [Exact continuation checkpoint](docs/CONTINUATION.md) and [prioritized backlog](docs/BACKLOG.md)
-- [RPG vision](docs/RPG-DIRECTION.md), [art direction](docs/RPG-ART-DIRECTION.md), [visual board](docs/art-direction/bellwether-direction.png)
-- [Independent AI critique](docs/RPG-CRITIQUE.md) and [human playtest protocol](docs/RPG-PLAYTEST.md)
-- [Story](docs/RPG-NARRATIVE.md), [world](docs/RPG-WORLD.md), [integration](docs/RPG-INTEGRATION.md), [companions](docs/RPG-COMPANIONS.md), [audio](docs/RPG-AUDIO.md), [packaging](docs/RPG-PACKAGING.md)
-
-Native recordings under `evidence/rpg` use generated inputs, with frozen source manifests. Failed routes are retained and labelled. MovieMaker engine time is not human pacing or performance evidence. Headless geometry, save and audio checks do not establish visual appeal, listening comfort or enjoyment. Physical Windows, human audiovisual review and owner acceptance remain unverified. Figma is unavailable; the visual board and real engine interface are the inspectable fallback. iPad/iPhone are later ports.
-
-The old Godot courtyard scene, Canvas/Electron prototype and earlier artifacts remain available as historical work. They do not establish quality or completion of the RPG.
+Develop from source with `.tools/Godot.app/Contents/MacOS/Godot --path godot`. Run isolated suites with `node tools/check-rpg.mjs`. [Continuation](docs/CONTINUATION.md), [quality gates](docs/RPG-QUALITY-GATES.md), [playtest protocol](docs/RPG-PLAYTEST.md), [store copy](docs/STORE-COPY-2026-09-14.md), [performance](docs/PERFORMANCE.md).

@@ -18,7 +18,7 @@ if (!selected.length || selected.some(name => !all.includes(name))) throw Error(
 const output = path.resolve(root, args.output || `evidence/rpg/checks-${new Date().toISOString().replaceAll(/[:.]/g, '-')}`);
 await fs.mkdir(path.dirname(output), {recursive: true});
 await fs.mkdir(output); // Refuse to reuse a save from a previous run.
-const engine = path.join(root, '.tools/Godot.app/Contents/MacOS/Godot');
+const engine = process.env.GODOT_BIN || path.join(root, '.tools/Godot.app/Contents/MacOS/Godot');
 const digest = data => crypto.createHash('sha256').update(data).digest('hex');
 async function sources() {
   const files = {};

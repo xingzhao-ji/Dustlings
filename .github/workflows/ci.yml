@@ -1,0 +1,74 @@
+name: Godot RPG checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  rpg:
+    name: Headless RPG regression (Godot 4.7.2)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout game source
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            godot
+            tools
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - name: Install pinned Godot 4.7.2
+        env:
+          GODOT_DOWNLOAD: https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+          GODOT_SHA256: cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+        run: |
+          mkdir -p "$RUNNER_TEMP/godot" "$RUNNER_TEMP/dustlings-user-data"
+          echo "XDG_DATA_HOME=$RUNNER_TEMP/dustlings-user-data" >> "$GITHUB_ENV"
+          curl --fail --location --retry 3 "$GODOT_DOWNLOAD" -o "$RUNNER_TEMP/godot.zip"
+          echo "$GODOT_SHA256  $RUNNER_TEMP/godot.zip" | sha256sum --check
+          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP/godot"
+          engine="$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"
+          chmod +x "$engine"
+          "$engine" --version | tee "$RUNNER_TEMP/godot-version.txt"
+          grep -E '^4\.7\.2\.stable\.' "$RUNNER_TEMP/godot-version.txt"
+          echo "GODOT_BIN=$engine" >> "$GITHUB_ENV"
+      - name: Import clean game
+        run: |
+          "$GODOT_BIN" --headless --path godot --editor --import --quit 2>&1 | tee "$RUNNER_TEMP/godot-import.log"
+          if grep -E '^SCRIPT ERROR:|^ERROR:' "$RUNNER_TEMP/godot-import.log"; then
+            exit 1
+          fi
+      - name: Run all seven RPG suites sequentially
+        run: node tools/check-rpg.mjs --output=evidence/ci-rpg
+      - name: Preserve current check evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: godot-rpg-checks
+          path: |
+            ${{ runner.temp }}/godot-version.txt
+            ${{ runner.temp }}/godot-import.log
+            evidence/ci-rpg/report.json
+            evidence/ci-rpg/*/run.log
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Record scope
+        if: always()
+        run: |
+          echo 'Sequential headless RPG actor, story, save, reveal, integration, companion and earned-route checks. These do not validate rendered performance, native packages, visual/audio quality or human play.' >> "$GITHUB_STEP_SUMMARY"
